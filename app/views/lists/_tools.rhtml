@@ -1,0 +1,71 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% def row(l,r)
+  "<tr>
+		<td>#{_(r)}</td>
+		<td style=\"width:7em; white-space: pre;\">#{_(l)}</td>
+	</tr>"
+end %>
+
+<table border="0" width="100%">
+	<tr>
+		<td width="50%" style="text-align: left;">
+			<h5><%= _('Keyboard Shortcuts') %></h5>
+		</td>
+		<td width="50%" style="text-align: left;">
+			<h5><%= _('Special Values') %></h5>			
+		</td>
+	</tr>
+</table>
+<fieldset>
+	<table border="0" width="100%">
+		<tr>
+			<td style="padding: 0 1em 0 0; border-right: 1px solid #B1B1B1; vertical-align: top; width: 50%;">
+			<h6><%= _('Navigation') %></h6>
+				<table cellspacing="0" style="border: none;text-align:left;width:100%;">
+					<%= row 'Ctrl-&uarr;', 'Select Previous' %>
+					<%= row 'Ctrl-&darr;', 'Select Next' %>
+					<%= row 'Ctrl-&rarr;', 'Expand' %>
+					<%= row 'Ctrl-&larr;', 'Collapse' %>
+				</table>
+			<h6 style="margin-top:1em;"><%= _('Editing') %></h6>
+				<table cellspacing="0" style="border: none;text-align:left;width:100%;">
+					<%= row 'Ctrl-Shift-&uarr;', 'Move Up' %>
+					<%= row 'Ctrl-Shift-&darr;', 'Move Down' %>
+					<%= row 'Ctrl-Shift-&larr;', 'Move Left' %>
+					<%= row 'Ctrl-Shift-&rarr;', 'Move Right' %>
+					<%= row 'Ctrl-Shift-n', 'New Row' %>
+					<%= row 'Ctrl-Shift-d', 'Delete Row' %>
+					<%= row 'Spacebar', 'Toggle First Checkbox' %>
+				</table>
+			</td>
+			<td style="padding: 0 0 0 1em; vertical-align: top; width: 50%;">
+  			  <h6><%= _('Checkboxes') %></h6>
+  			  <p>
+  			  	<%= _("When changing a column from Text to Checkbox the values 'true', 't', 'yes', 'y', '1', and '2' will be checked.") %>
+  			  </p>
+					<h6><%= _('Dates') %></h6>
+  			  <p>
+    				<%= _('Various ways of entering dates are supported, such as:') %>
+    				'10/23/2009', '4 jan 2010', 'today', 'tomorrow', 
+    				'2 days from now', 'next week', 'Oct 2006', 'january 5', '3rd wednesday in nov'
+  			  </p>
+  			  <h6><%= _('Numbers') %></h6>
+  			  <p>
+    				<%= _("A number cell with the value '+' will sum the values of its children.") %>
+  			  </p>
+			</td>
+		</tr>
+	</table>
+</fieldset>
+
+<div class="drawerButtons">
+	<input type="button" value="<%= _('Done') %>" onclick="Drawers.hide('Tools');" />
+</div>

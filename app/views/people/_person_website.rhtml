@@ -1,0 +1,23 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% index ||= params[:index] -%>
+
+<tr id="person_website_<%= index %>">
+	<td valign="top"><%= mark_as_primary_star(website, 'person', 'website', index) %></td>
+	<td>
+		<input id="person_websites_<%= index %>_site_title" size="40" value="<%= website.site_title %>" type="text" maxlength="100" name="person[websites][<%= index %>][site_title]" class="textInput" style="width:90px;"  />
+		<div class="infoGroupInputLabel"><%= _('site name') -%></div>
+	</td>
+	<td>
+		<input id="person_websites_<%= index %>_site_url" size="40" value="<%= website.site_url %>" type="text" maxlength="100" name="person[websites][<%= index %>][site_url]" class="textInput" style="width:180px;"  />
+		<div class="infoGroupInputLabel"><%= _('url') -%></div>
+	</td>
+	<td valign="top"><a href="#" onclick="People.removeNewIndex('arrPersonWebsiteIndexes', <%= index %>); $('person_website_<%= index %>').remove(); return false;" class="deleteItem">-</a></td>
+</tr>

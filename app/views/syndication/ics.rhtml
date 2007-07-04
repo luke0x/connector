@@ -1,0 +1,47 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+PRODID:-//Joyent\, Inc//NONSGML Calendar 1.0//EN
+VERSION:2.0
+<% @events.each do |event| -%>
+BEGIN:VEVENT
+<% if event.all_day? -%>
+DTSTART;VALUE=DATE:<%= event.start_time_in_user_tz.strftime("%Y%m%d") %>
+DTEND;VALUE=DATE:<%= event.end_time_in_user_tz.strftime("%Y%m%d") %>
+<% else -%>
+DTSTART;TZID=<%= User.current.person.tz.identifier %>:<%= event.start_time_in_user_tz.strftime("%Y%m%dT%H%M%S") %>
+DTEND;TZID=<%= User.current.person.tz.identifier %>:<%= event.end_time_in_user_tz.strftime("%Y%m%dT%H%M%S") %>
+<% end -%>
+<% if event.repeats? -%>
+<%   if event.all_day? -%>
+RRULE:<%= event.recurrence_description.rule_text %><%= ";UNTIL=#{event.recur_end_time.strftime("%Y%m%d")}" if event.recur_end_time %>
+<% elsif !event.by_day.nil? %>
+RRULE:<%= event.recurrence_description.rule_text %><%= ";UNTIL=#{event.recur_end_time.strftime("%Y%m%d")}" if event.recur_end_time %><%= ";BYDAY=#{event.by_day.join(',').upcase}" %>
+<%   else -%>
+RRULE:<%= event.recurrence_description.rule_text %><%= ";UNTIL=#{event.recur_end_time.strftime("%Y%m%dT%H%M%S")}Z" if event.recur_end_time %>
+<%   end -%>
+<% end -%>
+SUMMARY:<%= event.name %>
+<% unless event.location.blank? -%>
+LOCATION:<%= event.location %>
+<% end -%>
+DESCRIPTION:<%= event.notes && event.notes.gsub("\r\n", "\n").gsub("\r", "\n").gsub("\n", '\n') %>
+UID:<%= event.id %>@<%= Organization.current.primary_domain.web_domain %>
+<% if event.alarm? -%>
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:<%= event.ics_alarm_trigger %>
+DESCRIPTION:<%= event.name %>
+END:VALARM
+<% end -%>
+END:VEVENT
+<% end -%>
+END:VCALENDAR

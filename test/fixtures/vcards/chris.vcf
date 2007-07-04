@@ -1,0 +1,8 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Morris;Chris\; Man;;;
+FN:Chris\; Man Morris
+NICKNAME:chris
+ORG:Joy\: Division\, LLC
+NOTE:Notes\n that span over \n\n multiple\; lines and are \n whack
+END:VCARD

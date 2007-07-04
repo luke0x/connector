@@ -1,0 +1,19 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<%= link_to_function _('Rename'), "StandardGroup.toggleEditRename();", { :id => 'standardGroupEditRenameLink', :class => 'groupOption rename' } %>
+<div id="standardGroupEditRename" style="display: none;" class="groupOptionMenu">
+  <form action="<%= url_for({ :action => 'rename_strongspace_group' }) %>" method="post" onsubmit="return StandardGroup.editSubmit(this);">
+		<input name="path" type="hidden" value="<%= group.relative_path %>" />
+    <input id="standardGroupRenameName" type="text" name="name" value="<%= group.name %>" style="width: 100%;"/>
+    <div style="text-align: right;">
+      <%= submit_tag _('Rename'), { :name => 'Submit' } %>
+    </div>
+  </form>
+</div>

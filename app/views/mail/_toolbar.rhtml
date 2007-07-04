@@ -1,0 +1,41 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+  <% if @toolbar[:compose] -%>
+    <li class="actionCompose"><%= link_to _('Compose'), mail_compose_url %></li>
+	<% end -%>
+  <% if @toolbar[:new_notifications] -%>
+    <li class="actionShowNew"><%= link_to _('Show New'), mail_notifications_url %></li>
+  <% end -%>
+  <% if @toolbar[:all_notifications] -%>
+    <li class="actionShowAll"><%= link_to _('Show All'), mail_notifications_url(:all => '') %></li>
+  <% end -%>
+  <% if @toolbar[:reply] -%>
+    <li class="actionReply"><%= link_to _('Reply'), mail_reply_url(:id => @message) %></li>
+	<% end -%>
+  <% if @toolbar[:reply_all] -%>
+    <li class="actionReplyAll"><%= link_to _('Reply All'), mail_reply_url(:id=>@message, :all => true) %></li>
+	<% end -%>
+  <% if @toolbar[:forward] -%>
+    <li class="actionForward"><%= link_to _('Forward'), mail_forward_url(:id => @message) %></li>
+	<% end -%>
+	<% if @toolbar[:copy] -%>
+		<li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy')", {:id => 'actionCopyLink'} %></li>
+	<% end -%>
+	<% if @toolbar[:move] -%>
+		<li class="actionMove"><%= link_to_function _('Move'), "return Drawers.toggleBrowser('Move')", {:id => 'actionMoveLink'} %></li>
+	<% end -%>
+  <% if @toolbar[:delete] -%>
+		<li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
+  <% end -%>
+	<% if @mailbox && @mailbox.full_name == 'INBOX.Trash' -%>
+	  <li class="actionEmptyTrash"><%= link_to _('Empty Trash'), mail_empty_trash_url, {:confirm => _('Do you want to empty your trash?')} %></li>
+	<% end -%>
+</ul>

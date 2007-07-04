@@ -1,0 +1,392 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+/* Pretty Forms ------------------------------------*/
+
+	input.textInput, input.textInputLarge, input.textInputSmall, textarea {
+		border-top: 1px solid #7c7c7c;
+		border-left: 1px solid #c3c3c3;
+		border-right: 1px solid #c3c3c3;
+		border-bottom: 1px solid #ddd;
+		background-color: #FFF;
+		background-image: url(/images/bg/fieldbg.gif);
+		background-repeat: repeat-x;
+		}
+	input.textInput {
+		padding: 3px 4px 3px 4px;
+		}
+	input.textInputLarge {
+		font-size: 1.2em;
+		line-height: 1.4em;
+		padding: 4px 5px;
+		}
+	input.textInputSmall {
+		font-size: 100%;
+		line-height: 1.4em;
+		}
+	
+	
+/*  ------------------------------------*/
+	
+	.dialog {
+		background-color: #D7E4EF;
+		padding: 1em 1em .5em 1em;
+		border-color: #9ABAD6;
+		border-width: 1px;
+		border-style: solid;
+		-moz-border-radius: .4em .4em .4em .4em;
+		-webkit-border-top-left-radius: .4em;
+		-webkit-border-top-right-radius: .4em;
+		-webkit-border-bottom-left-radius: .4em;
+		-webkit-border-bottom-right-radius: .4em;
+		margin-bottom: 1em;
+	}
+	.dialog.alt {
+		background-color: #FFEFB5;
+		border-color: #E5C797;
+	}
+	
+	.dialog.squareTopLeft {
+		-moz-border-radius: 0 .4em .4em .4em;
+		-webkit-border-top-left-radius: 0;
+	}
+	
+	.accountTypes {
+		margin-left: 1em;
+		margin-top: .7em;
+	}
+	.accountTypes td {
+		line-height: 1.3em;
+	}
+	
+	.infoGroup {
+		border-color: #B1CDE2 #EEF4F8 #EEF4F8 #B5D0E5;
+		border-width: 1px;
+		border-style: solid;
+		padding: 1em;
+		background-color: #DDE7EF;
+		margin: 1em 0 1em 0;
+	}
+	.alt .infoGroup {
+		border-color: #E5C797 #EEF4F8 #EEF4F8 #E5C797;
+		background-color: #FFF2D1;
+	}
+	.infoGroup .addItem {
+		margin-left:8px !important;
+		}
+	.infoGroupLabel {
+		padding: 7px 0 0 0;
+		width: 11em;
+		text-align: right;
+		color:#777;
+		}
+	.infoGroupInputLabel {
+		color: #9B9B9B;
+		font-size: .85em;
+		padding-left: 4px;
+		}
+	.infoGroup table td {
+		padding: 0;
+		}
+		
+	.infoGroup hr {	
+		border-top: 0px solid #B1CDE2;
+		border-bottom: 1px solid #EEF4F8;
+		border-left: 0px solid #AAA;
+		border-right: 0px solid #AAA;
+		height: 1px;
+		background-color: #B1CDE2;
+		}
+		
+	.alt .infoGroup hr {
+		height: 2px;
+		background-color: #E4CDB2;
+		border-color: #FFF;
+		border-width: 0px 0px 1px 0px;
+		border-style: solid;
+	}
+	
+	
+/*  ------------------------------------
+	
+	.dialog {
+		background-color: #FFF8CF;
+		padding: 1em;
+		width: 47.5em;
+		border-color: #F7E38F;
+		border-width: 1px;
+		border-style: solid;
+	}
+	
+	
+	.infoGroup {
+		border-color: #E8CE70 #FFF #FFF #F9DA74;
+		border-width: 1px;
+		border-style: solid;
+		padding: 1em;
+		background-color: #FFFAD8;
+		margin: 1em 0 1em 0;
+		width: 45em;
+	}
+	.infoGroup .addItem {
+		margin-left:8px !important;
+		}
+	.infoGroupLabel {
+		padding: 7px 0 0 0;
+		width: 11em;
+		text-align: right;
+		color:#777;
+		}
+	.infoGroupInputLabel {
+		color: #9B9B9B;
+		font-size: .85em;
+		padding-left: 4px;
+		}
+	.infoGroup table td {
+		padding: 0;
+		}
+		
+	.infoGroup hr {	
+		border-top: 0px solid #DAC58D;
+		border-bottom: 1px solid #FFF;
+		border-left: 0px solid #AAA;
+		border-right: 0px solid #AAA;
+		height: 1px;
+		background-color: #DAC58D;
+		}
+
+/* info ------------------------------------*/
+
+	.info, .info2, .info3, .info4 {	
+		background-image: url(/images/bg/infoBG.png);
+		background-repeat: no-repeat;
+	}
+	.info4 {
+		background-position: right bottom;
+		background-color: #FFEFB5;
+		width: 500px;
+		margin: 1em;
+	}
+	.info4.infoMessageBG {
+		background-color: #EFEFEF;
+	}
+	.info4.fullwidth {
+		width: 100%;
+		margin: 0 0 1em 0;
+	}
+	.info3 {	
+		background-position: left bottom;
+	}
+	.info2 {	
+		background-position: right top;
+	}
+	.info {	
+		background-position: left top;
+		padding: 2em;
+	}
+	.info.noPadding {	
+		padding: 0 !important;
+	}
+	.infoError, .infoMessage {
+		background-repeat: no-repeat;
+		background-position: 2em center;
+		padding: 2em 2em 2em 5.5em;
+	}
+	.infoError {
+		background-image: url(/images/icons/attention32.png);
+	}
+	.infoMessage {
+		background-image: url(/images/icons/ok32.png);
+	}
+		
+	.info .acceptDecline {
+		float: right;
+	}
+	.info hr {	
+		background-color: #E3D8A1;
+		margin: 1em 0;
+	}
+		
+	.yes, .no {	
+		background-image: url(/images/icons/yesNo.png);
+		padding: 2px 2px 2px 16px;
+		background-repeat: no-repeat;
+		}
+	.yes {	
+		background-position: 0 0;
+		}
+	.yes:hover {	
+		background-position: 0 -50px;
+		color: #000;
+		}
+	.no {	
+		background-position: 0 -100px;
+		}
+	.no:hover {	
+		background-position: 0 -150px;
+		color: #000;
+		}
+	.notAvailable {	
+		opacity: .30;
+		filter: alpha(opacity=30);
+		-moz-opacity: .30;
+		}
+		
+/* Warning --------------------------------- */
+
+	#warning {
+		background-color: #FFEAAB;
+		width: 350px;
+		padding: 10px 20px 20px 80px;
+		border-color: #E7CF8E;
+		border-width: 1px;
+		border-style: solid;
+		margin: 10px 0 0 0;
+		background-image: url(/images/bg/warningBG.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		}
+	#warning fieldset {
+		padding: 0.25em 0.5em 0.35em 15px;
+		border-color: #D8C487;
+		border-width: 1px;
+		border-style: solid;
+		}
+	#warning legend {
+		margin: 0 !important;
+		background-color: transparent !important;
+		padding: 0 10px;
+	}
+	.warningInline {
+		background-color: #FFEAAB;
+		padding: 4px 2em 4px 26px;
+		border-color: #E7CF8E;
+		border-width: 1px;
+		border-style: solid;
+		margin: 10px 0 0 0;
+		background-image: url(/images/bg/warningInline.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		}
+
+/* icons ------------------------------------*/
+
+	.deleteItem {	
+		height: 16px;
+		width: 16px;
+		background-position: -500px 0;
+		text-indent: -3000px;
+		display: block;
+		background-image: url(/images/icons/addRemove.png);
+		background-repeat: no-repeat;
+	}
+	.deleteItem:hover {
+		background-position: -500px -50px;
+	}	
+	a.addItem, .addItem {
+		height: 14px;
+		margin: 0px 0px 0px 0px;
+		padding: 2px 3px 2px 16px;
+		white-space: nowrap;
+		background-image: url(/images/icons/addRemove.png);
+		color: #000;
+		background-position: 0 0;
+	}
+	a.addItem:hover, .addItem a:hover {	
+		background-position: 0 -50px;
+	}
+
+
+
+/* Buttons ------------------------------------*/
+
+	a.buttonStandard {
+		height: 22px;
+		display: -moz-inline-stack;
+		display: inline-block;
+	}
+	.buttonStandardLeft {
+		/* firstwrapper */
+		background-image: url(/images/bg/buttons/buttonStandardLeft.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.buttonStandardRight {
+		background-image: url(/images/bg/buttons/buttonStandardRight.png);
+		background-repeat: no-repeat;
+		background-position: right 0;
+	}
+	.buttonStandardBG {
+		background-image: url(/images/bg/buttons/buttonStandardBG.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		margin: 0 11px;
+		text-align: center;
+		height: 22px;
+	}
+	a .buttonStandardBG span {
+		background-repeat: no-repeat;
+		color: #000;
+		font-size: 11px;
+		height: 22px;
+		margin-left: auto;
+		margin-right: auto;
+		vertical-align: middle;
+		display: inline-block;
+		display: -moz-inline-stack;
+		padding-top: 3px;
+		padding-left: 0px;
+	}
+	a .buttonStandardBG span.noIcon {
+		padding-left: 0;
+	}
+		
+	a:active .buttonStandardBG {
+		background-position: 0 -100px;
+	}
+	a:active .buttonStandardLeft {
+		background-position: 0 -100px;
+	}
+	a:active .buttonStandardRight {
+		background-position: right -100px;
+	}
+	a .buttonStandardBG span, a .buttonStandardBG span:hover, a .buttonStandardBG span:active {
+		background-position: 0 3px;
+	}
+	
+	
+	.addTag {
+		background-image: url(/images/icons/tag.png);
+		padding-left: 19px !important;
+	}
+	.jumpTo {
+		background-image: url(/images/icons/jumpTo.png);
+		padding-left: 19px !important;
+	}
+	.setAccess {
+		background-image: url(/images/icons/user.png);
+		padding-left: 19px !important;
+	}
+	.notifySomeone {
+		background-image: url(/images/icons/notifyBubble.png);
+		padding-left: 19px !important;
+	}
+	.download {
+		background-image: url(/images/icons/download.png);
+		padding-left: 19px !important;
+	}
+	
+	.disabled {
+		color:#6D6D6D;
+		width:11em;
+	}
+		

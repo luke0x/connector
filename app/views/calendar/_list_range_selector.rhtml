@@ -1,0 +1,41 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="rangeFinder">
+  <table border="0" cellspacing="0" cellpadding="0">
+  	<tr>
+  		<td valign="top">
+        <% form_tag(calendar_list_url, {'method' => 'get'}) do -%>
+          <% today = User.current.today %>
+          <select name="start_date" style="font-size: 10px;" onchange="this.parentNode.submit();">
+            <% cur_date = today - 28 -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @start_date %>><%= _('4 Weeks Ago') -%></option>
+            <% cur_date = today - 7 -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @start_date %>><%= _('1 Week Ago') -%></option>
+            <% cur_date = today - 1 -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @start_date %>><%= _('Yesterday') -%></option>
+  	        <% cur_date = today -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @start_date %>><%= _('Today') -%></option>
+          </select>
+          <%= _('to') -%> 
+          <select name="end_date" style="font-size: 10px;" onchange="this.parentNode.submit();">
+  	      <% cur_date = today -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @end_date %>><%= _('Today') -%></option>
+            <% cur_date = today + 1 -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @end_date %>><%= _('Tomorrow') -%></option>
+            <% cur_date = today + 7 -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @end_date %>><%= _('1 Week From Now') -%></option>
+            <% cur_date = today + 28 -%>
+            <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @end_date %>><%= _('4 Weeks From Now') -%></option>
+          </select>
+        <% end -%>
+      </td>
+    </tr>
+  </table>
+</div>

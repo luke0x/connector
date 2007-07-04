@@ -1,0 +1,61 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% index ||= params[:index] -%>
+
+<tr id="person_address_<%= index %>">
+  <td>
+    <table>
+      <tr>
+      	<td valign="top"><%= mark_as_primary_star(address, 'person', 'address', index) %></td>
+      	<td colspan="2">
+      		<table style="border-collapse: collapse;">
+      			<tr>
+      				<td style="width:80px;padding:0px;" valign="top">
+      					<% address_types = [[_('Home'), 'Home'], [_('Other'), 'Other'], [_('Work'), 'Work']] -%>
+      					<% address_types_options = options_for_select address_types, (address ? address.address_type : nil) -%>
+      					<%= select_tag_with_id "person[addresses][#{index}][address_type]", address_types_options, {:id => "person_addresses_#{index}_address_type"} %>
+      					<br /><span class="infoGroupInputLabel"><%= _('type') -%></span>
+      				</td>
+      				<td style="padding:0px;">
+      					<input id="person_addresses_<%= index %>_street" size="40" value="<%= address.street %>" type="text" maxlength="100" name="person[addresses][<%= index %>][street]" class="textInput" style="width:202px;" />
+      					<div class="infoGroupInputLabel"><%= _('street address') -%></div>
+      				</td>
+      			</tr>
+      		</table>
+      	</td>
+      	<td valign="top"><a href="#" onclick="People.removeNewIndex('arrPersonAddressIndexes', <%= index %>); $('person_address_<%= index %>').remove(); return false;" class="deleteItem">-</a></td>
+      </tr>
+      <tr>
+      	<td />
+      	<td>
+      		<input id="person_addresses_<%= index %>_city" size="40" value="<%= address.city %>" type="text" maxlength="100" name="person[addresses][<%= index %>][city]" class="textInput" style="width:133px;" />
+      		<div class="infoGroupInputLabel"><%= _('city') -%></div>
+      	</td>
+      	<td>
+      		<input id="person_addresses_<%= index %>_state" size="40" value="<%= address.state %>" type="text" maxlength="100" name="person[addresses][<%= index %>][state]" class="textInput" style="width:136px;" />
+      		<div class="infoGroupInputLabel"><%= _('state') -%></div>
+      	</td>
+      	<td />
+      </tr>
+      <tr>
+      	<td />
+      	<td>
+      		<input id="person_addresses_<%= index %>_postal_code" size="40" value="<%= address.postal_code %>" type="text" maxlength="100" name="person[addresses][<%= index %>][postal_code]" class="textInput" style="width:133px;" />
+      		<div class="infoGroupInputLabel"><%= _('postal code') -%></div>
+      	</td>
+      	<td>
+      		<input id="person_addresses_<%= index %>_country_name" size="40" value="<%= address.country_name %>" type="text" maxlength="100" name="person[addresses][<%= index %>][country_name]" class="textInput" style="width:136px;" />
+      		<div class="infoGroupInputLabel"><%= _('country') -%></div>
+      	</td>
+      	<td />
+      </tr>
+    </table>
+  </td>
+</tr>

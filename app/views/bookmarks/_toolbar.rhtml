@@ -1,0 +1,35 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+  <% if @toolbar[:new] -%>
+    <li class="actionNew"><%= link_to _('New'), bookmarks_create_url %></li>
+  <% end -%>
+	<% if @toolbar[:new_notifications] -%>
+		<li class="actionShowNew"><%= link_to _('Show New'), bookmarks_notifications_url %></li>
+	<% end -%>
+	<% if @toolbar[:all_notifications] -%>
+		<li class="actionShowAll"><%= link_to _('Show All'), bookmarks_notifications_url(:all => '') %></li>
+	<% end -%>
+	<% if @toolbar[:edit] and @bookmark -%>
+		<li class="actionEdit"><%= link_to _('Edit'), bookmarks_edit_route_url(:id => @bookmark.id) %></li>
+	<% end -%>
+  <% if @toolbar[:copy] -%>
+		<li class="actionCopyDirect"><%= render :partial => 'toolbars/copy_to_bookmarks' %></li>      
+	<% end -%>
+	<% if @toolbar[:delete] -%>
+		<li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
+	<% end -%>
+  <% if @toolbar[:sync] -%>
+  	<li class="actionSyncBookmarks"><%= link_to_function _('Sync Bookmarks with del.icio.us'), "return Drawers.toggle('BookmarksSync');", {:id => 'actionBookmarksSyncLink'} %></li>
+  <% end -%>
+  <% if @toolbar[:bookmarklet] -%>
+    <li class="actionTools"><%= link_to_function _('Get the Joyent Bookmarks Bookmarklet'), "return Drawers.toggle('BookmarksBookmarklet');", {:id => 'actionBookmarksBookmarkletLink'} %></li>
+  <% end -%>
+</ul>

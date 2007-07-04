@@ -1,0 +1,46 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="attachUI" style="display: none;">
+	<div class="attachSelector">
+		<label for="attachmentFromConnector">
+			<input type="radio" id="attachmentFromConnector" name="attachmentFrom" value="1" onclick="file_browser.selectConnectorUi();" />
+			<span class="connectorIcon"><%= _('From Connector') -%></span>
+		</label>
+		<span style="padding:0 0 0 1em;">
+			<label for="attachmentFromComputer">
+				<input type="radio" id="attachmentFromComputer" name="attachmentFrom" value="1" onclick="file_browser.selectYourComputerUi();" />
+				<span class="computerIcon"><%= _('From Your Computer') -%></span>
+			</label>
+		</span>
+	</div>
+	<div id="fromComputerUI" style="display: none;">
+		<%= _('Select a file to upload') -%>
+		<div class="attachDialogBody"> 
+			<div id="fileForms">
+				<div id="file-form-0">
+					<input type="file" id="file-0" name="message[files][]" />
+				</div>
+			</div>
+			<div class="attachDialogSubmit">
+				<%= submit_tag _('Attach'), :onclick => "return uploads.attach();" %>
+				<%= button_to_function _('Cancel'), "$('fromComputerUI').hide(); $('attachmentFromComputer').checked = false;" %>
+			</div>
+		</div>
+	</div>
+	<div id="fromConnectorUI" style="display: none;">
+		<%= _('From Connector') -%>
+	</div>
+</div>
+
+<div style="text-align: right;padding:5px;">
+  <%= joyent_button_to_function _('Done'), "JoyentPage.hideEverything()", {:style => 'width: 7em;'} %>
+</div>
+
+<%= javascript_tag "file_browser.selectConnectorUi(); $('fromConnectorUI').show();" %>

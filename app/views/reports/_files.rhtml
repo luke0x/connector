@@ -1,0 +1,52 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table id="tableList" class="tableList">
+	<colgroup>
+		<col style="width:25%;" />
+		<col style="width:25%;" />
+		<col style="width:25%;" />
+		<col style="width:19%;" />
+		<col style="width:6%;" />
+	</colgroup>
+  <thead>
+		<tr>
+			<th class="firstCol"><%= _('Name') %></th>
+			<th><%= _('Size') %></th>
+			<th><%= _('Date Modified') %></th>
+			<th><%= _('File Type') %></th>
+			<th class="detailView"><span>Peek</span></th>
+		</tr>
+  </thead>
+  <tbody>
+		<% files.each_with_index do |file, index| -%>
+		<%   dom_id = "#{params[:dom_prefix]}_#{file.dom_id}" %>
+			<tr id="<%= dom_id %>_tr" itemDomId="<%= file.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td class="fileName firstCol">
+					<%= link_to h(file.filename), files_show_url(:id => file.id), {:class => "file #{file.joyent_file_type.css_class}" } %>
+				</td>
+				<td class="size">
+					<%= link_to number_to_human_size(file.size_in_bytes), files_show_url(:id => file.id) %>
+				</td>
+				<td class="dateMod">
+					<%= link_to _("%{i18n_time}")%{:i18n_time =>"#{format_local_words_or_date(file.updated_at)}"}, files_show_url(:id => file.id) %>
+				</td>
+				<td class="type">
+					<%= link_to _(file.joyent_file_type.description), files_show_url(:id => file.id) %>
+				</td>
+				<td id="<%= dom_id %>_td_details_icon" class="details">
+					<%= link_to_function _('Details'), "PeekView.toggle('#{dom_id}', '#{peek_url(file, dom_id)}')" %>
+				</td>
+			</tr>
+			<tr id="<%= dom_id %>_tr_details" itemDomId="<%= file.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td id="<%= dom_id %>_td_details" colspan="5" class="Details"></td>
+			</tr>
+    <% end -%>
+  </tbody>
+</table>

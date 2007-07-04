@@ -1,0 +1,35 @@
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+desc 'Default: run unit tests.'
+task :default => :test
+
+desc 'Test the gettextilize plugin.'
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
+end
+
+desc 'Generate documentation for the gettextilize plugin.'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'Gettextilize'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+namespace :gettextilize do
+  require 'gettext/utils'
+  desc "Create po files for Gettextilize plugin"
+  task :updatepo do
+    GetText.update_pofiles("datetime", ["lib/date_time.rb"],"Date Time Gettextilize 1.0")
+    GetText.update_pofiles("railsdatehelper", ["lib/date_helper.rb"],"Rails Date Helper Gettextilize 1.0")
+  end
+  desc "Create mo files for Gettextilize plugin"
+  task :makemo do
+    GetText.create_mofiles(true, "po", "data/locale")
+  end
+end

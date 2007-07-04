@@ -1,0 +1,31 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="listPreview">
+	<table id="" class="tableList">
+		<thead>
+  		<tr id="listHeaderColumns">
+  			<th class="listDinger" style="width: <%= (@list.depth + 2) * 12 %>px;" id="list_toggle_all">
+    			<%= link_to_function "Expand + Collapse", "" %>
+  			</th>
+  			<% @list.list_columns_by_position.each do |list_column| -%>
+  				<th class="columnHeaderValue <%= "secondlastCol" if @list.list_columns_by_position.last == list_column %>" id="<%= list_column.dom_id -%>" style="<%= list_column_style(list_column) %> text-align: left;" columndomid="<%= list_column.dom_id %>">
+    				<%= list_column.name -%>
+  				</th>
+				<% end -%>
+				<th style="width: 20px;">&nbsp;</th>
+			 </tr>
+		</thead>
+		<tbody id="" class="listsTableBody">
+			<% @list.roots.sort_by(&:position).each do |list_row| -%>
+				<%= render :partial => 'lists/peek_row', :locals => { :list_row => list_row } %>
+			<% end -%>
+		</tbody>
+	</table> 
+</div>

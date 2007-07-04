@@ -1,0 +1,49 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="comment" id="comment-<%= comment.id %>">
+  <% if comment.user == User.current -%>
+    <div id='editComment<%= comment.id %>' style='display: none;'>
+      <div class="dialog">
+        <% form_remote_tag(:url => comment_edit_url(:id => comment), :after => 'preventFormResubmission(this);') do -%>
+          <div><textarea id="editComment<%= comment.id %>Text" name="body" cols="50" rows="10" style="width:100%; padding:10px;"><%= comment.body %></textarea></div>
+          <div class="submitButtons">
+            <input type="submit" value="<%= _('Update') -%>">
+            <input type="button" value="<%= _('Cancel') -%>" onclick="$('editComment<%= comment.id %>').hide(); $('viewComment<%= comment.id %>').show();">
+          </div>
+        <% end -%>
+      </div>
+    </div>
+  <% end -%>
+  <div id='viewComment<%= comment.id %>'>
+    <div style="overflow:auto">
+      <div class="commentUserPhoto">
+        <img src="<%= person_icon_url(:id => comment.user.person.id) %>" border="0" style="width:48px; height: 48px;" />
+      </div>
+      <div class="commentInfo">
+        <%# LOCALIZE: This should be done using interpolation in order to change the order when localizing -%>
+        <%= _("%{i18n_the_time_in_words} ago by") % {:i18n_the_time_in_words => "#{time_ago_in_words comment.created_at}"} %>
+        <%= link_to comment.user.person.full_name, person_show_url(:id => comment.user.person.id) %>
+      </div>
+      <div class="commentBody">
+        <%= auto_link(simple_format(h(comment.body))) %>
+        <div class="commentEditControls">
+          <% if comment.user == User.current -%>
+            <%= link_to_function _('Edit'), "$('viewComment#{comment.id}').hide(); $('editComment#{comment.id}').show(); $('editComment#{comment.id}Text').activate()" %>
+            |
+          <% end -%>
+          <% if (comment.user == User.current || comment.commentable.owner == User.current) -%>
+            <%= link_to_remote(_('Delete'), :url => comment_delete_url(:id => comment), :confirm => _('Delete this comment?')) %>
+          <% end -%>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>

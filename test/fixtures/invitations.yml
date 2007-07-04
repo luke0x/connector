@@ -1,0 +1,149 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+invitation_12:
+  id: 12
+  user_id: 1
+  event_id: 5  
+  accepted: true
+  pending: false
+  calendar_id: 1
+invitation_11:
+  id: 11
+  event_id: 8
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+inviation_10:
+  id: 10
+  event_id: 13
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+inviation_09: 
+  id: 9
+  event_id: 10
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+no_calendar_for_weekly:
+  id: 8
+  event_id: 4
+  user_id: 1
+  accepted: true
+  pending: false
+  calendar_id: 1  
+                
+inviation_07:
+  id: 7
+  event_id: 12
+  calendar_id: 3
+  user_id: 2    
+  accepted: true
+  pending: false
+  
+inviation_05:
+  id: 5
+  event_id: 11
+  calendar_id: 3
+  user_id: 2
+  accepted: true
+  pending: false
+  
+inviation_13:
+  id: 13
+  event_id: 7
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+inviation_03:
+  id: 3  
+  event_id: 6
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+
+inviation_02:
+  id: 2
+  event_id: 2
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+concert_ian:
+  id: 1
+  event_id: 1
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+daily_forever_ian:
+  id: 14
+  event_id: 3
+  calendar_id: 1
+  user_id: 1
+  accepted: true
+  pending: false
+  
+another_thing:
+  id: 15
+  event_id: 14
+  calendar_id: 2
+  user_id: 1
+  accepted: true
+  pending: false
+invitation_16:
+  id: 16
+  user_id: 1
+  event_id: 9  
+  accepted: true
+  pending: false
+  calendar_id: 1
+  
+  
+  
+ian_to_busy_test:
+  id: 17
+  user_id: 1
+  event_id: 15
+  accepted: true
+  pending: false
+  calendar_id: 1
+ian_to_busy_repeat_forever_test:
+  id: 18          
+  user_id: 1
+  event_id: 16
+  accepted: true
+  pending: false
+  calendar_id: 1
+ian_to_busy_repeat_test:
+  id: 19
+  user_id: 1
+  event_id: 17
+  accepted: true
+  pending: false
+  calendar_id: 1      
+
+concert_peter:
+  id: 20
+  event_id: 1
+  user_id: 2
+  accepted: false
+  pending: true

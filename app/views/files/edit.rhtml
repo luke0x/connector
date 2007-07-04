@@ -1,0 +1,48 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@file], 'edit') -%>
+
+<div class="dialog">
+  <h2><%= _('Edit File') %></h2>
+  <% if flash[:error] -%>
+  	<p><span class="warning"><%= h(flash[:error]) %></span></p>
+  <% end -%>
+  <% form_tag({}, { :onsubmit => 'return Files.validateSubmitEdit(this);' }) do -%>
+    <div class="infoGroup">
+      <dl>
+        <dt><%= _('Name') %>:</dt>
+        <dd>
+          <div>
+            <%= text_field_tag('file[name]', @file.filename_without_extension, :size => 40) %>
+            <%= h(@file.extension) %>
+          </div>
+          <div><%= h _(@file.joyent_file_type.description) %></div>
+          <%= file_preview(@file) %>
+        </dd>
+      </dl>
+    	<dl>
+    	  <dt><%= _('Folder') -%>:</dt>
+        <dd>
+          <%= link_to(_("%{i18n_file_owner_name}'s") % {:i18n_file_owner_name => @file.owner.person.name}, person_show_url(:id => User.current.person.id), {:class => 'go toContacts'}) %>
+          <%= link_to(_("Files: %{i18n_file_folder_pathname}") % {:i18n_file_folder_pathname=> @file.folder.pathname}, files_list_route_url(:folder_id => @file.folder_id), {:class => 'goto'}) %>
+        </dd>
+    	  <dt><%= _('Notes') %>:</dt>
+    	  <dd><%= text_area_tag('file[notes]', @file.notes, :size => '40x10') %></dd>
+    	</dl>
+    </div>
+  	<div class="infoGroup">
+  	  <%= render :partial => 'partials/sidebar_buttons' %>
+  	</div>
+    <div class="infoGroup">
+  	  <input type="submit" name="command" value="Save" />
+  	  <input type="button" value="Cancel" onclick="window.location = '<%= files_show_url(:id => @file.id) %>';" />
+    </div>
+  <% end -%>
+</div>

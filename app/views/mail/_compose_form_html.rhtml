@@ -1,0 +1,159 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << "
+  Event.observe(window, 'load', function(event){ Mail.setupCompose(); });
+  new Autocompleter.Local('message_to_complete', 'message_to_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
+  new Autocompleter.Local('message_cc_complete', 'message_cc_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
+  new Autocompleter.Local('message_bcc_complete', 'message_bcc_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
+" -%>
+
+<% if flash["error"] %>
+	<p class="warning"><%= flash["error"] %></p>
+<% end %>
+
+<div class="infoGroup">
+	<table cellspacing="0" style="width: 100%; border: none; padding: 0 0 5px 0;">
+		<colgroup>
+			<col style="width: 75px;" />
+			<col />
+		</colgroup>
+
+		<tr>
+			<td style="text-align: right;"><%= _('From') -%>:&nbsp;</td>
+			<td>
+				<select name="message[from]" style="width: 50%;">
+					<%= options_for_select User.current.from_addresses %>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="text-align: right; vertical-align: top;">
+				<%= _('To') -%>:&nbsp;
+			</td>
+			<td>
+				<span id='to_addresses'>
+					<% @message.to.each_with_index do |address, idx| %>
+						<a href="#" onclick="return addresses.removeAddress('to', <%= idx %>);" class="removeEmail" id="address_to_<%= idx %>"><%= h(address) %></a>
+					<% end if @message %>
+				</span>
+				<div>
+					<input type="hidden" id="message_to" name="message[to]" />
+					<input id="message_to_complete" name="message[to_field]" type="text" style="width: 325px;" value="<%= h params[:to] %>" onkeypress="if (event.keyCode == Event.KEY_RETURN) { addresses.addAddress('to'); return false; }" />
+          <input type='button' value='<%= _("Add") -%>' onclick="return addresses.addAddress('to');" />
+					<div class="auto_complete" id="message_to_complete_div"></div>
+        </div>
+			</td>
+		</tr>
+
+		<tr id="cc" <% unless @message && !@message.cc.blank? %>style="display:none;"<% end %>>
+			<td style="text-align: right; vertical-align: top;">
+				<%= _('Cc') -%>:&nbsp;
+			</td>
+			<td>
+				<span id='cc_addresses'>
+					<% @message.cc.each_with_index do |address, idx| -%>
+						<a href="#" onclick="return addresses.removeAddress('cc', <%= idx %>);" class="removeEmail" id="address_cc_<%= idx %>"><%= h(address) %></a>
+					<% end if @message -%>
+				</span>
+				<div>
+					<input type="hidden" id="message_cc" name="message[cc]" />
+					<input id="message_cc_complete" name="message[cc_field]" type="text" style="width: 325px;" onkeypress="if (event.keyCode == Event.KEY_RETURN) { addresses.addAddress('cc'); return false; }" />
+          <input type='button' value='<%= _("Add") -%>' onclick="return addresses.addAddress('cc');"/>
+					<a onclick="return Mail.hideAddressField('cc');"><span id="hide_cc_link"><%= _('Hide Cc') -%></span></a>
+					<div class="auto_complete" id="message_cc_complete_div"></div>
+				</div>
+			</td>
+		</tr>
+		
+		<tr id="bcc" <% unless @message && !@message.bcc.blank? %>style="display:none;"<% end %>>
+			<td style="text-align: right; vertical-align: top;">
+				<%= _('Bcc') -%>:&nbsp;
+			</td>
+			<td>
+				<span id='bcc_addresses'>
+					<% @message.bcc.each_with_index do |address, idx| -%>
+						<a href="#" onclick="return addresses.removeAddress('bcc', <%= idx %>);" class="removeEmail" id="address_bcc_<%= idx %>"><%= h(address) %></a>
+					<% end if @message -%>
+				</span>
+				<div>
+					<input type="hidden" id="message_bcc" name="message[bcc]" />
+					<input id="message_bcc_complete" name="message[bcc_field]" type="text" style="width: 325px;" onkeypress="if (event.keyCode == Event.KEY_RETURN) { addresses.addAddress('bcc'); return false; }" />
+          <input type='button' value='<%= _("Add") -%>' onclick="return addresses.addAddress('bcc');"/>
+					<a onclick="return Mail.hideAddressField('bcc');"><span id="hide_bcc_link"><%= _('Hide Bcc') -%></span></a>
+					<div class="auto_complete" id="message_bcc_complete_div"></div>
+        </div>
+      </td>
+		</tr>
+		
+		<tr id="showCcAndBcc">
+			<td>&nbsp;</td>
+			<td style="text-align: left;">
+				<div id="add_fields">
+					<% unless @message && !@message.cc.blank? -%>
+						<a onclick="return Mail.showAddressField('cc');"><span id="show_cc_link"><%= _('Show Cc') -%></span></a>
+					<% end -%>
+					<% if !@message || (@message.cc.blank? && @message.bcc.blank?) -%>
+						<span id="field_separator">|</span>
+					<% end -%>
+					<% unless @message && !@message.bcc.blank? -%>
+						<a onclick="return Mail.showAddressField('bcc');"><span id="show_bcc_link"><%= _('Show Bcc') -%></span></a>
+					<% end -%>
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="text-align: right;"><%= _('Subject') -%>:&nbsp;</td>
+			<td><%= text_field :message, :subject, :style => "width: 100%;" %></td>
+		</tr>
+
+		<tr id="attachmentListRow" <%= 'style="display:none;"' unless @message && ! @message.attachments.blank? %>>
+			<td style="text-align: right; vertical-align: top;"><%= _('Attachments') -%>:&nbsp;</td>
+      <td>
+        <div id="attachmentList" class="inlineList">
+      		<% @message && @message.attachments.each_with_index do |attachment, idx| %>
+      			<span class="file" id="eattachment-<%= idx %>">	
+      				<input type="hidden" name="message[eattachments][]" value="<%= attachment[:id] %>" />
+      				<a href="#" class="deleteAttachment" onclick="$('eattachment-<%= idx %>').remove(); return false;"><%= h(attachment[:filename]) %></a>
+      			</span>
+      		<% end %>
+      	</div>
+      </td>
+  	</tr>
+    	
+  </table>
+</div>
+
+<div id="draftHTMLWarning">
+	<%= _('You cannot edit this draft email because it was composed in an email application using HTML formatting. To edit the email you can either') -%>
+	<%= _("1) open the email in the original email application or") -%>
+	<%= _("2) you can copy the text from the email below and paste it into a new email in Joyent's web mail application.") -%>
+	<%= _('Otherwise you can send the message from here.') -%>
+</div>
+
+<iframe style="width: 100%; height: 40em;" class='mailViewShow' src='<%= mail_show_body_url(:id => @original_message) %>'>
+</iframe>
+
+<div class="infoGroup" style="text-align:center;">
+	<%= render :partial => 'partials/sidebar_buttons' %>
+</div>
+
+<div class="infoGroup">
+	<%= hidden_field_tag "command" %>
+	<input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
+	<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
+	<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
+	<%= submit_tag _("Send"),           :id => 'command_send',    :onclick => "$('command').value = 'send';" %>
+	<%= submit_tag _("Save in Drafts"), :id => 'command_save',    :onclick => "$('command').value = 'save';" %>
+	<%= submit_tag _("Discard"),        :id => 'command_discard', :onclick => "$('command').value = 'discard';" %>
+</div>
+
+<script src="<%= mail_address_lookup_url %>" type="text/javascript"></script>

@@ -1,0 +1,1188 @@
+File: client.NetRemoting_GroupB.log - Wiredumps for SOAP4R client / dotNetRemotingWebServices server.
+Date: Sat Jul 23 21:06:12 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:12 JST 2005
+Content-Length: 700
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:54 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:54 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 994
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoStructAsSimpleTypes id="ref-1" xmlns:i5="http://soapinterop.org/">
+<outputString xsi:type="xsd:string">a</outputString>
+<outputInteger xsi:type="xsd:int">1</outputInteger>
+<outputFloat xsi:type="xsd:float">1.1</outputFloat>
+</i5:echoStructAsSimpleTypes>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception:  **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server's .config file. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c0026c>
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:13 JST 2005
+Content-Length: 677
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:54 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 500 Internal Server Error
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:54 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1110
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault id="ref-1">
+<faultcode id="ref-2">SOAP-ENV:Server</faultcode>
+<faultstring id="ref-3"> **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server&#39;s .config file.</faultstring>
+<detail xsi:type="a1:ServerFault" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Serialization.Formatters">
+<exceptionType id="ref-4">System.Runtime.Remoting.RemotingException, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</exceptionType>
+<message href="#ref-3"/>
+<stackTrace xsi:null="1"/>
+<exception xsi:null="1"/>
+</detail>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:13 JST 2005
+Content-Length: 600
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:56 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:56 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1077
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoSimpleTypesAsStruct id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-7"/>
+</i5:echoSimpleTypesAsStruct>
+<i6:SOAPStruct id="ref-7" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string">a</varString>
+<varInt xsi:type="xsd:int">1</varInt>
+<varFloat xsi:type="xsd:float">1.1</varFloat>
+</i6:SOAPStruct>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception:  **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server's .config file. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7bec758>
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:14 JST 2005
+Content-Length: 577
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:56 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 500 Internal Server Error
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:56 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1110
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault id="ref-1">
+<faultcode id="ref-2">SOAP-ENV:Server</faultcode>
+<faultstring id="ref-3"> **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server&#39;s .config file.</faultstring>
+<detail xsi:type="a1:ServerFault" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Serialization.Formatters">
+<exceptionType id="ref-4">System.Runtime.Remoting.RemotingException, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</exceptionType>
+<message href="#ref-3"/>
+<stackTrace xsi:null="1"/>
+<exception xsi:null="1"/>
+</detail>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:15 JST 2005
+Content-Length: 889
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:57 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:57 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1103
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echo2DStringArray id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-6"/>
+</i5:echo2DStringArray>
+<SOAP-ENC:Array id="ref-6" SOAP-ENC:arrayType="xsd:string[3,3]">
+<item>r0c0</item>
+<item>r1c0</item>
+<item>r2c0</item>
+<item>r0c1</item>
+<item>r1c1</item>
+<item>r2c1</item>
+<item>r0c2</item>
+<item>r1c2</item>
+<item>r2c2</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception:  **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server's .config file. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7ceb550>
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:16 JST 2005
+Content-Length: 1088
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:57 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 500 Internal Server Error
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:57 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1110
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault id="ref-1">
+<faultcode id="ref-2">SOAP-ENV:Server</faultcode>
+<faultstring id="ref-3"> **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server&#39;s .config file.</faultstring>
+<detail xsi:type="a1:ServerFault" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Serialization.Formatters">
+<exceptionType id="ref-4">System.Runtime.Remoting.RemotingException, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</exceptionType>
+<message href="#ref-3"/>
+<stackTrace xsi:null="1"/>
+<exception xsi:null="1"/>
+</detail>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:16 JST 2005
+Content-Length: 1063
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605608848"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605608848"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605608848"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:59 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:59 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1103
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echo2DStringArray id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-6"/>
+</i5:echo2DStringArray>
+<SOAP-ENC:Array id="ref-6" SOAP-ENC:arrayType="xsd:string[3,3]">
+<item>r0c0</item>
+<item>r1c0</item>
+<item>item</item>
+<item>r0c1</item>
+<item>r1c1</item>
+<item>r2c1</item>
+<item>item</item>
+<item>r1c2</item>
+<item>r2c2</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Expected = "String#-605714408"  //  Actual = "String#-605712708"
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:17 JST 2005
+Content-Length: 1063
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605685108"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605685108"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605685108"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:59 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:54:59 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1103
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echo2DStringArray id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-6"/>
+</i5:echo2DStringArray>
+<SOAP-ENC:Array id="ref-6" SOAP-ENC:arrayType="xsd:string[3,3]">
+<item>r0c0</item>
+<item>r1c0</item>
+<item>item</item>
+<item>r0c1</item>
+<item>r1c1</item>
+<item>r2c1</item>
+<item>item</item>
+<item>r1c2</item>
+<item>r2c2</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:18 JST 2005
+Content-Length: 920
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:00 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:00 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1321
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoNestedStruct id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-7"/>
+</i5:echoNestedStruct>
+<i6:SOAPStructStruct id="ref-7" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string">a</varString>
+<varInt xsi:type="xsd:int">1</varInt>
+<varFloat xsi:type="xsd:float">1.1</varFloat>
+<varStruct href="#ref-8"/>
+</i6:SOAPStructStruct>
+<i6:SOAPStruct id="ref-8" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string">b</varString>
+<varInt xsi:type="xsd:int">2</varInt>
+<varFloat xsi:type="xsd:float">2.2</varFloat>
+</i6:SOAPStruct>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception:  **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server's .config file. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c74f04>
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:18 JST 2005
+Content-Length: 874
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:00 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 500 Internal Server Error
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:00 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1110
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault id="ref-1">
+<faultcode id="ref-2">SOAP-ENV:Server</faultcode>
+<faultstring id="ref-3"> **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server&#39;s .config file.</faultstring>
+<detail xsi:type="a1:ServerFault" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Serialization.Formatters">
+<exceptionType id="ref-4">System.Runtime.Remoting.RemotingException, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</exceptionType>
+<message href="#ref-3"/>
+<stackTrace xsi:null="1"/>
+<exception xsi:null="1"/>
+</detail>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Expected = "String#-605892128"  //  Actual = "String#-605892858"
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:19 JST 2005
+Content-Length: 1062
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605847358"></varString>
+        </varStruct>
+        <varString href="#id-605847358"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605847358"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:01 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:01 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1319
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoNestedStruct id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-7"/>
+</i5:echoNestedStruct>
+<i6:SOAPStructStruct id="ref-7" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string"></varString>
+<varInt xsi:type="xsd:int">1</varInt>
+<varFloat xsi:type="xsd:float">1.1</varFloat>
+<varStruct href="#ref-8"/>
+</i6:SOAPStructStruct>
+<i6:SOAPStruct id="ref-8" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string"></varString>
+<varInt xsi:type="xsd:int">2</varInt>
+<varFloat xsi:type="xsd:float">2.2</varFloat>
+</i6:SOAPStruct>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:19 JST 2005
+Content-Length: 931
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:01 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:01 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1231
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoNestedArray id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-7"/>
+</i5:echoNestedArray>
+<i6:SOAPArrayStruct id="ref-7" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string">a</varString>
+<varInt xsi:type="xsd:int">1</varInt>
+<varFloat xsi:type="xsd:float">1.1</varFloat>
+<varArray href="#ref-8"/>
+</i6:SOAPArrayStruct>
+<SOAP-ENC:Array id="ref-8" SOAP-ENC:arrayType="xsd:string[3]">
+<item>2</item>
+<item>2.2</item>
+<item>b</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception:  **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server's .config file. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c41028>
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:20 JST 2005
+Content-Length: 998
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:02 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 500 Internal Server Error
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:02 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1110
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault id="ref-1">
+<faultcode id="ref-2">SOAP-ENV:Server</faultcode>
+<faultstring id="ref-3"> **** System.Runtime.Remoting.RemotingException - Server encountered an internal error.  For more information, turn off customErrors in the server&#39;s .config file.</faultstring>
+<detail xsi:type="a1:ServerFault" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Serialization.Formatters">
+<exceptionType id="ref-4">System.Runtime.Remoting.RemotingException, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</exceptionType>
+<message href="#ref-3"/>
+<stackTrace xsi:null="1"/>
+<exception xsi:null="1"/>
+</detail>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:21 JST 2005
+Content-Length: 1083
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605949498"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605949498"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605949498"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:02 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:02 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1227
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoNestedArray id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-7"/>
+</i5:echoNestedArray>
+<i6:SOAPArrayStruct id="ref-7" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string"></varString>
+<varInt xsi:type="xsd:int">1</varInt>
+<varFloat xsi:type="xsd:float">1.1</varFloat>
+<varArray href="#ref-8"/>
+</i6:SOAPArrayStruct>
+<SOAP-ENC:Array id="ref-8" SOAP-ENC:arrayType="xsd:string[3]">
+<item>2</item>
+<item></item>
+<item>b</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Expected = "String#-606000948"  //  Actual = "String#-606002088"
+
+Wire dump:
+
+= Request
+
+POST /remoting/ServiceB.soap HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:06:21 JST 2005
+Content-Length: 1083
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605977648"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605977648"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605977648"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:03 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 12:55:03 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Server: MS .NET Remoting, MS .NET CLR 2.0.40301.9
+Cache-Control: private
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1227
+
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<h4:__CallContext href="#ref-3" xmlns:h4="http://schemas.microsoft.com/clr/soap/messageProperties" SOAP-ENC:root="1"/>
+<a1:LogicalCallContext id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Runtime.Remoting.Messaging">
+</a1:LogicalCallContext>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<i5:echoNestedArray id="ref-1" xmlns:i5="http://soapinterop.org/">
+<return href="#ref-7"/>
+</i5:echoNestedArray>
+<i6:SOAPArrayStruct id="ref-7" xmlns:i6="http://soapinterop.org/xsd">
+<varString xsi:type="xsd:string"></varString>
+<varInt xsi:type="xsd:int">1</varInt>
+<varFloat xsi:type="xsd:float">1.1</varFloat>
+<varArray href="#ref-8"/>
+</i6:SOAPArrayStruct>
+<SOAP-ENC:Array id="ref-8" SOAP-ENC:arrayType="xsd:string[3]">
+<item>2</item>
+<item></item>
+<item>b</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+

@@ -1,0 +1,48 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="tagsSidebar" class="sidebar <%= class_name %>">
+  <div id="tagsUnavailableContainer" class="sidebarInset sidebarWarning" style="display: none;"><%= _('Tags unavailable') -%></div>
+  <div id="tagsAvailableContainer">
+    <h3><%= _('Your Assigned Tags') -%></h3>
+  	<div id="tagsAssignedInset" class="sidebarInset">
+    	<div id="tagsAssignedWarning" class="sidebarWarning"><%= _('No tags') -%></div>
+  		<ul id="tagsAssigned" class="tagList tagsAssigned">
+  		</ul>
+  	</div>
+  	<div id="tagsOthersContainer">
+    	<h3><%= _("Others' Assigned Tags") -%></h3>
+    	<div id="tagsOthersInset" class="sidebarInset">
+    		<ul id="tagsAssignedByOthers" class="tagList tagsAssignedByOthers">
+    		</ul>
+    	</div>
+  	</div>
+  	<div id="tagsUnusedContainer">
+    	<h3><%= _('Add Tags') -%></h3>
+    	<div id="tagsUnusedInset" class="sidebarInset">
+      	<% form_remote_tag(:url => { :controller => 'tag', :action => 'tag_item' }, 
+				  :before   => "if (! Sidebar.Tags.submitTypedTag(this)) return false;",
+				  :after    => "$('tag_name').disable();",
+  				:complete => "JoyentPage.pendingAddTags = JoyentPage.pendingAddTags.reject(function(tag){ return tag == $F('tag_name'); });
+  				              Sidebar.Tags.refresh();
+  				              $('tag_name').enable();
+  				              $('tag_name').value = '';
+  				              $('tag_name').activate();") do -%>
+      		<%= text_field_tag "tag_name", '', :style => 'width: 97%; margin-bottom: 10px;', :autocomplete => "off", :tabindex => "10" %>
+      		<input type="hidden" id="tag_name_dom_ids" name="dom_ids" value=""/>
+      	<% end %>
+    		<div class="autocompleteMenu" id="tag_name_auto_complete"></div>
+  		  <%= javascript_tag("Event.observe(window, 'load', function(event){ TagAddField.init(); });") %>
+  		  <%= javascript_tag("Event.observe(window, 'load', function(event){ new Ajax.Autocompleter('tag_name', 'tag_name_auto_complete', '/tag/auto_complete', {}); });") %>
+    		<ul id="tagsUnassigned" class="tagList tagsUnassigned">
+    		</ul>
+    	</div>
+    </div>
+  </div>
+</div>

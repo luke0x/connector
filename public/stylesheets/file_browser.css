@@ -1,0 +1,118 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* this files has been depreciated */
+
+	#showAttachUILink, #showAttachUILink.expanded {
+		color: #000;
+		background-image: url(/images/icons/enclosureDinger.png);
+		background-repeat: no-repeat;
+		padding: 2px 0 2px 32px;
+	}
+	#showAttachUILink {
+		background-position: 0 -100px;
+	}
+	#showAttachUILink:hover {
+		background-position: 0 -150px;
+	}
+	#showAttachUILink.expanded {
+		background-position: 0 0;
+	}
+	#showAttachUILink.expanded:hover {
+		background-position: 0 -50px;
+	}
+
+	#file_browser_group_list {
+		width: 180px;
+	}
+	#file_browser_file_list {
+		width: 270px;
+	}
+
+	.fileBrowserList {
+		border: 1px solid #9D9D9D;
+		overflow: auto;
+		height: 105px;
+		background-color:#FFF;
+		width: 100%;
+	}
+	.fileBrowserList ul{	
+		list-style: none;
+		margin: 0 ! important;
+		padding: 0 ! important;
+		width: 100%;
+	}
+	.fileBrowserList ul li {
+		padding: 2px ! important;
+		margin: 0 ! important;
+	}
+	.fileBrowserList ul li.selected {
+		background-color: #0055E9;
+	}
+	.fileBrowserList ul li.selected a {
+		color: #ffffff;
+	}
+	.fileBrowserList ul li a {
+		padding: 0 0 0 22px;
+		color: #000;
+		margin: 0; 
+		width: auto;
+		display: block;
+		height: 18px;
+	}
+	.fileBrowserList a.defaultFolder {
+		background: url(images/icons/folderClosed.png) 2px 50% no-repeat;
+	}
+	.fileBrowserList a.fileBrowserUp {	
+		background: url(images/icons/backToTop.png) 2px 50% no-repeat;
+	}
+
+	#fromConnectorUI, #fromComputerUI {
+		padding:0.75em;
+  }
+	.attachSelector {
+		border-bottom: 1px solid #A2C4DE;
+		padding: 4px;
+		background-color: #A7C7E0;
+	}
+	* html .attachSelector {
+		display: inline;
+		clear: both;
+	}
+	#attachUI {
+		margin: 4px 0 0 0;
+		position: relative;
+		background-color: #CEDFEC;
+		border-color: #A2C4DE;
+		border-width: 1px;
+		border-style: solid;
+	}
+	* html #attachUI {	
+		z-index: 9 !important;
+		overflow: auto;
+  }
+	.connectorIcon {
+		background: url(images/icons/all.png) left no-repeat;
+		padding:3px 0 3px 19px;
+  }
+	.computerIcon {
+		background: url(images/icons/computer.png) left no-repeat;
+		padding:3px 0 3px 19px;
+  }
+	.attachDialogBody {		
+		padding: 5px;
+  }
+	.attachDialogSubmit {		
+		padding: 5px 0 0 0;
+  }
+	.deleteAttachment {
+		background: url(images/icons/minusSmall.gif) right no-repeat ;
+		padding: 2px 15px 2px 0;
+		margin:0 1em 0 0;
+  }

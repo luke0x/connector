@@ -1,0 +1,25 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+Hi <%= @user.full_name %>,
+
+Welcome to your Joyent Connector! Your administrator has given you a Joyent Connector account.
+
+The sign in information for your account is:
+
+Web Site: https://<%= Organization.current.system_domain.web_domain %> 
+Username: <%= @user.username %> 
+Password: <%= @user.plaintext_password %> 
+
+This information is provided for your reference. You can always access your account at https://<%= Organization.current.system_domain.web_domain %>. 
+Your administrator may provide you with an additional address from which you can access your account.
+
+Thanks,
+
+The Joyent Team

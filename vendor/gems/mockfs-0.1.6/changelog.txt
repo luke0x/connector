@@ -1,0 +1,39 @@
+CHANGELOG
+
+0.1.6 -- January 21 2007
+* Added Wayne Vucenic's patch for File.size
+* Added Wayne Vucenic's patch for Dir.foreach
+* Added Wayne Vucenic's patch for FileUtils.mkpath
+* Fixed bug where FileUtils.cp would clear the contents of the source file
+
+0.1.5 -- December 31 2006
+* Fixed a bug where MockFS.file.read wouldn't rewind the file so later reads
+  would fail
+
+0.1.4 -- December 31 2006
+* MockFS.file.touch should leave behind a file with contents of blank string,
+  not nil
+
+0.1.3 -- June 11 2006
+* Added support for Dir[], Dir.glob, Dir.rmdir, File.directory?, File.file?,
+  File.read
+* File.open supports perms in format like 'w', 'r', and 'a'.
+* Added RDoc auto-generation to the Gemspec.
+* override.rb plays better with Rubygems.
+
+0.1.2 -- September 19 2005
+* Changed MockFS.get_dir to MockFS.dir, etc.
+* Fixed a lot of little bugs, including calling MockFileSystem.fill_path with a
+  path starting with '..', dir.new( 'somedir' ).entries, file.open( ) now works
+	without a block, file_utils.move works, file.mv and file.cp work when the
+	destination is a directory.
+* Added voodoo file override.rb, which redefines File, FileUtils, and Dir, as
+  well as tweaking Kernel.require.
+
+0.1.1 -- February 23 2005
+* Renamed the library to MockFS.
+
+0.1 -- February 15 2005
+* Initial release.
+
+

@@ -1,0 +1,21 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([Message.new], 'edit') -%>
+<%= javascript_include_tag 'addresses', 'attachments', 'file_browser' %>
+<%= stylesheet_link_tag 'file_browser' %>
+<%= javascript_tag "addresses = new AddressManager();" %>
+<%= javascript_tag "uploads = new UploadManager();" %>
+
+<h2><%= _('Forward Message') %></h2>
+<div id="itemView">
+  <% form_tag(mail_send_forward_url(:id => @original_message), {:onsubmit => "return Mail.validateSubmit(this);", :multipart => true, :class => "item_editor" }) do -%>
+	  <%= render :partial => 'compose_form' %>
+  <% end -%>
+</div>

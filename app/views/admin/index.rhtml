@@ -1,0 +1,30 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+yr logged in
+<%= link_to 'logout', :action => 'logout' %>
+<hr />
+<% form_remote_tag :update => 'content', :url => {:action => 'set_query_params'} do -%>
+  Query Range:
+  <%= text_field_tag 'value', session[:admin_query_value] || 1, {:size => 4} %>
+  <select name='unit'>
+    <%= options_from_collection_for_select AdminController::QUERY_UNITS, 'to_s', 'to_s', session[:admin_query_unit] || 'weeks' %>
+  </select>
+  <%= submit_tag 'Set' %>
+<% end -%>
+<ul>
+  <li><%= link_to_remote 'slowest evar', :update => 'content', :url => { :action => 'slowest_evar' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_remote 'slowest average', :update => 'content', :url => { :action => 'slowest_average' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_remote 'most popular hits', :update => 'content', :url => { :action => 'most_popular' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_remote 'most active orgs', :update => 'content', :url => { :action => 'most_active' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_remote 'most active users', :update => 'content', :url => { :action => 'most_active_users' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_remote 'organization info', :update => 'content', :url => { :action => 'organization_info' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_remote 'svn revision', :update => 'content', :url => { :action => 'svn_revision' }, :before => "$('content').update('loading...');" %></li>
+  <li><%= link_to_function 'stfu', "$('content').update('')" %></li>
+</ul>

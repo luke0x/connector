@@ -1,0 +1,977 @@
+File: clientASP.NET_GroupB.log - Wiredumps for SOAP4R client / MSASPdotNETWebServices server.
+Date: Sat Jul 23 19:26:58 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:58 JST 2005
+Content-Length: 700
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:39 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:41 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 674
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructAsSimpleTypesResponse><outputString xsi:type="xsd:string">a</outputString><outputInteger xsi:type="xsd:int">1</outputInteger><outputFloat xsi:type="xsd:float">1.1</outputFloat></types:echoStructAsSimpleTypesResponse></soap:Body></soap:Envelope>
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Expected = #<SOAPBuildersInterop::SOAPStruct:0xb7cc8888 @varFloat=nil, @varInt=nil, @varString=nil>  //  Actual = #<SOAPBuildersInterop::SOAPStruct:0xb7cc4aa8 @varFloat=nil, @varInt=0.0, @varString=0>
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:59 JST 2005
+Content-Length: 677
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:41 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:41 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 620
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructAsSimpleTypesResponse><outputInteger xsi:type="xsd:int">0</outputInteger><outputFloat xsi:type="xsd:float">0</outputFloat></types:echoStructAsSimpleTypesResponse></soap:Body></soap:Envelope>
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:00 JST 2005
+Content-Length: 600
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:42 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:42 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 773
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoSimpleTypesAsStructResponse><return href="#id1" /></types:echoSimpleTypesAsStructResponse><q1:SOAPStruct id="id1" xsi:type="q1:SOAPStruct" xmlns:q1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></q1:SOAPStruct></soap:Body></soap:Envelope>
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Expected = #<SOAPBuildersInterop::SOAPStruct:0xb7cb95e0 @varFloat=nil, @varInt=nil, @varString=nil>  //  Actual = #<SOAPBuildersInterop::SOAPStruct:0xb7cb1e30 @varFloat=0.0, @varInt=0>
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:00 JST 2005
+Content-Length: 577
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:42 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:42 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 725
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoSimpleTypesAsStructResponse><return href="#id1" /></types:echoSimpleTypesAsStructResponse><q1:SOAPStruct id="id1" xsi:type="q1:SOAPStruct" xmlns:q1="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">0</varInt><varFloat xsi:type="xsd:float">0</varFloat></q1:SOAPStruct></soap:Body></soap:Envelope>
+
+
+##########
+# echo2DStringArray
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1744:in `doTestGroupB'
+clientASP.NET.rb:16
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:01 JST 2005
+Content-Length: 889
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:43 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:43 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 693
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 8). --&gt; SOAP-ENC:arrayType with multidimensional array found at &amp;lt;input2DStringArray xmlns=''&amp;gt;. Only single-dimensional arrays are supported. Consider using an array of arrays instead.
+Parameter name: value</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1762:in `doTestGroupB'
+clientASP.NET.rb:16
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:02 JST 2005
+Content-Length: 1088
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:43 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:43 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 693
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 8). --&gt; SOAP-ENC:arrayType with multidimensional array found at &amp;lt;input2DStringArray xmlns=''&amp;gt;. Only single-dimensional arrays are supported. Consider using an array of arrays instead.
+Parameter name: value</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1825:in `doTestGroupB'
+clientASP.NET.rb:16
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:02 JST 2005
+Content-Length: 1063
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605748016"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605748016"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605748016"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:44 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:44 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 693
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 8). --&gt; SOAP-ENC:arrayType with multidimensional array found at &amp;lt;input2DStringArray xmlns=''&amp;gt;. Only single-dimensional arrays are supported. Consider using an array of arrays instead.
+Parameter name: value</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1849:in `doTestGroupB'
+clientASP.NET.rb:16
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:03 JST 2005
+Content-Length: 1063
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605763306"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605763306"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605763306"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:44 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:44 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 693
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 8). --&gt; SOAP-ENC:arrayType with multidimensional array found at &amp;lt;input2DStringArray xmlns=''&amp;gt;. Only single-dimensional arrays are supported. Consider using an array of arrays instead.
+Parameter name: value</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+##########
+# echoNestedStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:04 JST 2005
+Content-Length: 920
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:46 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:46 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1033
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoNestedStructResponse><return href="#id1" /></types:echoNestedStructResponse><q1:SOAPStructStruct id="id1" xsi:type="q1:SOAPStructStruct" xmlns:q1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varStruct href="#id2" /></q1:SOAPStructStruct><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></q2:SOAPStruct></soap:Body></soap:Envelope>
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Expected = #<SOAPBuildersInterop::SOAPStructStruct:0xb7c86a00 @varFloat=nil, @varInt=nil, @varStruct=#<SOAPBuildersInterop::SOAPStruct:0xb7c86ac8 @varFloat=nil, @varInt=nil, @varString=nil>, @varString=nil>  //  Actual = #<SOAPBuildersInterop::SOAPStructStruct:0xb7c7c348 @varFloat=0.0, @varInt=0, @varStruct=#<SOAPBuildersInterop::SOAPStruct:0xb7c7bf74 @varFloat=0.0, @varInt=0>>
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:04 JST 2005
+Content-Length: 874
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:46 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:46 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 937
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoNestedStructResponse><return href="#id1" /></types:echoNestedStructResponse><q1:SOAPStructStruct id="id1" xsi:type="q1:SOAPStructStruct" xmlns:q1="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">0</varInt><varFloat xsi:type="xsd:float">0</varFloat><varStruct href="#id2" /></q1:SOAPStructStruct><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">0</varInt><varFloat xsi:type="xsd:float">0</varFloat></q2:SOAPStruct></soap:Body></soap:Envelope>
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Expected = "String#-605848386"  //  Actual = "String#-605849186"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:05 JST 2005
+Content-Length: 1062
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605826896"></varString>
+        </varStruct>
+        <varString href="#id-605826896"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605826896"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:47 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:47 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1011
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoNestedStructResponse><return href="#id1" /></types:echoNestedStructResponse><q1:SOAPStructStruct id="id1" xsi:type="q1:SOAPStructStruct" xmlns:q1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string" /><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varStruct href="#id2" /></q1:SOAPStructStruct><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varString xsi:type="xsd:string" /><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></q2:SOAPStruct></soap:Body></soap:Envelope>
+
+
+##########
+# echoNestedArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:06 JST 2005
+Content-Length: 931
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:47 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:47 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 914
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoNestedArrayResponse><return href="#id1" /></types:echoNestedArrayResponse><q1:SOAPArrayStruct id="id1" xsi:type="q1:SOAPArrayStruct" xmlns:q1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#id2" /></q1:SOAPArrayStruct><soapenc:Array id="id2" soapenc:arrayType="xsd:string[3]"><Item>2</Item><Item>2.2</Item><Item>b</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1924:in `doTestGroupB'
+clientASP.NET.rb:16
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:06 JST 2005
+Content-Length: 998
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:48 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:48 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 565
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (17, 20). --&gt; Cannot assign object of type System.Object[] to an object of type System.String[].</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:07 JST 2005
+Content-Length: 1083
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-604896942"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-604896942"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-604896942"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:48 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:48 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 895
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoNestedArrayResponse><return href="#id1" /></types:echoNestedArrayResponse><q1:SOAPArrayStruct id="id1" xsi:type="q1:SOAPArrayStruct" xmlns:q1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string" /><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#id2" /></q1:SOAPArrayStruct><soapenc:Array id="id2" soapenc:arrayType="xsd:string[3]"><Item>2</Item><Item /><Item>b</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Expected = "String#-605379646"  //  Actual = "String#-605381776"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simpleB.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:27:08 JST 2005
+Content-Length: 1083
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605335366"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605335366"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605335366"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:50 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:50 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 895
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoNestedArrayResponse><return href="#id1" /></types:echoNestedArrayResponse><q1:SOAPArrayStruct id="id1" xsi:type="q1:SOAPArrayStruct" xmlns:q1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string" /><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#id2" /></q1:SOAPArrayStruct><soapenc:Array id="id2" soapenc:arrayType="xsd:string[3]"><Item>2</Item><Item /><Item>b</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+

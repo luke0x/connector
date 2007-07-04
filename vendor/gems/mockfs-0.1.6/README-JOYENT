@@ -1,0 +1,18 @@
+This may look like MockFS Version 0.1.6, but it really isn't.  The following
+changes were made by Joyent, so you can't just drop in a new version of MockFS
+and expect it to work.
+
+* Fixed a bug where files open with 'w' mode that do not use the block style
+  were not created in the mock file system
+
+* Fix a bug in dir.glob
+
+* Added transactional support
+  * Added a clone method to MockDir
+
+* Added support for a number of FileUtils and File methods that Joyent uses which
+  MockFS originally did not support:
+
+  * FileUtils.mkdir_p
+... (FINISH THIS LIST) ...
+

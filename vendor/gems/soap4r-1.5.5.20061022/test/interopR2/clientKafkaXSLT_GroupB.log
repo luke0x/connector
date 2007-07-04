@@ -1,0 +1,1739 @@
+File: clientKafkaXSLT_GroupB.log - Wiredumps for SOAP4R client / KafkaXSLTSOAP server.
+Date: Sat Jul 23 21:02:33 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+! CONNECTION CLOSED
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:34 JST 2005
+Content-Length: 700
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:07 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1687:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:34 JST 2005
+Content-Length: 677
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:08 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1698:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:35 JST 2005
+Content-Length: 600
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:08 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1708:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:36 JST 2005
+Content-Length: 577
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:09 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echo2DStringArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1747:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:36 JST 2005
+Content-Length: 889
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:09 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1765:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:37 JST 2005
+Content-Length: 1088
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:10 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1828:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:37 JST 2005
+Content-Length: 1063
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605614638"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605614638"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605614638"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:10 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1852:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:38 JST 2005
+Content-Length: 1063
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605636668"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605636668"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605636668"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:11 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:38 JST 2005
+Content-Length: 920
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </varStruct>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:11 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1894:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:39 JST 2005
+Content-Length: 874
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+        </varStruct>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:12 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1907:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:39 JST 2005
+Content-Length: 1062
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varString href="#id-605669668"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString href="#id-605669668"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </varStruct>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605669668"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:12 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1917:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:40 JST 2005
+Content-Length: 931
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:13 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:40 JST 2005
+Content-Length: 998
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:14 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1938:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:41 JST 2005
+Content-Length: 1093
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString href="#id-605703178"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605703178"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <varString id="id-605703178"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:14 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1949:in `doTestGroupB'
+clientKafkaXSLT.rb:14
+
+Wire dump:
+
+= Request
+
+POST /services/interop.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:41 JST 2005
+Content-Length: 1093
+Host: www.thoughtpost.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString href="#id-605714688"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605714688"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <varString id="id-605714688"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:08:15 GMT
+Server: Microsoft-IIS/6.0
+Set-Cookie: server=1
+X-AspNet-Version: 1.1.4322
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 3385
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+        	body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+        	p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+        	b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+        	H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+        	H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+        	pre {font-family:"Lucida Console";font-size: .9em}
+        	.marker {font-weight: bold; color: black;text-decoration: none;}
+        	.version {color: gray;}
+        	.error {margin-bottom: 10px;}
+        	.expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>The resource cannot be found.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>HTTP 404. The resource you are looking for (or one of its dependencies) could have been removed, had its name changed, or is temporarily unavailable.  Please review the following URL and make sure that it is spelled correctly.
+            <br><br>
+
+            <b> Requested Url: </b>/services/interop.asmx<br><br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:1.1.4322.2032; ASP.NET Version:1.1.4322.2032
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileNotFoundException]: Could not find file &quot;\\premfs2\sites\premium7\thoughtpost\webroot\services\interop.asmx&quot;.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String str)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.Compilation.SourceCompiler.GetCachedEntry()
+   at System.Web.UI.SimpleWebHandlerParser.GetCompiledTypeFromCache()
+   at System.Web.UI.WebServiceParser.GetCompiledType(String inputFile, HttpContext context)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+[HttpException]: Exception of type System.Web.HttpException was thrown.
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, String path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.MapHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->
+
+

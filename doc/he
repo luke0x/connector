@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+# hyperwhatsit startup script, Solaris 11
+
+
+case "$1" in
+	start)
+	/opt/csw/bin/estmaster start -bg /opt/local/search_index
+	;;
+	stop)
+	/opt/csw/bin/estmaster stop /opt/local/search_index
+
+	;;
+	*)
+	echo "Usage: $0 {start | stop}"
+	;;
+esac
+
+exit 0

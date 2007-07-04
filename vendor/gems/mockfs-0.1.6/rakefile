@@ -1,0 +1,27 @@
+$: << 'lib'
+require 'mockfs'
+
+@@version_str = MockFS::Version
+
+def release_tag
+	( uber, major, minor ) = @@version_str.split( '.' ).collect! { |str|
+		str.to_i
+	}
+	"rel-#{ uber }-#{ major }-#{ minor }"
+end
+
+def release_dir_name
+	"mockfs-#{ @@version_str }"
+end
+
+task :export_release do
+	Dir.chdir('../releases')
+	ext = "-d:ext:francis@rubyforge.org:/var/cvs/mockfs"
+	`cvs #{ ext } export -r #{ release_tag } -d #{ release_dir_name } mockfs`
+	`tar zcvf mockfs-#{ @@version_str }.tar.gz #{ release_dir_name }`
+end
+
+task :update_docs do
+	Dir.chdir( 'lib' )
+	`rdoc --op ../docs/ --main mockfs.rb`
+end

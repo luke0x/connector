@@ -1,0 +1,34 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="notifySidebar" class="sidebar <%= class_name %>">
+  <div id="notifyUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;"><%= _('Notify unavailable') -%></div>
+  <div id="notifyAvailableContainer">
+		<table style="width:100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width:100%;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align:left;"><span class="notifyIcon"><%= _('Notified') -%></span><%= _('Notify') -%></th>
+				</tr>
+			</thead>
+		</table>
+    <div id="notifyAvailableInset" class="sidebarInset">
+			<table style="width:100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width:98%;" />
+					<col class="notify" style="width:16px;" />
+				</colgroup>
+				<tbody id="notifySidebarUsers">
+				</tbody>
+			</table>
+  	</div>
+  </div>
+</div>

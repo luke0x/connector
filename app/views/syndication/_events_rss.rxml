@@ -1,0 +1,20 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+events.each do |event|
+  xm.item do
+    xm.title event.name
+    xm.description render(:partial => "event", :locals => { :event => event })
+    xm.pubDate feed_date(event)
+    xm.guid calendar_link_for(event)
+    xm.link calendar_link_for(event)
+  end
+end

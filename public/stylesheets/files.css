@@ -1,0 +1,66 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) --------------------------------------------- */
+
+	.actionEmail a.disabled, .actionEmail a:hover.disabled {
+		background-position: 0px 0px;
+	}
+	.actionEmail a {
+		background-position: 0px -30px;
+	}
+	.actionEmail a:hover {
+		background-position: 0px -60px;
+	}
+	.actionEmail a:active, .actionEmail a.active {
+		background-position: 0px -90px;
+	}
+
+
+/* sidebar -------------------------------------------- */
+
+	#files .smartGroup {		
+		background-image: url(/images/icons/groupFolderSmart.png);
+		}
+	#files .group {		
+		background-image: url(/images/icons/groupFolder.png);
+		}
+	#files .group.subscription {
+		background-image: url(/images/icons/groupFolderSubscription.png);
+	}
+	#files .sidebar .all {
+		background-image: url(/images/icons/groupAllFiles.png);
+	}	
+	#files .sidebar .strongspace {
+		background-image: url(/images/icons/groupStrongspace.png);
+	}	
+	#files .sidebar .lightning {
+		background-image: url(/images/icons/groupLightning.png);
+	}
+
+/* Item View ------------------------------------------- */
+
+	#files #contentPane dt+dd {
+		margin-top:1em;
+	}
+	#files #contentPane dd+dt {	
+		margin-top:1em;
+	}
+	#files #contentPane dt {
+		width:9em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin:0px 0 0 0;
+		font-weight: bold;
+	}
+	#files #contentPane dd {
+		margin:0px 0 0px 10em;
+		padding:0;
+	}

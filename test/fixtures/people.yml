@@ -1,0 +1,196 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian:
+  id: 1
+  organization_id: 1
+  user_id: 1
+  first_name: Ian
+  middle_name: Kevin
+  last_name: Curtis
+  nickname: ian
+  company_name: Joy Division
+  title: Singer
+  time_zone: America/Detroit
+  notes: Foo
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+  person_type: 0_Admin
+  primary_email: ian@textdrive.com
+  primary_phone: 0800 666 112
+peter:
+  id: 2
+  organization_id: 1
+  user_id: 2
+  first_name: Peter
+  last_name: Hook
+  company_name: Joy Division
+  title: Bass Player
+  time_zone: America/Detroit
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+  person_type: 1_User
+  primary_email: 
+  primary_phone: 
+stephen:
+  id: 3
+  user_id: 1
+  contact_list_id: 1
+  organization_id: 1
+  first_name: Stephen
+  last_name: Morris
+  company_name: Joy Division
+  title: Drums
+  time_zone: America/Detroit
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+
+jason:
+  id: 4
+  organization_id: 2
+  user_id: 3
+  first_name: Jason
+  last_name: Hoffman
+  company_name: Textdrive
+  title: Guru
+  time_zone: America/Detroit
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  person_type: 0_Admin
+  primary_email: 
+  primary_phone: 0980 9809 809 8
+notuser:
+  id: 5
+  organization_id: 2
+  user_id: 3
+  first_name: Tai
+  last_name: Lee
+  company_name: Not Textdrive
+  title: Not Guru
+  time_zone: America/Detroit
+  notes: Hopeless Groupie
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+secret_person:
+  id: 6
+  organization_id: 2
+  user_id: 3
+  first_name: Some
+  last_name: Guy
+  company_name: some guy inc
+  title: CEO
+  time_zone: America/Detroit
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+user_with_restrictions:
+  id: 7
+  organization_id: 2
+  user_id: 4
+  first_name: Some
+  last_name: Guy
+  company_name: some guy inc
+  title: CEO
+  time_zone: America/Detroit
+  person_type: 0_Admin
+  primary_email: 
+  primary_phone: 
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+chris:
+  id: 8
+  user_id: 4
+  organization_id: 2
+  first_name: "Chris; Man"
+  last_name: Morris
+  nickname: chris
+  company_name: "Joy: Division, LLC"
+  time_zone: America/Detroit
+  notes: "Notes\r\n that span over \n\n multiple; lines and are \n whack"
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+
+o1notuser:
+  id: 9
+  organization_id: 1
+  user_id: 1
+  first_name: Imnot
+  last_name: Auser
+  company_name: Whatevs
+  title: Mr.
+  time_zone: America/Detroit
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+
+crud_fred:
+  id: 10
+  organization_id: 1
+  user_id: 1
+  first_name: Fred
+  last_name: Flinstone
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+     
+tagged_with_rails_solaris:
+  id: 11
+  organization_id: 1
+  user_id: 1
+  contact_list_id: 1
+  first_name: Rails
+  last_name: Solaris
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  person_type: 2_Contact
+  primary_email: 
+  primary_phone: 
+
+bernard:
+  id: 12
+  organization_id: 1
+  user_id: 5
+  first_name: Bernard
+  last_name: Sumner
+  company_name: Joy Division
+  title: Guitar
+  time_zone: America/Detroit
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+  person_type: 1_User
+  primary_email: 
+  primary_phone: 
+
+guest:
+  id: 13
+  organization_id: 1
+  user_id: 6
+  first_name: Im
+  last_name: JustaGuest
+  company_name: SomeOther Company, LLC
+  title: 
+  time_zone: America/Detroit
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+  person_type: 1_User_Guest

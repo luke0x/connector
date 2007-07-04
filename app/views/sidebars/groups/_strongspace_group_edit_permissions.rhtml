@@ -1,0 +1,32 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% if group and group.user_id == User.current.id -%>
+  <%= link_to_function _('Guest Access'), "StandardGroup.toggleEditAccess();", { :id => 'standardGroupEditAccessLink', :class => 'groupOption access' } %>
+  <div id="standardGroupEditAccess" style="display: none;" class="groupOptionMenu">
+    <% form_tag({:controller => 'files', :action => 'set_guest_access', :path => group.relative_path}, {:method => 'post', :onsubmit => 'return StandardGroup.editSubmit(this);'}) do -%>
+      <input type="radio" id="access_mode_guests_restricted" name="access_mode" <%= group.guests_restricted? ? 'checked="checked"' : '' %> onclick="Effect.BlindUp('access_mode_restricted_info', { duration: Joyent.effectsDuration });" value="guests_restricted" />
+      <label for="access_mode_no_guests"><%= _('None') -%></label>
+      <br />
+      <input type="radio" id="access_mode_guests_allowed" name="access_mode" <%= group.guests_restricted? ? '' : 'checked="checked""' %> onclick="if (! $('access_mode_restricted_info').visible()) Effect.BlindDown('access_mode_restricted_info', { duration: Joyent.effectsDuration });" value="guests_allowed" />
+      <label for="access_mode_guests_allowed"><%= _('Share with Selected Guests') -%></label>
+      <br />
+      <div id="access_mode_restricted_info" style="margin: 4px 2px; <%= group.guests_restricted? ? 'display: none;' : '' %>">
+        <select name="user_ids[]" size="6" multiple="multiple" style="width:100%;">
+          <% User.current.guests.sort.each do |user| -%>
+            <option value="<%= user.id %>" <%= "selected" if group.permission_for(user) %>><%= user.full_name %></option>
+          <% end -%>          
+        </select>
+      </div>
+      <div style="text-align: right;">
+        <%= submit_tag _('Save Permissions'), {:name => 'Submit'} %>
+      </div>
+    <% end -%>
+  </div>
+<% end -%>

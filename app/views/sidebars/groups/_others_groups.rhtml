@@ -1,0 +1,36 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="others_groups">
+  <ul class="groupsList">
+    <% User.current.other_users.sort.each do |user| -%>
+      <% update_id = "groups_user_#{user.id}" -%>
+      <li>
+        <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+          <table><tr>
+            <td class="dinger">
+              <%= link_to_function('+', "GroupsBrowser.toggleUser('#{user.id}');", { :class => (user == User.selected && ! @is_subscription ? 'expanded' : 'collapsed'), :id => "dinger_user_#{user.id}" }) -%>
+            </td>
+            <td>
+              <%= link_to_function(user.full_name, "GroupsBrowser.toggleUser('#{user.id}');", { :class => 'folder user', :style => "background-color: transparent;" }) -%>
+            </td>
+            <td id="groups_user_spinner_<%= user.id %>" style="display:none; width: 16px;">
+              <div class="loadingMessageSmall"></div>
+            </td>
+          </tr></table>
+        </div></div></div></div>
+        <div id="<%= update_id %>">
+          <% if user == User.selected && ! @is_subscription -%>
+            <%= render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}", :locals => {:user => User.selected} %>
+          <% end -%>
+        </div>
+      </li>
+    <% end -%>
+  </ul>
+</div>

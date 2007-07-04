@@ -1,0 +1,58 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@file], 'show') -%>
+
+<div class="dialog">
+	<h2><%= _('New File') %></h2>
+	<% if flash['error'] -%>
+		<p class="warning"><%= flash['error'] %></p>
+	<% end -%>
+	<% form_tag(file_create_url, {:multipart => true, :onsubmit => 'return Files.validateSubmitNew(this);', :class => "item_editor", :style => "margin-bottom: 0;" }) do -%>
+		<div class="infoGroup">
+			<table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="padding-bottom: 8px;">
+						<h3><%= _('Upload up to 5 files at once') %></h3>
+					</td>
+				</tr>
+				<% 5.times do |i| -%>
+					<tr>
+						<td class="infoGroupLabel" valign="top" style="width: 50px;"><%= _('File') + ' ' + (i + 1).to_s %>:</td>
+						<td style="padding-left: 5px; padding-bottom: 8px;"><%= file_field_tag "upload_#{i}" %></td>
+					</tr>
+				<% end -%>
+				<tr>
+					<td colspan="2" style="width: 100%;">
+						<hr style="width: 100%;" />
+					</td>
+				</tr>
+				<tr>
+					<td class="infoGroupLabel" valign="top" style="padding-top: 6px; width: 50px;">
+						<%= _('Folder') %>:
+					</td>
+					<td style="padding-top: 6px; padding-left: 5px;">
+						<%= hierarchical_groups_select(:id => 'folder_id', :name => 'folder_id', :groups => User.current.folders.select{|f| f.parent_id == nil}, :selected => (User.current.can_create_on?(@folder) ? @folder : nil rescue nil)) %>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoGroup" style="text-align:center;">
+			<%= render :partial => 'partials/sidebar_buttons' %>
+		</div>
+		<div class="infoGroup">
+			<input type="hidden" name="folder_id" value="<%= User.current.can_create_on?(@folder) ? @folder.id : '' rescue '' %>" />
+			<input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
+			<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
+			<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
+			<%= submit_tag _('Create'), :name => 'command' %>
+			<input type="button" value="<%= _('Cancel') -%>" onclick="window.location = '<%= files_home_url %>';" />
+		</div>
+	<% end -%>
+</div>

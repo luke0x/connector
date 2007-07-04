@@ -1,0 +1,22 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<h5><%= _('Import contacts from a vCard file (.vcf)') %></h5>
+<% form_tag(people_import_url, {:multipart => true, :onsubmit => 'return People.validateSubmitImport(this);' , :class => "item_editor", :style => "margin-bottom: 0;" }) do -%>
+	<fieldset>
+		<% if flash['error'] -%>
+      <p class="warning"><%= flash['error'] %></p>
+    <% end -%>
+    <%= file_field_tag 'vcard', {:style => "margin-left: 10px;"} %>
+  </fieldset>
+	<div class="drawerButtons">
+			<input type="button" value="Cancel" onclick="Drawers.hide('PeopleImport');" />
+			<%= submit_tag _('Import') %>
+	</div>
+<% end -%>

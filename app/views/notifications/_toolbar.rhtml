@@ -1,0 +1,19 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="ActionBar">
+  <ul class="toolbar">
+    <% if @toolbar[:show_new] -%>
+      <li><%= link_to 'Show New',  url_for(:all => nil), {:style => '', :class=> 'actionShowNew' } %></li>
+    <% end -%>
+    <% if @toolbar[:show_all] -%>
+      <li><%= link_to 'Show All',  url_for(:all => ''), {:style => '', :class=> 'actionShowAll' } %></li>
+    <% end -%>
+  </ul>
+</div>

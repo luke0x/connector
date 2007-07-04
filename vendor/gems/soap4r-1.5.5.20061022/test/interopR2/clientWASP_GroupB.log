@@ -1,0 +1,970 @@
+File: clientWASP_GroupB.log - Wiredumps for SOAP4R client / WASPforJava server.
+Date: Sat Jul 23 22:01:19 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:20 JST 2005
+Content-Length: 700
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:25 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+29e
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoStructAsSimpleTypesResponse xmlns:n0="http://soapinterop.org/"><outputString i:type="d:string">a</outputString><outputInteger i:type="d:int">1</outputInteger><outputFloat i:type="d:float">1.1</outputFloat></n0:echoStructAsSimpleTypesResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class <null> into public int iface.round2.groupb.SOAPStruct.varInt (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7db143c>
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:21 JST 2005
+Content-Length: 677
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:02:26 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+
+fa1
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/"><e:Body><e:Fault><faultcode>e:Server</faultcode><faultstring>org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class &lt;null&gt; into public int iface.round2.groupb.SOAPStruct.varInt</faultstring><detail><ijm:idoox-java-mapping.com.idoox.wasp.serialization.DeserializationException xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ijm="urn:idoox-java-mapping"><ijm:stack-trace>com.idoox.wasp.serialization.DeserializationException: org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class &lt;null&gt; into public int iface.round2.groupb.SOAPStruct.varInt
+	at com.idoox.wasp.serialization.ReflectionDeserializer.deserialize(ReflectionDeserializer.java:166)
+	at com.idoox.wasp.serialization.BasicConstructDeserializer.deserialize(BasicConstructDeserializer.java:195)
+	at com.idoox.wasp.serialization.SimpleDeserializer.deserialize(SimpleDeserializer.java:144)
+	at com.idoox.wasp.serialization.xml.XMLEncDeserializerWrapper.deserialize(XMLEncDeserializerWrapper.java:62)
+	at com.idoox.wasp.serialization.SerializationHelper.deserializeElement(SerializationHelper.java:437)
+	at com.idoox.wasp.serialization.WaspSerializationHelper.deserialize(WaspSerializationHelper.java:224)
+	at com.systinet.wasp.server.adaptor.JavaInvoker.fillCallParamsXml(JavaInvoker.java:1202)
+	at com.systinet.wasp.server.adaptor.JavaInvoker.beginInvoke(JavaInvoker.java:478)
+	at com.idoox.wasp.server.adaptor.JavaAdaptorImpl.beginInvoke(JavaAdaptorImpl.java:63)
+	at com.idoox.wasp.server.AdaptorTemplate.javaInvocation(AdaptorTemplate.java:510)
+	at com.idoox.wasp.server.AdaptorTemplate.doDispatch(AdaptorTemplate.java:395)
+	at com.idoox.wasp.server.AdaptorTemplate.dispatch(AdaptorTemplate.java:328)
+	at com.idoox.wasp.server.ServiceConnector.dispatch(ServiceConnector.java:378)
+	at com.systinet.wasp.ServiceManagerImpl.dispatchRequest(ServiceManagerImpl.java:625)
+	at com.systinet.wasp.ServiceManagerImpl.dispatch(ServiceManagerImpl.java:461)
+	at com.systinet.wasp.ServiceManagerImpl$DispatcherConnHandler.handlePost(ServiceManagerImpl.java:2525)
+	at com.idoox.transport.http.server.Jetty$WaspHttpHandler.handle(Jetty.java:97)
+	at com.mortbay.HTTP.HandlerContext.handle(HandlerContext.java:1087)
+	at com.mortbay.HTTP.HttpServer.service(HttpServer.java:675)
+	at com.mortbay.HTTP.HttpConnection.service(HttpConnection.java:457)
+	at com.mortbay.HTTP.HttpConnection.handle(HttpConnection.java:317)
+	at com.mortbay.HTTP.SocketListener.handleConnection(SocketListener.java:99)
+	at com.mortbay.Util.ThreadedServer.handle(ThreadedServer.java:254)
+	at com.mortbay.Util.ThreadPool$PoolThreadRunnable.run(ThreadPool.java:607)
+	at java.lang.Thread.run(Thread.java:534)
+Caused by: org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class &lt;null&gt; into public int iface.round2.groupb.SOAPStruct.varInt
+	at com.idoox.wasp.serialization.ReflectionDeserializer.processStructure(ReflectionDeserializer.java:624)
+	at com.idoox.wasp.serialization.ReflectionDeserializer.deserialize(ReflectionDeserializer.java:145)
+	... 24 more
+Caused by: org.idoox.xmlrpc.MessageProcessingException: Error setting field public int iface.round2.groupb.SOAPStruct.varInt to &lt;null&gt; : null
+	at com.idoox.wasp.serialization.ReflectionDeserializer.setField(ReflectionDeserializer.java:690)
+	at com.idoox.wasp.serialization.ReflectionDeserializer.processStructure(ReflectionDeserializer.java:620)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException
+	at sun.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:62)
+	at java.lang.reflect.Field.set(Field.java:519)
+	at com.idoox.wasp.serialization.ReflectionDeserializer.setField(ReflectionDeserializer.java:687)
+	... 26 more
+</ijm:stack-trace></ijm:idoox-java-mapping.com.idoox.wasp.serialization.DeserializationException></detail></e:Fault></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:23 JST 2005
+Content-Length: 600
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:28 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+2ad
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoSimpleTypesAsStructResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPStruct"><varString i:type="d:string">a</varString><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat></return></n0:echoSimpleTypesAsStructResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: An exception occurred: java.lang.NullPointerException (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7d8a4cc>
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:24 JST 2005
+Content-Length: 577
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:02:29 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+
+8ea
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/"><e:Body><e:Fault><faultcode>e:Server</faultcode><faultstring>An exception occurred: java.lang.NullPointerException</faultstring><detail><ijm:idoox-java-mapping.java.lang.NullPointerException xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ijm="urn:idoox-java-mapping"><ijm:stack-trace>java.lang.NullPointerException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:324)
+	at com.systinet.wasp.server.adaptor.JavaInvoker.invokeService(JavaInvoker.java:1528)
+	at com.systinet.wasp.server.adaptor.JavaInvoker.endInvoke(JavaInvoker.java:542)
+	at com.idoox.wasp.server.adaptor.JavaAdaptorImpl.endInvoke(JavaAdaptorImpl.java:76)
+	at com.idoox.wasp.server.AdaptorTemplate.javaInvocation(AdaptorTemplate.java:561)
+	at com.idoox.wasp.server.AdaptorTemplate.doDispatch(AdaptorTemplate.java:395)
+	at com.idoox.wasp.server.AdaptorTemplate.dispatch(AdaptorTemplate.java:328)
+	at com.idoox.wasp.server.ServiceConnector.dispatch(ServiceConnector.java:378)
+	at com.systinet.wasp.ServiceManagerImpl.dispatchRequest(ServiceManagerImpl.java:625)
+	at com.systinet.wasp.ServiceManagerImpl.dispatch(ServiceManagerImpl.java:461)
+	at com.systinet.wasp.ServiceManagerImpl$DispatcherConnHandler.handlePost(ServiceManagerImpl.java:2525)
+	at com.idoox.transport.http.server.Jetty$WaspHttpHandler.handle(Jetty.java:97)
+	at com.mortbay.HTTP.HandlerContext.handle(HandlerContext.java:1087)
+	at com.mortbay.HTTP.HttpServer.service(HttpServer.java:675)
+	at com.mortbay.HTTP.HttpConnection.service(HttpConnection.java:457)
+	at com.mortbay.HTTP.HttpConnection.handle(HttpConnection.java:317)
+	at com.mortbay.HTTP.SocketListener.handleConnection(SocketListener.java:99)
+	at com.mortbay.Util.ThreadedServer.handle(ThreadedServer.java:254)
+	at com.mortbay.Util.ThreadPool$PoolThreadRunnable.run(ThreadPool.java:607)
+	at java.lang.Thread.run(Thread.java:534)
+</ijm:stack-trace></ijm:idoox-java-mapping.java.lang.NullPointerException></detail></e:Fault></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:25 JST 2005
+Content-Length: 889
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:30 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+36e
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echo2DStringArrayResponse xmlns:n0="http://soapinterop.org/"><return wn0:arrayType="d:string[3,3]"><item i:type="d:string">r0c0</item><item i:type="d:string">r1c0</item><item i:type="d:string">r2c0</item><item i:type="d:string">r0c1</item><item i:type="d:string">r1c1</item><item i:type="d:string">r2c1</item><item i:type="d:string">r0c2</item><item i:type="d:string">r1c2</item><item i:type="d:string">r2c2</item></return></n0:echo2DStringArrayResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:26 JST 2005
+Content-Length: 1088
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:31 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+36e
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echo2DStringArrayResponse xmlns:n0="http://soapinterop.org/"><return wn0:arrayType="d:string[3,3]"><item i:type="d:string">r0c0</item><item i:type="d:string">r0c1</item><item i:type="d:string">r0c2</item><item i:type="d:string">r1c0</item><item i:type="d:string">r1c1</item><item i:type="d:string">r1c2</item><item i:type="d:string">r2c0</item><item i:type="d:string">r0c1</item><item i:type="d:string">r2c2</item></return></n0:echo2DStringArrayResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:27 JST 2005
+Content-Length: 1063
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605393722"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605393722"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605393722"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:32 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+37e
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echo2DStringArrayResponse xmlns:n0="http://soapinterop.org/"><return wn0:arrayType="d:string[3,3]"><item i:type="d:string">r0c0</item><item i:type="d:string">r1c0</item><item href="#0"/><item i:type="d:string">r0c1</item><item i:type="d:string">r1c1</item><item i:type="d:string">r2c1</item><item href="#0"/><item i:type="d:string">r1c2</item><item i:type="d:string">r2c2</item></return></n0:echo2DStringArrayResponse><reference i:type="d:string" id="0">item</reference></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:28 JST 2005
+Content-Length: 1063
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605484532"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605484532"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605484532"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:33 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+37e
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echo2DStringArrayResponse xmlns:n0="http://soapinterop.org/"><return wn0:arrayType="d:string[3,3]"><item i:type="d:string">r0c0</item><item i:type="d:string">r1c0</item><item href="#0"/><item i:type="d:string">r0c1</item><item i:type="d:string">r1c1</item><item i:type="d:string">r2c1</item><item href="#0"/><item i:type="d:string">r1c2</item><item i:type="d:string">r2c2</item></return></n0:echo2DStringArrayResponse><reference i:type="d:string" id="0">item</reference></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:30 JST 2005
+Content-Length: 920
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:35 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+348
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoNestedStructResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPStructStruct"><varString i:type="d:string">a</varString><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat><varStruct i:type="wn2:SOAPStruct"><varString i:type="d:string">b</varString><varInt i:type="d:int">2</varInt><varFloat i:type="d:float">2.2</varFloat></varStruct></return></n0:echoNestedStructResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class <null> into public int iface.round2.groupb.SOAPStructStruct.varInt (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7cf39c8>
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:31 JST 2005
+Content-Length: 874
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:02:36 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+
+fb9
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/"><e:Body><e:Fault><faultcode>e:Server</faultcode><faultstring>org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class &lt;null&gt; into public int iface.round2.groupb.SOAPStructStruct.varInt</faultstring><detail><ijm:idoox-java-mapping.com.idoox.wasp.serialization.DeserializationException xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ijm="urn:idoox-java-mapping"><ijm:stack-trace>com.idoox.wasp.serialization.DeserializationException: org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class &lt;null&gt; into public int iface.round2.groupb.SOAPStructStruct.varInt
+	at com.idoox.wasp.serialization.ReflectionDeserializer.deserialize(ReflectionDeserializer.java:166)
+	at com.idoox.wasp.serialization.BasicConstructDeserializer.deserialize(BasicConstructDeserializer.java:195)
+	at com.idoox.wasp.serialization.SimpleDeserializer.deserialize(SimpleDeserializer.java:144)
+	at com.idoox.wasp.serialization.xml.XMLEncDeserializerWrapper.deserialize(XMLEncDeserializerWrapper.java:62)
+	at com.idoox.wasp.serialization.SerializationHelper.deserializeElement(SerializationHelper.java:437)
+	at com.idoox.wasp.serialization.WaspSerializationHelper.deserialize(WaspSerializationHelper.java:224)
+	at com.systinet.wasp.server.adaptor.JavaInvoker.fillCallParamsXml(JavaInvoker.java:1202)
+	at com.systinet.wasp.server.adaptor.JavaInvoker.beginInvoke(JavaInvoker.java:478)
+	at com.idoox.wasp.server.adaptor.JavaAdaptorImpl.beginInvoke(JavaAdaptorImpl.java:63)
+	at com.idoox.wasp.server.AdaptorTemplate.javaInvocation(AdaptorTemplate.java:510)
+	at com.idoox.wasp.server.AdaptorTemplate.doDispatch(AdaptorTemplate.java:395)
+	at com.idoox.wasp.server.AdaptorTemplate.dispatch(AdaptorTemplate.java:328)
+	at com.idoox.wasp.server.ServiceConnector.dispatch(ServiceConnector.java:378)
+	at com.systinet.wasp.ServiceManagerImpl.dispatchRequest(ServiceManagerImpl.java:625)
+	at com.systinet.wasp.ServiceManagerImpl.dispatch(ServiceManagerImpl.java:461)
+	at com.systinet.wasp.ServiceManagerImpl$DispatcherConnHandler.handlePost(ServiceManagerImpl.java:2525)
+	at com.idoox.transport.http.server.Jetty$WaspHttpHandler.handle(Jetty.java:97)
+	at com.mortbay.HTTP.HandlerContext.handle(HandlerContext.java:1087)
+	at com.mortbay.HTTP.HttpServer.service(HttpServer.java:675)
+	at com.mortbay.HTTP.HttpConnection.service(HttpConnection.java:457)
+	at com.mortbay.HTTP.HttpConnection.handle(HttpConnection.java:317)
+	at com.mortbay.HTTP.SocketListener.handleConnection(SocketListener.java:99)
+	at com.mortbay.Util.ThreadedServer.handle(ThreadedServer.java:254)
+	at com.mortbay.Util.ThreadPool$PoolThreadRunnable.run(ThreadPool.java:607)
+	at java.lang.Thread.run(Thread.java:534)
+Caused by: org.idoox.xmlrpc.MessageProcessingException: Exception thrown while setting value of class &lt;null&gt; into public int iface.round2.groupb.SOAPStructStruct.varInt
+	at com.idoox.wasp.serialization.ReflectionDeserializer.processStructure(ReflectionDeserializer.java:624)
+	at com.idoox.wasp.serialization.ReflectionDeserializer.deserialize(ReflectionDeserializer.java:145)
+	... 24 more
+Caused by: org.idoox.xmlrpc.MessageProcessingException: Error setting field public int iface.round2.groupb.SOAPStructStruct.varInt to &lt;null&gt; : null
+	at com.idoox.wasp.serialization.ReflectionDeserializer.setField(ReflectionDeserializer.java:690)
+	at com.idoox.wasp.serialization.ReflectionDeserializer.processStructure(ReflectionDeserializer.java:620)
+	... 25 more
+Caused by: java.lang.IllegalArgumentException
+	at sun.reflect.UnsafeIntegerFieldAccessorImpl.set(UnsafeIntegerFieldAccessorImpl.java:62)
+	at java.lang.reflect.Field.set(Field.java:519)
+	at com.idoox.wasp.serialization.ReflectionDeserializer.setField(ReflectionDeserializer.java:687)
+	... 26 more
+</ijm:stack-trace></ijm:idoox-java-mapping.com.idoox.wasp.serialization.DeserializationException></detail></e:Fault></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:32 JST 2005
+Content-Length: 1062
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605583572"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString href="#id-605583572"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605583572"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:37 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+350
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoNestedStructResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPStructStruct"><varString href="#0"/><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat><varStruct i:type="wn2:SOAPStruct"><varString href="#0"/><varInt i:type="d:int">2</varInt><varFloat i:type="d:float">2.2</varFloat></varStruct></return></n0:echoNestedStructResponse><reference i:type="d:string" id="0"></reference></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:33 JST 2005
+Content-Length: 931
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:38 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+335
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoNestedArrayResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPArrayStruct"><varString i:type="d:string">a</varString><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat><varArray wn0:arrayType="d:string[3]"><item i:type="d:string">2</item><item i:type="d:string">2.2</item><item i:type="d:string">b</item></varArray></return></n0:echoNestedArrayResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:35 JST 2005
+Content-Length: 998
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:39 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+335
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoNestedArrayResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPArrayStruct"><varString i:type="d:string">a</varString><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat><varArray wn0:arrayType="d:string[3]"><item i:type="d:string">2</item><item i:type="d:string">2.2</item><item i:type="d:string">b</item></varArray></return></n0:echoNestedArrayResponse></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:36 JST 2005
+Content-Length: 1083
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605656622"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605656622"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605656622"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:41 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+340
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoNestedArrayResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPArrayStruct"><varString href="#0"/><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat><varArray wn0:arrayType="d:string[3]"><item i:type="d:string">2</item><item href="#0"/><item i:type="d:string">b</item></varArray></return></n0:echoNestedArrayResponse><reference i:type="d:string" id="0"></reference></e:Body></e:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /InteropBService/ HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 22:01:37 JST 2005
+Content-Length: 1083
+Host: soap.systinet.net:6060
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605681942"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605681942"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605681942"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:02:42 GMT
+Server: Systinet Server for Java/5.5 (Java/1.4.2_05; Linux/2.4.20-37.9.legacy; build SSJ-5.5-20041128-1204)
+SOAPAction: ""
+Content-type: text/xml;charset=UTF-8
+X-WASP-Message-ID: 14a-0Olp5KP/kgnHA08ARL7AEQ==
+Transfer-Encoding: chunked
+
+340
+<?xml version="1.0" encoding="UTF-8"?>
+<e:Envelope xmlns:e="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:wn0="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wn1="http://idoox.com/interface" xmlns:wn2="http://soapinterop.org/xsd"><e:Body e:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:echoNestedArrayResponse xmlns:n0="http://soapinterop.org/"><return i:type="wn2:SOAPArrayStruct"><varString href="#0"/><varInt i:type="d:int">1</varInt><varFloat i:type="d:float">1.1</varFloat><varArray wn0:arrayType="d:string[3]"><item i:type="d:string">2</item><item href="#0"/><item i:type="d:string">b</item></varArray></return></n0:echoNestedArrayResponse><reference i:type="d:string" id="0"></reference></e:Body></e:Envelope>
+0
+
+
+
+

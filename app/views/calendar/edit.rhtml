@@ -1,0 +1,258 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="dialog">
+	<% @page_javascript << javascript_jsar_init([@event], 'edit') -%>
+	<% @page_javascript << "Event.observe(window, 'load', function(event){Calendar.setupEdit();});" -%>
+	
+	<% if @view_kind == 'edit' -%>
+		<h2><%= _('Edit Event') %></h2>
+  	<form action="<%= calendar_edit_url(:id => @event.id) %>" id="item_editor" onsubmit="return Calendar.validateSubmit(this);" class="item_editor" method="post">		
+	<% else -%>
+		<h2><%= _('New Event') %></h2>
+  	<form action="<%= calendar_create_url %>" id="item_editor" onsubmit="return Calendar.validateSubmit(this);" class="item_editor" method="post">		
+	<% end -%>
+    <% if flash[:error] -%>
+		<div class="warningInline"><%= h(flash[:error]) %></div>
+    <% end -%>
+		<div class="infoGroup">
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('Event') -%>:
+					</td>
+					<td>
+						<div>
+							<input id="event_name" size="40" value="<%= @event.name %>" type="text" maxlength="100" name="event[name]" class="textInput" />
+						</div>
+					</td>
+				</tr>
+				<% if @view_kind == 'create' %>
+					<tr>
+						<td class="infoGroupLabel" valign="top" style="padding-top: 6px;">
+							<%= _('Calendar') -%>:
+						</td>
+						<td style="padding-top: 6px;">
+							<div>
+								<%= hierarchical_groups_select(:id => 'calendar_id', :name => 'calendar_id', :groups => User.current.calendar_root_calendars, :selected => @calendar) %>
+							</div>
+						</td>
+					</tr>
+				<% end -%>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('Date') -%>:
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>
+									<input id="event_start_month" value="<%= @event.start_time_in_user_tz.month rescue nil %>" size="3" type="text" name="event[start_month]" class="textInput" />/
+									<div class="infoGroupInputLabel"><%= _('month') -%></div>
+								</td>
+								<td>
+									<input id="event_start_day" value="<%= @event.start_time_in_user_tz.day rescue nil %>" size="3" type="text" name="event[start_day]" class="textInput" />/
+									<div class="infoGroupInputLabel"><%= _('day') -%></div>
+								</td>
+								<td>
+									<input id="event_start_year" value="<%= @event.start_time_in_user_tz.year rescue nil %>" size="5" type="text" name="event[start_year]" class="textInput" />
+									<div class="infoGroupInputLabel"><%= _('year') -%></div>
+								</td>
+								<td style="width:15em;text-align:right;" valign="top">								
+									<input type="button" value="<%= _('Today') -%>" onclick="Calendar.setToToday(); return false;"/>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('Time') -%>:
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>
+									<input id="event_all_day_true" value="true" <%= 'checked="checked"' if @event.all_day? %> type="radio" name="event[all_day]" onclick="Calendar.setToAllDay();" />
+									<%= javascript_tag "Event.observe(window, 'load', function(event){Calendar.setToAllDay();})" if @event.all_day? %>
+								</td>
+								<td style="text-align: left;" colspan="2">
+									<%= _('This is an <strong>all-day</strong> event') -%>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input id="event_all_day_false" value="false" <%= 'checked="checked"' unless @event.all_day? %> type="radio" name="event[all_day]" onclick="Calendar.setToNotAllDay();" />
+								</td>
+								<td>
+									<label><%= _('Start Time') -%>:</label>
+								</td>
+								<td>
+									<span>
+										<input class="textInput" id="event_start_hour" value="<%= @event.start_time_in_user_tz.strftime('%I') rescue nil %>" size="2" type="text" name="event[start_hour]" />
+										:
+										<input class="textInput" id="event_start_minute" value="<%= @event.start_time_in_user_tz.strftime('%M') rescue '00' %>" size="2" type="text" name="event[start_minute]" />
+									</span>
+									<% if @event.start_time_in_user_tz && @event.start_time_in_user_tz.strftime('%p').downcase == 'am' -%>
+										<input id="event_start_ampm_am" checked="checked" value="am" type="radio" name="event[start_ampm]" /> AM
+										<input id="event_start_ampm_pm" value="pm" type="radio" name="event[start_ampm]" /> PM
+									<% else -%>
+										<input id="event_start_ampm_am" value="am" type="radio" name="event[start_ampm]" /> AM
+										<input id="event_start_ampm_pm" checked="checked" value="pm" type="radio" name="event[start_ampm]" /> PM
+									<% end -%>
+								</td>
+							</tr>
+							<tr>
+								<td />
+								<td style="text-align: right;">
+									<label for="Duration"><%= _('Duration') -%>:</label>
+								</td>
+								<td>
+									<input class="textInput" id="event_duration_hours" value="<%= @event.duration / 1.hour %>" size="2" type="text" name="event[duration_hours]" />
+									<label><%= _('Hours') -%></label>
+									<input class="textInput" id="event_duration_minutes" value="<%= (@event.duration - (@event.duration / 1.hour).hours) / 1.minute %>" size="2" type="text" name="event[duration_minutes]" />
+									<label><%= _('Minutes') -%></label>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('Repeat') -%>:
+					</td>
+					<td>
+						<% repeat_frequency_types = [[_('None'), ''], [_('Daily'), 'daily'], [_('Weekly'), 'weekly'], [_('Monthly'), 'monthly'], [_('Yearly'), 'yearly']] -%>
+						<% repeat_frequency_options = options_for_select repeat_frequency_types, (@event.recurrence_description.name.downcase rescue '') -%>
+						<%= select_tag "event[repeat]", repeat_frequency_options, { :id => 'event_repeat', :onchange => 'Calendar.changeRepeat();' } %>
+						<div id="event_repeat_options" <%= 'style="display: none;"' if (@event.recurrence_description.name.downcase rescue '') == '' %>>
+							<table>
+								<tr>
+									<td valign="top">
+										<input id="event_repeat_forever_true" value="true" <%= 'checked="checked"' if @event.repeat_forever? %> type="radio" name="event[repeat_forever]" onclick="Calendar.setToForever();" />
+									</td>
+									<td colspan="4">											
+										<%= _('Forever') -%>
+										<%= javascript_tag "Event.observe(window, 'load', function(event){Calendar.setToForever();})" if @event.repeat_forever? %>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top">
+										<input id="event_repeat_forever_false" value="false" <%= 'checked="checked"' unless @event.repeat_forever? %> type="radio" name="event[repeat_forever]" onclick="Calendar.setToNotForever();" />
+									</td>
+									<td valign="top">
+										<%= _('End Date') -%>:
+									</td>
+									<td>
+										<input class="textInput" id="event_recur_end_month" value="<%= @event.recur_end_time_in_user_tz.month rescue nil %>" size="3" type="text" name="event[recur_end_month]" />
+										/
+										<div class="infoGroupInputLabel"><%= _('month') -%></div>
+									</td>
+									<td>
+										<input class="textInput" id="event_recur_end_day" value="<%= @event.recur_end_time_in_user_tz.day rescue nil %>" size="3" type="text" name="event[recur_end_day]" />
+										/
+										<div class="infoGroupInputLabel"><%= _('day') -%></div>
+									</td>
+									<td>
+										<input class="textInput" id="event_recur_end_year" value="<%= @event.recur_end_time_in_user_tz.year rescue nil %>" size="5" type="text" name="event[recur_end_year]" />
+										<div class="infoGroupInputLabel"><%= _('year') -%></div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td colspan="4">
+										<div id="event_by_day_options" <%= 'style="display: none;"' if (@event.by_day.empty? rescue '') == '' %>>
+										  <table>
+										    <tr>
+      										<% ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].each do |day| -%>
+      										  <td>
+        											<% by_day = day[0..1] %>
+        											<input class="textInput" id="by_day" value="<%= by_day %>" size="3" type="checkbox" <%= 'checked="checked"' if (@event.by_day.include?(by_day) rescue '') == true %> name="event[by_day][]" />
+        											<div class="infoGroupInputLabel"><%= _(day) -%></div>
+        										</td>
+      										<% end -%>
+    										</tr>
+  										</table>
+										</div>
+									</td>
+								</tr>
+								
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('Location') -%>:
+					</td>
+					<td>
+						<input class="textInput" id="event_location" size="40" value="<%= @event.location %>" type="text" maxlength="100" name="event[location]" />
+					</td>
+				</tr>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('ICS Alarm') -%>:
+					</td>
+					<td>
+						<% alarms = [[_('None'), 0], [_('15 minutes before'), 15], [_('1 hour before'), 60], [_('1 day before'), 1440]] -%>
+						<% alarm_options = options_for_select alarms, @event.alarm_trigger_in_minutes -%>
+						<%= select_tag "event[alarm_trigger_in_minutes]", alarm_options %>
+					</td>
+				</tr>
+			</table>
+			<hr />
+			<table>
+				<tr>
+					<td class="infoGroupLabel" valign="top">
+						<%= _('Notes') -%>:
+					</td>
+					<td>
+						<textarea class="textInput" cols="40" rows="10" name="event[notes]"><%= @event.notes %></textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="infoGroup" style="text-align:center;">
+			<%= render :partial => 'partials/sidebar_buttons' %>
+		</div>
+		<div class="infoGroup">
+			<input id="command" value="Save" type="hidden" name="command" />
+			<input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
+			<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
+			<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
+			<% if @view_kind == 'edit' -%>
+				<%= submit_tag _("Save") %>
+			<% else -%>
+				<%= submit_tag _("Create") %>
+			<% end -%>
+			<% if @event.id -%>
+				<%= button_to_function _('Cancel'), "window.location = '#{calendar_show_url(:id => @event.id)}'" %>
+			<% elsif request.env.has_key?('HTTP_REFERER') -%>
+				<%= button_to_function _('Cancel'), "window.location = '#{request.env['HTTP_REFERER']}'" %>
+			<% else -%>
+				<%= button_to_function _('Cancel'), "window.location = '#{calendar_home_url}'" %>
+			<% end -%>
+		</div>
+	</form>
+</div>

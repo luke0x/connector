@@ -1,0 +1,106 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Dock ----------------------------------------------------------------- */
+
+	#Dock li a{
+		background-image: url(/images/lang/en/apps.png);
+		}
+	#connect .dockConnect a {	
+		width: 115px;
+		}
+	#mail .dockMail a {	
+		width: 85px;
+		}
+	#calendar .dockCalendar a {	
+		width: 122px;
+		}
+	#people .dockPeople a {	
+		width: 102px;
+		}
+	#files .dockFiles a {	
+		width: 86px;
+		}
+	#bookmarks .dockBookmarks a {	
+		width: 139px;
+		}
+	#lists .dockLists a {	
+		width: 82px;
+		}
+
+
+/* Sidebar Tabs ----------------------------------------------------------------- */
+
+
+	.sidebarTab a {
+		background-image: url(/images/lang/en/tabs.png);
+		}
+	#groupsSidebarTab a {
+		height: 83px;
+		}	
+	#rulesSidebarTab a {
+		height: 80px;
+		}	
+	#tagsSidebarTab a {
+		height: 80px;
+		}	
+	#accessSidebarTab a {
+		height: 80px;
+		}	
+	#notifySidebarTab a {
+		height: 83px;
+		}	
+
+
+/* General Toolbar (actions) -------------------------------------------- */
+
+	.actionMove a {	
+		width: 66px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionCopy a {	
+		width: 65px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionCopyDirect a {	
+		width: 59px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionNew a {	
+		width: 54px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionImport a {
+		width: 73px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionShowAll a {
+		width: 77px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionShowNew a {
+		width: 86px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionDelete a {	
+		width: 65px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionSaveSearch a {	
+		width: 93px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionTools a {	
+		width: 67px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}
+	.actionEdit a {	
+		width: 50px !important;
+		background-image: url(/images/lang/en/actionsGeneral.png);
+		}

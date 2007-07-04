@@ -1,0 +1,106 @@
+#! /usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require File.dirname(__FILE__) + "/../config/environment.rb"
+require 'joyent_job/job'
+
+def master
+  DRb::DRbObject.new(nil, "druby://#{JoyentConfig.joyent_job_host}:#{JoyentConfig.joyent_job_port}")
+end
+
+def logger
+  @logger ||= Logger.new("#{RAILS_ROOT}/log/joyent_job.log")
+end
+
+def add_dummy_jobs(n)
+  JoyentJob::Job.server=master
+  1.upto(n.to_i) do |i|
+    JoyentJob::Job.new(Person, i, :save ).submit
+  end
+end
+
+def stop_workers
+  pids = Dir["#{RAILS_ROOT}/log/joyent_job.worker-*.pid"].map{|f| File.read(f).strip.to_i}
+  pids.each do |pid|
+    # if only I could avoid variables with something like String#act
+    msg = "Stopping JoyentJob worker (#{pid})"
+    puts msg
+    logger.error(msg)
+    begin
+      Process.kill(9, pid)
+    rescue => exception
+      msg = "Unable to shut down #{pid}, removing pid file"
+      puts msg
+      logger.error(msg)
+    end
+    FileUtils.rm("#{RAILS_ROOT}/log/joyent_job.worker-#{pid}.pid")
+  end
+end
+
+def start_worker(count)
+  logger.info "Starting Worker"
+  count.to_i.times do
+    fork do
+      stdin  = open '/dev/null', 'r'
+      stdout = open '/dev/null', 'w'
+      stderr = open '/dev/null', 'w'
+      STDIN.reopen stdin
+      STDOUT.reopen stdout
+      STDERR.reopen stderr
+      p = Process.pid
+      File.open("#{RAILS_ROOT}/log/joyent_job.worker-#{p}.pid", 'w+'){|f| f.write(p)}
+      $0 = "joyent_job_worker"
+      JoyentJob::Worker.new(master, logger).work
+    end
+  end
+  exit!
+end
+
+def stop_server
+  puts "Shutting down JoyentJob"
+  master.shut_down rescue nil
+  FileUtils.rm "#{RAILS_ROOT}/log/joyent_job.pid" rescue nil
+end
+
+def start_server
+  logger.info "Starting Joyent Job"
+  puts "Starting Joyent Job"
+  fork do
+    stdin  = open '/dev/null', 'r'
+    stdout = open '/dev/null', 'w'
+    stderr = open '/dev/null', 'w'
+    STDIN.reopen stdin
+    STDOUT.reopen stdout
+    STDERR.reopen stderr
+    $0 = 'joyent_job'
+    DRb.start_service "druby://#{JoyentConfig.joyent_job_host}:#{JoyentConfig.joyent_job_port}", JoyentJob::Server.new(logger)
+    File.open("#{RAILS_ROOT}/log/joyent_job.pid", 'w+'){|f| f.write(Process.pid)}
+    DRb.thread.join
+  end and exit!
+end
+
+case ARGV[0]
+when 'start' 
+  start_server
+when 'stop'
+  stop_workers
+  stop_server
+when 'status'
+  puts master.status_string
+when 'start_worker'
+  start_worker(ARGV[1] || 3)
+when 'stop_workers'
+  stop_workers
+when 'add_dummy_jobs'
+  add_dummy_jobs(ARGV[1] || 5)
+else
+  $stderr.puts "Sorry, no idea what you mean by #{ARGV[0]}"
+end

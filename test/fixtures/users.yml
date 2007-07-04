@@ -1,0 +1,81 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian:
+  id: 1
+  person_id: 1
+  identity_id: 1
+  organization_id: 1
+  username: ian
+  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password_sha1: fill me in
+  full_name: Ian Kevin Curtis
+  recovery_email: ian@something.com
+  documents_id: 1
+  admin: true
+
+peter:
+  id: 2
+  person_id: 2
+  identity_id: 1
+  organization_id: 1
+  documents_id: 5
+  username: peter
+  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password_sha1: fill me in
+  full_name: Peter Hook
+  admin: false
+
+bernard:
+  id: 5
+  person_id: 12
+  identity_id: 3
+  organization_id: 1
+  documents_id: 5
+  username: bernard
+  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password_sha1: fill me in
+  full_name: Bernard Sumner
+  admin: false
+
+jason:
+  id: 3
+  person_id: 4
+  identity_id: 1
+  organization_id: 2
+  documents_id: 7
+  username: jason
+  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password_sha1: fill me in
+  full_name: Jason Hoffman
+  admin: true
+
+user_with_restrictions:
+  id: 4
+  person_id: 7
+  identity_id: 5
+  organization_id: 2
+  documents_id: 9
+  username: uwr
+  password: "LYztEp0YbD2BYC9wAU3gsw==\n" # nothing you can use
+  password_sha1: fill me in
+  admin: true
+  full_name: Some Guy
+
+guest:
+  id: 6
+  person_id: 13
+  identity_id: 5
+  organization_id: 1
+  username: guest
+  password: "qPM1/HI/l7GFbq4cPTfs1w==\n" # guest
+  password_sha1: fill me in
+  admin: false
+  guest: true
+  full_name: Im JustaGuest

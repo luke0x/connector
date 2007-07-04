@@ -1,0 +1,112 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) --------------------------------------------- */
+
+	.actionRefreshAll a.disabled, .actionRefreshAll a:hover.disabled {
+		background-position: -0px 0px;
+	}
+	.actionRefreshAll a {
+		background-position: -0px -30px;
+	}
+	.actionRefreshAll a:hover {
+		background-position: -0px -60px;
+	}
+	.actionRefreshAll a:active, .actionRefreshAll a.active {
+		background-position: -0px -90px;
+	}
+
+	.actionCollapseAll a.disabled, .actionCollapseAll a:hover.disabled {
+		background-position: -150px 0px;
+	}
+	.actionCollapseAll a {
+		background-position: -150px -30px;
+	}
+	.actionCollapseAll a:hover {
+		background-position: -150px -60px;
+	}
+	.actionCollapseAll a:active, .actionCollapseAll a.active {
+		background-position: -150px -90px;
+	}
+
+	.actionExpandAll a.disabled, .actionExpandAll a:hover.disabled {
+		background-position: -300px 0px;
+	}
+	.actionExpandAll a {
+		background-position: -300px -30px;
+	}
+	.actionExpandAll a:hover {
+		background-position: -300px -60px;
+	}
+	.actionExpandAll a:active, .actionExpandAll a.active {
+		background-position: -300px -90px;
+	}
+
+/* sidebar -------------------------------------------------- */
+
+	#connect .smartGroup {		
+		background-image: url(/images/icons/groupFolderSmart.png);
+		}
+	#connect .group {		
+		background-image: url(/images/icons/groupFolder.png);
+		}
+	#connect .group.subscription {
+		background-image: url(/images/icons/groupFolderSubscription.png);
+		}
+
+/* Item View ------------------------------------------- */
+
+	#connect #contentPane dt+dd {
+		margin-top:1em;
+	}
+	#connect #contentPane dd+dt {	
+		margin-top:1em;
+	}
+	#connect #contentPane dt {
+		width:11em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin:0px 0 0 0;
+	}
+	#connect #contentPane dd {
+		margin:0px 0 0px 12em;
+		padding:0;
+	}
+
+	#report_list .report {
+		margin: 0 0 1em 0;
+	}
+
+	#connect pre {
+		font-family: "Lucida Grande", Verdana, sans-serif;
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+	}
+
+	div.lightning table {
+		margin-bottom: 20px;
+	}
+	
+	div.lightning h2 {
+		font-size: 18px;
+		padding-bottom: 10px;
+	}
+	
+	div.lightning h3 {
+		padding-bottom: 10px;
+	}
+	
+	div.lightning p {
+		padding-bottom: 10px;
+	}
+
+  div.lightning a {
+    text-decoration: underline;
+  }

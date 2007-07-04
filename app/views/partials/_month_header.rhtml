@@ -1,0 +1,38 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # use with render_month_header -%>
+
+<div>
+	<ul class="reportBoxHeader">
+    <li>
+      <strong><%= title %></strong>
+      &bull;
+      <%= month_view.events.length + month_view.others_events_length %>
+      <%= _('events') -%>
+    </li>
+		<li class="right arrowNext">
+      <%= link_to '&gt;', {:date => "#{month_view.date.month == 12 ? month_view.year + 1 : month_view.year}-#{(month_view.date.month % 12) + 1}-01"}, {:title => _('Next Month')} %>
+	  </li>
+		<li class="right">
+  	  <select id="paginatorSelect" onchange="window.location = '<%= jump_url %>'.sub('jump_url_page_number', $('paginatorSelect').value);">
+      <% 25.times do |i| -%>
+        <% i = i - 12 -%>
+        <% i_month = month_view.date >> i -%>
+        <option<%= ' selected="selected"' if i == 0 %> value="<%= "#{i_month.year}-#{i_month.month}-01" %>">
+          <%= Date::MONTHNAMES[i_month.month] + ' ' + i_month.year.to_s %>
+        </option>
+      <% end -%>
+      </select>
+		</li>
+		<li class="right arrowPrev">
+      <%= link_to '&lt;', {:date => "#{month_view.date.month == 1 ? month_view.year - 1 : month_view.year}-#{month_view.date.month == 1 ? 12 : month_view.date.month - 1}-01"}, {:title => _('Previous Month')} %>
+	  </li>
+	</ul>
+</div>

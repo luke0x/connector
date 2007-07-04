@@ -1,0 +1,617 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+# This program is used for importing orgs from the existing (version 1) 
+# joyent.net version of our codebase into this new code base.
+                
+unless ARGV.size == 2
+  puts "usage: ./import [<path_to_dir> | <path_to_file] [users | data]"
+  puts "       - a directory path will look for all .xml files in the given directory"
+  puts "         OR a file path will import the provided file"  
+  puts "       - the mode, either 'users' or 'data'"
+  exit
+end
+
+unless ['users', 'data'].include?(ARGV[1])
+  puts "Error: mode must be either 'users' or 'data'"
+  exit
+end
+
+require File.dirname(__FILE__) + '/../config/boot'  
+require "#{RAILS_ROOT}/config/environment"
+require 'rexml/document'   
+require 'base64' 
+
+# BE SURE TO RECORD A TIMESTAMP FOR EVERYTHING THAT NEEDS IT
+ActiveRecord::Base.record_timestamps = false
+UserObserver.new_user_email          = false
+
+# Determine all of the files that need to be imported
+files_paths_to_import = []
+
+if File.directory?(ARGV[0]) 
+  ARGV[0] += '/' unless ARGV[0][-1,1] == '/'
+  files_paths_to_import += Dir.glob("#{ARGV[0]}*.xml")
+elsif File.exists?(ARGV[0])
+  files_paths_to_import << ARGV[0]
+end 
+ 
+
+# BEGIN HELPER METHODS 
+@log_depth=0
+def log(text)                     
+  if block_given?                                      
+    @log_depth += 1
+    puts "#{'.'*@log_depth}#{text} creation."    
+    value = yield
+    puts "#{'.'*@log_depth}#{text} creation completed."  
+    @log_depth -= 1
+  else
+    puts text
+  end       
+  value
+end             
+           
+def extract_fields(element, fields, params={})
+  fields.inject(params){|params, field| params[field] = element.elements[field.to_s].text; params}
+end       
+
+def parse_uid_mappings
+  filename = "#{Organization.current.system_domain.email_domain}-mail_maps.txt"
+
+  @user_mailbox_maps   = {}
+  current_mailbox_map  = nil
+  current_uid_mappings = nil 
+  current_uid_map      = nil
+  current_old_mailbox  = nil
+  
+  if File.exists?(filename)
+    IO.readlines(filename).each do |line| 
+      key, value = line.split(':')
+      value.strip!         
+    
+      case key
+        when 'org'
+        when 'user'
+          current_mailbox_map, current_uid_mappings = @user_mailbox_maps[value] ||= [{}, {}]
+        when 'old_mailbox'                                               
+          # creating a hash for old uid mappings
+          current_uid_map     = current_uid_mappings[value] ||= {}        
+          current_old_mailbox = value
+        when 'new_mailbox'
+          # mapping old name to new
+          current_mailbox_map[current_old_mailbox] ||= value
+        when 'msg'
+          old_uid, new_uid = value.split
+          current_uid_map[old_uid.to_i] ||= new_uid.to_i
+      end  
+    end    
+  end  
+end
+
+def old_uid_to_new_uid(old_mailbox, old_uid)
+  uid_map = @user_mailbox_maps[User.current.username][-1][old_mailbox]
+  uid_map ? uid_map[old_uid.to_i] : nil
+end 
+
+def old_mailbox_to_new_mailbox(old_mailbox)
+  @user_mailbox_maps[User.current.username][0][old_mailbox]
+end
+
+def add_notifications(item, element)
+  log('notifications') do
+    fields = [:notifier, :notifiee, :updated_at, :created_at]
+    element.elements.each('notification') do |notification_element|
+      params = extract_fields(notification_element, fields)
+    
+      notifiee = @users[params[:notifiee].downcase]
+      params.delete(:notifiee)
+                                                 
+      params[:organization] = Organization.current                                    
+      params[:item]         = item
+      params[:notifier]     = @users[params[:notifier].downcase] 
+      params[:message]      = ''
+    
+      notifiee.notifications.create(params)
+    end   
+    item.notifications(true)
+    item.save!
+  end
+end   
+
+def add_comments(item, element)    
+  log('comments') do
+    fields = [:username, :body, :updated_at, :created_at]
+    params = {:commentable => item}
+    element.elements.each('comment') do |comment_element|
+      extract_fields(comment_element, fields, params)
+      
+      commenter = @users[params[:username].downcase]
+      params.delete(:username) 
+      
+      commenter.comments.create(params)
+    end 
+    item.comments(true)
+    item.save!                       
+  end
+end     
+
+def add_tags(item, element)
+  log('tags') do
+    fields = [:username, :tag]
+    element.elements.each('tag') do |tag_element|
+      params = extract_fields(tag_element, fields)
+      
+      @users[params[:username].downcase].tag_item(item, params[:tag])  
+    end        
+    item.tags(true)
+    item.taggings(true)
+    item.save!
+  end                                                       
+end       
+
+def add_permissions(item, element) 
+  log('permissions') do     
+    fields = [:restricted_to]
+    element.elements.each('permission') do |perm_element|
+      params = extract_fields(perm_element, fields)
+      
+      item.add_permission(@users[params[:restricted_to].downcase])
+    end 
+    item.permissions(true)
+    item.save!
+  end
+end       
+            
+@recurrence_descriptions = RecurrenceDescription.find(:all).inject({}){|hash, recur| hash[recur.name.downcase.to_sym] = recur; hash} 
+
+def create_calendar(element, parent=nil) 
+  log('calendar') do
+    fields          = [:name, :created_at, :updated_at]
+    params          = extract_fields(element, fields)          
+    params[:parent] = parent
+                      
+    # See if this calendar already exists (could have been created automatically upon user creation)
+    calendar        = Calendar.find(:first, :conditions => ["user_id = ? and name = ? and parent_id #{parent ? ' = ' + parent.id.to_s : 'is null'}",
+                                                            User.current.id, 
+                                                            params[:name]])
+                                                            
+    if calendar
+      # Need to make sure we force the updated/created at times
+      calendar.update_attributes(params)
+    else
+      calendar = User.current.calendars.create(params)
+    end
+        
+    add_permissions(calendar, element)
+        
+    element.elements.each('event') do |event_element|
+      log('event') do
+        fields = [:name, :location, :notes, :start_time, :duration, :all_day, :recur_end_time, :recur_rule, :created_at, :updated_at]
+        params = extract_fields(event_element, fields)
+    
+        params[:organization] = Organization.current
+        params[:end_time]     = params[:all_day] == 'true' ? params[:start_time].to_time + 1.minute : params[:start_time].to_time + params[:duration].to_i
+        params.delete(:duration) 
+        
+        # This is a little weak, but since we didn't accept anything more than this in the past
+        # we definitely aren't losing functionality.  The worst that could happen is that the 
+        # pattern is more complex than just 'weekly' and we just call it weekly
+        params[:recurrence_description] = case params[:recur_rule]
+          when /daily/i       then @recurrence_descriptions[:daily]
+          when /weekly/i      then @recurrence_descriptions[:weekly]
+          when /fortnightly/i then @recurrence_descriptions[:fortnightly]
+          when /monthly/i     then @recurrence_descriptions[:monthly]
+          when /yearly/i      then @recurrence_descriptions[:yearly]  
+          else nil
+        end                   
+    
+        params.delete(:recur_rule)
+        event = User.current.events.create(params)
+        raise "Problem creating Event with (#{params.inspect}): #{event.errors.inspect}" if event.new_record?
+        calendar.add_event(event)
+    
+        add_notifications(event, event_element)
+        add_comments(event, event_element)
+        add_tags(event, event_element)
+        add_permissions(event, event_element)
+           
+        # In order to appropriately deal with accepted invitations, we need to first 
+        # make sure the notification appears for the individual (which will create the 
+        # invitation implicitly.)  Then we need to accept the invitation.
+        event_element.elements.each('accepted_invitation') do |accepted_by_element|
+          user         = @users[accepted_by_element.text.downcase]                          
+          raise "User: #{accepted_by_element.text} does not exist" unless user
+
+          notification = user.find_notification_for(event) || user.notify_of(event, event.owner)
+          invitation   = event.invitation_for(user)
+          raise "An invitation for #{user.username} should exist on event '#{event.inspect}'" unless invitation
+
+          user_calendar   = user.calendars.first
+          raise "User #{user.username} should have at least one calendar" unless user_calendar
+          
+          invitation.accept!(user_calendar)
+        end                                                 
+      end 
+    end
+    
+    # Get child calendars
+    element.elements.each('calendar') do |cal_element|
+      create_calendar(cal_element, calendar)  
+    end
+  end
+end
+
+def create_mailbox(mailbox_element, parent_mailbox_name = nil)
+  log('mailbox') do 
+    mailbox_name  = mailbox_element.elements['name'].text
+    old_full_name = [parent_mailbox_name, mailbox_name].compact.join('/')
+    old_full_name = "INBOX" if old_full_name =~ /^inbox$/i 
+    new_full_name = old_mailbox_to_new_mailbox(old_full_name)
+    
+    # find, don't create
+    mailbox = User.current.mailboxes.find_by_full_name(new_full_name)
+    if !mailbox.blank?
+      add_permissions(mailbox, mailbox_element)
+
+      mailbox_element.elements.each('message') do |message_element|
+        log('message') do
+          old_uid = message_element.elements['uid'].text
+          new_uid = old_uid_to_new_uid(old_full_name, old_uid)
+          
+          if new_uid 
+            begin    
+              pis = ProductionImapSystem.new(User.current) 
+              pis.login(false)                                            
+            
+              # Get the imap_message
+              pis.send(:examine_mailbox, mailbox.full_name)
+              imap         = pis.instance_variable_get('@imap')
+              imap_message = imap.uid_fetch(new_uid, '(INTERNALDATE BODYSTRUCTURE FLAGS ENVELOPE RFC822.SIZE BODY[1])').first 
+              message      = pis.send(:create_and_tag, imap_message, mailbox) 
+              pis.logout
+            rescue => e
+              log("ERROR Contacting IMAP: #{e.message}")
+              retry  
+            end
+          end
+         
+          if !message.blank?                                                 
+            add_notifications(message, message_element)
+            add_comments(message, message_element)
+            add_tags(message, message_element)
+            add_permissions(message, message_element)
+          end
+        end
+      end
+    end
+    
+    # albeit odd, if the parent does not exist, it may be possible that the children exist
+    # create child mailboxes
+    mailbox_element.elements.each('mailbox') do |m_element|
+      create_mailbox(m_element, old_full_name)
+    end
+  end
+end
+
+def add_to_person(person, element, element_name, fields)
+  element.elements.each(element_name){|sub_element| person.send(element_name.pluralize).create(extract_fields(sub_element, fields))}  
+end
+                     
+def create_person(element, unsaved_user=nil)
+  log('person') do
+    fields = [:name_prefix, :first_name, :middle_name, :last_name, :name_suffix, :nickname, 
+              :company_name, :title, :time_zone, :notes, :created_at, :updated_at]  
+    params = extract_fields(element, fields)               
+    params[:organization] = Organization.current                                      
+     
+    if unsaved_user == nil
+      # This is a regular contact             
+      params[:contact_list] = User.current.contact_list
+      person                = User.current.people.create(params)           
+    else  
+      # Need to disable search because there is no user id  
+      SearchObserver.enabled = false                     
+      person = Person.new(params)
+      person.save(false)
+      SearchObserver.enabled = true
+      
+      # We need to write the email addresses early for a user because otherwise we may get
+      # duplicates for their domains
+      add_to_person(person, element, 'email_address', [:preferred, :email_type, :email_address]) 
+      
+      unsaved_user.person    = person
+      unsaved_user.full_name = person.full_name
+      unsaved_user.save
+      
+      person.owner           = unsaved_user    
+      person.save
+    end
+      
+    add_to_person(person, element, 'email_address', [:preferred, :email_type, :email_address]) unless unsaved_user
+    add_to_person(person, element, 'im_address',    [:preferred, :im_type, :im_address])
+    add_to_person(person, element, 'address',       [:preferred, :address_type, :street, :city, :state, :postal_code, :geocode, :country_name])
+    add_to_person(person, element, 'phone_number',  [:preferred, :phone_number_type, :phone_number])                                                                            
+    add_to_person(person, element, 'website',       [:preferred, :site_title, :site_url])                                                                                                
+    add_to_person(person, element, 'special_date',  [:preferred, :description, :special_date])                          
+  
+    # Save one last time to get the 'preferred' defaults in place                                                     
+    person.save  
+    
+    # Add the icon if there is one
+    # need to pull out the type and the Base64 content
+    if icon = element.elements['icon']
+      type    = icon.elements['type'].text || 'jpg'
+      content = icon.elements['data'].cdatas.first.to_s
+      if !content.blank?
+        person.add_icon(Base64.decode64(content), type)
+      end  
+    end
+    
+    person
+  end  
+end    
+                                               
+# We will create new folders, but not new files, since a file needs to have a representation on disk
+def create_folder(element, parent=nil)
+  log('folder') do
+    fields          = [:name, :created_at, :updated_at]
+    params          = extract_fields(element, fields)    
+    params[:parent] = parent
+    
+    folder = User.current.folders.find(:first, :conditions => ["name = ? and parent_id #{parent ? ' = ' + parent.id.to_s : 'is null'}", params[:name]])
+                                               
+    if folder                                                                         
+      # Need to make sure we force the updated/created at times
+      folder.update_attributes(params)
+    else                                       
+      folder = User.current.folders.create(params)
+    end
+    
+    add_permissions(folder, element)
+    log('file') do                                
+      element.elements.each('joyent_file') do |file_element|
+        fields = [:filename, :notes, :created_at, :updated_at]
+        params = extract_fields(file_element, fields)
+        file   = folder.joyent_files.find_by_filename(params[:filename])
+
+        if file                        
+          # Need to make sure we add the notes, and the created/updated stamps
+          file.update_attributes(params)      
+
+          add_notifications(file, file_element)
+          add_comments(file, file_element)
+          add_tags(file, file_element)
+          add_permissions(file, file_element)                                   
+        end
+      end
+    end
+        
+    # Get nested folders
+    element.elements.each('folder') do |sub_element|
+      create_folder(sub_element, folder)
+    end
+  end
+end
+
+# preload sgad into a hash indexed by sgd name + ~'attribute name'
+@smart_group_attribute_descriptions = SmartGroupAttributeDescription.find(:all).inject({}) do |hash, sgad|
+  hash[sgad.smart_group_description.name] ||= {}
+  attribute_name = sgad.attribute_name || 'all'
+  hash[sgad.smart_group_description.name][attribute_name] = sgad
+  hash  
+end
+
+# nil means this is invalid, don't create it
+def smart_group_attribute_description(smart_group_description_name, type)
+  return nil if type == 'item_type' and smart_group_description_name != 'All Items'
+  return nil if type == 'nickname'
+  return nil if type == 'username'
+
+  attributes = @smart_group_attribute_descriptions[smart_group_description_name]
+
+  converted_type = case type
+    when 'owner.username' then 'owner_name'
+    when 'item_type.name' then 'item_type'
+    when '*'              then 'all'
+    when 'sent_date'      then 'date'
+    when 'from', 'status', 'subject', 'to', 'location', 'name', 'company_name', 'first_name', 'full_name', 'last_name', 'filename' then type
+    else
+      log "Unknown smart group type: #{type} (#{smart_group_description_name})"
+      return nil
+  end
+
+  attributes[converted_type]
+end
+
+
+# END HELPER METHODS
+
+
+log "Organizations will be imported into the '#{RAILS_ENV}' environment.\n\n"
+
+
+# Import each file, one at a time
+files_paths_to_import.each do |file_path| 
+  log "Importing organization '#{ARGV[1]}' from file '#{file_path}'..."
+  begin
+    doc = REXML::Document.new(File.new(file_path))
+
+    if ARGV[1] == 'users'
+      # Create the organization 
+      raise "Document must have an 'organization' root element."  if doc.root.name != 'organization'
+      log('organization') do
+        name                 = doc.elements['organization/name'].text 
+        active               = false
+        Organization.current = Organization.create(:name => name, :active => active) 
+      end
+      
+      # Create the quota
+      log('quota') do      
+        users_quota    = doc.elements['organization/quota/users'].text.to_i
+        disk_quota     = doc.elements['organization/quota/disk'].text.to_i
+        custom_domains = true # NONXML
+        Organization.current.create_quota(:users => users_quota, :gigabytes => disk_quota, :custom_domains => true)  
+      end
+                  
+      # Create the domains 
+      log('domains') do  
+        fields = [:email_domain, :web_domain, :system_domain, :primary]
+        doc.elements.each('organization/domain') do |element|          
+          params = extract_fields(element, fields)              
+          Organization.current.domains.create(params)
+        end            
+      end  
+      
+      # Make sure we sync to ldap
+      Organization.current.sync_to_ldap 
+                   
+      # Create the users   
+      # Not going to track the first user in the new app
+      log('users') do
+        doc.elements.each('organization/user') do |element|
+          fields = [:username, :password, :admin] 
+          params = extract_fields(element, fields)
+          params[:organization] = Organization.current
+          params[:username].downcase!   
+          unsaved_user          = User.new(params)
+        
+          create_person(element.elements['user_person'], unsaved_user)       
+        end                                                
+      end                                                             
+    end
+
+    if ARGV[1] == 'data'
+      # Create the comments, notifcations, tags/taggings on each user_person
+      log('users data') do 
+        # load the organization
+        raise "Document must have an 'organization' root element."  if doc.root.name != 'organization'
+        log('organization') do
+          email_domain         = doc.elements['organization/domain/email_domain'].text 
+          domain               = Domain.find_by_email_domain(email_domain)
+          Organization.current = domain.organization   
+          @users = Organization.current.users.inject({}){|hash, user| hash[user.username] = user; hash}
+        end
+            
+        # We need to set up the uid mappings for mail so we can work with them
+        parse_uid_mappings
+        
+        doc.elements.each('organization/user') do |element|
+          username     = element.elements['username'].text 
+          User.current = @users[username.downcase]
+
+          # Additional information on the user_person element       
+          user_person_element = element.elements['user_person']
+          add_tags(User.current.person, user_person_element)
+          add_comments(User.current.person, user_person_element)                                                                                                          
+          add_notifications(User.current.person, user_person_element) 
+          add_permissions(User.current.person, user_person_element)                     
+
+          # Get calendars & events
+          element.elements.each('calendar') do |cal_element|
+            create_calendar(cal_element)
+          end 
+        
+          # Get contacts
+          contact_list_element = element.elements['contact_list']
+          add_permissions(User.current.contact_list, contact_list_element)    
+        
+          contact_list_element.elements.each('contact') do |contact_element|
+            person = create_person(contact_element)  
+
+            add_tags(person, contact_element)
+            add_comments(person, contact_element)                                                                                                          
+            add_notifications(person, contact_element) 
+            add_permissions(person, contact_element)
+          end
+                                                               
+          # Folders & files 
+          element.elements.each('folder') do |folder_element| 
+            create_folder(folder_element)  
+          end         
+                
+          # Get mailboxes & mail
+          element.elements.each('mailbox') do |mailbox_element|
+            create_mailbox(mailbox_element)
+          end
+        
+          # Import the smart groups 
+          element.elements.each('smart_group') do |smart_group_element|
+            log('smart group') do
+              # load stuff up
+              fields = [:name, :accept_any, :app_name]
+              params = extract_fields(smart_group_element, fields)
+
+              params[:smart_group_description] = SmartGroupDescription.find_by_application_name(params[:app_name])
+              params.delete(:app_name)
+                                                  
+              params[:tags] = []
+              smart_group_element.elements.each('keyword_tag') do |tag_element|
+                params[:tags] << tag_element.text  
+              end
+
+              # filter special conditions before we create a smart group to make sure we still should
+              valid_special_conditions = []
+              smart_group_element.elements.each('special_condition') do |sc|
+                sgad = smart_group_attribute_description(params[:smart_group_description].name, sc.elements['type'].text)
+                valid_special_conditions << sc unless sgad.blank?
+              end
+
+              # see if we should skip this group
+              next if valid_special_conditions.empty? and params[:tags].empty?
+          
+              smart_group = User.current.smart_groups.create(params)
+          
+              # create the special conditions
+              valid_special_conditions.each do |sc|
+                fields = [:type, :value]
+                params = extract_fields(sc, fields) 
+
+                params[:smart_group_attribute_description] = smart_group_attribute_description(smart_group.smart_group_description.name, params[:type])
+                params.delete(:type)
+
+                # transform the value for mail status + item type
+                if params[:smart_group_attribute_description].name == 'Status'
+                  params[:value] = case params[:value].downcase
+                    when 'unread'    then 'Unread'
+                    when 'replied'   then 'Replied'
+                    when 'flagged'   then 'Flagged'
+                    when 'draft'     then 'Draft'
+                    when 'forwarded' then 'Forwarded'
+                    when 'read'      then 'Read'
+                    when 'deleted'   then 'Flagged' # this is intentionally totally wrong, they can just change it since we don't support this anymore
+                  end
+                elsif params[:smart_group_attribute_description].name == 'Item Type'
+                  params[:value] = case params[:value].downcase
+                    when 'account'    then 'Person'
+                    when 'event'      then 'Event'
+                    when 'joyentfile' then 'JoyentFile'
+                    when 'message'    then 'Message'
+                    else
+                      'Unknown'
+                  end
+                end
+
+                smart_group.smart_group_attributes.create(params)
+              end    
+            end
+          end
+        end    
+      end
+    end
+
+    log("Import of '#{ARGV[1]}' complete.\n\n")
+  rescue => e 
+    puts "ERROR: Unable to process file '#{file_path}'. (#{e.message})"    
+    puts e.backtrace
+    SearchObserver.enabled = true
+  end
+end  

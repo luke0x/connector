@@ -1,0 +1,143 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require 'rubygems'
+require 'cmd'
+require 'net/imap' # may switch to joyent_imap, but I don't want joyent_imap
+                   # to become too general.
+
+class ImapShell < Cmd
+  doc :login, "Log in to an imapd (ex: login myhost.com username password)"
+  def do_login(args)
+    host, user, pass = args.to_s.split(/, +/)
+    @imap = Net::IMAP.new(host)
+    @imap.login(user, pass)
+    puts "Logged in to #{host} as #{user}"
+  end
+  
+  def do_logout
+    @imap.logout if @imap
+    @imap = nil
+    puts 'Logged out'
+  end
+  
+  def do_ls(args)
+    return unless check_login
+    
+    if args.nil? && @selected_folder.nil?
+      # Use INBOX *
+      print_folders @imap.list('INBOX', '*')
+    elsif args.nil?
+      # Use selected folder
+      @imap.search(["ALL"]).each do |message_id|
+        envelope = @imap.fetch(message_id, "ENVELOPE")[0].attr["ENVELOPE"]
+        puts "  #{message_id}: \t#{envelope.subject}"
+      end    
+    else
+      # Use the folder given
+      puts args
+    end
+  end
+  
+  def do_select(args)
+    return unless check_login
+    
+    if args.nil?
+      puts 'Select a folder.'
+      return
+    end
+    
+    @imap.select args
+    @selected_folder = args
+  end
+  
+  def do_rm(args)
+    return unless check_login
+    return unless check_selected
+    
+    set = case args
+    when /\d+\.\.\.?\d+/
+      eval args
+    when /, /
+      eval "[#{args}]"
+    else
+      args.to_i
+    end
+    @imap.store(set, "+FLAGS", [:Deleted])
+  end
+  
+  def do_expunge
+    return unless check_login
+    return unless check_selected
+    @imap.expunge
+  end
+  
+  def do_delete(mailbox)
+    return unless check_login
+    @imap.delete(mailbox)
+  end
+  
+  def do_create(mailbox)
+    return unless check_login
+    mb = if @selected_folder
+      "#{@selected_folder}.#{mailbox}"
+    else
+      mailbox
+    end
+    @imap.create(mb)
+  end
+  
+  prompt_with :set_prompt
+  
+  protected
+  def setup
+    @selected_folder = nil
+    @imap            = nil    
+  end
+  
+  def postloop
+    unless @imap.nil?
+      @imap.logout
+      puts 'Logged out'
+    end
+  end
+  
+  def set_prompt
+    if @imap
+      (@selected_folder || 'INBOX') + '> '
+    else
+      'ImapShell> '
+    end
+  end
+  
+  private
+  def check_login
+    if @imap.nil?
+      puts "Please log in first"
+      return false
+    end
+    true
+  end
+  
+  def check_selected
+    if @selected_folder.nil?
+      puts 'Select a folder.'
+      return false
+    end
+    true
+  end
+  
+  def print_folders(folders)
+    folders.each { |f| puts "  #{f.name}" }
+  end
+end
+
+ImapShell.new.cmdloop

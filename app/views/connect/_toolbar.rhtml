@@ -1,0 +1,20 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+	<% if @toolbar[:new_notifications] -%>
+		<li class="actionShowNew"><%= link_to _('Show New'), connect_notifications_url %></li>
+	<% end -%>
+	<% if @toolbar[:all_notifications] -%>
+		<li class="actionShowAll"><%= link_to _('Show All'), connect_notifications_url(:all => '') %></li>
+	<% end -%>
+	<% if @toolbar[:save_search] -%>
+		<li class="actionSaveSearch"><%= link_to _('Save Search'), {:action => 'save_search', :search_string => params[:search_string]}, {:title => _("Save this search for %{i18n_params_string} as a smart group")%{:i18n_params_string => "'#{params[:search_string]}'"}} %></li>
+	<% end -%>
+</ul>

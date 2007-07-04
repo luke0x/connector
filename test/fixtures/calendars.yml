@@ -1,0 +1,48 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+concerts:
+  id: 1
+  user_id: 1
+  organization_id: 1
+  name: Concerts
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+  
+anotherthing:
+  id: 2
+  user_id: 1
+  organization_id: 1
+  name: Another thing
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+
+anotherthingchild:
+  id: 5
+  user_id: 1
+  organization_id: 1
+  name: Another thing child
+  parent_id: 2
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+
+noevents:
+  id: 4
+  user_id: 1
+  organization_id: 1
+  name: Aint no events on this guy 
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+
+peter:
+  id: 3
+  user_id: 2
+  organization_id: 1
+  name: Yeah baby
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>

@@ -1,0 +1,32 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Login  ----------------------------------------------------------------- */
+
+	#Login #contentPane {
+		background-image: url(/images/bg/loginBGCorel.png) !important;
+	}
+
+/* Dock  ----------------------------------------------------------------- */
+		
+	.dockConnect a { 
+		background-position: -1200px -76px !important;
+		}
+	.dockConnect a:hover { 
+		background-position: -1200px -114px !important;
+		}
+	#connect .dockConnect a {	
+		background-position: -1200px 0px !important;
+		}
+	#connect .dockConnect a:hover {	
+		background-position: -1200px -38px !important;
+		}
+	.dockConnect a.disabled { 
+		background-position: -1200px -152px !important;
+		}

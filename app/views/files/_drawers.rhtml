@@ -1,0 +1,25 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="Drawers">
+  <% if @toolbar[:copy] -%>
+		<% if @view_kind == 'strongspace' -%>
+    	<div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => [User.current.strongspace_folder], :selected => @folder} %></div>
+		<% else -%>
+			<div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => User.current.folders.select{|f| f.parent.blank?}, :selected => @folder} %></div>
+    <% end -%>
+  <% end -%>
+  <% if @toolbar[:move] -%>
+		<% if @view_kind == 'strongspace' -%>
+    	<div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => [User.current.strongspace_folder], :selected => @folder} %></div>
+		<% else -%>
+    	<div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => User.current.folders.select{|f| f.parent.blank?}, :selected => @folder} %></div>
+		<% end -%>
+  <% end -%>
+</div>

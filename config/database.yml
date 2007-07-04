@@ -1,0 +1,35 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+development:
+  adapter: mysql
+  database: connector_development
+  username: username
+  password: password
+  host: localhost
+  socket: /tmp/mysql.sock
+  encoding: UTF8
+
+test:
+  adapter: mysql
+  database: connector_test
+  username: username
+  password: password
+  host: localhost
+  socket: /tmp/mysql.sock
+  encoding: UTF8
+
+production:
+  adapter: mysql
+  database: connector_production
+  username: username
+  password: password
+  host: localhost
+  socket: /tmp/mysql.sock
+  encoding: UTF8

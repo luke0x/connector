@@ -1,0 +1,26 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+  <% if group.owner == User.current -%>
+<% unless group.name == 'Strongspace' %>
+    <%= render :partial => 'sidebars/groups/strongspace_group_edit_rename',        :locals => { :group => group } %>
+    <%= render :partial => 'sidebars/groups/strongspace_group_edit_move',          :locals => { :group => group } %>
+<% end %>
+<%= render :partial => 'sidebars/groups/strongspace_group_edit_permissions',   :locals => { :group => group } %>
+
+<% unless group.name == 'Strongspace' %>
+    <%= render :partial => 'sidebars/groups/strongspace_group_edit_delete',        :locals => { :group => group } %>
+<% end %>
+    <hr />
+    <%= content %>
+  <% else -%>
+    <%= content %>
+  <% end -%>
+</div></div>

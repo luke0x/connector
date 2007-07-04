@@ -1,0 +1,60 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+  <% if @toolbar[:new] and ! @toolbar[:new_row] -%>
+  	<li class="actionNew"><%= link_to _('New'), new_list_url %></li>
+  <% end -%>
+	<% if @toolbar[:new_notifications] -%>
+		<li class="actionShowNew"><%= link_to _('Show New'), lists_notifications_url %></li>
+	<% end -%>
+	<% if @toolbar[:all_notifications] -%>
+		<li class="actionShowAll"><%= link_to _('Show All'), lists_notifications_url(:all => '') %></li>
+	<% end -%>
+	<% if @toolbar[:copy] -%>
+		<li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy');", {:id => 'actionCopyLink'} %></li>
+	<% end -%>
+	<% if @toolbar[:move] -%>
+		<li class="actionMove"><%= link_to_function _('Move'), "return Drawers.toggleBrowser('Move');", {:id => 'actionMoveLink'} %></li>
+	<% end -%>
+  <% if @toolbar[:delete] -%>
+		<li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
+  <% end -%>
+	<% if @toolbar[:import] -%>
+  	<li class="actionImport"><%= link_to_function _('Import OPML'), "return Drawers.toggle('ImportOPML')", {:id => 'actionImportOPMLLink'}; %></li>
+  <% end -%>
+  <% if @toolbar[:import_opml] -%>
+  	<li class="actionImport"><%= link_to _('Import OPML'), new_list_url %></li>
+  <% end -%>
+	<% # edit actions -%>
+  <% if @toolbar[:new_row] -%>
+    <li class="actionNewRow"><%= link_to_function _('New Row'), "ListRow.create();", {:id => 'actionNewRowLink'} %></li>
+  <% end -%>
+  <% if @toolbar[:undo] -%>
+    <li class="actionUndo"><%= link_to_function _('Undo'), "List.undo();" %></li>
+  <% end -%>
+	<% if @toolbar[:move_row] -%>
+	  <li class="actionMoveUp"><%= link_to_function _('Move Up'), "ListRow.moveUp();", {:id => 'actionMoveUpLink'} -%></li>
+	  <li class="actionMoveDown"><%= link_to_function _('Move Down'), "ListRow.moveDown();", {:id => 'actionMoveDownLink'} -%></li>
+	  <li class="actionOutdent"><%= link_to_function _('Outdent'), "ListRow.outdent();", {:id => 'actionOutdentLink'} -%></li>
+	  <li class="actionIndent"><%= link_to_function _('Indent'), "ListRow.indent();", {:id => 'actionIndentLink'} -%></li>
+	<% end -%>
+	<% if @toolbar[:delete_row] -%>
+	  <li class="actionDeleteRow"><%= link_to_function _('Delete'), "ListRow.destroy();", {:id => 'actionDeleteRowLink'} -%></li>
+  <% end -%>
+	<% if @toolbar[:edit] -%>
+	  <li class="actionAttributes"><%= link_to_function _('Edit'), "List.rememberDrawerValues(); return Drawers.toggle('Edit');", {:id => 'actionEditLink'} %></li>
+	<% end -%>
+	<% if @toolbar[:tools] -%>
+  	<li class="actionTools"><%= link_to_function _('Tools'), "return Drawers.toggle('Tools');", {:id => 'actionToolsLink'} %></li>
+  <% end -%>
+  <% if @toolbar[:new] and @toolbar[:new_row] -%>
+  	<li class="actionNew"><%= link_to _('New'), new_list_url %></li>
+  <% end -%>
+</ul>

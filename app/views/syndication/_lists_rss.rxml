@@ -1,0 +1,20 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+lists.each do |list|
+  xm.item do
+    xm.title list.name
+    xm.description render(:partial => "list", :locals => { :list => list })
+    xm.pubDate feed_date(list)
+    xm.guid list_url(list)
+    xm.link list_url(list)
+  end
+end

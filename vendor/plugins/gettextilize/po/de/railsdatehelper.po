@@ -1,0 +1,77 @@
+# German Language Joyent Connector Localization.
+# Copyright (C) 2007 Joyent, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Sebastian Niesen <sebastian@niesen.net>, 2007.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Rails Date Helper Gettextilize 1.0\n"
+"POT-Creation-Date: 2007-06-12 15:21+0200\n"
+"PO-Revision-Date: 2007-05-28 18:54+0200\n"
+"Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
+"Language-Team: Joyent i18n <pedro@joyent.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: lib/date_helper.rb:30 lib/date_helper.rb:36
+msgid "less than a minute"
+msgstr "weniger als eine Minute"
+
+#: lib/date_helper.rb:30 lib/date_helper.rb:37
+msgid "1 minute"
+msgstr "einer Minute"
+
+#: lib/date_helper.rb:32
+msgid "less than 5 seconds"
+msgstr "weniger als 5 Sekunden"
+
+#: lib/date_helper.rb:33
+msgid "less than 10 seconds"
+msgstr "weniger als 10 Sekunden"
+
+#: lib/date_helper.rb:34
+msgid "less than 20 seconds"
+msgstr "weniger als 20 Sekunden"
+
+#: lib/date_helper.rb:35
+msgid "half a minute"
+msgstr "eine halbe Minute"
+
+#: lib/date_helper.rb:40
+msgid "%s minutes"
+msgstr "%s Minuten"
+
+#: lib/date_helper.rb:41
+msgid "about 1 hour"
+msgstr "ungefähr eine Stunde"
+
+#: lib/date_helper.rb:42
+msgid "about %s hours"
+msgstr "ungefähr %s Stunden"
+
+#: lib/date_helper.rb:43
+msgid "1 day"
+msgstr "einem Tag"
+
+#: lib/date_helper.rb:44
+msgid "%s days"
+msgstr "%s Tagen"
+
+#: lib/date_helper.rb:45
+msgid "about 1 month"
+msgstr "ungefähr ein Monat"
+
+#: lib/date_helper.rb:46
+msgid "%s months"
+msgstr "%s Monate"
+
+#: lib/date_helper.rb:47
+msgid "about 1 year"
+msgstr "ungefähr ein Jahr"
+
+#: lib/date_helper.rb:48
+msgid "over %s years"
+msgstr "mehr als %s Jahre"

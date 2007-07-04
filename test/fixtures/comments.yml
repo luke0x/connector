@@ -1,0 +1,44 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_comment_ian_jpg:
+  id: 1
+  user_id: 1 # ian
+  body: Turbo hawt
+  commentable_id: 1 # ian_jpg
+  commentable_type: JoyentFile
+  created_at: <%= 20.minutes.ago.to_s(:db) %>
+  updated_at: <%= 20.minutes.ago.to_s(:db) %>
+
+peter_comment_ian_jpg:
+  id: 2
+  user_id: 2 # peter
+  body: hellz yea
+  commentable_id: 1 # ian_jpg
+  commentable_type: JoyentFile
+  created_at: <%= 15.minutes.ago.to_s(:db) %>
+  updated_at: <%= 15.minutes.ago.to_s(:db) %>
+
+ian_message_base_comment:
+  id: 3
+  user_id: 1
+  body: hey man nice shot
+  commentable_id: 2
+  commentable_type: Message
+  created_at: <%= 5.minutes.ago.to_s(:db) %>
+  updated_at: <%= 5.minutes.ago.to_s(:db) %>
+
+ian_message_first_comment:
+  id: 4
+  user_id: 1
+  body: hey man nice shot
+  commentable_id: 1
+  commentable_type: Message
+  created_at: <%= 5.minutes.ago.to_s(:db) %>
+  updated_at: <%= 5.minutes.ago.to_s(:db) %>

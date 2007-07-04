@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+  
+if ARGV.length != 1
+  puts "usage: ./tear_down_organization <domain>"
+  exit
+end                                       
+
+puts `#{File.dirname(__FILE__)}/organization_info #{ARGV[0]}` 
+
+print "\nAre you sure you want to destroy this org [no]? "
+$stdout.flush
+sure = $stdin.gets.strip                                              
+sure = 'no' unless sure.length > 0
+
+if sure == 'yes'  
+  begin                                                       
+    require File.dirname(__FILE__) + '/../config/boot'  
+    puts "\nLoading #{RAILS_ENV} environment.\n"
+    require "#{RAILS_ROOT}/config/environment"
+
+    org_domain   = Domain.find_by_email_domain(ARGV[0]) || Domain.find_by_web_domain(ARGV[0])
+    organization = org_domain.organization if org_domain
+
+    if organization.blank?
+      puts "#{ARGV[0]} is an invalid domain."  
+      exit
+    end    
+                   
+    if organization.active?
+      print "\nWould you like to deactivate it so that it can be destroyed [no]? "
+      $stdout.flush
+      deactivate = $stdin.gets.strip                                              
+      deactivate = 'no' unless deactivate.length > 0
+    end                                   
+
+    if deactivate == 'yes'    
+      organization.deactivate! 
+      puts "#{ARGV[0]} deactivated."
+    end
+  
+    if !organization.active?
+      organization.destroy        
+      puts "#{ARGV[0]} destroyed."
+    else
+      puts "\nAn active organization cannot be destroyed."  
+    end                                                    
+  rescue => e
+    puts e.message
+    puts "There was a problem while trying to destroy the organization."
+  end
+else
+  puts "\nNo changes have been made.  Tear down cancelled."  
+end

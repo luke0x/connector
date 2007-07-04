@@ -1,0 +1,40 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # cache(:action => "sidebar", :user_id => User.current.id, :group_id => controller.current_group_id) do %>
+  <div class="defaultGroups groups"><ul class="groupsList">
+    <%= render_default_group 'sidebars/groups/people/people_contacts',      { :icon_class => 'people', :name => _('Contacts'), :url => people_list_url(:group => User.current.contact_list.id), :selected => (@contact_list == User.current.contact_list), :group => User.current.contact_list } %>
+    <%= render_default_group 'sidebars/groups/people/people_users',         { :icon_class => 'userFolder', :name => _('Users'), :url => people_list_url(:group => 'users'), :selected => (@group_name == _('Users') and @smart_group.blank?) } %>
+    <%= render_default_group 'sidebars/groups/people/people_notifications', { :icon_class => 'notifications', :name => _('Notifications'), :url => people_notifications_url, :selected => (@view_kind == 'notifications' and @smart_group.blank?)} %>
+    <%= render_default_group 'sidebars/groups/people/people_current_time', { :icon_class => 'currentTime',
+                                                                             :name       => _('Current Time'),
+                                                                             :url        => current_time_report_url(:id => User.current), 
+                                                                             :selected   => (@group_name == 'Current Time'),
+                                                                             :report_description_name => :current_time} %>
+
+    <% @smart_groups.each do |smart_group| -%>
+      <%= render_smart_group 'sidebars/groups/people/people_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
+    <% end -%>
+
+  	<% User.current.subscriptions_to_group_type(@contact_list.class).each do |subscription| -%>
+  		<%= render_standard_group 'sidebars/groups/people/people_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @contact_list, :subscription => true, :css_class => 'group subscription' } %>
+  	<% end %>
+  </ul></div>
+
+  <div id="addGroup">
+  	<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="<%= _('Add New Smart Group') -%>"><%= _('New') -%>&hellip;</a>
+  	<div id="addGroupMenu" style="display:none;">
+  		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart Group') -%></a>
+		<% if User.current.has_other_identities? -%>
+			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'People', :context => 'subscribe', :subscribable_type => 'ContactList')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
+		<% end -%>
+  	</div>
+  </div>
+  <%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>
+<% # end -%>

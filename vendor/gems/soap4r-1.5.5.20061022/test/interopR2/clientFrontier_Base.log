@@ -1,0 +1,5188 @@
+File: clientFrontier_Base.log - Wiredumps for SOAP4R client / Frontier server.
+Date: Sat Jul 23 20:26:22 JST 2005
+
+##########
+# echoVoid
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:23 JST 2005
+Content-Length: 400
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:08 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:24 JST 2005
+Content-Length: 488
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:09 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (Entity reference)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:25 JST 2005
+Content-Length: 549
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:10 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (Character reference)
+
+Result: Exception: Can't coerce the string "x20" into a number because it contains non-numeric characters. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:26 JST 2005
+Content-Length: 487
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 549
+Date: Sat, 23 Jul 2005 11:28:11 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t coerce the string &quot;x20&quot; into a number because it contains non-numeric characters.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:30 JST 2005
+Content-Length: 494
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:15 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (EUC encoded)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:31 JST 2005
+Content-Length: 501
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:16 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:32 JST 2005
+Content-Length: 501
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:17 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (empty)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:33 JST 2005
+Content-Length: 460
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:18 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (space)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:34 JST 2005
+Content-Length: 461
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:19 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: Exception: Can't coerce the string "xd" into a number because it contains non-numeric characters. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:35 JST 2005
+Content-Length: 479
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 548
+Date: Sat, 23 Jul 2005 11:28:20 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t coerce the string &quot;xd&quot; into a number because it contains non-numeric characters.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:36 JST 2005
+Content-Length: 684
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:21 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:37 JST 2005
+Content-Length: 843
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605890080"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605890080"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605890080"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:23 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:42 JST 2005
+Content-Length: 843
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605903160"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605903160"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605903160"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:27 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:43 JST 2005
+Content-Length: 831
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605916240"></item>
+        <item></item>
+        <item href="#id-605916240"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605916240"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:28 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:44 JST 2005
+Content-Length: 464
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:29 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:45 JST 2005
+Content-Length: 471
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:30 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:46 JST 2005
+Content-Length: 472
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:31 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:47 JST 2005
+Content-Length: 471
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 548
+Date: Sat, 23 Jul 2005 11:28:32 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode 2147483648 as an integer because its value exceeds the maximum size for an integer.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:48 JST 2005
+Content-Length: 472
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 549
+Date: Sat, 23 Jul 2005 11:28:33 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode -2147483649 as an integer because its value exceeds the maximum size for an integer.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:49 JST 2005
+Content-Length: 464
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:34 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:50 JST 2005
+Content-Length: 465
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:35 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:51 JST 2005
+Content-Length: 473
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 549
+Date: Sat, 23 Jul 2005 11:28:36 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode 0.000000000a as an integer because its size exceeds the maximum size for an integer.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:52 JST 2005
+Content-Length: 464
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 549
+Date: Sat, 23 Jul 2005 11:28:37 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t coerce the string &quot;+-5&quot; into a number because it contains non-numeric characters.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoIntegerArray
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:53 JST 2005
+Content-Length: 657
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:39 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:55 JST 2005
+Content-Length: 588
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:40 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:56 JST 2005
+Content-Length: 467
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:41 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:57 JST 2005
+Content-Length: 465
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:42 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:58 JST 2005
+Content-Length: 465
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:43 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:59 JST 2005
+Content-Length: 465
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:44 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:00 JST 2005
+Content-Length: 459
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:45 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:01 JST 2005
+Content-Length: 457
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:46 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:02 JST 2005
+Content-Length: 457
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:47 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:03 JST 2005
+Content-Length: 457
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:48 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:04 JST 2005
+Content-Length: 457
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:49 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:05 JST 2005
+Content-Length: 458
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:50 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:06 JST 2005
+Content-Length: 458
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:51 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:07 JST 2005
+Content-Length: 459
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:52 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:08 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 601
+Date: Sat, 23 Jul 2005 11:28:53 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;0.0000000000000000a&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:09 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 601
+Date: Sat, 23 Jul 2005 11:28:54 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;00a.000000000000001&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:10 JST 2005
+Content-Length: 458
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 585
+Date: Sat, 23 Jul 2005 11:28:55 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;+-5&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:11 JST 2005
+Content-Length: 458
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 585
+Date: Sat, 23 Jul 2005 11:28:56 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;5_0&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloatArray
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:12 JST 2005
+Content-Length: 662
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:57 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:13 JST 2005
+Content-Length: 658
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:58 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStruct
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:14 JST 2005
+Content-Length: 674
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:28:59 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStruct (nil members)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:15 JST 2005
+Content-Length: 651
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:00 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:16 JST 2005
+Content-Length: 1217
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:01 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:17 JST 2005
+Content-Length: 1392
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:02 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:18 JST 2005
+Content-Length: 1257
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605866700"></item>
+        <item href="#id-605866700"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605866700"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:03 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:19 JST 2005
+Content-Length: 1257
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605883150"></item>
+        <item href="#id-605883150"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605883150"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:03 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:19 JST 2005
+Content-Length: 1282
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item href="#id-605900910"></item>
+        <item href="#id-605900910"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605900910"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">b</varString>
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+      <varInt xsi:type="xsd:int">2</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:04 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:20 JST 2005
+Content-Length: 1360
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString href="#id-605916940"></varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString href="#id-605916940"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605916940"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:05 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:21 JST 2005
+Content-Length: 1535
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString href="#id-605935990"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString href="#id-605935990"></varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605935990"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:06 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (now)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:22 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T11:27:22Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:07 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:23 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:08 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:24 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:09 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:25 JST 2005
+Content-Length: 475
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:10 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:26 JST 2005
+Content-Length: 478
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:11 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:27 JST 2005
+Content-Length: 515
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:12 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (positive TZ)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:28 JST 2005
+Content-Length: 479
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:13 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (negative TZ)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:29 JST 2005
+Content-Length: 479
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:14 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:30 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:15 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:31 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:16 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (min TZ)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:32 JST 2005
+Content-Length: 479
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:17 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:33 JST 2005
+Content-Length: 480
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:19 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:34 JST 2005
+Content-Length: 480
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:20 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:35 JST 2005
+Content-Length: 475
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:20 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:36 JST 2005
+Content-Length: 474
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:21 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:37 JST 2005
+Content-Length: 472
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:22 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:38 JST 2005
+Content-Length: 471
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:23 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:39 JST 2005
+Content-Length: 471
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 549
+Date: Sat, 23 Jul 2005 11:29:25 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t coerce the string &quot;52z&quot; into a number because it contains non-numeric characters.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (empty: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:40 JST 2005
+Content-Length: 454
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:26 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:42 JST 2005
+Content-Length: 510
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:27 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:43 JST 2005
+Content-Length: 466
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:28 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:43 JST 2005
+Content-Length: 566
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:29 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (\0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:44 JST 2005
+Content-Length: 526
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:30 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:46 JST 2005
+Content-Length: 534
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:31 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:47 JST 2005
+Content-Length: 523
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:32 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:48 JST 2005
+Content-Length: 541
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:33 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(empty)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:49 JST 2005
+Content-Length: 475
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:34 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:50 JST 2005
+Content-Length: 477
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:35 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:51 JST 2005
+Content-Length: 493
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:36 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:54 JST 2005
+Content-Length: 495
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:39 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:55 JST 2005
+Content-Length: 479
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:40 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (true)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:56 JST 2005
+Content-Length: 469
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:41 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (false)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:57 JST 2005
+Content-Length: 470
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:42 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:58 JST 2005
+Content-Length: 469
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 550
+Date: Sat, 23 Jul 2005 11:29:43 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t coerce the string &quot;junk&quot; into a number because it contains non-numeric characters.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (123456)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:27:59 JST 2005
+Content-Length: 483
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:44 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:00 JST 2005
+Content-Length: 484
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:45 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:01 JST 2005
+Content-Length: 484
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:46 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:02 JST 2005
+Content-Length: 485
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:47 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:03 JST 2005
+Content-Length: 485
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:48 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (-123.)
+
+Result: Exception: Can't evaluate the expression because the name "soapinteropOrg" hasn't been defined. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:04 JST 2005
+Content-Length: 483
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 551
+Date: Sat, 23 Jul 2005 11:29:49 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t evaluate the expression because the name &quot;soapinteropOrg&quot; hasn&apos;t been defined.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:05 JST 2005
+Content-Length: 484
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 601
+Date: Sat, 23 Jul 2005 11:29:50 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;0.0000000000000000a&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:06 JST 2005
+Content-Length: 484
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 601
+Date: Sat, 23 Jul 2005 11:29:51 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;00a.000000000000001&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:07 JST 2005
+Content-Length: 468
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 585
+Date: Sat, 23 Jul 2005 11:29:52 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;+-5&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /xmethodsInterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:28:08 JST 2005
+Content-Length: 468
+Host: www.soapware.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Server Error
+Connection: close
+Content-Length: 585
+Date: Sat, 23 Jul 2005 11:29:53 GMT
+Server: UserLand Frontier/9.0-WinNT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Body>
+		<SOAP-ENV:Fault>
+			<faultcode>SOAP-ENV:Client</faultcode>
+			<faultstring>Can&apos;t decode the floating point value &apos;5_0&apos; because it&apos;s not in the form nnne[+/-]nnn, where n is a numeric character.</faultstring>
+			</SOAP-ENV:Fault>
+		</SOAP-ENV:Body>
+	</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+

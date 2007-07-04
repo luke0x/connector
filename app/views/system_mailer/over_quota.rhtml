@@ -1,0 +1,42 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+Hi <%= @user.full_name %>,
+
+This email is to inform you that you are over your quota for your Connnector account at https://<%= @user.organization.system_domain.web_domain %> 
+
+<% allowed = @user.organization.quota.megabytes.megabytes -%>
+<% used    = @user.organization.total_disk_usage          -%>
+<% percent = (used.to_f / allowed) * 100                  -%>
+Allocated Storage: <%= number_to_human_size allowed %>
+Used Storage:      <%= number_to_human_size used %>
+Percent Used:      <%= number_to_percentage percent, :precision => 2 %>
+
+The used storage is a combination of email storage and file storage.  Some suggestions to free up space are:
+
+* Empty your email Trash.
+* Make sure all of your users empty their email Trash.
+* Delete your Sent Mail.
+* Suggest to your users that they delete their Sent Mail.
+* Remove any unneeded files from your file storage (via the web of sftp).
+
+If you would like to purchase more space, you can upgrade your account by logging in at <%= @user.organization.affiliate.name == 'corel' ? "https://corel.joyent.com" : "https://customer.joyent.com" %>
+
+If you do not either upgrade or bring your usage below your allocated storage we will take the following actions until you do:
+
+* Disable your email
+* Disable sftp access
+* Disable file uploads
+
+Ultimately, we will deactivate your account if this continues.
+
+Thanks for your understanding.  Let us know if you have any questions or concerns.
+
+The Joyent Team
+support@joyent.com

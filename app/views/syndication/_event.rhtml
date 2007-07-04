@@ -1,0 +1,65 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="miniCard">
+  <h2><%=h event.name %></h2>
+  <dl>
+    <dt><%= _('Date') -%>:</dt>
+    <dd><%= format_date(event.start_time_in_user_tz) %></dd>
+
+    <dt><%= _('Time') -%>:</dt>
+    <% if event.all_day? -%>
+      <dd><%= _('All Day') -%></dd>
+    <% else -%>
+      <dd><%= "#{format_time(event.start_time_in_user_tz)} - #{format_time(event.end_time_in_user_tz)}" %></dd>
+    <% end -%>
+
+    <% unless event.all_day? -%>
+      <dt><%= _('Duration') -%>:</dt>
+      <dd><%= duration_in_words(event.duration) %></dd>
+    <% end -%>
+
+    <% if event.repeats? -%>
+      <dt><%= _('Repeat') -%>:</dt>
+      <dd><%= _(event.recurrence_description.name) %></dd>
+      <dt><%= _('Repeat Until') -%>:</dt>
+      <% if event.recur_end_time_in_user_tz && event.recur_end_time_in_user_tz != '' -%>
+        <dd><%= format_date(event.recur_end_time_in_user_tz) %></dd>
+      <% else -%>
+        <dd><%= _('Forever') -%></dd>
+      <% end -%>
+    <% end -%>
+
+    <% unless event.location.blank? -%>
+      <dt><%= _('Location') -%>:</dt>
+      <dd><%=h _(event.location) %></dd>
+    <% end -%>   
+    
+    <% unless event.invitees_accepted.empty? -%>
+  		<dt><%= _('Accepted By') %>:</dt>
+  		<dd><%= event.invitees_accepted.collect{|user| link_to(user.full_name, person_show_url(:id => user.person.id))}.join(', ') %></dd>
+  	<% end -%>
+
+  	<% unless event.invitees_declined.empty? -%>
+  		<dt><%= _('Declined By') %>:</dt>
+  		<dd><%= event.invitees_declined.collect{|user| link_to(user.full_name, person_show_url(:id => user.person.id))}.join(', ') %></dd>
+  	<% end -%>
+
+  	<% unless event.invitees_pending.empty? -%>
+  		<dt><%= _('Pending Invitees') %>:</dt>
+  		<dd><%= event.invitees_pending.collect{|user| link_to(user.full_name, person_show_url(:id => user.person.id))}.join(', ') %></dd>
+  	<% end -%>
+
+    <% unless event.notes.blank? -%>
+      <dt><%= _('Notes') -%>:</dt>
+      <dd><%= simple_format(h(event.notes)) %></dd>
+    <% end -%>
+  </dl>
+  <%= render :partial => 'comments', :locals => {:comments => event.comments} %>
+</div>

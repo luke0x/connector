@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require File.dirname(__FILE__) + '/../config/environment'
+
+orgs = ARGV[0] ? [Organization.find(ARGV[0])] : Organization.find(:all) 
+
+JoyentJob::Job.server = DRb::DRbObject.new(nil, "druby://#{JoyentConfig.joyent_job_host}:#{JoyentConfig.joyent_job_port}")
+
+def idx(i)
+  i.add_to_search_index
+  $stdout.write '.'
+  $stdout.flush
+end
+
+index_mail = ARGV[1]
+
+orgs.each do |org|
+  puts "Reindexing all searchables for Organization##{org.id} - #{org.name}"
+  
+  org.users.find(:all).each do |user|
+  begin
+    print "  Reindexing for User##{user.id} - #{user.full_name}"
+    user.joyent_files.find(:all).each do |file|
+      idx(file)
+    end
+    
+    user.people.find(:all).each do |person|
+      idx(person)
+    end
+    
+    user.events.find(:all).each do |event|
+      idx(event)
+    end
+    
+    if index_mail
+      user.messages.find(:all).each do |message|
+        if message.mailbox.nil?
+          message.destroy
+        else
+          idx(message) 
+        end
+      end
+    end
+    print "\n"
+  rescue  => e
+    s = e.to_s
+    s << "\n"
+    s << e.backtrace.join("\n")
+    print "  User's data was invalid somehow\n"
+    print s
+    print "\n"
+  end
+  end
+end

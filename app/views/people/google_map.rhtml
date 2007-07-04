@@ -1,0 +1,67 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="Container">	
+	<% form_tag({ :action => :show }, :style => "text-align: center;") do -%>
+	  <label for="city"><%= _('City') -%></label>
+	  <input name="city" size="15" type="text" value="<%= params[:city] %>" />
+	  <label for="state"><%= _('State') -%></label>
+	  <input name="state" size="15" type="text" value="<%= params[:state] %>" />
+	  <label for="zipcode"><%= _('Zip') -%></label>
+	  <input name="zipcode" size="15" type="text" value="<%= params[:zipcode] %>" />
+    <input value="<%= _('Search') -%>" type="submit" />
+	  <%= link_to(_("Clear search"), { :action => :show }) %>
+  <% end -%>
+
+	<div id="map" style="width: 690px; height: 470px; margin: 20px auto 5px auto; border:1px solid #000;"></div>
+	<script type="text/javascript">
+	//<![CDATA[
+	  var map = new GMap(document.getElementById("map"));
+	  map.addControl(new GLargeMapControl());
+	  map.addControl(new GMapTypeControl());
+	  map.centerAndZoom(new GPoint(<%= @center_long %>, <%= @center_lat %>), <%= @zoom_level.to_s %>);
+	  var home_icon = new GIcon();
+	  home_icon.image = "http://luke.joyeur.net/map/images/home.png";
+	  home_icon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+	  home_icon.iconSize = new GSize(16, 16);
+	  home_icon.shadowSize = new GSize(22, 20);
+	  home_icon.iconAnchor = new GPoint(6, 20);
+	  home_icon.infoWindowAnchor = new GPoint(5, 1);
+	  var work_icon = new GIcon();
+	  work_icon.image = "http://luke.joyeur.net/map/images/work.png";      
+	  work_icon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+	  work_icon.iconSize = new GSize(12, 20);
+	  work_icon.shadowSize = new GSize(22, 20);
+	  work_icon.iconAnchor = new GPoint(6, 20);
+	  work_icon.infoWindowAnchor = new GPoint(5, 1);
+	  <% if @gmap_addresses -%>
+  		<% @gmap_addresses.each_with_index do |address, i| -%>
+  		  point_<%= i.to_s %> = new GPoint(<%= address[:long].to_s %>, <%= address[:lat].to_s %>);
+  		  <% if address[:type] == 'Home' -%>
+  			marker_<%= i.to_s %> = new GMarker(point_<%= i.to_s %>, home_icon);
+  		  <% else -%>
+  			marker_<%= i.to_s %> = new GMarker(point_<%= i.to_s %>, work_icon);
+  		  <% end -%>
+  		  caption_text_<%= i.to_s %> = '<div style="width: 200px;">';
+  		  caption_text_<%= i.to_s %> += '<span style="font-weight: bold;"><%= escape_javascript(address[:name]) %></span><br />'
+  		  caption_text_<%= i.to_s %> += '<%= escape_javascript(address[:address]) %><br />';
+  		  caption_text_<%= i.to_s %> += '<%= escape_javascript(address[:type]) %><br />';
+  		  caption_text_<%= i.to_s %> += '<a href="<%= address[:link] %>">View Person</a>';
+  		  caption_text_<%= i.to_s %> += '</div>';
+  		  GEvent.addListener(marker_<%= i.to_s %>, "click", function() { marker_<%= i.to_s %>.openInfoWindowHtml(caption_text_<%= i.to_s %>) });
+  		  map.addOverlay(marker_<%= i.to_s %>);
+  		<% end -%>
+	  <% end -%>
+	//]]>
+	</script>
+	<div style="text-align:center;font-size:9px;"><%= @gmap_addresses.length.to_s %> <%= _('address(es) found') -%></div>
+</div>
+<div id="footer">
+  (<%= session[:username] %>) <%= link_to(_("Logout"), { :action => :logout }) %>
+</div>

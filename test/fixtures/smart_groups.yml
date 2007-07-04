@@ -1,0 +1,113 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_everything_from_peter:
+  id: 1
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 1
+  name: Everything Owned By Peter
+  accept_any: false
+  
+ian_files:
+  id: 2
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 2
+  name: Files named like foo owned by Ian
+  accept_any: false
+
+ian_files_tagged_with_orange:
+  id: 3
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 2
+  name: Files tagged with orange
+  tags: "--- \n- orange\n"
+  accept_any: false
+
+ian_events_tagged_with_orange_and_raspberry:
+  id: 4
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 4
+  name: Events tagged with Orange and Raspberry
+  tags: "--- \n- orange\n- raspberry"
+  accept_any: false
+  
+ian_foo_mail:
+  id: 5
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 5
+  name: Emails tagged with foo
+  tags: "--- \n- foo\n"
+  accept_any: false
+  
+ian_foo_events:
+  id: 6
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 4
+  name: Events tagged with Foo
+  tags: "--- \n- foo\n"
+  accept_any: false
+
+jason_foo_events:
+  id: 7
+  user_id: 3
+  organization_id: 1
+  smart_group_description_id: 4
+  name: Events tagged with Foo
+  tags: "--- \n- foo\n"
+  accept_any: false
+
+peter_people_tagged_foo:
+  id: 8
+  user_id: 2
+  organization_id: 1
+  smart_group_description_id: 3
+  name: People tagged foo
+  tags: "--- \n- foo\n"
+  accept_any: false
+
+ian_people_body_foo:
+  id: 9
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 3
+  name: People with any like foo
+  tags: 
+  accept_any: false
+  
+ian_jason_regression:
+  id: 10
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 2
+  name: Files tagged with orange
+  tags: "--- \n- Rails\n- Solaris\n"
+  accept_any: false
+
+ian_secure_bookmarks:
+  id: 11
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 6
+  name: HTTPS Bookmarks
+  accept_any: false
+
+ian_lists_tagged_with_orange:
+  id: 12
+  user_id: 1
+  organization_id: 1
+  smart_group_description_id: 7
+  name: Lists tagged with orange
+  tags: "--- \n- orange\n"
+  accept_any: false

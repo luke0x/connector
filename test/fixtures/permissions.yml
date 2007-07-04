@@ -1,0 +1,68 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_jpg_ian:
+  id: 1
+  user_id: 1
+  item_id: 1
+  item_type: JoyentFile
+
+ians_dog_jpg_ian:
+  id: 2
+  user_id: 1
+  item_id: 2
+  item_type: JoyentFile
+
+ians_jpg_peter:
+  id: 3
+  user_id: 2
+  item_id: 1
+  item_type: JoyentFile
+  
+jason_only_secret:
+  id: 4
+  user_id: 3
+  item_id: 6
+  item_type: Person
+
+jason_only_user_for_some_reason:
+  id: 5
+  user_id: 3
+  item_id: 7
+  item_type: Person
+  
+ian_only_vacation_pictures:
+  id: 6
+  user_id: 1
+  item_id: 4
+  item_type: Folder
+
+ian_inbox_base:
+  id: 7
+  user_id: 1
+  item_id: 13
+  item_type: Mailbox
+
+ian_message_base_perm:
+  id: 8
+  user_id: 1
+  item_id: 6
+  item_type: Message
+
+ian_message_first_perm:
+  id: 9
+  user_id: 1
+  item_id: 1
+  item_type: Message
+
+bernards_secret_file:
+  id: 10
+  user_id: 5
+  item_id: 6
+  item_type: JoyentFile

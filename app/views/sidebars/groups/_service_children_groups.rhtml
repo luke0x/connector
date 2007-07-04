@@ -1,0 +1,16 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% if !children.blank? -%>
+  <ul>
+    <% children.each do |child| -%>
+    	<%= render_service_group 'sidebars/groups/files/files_service', { :standard_group => child, :name => child.name, :url => '', :service_name => child.service.name, :group_id => child.id} %>
+    <% end -%>
+  </ul>
+<% end -%>

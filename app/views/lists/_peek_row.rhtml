@@ -1,0 +1,23 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<tr id="<%= list_row.dom_id -%>" class="itemRow" <%= 'style="display: none;"' unless list_row.visible? %>>
+  <td class="listRowDinger" style="margin: 0; padding: 0; padding-left: <%= list_row.depth_cache * 12 %>px;">
+    <%= no_click_dinger(list_row) -%>
+  </td>
+  <% @list.list_columns_by_position.each_with_index do |list_column, index| -%>
+    <td class="listCell <%= "secondlastCol" if @list.list_columns_by_position.last == list_column %>" style="padding-left: <%= list_row.depth_cache * 12 + 5 %>px; padding-right: 0; <%= list_column_style(list_column) %>" columndomid="<%= list_column.dom_id %>">
+      <%= render_list_cell(ListCell.find_by_row_and_column(list_row, list_column), true) %>
+    </td>
+  <% end -%>
+  <td>&nbsp;</td>
+</tr>
+<% list_row.children.each_with_index do |child, i| -%>
+  <%= render :partial => 'lists/peek_row', :locals => { :list_row => child } %>
+<% end -%>

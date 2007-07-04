@@ -1,0 +1,22 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+class ReviseNotifications < ActiveRecord::Migration
+  def self.up
+    add_column :notifications, :acknowledged, :boolean, :default => false
+    rename_column :notifications, :user_id, :notifiee_id
+  end
+
+  def self.down
+    remove_column :notifications, :acknowledged
+    rename_column :notifications, :notifiee_id, :user_id
+  end
+end

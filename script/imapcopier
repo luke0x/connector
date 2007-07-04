@@ -1,0 +1,250 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+unless ARGV.size == 2
+  puts "usage: ./imapcopier <organization_domain> <username>"   
+  exit
+end                                                       
+           
+require File.dirname(__FILE__) + '/../config/boot'  
+require "#{RAILS_ROOT}/config/environment"
+require 'timeout'
+          
+def log(message)
+  puts message  
+end   
+
+def error(message)
+  File.open("#{Organization.current.system_domain.email_domain}-errors.txt", 'a'){|f| f.puts "imapcopier: "+message}
+end
+
+def parse_uid_mappings
+  filename = "#{Organization.current.system_domain.email_domain}-mail_maps.txt"
+
+  @user_mailbox_maps   = {}
+  current_mailbox_map  = nil
+  current_uid_mappings = nil 
+  current_uid_map      = nil
+  current_old_mailbox  = nil
+  
+  if File.exists?(filename)
+    IO.readlines(filename).each do |line| 
+      key, value = line.split(':')
+      value.strip!         
+    
+      case key
+        when 'org'
+        when 'user'
+          current_mailbox_map, current_uid_mappings = @user_mailbox_maps[value] ||= [{}, {}]
+        when 'old_mailbox'                                               
+          # creating a hash for old uid mappings
+          current_uid_map     = current_uid_mappings[value] ||= {}        
+          current_old_mailbox = value
+        when 'new_mailbox'
+          # mapping old name to new
+          current_mailbox_map[current_old_mailbox] ||= value
+        when 'msg'
+          old_uid, new_uid = value.split
+          current_uid_map[old_uid.to_i] ||= new_uid.to_i
+      end  
+    end    
+  end
+end 
+
+def uid_mapping_exists?(old_mailbox, old_uid)
+  current_mailbox_map, current_uid_mappings = @user_mailbox_maps[User.current.username]
+  
+  if current_uid_mappings
+    uid_map = current_uid_mappings[old_mailbox]
+    return uid_map && uid_map[old_uid.to_i] ? true : false
+  else
+    return false
+  end
+end 
+
+def mailbox_mapping_exists?(old_mailbox) 
+  current_mailbox_map, current_uid_mappings = @user_mailbox_maps[User.current.username]
+  
+  if current_mailbox_map
+    return current_mailbox_map[old_mailbox] ? true : false
+  else
+    return false         
+  end           
+end
+
+def connect(params)
+  imap = nil
+  timeout(@timeout_seconds, RuntimeError) do
+    imap = Net::IMAP.new(params[:host])
+    imap.login(params[:username], params[:password])
+    imap
+  end
+rescue
+  err_count ||= 0
+  err_count  += 1
+  disconnect(imap)
+  
+  if err_count <= 3  
+    retry
+  else
+    error "Cannot connect to IMAP server on #{params[:host]} with user/password of #{params[:username]}/#{params[:password]}."
+    raise
+  end                                                             
+end
+  
+def disconnect(imap) 
+  timeout(@timeout_seconds, RuntimeError){imap.logout}     if imap rescue nil
+  timeout(@timeout_seconds, RuntimeError){imap.disconnect} if imap rescue nil
+end 
+
+log "Loading #{RAILS_ENV} environment.\n" 
+
+IMAP_SOURCE                  = {}
+IMAP_SOURCE[:host  ]         = ENV['IMAP_SOURCE_HOST']
+IMAP_SOURCE[:username]       = nil
+IMAP_SOURCE[:password]       = nil  
+
+IMAP_DESTINATION             = {}
+IMAP_DESTINATION[:host]      = ENV['IMAP_DESTINATION_HOST']
+IMAP_DESTINATION[:username]  = nil
+IMAP_DESTINATION[:password]  = nil
+IMAP_DESTINATION[:delimiter] = ENV['IMAP_DESTINATION_DELIMITER'] ||'.'
+
+organizations    = []
+@timeout_seconds = 30
+
+if ARGV[0] == '*'
+  organizations = Organization.find(:all)
+else
+  domain        = Domain.find_by_email_domain(ARGV[0])
+  organizations = [domain.organization] if domain
+end     
+
+organizations.each do |org|
+  imap_src = imap_dest = nil
+  begin            
+    log "\nCopying IMAP mail for organization #{org.name}"
+    Organization.current = org
+  
+    parse_uid_mappings   
+
+    output_file = File.open("#{org.system_domain.email_domain}-mail_maps.txt", 'a')
+    output_file.puts("org: #{org.system_domain.email_domain}")
+    output_file.flush
+
+    # Get the list of users
+    users = (ARGV[1] == '*') ? org.users : [org.users.find_by_username(ARGV[1])].compact
+  
+    users.each do |user|
+      log "  Copying IMAP mail for user #{user.full_name} (#{user.username})" 
+      User.current = user
+      output_file.puts("user: #{user.username}")
+      output_file.flush
+      
+      IMAP_SOURCE[:username]      = ENV['IMAP_SOURCE_USERNAME']      || user.system_email
+      IMAP_SOURCE[:password]      = ENV['IMAP_SOURCE_PASSWORD']      || user.plaintext_password
+      IMAP_DESTINATION[:username] = ENV['IMAP_DESTINATION_USERNAME'] || user.system_email
+      IMAP_DESTINATION[:password] = ENV['IMAP_DESTINATION_PASSWORD'] || user.plaintext_password
+     
+      imap_src  = connect(IMAP_SOURCE)
+      imap_dest = connect(IMAP_DESTINATION)
+    
+      # Create all source mailboxes in destination
+      source_folders = {}
+      # Error handling
+      folder_list = timeout(@timeout_seconds, RuntimeError) do
+        imap_src.list('', '*') || []
+      end
+      folder_list.collect do |folder| 
+        IMAP_SOURCE[:delimiter] ||= folder.delim
+        dest_name = src_name  = folder.name
+        unless src_name =~ /^inbox$/i  
+          # Done because new mail has the form INBOX.folder_name
+          dest_name = "INBOX#{IMAP_DESTINATION[:delimiter]}#{folder.name.gsub(IMAP_SOURCE[:delimiter], IMAP_DESTINATION[:delimiter])}" 
+        end
+      
+        source_folders[src_name] = dest_name                     
+      
+        unless mailbox_mapping_exists?(src_name)
+          log "    Creating mailbox #{src_name} as #{dest_name}."
+          begin
+            timeout(@timeout_seconds, RuntimeError) do 
+              imap_dest.create(dest_name)
+              imap_dest.subscribe(dest_name)
+            end
+          rescue Net::IMAP::NoResponseError => e   
+            error "Unable to create #{dest_name} for user #{user.username} (#{e.message})." 
+          end                      
+        end
+      end
+    
+      # Copy over all messages folder by folder from source to destination
+      # This includes all of the flags on each message
+      source_folders.each_pair do |src_name, dest_name|
+        log "    Copying messages from #{src_name} to #{dest_name}"
+        output_file.puts("old_mailbox: #{src_name}")
+        output_file.puts("new_mailbox: #{dest_name}")        
+        output_file.flush
+      
+        # Error handling
+        timeout(@timeout_seconds, RuntimeError) do
+          imap_src.examine(src_name)
+        end
+        # Error handling
+        # Get the list of messages from the source IMAP 
+        fetch_data = timeout(@timeout_seconds, RuntimeError) do
+          imap_src.uid_fetch(1..-1, "UID") || []
+        end
+          
+        fetch_data.each do |uid_fetch|   
+          src_uid  = uid_fetch.attr["UID"]
+          dest_uid = -1
+        
+          unless uid_mapping_exists?(src_name, src_uid)
+            msg_fetch = timeout(@timeout_seconds, RuntimeError) do
+              imap_src.uid_fetch(src_uid, '(RFC822 INTERNALDATE FLAGS)')
+            end
+            if msg_fetch && msg_fetch.first
+              message = msg_fetch.first.attr['RFC822'] 
+              flags   = msg_fetch.first.attr['FLAGS']
+              date    = msg_fetch.first.attr['INTERNALDATE']
+          
+              # Error handling        
+              flags -= [:Recent] if flags
+              new_msg  = timeout(@timeout_seconds, RuntimeError) do
+                imap_dest.append(dest_name, message, flags, date)
+              end
+              dest_uid = new_msg.data.code.data.split.last.to_i 
+            end
+            output_file.puts("msg: #{src_uid} #{dest_uid}")
+            output_file.flush
+          end
+        end                                                        
+      end                
+    
+      disconnect(imap_src)
+      disconnect(imap_dest)
+    end                                                                              
+    log "Completed copying messages for the organization successfully."
+  rescue => e
+    error(e.message)
+    error(e.backtrace.to_s)
+    log "An error occurred while copying.  We will try again until we get this right!"
+    @timeout_seconds += 60
+    retry 
+  ensure        
+    output_file.close
+    log "Wrote mail mappings to file: #{output_file.path}"
+    
+    disconnect(imap_src)
+    disconnect(imap_dest) 
+  end
+end

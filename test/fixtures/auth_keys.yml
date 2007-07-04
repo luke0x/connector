@@ -1,0 +1,22 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+joyent:
+  id: 1
+  key: abcdefghijklmnop
+  organization_id: 1
+  user_id: 1
+  created_at: <%= Time.now.utc.to_s(:db) %>
+
+expired:
+  id: 2
+  key: qrstuvwxyz
+  organization_id: 1
+  user_id: 1
+  created_at: <%= (Time.now.utc - 6.minutes).to_s(:db) %>

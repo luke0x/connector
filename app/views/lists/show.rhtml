@@ -1,0 +1,31 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<%= javascript_tag javascript_jsar_init([@list], 'show') -%>
+<%= javascript_tag "List.selectedList = #{@list.id};" -%>
+<%= javascript_tag "Event.observe(document, 'keypress', List.onKeyPress.bindAsEventListener(this));" -%>
+
+<div class="infobox">
+	<table style="width:100%;">
+		<tr>
+			<td style="text-align:left;">				
+				<h2 id="listNameShowView"><%=h @list.name %></h2>
+			</td>
+			<td style="text-align:right;">			
+				<%= joyent_button_to _('Download As OPML'), formatted_list_url(@list, :opml), {:button_class => 'download', :style => ''} -%>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="listContainer">
+  <%= render :partial => "list" -%>
+</div>
+
+<%= render :partial => "comments/list", :locals => { :item => @list } %>

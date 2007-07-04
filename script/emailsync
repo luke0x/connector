@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+unless ARGV.size >= 2
+  puts "usage: ./emailsync <organization_domain> <username> [mailboxes]"   
+  exit
+end                                                       
+           
+require File.dirname(__FILE__) + '/../config/boot'  
+require "#{RAILS_ROOT}/config/environment"
+          
+def log(message)
+  puts message  
+end     
+
+log "Loading #{RAILS_ENV} environment.\n"
+organizations = []
+
+if ARGV[0] == '*'
+  organizations = Organization.find(:all)
+else
+  domain        = Domain.find_by_email_domain(ARGV[0])
+  organizations = [domain.organization] if domain
+end  
+
+only_mailboxes  = ARGV.size == 3     
+
+organizations.each do |org|            
+  log "\nSyncing IMAP mail for organization #{org.name}."
+  Organization.current = org
+
+  # Get the list of users
+  users = (ARGV[1] == '*') ? org.users : [org.users.find_by_username(ARGV[1])].compact
+  
+  users.each do |user|
+    log "  Syncing IMAP mail for user #{user.full_name} (#{user.username})." 
+    User.current = user
+   
+    log "    Syncing mailbox proxies with IMAP." 
+    # This is backgrounded, and we do not want to do that here
+    # Would be a slick option though for this script
+    # Mailbox.list(user)
+    pis = ProductionImapSystem.new(user)
+    pis.login(false)                                            
+    pis.sync_folders(user.mailboxes.find(:all))
+    pis.logout            
+    
+    if !only_mailboxes
+      user.mailboxes.each do |mailbox|           
+        log "    Syncing message proxies with IMAP for mailbox #{mailbox.full_name}."
+        mailbox.message_summaries()
+      end
+    end
+  end
+end

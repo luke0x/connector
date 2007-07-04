@@ -1,0 +1,93 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init(@day_views.collect(&:events).flatten, 'list') -%>
+
+<div style="position: relative;" class="report">	
+  <%= render_calendar_list_header(@group_name, @day_views) %>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:6%;" />
+			<col style="width:25%;" />
+			<col style="width:63%;" />
+			<col style="width:6%;" />
+		</colgroup>
+	  <thead>
+			<tr>
+				<th class="checkbox firstCol"><%= list_selection_tool %></th>
+				<th class="dateTime"><%= _('Time') %></th>
+				<th class="eventTitle"><%= _('Event') %></th>
+				<th class="detailView"><span>Peek</span></th>
+			</tr>
+    </thead>
+		<% @day_views.each do |day_view| -%>
+		  <% day_key = day_view.start_time.strftime('%Y_%m_%d') -%>
+		  <tbody>
+				<tr class="dayBar">
+					<td class="firstCol" />
+					<td colspan="2">
+  					<% date_title = format_date(day_view.start_time) -%>
+  					<% date_title = "<span>#{_('Today')} - #{date_title}</span>" if day_view.today? -%>
+  					<% date_title = "#{_('Tomorrow')} - #{date_title}" if day_view.tomorrow? -%>
+						<div class="dateBarTitle" title="Today"><%= date_title %></div>
+					</td>
+					<td>
+						<div id="collapsed_day_view_<%= day_key %>">
+							<a class="dateViewShow" href="#" onclick="Calendar.showTimeChart('<%= calendar_day_url(:chart_date => day_key.gsub(/_/, '-')) %>', '<%= day_key %>'); return false;"><%= _('Time Chart') %></a>
+						</div>
+						<div id="expanded_day_view_<%= day_key %>" style="display:none;">
+							<a class="dateViewHide" href="#" onclick="Calendar.hideTimeChart('<%= day_key %>'); return false;"><%= _('Time Chart') %></a>
+						</div>
+					</td>
+				</tr>
+				<tr id="day_view_row_<%= day_key %>" style="display:none;">
+					<td colspan="4" class="dayViewCell">
+						<table style="width:100%">
+							<tr>
+								<td id="day_view_td_<%= day_key %>" />
+							</tr>
+							<tr>
+								<td class="overlayColorKeyCell"><%= render :partial => "calendar/overlay_color_key", :locals => { :overlayed_users => @overlayed_users } -%></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<% (day_view.all_day_events + day_view.non_all_day_events).each_with_index do |event, index| -%>
+					<% row_dom_id = "#{event.dom_id}_#{day_key}" -%>
+					<tr id="<%= row_dom_id %>_tr" itemDomId="<%= event.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+						<td class="checkbox">
+							<input class="listCheckbox" id="<%= row_dom_id %>_list_checkbox" name="item_checkbox" onclick="Calendar.checkEvent(this); JoyentPage.toggleItemCheckbox(this);" type="checkbox" itemDomId="<%= event.dom_id %>" />
+						</td>
+						<td class="dateTime">
+							<% event_time = event.all_day? ? _('All Day') : "#{format_time(event.start_time_in_user_tz)} - #{format_time(event.end_time_in_user_tz)}" -%>
+							<%= link_to event_time, calendar_show_url(:id => event.id) %>
+						</td>
+						<td class="eventTitle">
+							<%= link_to event.name, calendar_show_url(:id => event.id) %>
+						</td>
+						<td id="<%= row_dom_id %>_td_details_icon" class="details">
+							<%= link_to_function _('Details'), "PeekView.toggle('#{row_dom_id}', '#{peek_url(event, row_dom_id)}')" %>
+						</td>
+					</tr>
+					<tr id="<%= row_dom_id %>_tr_details" itemDomId="<%= event.dom_id %>" valign="top" style="display:none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+						<td id="<%= row_dom_id %>_td_details" colspan="4" class="accountDetails Details"></td>
+					</tr>
+				<% end -%>
+				<tr>
+					<td style="border-right: none;" />
+					<td colspan="2" style="border-right: none;">
+						<% create_url = User.current.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_view.date.strftime('%Y-%m-%d')) : calendar_create_url(:date => day_view.date.strftime('%Y-%m-%d')) -%>
+						<%= link_to _('New Event'), create_url, { :class => "addPlusSmall" } %>
+					</td>
+					<td style="border-right: none;" />
+				</tr>
+      </tbody>
+		<% end -%>
+	</table>
+</div>

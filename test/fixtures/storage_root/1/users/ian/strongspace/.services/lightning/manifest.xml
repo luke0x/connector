@@ -1,0 +1,39 @@
+<connector-service>
+	<name>Lightning</name>
+	<directory>
+		<name>Good Folder</name>
+		<file>
+			<name>Important File</name>
+			<path>example.txt</path>
+			<type>text</type>
+		</file>
+	</directory>
+	
+	<file>
+		<name>Test File 2</name>
+		<path>dir1/example2.txt</path>
+		<type>text</type>
+	</file>
+	
+	<directory>
+		<name>Pictures</name>
+		<file>
+			<name>Code</name>
+			<path>picture3.png</path>
+			<type>png</type>
+		</file>
+		<file>
+			<name>iPhone</name>
+			<path>Picture 4.png</path>
+			<type>png</type>
+		</file>
+		<directory>
+			<name>Vacation</name>
+			<file>
+				<name>Italy</name>
+				<path>it_2007.jpg</path>
+				<type>jpg</type>
+			</file>
+		</directory>
+	</directory>
+</connector-service>

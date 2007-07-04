@@ -1,0 +1,29 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="browserList" id="<%= column_id(params) %>">
+	<ul>
+		<% items.each do |item| -%>
+			<li class="<%= icon_class item.icon_class %>">
+				<div id="<%= item.dom_id %>" class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+					<%= remote_column_link item.link_text,
+									{ :current_column => column_id(params),
+									  :type => item.next_type,
+									  :user_id => item.user_id,
+									  :app => item.app_name,
+									  :subscribable_id => item.subscription_id,
+									  :subscribable_type => item.subscription_type,
+									  :from_app => params[:from_app],
+									  :escape => false },
+									item %>
+				</div></div></div></div>
+			</li>
+		<% end -%>
+	</ul>
+</div>

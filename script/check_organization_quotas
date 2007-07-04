@@ -1,0 +1,82 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require 'optparse'
+
+options = {:over  => false, 
+           :near  => false, 
+           :print => false, 
+           :log   => false}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: check_organization_quotas [options] [environment]"
+  opts.on("-o", "--over",   "Email people who are at or over their quota."){options[:over]  = true}
+  opts.on("-n", "--near",   "Email people who are near their quota.")      {options[:near]  = true}
+  opts.on("-p", "--print",  "Print results to console.")                   {options[:print] = true}
+  opts.on("-l", "--log",    "Log results.")                                {options[:log]   = true}
+end.parse!
+
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'production'
+
+require File.dirname(__FILE__) + '/../config/boot'  
+puts "Loading #{RAILS_ENV} environment.\n"
+require "#{RAILS_ROOT}/config/environment"
+
+
+# Needs to check all users quotas and determine who is over
+# Those that are over need to be emailed as well as system admin
+# Can we shut anything off?  sftp? email ? file uploads ?
+
+# Could email people if they are close to their quota too
+
+log_file = options[:log] ? "#{RAILS_ROOT}/log/check_organization_quotas.log" : "/dev/null"
+logger   = Logger.new(log_file)
+
+STDOUT.reopen('/dev/null','w') unless options[:print]
+
+logger.info("#{Time.now.xmlschema} Checking organizations quotas in '#{RAILS_ENV}'.")
+Organization.find(:all, :conditions => ["active = ?", true]).each do |org|
+  disk_usage_in_bytes = org.total_disk_usage
+  quota_in_bytes      = org.quota.megabytes.megabytes 
+  percent_used        = disk_usage_in_bytes.to_f / quota_in_bytes
+  
+  if percent_used >= 1.0
+    logger.info("Organization #{org.system_domain.web_domain} is over quota with #{percent_used * 100}% of #{quota_in_bytes.to_f / 1.gigabytes}GB.")
+    puts       ("Organization #{org.system_domain.web_domain} is over quota with #{percent_used * 100}% of #{quota_in_bytes.to_f / 1.gigabytes}GB.")
+
+    # This would be a good place to lock out an account from sftp or email or uploading new files
+    # we can do this another time, but it should go here
+    
+    if options[:over]
+      # Send an email to each user that is marked as an admin
+      org.users.select{|user| user.admin?}.each do |user|
+        SystemMailer.deliver_over_quota(user)
+      
+        logger.info("Email has been sent to '#{user.username}'.")
+        puts       ("Email has been sent to '#{user.username}'.")
+      end
+    end
+  elsif percent_used >= JoyentConfig.quota_warning_percentage
+    logger.info("Organization #{org.system_domain.web_domain} is near quota with #{percent_used * 100}% of #{quota_in_bytes.to_f / 1.gigabytes}GB.")
+    puts       ("Organization #{org.system_domain.web_domain} is near quota with #{percent_used * 100}% of #{quota_in_bytes.to_f / 1.gigabytes}GB.")
+    
+    if options[:near]
+      # Send an email to each user that is marked as an admin
+      org.users.select{|user| user.admin?}.each do |user|
+        SystemMailer.deliver_near_quota(user)
+      
+        logger.info("Email has been sent to '#{user.username}'.")
+        puts       ("Email has been sent to '#{user.username}'.")
+      end
+    end
+  end
+end
+logger.info("#{Time.now.xmlschema} Check complete.")

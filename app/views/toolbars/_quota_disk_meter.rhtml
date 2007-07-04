@@ -1,0 +1,28 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% if Organization.current.quota.megabytes < 1024 -%>
+  <% units = 'MB' -%>
+  <% disk_used = Organization.current.total_disk_usage.to_f / 1.megabyte -%>
+  <% disk_quota = Organization.current.quota.megabytes -%>
+<% else -%>
+  <% units = 'GB' -%>
+  <% disk_used = Organization.current.total_disk_usage.to_f / 1.gigabyte -%>
+  <% disk_quota = Organization.current.quota.gigabytes -%>
+<% end -%>
+<% disk_used_percentage = ((disk_used.to_f / disk_quota) * 100).round -%>
+
+<div id="graph_container">
+	<div id="graphLabel">
+		<%= "#{disk_used.round}/#{disk_quota.round} #{units} #{_('Used')}" %>
+	</div>
+	<div id="graph">
+		<strong class="bar" style="width: <%= disk_used_percentage %>%;"></strong>
+	</div>
+</div>

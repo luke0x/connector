@@ -1,0 +1,19 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id='comments'>
+  <hr/>         
+  <h3><%= _('Comments') -%> (<%= comments.size %>)</h3>
+  <dl>
+    <% comments.each do |comment| -%>
+    	<dt><%= _('On') -%> <%= format_date_time(localize_time(comment.created_at)) %> <%= _("%{i18n_comment_user_full_name} said")%{:i18n_comment_user_full_name => "#{comment.user.full_name}"} %>:</dt>
+    	<dd><%= simple_format(h(comment.body)) %></dd>
+    <% end -%>
+  </dl>
+</div>

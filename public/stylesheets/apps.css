@@ -1,0 +1,431 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+	
+	#addHeader {	
+		background-repeat: no-repeat;
+		background-position: left top;
+		padding: 0 0 5px 0;
+		font-size: 1.5em;
+		border-bottom: #CCC 1px solid;
+		}
+	* html #addHeader {	
+		background-image: none;
+		padding: 0 0 5px 0;
+		font-size: 1.5em;
+		}
+		
+	.workspace {
+		margin:0; 
+		display:block;
+		background-image: url(/images/icons/workspace.png);
+	}
+	.currentTime {
+		background-image: url(/images/icons/clock.png);
+	}
+	.files_report {
+		background-image: url(/images/icons/groupAllFiles.png);
+	}
+	.recentComments {
+		background-image: url(/images/icons/commentBubble16.png);
+	}
+	.eventsReport, .calendar_report {
+		background-image: url(/images/icons/calendar16.png);
+	}
+	.smart_group {
+		background-image: url(/images/icons/groupFolderSmart.png);
+	}
+	.unreadMessages {
+		background-image: url(/images/icons/groupMail.png);
+	}
+	.bookmarks_report {
+		background-image: url(/images/icons/bookmark.png);
+	}
+	.lists_report {
+		background-image: url(/images/icons/groupAllLists.png);
+	}
+		
+	.reportBody {
+		max-height: 250px;
+		overflow: auto;
+	}
+
+
+/* Connect --------------------------------------------- */
+
+	/* notifications --------------------------------------------- */
+		
+	
+		table.notificationsList {
+			width: 100%;
+			}
+		table.notificationsList tr {
+			background-color: #FFEEBC;
+			}
+		table.notificationsList tr td {
+			height: 4 em;
+			border-color: #CCB36A !important;
+			border-width: 0 0 1px 0 !important;
+			border-style: solid;
+			line-height: 1.2em;
+			padding-top: 5px !important;
+			padding-bottom: 5px !important;
+			}
+		table.notificationsList tr td.Details {
+			background-color: #FFF;
+			background-image: url(/images/bg/peekShadow.png);
+			background-repeat: repeat-x;
+			background-position: 0 0;
+			}
+		table.notificationsList tr.oddRow {
+			background-color: #FFE59B;
+			border-width: 0 1px 0 1px;
+			border-color: #E0E6EE;
+			border-style: solid;
+		}
+		table.notificationsList {
+			table-layout:fixed;
+			width: 100%;
+			}
+		table.notificationsList td {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			}
+		table.notificationsList td .userPhoto {
+			float: left;
+			margin: 0 .25em .25em 0;
+			}
+		.notificationsDoc {
+			height: 32px !important;
+			padding: 5px 0 5px 36px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			display: block;
+			}
+		.notificationsDoc:hover {
+			color: #000;
+			text-decoration: underline;
+			}
+		.notificationsFooter {
+			padding: .5em;
+			border-color: #C5A652;
+			border-width: 1px 0 0 0;
+			border-style: solid;
+			}
+		.notificationsNone {
+			padding: 5px;
+			background-color: #FDFDFD;
+			border-color: #EEE #DEDEDE #DEDEDE #EEE;
+			border-width: 1px;
+			border-style: solid;
+			margin: 1em;
+		}
+		.notificationsInset {
+			text-align: center;
+			padding: 1.5em;
+			border-color: #F0F0F0 #FFF #FFF #EFEFEF;
+			border-width: 1px;
+			border-style: solid;
+			background-color: #F9F9F9;
+			color: #AAA;
+		}
+	
+
+/* pagination --------------------------------------------- */
+
+	
+		.reportBoxHeader .arrowPrev a {
+			background-position: -192px -2px;
+		}
+		.reportBoxHeader .arrowPrev a:hover {
+			background-position: -192px -26px;
+		}
+		.reportBoxHeader .arrowNext a {
+			background-position: -216px -2px;
+		}
+		.reportBoxHeader .arrowNext a:hover {
+			background-position: -216px -26px;
+		}
+
+
+	/* Reports -------------------------------------------------- */
+		
+		.report {		
+			margin: 0;
+		}
+		* html .report {
+			padding: 0 0 1px 0;
+		}
+		.lastRow td {
+			padding-bottom: 1em !important;
+		}
+		.lastRow td a {
+			color: #3175D8 !important;
+		}
+		ul.reportBoxHeader {
+			padding: 4px 8px 0 8px;
+			border-width: 1px;
+			border-color: #516E99 #516E99 #374D69 #516E99;
+			border-style: solid;
+			position: relative;
+			height: 2.2em;
+			color: #FFF;
+			background-color: #758BA9;
+			background-position: left center;
+			list-style-type: none;
+			-moz-border-radius: .4em .4em 0 0;
+			-webkit-border-top-left-radius: .4em;
+			-webkit-border-top-right-radius: .4em;
+			background-image: url(/images/bg/reportHeaderBG.png);
+			background-repeat: repeat-x;
+		}
+		ul.reportBoxHeader li {
+			float: left;
+		}
+		ul.reportBoxHeader li.right {
+			float: right;
+		}
+		.arrowPrev a, .arrowNext a {
+			width: 24px;
+			height: 20px;
+			display: block;
+			text-indent: -3000px;
+			background-image: url(/images/icons/reportHeaderIcons.png);
+		}
+		.arrowPrev a {
+			background-position: -96px -2px;
+		}
+		.arrowPrev a:hover {
+			background-position: -96px -26px;
+		}
+		.arrowNext a {
+			background-position: -120px -2px;
+		}
+		.arrowNext a:hover {
+			background-position: -120px -26px;
+		}
+		h3.drag_handle {		
+			font-size: 1em;
+			margin: 0 48px 0 26px !important;
+			padding: .4em 0 .4em 20px;
+			background-repeat: no-repeat;
+			background-position: left center;
+		}
+			
+		/* header Icons / report ----------------------- */
+			
+		.events {		
+			background-image: url(/images/icons/calendar16.png);
+		}
+		.messages {		
+			background-image: url(/images/icons/mailbox.png);
+		}
+		.joyent_files {		
+			background-image: url(/images/icons/filesAll.png);
+		}
+			
+			
+		#report_list:first-child {
+			border-top: 0 !important;
+			}
+		.reportHeader .hideReport,
+		.reportHeader .showReport,
+		.reportHeader .reload,
+		.reportHeader .remove,
+		.reportHeader .goToReport {		
+			background-repeat: no-repeat;
+			top: 2px;
+			height: 24px;
+			width: 24px;
+			position: absolute;
+			text-indent: -3000px;
+			cursor: pointer;
+			background-image: url(/images/icons/reportHeaderIcons.png);
+			}
+		* html .reportHeader .hideReport,
+		* html .reportHeader .showReport,
+		* html .reportHeader .reload,
+		* html .reportHeader .remove,
+		* html .reportHeader .goToReport {		
+			background-image: url(/images/ie/reportHeaderIcons.gif);
+			}
+		.reportHeader .showReport {		
+			background-position: -48px 0px;
+			left: 0px;
+			}
+		.reportHeader .showReport:hover {		
+			background-position: -48px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .hideReport {	
+			background-position: -72px 0px;
+			left: 0px;
+			}
+		.reportHeader .hideReport:hover {	
+			background-position: -72px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .reload {		
+			background-position: 0px 0px;
+			right: 24px;
+			}
+		.reportHeader .reload:hover {		
+			background-position: 0px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .remove {		
+			background-position: -24px 0px;
+			right: 0px;
+			}
+		.reportHeader .remove:hover {		
+			background-position: -24px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .goToReport {
+			background-position: -168px 0px;
+			right: 48px;
+		}
+		.reportHeader .goToReport:hover {		
+			background-position: -168px -24px;
+			background-color: transparent;
+			}
+
+		.reportsNone {
+			padding: 5px;
+			background-color: #FDFDFD;
+			border-color: #EEE #DEDEDE #DEDEDE #EEE;
+			border-width: 1px;
+			border-style: solid;
+			margin: 1em;
+		}
+		.reportsInset {
+			text-align: center;
+			padding: 1.5em;
+			border-color: #F0F0F0 #FFF #FFF #EFEFEF;
+			border-width: 1px;
+			border-style: solid;
+			background-color: #F9F9F9;
+			color: #AAA;
+		}
+			
+
+
+/* Contacts --------------------------------------------- */
+
+	/* Item View ------------------------------------------- */
+					
+		#people #contentPane dl {
+			padding: 0;
+			}
+		#people #contentPane dt+dd {
+			margin-top:1.5em;
+			}
+		#people #contentPane dd+dt {	
+			margin-top:1.5em;
+			}
+		#people #contentPane dt {
+			width:10em;
+			text-align:right;
+			display:block;
+			float:left;
+			margin:0px 0 0 0;
+			}
+		#people #contentPane dd {
+			margin:0.3em 0 0px 10.5em;
+			padding:0;
+			}
+			
+	/* Edit View Fix --------------------------------------- */
+	
+		#people #ContectCell legend, #people #ContectCell legend a {		
+			color: #777;
+			}
+		#people #item_editor legend, #people #item_editor legend a {		
+			font-weight: bold !important;
+			font-size: 1.1em !important;
+			margin: 0 0 0 0;
+			padding: 0 5px 0 5px;
+			}
+	
+		#people #item_editor fieldset {		
+			border: #DCDCDC;
+			border-width: 1px 0 0 0;
+			margin: 2.5em 0 1em 0;
+			padding-top: 0.75em;
+			border-style: solid;
+			border: #DCDCDC;
+			border-width: 1px 0 0 0;
+			margin: 1.75em 0 1em 0;
+			padding-top: 0.75em;
+			border-style: solid;
+			}
+		#people .addItem {
+			margin:1em 0 0 0;
+			margin:1em 0 0 0;
+			}
+		/*
+		#people fieldset {		
+			position: relative;
+			}
+		*/
+		#item_editor {
+			padding:0px;
+			margin:0px;
+			}
+	
+	/* Misc -------------------------------------------------- */
+		
+		.user_summary, .contact_summary {
+		  padding: 0 1em;
+		  border-style: solid;
+		  border-width: 1px;
+		  border-top-color: #FFF;
+		  border-left-color: #FFF;
+		  border-bottom-color: #BBB;
+		  border-right-color: #BBB;
+			}
+		
+		.contact_summary {
+		  background-color: #EDE;
+			}
+		
+		.user_summary {
+		  background-color: #DDE;
+			}
+		
+		.account_details {
+		  border-spacing: 0;
+		  width: auto;
+		/*  display: none; */
+			}
+		
+		
+		.account_details tr td {
+		  padding: 0 1em;
+		  border-bottom: thin solid #DDD;
+			}  
+		
+		.account_details tr td.label {
+		  text-align: right;
+		  font-weight: bold;
+			}
+		
+		.account_details tr th {
+		  font-weight: normal;
+		  text-align: left;
+		  padding-top: 0.5em;
+		  border-bottom: thin solid #888;
+			}
+		
+		
+		span.annotation {
+		  margin-left: 1em;
+		}
+

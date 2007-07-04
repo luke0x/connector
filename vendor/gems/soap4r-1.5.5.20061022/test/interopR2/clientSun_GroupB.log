@@ -1,0 +1,856 @@
+File: clientSun_GroupB.log - Wiredumps for SOAP4R client / SunMicrosystems server.
+Date: Sat Jul 23 21:27:04 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:05 JST 2005
+Content-Length: 700
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:32 GMT
+Server: Apache Coyote/1.0
+
+296
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoStructAsSimpleTypesResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><outputString xsi:type="xsd:string">a</outputString><outputInteger xsi:type="xsd:int">1</outputInteger><outputFloat xsi:type="xsd:float">1.1</outputFloat></ns0:echoStructAsSimpleTypesResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: caught exception while handling request: deserialization error: java.lang.NullPointerException (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:05 JST 2005
+Content-Length: 677
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:34 GMT
+Server: Apache Coyote/1.0
+
+224
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><env:Fault><faultcode>env:Client</faultcode><faultstring>caught exception while handling request: deserialization error: java.lang.NullPointerException</faultstring></env:Fault></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:05 JST 2005
+Content-Length: 600
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:34 GMT
+Server: Apache Coyote/1.0
+
+313
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoSimpleTypesAsStructResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoSimpleTypesAsStructResponse><ns1:SOAPStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></ns1:SOAPStruct></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: caught exception while handling request: deserialization error: java.lang.NullPointerException (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:06 JST 2005
+Content-Length: 577
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:34 GMT
+Server: Apache Coyote/1.0
+
+224
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><env:Fault><faultcode>env:Client</faultcode><faultstring>caught exception while handling request: deserialization error: java.lang.NullPointerException</faultstring></env:Fault></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:06 JST 2005
+Content-Length: 889
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:35 GMT
+Server: Apache Coyote/1.0
+
+40b
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echo2DStringArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echo2DStringArrayResponse><ns1:ArrayOfString2D id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r1c0</item><item xsi:type="xsd:string">r2c0</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r2c1</item><item xsi:type="xsd:string">r0c2</item><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c2</item></ns1:ArrayOfString2D></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:07 JST 2005
+Content-Length: 1088
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:35 GMT
+Server: Apache Coyote/1.0
+
+40b
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echo2DStringArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echo2DStringArrayResponse><ns1:ArrayOfString2D id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r0c2</item><item xsi:type="xsd:string">r1c0</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c0</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r2c2</item></ns1:ArrayOfString2D></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:07 JST 2005
+Content-Length: 1063
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605267072"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605267072"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605267072"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:35 GMT
+Server: Apache Coyote/1.0
+
+40b
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echo2DStringArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echo2DStringArrayResponse><ns1:ArrayOfString2D id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r1c0</item><item xsi:type="xsd:string">item</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r2c1</item><item xsi:type="xsd:string">item</item><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c2</item></ns1:ArrayOfString2D></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Expected = "String#-605373392"  //  Actual = "String#-605366852"
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:08 JST 2005
+Content-Length: 1063
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605328242"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605328242"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605328242"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:36 GMT
+Server: Apache Coyote/1.0
+
+40b
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echo2DStringArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echo2DStringArrayResponse><ns1:ArrayOfString2D id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r1c0</item><item xsi:type="xsd:string">item</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r2c1</item><item xsi:type="xsd:string">item</item><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c2</item></ns1:ArrayOfString2D></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:08 JST 2005
+Content-Length: 920
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:36 GMT
+Server: Apache Coyote/1.0
+
+431
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoNestedStructResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoNestedStructResponse><ns1:SOAPStructStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPStructStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varStruct href="#ID2"/></ns1:SOAPStructStruct><ns1:SOAPStruct id="ID2" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></ns1:SOAPStruct></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: caught exception while handling request: deserialization error: java.lang.NullPointerException (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:09 JST 2005
+Content-Length: 874
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:36 GMT
+Server: Apache Coyote/1.0
+
+224
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><env:Fault><faultcode>env:Client</faultcode><faultstring>caught exception while handling request: deserialization error: java.lang.NullPointerException</faultstring></env:Fault></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Expected = "String#-605521492"  //  Actual = "String#-605522222"
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:09 JST 2005
+Content-Length: 1062
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605479232"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString href="#id-605479232"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605479232"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:38 GMT
+Server: Apache Coyote/1.0
+
+42f
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoNestedStructResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoNestedStructResponse><ns1:SOAPStructStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPStructStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varStruct href="#ID2"/></ns1:SOAPStructStruct><ns1:SOAPStruct id="ID2" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></ns1:SOAPStruct></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:09 JST 2005
+Content-Length: 931
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:38 GMT
+Server: Apache Coyote/1.0
+
+438
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoNestedArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoNestedArrayResponse><ns1:SOAPArrayStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPArrayStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#ID2"/></ns1:SOAPArrayStruct><ns1:ArrayOfstring id="ID2" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item xsi:type="xsd:string">2.2</item><item xsi:type="xsd:string">b</item></ns1:ArrayOfstring></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:10 JST 2005
+Content-Length: 998
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:38 GMT
+Server: Apache Coyote/1.0
+
+438
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoNestedArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoNestedArrayResponse><ns1:SOAPArrayStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPArrayStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#ID2"/></ns1:SOAPArrayStruct><ns1:ArrayOfstring id="ID2" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item xsi:type="xsd:string">2.2</item><item xsi:type="xsd:string">b</item></ns1:ArrayOfstring></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:10 JST 2005
+Content-Length: 1083
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605580372"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605580372"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605580372"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:39 GMT
+Server: Apache Coyote/1.0
+
+434
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoNestedArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoNestedArrayResponse><ns1:SOAPArrayStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPArrayStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#ID2"/></ns1:SOAPArrayStruct><ns1:ArrayOfstring id="ID2" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item xsi:type="xsd:string"></item><item xsi:type="xsd:string">b</item></ns1:ArrayOfstring></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Expected = "String#-605629622"  //  Actual = "String#-605630732"
+
+Wire dump:
+
+= Request
+
+POST /round2/groupb HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:27:11 JST 2005
+Content-Length: 1083
+Host: soapinterop.java.sun.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605607392"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605607392"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605607392"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+SOAPAction: ""
+Content-Type: text/xml; charset="utf-8"
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:36:39 GMT
+Server: Apache Coyote/1.0
+
+434
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns0="http://soapinterop.org/" xmlns:ns1="http://soapinterop.org/xsd"><env:Body><ns0:echoNestedArrayResponse env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return href="#ID1"/></ns0:echoNestedArrayResponse><ns1:SOAPArrayStruct id="ID1" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns1:SOAPArrayStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat><varArray href="#ID2"/></ns1:SOAPArrayStruct><ns1:ArrayOfstring id="ID2" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="enc:Array" enc:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item xsi:type="xsd:string"></item><item xsi:type="xsd:string">b</item></ns1:ArrayOfstring></env:Body></env:Envelope>
+0
+
+
+
+

@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ENV['RAILS_ENV'] ||= 'production'
+
+require File.dirname(__FILE__) + "/../config/environment.rb"
+require 'active_support' # JoyentConfig needs cattr_accessor
+require 'net/smtp'
+
+WAKE_THESE_FOLKS_UP = JoyentConfig.bookmark_notification_list
+
+def send_notice(message)
+  
+  msgstr =<<EOM
+From: #{JoyentConfig.bookmark_email_from}
+To: #{WAKE_THESE_FOLKS_UP.join(", ")}
+Subject: Bookmark Generator Alert
+Date: #{Time.now.rfc822}
+
+#{message}
+EOM
+  settings = ActionMailer::Base.server_settings
+  Net::SMTP.start(settings[:address], 25) do |smtp|
+    smtp.send_message msgstr, WAKE_THESE_FOLKS_UP.first, WAKE_THESE_FOLKS_UP
+  end
+end
+
+begin
+  bm = Bookmark.find(ARGV[0])
+  unless bm.icon_url.include? 'cameraShy'
+    # Delete existing file
+    FileUtils.rm_f "#{RAILS_ROOT}/public#{bm.icon_url}"
+  end
+  
+  begin
+    bm.create_icon!
+  rescue
+    # The thing has likely totally gone away
+    send_notice 'Bookmark generator has gone away'
+    exit
+  end
+  sleep 10
+  
+  if bm.icon_url.include? 'cameraShy'
+    # oh noes.  The thing is not creating thumbs, send out a notice
+    send_notice 'Bookmark generator is not creating thumbnails'
+  end
+  
+rescue ActiveRecord::RecordNotFound
+  # The bookmark we're testing against has disappeared, send a notice
+  send_notice 'Bookmark not found, what happened?'
+end
+

@@ -1,0 +1,72 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # use with render_standard_group -%>
+<% name = standard_group.name # HAX -%>
+<% selected = standard_group_selected && (standard_group == standard_group_selected) && ((! others) or (others and ! User.current.subscribed_to?(standard_group))) -%>
+
+<li>
+  <% if selected -%>
+    <div id="selectedStandardGroup" class="roundtl highlighted"><div class="roundtr"><div id="standardGroupSelectedEditDivBL" class="roundbl"><div id="standardGroupSelectedEditDivBR" class="roundbr">
+  		<table>
+  			<tr>
+  				<td class="dinger">
+  				  <% if ! skip_children and ! standard_group.children.blank? and ! subscription -%>
+              <%= link_to_function('+', "GroupsBrowser.loadServiceChildren('#{service_name}', '#{standard_group.id}');",
+                                   { :class => 'collapsed', :id => "dinger_group_#{standard_group.id}" }) -%>
+  					<% end -%>
+  				</td>
+  				<td>
+            <%= link_to("#{name}", standard_list_url(standard_group), { :class => "folder highlighted #{css_class}" }) %>
+  				</td>
+  				<td class="showInfo">
+            <div id="standard_group_spinner_<%= standard_group.id %>" class="loadingSmallBlue" style="display: none;"></div>
+            <%= link_to_function("Edit", "StandardGroup.editToggle('#{standard_group.id}');", {:class => 'groupInfo collapsed', :id => "standard_group_edit_dinger_#{standard_group.id}"}) %>
+  				</td>
+  			</tr>
+  		</table>
+    </div></div></div></div>
+    <div id="standardGroupSelectionEdit" style="display: none;"><div>
+      <%= render :partial => 'sidebars/groups/service_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription} %>
+    </div></div>
+    <script type="text/javascript">
+    //<![CDATA[
+      var standardGroupSelectionEditContents = "<%= escape_javascript(render(:partial => 'sidebars/groups/service_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription})) %>";
+    //]]>
+    </script>
+  <% else -%>
+    <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+      <table><tr>
+        <td class="dinger">
+  			  <% if ! skip_children and ! standard_group.children.blank? and ! subscription -%>
+            <%= link_to_function('+', "GroupsBrowser.loadServiceChildren('#{service_name}', '#{standard_group.id}');",
+                                 { :class => (standard_group_selected and standard_group.descendent?(standard_group_selected)) ? 'expanded' : 'collapsed', :id => "dinger_group_#{standard_group.id}" }) -%>
+          <% end -%>
+        </td>
+        <td>
+          <%= link_to "#{name}", standard_list_url(standard_group), { :class => "folder #{css_class} service" } %>
+        </td>
+        <td class="showInfo">
+          <div id="standard_group_spinner_<%= standard_group.id %>" class="loadingSmallGrey" style="display: none;"></div>
+        </td>
+      </tr></table>  
+    </div></div></div></div>
+  <% end -%>
+	<% if ! skip_children -%>
+    <div id="groups_standard_group_<%= standard_group.id %>">
+      <% if standard_group_selected and standard_group.descendent?(standard_group_selected) -%>
+        <ul>
+          <% standard_group.children.each do |standard_group| -%>
+          	<%= render_service_group partial_path, { :standard_group => standard_group, :url => standard_list_url(standard_group), :selected_group => standard_group_selected, :level => level + 1, :service_name => standard_group.service.name, :group_id => standard_group.id } %>
+          <% end -%>
+        </ul>
+      <% end -%>
+    </div>
+	<% end -%>
+</li>

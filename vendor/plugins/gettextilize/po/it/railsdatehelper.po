@@ -1,0 +1,77 @@
+# Rails Date Helper Gettextilize 0.0.1
+# Copyright (C) 2006-2007 Joyent Inc.
+# This file is distributed under the same license as the Joyent Connector package.
+# Federico Caiazzo <neko@numerozero.com>, 2006-2007.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Rails Date Helper Gettextilize 1.0\n"
+"POT-Creation-Date: 2007-06-12 15:21+0200\n"
+"PO-Revision-Date: 2007-43-24 14:43+0000\n"
+"Last-Translator:  Federico Caiazzo <neko@numerozero.com>\n"
+"Language-Team: Joyent i18n <pedro@joyent.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: lib/date_helper.rb:30 lib/date_helper.rb:36
+msgid "less than a minute"
+msgstr "meno di un minuto"
+
+#: lib/date_helper.rb:30 lib/date_helper.rb:37
+msgid "1 minute"
+msgstr "1 minuto"
+
+#: lib/date_helper.rb:32
+msgid "less than 5 seconds"
+msgstr "meno di 5 secondi"
+
+#: lib/date_helper.rb:33
+msgid "less than 10 seconds"
+msgstr "meno di 10 secondi"
+
+#: lib/date_helper.rb:34
+msgid "less than 20 seconds"
+msgstr "meno di 20 secondi"
+
+#: lib/date_helper.rb:35
+msgid "half a minute"
+msgstr "mezzo minuto"
+
+#: lib/date_helper.rb:40
+msgid "%s minutes"
+msgstr "%s minuti"
+
+#: lib/date_helper.rb:41
+msgid "about 1 hour"
+msgstr "circa 1 ora"
+
+#: lib/date_helper.rb:42
+msgid "about %s hours"
+msgstr "circa %s ore"
+
+#: lib/date_helper.rb:43
+msgid "1 day"
+msgstr "1 giorno"
+
+#: lib/date_helper.rb:44
+msgid "%s days"
+msgstr "%s giorni"
+
+#: lib/date_helper.rb:45
+msgid "about 1 month"
+msgstr "circa 1 mese"
+
+#: lib/date_helper.rb:46
+msgid "%s months"
+msgstr "%s mesi"
+
+#: lib/date_helper.rb:47
+msgid "about 1 year"
+msgstr "circa 1 anno"
+
+#: lib/date_helper.rb:48
+msgid "over %s years"
+msgstr "più di %s anni"

@@ -1,0 +1,66 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<form action="<%= smart_group_update_url(:id => smart_group.id) %>" method="post" onsubmit="return  SmartGroup.editSubmit(this);">
+  <%= smart_group_boolean_mode_select %>
+  <fieldset>
+    <legend><%= _('Tags') -%>:</legend>
+    <div id="smartGroupEditTagList">
+      <% smart_group.tags.each_with_index do |tag,index| -%>
+        <% index += 1 -%>
+        <div id="smartGroupEditTagRow_<%= index %>">
+          <a href="#" onclick="SmartGroup.editRemoveTag(<%= index %>); return false;" class="smallRemoveLink">-</a>
+          <%= _('tag is') -%><br />
+          <input type="text" id="smartGroupEditTag_<%= index %>" name="tag[<%= index %>]" value="<%= tag %>" style="font-size:9px; width: 85%;" autocomplete="off" />
+          <hr />
+        </div>
+      <% end unless smart_group.tags.blank? -%>
+    </div>
+    <a href="#" onclick="SmartGroup.editAddTag(); return false;" class="smallAdd"><%= _('Add Tag') -%></a>
+  </fieldset>
+  <fieldset>
+    <legend><%= _('Conditions') -%>:</legend>
+    <div id="smartGroupEditAttributeList">
+      <% smart_group.smart_group_attributes.each_with_index do |attribute,index| -%>
+        <% index += 1 -%>
+        <div id="smartGroupEditAttributeRow_<%= index %>">
+          <table style="width: 100%;">
+            <tr>
+              <td>
+                <select name="attribute[<%= index %>][key]" size="1" style="font-size:9px; width: 100%;">
+                  <% SmartGroupDescription.find_by_item_type(controller.item_class_name).smart_group_attribute_descriptions.each do |attr_desc| -%>
+                    <% if attribute.smart_group_attribute_description == attr_desc -%>
+                      <option selected="selected" value="<%= attr_desc.id %>">
+                    <% else -%>
+                      <option value="<%= attr_desc.id %>">
+                    <% end -%>
+                      <%= _(attr_desc.name) %>
+                    </option>
+                  <% end -%>
+                </select>
+              </td>
+              <td rowspan="2">
+                <a href="#" onclick="SmartGroup.editRemoveAttribute(<%= index %>); return false;" class="smallRemoveLink">-</a>
+              </td>
+            </tr>
+            <tr><td>
+              <%= _('contains') -%><br/>
+              <input type="text" name="attribute[<%= index %>][value]" value="<%= attribute.value %>" style="font-size:9px; width: 90%;" />
+            </td></tr>
+          </table>
+          <hr />
+        </div>
+      <% end -%>
+    </div>
+		<a href="#" onclick="SmartGroup.editAddAttribute(); return false;" class="smallAdd"><%= _('Add Condition') -%></a>
+  </fieldset>
+  <p style="text-align: right;">
+  	<input type="submit" name="Submit" value="<%= _('Save Conditions') -%>" />
+  </p>
+</form>

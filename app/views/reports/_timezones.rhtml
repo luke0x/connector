@@ -1,0 +1,51 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:24%;" />
+			<col style="width:24%;" />
+			<col style="width:23%;" />
+			<col style="width:23%;" />
+			<col style="width:6%;" />
+		</colgroup>
+	<thead>
+		<tr>
+		  <th class="firstCol"><%= _('Name') -%></th>
+		  <th><%= _('Day') -%></th>
+	    <th><%= _('Time') -%></th>
+	    <th><%= _('Time Zone') -%></th> 
+	    <th class="detailView"><span>Peek</span></th> 
+	  </tr>
+	</thead>
+	<tbody>
+	<% @people.each_with_index do |person, index| -%>
+		<tr id="<%= person.dom_id %>_tr" itemDomId="<%= person.dom_id %>" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>"> 
+  		<td class="firstCol">
+				<%= person.user.full_name %>
+			</td>
+			<td>
+				<%= person.user.now.strftime('%A') %>
+			</td>
+  		<td>
+				<%= person.user.now.strftime('%I:%M %p') %>
+			</td>   
+  		<td>
+				<%= person.user.tz.to_s %>
+			</td> 
+			<td id="<%= person.dom_id %>_td_details_icon" class="details">
+				<%= link_to_function _('Details'), "PeekView.toggle('#{person.dom_id}', '#{peek_url(person, person.dom_id)}')" %>
+			</td>
+		</tr>
+		<tr id="<%= person.dom_id %>_tr_details" itemDomId="<%= person.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+			<td id="<%= person.dom_id %>_td_details" colspan="5" class="accountDetails Details"></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

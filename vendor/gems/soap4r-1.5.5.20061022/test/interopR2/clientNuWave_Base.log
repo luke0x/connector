@@ -1,0 +1,2019 @@
+File: clientNuWave_Base.log - Wiredumps for SOAP4R client / NuWave server.
+Date: Sat Jul 23 21:11:01 JST 2005
+
+##########
+# echoVoid
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoVoid'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoVoid'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:226:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:236:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (Entity reference)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:246:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (Character reference)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:257:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:267:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (EUC encoded)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:277:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:287:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (empty)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:297:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (space)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:307:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:317:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStringArray
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:327:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:351:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:363:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:375:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:398:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:408:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:418:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:429:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:443:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:457:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:471:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:485:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:499:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoIntegerArray
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:512:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:532:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:554:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:564:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:574:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:584:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:594:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:604:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:614:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:624:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:634:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:644:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:654:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:664:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:675:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:689:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:703:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:717:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloatArray
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:730:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:743:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStruct
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:765:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStruct (nil members)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:775:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:788:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:801:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:828:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:840:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:852:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:895:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:910:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (now)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:994:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1005:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1016:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1027:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1038:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1049:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (positive TZ)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1060:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (negative TZ)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1071:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1082:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1093:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (min TZ)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1104:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1115:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1126:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1137:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1148:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1162:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1176:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1190:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDate (empty: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1204:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1219:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1231:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1242:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBase64 (\0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1253:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1264:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1276:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoHexBinary
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1290:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoHexBinary(empty)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1301:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1312:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1323:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1335:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1347:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBoolean (true)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1360:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBoolean (false)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1370:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoBoolean (junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1382:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (123456)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1395:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1406:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1417:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1428:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1439:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (-123.)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1450:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1461:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1475:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1489:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: Exception: bad URI(is not URI?): 	http://interop.nuwave-tech.com:7070/interop/base.wsdl (URI::InvalidURIError)
+/usr/local/lib/ruby/1.9/uri/common.rb:432:in `split'
+/usr/local/lib/ruby/1.9/uri/common.rb:481:in `parse'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:901:in `reset'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:337:in `reset'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:166:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1503:in `doTestBase'
+clientNuWave.rb:13
+
+Wire dump:
+
+

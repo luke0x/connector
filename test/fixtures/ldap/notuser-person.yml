@@ -1,0 +1,34 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+--- 
+city: 
+- Someville
+companyName: 
+- Not Textdrive
+st: 
+- Someabama
+objectclass: 
+- joyentContact
+dbid: 
+- "5"
+domain: 
+- textdrive.joyent.com
+country: 
+- Some Land
+sn: 
+- Lee
+postalCode: 
+- "666"
+givenName: 
+- Tai
+addressType: 
+- Home
+street: 
+- 666 Some Street

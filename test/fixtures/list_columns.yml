@@ -1,0 +1,40 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+list1_column1:
+  id: 1
+  list_id: 1
+  position: 1
+  name: Done?
+  kind: Checkbox
+list1_column2:
+  id: 2
+  list_id: 1
+  position: 2
+  name: Completed
+  kind: Date
+list1_column3: 
+  id: 3
+  list_id: 1
+  position: 3
+  name: A Number
+  kind: Number
+list1_column4: 
+  id: 4
+  list_id: 1
+  position: 4
+  name: notes
+  kind: Text
+
+checkbox_column:
+  id: 100
+  list_id: 100
+  position: 1
+  name: Checkbox Column
+  kind: Checkbox

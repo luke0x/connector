@@ -1,0 +1,38 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+joyent:
+  id: 1
+  organization_id: 1
+  web_domain: joyent.joyent.com
+  email_domain: joyent.joyent.com
+  primary: true
+  system_domain: true
+joyent_dev:
+  id: 4
+  organization_id: 1
+  web_domain: koz.dev.joyent.com
+  email_domain: koz.dev.joyent.com
+  primary: false
+  system_domain: false
+joyent_net:
+  id: 3
+  organization_id: 1
+  web_domain: www.joyent.net
+  email_domain: joyent.net
+  primary: false
+  system_domain: false
+
+textdrive:
+  id: 2
+  organization_id: 2
+  web_domain: textdrive.joyent.com
+  email_domain: textdrive.joyent.com
+  primary: true
+  system_domain: true

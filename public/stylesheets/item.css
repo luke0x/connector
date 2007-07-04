@@ -1,0 +1,515 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Forms --------------------------------------------- */
+
+		fieldset {
+			border:1px solid #DDD;
+			padding:0.25em 0.5em 0.35em 15px;
+		}
+		legend {
+			margin:0px 0px 0px -17px;
+			background-color:#FFF;
+			padding: 0 10px 0 0;
+		}
+
+/* Warnings ------------------------------------- */
+
+	.requestStatus {	
+		position: relative;
+		height: 200px;
+		width: 400px;
+		margin: 40px auto;
+		text-align: left;
+		padding: 0;
+		background-color: #f5f5f5;
+		background-image: url(/images/bg/warningBGGray.jpg);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+	}
+	.loading, .warningDialog, .success, .viewUsersStuff {	
+		padding: 100px 20px 0px 20px;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-position: 50% 35px;
+	}
+	.loading {	
+		background-image: url(/images/animation/loading48Grey.gif);
+	}
+	.warningDialog {	
+		background-image: url(/images/icons/attention48.png);
+	}
+	.success {	
+		background-image: url(/images/icons/check48.png);
+	}
+	.viewUsersStuff {	
+		background-image: url(/images/icons/userSearch.png);
+	}
+	.loading h4, .warningDialog h4, .success h4, .viewUsersStuff h4 {	
+		margin:0 0 0.5em 0;
+	}
+
+
+/* View ------------------------------------*/
+	
+
+	#ContentCell h3 {
+		margin:0.25em 0;
+		}
+	#ContentCell dt {
+		width:9em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin:0px 0 0 0;
+		}
+	#ContentCell dd {
+		margin:0px 0 0px 9.5em;
+		padding:0;
+		}
+	#ContentCell dd h3 {	
+		margin: 0px;
+		padding: 0px;
+		font-size: 1.2em;
+		}
+	#ContentCell dt+dd {
+		margin-top:0.5em;
+		}
+	#ContentCell dd+dt {	
+		margin-top:0.5em;
+		}
+	#ContentCell .accountDetails dt+dd {
+		margin-top:0em;
+		}
+	#ContentCell .accountDetails dd+dt {	
+		margin-top:0em;
+		}
+	#ContentCell dd pre {
+		margin:0px;
+		padding:0;
+		white-space: normal;
+		font-family:inherit;
+		font-size:inherit;
+		}
+	#ContentCell dd p {
+		margin:0px;
+		padding:0 0 1em 0;
+		}
+	#ContentCell dd em {
+		margin-left:8px;
+		font-style:italic;
+		color:#AAA;
+		}
+	.preview {	
+		padding: 8px;
+		text-align: center;
+		border-bottom:1px solid #DDD;
+		border-right:1px solid #DDD;
+		border-left:1px solid #DDD;
+		}
+	.inlineList ul {
+		padding-left: 0;
+		margin-left: 0 !important;
+		}
+	.inlineList ul li {
+		display: inline;
+		list-style-type: none;
+		margin-right: 5px !important;
+		}
+	.userPhotoBorder {	
+		float: right;
+		padding: 4px;
+		margin-right:1em;
+		background-color: #FFF;
+		border: 1px solid #ECECEC;
+		border-bottom: 1px solid #CCC;
+		border-right: 1px solid #CCC;
+		}
+	.userPhoto {	
+		padding: 0;
+		width: 48px;
+		height: 48px;
+		background: #FFF url(/images/icons/unavailableUserIcon.png) 50% 50% no-repeat;
+		}
+/* List View ------------------------------------ */
+
+	.pager {
+		font-size:x-small;
+		color: #DCDCDC;
+		}
+		
+/* Peek ------------------------------------*/
+	
+	tr.expandedListItem {
+		border-bottom:0px solid #eee;
+		}
+	* html #contentWrapper #itemView,
+	* html .eventDetails #itemView,
+	* html .messageDetails #itemView {	
+		position: relative !important;
+		top: 0px !important;
+		}	
+	#contentWrapper .accountDetails h5 {
+		font-size:11px;
+		}	
+	#contentWrapper .accountDetails h5 span {
+		font-size:10px;
+		float:right;
+		font-weight:normal;
+		}		
+	#contentWrapper .accountDetails table {
+		border-collapse: collapse;
+		line-height:17px;
+		width:100%;
+		}	
+	.accountDetails tr th {
+		border-bottom:1px solid #BCB08E;
+		background-color:#CCC;
+		padding:2px 5px 0 0;
+		background:#FFF;
+		text-align:left;
+		}
+	#contentWrapper table tr td table tr th .edit {
+		float:right;
+		border:1px solid #330;
+		}	
+	#contentWrapper .accountDetails table {
+		width:auto;
+		margin-left:25px;
+		}	
+	#contentWrapper .accountDetails table tr td {
+		border:0px #000 solid;
+		}
+		
+		
+/* Edit ------------------------------------*/
+	
+	
+	* html #itemView {
+		position: absolute;
+		left: 0px;
+		top: 50px;
+		}
+	#itemView table tr td {
+		padding:2px 0px;
+		color:#666;
+		}
+	#itemView h4 {
+		margin:0px 0px 0px 0px;
+		padding:0px;
+		font-size:13px;
+		}
+	#itemView h5 {
+		margin:0px;
+		padding:10px 0px 5px 0px;
+		font-size:1.4em;
+		line-height:13px;
+		text-align:left;
+		}
+	#itemView table tr th {
+		margin:0px;
+		padding:20px 0px 5px 0px;
+		font-size:1.2em;
+		line-height:13px;
+		text-align:left;
+		color:#000;
+		}
+	#itemView ul, #itemView .titleInfo  {
+		margin:0px 0px 0px 35px;
+		padding:0px;
+		}
+	#itemView ul li  {
+		margin:0px 0px 5px 0px;
+		padding:0px;
+		}
+	fieldset hr {
+		border:#EEE 0px solid;
+		height:1px;
+		background-color:#EEE;
+		border-bottom:#EEE 0px solid;
+		}
+	.dateEntry {
+		padding: 3px 0 3px 0;
+		}
+	.timeEntry {
+		padding: 3px 0 3px 0;
+		}
+	.deleteItem span {
+		display:none;
+		}
+	.noWrap {
+		white-space:nowrap;
+		}
+
+
+		
+/* List View --------------------------------------------- */
+
+		
+	
+	.file {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 20px;
+		font-weight:normal;
+		margin:0;
+		}
+	#contentWrapper table.tableList tr td.Details {
+		height: 5em;
+		border-width: 0 1px 1px 1px !important;
+		border-style: solid;
+		border-color: #E0E6EE !important;
+		line-height: 1.2em;
+		padding: 10px 0 10px 0 !important;
+		}
+	#contentWrapper table.tableList {
+		border-collapse: separate;
+		border: outset 0px;
+		border-spacing: 0px;
+		line-height:17px;
+		width:100%;
+		border-top:1px solid #E3E4DE;
+		table-layout:fixed
+	}
+	#contentWrapper table.tableList tr {
+		border-top:1px solid #F7F8F1;
+	}
+	#contentWrapper table.tableList tr tr {
+		border-top:0px solid #F7F8F1;
+	}
+	#contentWrapper table.tableList tr th a {	
+		padding-right: 3%;
+		display: block;
+	}
+	th.firstName a:hover,     	th.lastName a:hover, 	th.companyName a:hover, th.emailAddress a:hover, 
+			th.phoneNumber a:hover, th.fileName a:hover, 	th.size a:hover, 
+			th.dateMod a:hover, 		th.type a:hover, 			th.from a:hover, 
+			th.subject a:hover, 		th.dateSent a:hover		th.name a:hover, th.unsorted a:hover {
+		text-decoration: none;
+		background: transparent;
+		background-image: url(/images/icons/listedByUpArrow.png) !important;
+		background-repeat: no-repeat;
+		background-position: 98% 50%;
+	}
+	#contentWrapper .listedByDescending a, 
+	#contentWrapper .listedByAscending a:hover, 
+	.listedByDescending span {
+		background-image: url(/images/icons/listedByDownArrow.png) !important;
+		background-repeat: no-repeat;
+		background-position: 98% 50%;
+	}
+	#contentWrapper .listedByAscending a, 
+	#contentWrapper .listedByDescending a:hover, 
+	.listedByAscending span {
+		background-image: url(/images/icons/listedByUpArrow.png) !important;
+		background-repeat: no-repeat;
+		background-position: 98% 50%;
+	}
+	.oddRow {
+		background-color: #F3F7FE;
+	}
+	th.dateBar {		
+		text-align: left;
+	}
+	td.checkbox {
+		text-align: center;
+	}
+	#contentWrapper td.checkbox, td.firstCol {
+		border-width: 1px !important;
+	}
+	#contentWrapper th.checkBox, th.firstCol {
+		border-width:0 1px 1px 1px !important;
+	}
+	.notificationDetails a, .notificationDetailsActivated a {	
+		text-indent: -6000px;
+		height: 16px;
+		width: 32px;
+		display: block;
+		margin: 0 auto;
+		background-image: url(/images/icons/info.png);
+		background-repeat: no-repeat;
+	}
+
+	/* temp hax */
+		.notificationDetails a {	
+			background-position: -38px 0;
+			}
+		.notificationDetails a:hover {
+			background-position: -38px -16px;
+			}
+		.notificationDetails a:active {
+			background-position: -38px -32px;
+			}
+		.notificationDetailsActivated a {
+			background-position: -6px -32px; 
+			}
+		.notificationDetailsActivated a:hover {
+			background-position: -6px -16px; 
+			}
+		.notificationDetailsActivated a:active {
+			background-position: -6px 0; 
+			}
+
+
+		
+		
+	.getInfo a {
+		background:#0055E9;
+		padding:3px 6px;
+		color:#fff;
+	}
+	
+	#AddressQuickInfo tr td {
+		border:0px solid #EBEADD;
+	}
+	#AddressQuickInfo .infoLabels {
+		text-align:right;
+		font-weight:bold;
+		padding-right:12px;
+	}
+	#AddressQuickInfo {
+		border-collapse: collapse;
+		border:0px solid #0c0;
+		margin:15px;
+	}
+
+	/* Columns --------------------------------------------- */
+		
+		.details {
+			width:2%;
+		}
+	
+		
+/* Comments ---------------------------------------------- */
+	
+	.CommentsExpanded h3, .CommentsCollapsed h3 {
+		background-image: url(/images/bg/commentsHeader.png);
+		background-position: left top;
+		padding-top: 6px;
+		background-repeat: no-repeat;
+		margin: 1em 0;
+	}
+	.CommentsExpanded h3 a, .CommentsCollapsed h3 a {	
+		padding: 5px 0 5px 38px;
+		background-repeat: no-repeat;
+		background-position: 6px 50%;
+		font-size: 11px !important;
+		margin:0px;
+		color: #000 !important;
+		}
+	.CommentsExpanded h3 a  {
+		background-image: url(/images/icons/commentBubble16-down.png);
+		}
+	.CommentsCollapsed h3 a {	
+		background-image: url(/images/icons/commentBubble16-up.png);	
+		}
+	#comments {
+		padding: 1em 0;
+		}
+	#comments hr {		
+		background-color: #ECECEC;
+		margin:1em 0;
+		}
+	.comment, .commentForm {
+		padding: .75em;
+		}
+	.commentInfo {
+		font-style:italic;
+		color: #000;
+		padding: 0 0 0.85em 16px;
+		margin: 0 0 0 51px;
+		background-image: url(/images/icons/commentBubble12.gif);
+		background-repeat: no-repeat;
+		background-position: 0 2px;
+		}
+	.commentInfoForm {
+		color: #000;
+		padding: 0 0 0 16px;
+		background-image: url(/images/icons/commentBubble12.gif);
+		background-repeat: no-repeat;
+		background-position: 0px 50%;
+		}
+	.commentUserPhoto {
+		}
+	.comment p {
+		padding: 0;
+		margin: 0 0 0.85em 0;
+		}
+	.commentEditControls {
+		font-size:0.85em;
+		}
+	.commentBody {
+		margin:0 0 0 51px;
+		color:#000;
+		}
+	.commentUserPhoto {
+		float:left;
+		}
+	.commentUserPhoto img {
+		height:44px;
+		width:44px;
+		padding:4px 5px 2px 0;
+		}
+
+/* Anime -------------------------------------------------- */
+
+
+	.loadingMessageSmall {	
+		background-image: url(/images/animation/loading16.gif);
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		padding: 1em 0 1em 38px;
+		}
+	.loadingMessageLarge {
+		background-image: url(/images/animation/loading48.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		height:120px;
+		}
+	.loadingSmallBlue {	
+		background-image: url(/images/animation/loading16Blue.gif);
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		padding: 1em 0 1em 38px;
+		}
+	.loadingSmallGrey {	
+		background-image: url(/images/animation/loading16Grey.gif);
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		padding: 1em 0 1em 38px;
+		}
+		
+/* Go Tos-------------------------------------------------------- */
+
+	.go {	
+		padding:1px 0 1px 18px;
+		line-height:16px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		}
+	.goto {	
+		padding:1px 0 1px 10px;
+		line-height:16px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-image: url(/images/icons/goTo.png);
+		}
+	.toGoogle {	
+		background-image: url(/images/icons/goToGoogle.png);
+		}
+	.toSkype {	
+		background-image: url(/images/icons/goToSkype.png);
+		}
+	.toJajah {
+		background-image: url(/images/icons/goToJajah.png);
+		}
+	.toContacts {	
+		background-image: url(/images/icons/doc/16/vcf.png);
+		}
+

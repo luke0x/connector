@@ -1,0 +1,48 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table>
+  <tr style="text-align:left;">
+    <th style="padding:0; margin:0;"><%= _('Folders') -%></th>
+    <th style="padding:0; margin:0;"><%= _('Files') -%></th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <div id="file_browser_group_list" class="fileBrowserList">
+        <ul>
+          <% if @folder -%>
+            <li id="fileBrowserFolder<%= @folder.parent.id rescue -1 %>">
+              <%= link_to_function _('Up one level'), "file_browser.selectConnectorFolder(#{@folder.parent.id rescue -1});", {:class => 'fileBrowserUp'} %>
+            </li>
+          <% end -%>
+          <% @children.each do |folder| -%>
+            <li id="fileBrowserFolder<%= folder.id %>">
+              <%= link_to_function folder.name, "file_browser.selectConnectorFolder(#{folder.id});", {:class => 'defaultFolder'} %>
+            </li>
+          <% end -%>
+        </ul>
+      </div>
+    </td>
+    <td valign="top">
+      <div id="file_browser_file_list" class="fileBrowserList">
+        <% unless @files.blank? -%>
+          <ul>
+            <% @files.each do |file| -%>
+              <li id="fileBrowserFile<%= file.id %>">
+                <%= link_to_function file.filename, "file_browser.selectConnectorFile(#{file.id}, '#{file.name}');", {:class => "file #{file.joyent_file_type.css_class}"} %>
+              </li>
+            <% end -%>
+          </ul>
+        <% end -%>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<%= _('Current Folder') -%>: Home/<%= h @folder && @folder.pathname %>

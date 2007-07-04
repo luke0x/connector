@@ -1,0 +1,34 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+xml.instruct! :xml, :version => "1.0", :encoding => "UTF-8"
+xml.opml :version=>"1.0" do
+  xml.head do |xml|
+    xml.title @list.name
+    xml.dateCreated  @list.created_at
+    xml.dateModified @list.updated_at
+    xml.ownerName @list.owner.username
+    xml.expansionState 
+  end
+  xml.body do |xml|
+    @list.roots.sort_by(&:position).each do |list_row|
+      if list_row.children.empty?
+        xml.outline build_attrs(list_row)
+      else
+        list_row.children.each do |child|
+          xml.outline build_attrs(list_row) do
+            xml.outline build_attrs(child)
+          end
+        end
+      end
+    end
+  end
+end

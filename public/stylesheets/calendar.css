@@ -1,0 +1,435 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) --------------------------------------------- */
+	
+	.actionMonthView a.disabled, .actionMonthView a:hover.disabled {
+		background-position: 0px 0px;
+	}
+	.actionMonthView a {
+		background-position: 0px -30px;
+	}
+	.actionMonthView a:hover {
+		background-position: 0px -60px;
+	}
+	.actionMonthView a:active, .actionMonthView a.active {
+		background-position: 0px -90px;
+	}
+		
+	.actionListView a.disabled, .actionListView a:hover.disabled {
+		background-position: -150px 0px;
+	}
+	.actionListView a {
+		background-position: -150px -30px;
+	}
+	.actionListView a:hover {
+		background-position: -150px -60px;
+	}
+	.actionListView a:active, .actionListView a.active {
+		background-position: -150px -90px;
+	}
+		
+	.actionDay a.disabled, .actionDay a:hover.disabled {
+		background-position: -300px 0px;
+	}
+	.actionDay a {
+		background-position: -300px -30px;
+	}
+	.actionDay a:hover {
+		background-position: -300px -60px;
+	}
+	.actionDay a:active, .actionDay a.active {
+		background-position: -300px -90px;
+	}
+		
+	.actionWeek a.disabled, .actionWeek a:hover.disabled {
+		background-position: -450px 0px;
+	}
+	.actionWeek a {
+		background-position: -450px -30px;
+	}
+	.actionWeek a:hover {
+		background-position: -450px -60px;
+	}
+	.actionWeek a:active, .actionWeek a.active {
+		background-position: -450px -90px;
+	}
+		
+	.actionOverlayUser a.disabled, .actionOverlayUser a:hover.disabled {
+		background-position: -600px 0px;
+	}
+	.actionOverlayUser a {
+		background-position: -600px -30px;
+	}
+	.actionOverlayUser a:hover {
+		background-position: -600px -60px;
+	}
+	.actionOverlayUser a:active, .actionOverlayUser a.active {
+		background-position: -600px -90px;
+	}
+
+	.actionToday a.disabled, .actionToday a:hover.disabled {
+		background-position: -750px 0px;
+	}
+	.actionToday a {
+		background-position: -750px -30px;
+	}
+	.actionToday a:hover {
+		background-position: -750px -60px;
+	}
+	.actionToday a:active, .actionToday a.active {
+		background-position: -750px -90px;
+	}
+
+/* sidebar -------------------------------------------------- */
+
+	#calendar .all.folder {
+		background-image: url(/images/icons/calendar16.png);
+		}
+	#calendar .smartGroup {		
+		background-image: url(/images/icons/groupCalendarSmart.png);
+		}
+	#calendar .group {
+		background-image: url(/images/icons/calendar16.png);
+		}
+	#calendar .group.subscription {
+		background-image: url(/images/icons/groupCalendarSubscription.png);
+	}
+
+/* List View ---------------------------------------------- */
+
+	#calendar #contentPane dt+dd {
+		margin-top:1em;
+  }
+	#calendar #contentPane dd+dt {	
+		margin-top:1em;
+  }
+	#calendar #contentPane dt {
+		width:10em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin:0px 0 0 0;
+  }
+	#calendar #contentPane dd {
+		margin:0px 0 0px 10.5em;
+		padding:0;
+  }
+	#calendar .oddRow {
+		background-color: transparent !important;
+  }
+	.dayBar td {	
+		background-color: #F3F7FE;
+		border-bottom: 1px solid #C7D6EF !important;
+		border-top: 1px solid #D6E1F3 !important;
+		border-right: none !important;
+  }
+	.addPlusSmall {
+		background-image: url(/images/icons/smallPlus.png);
+		background-repeat: no-repeat;
+		background-position: 0 3px;
+		padding: 0 0 0 10px;
+		height: 16px;
+		margin: 2px;
+		display: block;
+		width: 12em;
+		color: #CCC !important;
+		font-size: .95em;
+		}
+	td .addPlusSmall {	
+		margin-bottom: 9px;
+		margin-left: 0 !important;
+		}
+	.addPlusSmall:hover {	
+		background-position: 0 -97px;
+		color: #AAA !important;
+		text-decoration: none;
+		}
+	.addPlusSmall:active {	
+		background-position: 0 -197px;
+		color: #000 !important;
+		text-decoration: none;
+		}
+	
+	.dateTime {
+		white-space: nowrap;
+		padding:0px 15px 0px 0px;
+		}
+	.dateBarTitle {	
+		float: left;
+		font-weight: bold;
+		}
+	.dateBarTitle span, .dateBarTitleCollapsed span {	
+		padding: 0 0 0 15px;
+		background-image: url(/images/calendar/today.gif);
+		background-repeat: no-repeat;
+		background-position: -1px -2px;
+		}
+
+/* Day View ----------------------------------------------- */
+
+	.dayViewCell {
+		margin: 0;
+		padding: 0 !important;	
+		border-width: 0px !important;
+		border-style: none;
+  }
+	.dayViewCell table {
+		border-width: 0px !important;
+  }
+	.dayViewCell table tr td {
+		padding: 0 !important;	
+  }
+	.dayView {		
+		height: 20em;
+		overflow: auto;
+		border-style: solid;
+		border-color: #999;
+		border-width: 0px 0px 1px 0px;
+		margin: 0;
+  }
+	* html .dayView {		
+		width: 97%;
+  }
+	.dayView table {
+		empty-cells:show;
+		border-collapse: collapse;
+  }
+	.dayView table tr td {		
+		height: 5px;
+		overflow: hidden;
+		padding: 0px;
+  }
+	.dayViewMeter {
+		width: 0% !important;
+		padding: 0 !important;
+		border-width: 0px !important;
+		border-color: transparent !important;
+  }
+	.dayViewTime {		
+		font-weight: normal;
+		text-align: center;
+		text-transform: inherit;
+		padding: 0 0.25em !important;
+		border-color: #FFF #CCC #CCC #CCC;
+		border-width: 1px;
+		border-style: solid;
+		background-color: #F5F5F5;
+		white-space: nowrap;
+  }
+	.dayView00 td {
+		border-top:1px solid #E6E6E6 !important;
+  }
+	.dayView30 td {
+		border-top:1px solid #F6F6F6 !important;
+  }
+	.dayViewEvent {
+		padding: 0 1em !important;
+		background-color: #215FD0;
+		border:1px solid #FFF;
+		color:#FFF;
+  }
+	.dayViewEvent a {		
+		color: #FFF !important;
+  }
+	a.dateViewShow, a.dateViewHide {		
+		display: block;
+		height: 16px;
+		width: 16px;
+		margin: .25em .25em .25em 0;
+		text-indent: -3000px;
+		background-image: url(/images/icons/dayChartCombo.png);
+		background-repeat: no-repeat;
+  }
+	a.dateViewShow {
+		background-position: 0 -32px;
+		margin: 0 auto;
+	}
+	a.dateViewHide {	
+		background-position: 0 0;
+		margin: 0 auto;
+  }
+	a.dateViewHide:hover, a.dateViewShow:hover {		
+		background-position: 0 -16px;
+  }
+	a.dateViewHide:active, a.dateViewShow:active {		
+		background-position: 0 -48px;
+  }
+
+/* Month View --------------------------------------------- */
+	
+	#calendarMonthView {
+		border-collapse: collapse;
+		margin: 0;	
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		border-color: #CCC;
+		clear: left;
+  }
+	#calendarMonthView td {
+		border-color: #CCC #DDD #CCC #DDD;
+		border-width: 1px;
+		border-style: solid;
+		background-color: #FFF;
+	}	
+	#calendarMonthView thead th { 
+		font-size:85%;
+		text-align:center;
+		padding:3px 0;
+  }
+	#calendarMonthView tr+td {
+		border-left: 1px solid #CCC !important;
+		background-color: red;
+  }
+	#calendarMonthView caption {
+		display:none;
+  }
+	#calendarMonthView tbody td {
+		vertical-align: top;
+		height: 60px;
+		padding: 0px 2px 2px 2px;
+		white-space: normal;
+	}
+	.dayView .allDayEvent {
+		margin: 1px 1px 1px 1px;
+	}	
+	.allDayEvent {
+		margin: 0px 0px 1px 0px;
+		clear: both;
+		-moz-border-radius: .7em .7em .7em .7em;
+		-webkit-border-top-left-radius: .7em;
+		-webkit-border-top-right-radius: .7em;
+		-webkit-border-bottom-left-radius: .7em;
+		-webkit-border-bottom-right-radius: .7em;
+	}	
+	.allDayEvent a {
+		display: block;
+		color: #FFF !important;
+		padding-left: 3px;
+		-moz-border-radius: .7em .7em .7em .7em;
+		-webkit-border-top-left-radius: .7em;
+		-webkit-border-top-right-radius: .7em;
+		-webkit-border-bottom-left-radius: .7em;
+		-webkit-border-bottom-right-radius: .7em;
+	}	
+	.allDayEvent a:hover {
+		background-image: url(/images/bg/eventAllDayHover.png);
+		background-repeat: repeat;
+		background-position: 0 0;
+	}	
+	ul.monthViewEvent {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	.monthViewEvent li {
+		margin: 0;
+		color: #215FD0;
+	}	
+	.monthViewEvent li a {
+		color: #215FD0;
+		display: block;
+		padding: 6px 0 ;
+		line-height: 1em;
+	}	
+	.monthViewEvent li a:hover {
+		background-image: url(/images/bg/eventShadowHover.png);
+		background-position: left top;
+	}	
+	.monthViewEvent li a:hover, .monthViewAllDayEvent a:hover {
+	}			
+
+	.monthViewCurrentUserEvent a {
+		color:#215FD0;
+	}
+	.monthViewCurrentUserAllDayEvent {
+		background: #215FD0;
+	}
+
+	.dayViewCurrentUserAllDayEvent, .dayViewCurrentUserAllDayEvent a {
+		background-color: #2A5FCF !important;		
+		color: #FFF !important;
+  }
+	.calMonthDayHeader {
+		font-weight:bold;
+		text-align:left;
+		padding: 2px 0 0 0;
+  }
+	.today {
+		background: #EEE;
+  }
+	td.monthToday {
+		background-color: #D1E6FF !important;
+  }
+	.monthDay {
+		padding: 0 0 0 2px;
+		width: 2em;
+		display: block;
+		margin: 0 0 2px 0;
+		font-weight: normal;
+	}
+	.monthDay, .monthDay a  {
+		color:#000 !important;
+  }
+	.monthDay:hover {
+		background-image: url(/images/bg/eventShadowHover.png);
+  }
+	.addEventMonthView {
+		height: 9px;
+		width: 9px;
+		margin: 4px 2px 0 0;
+		float: right;
+		background-image: url(/images/icons/smallPlus.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		display: block;
+		text-indent: -3000px;
+	}
+	.addEventMonthView {
+  }
+	.addEventMonthView:hover {
+		background-position: 0 -100px;
+  }
+	.addEventMonthView:active {
+		background-position: 0 -200px;
+  }
+	.addEventMonthView a {
+		text-indent: -3000px;
+		display: block;
+  }
+	.addEventMonthView a:hover {
+		text-decoration: none;
+  }
+	.overlayColorKey {	
+		padding: 0 0 4px 0;
+		margin: 0;
+		list-style: none;
+		display: block;
+  }
+	.overlayColorKey li {
+		display: inline;
+		padding: 0 1em 0 0;
+  }
+	.overlayColorKey li span {		
+		height: 12px;
+		width: 12px;
+  }
+	.overlayColorKeyCell {		
+		padding: 0.75em;
+		background-color: #F9F9F9;
+  }
+	.overlayColorKeyCell .overlayColorKey {		
+		background-color: transparent;
+		border-width: 0px;
+		padding: 0;
+		list-style: none;
+		display: inline;
+		clear: both;
+		margin-top: 2em;
+  }

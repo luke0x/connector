@@ -1,0 +1,41 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table id="tableList" class="tableList">
+	<colgroup>
+		<col style="width:57%;" />
+		<col style="width:37%;" />
+		<col style="width:6%;" />
+	</colgroup>
+  <thead>
+		<tr>
+			<th class="firstCol"><%= _('Name') %></th>
+			<th><%= _('Date Modified') %></th>
+			<th class="detailView"><span>Peek</span></th>
+		</tr>
+  </thead>
+  <tbody>
+		<% @lists.each_with_index do |list, index| -%>
+			<tr id="<%= list.dom_id %>_tr" itemDomId="<%= list.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td class="firstCol">
+					<%= link_to h(list.name), list_url(list) %>
+				</td>
+				<td>
+					<%= link_to _("%{i18n_time}")%{:i18n_time =>"#{format_local_words_or_date(list.updated_at)}"}, list_url(list) %>
+				</td>
+				<td id="<%= list.dom_id %>_td_details_icon" class="details">
+					<%= link_to_function _('Details'), "PeekView.toggle('#{list.dom_id}', '#{peek_url(list, list.dom_id)}')" %>
+				</td>
+			</tr>
+			<tr id="<%= list.dom_id %>_tr_details" itemDomId="<%= list.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td id="<%= list.dom_id %>_td_details" colspan="4" class="Details"></td>
+			</tr>
+    <% end -%>
+  </tbody>
+</table>

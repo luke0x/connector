@@ -1,0 +1,26 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+list1:
+  id: 1
+  organization_id: 1
+  user_id: 1
+  list_folder_id: 2
+  name: List of Silly Things
+  created_at: <%= 5.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+
+list2:
+  id: 2
+  organization_id: 1
+  user_id: 1
+  list_folder_id: 1
+  name: List of Stuff that Might Be Done
+  created_at: <%= 15.days.ago.to_s :db %>
+  updated_at: <%= 3.days.ago.to_s :db %>

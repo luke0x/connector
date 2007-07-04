@@ -1,0 +1,21 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+if @items.empty?
+  page.call 'browser.decreaseContainer', 1
+  render_action_button(params, true, page)
+elsif params[:subscribable_id]
+  render_action_button(params, true, page)
+  page.insert_html :after, "#{params[:current_column]}", :partial => 'columns', :locals => {:items => @items, :params => params, :next_type => @next_type}
+else
+  render_action_button(params, false)
+  page.insert_html :after, "#{params[:current_column]}", :partial => 'columns', :locals => {:items => @items, :params => params, :next_type => @next_type}
+end

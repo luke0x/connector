@@ -1,0 +1,176 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* file browser ---------------------------------------------- */
+	
+	#Drawers #browserFrame {
+		height: 210px;
+	}
+	#browserFrame {
+		border-color: #BEBEBE;
+		border-width: 1px;
+		border-style: solid;
+		overflow: auto;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		background-color: #FFF;
+		margin-top: 5px;
+		width: 100%;
+		height: 310px;
+	}
+	#browserColumns {
+		width: 150px;
+	}
+div.browserList {
+	width: 150px;
+	height: 293px !important;
+	background-color: #FFF;
+	border-color: #9D9D9D;
+	border-width: 0;
+	border-style: solid;
+	vertical-align: top;
+	float: left;
+}
+#Drawers  div.browserList, #Drawers  div.browserList ul {
+	height: 193px !important;
+}
+div.browserList ul {
+	height: 293px !important;
+}
+.browserList ul {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100%;
+	overflow: auto;
+	overflow-y: scroll !important;
+}
+.browserList ul li {
+	padding: 0 2px ! important;
+}
+.browserList ul li.selected {
+	background-color: #0055E9;
+}
+.browserList ul li.selected a {
+	color: #ffffff;
+}
+.browserList ul li a {
+	padding: 6px 3px 6px 27px;
+	color: #000;
+	display: block;
+	line-height: 1.3em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.browserList a.defaultFolder {
+	background: url(/images/icons/folderClosed.png) 2px 50% no-repeat;
+}
+.browserList a.fileBrowserUp {	
+	background: url(/images/icons/backToTop.png) 2px 50% no-repeat;
+}
+
+.onceClicked {
+	background-color: #D9D9D9;
+}
+#browserFrame .highlighted a {
+	color: #FFF !important;
+}
+
+.browserButton {
+	width:100px;
+	text-align:right; 
+	padding:5px;
+	float:right;
+}
+
+
+.attachSelector {
+	border-bottom: 1px solid #A2C4DE;
+	padding: 4px;
+	background-color: #A7C7E0;
+}
+* html .attachSelector {
+	display: inline;
+	clear: both;
+}
+#attachUI {
+	margin: 4px 0 0 0;
+	position: relative;
+	background-color: #CEDFEC;
+	border-color: #A2C4DE;
+	border-width: 1px;
+	border-style: solid;
+}
+* html #attachUI {	
+	z-index: 9 !important;
+	overflow: auto;
+}
+
+.browser_placeholder {
+	height: 250px;
+}
+
+
+/* icons -------------------------------------------- */
+
+	#browserColumns .roundtl, #browserColumns .roundtr, #browserColumns .roundbl, #browserColumns .roundbr {
+	background-image: url(/images/bg/roundCornersOnWhite.png);
+	}
+
+	#browserColumns li a {
+		background-repeat: no-repeat;
+		background-position: 7px center;
+		font-size: .9em;
+	}
+	#browserColumns ul li.browserUserShortcut a {
+		background-image: url(/images/icons/groupUser.png);
+	}
+	
+	#browserColumns #app_column ul li.browserFiles a {
+		background-image: url(/images/icons/groupAllFiles.png);
+	}
+	#browserColumns ul li.browserFiles a {
+		background-image: url(/images/icons/groupFolder.png);
+	}
+	
+	#browserColumns #app_column ul li.browserMail a {
+		background-image: url(/images/icons/groupMail.png);
+	}
+	#browserColumns ul li.browserMail a {
+		background-image: url(/images/icons/groupMail.png);
+	}
+	
+	#browserColumns #app_column ul li.browserPeople a {
+		background-image: url(/images/icons/groupPeople.png);
+	}
+	#browserColumns ul li.browserPeople a {
+		background-image: url(/images/icons/groupPeople.png);
+	}
+	
+	#browserColumns #app_column ul li.browserCalendar a {
+		background-image: url(/images/icons/calendar16.png);
+	}
+	#browserColumns ul li.browserCalendar a {
+		background-image: url(/images/icons/calendar16.png);
+	}
+	
+	#browserColumns #app_column ul li.browserBookmarks a {
+		background-image: url(/images/icons/bookmarkEveryones.png);
+	}
+	#browserColumns ul li.browserBookmarks a {
+		background-image: url(/images/icons/bookmark.png);
+	}
+
+	#browserColumns #app_column ul li.browserLists a {
+		background-image: url(/images/icons/groupFolder.png);
+	}
+	#browserColumns ul li.browserLists a {
+		background-image: url(/images/icons/groupFolder.png);
+	}

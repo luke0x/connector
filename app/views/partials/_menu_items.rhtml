@@ -1,0 +1,90 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="plusMenu">
+	<a href="#" id="plusMenuLink" class="collapsed" onclick="return MenuItems.toggle();">+</a>
+	<ul id="plusMenuContents" style="display:none;">
+		<li>
+			<div id="loggedInUser">
+				<table>
+					<tr>
+						<td style="width: 48px;">
+							<div class="userPhoto">
+								<% if User.current.person.has_icon? -%>
+  								<img src="<%= person_icon_url(:id => User.current.person.id) %>" border="0" style="width:48px; height: 48px;" />
+								<% end -%>
+							</div>
+						</td>
+						<td>
+							<h4 style="margin-left: 5px;"><%= User.current.full_name %> (<%= User.current.username %>)</h4>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</li>
+		<% unless User.current.guest? -%>
+  		<li>
+  			<h5><%= _('Account Switching') -%></h5>
+  		</li>
+  		<% if User.current.has_other_identities? -%>
+    		<% User.current.identity.users.each do |user| -%>
+      		<li class="userShortcut <%= User.current == user ? 'selected' : '' %>">
+      			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+      			  <% if User.current == user -%>
+        			  <%= link_to_function "#{user.organization.name} - #{user.username}", "", {:style => 'font-weight: bold; font-style: italic;'} %>
+      			  <% else -%>
+        			  <%= link_to "#{user.organization.name} - #{user.username}", user_switch_url(:id => user.id) %>
+      			  <% end -%>
+      			</div></div></div></div>
+      		</li>
+    		<% end -%>
+  		<% end -%>
+  		<li class="userShortcutManage">
+  			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+  				<%= link_to_function _('Edit') + '&hellip;', "ModalDialog.showURL('#{user_connect_url}');" %>
+  			</div></div></div></div>
+  		</li>
+		<% end -%>
+		<li>
+			<h5><%= _('Utilities') -%></h5>
+		</li>
+		<li id="yourPreferences">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+  			<% if User.current.guest? -%>
+  				<%= link_to_function(_("Your Preferences") + '&hellip;', "ModalDialog.showURL('#{guest_edit_url(:id => User.current.id)}')", {:title => _("Edit your personal information")}) %>
+  			<% else -%>
+  				<%= link_to(_("Your Preferences"), person_edit_url(:id => User.current.person.id), {:title => _("Edit your personal information")}) %>
+  			<% end -%>
+  		</div></div></div></div>
+		</li>
+		<% if User.current.admin? -%>
+  		<li id="customerCenter">
+  			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+	          <% if Organization.current.affiliate.name == 'corel' -%>
+				<%= link_to _("Customer Center"), "http://corel.joyent.com/login", {:target => '_blank', :title => _('Go to the Joyent Customer Center')} %>
+			  <% else -%>
+    			<%= link_to _("Customer Center"), "http://customer.joyent.com/login", {:target => '_blank', :title => _('Go to the Joyent Customer Center')} %>
+              <% end -%>
+  			</div></div></div></div>
+  		</li>
+		<% end -%>
+		<li id="help">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<a href="http://forum.joyent.com/" target="_blank" title="<%= _('Open the Joyent Forum in a new window') -%>">
+					<%= _('Help') -%>
+				</a>
+			</div></div></div></div>
+		</li>
+		<li id="logout">
+			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+				<%= link_to(_("Sign Out"), logout_url, {}, {:title => _('Sign Out')}) %>
+			</div></div></div></div>
+		</li>
+	</ul>
+</div>

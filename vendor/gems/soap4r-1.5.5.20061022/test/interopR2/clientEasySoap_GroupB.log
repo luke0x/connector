@@ -1,0 +1,1076 @@
+File: clientEasySoap_GroupB.log - Wiredumps for SOAP4R client / EasySoap++ server.
+Date: Sat Jul 23 20:23:03 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:04 JST 2005
+Content-Length: 700
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:24:48 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 591
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoStructAsSimpleTypesResponse
+	xmlns:m="http://soapinterop.org/">
+<outputString
+	s:type="y:string">a</outputString>
+<outputInteger
+	s:type="y:int">1</outputInteger>
+<outputFloat
+	s:type="y:float">1.10000002</outputFloat>
+</m:echoStructAsSimpleTypesResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: Cannot convert null value to integer. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:04 JST 2005
+Content-Length: 677
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 11:24:49 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 433
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault>
+<faultstring
+	xsi:type="xsd:string">Cannot convert null value to integer.</faultstring>
+<faultcode
+	xsi:type="xsd:string">SOAP-ENV:Server</faultcode>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:05 JST 2005
+Content-Length: 600
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:24:50 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 653
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoSimpleTypesAsStructResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="ns1:SOAPStruct"
+	xmlns:ns1="http://soapinterop.org/xsd">
+<varString
+	s:type="y:string">a</varString>
+<varInt
+	s:type="y:int">1</varInt>
+<varFloat
+	s:type="y:float">1.10000002</varFloat>
+</return>
+</m:echoSimpleTypesAsStructResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: Cannot convert null value to integer. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:06 JST 2005
+Content-Length: 577
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 11:24:50 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 433
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault>
+<faultstring
+	xsi:type="xsd:string">Cannot convert null value to integer.</faultstring>
+<faultcode
+	xsi:type="xsd:string">SOAP-ENV:Server</faultcode>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:07 JST 2005
+Content-Length: 889
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:24:51 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 659
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echo2DStringArrayResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="A:Array"
+	A:arrayType="y:string[3,3]">
+<item>r0c0</item>
+<item>r1c0</item>
+<item>r2c0</item>
+<item>r0c1</item>
+<item>r1c1</item>
+<item>r2c1</item>
+<item>r0c2</item>
+<item>r1c2</item>
+<item>r2c2</item>
+</return>
+</m:echo2DStringArrayResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:07 JST 2005
+Content-Length: 1088
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:24:52 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 659
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echo2DStringArrayResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="A:Array"
+	A:arrayType="y:string[3,3]">
+<item>r0c0</item>
+<item>r0c1</item>
+<item>r0c2</item>
+<item>r1c0</item>
+<item>r1c1</item>
+<item>r1c2</item>
+<item>r2c0</item>
+<item>r0c1</item>
+<item>r2c2</item>
+</return>
+</m:echo2DStringArrayResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1828:in `doTestGroupB'
+clientEasySoap.rb:13
+
+Wire dump:
+
+= Request
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Expected = "String#-604986702"  //  Actual = "String#-604945562"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:13 JST 2005
+Content-Length: 1063
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605631962"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605631962"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605631962"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:24:58 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 659
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echo2DStringArrayResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="A:Array"
+	A:arrayType="y:string[3,3]">
+<item>r0c0</item>
+<item>r1c0</item>
+<item>item</item>
+<item>r0c1</item>
+<item>r1c1</item>
+<item>r2c1</item>
+<item>item</item>
+<item>r1c2</item>
+<item>r2c2</item>
+</return>
+</m:echo2DStringArrayResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:14 JST 2005
+Content-Length: 920
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:24:58 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 833
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoNestedStructResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="ns1:SOAPStructStruct"
+	xmlns:ns1="http://soapinterop.org/xsd">
+<varString
+	s:type="y:string">a</varString>
+<varInt
+	s:type="y:int">1</varInt>
+<varFloat
+	s:type="y:float">1.10000002</varFloat>
+<varStruct
+	s:type="ns1:SOAPStruct">
+<varString
+	s:type="y:string">b</varString>
+<varInt
+	s:type="y:int">2</varInt>
+<varFloat
+	s:type="y:float">2.20000005</varFloat>
+</varStruct>
+</return>
+</m:echoNestedStructResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: Cannot convert null value to integer. (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:15 JST 2005
+Content-Length: 874
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 11:24:59 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 433
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault>
+<faultstring
+	xsi:type="xsd:string">Cannot convert null value to integer.</faultstring>
+<faultcode
+	xsi:type="xsd:string">SOAP-ENV:Server</faultcode>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Expected = "String#-605151282"  //  Actual = "String#-605152862"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:15 JST 2005
+Content-Length: 1062
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString href="#id-605110412"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </varStruct>
+        <varString href="#id-605110412"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605110412"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:25:00 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 831
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoNestedStructResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="ns1:SOAPStructStruct"
+	xmlns:ns1="http://soapinterop.org/xsd">
+<varString
+	s:type="y:string"></varString>
+<varInt
+	s:type="y:int">1</varInt>
+<varFloat
+	s:type="y:float">1.10000002</varFloat>
+<varStruct
+	s:type="ns1:SOAPStruct">
+<varString
+	s:type="y:string"></varString>
+<varInt
+	s:type="y:int">2</varInt>
+<varFloat
+	s:type="y:float">2.20000005</varFloat>
+</varStruct>
+</return>
+</m:echoNestedStructResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:16 JST 2005
+Content-Length: 931
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:25:01 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 764
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoNestedArrayResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="ns1:SOAPArrayStruct"
+	xmlns:ns1="http://soapinterop.org/xsd">
+<varString
+	s:type="y:string">a</varString>
+<varInt
+	s:type="y:int">1</varInt>
+<varFloat
+	s:type="y:float">1.10000002</varFloat>
+<varArray
+	s:type="A:Array"
+	A:arrayType="y:string[3]">
+<item>2</item>
+<item>2.2</item>
+<item>b</item>
+</varArray>
+</return>
+</m:echoNestedArrayResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientEasySoap.rb:13
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:22 JST 2005
+Content-Length: 1093
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString href="#id-605218022"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605218022"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <varString id="id-605218022"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:25:06 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 760
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoNestedArrayResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="ns1:SOAPArrayStruct"
+	xmlns:ns1="http://soapinterop.org/xsd">
+<varString
+	s:type="y:string"></varString>
+<varInt
+	s:type="y:int">1</varInt>
+<varFloat
+	s:type="y:float">1.10000002</varFloat>
+<varArray
+	s:type="A:Array"
+	A:arrayType="y:string[3]">
+<item>2</item>
+<item></item>
+<item>b</item>
+</varArray>
+</return>
+</m:echoNestedArrayResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Expected = "String#-605311052"  //  Actual = "String#-605312202"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /cgi-bin/interopserver HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:23:22 JST 2005
+Content-Length: 1093
+Host: easysoap.sourceforge.net
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString href="#id-605252222"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605252222"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <varString id="id-605252222"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:25:07 GMT
+Server: Apache/1.3.33 (Unix) PHP/4.3.10
+SOAPServer: EasySoap++/0.6
+Content-Length: 760
+Connection: close
+Content-Type: text/xml; charset="UTF-8"
+
+<E:Envelope
+	xmlns:E="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:A="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:y="http://www.w3.org/2001/XMLSchema"
+	E:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<E:Body>
+<m:echoNestedArrayResponse
+	xmlns:m="http://soapinterop.org/">
+<return
+	s:type="ns1:SOAPArrayStruct"
+	xmlns:ns1="http://soapinterop.org/xsd">
+<varString
+	s:type="y:string"></varString>
+<varInt
+	s:type="y:int">1</varInt>
+<varFloat
+	s:type="y:float">1.10000002</varFloat>
+<varArray
+	s:type="A:Array"
+	A:arrayType="y:string[3]">
+<item>2</item>
+<item></item>
+<item>b</item>
+</varArray>
+</return>
+</m:echoNestedArrayResponse>
+</E:Body>
+</E:Envelope>
+! CONNECTION CLOSED
+
+
+

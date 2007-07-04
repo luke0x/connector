@@ -1,0 +1,958 @@
+File: clientNuSOAP_GroupB.log - Wiredumps for SOAP4R client / NuSOAP server.
+Date: Sat Jul 23 21:10:39 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:39 JST 2005
+Content-Length: 700
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:24 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1687:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:44 JST 2005
+Content-Length: 677
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:28 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1698:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:45 JST 2005
+Content-Length: 600
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:29 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1708:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:46 JST 2005
+Content-Length: 577
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:30 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echo2DStringArray
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1747:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:46 JST 2005
+Content-Length: 889
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:31 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1765:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:47 JST 2005
+Content-Length: 1088
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:32 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1828:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:48 JST 2005
+Content-Length: 1063
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-604970154"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-604970154"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-604970154"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:32 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1852:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:49 JST 2005
+Content-Length: 1063
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-604704410"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-604704410"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-604704410"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:33 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:50 JST 2005
+Content-Length: 920
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:34 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1894:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:50 JST 2005
+Content-Length: 874
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:35 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1907:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:51 JST 2005
+Content-Length: 1062
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605249034"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString href="#id-605249034"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605249034"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:36 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedArray
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1917:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:52 JST 2005
+Content-Length: 931
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:36 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:53 JST 2005
+Content-Length: 998
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:37 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1938:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:53 JST 2005
+Content-Length: 1083
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605334074"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605334074"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605334074"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:38 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: response is not a SOAP envelope: You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL. (SOAP::ResponseFormatError)
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:235:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1949:in `doTestGroupB'
+clientNuSOAP.rb:18
+
+Wire dump:
+
+= Request
+
+POST /nusoap/testbed/round2_groupb_server.php HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:10:54 JST 2005
+Content-Length: 1083
+Host: dietrich.ganx4.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605346614"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605346614"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605346614"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:12:39 GMT
+Server: Apache/1.3.29 (Unix) mod_ssl/2.8.16 OpenSSL/0.9.6b PHP/4.3.10
+X-Powered-By: PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+73 
+You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.
+0
+
+
+
+

@@ -1,0 +1,72 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+list1_root1:
+  id: 1
+  list_id: 1
+  parent_id:
+  position: 1
+  children_count: 2
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+  visible_children: false
+list1_root1_child1:
+  id: 2
+  list_id: 1
+  parent_id: 1
+  position: 1
+  children_count: 0
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+list1_root1_child2:
+  id: 3
+  list_id: 1
+  parent_id: 1
+  position: 2
+  children_count: 0
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+list1_root2:
+  id: 4
+  list_id: 1
+  parent_id:
+  position: 2
+  children_count: 0
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+  
+list2_root1:
+  id: 5
+  list_id: 2
+  parent_id:
+  position: 1
+  children_count: 1
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+list2_root1_child1:
+  id: 6
+  list_id: 2
+  parent_id: 5
+  position: 1
+  children_count: 0
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+
+collapsed:
+  id: 100
+  list_id: 100
+  parent_id:
+  position: 1
+  visible_children: false
+expanded:
+  id: 101
+  list_id: 100
+  parent_id:
+  position: 2
+  visible_children: true

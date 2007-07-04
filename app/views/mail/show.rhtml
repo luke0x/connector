@@ -1,0 +1,83 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@message], 'show') -%>
+
+<div class="infobox">
+	<div class="" style="float:right;">
+    <% prev_url = if @paginator.current_page.number > 1
+      message_index = 0
+      @messages.each{|message| break if message == @message; message_index += 1;}
+      message = @messages[message_index - 1]
+      message_url(@mailbox_name, message)
+    else
+      ''
+    end -%>
+    <% next_url = if @paginator.page_count > @paginator.current_page.number
+      message_index = 0
+      @messages.each{|message| break if message == @message; message_index += 1;}
+      message = @messages[message_index + 1]
+      message_url(@mailbox_name, message)
+    else
+      ''
+    end -%>
+	  <%= prev_url.blank? ? '' : link_to(_('Previous'), prev_url, {:class=> 'buttonPrevious addIconLeft'}) %>
+	  <%= next_url.blank? ? '' : link_to(_('Next'), next_url, { :class=> 'buttonNext addIconLeft' }) %>
+	</div>
+  <h2><%= h decode(@message.subject) %></h2>
+	<div id="report_issue" class="" style="float:right;">
+		<%= link_to_remote _('Does this message not look quite right?'), 
+		                   :update => 'report_issue', 
+											 :url => message_report_issue_url(@message), 
+											 :confirm => _("We've noticed that some messages with rich-text or attached images don't always look quite right. In an effort to improve our ability to display complex messages correctly we'd like your permission to investigate this message further.\n\nYour privacy is very important to us so we will only use this message for bug-fixing purposes.\n\nSend this message to Joyent engineers for further analysis?") %>
+	</div>
+  <div>
+    <a href="<%= mail_mailbox_url(:id => @message.mailbox.id) %>" style="color: black;">
+      <%= @message.owner == User.current ? _('Your') : _("%{i18n_message_owner_name}'s")%{:i18n_message_owner_name => "#{@message.owner.full_name}"} %>
+      <%= @message.mailbox.name == 'INBOX' ? _('Inbox') : @message.mailbox.name %>
+    </a>
+    &bull;
+    <% if @paginator.item_count > @paginator.items_per_page -%>
+      <span id="paginationPageStart"><%= @paginator.current_page.first_item %></span>
+      <%= _('of') -%>
+    <% end -%>
+    <span id="paginationTotalCount"><%= @paginator.item_count %></span>
+    <%= _('messages') -%>
+  </div>
+</div>
+
+<div id="itemView">
+	<dl>
+		<dt><%= _('From') %>:</dt>
+		<dd><%= render :partial => 'mail/imap_addresses', :locals => {:addresses => @message.from, :type => 'from'} %></dd>
+    <dt><%= _('Date') %>:</dt>
+    <dd><%= message_date(@message) %></dd>
+		<% unless @message.to.empty? -%>
+  		<dt><%= _('To') %>:</dt>
+  		<dd><%= render :partial => 'mail/imap_addresses', :locals => {:addresses => @message.to, :type => 'to'} %></dd>
+		<% end -%>
+		<% unless @message.cc.empty? -%>
+  		<dt><%= _('Cc') %>:</dt>
+  		<dd><%= render :partial => 'mail/imap_addresses', :locals => {:addresses => @message.cc, :type => 'cc'} %></dd>
+		<% end -%>
+		<% if @message.has_attachments? -%>
+      <dt><%= _('Attachments') %>:</dt>
+      <dd>
+        <div class="inlineList">
+  				<% @message.attachments.each do |a| -%>
+  				  <%= link_to h(a[:filename]), mail_attachment_url(:message => @message, :id => a[:id]) %>
+  				<% end -%>
+        </div>
+      </dd>
+		<% end -%>
+	</dl>
+	<iframe style="width:100%;height:40em;" class='mailViewShow' src='<%= mail_show_body_url(:id => @message) %>'>
+	</iframe>
+  <%= render :partial => "comments/list", :locals => { :item => @message } %>
+</div>

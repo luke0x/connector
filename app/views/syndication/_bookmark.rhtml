@@ -1,0 +1,32 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="infobox">
+	<h2><%= link_to "#{bookmark.name}: #{bookmark.uri}", bookmark.uri, {:target => '_blank'} %></h2>
+</div>
+
+<% unless bookmark.bookmarked_by?(User.current) -%>
+  <%= link_to _('Save Bookmark'), bookmarks_create_url(:title => bookmark.title, :uri => bookmark.uri) %>
+<% end -%>
+
+<a href="<%= bookmarks_show_url(:id => bookmark) %>"><img src="<%= bookmark.icon_url %>" width="200" height="150" style="padding:1em;float:right;" /></a>
+<dl>
+	<dt><%= _('Info') -%>:</dt>
+	<dd><%= _("Bookmarked by %{i18n_bookmark_user_count} users")%{:i18n_bookmark_user_count => bookmark.user_count} -%>, <%= _('first by %{i18n_bookmark_first_user}')%{:i18n_bookmark_first_user => bookmark.first_user.full_name} -%> <%= _("%{i18n_time_ago_in_words} ago")%{:i18n_time_ago_in_words =>"#{time_ago_in_words(bookmark.first_bookmarked_at)}"} %></dd>
+	<dt><%= _('Date Created') -%>:</dt>
+	<dd><%= format_date_time(localize_time(bookmark.created_at)) %></dd>
+	<dt><%= _('Date Modified') -%>:</dt>
+	<dd><%= format_date_time(localize_time(bookmark.updated_at)) %></dd>
+	<% unless bookmark.notes.blank? -%>
+		<dt><%= _('Notes') %></dt>
+		<dd><%= bookmark.notes %></dd>
+	<% end -%>
+</dl>
+
+<%= render :partial => 'comments', :locals => {:comments => bookmark.comments} %>

@@ -1,0 +1,134 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Title : Lightbox Kevin Hale http://particletree.com/features/lightbox-gone-wild/ 
+   Created : January 13, 2006 Modified : February 1, 2006 */
+
+#modalDialog {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	width: 500px;
+	height: 400px;
+	margin: -220px 0 0 -250px;
+	background: #F0F0F0;
+	text-align: left;
+	color: #000;
+	padding: 10px;
+	-moz-border-radius: .8em .8em .8em .8em;
+	-webkit-border-top-left-radius: .8em;
+	-webkit-border-top-right-radius: .8em;
+	-webkit-border-bottom-left-radius: .8em;
+	-webkit-border-bottom-right-radius: .8em;
+	-moz-opacity: 0.95;
+	opacity: .95;
+	filter: alpha(opacity=95);
+	border-color: #6F6F6F;
+	border-width: 1px;
+	border-style: solid;
+}
+
+/* ----------------------------------------------------------------- */
+
+	#modalDialog h2 {
+		background-color: #607A9C;
+		color: #FFF;
+		padding: 5px 15px;
+		border-color: #405A7A #FFF #FFF #405A7A;
+		border-width: 1px;
+		border-style: solid;
+	}
+	#modalDialog .content {
+		padding: 10px 20px 20px 80px;
+		margin: 10px 0 0 0;
+		background-image: url(/images/icons/attention48.png);
+		background-repeat: no-repeat;
+		background-position: 15px 20px;
+		height: 296px;
+		overflow: auto;
+	}
+	#modalDialog .userSwitching {
+		background-image: url(/images/icons/userSwitching48.png);
+	}
+	#modalDialog .content fieldset {
+		padding: 1.25em;
+		border-color: #C7C7C7;
+		border-width: 1px;
+		border-style: solid;
+		margin: 0 0 1em 0;
+	}
+	#modalDialog .content legend {
+		background-color: transparent !important;
+	}
+	
+	#modalDialog fieldset hr {
+		border: #BEBEBE 0px solid;
+		height: 1px;
+		background-color: #BEBEBE;
+		border-bottom: #BEBEBE 0px solid;
+	}
+	
+	#modalDialog .tip {
+		background-image: url(/images/icons/information.png);
+		background-repeat: no-repeat;
+		background-position: 0 3px;
+		padding: 0 0 .5em 23px;
+		background-color: #FFF;
+		background-color: transparent;
+	}
+
+
+/* ----------------------------------------------------------------- */
+
+#modalDialog[id]{
+	position:fixed;
+}
+
+.overlay{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:6500;
+	background-color:#000;
+	-moz-opacity: 0.35;
+	opacity:.35;
+	filter: alpha(opacity=35);
+}
+.overlay.transparent{
+	z-index:5000 !important;
+	-moz-opacity: 0.0;
+	opacity:.0;
+	filter: alpha(opacity=0);
+}
+.overlay[id]{
+	position:fixed;
+}
+
+#modalDialog.done #lbLoadMessage{
+	display:none;
+}
+#modalDialog.done #lbContent{
+	display:block;
+}
+#modalDialog.loading #lbContent{
+	display:none;
+}
+#modalDialog.loading #lbLoadMessage{
+	display:block;
+}
+
+#modalDialog.done img{
+	width:100%;
+	height:100%;
+}

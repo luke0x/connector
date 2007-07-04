@@ -1,0 +1,41 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+  <% if smart_group.owner == User.current -%>
+    <%= render :partial => 'sidebars/groups/smart_group_edit_rename',   :locals => { :smart_group => smart_group } %>
+    <%= render :partial => 'sidebars/groups/smart_group_edit_criteria', :locals => { :smart_group => smart_group } %>
+    <%= render :partial => 'sidebars/groups/smart_group_edit_delete',   :locals => { :smart_group => smart_group } %>
+  <% else -%>
+    <%= _('Match All') -%>:
+    <br />
+    <fieldset>
+  		<legend><%= _('Tags') -%>:</legend>
+      <% if smart_group.tags and ! smart_group.tags.blank? -%>
+        <% smart_group.tags.each do |tag| -%>
+          <%= _('tag is') -%>: <%= tag %><br />
+        <% end -%>
+      <% else -%>
+        <em><%= _('None') -%></em>
+      <% end -%>
+  	</fieldset>
+  	<fieldset>
+  		<legend><%= _('Conditions') -%>:</legend>
+      <% if smart_group.smart_group_attributes and ! smart_group.smart_group_attributes.blank? -%>
+        <% smart_group.smart_group_attributes.each do |sga| -%>
+          <%= sga.smart_group_attribute_description.name %> contains <%= sga.value %><br />
+        <% end -%>
+      <% else -%>
+        <em><%= _('None') -%></em>
+      <% end -%>
+  	</fieldset>
+  <% end -%>
+  <hr />
+  <%= content %>
+</div></div>

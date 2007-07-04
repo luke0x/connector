@@ -1,0 +1,35 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% remote_report = remote_function(:url      => url_for(report.js_url),
+                                   :method   => 'get',
+                                   :update   => "report_body_#{report.id}",
+                                   :loading  => "$('report_body_#{report.id}').innerHTML = Joyent.loadingMessageSmall;Sortable.create('report_list', {handle:'drag_handle', onUpdate:function(){new Ajax.Request('#{reports_reorder_url}', {asynchronous:true, evalScripts:true, parameters:Sortable.serialize('report_list')})}, tag:'div'});",
+                                   :complete => "Sortable.create('report_list', {handle:'drag_handle', onUpdate:function(){new Ajax.Request('#{reports_reorder_url}', {asynchronous:true, evalScripts:true, parameters:Sortable.serialize('report_list')})}, tag:'div'});")
+-%>                                 
+
+<div id="report_<%= report.id %>" class="report">
+  <div class="reportHeader">
+    <%= link_to _("Go to report group."), report.html_url, {:class => 'goToReport', :title => _("Go to this group.")} %>
+    <a href="#" onclick="<%= remote_report %>; return false;" id="refresh_report_<%= report.id %>" class="reload" title="<%= _('Reload this report.') -%>"><%= _('Refresh') -%></a> 
+    <%= link_to_remote(_("Remove"),
+                       {:complete => "$('report_#{report.id}').remove();",
+                        :url      => reports_destroy_url(:id => report.id)
+                       },
+                       {:class => "remove",
+                        :title => _("Remove this report from the workspace.")})
+    %>        
+    <a href="#" onclick="return Report.hide(<%= report.id %>);" id="hide_report_<%= report.id %>" class="hideReport" title="<%= _('Hide this report.') -%>"><%= _('Hide Report') -%></a>
+    <a href="#" onclick="return Report.show(<%= report.id %>);" id="show_report_<%= report.id %>" class="showReport" title="<%= _('Show this report.') -%>" style="display:none;"><%= _('Show Report') -%></a>
+    <h3 id="report_title_<%= report.id %>" class="drag_handle <%= report.group_type %>" title="&uarr; <%= _('Drag to change order') -%> &darr;"><%= _(report.title) %></h3>
+  </div>
+  <div class="reportBody" id='report_body_<%= report.id %>'>
+  </div>
+  <%= javascript_tag "Event.observe(window, 'load', function(event){ setTimeout(function(){ #{remote_report}; }, 10); });" %>
+</div>

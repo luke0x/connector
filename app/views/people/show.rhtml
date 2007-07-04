@@ -1,0 +1,136 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@person], 'show') -%>
+
+<div class="infobox">
+	<table style="width:100%;">
+		<tr>
+			<td style="text-align:left;">						
+				<table>
+					<tr>
+						<td>
+							<div class="userPhotoWrapper">
+								<div class="userPhotoBorder">
+									<div class="userPhoto">
+										<% if @person.has_icon? -%>
+											<img src="<%= person_icon_url(:id => @person.id) %>" border="0" align="right" style="width:48px; height: 48px;"/>
+										<% end -%>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h2><%= @person.full_name %></h2>
+							<div><%= [@person.company_name, @person.title].reject(&:blank?).join(', ') %></div>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="" style="text-align:right;">
+				<%= link_to '<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="download addIconLeft">'+_('Download vCard')+'</span></div></div></div>', person_vcard_url(:id => @person), {:class => 'buttonStandard', :style => '', :title => _('Download vCard for this person')} %>
+			</td>
+		</tr>
+  </table>
+</div>
+
+<dl>
+  <% unless @person.phone_numbers.empty? -%>
+    <dt><%= _('Phone') -%>:</dt>
+    <% @person.phone_numbers.each do |phone_number| -%>
+      <dd>                                                                  
+          <%= h(phone_number.phone_number) %>
+        <em>
+          <%= h(_(phone_number.phone_number_type)) %>
+        </em>
+      </dd>
+    <% end -%>
+  <% end -%>
+  <% unless @person.email_addresses.empty? -%>
+    <dt><%= _('Email') -%>:</dt>
+    <% @person.email_addresses.each do |email_address| -%>
+      <dd>
+        <%= link_to(h(email_address.email_address), {:controller => 'mail', :action => 'compose', :to => "#{@person.full_name} <#{email_address.email_address}>"}, {:title => _("Compose a new email to %{i18n_email_address}")%{:i18n_email_address => "#{email_address.email_address}"}}) %>
+        <em>
+          <%= h(_(email_address.email_type)) %>
+        </em>
+      </dd>
+    <% end -%>
+  <% end -%>
+  <% @person.addresses.each do |address| -%>
+    <dt><%= _('Address') -%>:</dt>
+    <dd>
+      <%= h(address.street) %> <em><%= h(_(address.address_type)) %></em>
+      <br />
+      <%= h(address.city) %>, <%= h(address.state) %> <%= h(address.postal_code) %>
+      <br />
+      <%= google_maps_link(address) %>
+    </dd>
+  <% end -%>
+  <% unless @person.im_addresses.empty? -%>
+    <dt><%= _('Instant Messaging') -%>:</dt>
+    <% @person.im_addresses.each do |im| -%>
+      <dd>
+        <%= im.im_address %>
+        <em><%= h(im.im_type) %></em>
+      </dd>
+    <% end -%>
+  <% end -%>
+  <% unless @person.websites.empty? -%>
+    <dt><%= _('Websites') -%>:</dt>
+    <% @person.websites.each do |website| -%>
+      <dd>
+        <a target="_blank" href="<%= website.site_url %>">
+          <%= h(website.site_title.length > 0 ? website.site_title : website.site_url) %>
+        </a>
+      </dd>
+    <% end -%>
+  <% end -%>
+  <% unless @person.special_dates.empty? -%>
+    <dt><%= _('Special Dates') -%>:</dt>
+    <% @person.special_dates.each do |special_date| -%>
+      <dd>
+        <%= h(special_date.special_date.to_s) %>
+        <em><%= h(special_date.description) %></em>
+      </dd>
+    <% end -%>
+  <% end -%>
+  <% unless @person.notes.blank? -%>
+    <dt><%= _('Notes') -%>:</dt>
+    <dd>
+      <%= simple_format(h(@person.notes)) %>
+    </dd>
+  <% end -%>
+  <% if @person.phone_numbers.empty? -%>
+    <dt><%= _('Phone') -%>:</dt>
+    <dd><em><%= _('None') %></em></dd>
+  <% end -%>
+  <% if @person.email_addresses.empty? -%>
+    <dt><%= _('Email') -%>:</dt>
+    <dd><em><%= _('None') %></em></dd>
+  <% end -%>
+  <% if @person.im_addresses.empty? -%>
+    <dt><%= _('Instant Messaging') -%>:</dt>
+    <dd><em><%= _('None') %></em></dd>
+  <% end -%>
+  <% if @person.websites.empty? -%>
+    <dt><%= _('Websites') -%>:</dt>
+    <dd><em><%= _('None') %></em></dd>
+  <% end -%>
+  <% if @person.special_dates.empty? -%>
+    <dt><%= _('Special Dates') -%>:</dt>
+    <dd><em><%= _('None') %></em></dd>
+  <% end -%>
+  <% if @person.notes.blank? -%>
+    <dt><%= _('Notes') -%>:</dt>
+    <dd><em><%= _('None') %></em></dd>
+  <% end -%>
+</dl>
+
+<%= render :partial => "comments/list", :locals => { :item => @person } %>

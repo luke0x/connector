@@ -1,0 +1,106 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ENV['RAILS_ENV'] ||= 'production'
+
+require File.dirname(__FILE__) + "/../config/boot.rb"
+require 'rubygems'
+require 'active_record'
+require 'optparse'
+require 'drb/acl'
+require "#{RAILS_ROOT}/lib/joyent_maildir/maildir_worker"
+require "#{RAILS_ROOT}/vendor/plugins/joyent_ruby/init"
+
+detatch   = true
+log_level = 'DEBUG'
+
+ARGV.options do |o|
+  o.set_summary_indent('   ')
+  o.banner =    "Usage: #{File.basename($0)} [options] <start|stop>"
+  o.define_head 'Start the MaildirWorker process'
+  o.separator   ''
+  
+  o.on('-D', "Don't go into background (default: detatch)") {detatch = false}
+  o.on('-l', '=LEVEL', 'Set log level (debug|warn|error) (default: debug)') {|log_level|}
+  
+  o.separator ''
+  
+  o.on_tail('-h', 'Show this help message.') { puts o; exit }
+  
+  o.parse!
+end
+
+case ARGV[0]
+when 'start'  
+  ActiveRecord::Base.allow_concurrency = true
+  ActiveRecord::Base.establish_connection(YAML.load(ERB.new(IO.read("#{RAILS_ROOT}/config/database.yml")).result)[RAILS_ENV])
+
+  acl = ACL.new(['deny', 'all', 'allow', 'localhost', 'allow', JoyentConfig.maildir_worker_host, 'allow', JoyentConfig.mongrel_cluster_host])
+  DRb.install_acl(acl)
+
+  if detatch
+    fork do
+      stdin  = open '/dev/null', 'r'
+      stdout = open '/dev/null', 'w'
+      stderr = open '/dev/null', 'w'
+      STDIN.reopen stdin
+      STDOUT.reopen stdout
+      STDERR.reopen stderr
+      $0 = 'maildir_worker'
+      fork {
+        logger = Logger.new("#{RAILS_ROOT}/log/maildirworker.log")
+        Logger.const_get(log_level.upcase)
+        silence_warnings { Object.const_set "MAILDIR_LOGGER", logger }
+        
+        DRb.start_service("druby://#{JoyentConfig.maildir_worker_host}:#{JoyentConfig.maildir_worker_port}", JoyentMaildir::MaildirWorker.new)
+        logger.error("Starting maildir worker on #{DRb.uri} (#{Process.pid})")
+
+        File.open("#{RAILS_ROOT}/log/maildirworker.pid", 'w+'){|f| f.write(Process.pid)}
+        DRb.thread.join
+      } and exit!
+    end
+  else
+    logger = Logger.new("#{RAILS_ROOT}/log/maildirworker.log")
+    Logger.const_get(log_level.upcase)
+    silence_warnings { Object.const_set "MAILDIR_LOGGER", logger }
+
+    trap(0) do
+      puts "Stopping maildir worker"
+      logger.error("Stopping maildir worker (#{Process.pid})")
+      File.unlink("#{RAILS_ROOT}/log/maildirworker.pid") rescue nil
+    end
+    
+    trap('TERM') do
+      puts "Stopping maildir worker"
+      logger.error("Stopping maildir worker (#{Process.pid})")
+      File.unlink("#{RAILS_ROOT}/log/maildirworker.pid") rescue nil
+      exit!
+    end
+
+    DRb.start_service("druby://#{JoyentConfig.maildir_worker_host}:#{JoyentConfig.maildir_worker_port}", JoyentMaildir::MaildirWorker.new)
+    puts "DRb URI: #{DRb.uri}"
+    puts "Pid: #{Process.pid}"
+    logger.error("Starting maildir worker on #{DRb.uri} (#{Process.pid})")
+
+    File.open("#{RAILS_ROOT}/log/maildirworker.pid", 'w+'){|f| f.write(Process.pid)}
+    DRb.thread.join
+  end
+  
+when 'stop'
+  pid = File.open("#{RAILS_ROOT}/log/maildirworker.pid").read.strip.to_i
+
+  logger = Logger.new("#{RAILS_ROOT}/log/maildirworker.log")
+  Logger.const_get(log_level.upcase)
+  logger.error("Stopping maildir worker (#{pid})")
+
+  Process.kill(9, pid)
+  File.unlink("#{RAILS_ROOT}/log/maildirworker.pid") rescue nil
+end

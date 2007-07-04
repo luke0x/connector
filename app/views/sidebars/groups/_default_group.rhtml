@@ -1,0 +1,41 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # use with render_default_group -%>
+<li>
+  <% if default_group_selected -%>
+    <div id="editDefaultGroupHead" class="roundtl highlighted"><div class="roundtr"><div id="defaultGroupSelectedEditDivBL" class="roundbl"><div id="defaultGroupSelectedEditDivBR" class="roundbr">
+      <table><tr>
+        <td class="dinger">
+        </td>
+        <td>
+          <%= link_to(default_group_name, default_group_url, { :class => "#{icon_class} folder highlighted" }) %>
+        </td>
+        <td class="showInfo">
+          <%= link_to_function(_('Show'), "DefaultGroup.editToggle();", { :id => 'defaultGroupSelectedEditDinger',:class => 'groupInfo collapsed', :title => _('View group info') }) %>
+        </td>
+      </tr></table>
+    </div></div></div></div>
+    <div id="editDefaultGroupDialog" class="roundbl groupInfo" style="display:none;"><div class="roundbr groupInfoMargin">
+      <%= content %>
+    </div></div>
+  <% else -%>
+    <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+      <table><tr>
+        <td class="dinger">
+        </td>
+        <td>
+          <%= link_to default_group_name, default_group_url, { :class => "folder #{icon_class}" } %>
+        </td>
+        <td class="showInfo">
+        </td>
+      </tr></table>  
+    </div></div></div></div>
+  <% end -%>
+</li>

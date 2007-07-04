@@ -1,0 +1,88 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<%= render(:partial => "overlay_color_key", :locals => { :overlayed_users => @overlayed_users }) %>
+<%= render_month_header(@group_name, @month_view) %>
+
+<table id="calendarMonthView" cellspacing="0" style="width:100%; border:none; border-collapse: collapse;" class="tableList">
+	<caption><%= @month_view.name %> <%= @month_view.year %></caption>
+	<colgroup>
+		<col width="15%" />
+		<col width="14%" />
+		<col width="14%" />
+		<col width="14%" />
+		<col width="14%" />
+		<col width="14%" />
+		<col width="15%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th class="firstCol"><%= _('Sunday') -%></th>
+			<th><%= _('Monday') -%></th>
+			<th><%= _('Tuesday') -%></th>
+			<th><%= _('Wednesday') -%></th>
+			<th><%= _('Thursday') -%></th>
+			<th><%= _('Friday') -%></th>
+			<th><%= _('Saturday') -%></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @month_view.each_week do |week| -%>
+			<tr>
+				<% week.each_day do |day| -%>
+					<% td_class = day.today? ? "monthToday" : "" -%>
+					<td class="<%= td_class %>">
+						<div class="calMonthDayHeader">
+							<% day_date_formatted = day.date.strftime('%Y-%m-%d') %>
+							<% create_url = User.current.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_date_formatted) : calendar_create_url(:date => day_date_formatted) -%>
+							<%= link_to "+", create_url, {:class => 'addEventMonthView'} %>
+							<%= link_to(day.date.mday, calendar_list_url(day_date_formatted, day_date_formatted), {:class => "monthDay"}) %>
+						</div>
+						<% day.events.select{ |event| event.all_day? }.sort_by(&:name).each do |event| -%>
+							<div class="monthViewCurrentUserAllDayEvent allDayEvent">
+								<%= link_to event.name, calendar_show_url(:id => event.id) %>
+							</div>
+						<% end -%>
+						<% day.others_events.each do |user_id, events| -%>
+							<% events.select{ |event| event.all_day? }.sort_by(&:name).each do |event| -%>
+								<div class="allDayEvent" style="background-color: #<%= event.owner.person.color %>;">
+									<%= link_to event.name, calendar_show_url(:id => event.id) %>
+								</div>
+							<% end -%>
+						<% end -%>
+						<% regular_events = [] -%>
+						<% day.events.reject{ |event| event.all_day? }.each do |event| -%>
+							<% regular_events << event -%>
+						<% end -%>
+						<% day.others_events.each do |user_id, events| -%>
+							<% events.reject{ |event| event.all_day? }.each do |event| -%>
+								<% regular_events << event -%>
+							<% end -%>
+						<% end -%>
+						<% if regular_events.length > 0 -%>
+							<ul class="monthViewEvent">
+								<% regular_events.sort_by(&:start_time).each do |event| -%>
+									<% li_style = (event.owner == User.current) ? '' : "color: ##{event.owner.person.color};" -%>
+									<li style="<%= li_style %>">
+										<% a_class = (event.owner == User.current) ? 'monthViewCurrentUserEvent monthViewEvent' : 'monthViewEvent' -%>
+										<% a_style = (event.owner == User.current) ? '' : "color: ##{event.owner.person.color};" -%>
+										<a href="<%= calendar_show_url(:id => event.id) %>" class="<%= a_class %>" style="<%= a_style %>">
+											<strong><%= "#{event.start_time_in_user_tz.strftime('%I:%M%p')[0,6].downcase.gsub(/^0(\d)/, '\1').gsub(/:00(.)/, '\1')}" %></strong>
+											<%= event.name %>
+										</a>
+									</li>
+								<% end -%>
+							</ul>
+						<% end -%>
+					</td>
+				<% end -%>
+			</tr>
+		<% end -%>
+	</tbody>
+</table>

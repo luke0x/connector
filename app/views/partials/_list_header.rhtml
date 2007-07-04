@@ -1,0 +1,45 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # use with render_list_header -%>
+
+<div>
+	<ul class="reportBoxHeader">
+    <li>
+      <strong><%= _(title) %></strong>
+      &bull;
+      <% if paginator.item_count > paginator.items_per_page -%>
+        <span id="paginationPageStart"><%= paginator.current_page.first_item %></span>
+        -
+        <span id="paginationPageEnd"><%= paginator.current_page.last_item %></span>
+        <%= _('of') -%>
+      <% end -%>
+      <span id="paginationTotalCount"><%= paginator.item_count %></span>
+      <%= _(item_kind) %>
+    </li>
+		<li class="right arrowNext">
+		  <%= next_url.blank? ? '' : link_to('>', next_url) %>
+	  </li>
+		<li class="right">
+		  <% if paginator.page_count > 1 -%>
+  		  &nbsp;<%= _('Page') -%>
+  		  <select id="paginatorSelect" onchange="window.location = '<%= jump_url %>'.sub('jump_url_page_number', $('paginatorSelect').value);">
+  		    <% paginator.page_count.times do |i| -%>
+  		      <option <%= 'selected="selected"' if (i + 1) == paginator.current_page.number %> value="<%= (i + 1) %>"><%= (i + 1) %></option>
+  	      <% end -%>
+  	    </select>
+  		  of
+  		  <%= paginator.page_count %>&nbsp;
+		  <% end -%>
+		</li>
+		<li class="right arrowPrev">
+		  <%= prev_url.blank? ? '' : link_to('<', prev_url) %>
+	  </li>
+	</ul>
+</div>

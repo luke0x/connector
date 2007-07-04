@@ -1,0 +1,72 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+      
+require 'yaml'
+
+if ARGV.length < 1
+  puts "usage: ./print_organization <domain>"
+  exit
+end                                       
+
+begin                                                       
+  require File.dirname(__FILE__) + '/../config/boot'  
+  require "#{RAILS_ROOT}/config/environment"
+   
+  organizations = []
+  
+  ARGV.each do |domain_name| 
+    if domain_name == '*'
+      organizations = Organization.find(:all)
+    else
+      org_domain   = Domain.find_by_email_domain(domain_name) || Domain.find_by_web_domain(domain_name)
+      organization = org_domain.organization if org_domain
+
+      if organization.blank?
+        puts "#{ARGV[0]} is an invalid domain."  
+        exit
+      end            
+
+      organizations << organization 
+    end
+  end
+   
+  orgs = []
+  organizations.each do |organization|                                      
+    org            = {}
+    org['id'     ] = organization.id
+    org['name'   ] = organization.name
+    org['active' ] = organization.active?
+    quota          = organization.quota
+    org['quota'  ] = {'id'             => quota.id, 
+                      'gigabytes'      => quota.gigabytes, 
+                      'users'          => quota.users, 
+                      'custom_domains' => quota.custom_domains?}
+    org['domains'] = []
+                                                              
+    organization.domains.each do |domain|
+      if domain.system_domain?  
+        org['subdomain'] = domain.email_domain.split('.')[0]
+      else
+        org['domains'] << {'id'           => domain.id,
+                           'web_domain'   => domain.web_domain,
+                           'email_domain' => domain.email_domain,
+                           'primary'      => domain.primary?}
+      end
+    end    
+    
+    orgs << org
+  end          
+  
+  puts YAML.dump(orgs)
+rescue => e
+  puts e.message
+  puts "The organization #{ARGV[0]} may not exist in the system."
+end

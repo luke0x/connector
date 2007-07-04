@@ -1,0 +1,42 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+everything:
+  id: 1
+  name: All Items
+
+files:
+  id: 2
+  name: Files
+  item_type: JoyentFile
+
+people:
+  id: 3
+  name: People
+  item_type: Person
+  
+events:
+  id: 4
+  name: Events
+  item_type: Event
+
+messages:
+  id: 5
+  name: Messages
+  item_type: Message
+
+bookmarks:
+  id: 6
+  name: Bookmarks
+  item_type: Bookmark
+
+lists:
+  id: 7
+  name: Lists
+  item_type: List

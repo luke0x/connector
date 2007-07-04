@@ -1,0 +1,17 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="message" >
+	<pre><%= html_for_display @message %></pre>
+	<ul class="toolbar" style="padding-top: 5px;">
+		<li class="actionReply"><%= link_to _('Reply'), mail_reply_url(:id => @message) %></li>
+		<li class="actionReplyAll"><%= link_to _('Reply All'), mail_reply_url(:id => @message, :all => true) %></li>
+		<li class="actionForward"><%= link_to _('Forward'), mail_forward_url(:id => @message) %></li>
+	</ul>
+</div>

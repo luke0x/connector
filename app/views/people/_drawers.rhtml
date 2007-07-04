@@ -1,0 +1,17 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="Drawers">
+  <% if @toolbar[:import] -%>
+    <div class="drawerContent" id="drawerPeopleImport" style="display: none;"><%= render :partial => 'import' %></div>
+  <% end -%>
+  <% if @toolbar[:call] -%>
+    <div class="drawerContent" id="drawerJajah" style="display: none;"><%= render :partial => 'call' %></div>
+  <% end -%>
+</div>

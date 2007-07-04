@@ -1,0 +1,23 @@
+Copyright (c) 2006-2007 Joyent Inc. 
+Licensed under the same terms as Joyent Connector.
+
+Gettextilize
+============
+
+This plugin uses GetText Ruby gem by Masaoh Mutoh
+- http://www.yotabanana.com/hiki/ruby-gettext.html - 
+to localize Rails applications.
+
+The plugin includes the option to localize Date and Moth names and abbreviations.
+
+Just call Date.translate_strings once you've set the user locale.
+ 
+(It also includes a customized  version of 
+ActionView::Helpers::DateHelper::distance_of_time_in_words). 
+
+Sample tasks useful to generate application po/mo files are included, 
+
+In order to get more info about GetText Gem Usage, you should give a
+look to Masaoh's documents for developers at 
+http://www.yotabanana.com/hiki/ruby-gettext-dev.html, specially the
+section for Rails: http://www.yotabanana.com/hiki/ruby-gettext-howto-rails.html

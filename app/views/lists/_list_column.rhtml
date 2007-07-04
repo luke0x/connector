@@ -1,0 +1,40 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<li id="column_<%= list_column.id -%>" style="background: none; border: none; padding-left: 0;">
+  <table>
+  	<tr>
+  		<td class="listColumnNamesTd">
+				<% form_remote_tag :url => list_column_url(list_column), :method => :put, :loading => "ListColumn.toggleEdit('#{list_column.id}')", :complete => "List.rememberDrawerValues(); ListColumn.toggleEdit('#{list_column.id}'); List.updateList(request.responseText)" do -%>
+					<%= text_field_tag 'list_column[name]', list_column.name, {:id => "list_column_name_#{list_column.id}", :style => 'width: 150px;'} %>
+				<% end -%>
+			</td>
+			<td>
+				<% form_remote_tag :url => list_column_url(list_column), 
+							   	         :method => :put, 
+    										   :loading => "ListColumn.toggleEdit('#{list_column.id}')", 
+										       :complete => "ListColumn.toggleEdit('#{list_column.id}'); List.updateList(request.responseText)" do -%>
+					<select id="<%= list_column.dom_id %>_kind" name="list_column[kind]" onchange="this.form.onsubmit();">
+						<%= options_for_select(ListColumn::ColumnKinds.collect{|k| [k, k] }, list_column.kind) -%>
+					</select>
+				<% end -%>
+			</td>
+			<td>
+				<%= link_to_remote '-', { :url => list_column_url(list_column), 
+										  :method => :delete, 
+										  :loading => "ListColumn.toggleEdit('#{list_column.id}')", 
+										  :complete => "List.rememberDrawerValues();", 
+										  :condition => "ListColumn.validateDelete(#{list_column.id})", 
+										  :confirm => "Delete this column and all the values in it?" },
+										  { :class => 'deleteItem', :id => "delete_column_#{list_column.id}", :style => 'display: inline-block;' } -%>
+				<div id="delete_column_<%= list_column.id %>_loading" class="loadingMessageSmall" style="background-position:0;display:none;"></div>
+  		</td>
+  	</tr>
+  </table>
+</li>

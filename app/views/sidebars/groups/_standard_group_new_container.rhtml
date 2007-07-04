@@ -1,0 +1,43 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="addGroupDialog" style="display: none;margin:2px 0 0 0;">
+  <div>
+    <% form_tag({:action => "create_#{controller.class.group_name.underscore}"}, {:method => 'post', :onsubmit => 'return StandardGroup.newSubmit(this);'}) do -%>
+			<div class="roundtl highlighted"><div class="roundtr">
+    		<table>
+    			<tr>
+    				<td class="dinger">
+    				</td>
+    				<td>
+    				  <a href="#" class="folder highlighted group" onclick="return false;">
+      				  <%= _("New %{i18n_controller_class_groupname}")%{:i18n_controller_class_groupname => _("#{controller.class.group_name.underscore.humanize.titlecase}")} -%>
+    				  </a>
+    				</td>
+    				<td class="showInfo">
+    				</td>
+    			</tr>
+    		</table>
+      </div></div>
+      <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+        <%= _('Name') -%>:
+  			<%= text_field_tag "group_name", _("New %{i18n_controller_class_groupname}")%{:i18n_controller_class_groupname => _("#{controller.class.to_s.underscore.humanize.titlecase}")}, { :style => 'width: 100%; display: block;' } %>
+				<% if @view_kind == 'strongspace' -%>
+  				<%= hidden_field_tag 'parent_path', @folder.relative_path %>
+				<% else -%>
+          <%= hidden_field_tag 'parent_id', parent_id %>
+				<% end -%>
+        <p style="text-align: right; margin-top: 10px;">
+          <input type="button" value="<%= _('Cancel') -%>" onclick="StandardGroup.newCancel();" />
+          <input type="submit" name="Submit" value="<%= _('Save') -%>" />
+        </p>
+      </div></div>
+    <% end -%>
+  </div>
+</div>

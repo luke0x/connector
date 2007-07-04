@@ -1,0 +1,45 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="lightning">
+  <table style="width: 100%;" cellspacing="0"><tr>
+    <td style="background-image: url(images/corel/bg_left.gif); height: 71px; width: 10px;"></td>
+    <td style="background-image: url(images/corel/bg_mid.gif); background-repeat: repeat-x; height: 71px;">
+      <img src="images/corel/lightning.png" alt="Corel WordPerfect Lightning">
+    </td>
+    <td style="background-image: url(images/corel/bg_right.gif); height: 71px; width: 10px;"></td>
+  </tr></table>
+
+  <table><tr>
+    <td>
+      <h2>Online Portal</h2>
+      <h3>Welcome to your Corel WordPerfect Lightning Online Services Portal.</h3>
+
+      <p>This is the gateway for your online Lightning experience! Check out all the available services.</p>
+
+      <p>If you have already copied your Lightning files and notes to the Online Portal, you can <%= link_to 'see them here', files_service_url(:service_name => 'lightning') %>.</p>
+
+      <p>Not sure how to put your Lightning <%= link_to 'documents and notes online', 'http://apps.corel.com/redirect?_redirect=command&app=lightning&function=onlinedocs&lang=en', {:target => '_blank'} %>?</p>
+
+      <p>For the current beta version of Lightning, we’re offering services through our online partner Joyent. With each Lightning account, you receive two email accounts, a shared work space which includes Calendar, 200 MB of storage, and contacts, along with other collaborative tools—all free!</p>
+
+      <p>Click on the icons at the top of the page to explore the functions. Get more details about how to work with your Corel WordPerfect Lightning online services portal by choosing "Help" from the "+" menu at the top right of this page.</p>
+
+      <p>Lightning-specific information is always available in our <%= link_to 'Community space', 'http://www.wordperfect.com/lightning/community', {:target => '_blank'} %>. If you don’t find answers there, please ask us in the forums.</p>
+
+      <h3>Get started and enjoy Corel WordPerfect Lightning.</h3>
+      <h3>It’s a new way of doing things!</h3>
+    </td>
+    <td style="vertical-align: top;">
+      <a href="http://apps.corel.com/redirect?_redirect=command&app=lightning&function=home&lang=en" target="_blank">
+        <img src="images/corel/download.jpg" alt="[Download Lightning]" style="padding-left: 20px;" />
+      </a>
+    </td>
+  </tr></table>
+</div>

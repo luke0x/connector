@@ -1,0 +1,83 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require File.dirname(__FILE__) + '/../config/environment'
+
+def uncommented_messages
+  collector = []
+  ::Message.connection.execute("SELECT messages.id FROM messages LEFT OUTER JOIN comments on messages.id = comments.commentable_id AND commentable_type = 'Message' WHERE commentable_type IS NULL").each do |row|
+    collector << row[0].to_i
+  end
+  collector
+end
+
+def untagged_messages
+  collector = []
+  ::Message.connection.execute("SELECT messages.id FROM messages LEFT OUTER JOIN taggings on messages.id = taggings.taggable_id AND taggable_type = 'Message' WHERE taggable_type IS NULL").each do |row|
+    collector << row[0].to_i
+  end
+  collector
+end
+
+def unpermed_messages
+  collector = []
+  ::Message.connection.execute("SELECT messages.id FROM messages LEFT OUTER JOIN permissions on messages.id = permissions.item_id AND permissions.item_type = 'Message' WHERE permissions.item_type IS NULL").each do |row|
+    collector << row[0].to_i
+  end
+  collector
+end
+
+
+
+puts "Scrubbing #{Message.count} messages"
+
+uncommented = uncommented_messages
+puts "#{uncommented.size} messages without comments"
+
+untagged = untagged_messages
+puts "#{untagged.size} messages without tags"
+
+unpermed = unpermed_messages
+puts "#{unpermed.size} messages without permissions"
+
+destroy = (uncommented & untagged & unpermed)
+unless destroy.empty?
+  puts "Destroying #{destroy.size} messages"
+
+  destroy.each do |d|
+    ::Message.connection.execute("DELETE FROM messages WHERE id = #{d}")
+  end
+else
+  puts "No messages to destroy"
+end
+
+# Second pass
+mailbox_cache = {}
+
+validate = (uncommented & untagged) - destroy
+unless validate.empty?
+  puts "Validating #{validate.size} messages"
+  validate.each do |v|
+    msg = Message.find(v)
+    unless mailbox_cache.has_key?(msg.mailbox_id)
+      mailbox_cache[msg.mailbox_id] = msg.mailbox.permissions.map(&:user_id).sort.uniq
+    end
+    
+    if msg.permissions.map(&:user_id).sort.uniq == mailbox_cache[msg.mailbox_id]
+      puts "  Message #{msg.id} has mailbox permissions, destroying"
+      msg.destroy
+    end
+  end
+else
+  puts "No messages to validate"
+end
+
+puts "Done, #{Message.count} messages remaining"

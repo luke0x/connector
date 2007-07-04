@@ -1,0 +1,6171 @@
+File: clientOpenLink_Base.log - Wiredumps for SOAP4R client / OpenLink server.
+Date: Sat Jul 23 21:11:05 JST 2005
+
+##########
+# echoVoid
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoVoid'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoVoid'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:226:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:06 JST 2005
+Content-Length: 400
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:41 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:236:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:07 JST 2005
+Content-Length: 488
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:41 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (Entity reference)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:246:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:07 JST 2005
+Content-Length: 549
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:42 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (Character reference)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:257:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:08 JST 2005
+Content-Length: 487
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:42 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:267:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:08 JST 2005
+Content-Length: 494
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:43 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (EUC encoded)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:277:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:09 JST 2005
+Content-Length: 501
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:43 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:287:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:09 JST 2005
+Content-Length: 501
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:44 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (empty)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:297:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:10 JST 2005
+Content-Length: 460
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:44 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (space)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:307:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:10 JST 2005
+Content-Length: 461
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:45 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:317:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:11 JST 2005
+Content-Length: 479
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:45 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStringArray
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:327:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:11 JST 2005
+Content-Length: 684
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:46 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:351:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:12 JST 2005
+Content-Length: 843
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605793482"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605793482"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605793482"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:46 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:363:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:12 JST 2005
+Content-Length: 843
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605802372"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605802372"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605802372"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:47 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:375:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:13 JST 2005
+Content-Length: 831
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605811262"></item>
+        <item></item>
+        <item href="#id-605811262"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605811262"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:47 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:398:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:13 JST 2005
+Content-Length: 464
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:48 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:408:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:14 JST 2005
+Content-Length: 471
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:48 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:418:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:14 JST 2005
+Content-Length: 472
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:49 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:429:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:15 JST 2005
+Content-Length: 471
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:49 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:443:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:15 JST 2005
+Content-Length: 472
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:50 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:457:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:16 JST 2005
+Content-Length: 464
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:50 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:471:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:16 JST 2005
+Content-Length: 465
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:51 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:485:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:17 JST 2005
+Content-Length: 473
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:51 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:499:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:17 JST 2005
+Content-Length: 464
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:52 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoIntegerArray
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:512:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:18 JST 2005
+Content-Length: 657
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:52 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:532:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:18 JST 2005
+Content-Length: 588
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:53 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:554:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:19 JST 2005
+Content-Length: 467
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:53 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:564:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:19 JST 2005
+Content-Length: 465
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:54 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:574:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:20 JST 2005
+Content-Length: 465
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:54 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:584:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:20 JST 2005
+Content-Length: 465
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:55 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:594:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:21 JST 2005
+Content-Length: 459
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:55 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:604:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:21 JST 2005
+Content-Length: 457
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:56 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:614:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:22 JST 2005
+Content-Length: 457
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:56 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:624:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:22 JST 2005
+Content-Length: 457
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:57 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:634:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:23 JST 2005
+Content-Length: 457
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:57 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:644:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:23 JST 2005
+Content-Length: 458
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:58 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:654:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:24 JST 2005
+Content-Length: 458
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:58 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:664:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:24 JST 2005
+Content-Length: 459
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:59 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:675:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:25 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:29:59 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:689:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:25 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:00 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:703:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:26 JST 2005
+Content-Length: 458
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:00 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:717:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:26 JST 2005
+Content-Length: 458
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:01 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloatArray
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:730:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:27 JST 2005
+Content-Length: 662
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:01 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:743:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:27 JST 2005
+Content-Length: 658
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:02 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStruct
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:765:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:28 JST 2005
+Content-Length: 674
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:02 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStruct (nil members)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:775:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:28 JST 2005
+Content-Length: 651
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:03 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:788:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:29 JST 2005
+Content-Length: 1217
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:03 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:801:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:29 JST 2005
+Content-Length: 1392
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:04 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:828:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:30 JST 2005
+Content-Length: 1257
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605520562"></item>
+        <item href="#id-605520562"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605520562"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:04 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:840:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:30 JST 2005
+Content-Length: 1257
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605532782"></item>
+        <item href="#id-605532782"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605532782"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:05 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:852:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:31 JST 2005
+Content-Length: 1282
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item href="#id-605546302"></item>
+        <item href="#id-605546302"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605546302"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">b</varString>
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+      <varInt xsi:type="xsd:int">2</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:05 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:895:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:31 JST 2005
+Content-Length: 1360
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString href="#id-605567532"></varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString href="#id-605567532"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605567532"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:06 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:910:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:32 JST 2005
+Content-Length: 1535
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString href="#id-605614602"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString href="#id-605614602"></varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605614602"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:06 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (now)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:994:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:32 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T12:11:32Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:07 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1005:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:33 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:07 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1016:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:33 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:08 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1027:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:34 JST 2005
+Content-Length: 475
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:08 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1038:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:34 JST 2005
+Content-Length: 478
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:09 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1049:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:35 JST 2005
+Content-Length: 515
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:09 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (positive TZ)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1060:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:35 JST 2005
+Content-Length: 479
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:10 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (negative TZ)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1071:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:36 JST 2005
+Content-Length: 479
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:10 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1082:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:36 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:11 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1093:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:37 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:11 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (min TZ)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1104:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:37 JST 2005
+Content-Length: 479
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:12 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1115:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:38 JST 2005
+Content-Length: 480
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:12 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1126:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:38 JST 2005
+Content-Length: 480
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:13 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1137:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:39 JST 2005
+Content-Length: 475
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:13 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1148:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:39 JST 2005
+Content-Length: 474
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:14 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1162:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:40 JST 2005
+Content-Length: 472
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:14 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1176:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:40 JST 2005
+Content-Length: 471
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:15 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1190:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:41 JST 2005
+Content-Length: 471
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:15 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDate (empty: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1204:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:41 JST 2005
+Content-Length: 454
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:16 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1219:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:42 JST 2005
+Content-Length: 510
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:16 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1231:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:42 JST 2005
+Content-Length: 466
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:17 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1242:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:43 JST 2005
+Content-Length: 566
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:17 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBase64 (\0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1253:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:43 JST 2005
+Content-Length: 526
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:18 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1264:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:44 JST 2005
+Content-Length: 534
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:18 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1276:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:44 JST 2005
+Content-Length: 523
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:19 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoHexBinary
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1290:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:45 JST 2005
+Content-Length: 541
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:19 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoHexBinary(empty)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1301:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:45 JST 2005
+Content-Length: 475
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:20 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1312:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:46 JST 2005
+Content-Length: 477
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:20 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1323:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:46 JST 2005
+Content-Length: 493
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:21 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1335:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:47 JST 2005
+Content-Length: 495
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:21 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1347:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:47 JST 2005
+Content-Length: 479
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:22 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBoolean (true)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1360:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:48 JST 2005
+Content-Length: 469
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:22 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBoolean (false)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1370:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:48 JST 2005
+Content-Length: 470
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:23 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoBoolean (junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1382:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:49 JST 2005
+Content-Length: 469
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:23 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (123456)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1395:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:49 JST 2005
+Content-Length: 483
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:24 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1406:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:50 JST 2005
+Content-Length: 484
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:24 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1417:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:50 JST 2005
+Content-Length: 484
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:25 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1428:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:51 JST 2005
+Content-Length: 485
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:25 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1439:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:51 JST 2005
+Content-Length: 485
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:26 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (-123.)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1450:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:52 JST 2005
+Content-Length: 483
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:26 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1461:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:52 JST 2005
+Content-Length: 484
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:27 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1475:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:53 JST 2005
+Content-Length: 484
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:27 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1489:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:53 JST 2005
+Content-Length: 468
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:28 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: Exception: 404: File not found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1503:in `doTestBase'
+clientOpenLink.rb:13
+
+Wire dump:
+
+= Request
+
+POST /Interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:11:54 JST 2005
+Content-Length: 468
+Host: demo.openlinksw.com:8890
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 File not found
+Server: Virtuoso/04.00.2807 (Linux) i686-pc-linux-gnu Mono ECMA-CLI 1.1.6, Java VM 1.4 and PHP4
+Connection: Keep-Alive
+Content-Type: text/html; charset=ISO-8859-1
+Date: Sat, 23 Jul 2005 16:30:28 GMT
+Accept-Ranges: bytes
+Content-Length: 221
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Error HTTP/</title>
+  </head>
+  <body>
+    <h3>Error HTTP/</h3><pre>
+The requested URL was not found
+    URI  = '/Interop'
+  </pre></body>
+</html>
+
+
+

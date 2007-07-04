@@ -1,0 +1,21 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="groupsSidebar" class="sidebar <%= class_name %>">
+  <h3><%= _('Your %{i18n_controller_class_groupname}')%{ :i18n_controller_class_groupname => _(controller.class.group_name.pluralize.titlecase) }  %></h3>
+  <div id="groupsYourInset" class="sidebarInset" style="margin-bottom:15px;">
+    <%= render :partial => "sidebars/groups/#{@application_name}/#{@application_name}" %>
+  </div>
+  <div id="groupsOthers" class="collapsiblePalette <%= User.current == User.selected || @is_subscription ? 'collapsed' : 'expanded' %>">
+    <h3><%= link_to_function _("Others' %{i18n_controller_class_groupname}")%{:i18n_controller_class_groupname => _(controller.class.group_name.pluralize.titlecase)}, "CollapsiblePalette.toggle('groupsOthers');" %></h3>
+  	<div id="groupsOthersInset" class="content sidebarInset" <%= 'style="display: none;"' if User.current == User.selected || @is_subscription %>>
+      <%= render :partial => 'sidebars/groups/others_groups' %>
+  	</div>
+  </div>
+</div>

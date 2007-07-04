@@ -1,0 +1,134 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+body {
+	background-color: #C0C0C0;
+	font-size:11px;
+	line-height:1.5em;
+	font-family: "Lucida Grande", Verdana, sans-serif;
+	color: #B0CFE5;
+	padding:0px;
+	margin:0px;
+}
+#contentPane {
+	position: absolute;
+	height: 277px;
+	width: 412px;
+	margin: -150px 0px 0px -200px;
+	top: 50%;
+	left: 50%;
+	text-align: left;
+	padding: 0px;
+	background-color: transparent;
+	overflow: auto;
+	background-image: url(/images/bg/joyentLoginBG.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+p {
+	margin: 0px; 
+	padding: 0px; 
+}
+.error p {
+	padding: 0 0 1em 0; 
+}
+h1 {
+	font-size: 12px;
+	margin: 13px 20px 0 0;
+	text-align: right;
+	color: #FFF;
+}
+h2, h3 {
+	color: #FFF;
+	padding: 0;
+	margin: 0;
+}
+
+a { 
+	color: #648DAA;
+	font-size: 11px;
+	background-color:transparent;
+	text-decoration: none; 
+}
+.error a { 
+	text-decoration: underline; 
+}
+
+#loginTable {
+	margin: 0 auto 5px auto;
+	width: 382px;
+}
+.info {
+	border-color: #001C2C;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1em;
+	margin-bottom: 1em;
+	background-color: #05213b;
+}
+.label {
+	text-align: right;
+	font-size: 1.2em;
+	color: #FFF;
+	white-space: nowrap;
+}
+.resetPassword {
+	border-color: #001C2C;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	margin: 0 20px 0 20px;
+	padding: 8px 10px 0 10px;
+}
+.resetPassword a {
+	text-decoration: underline;
+}
+
+	dt {
+		width:9em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin: 0px 0 0 0;
+		color:#FFF;
+		font-size:13px;
+	}
+	dd {
+		margin:0px 0 0px 11.5em;
+		padding:0;
+	}
+	dd h3 {	
+		margin: 0px;
+		padding: 0px;
+	}
+	dt+dd {
+		margin-top:8px;
+	}
+	dd+dt {	
+		margin-top:8px;
+	}
+	dd pre {
+		margin:0px;
+		padding:0;
+		white-space: normal;
+		font-family:inherit;
+		font-size:inherit;
+	}
+	dd em {
+		margin-left:8px;
+		font-style:italic;
+	}
+	#loginButton {	
+		text-align: center;
+		margin:14px 0 10px 0;
+	}
+	#ExtraBits {
+		font-size:.85em;
+		text-align:left;
+		margin: 10px 0 0 25px;
+		}

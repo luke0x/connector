@@ -1,0 +1,23 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="Drawers">
+  <% if @toolbar[:overlay_users] -%>
+    <div class="drawerContent" id="drawerCalendarOverlay" style="display: none;"><%= render :partial => 'overlay_users' %></div>
+  <% end -%>
+  <% if @toolbar[:import] -%>
+    <div class="drawerContent" id="drawerCalendarImport" style="display: none;"><%= render :partial => 'import' %></div>
+  <% end -%>
+  <% if @toolbar[:copy] -%>
+    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => User.current.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>
+  <% end -%>
+  <% if @toolbar[:move] -%>
+    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => User.current.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>
+  <% end -%>
+</div>

@@ -1,0 +1,298 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) --------------------------------------------- */
+
+	.actionOutdent a.disabled, .actionOutdent a:hover.disabled {
+		background-position: 0px 0px;
+	}
+	.actionOutdent a {
+		background-position: 0px -30px;
+	}
+	.actionOutdent a:hover {
+		background-position: 0px -60px;
+	}
+	.actionOutdent a:active, .actionOutdent a.active {
+		background-position: 0px -90px;
+	}
+
+	.actionIndent a.disabled, .actionIndent a:hover.disabled {
+		background-position: -150px 0px;
+	}
+	.actionIndent a {
+		background-position: -150px -30px;
+	}
+	.actionIndent a:hover {
+		background-position: -150px -60px;
+	}
+	.actionIndent a:active, .actionIndent a.active {
+		background-position: -150px -90px;
+	}
+
+	.actionDeleteRow a.disabled, .actionDeleteRow a:hover.disabled {
+		background-position: -300px 0px;
+	}
+	.actionDeleteRow a {
+		background-position: -300px -30px;
+	}
+	.actionDeleteRow a:hover {
+		background-position: -300px -60px;
+	}
+	.actionDeleteRow a:active, .actionDeleteRow a.active {
+		background-position: -300px -90px;
+	}
+
+	.actionAttributes a.disabled, .actionAttributes a:hover.disabled {
+		background-position: -450px 0px;
+	}
+	.actionAttributes a {
+		background-position: -450px -30px;
+	}
+	.actionAttributes a:hover {
+		background-position: -450px -60px;
+	}
+	.actionAttributes a:active, .actionAttributes a.active {
+		background-position: -450px -90px;
+	}
+
+	.actionNewRow a.disabled, .actionNewRow a:hover.disabled {
+		background-position: -600px 0px;
+	}
+	.actionNewRow a {
+		background-position: -600px -30px;
+	}
+	.actionNewRow a:hover {
+		background-position: -600px -60px;
+	}
+	.actionNewRow a:active, .actionNewRow a.active {
+		background-position: -600px -90px;
+	}
+
+	.actionMoveUp a.disabled, .actionMoveUp a:hover.disabled {
+		background-position: -750px 0px;
+	}
+	.actionMoveUp a {
+		background-position: -750px -30px;
+	}
+	.actionMoveUp a:hover {
+		background-position: -750px -60px;
+	}
+	.actionMoveUp a:active, .actionMoveUp a.active {
+		background-position: -750px -90px;
+	}
+
+	.actionMoveDown a.disabled, .actionMoveDown a:hover.disabled {
+		background-position: -900px 0px;
+	}
+	.actionMoveDown a {
+		background-position: -900px -30px;
+	}
+	.actionMoveDown a:hover {
+		background-position: -900px -60px;
+	}
+	.actionMoveDown a:active, .actionMoveDown a.active {
+		background-position: -900px -90px;
+	}
+
+/* sidebar -------------------------------------------------- */
+
+	#lists .all.folder {
+		background-image: url(/images/icons/groupAllLists.png);
+	}
+	#lists .smartGroup {		
+		background-image: url(/images/icons/groupFolderSmart.png);
+		}
+	#lists .group {		
+		background-image: url(/images/icons/groupFolder.png);
+		}
+	#lists .group.subscription {
+		background-image: url(/images/icons/groupFolderSubscription.png);
+	}
+
+/* list cells ------------------------------------------------ */
+
+	.handle {
+		background-color: #dcdcdc !important;
+		background-image: none !important;
+	}
+	table.tableList tr td {
+		text-indent: 1px;
+		white-space: normal;
+	}
+	table.tableList tr th {
+		overflow: hidden;
+		white-space: no-wrap;
+	}
+	table tbody#listsTbody td {
+		vertical-align: top;
+	}
+	table tbody#listsTbody td div.listEditable {
+		outline: 0px solid red;
+	}
+	td.listCell.checkbox input.checkbox {
+		margin-top: 2px;
+	}
+	table tbody#listsTbody td.first.checkbox {
+		vertical-align: middle;
+		width: 22px;
+		padding: 0px;
+	}
+	textarea.editor_field {
+		width: 99%;
+		background-color: #FFF;
+		white-space: pre-wrap;
+		overflow: hidden;
+		font-size: 11px;
+		line-height: 17px;
+		font-family: "Lucida Grande", Verdana, sans-serif;
+		border: 0;
+		background-image: none;
+	}
+	.inplaceeditor-hover {
+		cursor: text;
+		outline-color: #BBBBBB;
+		outline-width: 3px;
+		outline-style: solid;
+		background-color: #DFE7FB;
+		height: 100% !important !important;
+	}
+	#listsTbody tr.hover {
+		background-color: #EBF3FE !important;
+	}
+	#listsTbody tr.selected td {
+		border-top: 1px #0039C3 solid;
+		border-bottom: 1px #0039C3 solid;
+		border-right: 1px #0039C3 none;
+		background-color: #D0E3FF;
+	}
+	#listsTbody tr.selected td.checkbox {
+		border-left: 1px #0039C3 solid;
+		border-right: 1px transparent solid;
+	}
+	#listsTbody td.listCell.checkbox, #listsTbody tr.selected td.listCell.checkbox {
+		border-left: transparent;
+		text-align: left;
+	}
+	#listsTbody tr.selected td.lastCol {
+		border-right: 1px #0039C3 solid;
+	}
+	.rowSelector {
+		background-image: url(/images/icons/rowSelector.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 22px;
+		height: 16px;
+		text-indent: -3000px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		vertical-align: top;
+	}
+	.itemRow.selected .rowSelector, .rowSelector:hover {
+		background-image: url(/images/icons/rowSelector.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+	#listsTbody tr.selected td .rowSelector {
+		background-position: -22px 0px !important;
+	}
+	#listsTbody tr.selected td .rowSelector:hover {
+		background-position: -22px -16px !important;
+	}
+	#listsTbody tr.selected td .rowSelector:active {
+		background-position: 0px -32px !important;
+	}
+	.rowSelector:hover {
+		background-position: 0 -16px;
+	}
+	.rowSelector:active {
+		background-position: 0 -32px;
+	}
+	#listsTbody tr.selected td .rowSelector.saving {
+		background-image: url(/images/animation/loading16LightBlue.gif) !important;
+		background-position: center !important;
+	}
+	
+	#list_columns form {
+		display: inline;
+	}
+	
+	.secondlastCol {
+		border-right: 0 !important;
+	}
+	
+	th.columnHeaderValue {
+		cursor: move !important;
+		white-space: nowrap;
+	}
+	
+	/* index view */
+	
+	th.listRadio a {
+		background-image: url(/images/icons/rowSelector.png);
+		background-position: -5px -2px;
+		width: 12px;
+		height: 12px;
+		display: block;
+		text-indent: -3000px;
+		margin: 0 auto;
+	}
+	th.listRadio a:hover {
+		background-position: -5px -18px;
+	}
+	
+	th.listDinger a, th.listDinger.expanded a {
+		background-image: url(/images/icons/dinger.png);
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		margin: 0;
+	}
+	
+	th.listDinger a {
+		background-position: 0 -100px;
+	}
+	
+	th.listDinger.expanded a {
+		background-position: 0 0px;
+	}
+	
+	th.listDinger.expanded a:hover {
+		background-position: 0 -50px;
+	}
+	
+	th.listDinger a:hover {
+		background-position: 0 -150px;
+	}
+	
+	.listPreview {
+		margin: 0 10px;
+		max-height: 150px;
+		overflow: auto;
+		border-width: 4px;
+		border-color: #E0E6EE;
+		border-style: solid;
+	}
+	.listPreview tr {
+		background-color: #FFF;
+	}
+	.listPreview td {
+		border: none !important;
+		color: #7F7F7F;
+	}
+	.listPreview table.tableList {
+		border-top: none !important;
+	}
+	selector {
+	}
+	
+	td.listCell.number textarea {
+		text-align: right;
+	}

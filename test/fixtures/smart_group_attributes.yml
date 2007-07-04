@@ -1,0 +1,38 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+first_for_eobp:
+  id: 1
+  smart_group_id: 1
+  smart_group_attribute_description_id: 3
+  value: peter
+  
+first_for_fnlfobi:
+  id: 2
+  smart_group_id: 2
+  smart_group_attribute_description_id: 1
+  value: foo
+
+second_for_fnlfobi:
+  id: 3
+  smart_group_id: 2
+  smart_group_attribute_description_id: 2
+  value: ian
+
+first_for_ian_ppl_body_foo:
+  id: 4
+  smart_group_id: 9
+  smart_group_attribute_description_id: 23
+  value: foo
+
+first_for_ian_secure_bookmarks:
+  id: 5
+  smart_group_id: 11
+  smart_group_attribute_description_id: 29
+  value: https

@@ -1,0 +1,115 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Dock ----------------------------------------------------------------- */
+
+	#Dock li a{
+		background-image: url(/images/lang/it/apps.png);
+		}
+	#connect .dockConnect a {	
+		width: 115px;
+		}
+	#mail .dockMail a {	
+		width: 85px;
+		}
+	#calendar .dockCalendar a {	
+		width: 133px;
+		}
+	#people .dockPeople a {	
+		width: 112px;
+		}
+	#files .dockFiles a {	
+		width: 86px;
+		}
+	#bookmarks .dockBookmarks a {	
+		width: 116px;
+		}
+	#lists .dockLists a {	
+		width: 116px;
+		}
+
+
+/* Sidebar Tabs ----------------------------------------------------------------- */
+
+
+	.sidebarTab a {
+		background-image: url(/images/lang/it/tabs.png);
+		}
+	#groupsSidebarTab a {
+		height: 83px;
+		}	
+	#rulesSidebarTab a {
+		height: 86px;
+		}	
+	#tagsSidebarTab a {
+		height: 80px;
+		}	
+	#accessSidebarTab a {
+		height: 82px;
+		}	
+	#notifySidebarTab a {
+		height: 87px;
+		}	
+
+
+/* General Toolbar (actions) -------------------------------------------- */
+
+	.actionMove a {	
+		width: 72px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionCopy a {	
+		width: 65px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionCopyDirect a {	
+		width: 62px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionNew a {	
+		width: 65px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionImport a {
+		width: 77px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionShowAll a {
+		width: 100px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionShowNew a {
+		width: 106px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionDelete a {	
+		width: 70px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionSaveSearch a {	
+		width: 100px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionTools a {	
+		width: 85px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	.actionEdit a {
+		width: 74px !important;
+		background-image: url(/images/lang/it/actionsGeneral.png);
+		}
+	
+/* Spanish fixes */
+
+#people #contentPane dt {
+	width: 13em;
+}
+#graphLabel {
+	width: 13em;
+}

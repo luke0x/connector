@@ -1,0 +1,43 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) ------------------------------------------- */
+	
+	.actionCompose a {	
+		width: 79px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionEmptyTrash a {
+		width: 112px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionReply a {	
+		width: 87px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionReplyAll a {	
+		width: 133px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionForward a {	
+		width: 76px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionNotJunk a {	
+		width: 98px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionJunk a {	
+		width: 64px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}
+	.actionDeleteAllJunk a {	
+		width: 143px !important;
+		background-image: url(/images/lang/es/actionsMail.png);
+		}

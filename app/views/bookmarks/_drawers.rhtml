@@ -1,0 +1,17 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="Drawers">
+  <% if @toolbar[:sync] -%>
+    <div class="drawerContent" id="drawerBookmarksSync" style="display: none;"><%= render :partial => 'sync' %></div>
+  <% end -%>
+  <% if @toolbar[:bookmarklet] -%>
+    <div class="drawerContent" id="drawerBookmarksBookmarklet" style="display: none;"><%= render :partial => 'bookmarklet' %></div>
+  <% end -%>
+</div>

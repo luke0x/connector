@@ -1,0 +1,22 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+dn: dc=joyent,dc=net
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: joyent.net
+dc: joyent
+description: Root
+
+dn: uid=admin,dc=joyent,dc=net
+objectClass: joyentUser
+uid: admin
+sn: admin
+userPassword: password

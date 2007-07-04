@@ -1,0 +1,84 @@
+#!/opt/csw/bin/ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+# This needs to live at /root/remove_maildir and be permissioned as 700
+# It will backup a user or an orgs mail 
+    
+require 'fileutils'
+require 'logger'
+
+MAILROOT     = '/home/vmail'
+RECOVERY_DIR = "#{MAILROOT}/recovery"
+LOGFILE      = '/var/log/remove_maildir.log'
+
+# Set up a logger
+logger       = Logger.new(LOGFILE)
+logger.level = Logger::DEBUG
+                 
+unless ARGV.size == 1 || ARGV.size == 2
+  puts "usage: ./remove_maildir <system_domain> [<user>]"
+  exit
+end
+
+domain = ARGV[0].strip
+                         
+if domain.length <= 0
+  puts "Invalid domain."  
+  exit
+end
+               
+def move_user(username)
+  return if username.length == 0
+  
+  user_src  = File.join(@domain_dir, username)
+  user_dest = File.join(@recovery_dir, username)
+
+  return if !File.exists?(user_src)
+  
+  # Move the old maildirs from user2 to user2.old_1, user2.old_2
+  # so that the newest can be in user2 (this is only in the case
+  # that the username already exists in the recovery directory)
+  count    = 1                                     
+  old_dest = user_dest
+  while File.exists?(old_dest)
+    old_dest  = "#{user_dest}.old_#{count}"
+    count    += 1  
+  end                   
+  
+  FileUtils.mv(user_dest, old_dest) unless old_dest == user_dest
+  
+  # Now move over the user directory
+  FileUtils.mv(user_src, user_dest)
+end      
+ 
+begin     
+  @domain_dir   = File.join(MAILROOT, domain)
+  @recovery_dir = File.join(RECOVERY_DIR, domain)
+
+  # Make sure the destination directory exists
+  FileUtils.mkdir_p @recovery_dir
+
+  # If a user was provided
+  if ARGV.size == 2
+    move_user(ARGV[1].strip)    
+  else
+    Dir.foreach(@domain_dir) do |user|
+      move_user(user) unless ['.', '..'].include?(user)
+    end                     
+  
+    # remove the source directory
+    FileUtils.rmdir(@domain_dir)
+  end
+rescue => e               
+  logger.error "ERROR: ARGV = #{ARGV}"
+  logger.error e.message
+  logger.error e.backtrace  
+end

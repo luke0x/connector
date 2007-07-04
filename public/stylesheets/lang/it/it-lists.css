@@ -1,0 +1,39 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actionsLists) ------------------------------------------- */
+
+	.actionOutdent a {	
+		width: 26px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}
+	.actionIndent a {	
+		width: 67px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}
+	.actionDeleteRow a {	
+		width: 98px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}
+	.actionAttributes a {	
+		width: 82px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}
+	.actionNewRow a {	
+		width: 91px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}
+	.actionMoveUp a {	
+		width: 26px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}
+	.actionMoveDown a {	
+		width: 26px !important;
+		background-image: url(/images/lang/it/actionsLists.png);
+		}

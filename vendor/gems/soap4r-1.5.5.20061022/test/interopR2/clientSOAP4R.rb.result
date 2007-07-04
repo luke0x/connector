@@ -1,0 +1,3409 @@
+--- !ruby/object:SOAPBuildersInteropResult::InteropResults 
+client: !ruby/object:SOAPBuildersInteropResult::Endpoint 
+  endpointName: 
+  processorName: SOAP4R
+  processorVersion: "1.5"
+  uri: "*:*"
+  wsdl: " "
+dateTime: 2005-07-23 00:55:24.229595 +09:00
+server: !ruby/object:SOAPBuildersInteropResult::Endpoint 
+  endpointName: SOAP4R
+  processorName: unknown
+  processorVersion: 
+  uri: http://rrr.jin.gr.jp/soapsrv
+  wsdl: " "
+testResults: 
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: wrong number of arguments (0 for 1) (ArgumentError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:229:in `echoVoid'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoVoid'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:223:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoVoid
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:233:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:243:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (Entity reference)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:254:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (Character reference)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:264:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (Leading and trailing whitespace)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:274:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (EUC encoded)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:284:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (EUC encoded) again
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:294:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (empty)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:304:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (space)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:314:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoString (whitespaces:\r \n \t \r \n \t)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:324:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStringArray
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:348:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStringArray (multi-ref)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:360:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoStringArray (multi-ref: elem1 == elem3)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:372:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoStringArray (empty, multi-ref: elem1 == elem3)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:395:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (Int: 123)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:405:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (Int: 2147483647)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:415:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (Int: -2147483648)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:426:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (2147483648: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:440:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (-2147483649: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:454:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (0.0: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:468:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (-5.2: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:482:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (0.000000000a: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:496:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoInteger (+-5: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:509:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoIntegerArray
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:529:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoIntegerArray (empty)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:551:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:561:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat (scientific notation)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:571:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat (scientific notation 2)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:581:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat (scientific notation 3)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:591:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat (scientific notation 4)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:601:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat (positive lower boundary)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:611:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloat (negative lower boundary)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:621:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (special values: +0)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:631:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (special values: -0)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:641:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (special values: NaN)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:651:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (special values: INF)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:661:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (special values: -INF)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:672:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (0.000a: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:686:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (00a.0001: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:700:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (+-5: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:714:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloat (5_0: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:727:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoFloatArray
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:740:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoFloatArray (special values: NaN, INF, -INF)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:762:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStruct
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:772:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStruct (nil members)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:785:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStructArray
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:798:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStructArray (anyType Array)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:825:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoStructArray (multi-ref)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:837:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoStructArray (multi-ref: elem1 == elem2)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:849:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoStructArray (anyType Array, multi-ref: elem2 == elem3)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:892:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoStructArray (multi-ref: varString of elem1 == varString of elem2)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:907:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of
+      elem3)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:991:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (now)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1002:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (before 1970: 1-01-01T00:00:00Z)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1013:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (after 2038: 2038-12-31T00:00:00Z)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1024:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (negative: -10-01-01T00:00:00Z)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1035:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (time precision: msec)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1046:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (time precision: long)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1057:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (positive TZ)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1068:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (negative TZ)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1079:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (+00:00 TZ)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1090:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (-00:00 TZ)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1101:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (min TZ)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1112:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (year > 9999)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1123:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (year < 0)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1134:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDate (year == -4713)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1145:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (year 0000: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1159:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (year nn: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1173:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (no day part: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1187:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (no sec part: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1201:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDate (empty: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1216:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBase64 (xsd:base64Binary)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1228:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoBase64 (xsd:base64Binary, empty)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1239:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBase64 (SOAP-ENC:base64)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1250:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBase64 (\0)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1261:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBase64 (\0a\0)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1273:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoBase64 (-: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1287:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoHexBinary
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1298:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoHexBinary(empty)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1309:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoHexBinary(\0)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1320:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoHexBinary(\0a\0)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1332:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoHexBinary(lower case)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1344:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoHexBinary (0FG7: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1357:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBoolean (true)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1367:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBoolean (false)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1379:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoBoolean (junk)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1392:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDecimal (123456)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1403:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDecimal (+0.123)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1414:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDecimal (.00000123)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1425:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDecimal (-.00000123)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1436:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDecimal (-123.456)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1447:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: echoDecimal (-123.)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1458:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDecimal (0.000a: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1472:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDecimal (00a.0001: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1486:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDecimal (+-5: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1500:in `doTestBase'
+
+      clientSOAP4R.rb:14
+
+    result: false
+    testName: "echoDecimal (5_0: junk)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1673:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoStructAsSimpleTypes
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1684:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoStructAsSimpleTypes (nil)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: wrong number of arguments (3 for 1) (ArgumentError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:229:in `echoSimpleTypesAsStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1695:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoSimpleTypesAsStruct
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: wrong number of arguments (3 for 1) (ArgumentError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:229:in `echoSimpleTypesAsStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1705:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoSimpleTypesAsStruct (nil)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1744:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echo2DStringArray
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1762:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echo2DStringArray (anyType array)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1825:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echo2DStringArray (multi-ref)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1849:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: "echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1879:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoNestedStruct
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1891:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoNestedStruct (nil)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1904:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: "echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)"
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1914:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoNestedArray
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1924:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoNestedArray (anyType array)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1935:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: echoNestedArray (multi-ref)
+    wiredump: ''
+  - !ruby/object:SOAPBuildersInteropResult::TestResult 
+    comment: >-
+      Exception: can't convert Array into String (TypeError)
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `+'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:424:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:423:in `create_request_obj'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:334:in `request_rpc_enc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:317:in `request_rpc'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:279:in `request_body'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:114:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+
+      /usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+
+      /home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1946:in `doTestGroupB'
+
+      clientSOAP4R.rb:15
+
+    result: false
+    testName: "echoNestedArray (multi-ref: varString == varArray[1])"
+    wiredump: ''

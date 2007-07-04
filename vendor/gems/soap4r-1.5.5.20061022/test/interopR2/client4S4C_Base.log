@@ -1,0 +1,4635 @@
+File: client4S4C_Base.log - Wiredumps for SOAP4R client / 4S4C server.
+Date: Sat Jul 23 19:22:42 JST 2005
+
+##########
+# echoVoid
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:44 JST 2005
+Content-Length: 400
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:24 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 452
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:25 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoVoidResponse xmlns:m="http://soapinterop.org/"></m:echoVoidResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:48 JST 2005
+Content-Length: 488
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:28 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 535
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:28 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string">SOAP4R Interoperability Test</outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (Entity reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:50 JST 2005
+Content-Length: 549
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:30 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 585
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:30 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string">&lt;>"&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;>&lt;&lt;&lt;</outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (Character reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:50 JST 2005
+Content-Length: 487
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:30 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 515
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:31 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string">    </outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:51 JST 2005
+Content-Length: 494
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:31 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 541
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:31 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (EUC encoded)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:51 JST 2005
+Content-Length: 501
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:32 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 548
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:32 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:52 JST 2005
+Content-Length: 501
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:32 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 548
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:32 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:52 JST 2005
+Content-Length: 460
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:33 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 507
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:33 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string"></outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (space)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:53 JST 2005
+Content-Length: 461
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:33 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 508
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:34 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string"> </outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:53 JST 2005
+Content-Length: 479
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:34 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 518
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:34 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringResponse xmlns:m="http://soapinterop.org/"><outputString xsi:type="xsd:string"> 
+ 	  
+ 	</outputString></m:echoStringResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:54 JST 2005
+Content-Length: 684
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:34 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 702
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:35 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStringArrayResponse xmlns:m="http://soapinterop.org/"><outputStringArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3]"><item xsi:type="xsd:string">SOAP4R
+</item><item xsi:type="xsd:string"> Interoperability </item><item xsi:type="xsd:string">	Test	</item></outputStringArray></m:echoStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: Exception: parse error at `size' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:717:in `found_stag_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:780:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:348:in `doTestBase'
+client4S4C.rb:13
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:55 JST 2005
+Content-Length: 843
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-606032862"></item>
+        <item>SOAP4R</item>
+        <item href="#id-606032862"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-606032862"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 10:26:35 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 291
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:35 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+ <font face="Arial" size=2>
+<p>Microsoft VBScript runtime </font> <font face="Arial" size=2>error '800a01fb'</font>
+<p>
+<font face="Arial" size=2>An exception occurred: 'ExecuteWithConfig2'</font>
+<p>
+<font face="Arial" size=2>/ilab/soap.asp</font><font face="Arial" size=2>, line 55</font> ! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Exception: parse error at `size' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:717:in `found_stag_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:780:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:360:in `doTestBase'
+client4S4C.rb:13
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:56 JST 2005
+Content-Length: 843
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-606044152"></item>
+        <item>SOAP4R</item>
+        <item href="#id-606044152"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-606044152"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 10:26:36 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 291
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:36 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+ <font face="Arial" size=2>
+<p>Microsoft VBScript runtime </font> <font face="Arial" size=2>error '800a01fb'</font>
+<p>
+<font face="Arial" size=2>An exception occurred: 'ExecuteWithConfig2'</font>
+<p>
+<font face="Arial" size=2>/ilab/soap.asp</font><font face="Arial" size=2>, line 55</font> ! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Exception: parse error at `size' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:717:in `found_stag_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:780:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:372:in `doTestBase'
+client4S4C.rb:13
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:56 JST 2005
+Content-Length: 831
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-606055762"></item>
+        <item></item>
+        <item href="#id-606055762"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-606055762"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 10:26:37 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 291
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:37 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+ <font face="Arial" size=2>
+<p>Microsoft VBScript runtime </font> <font face="Arial" size=2>error '800a01fb'</font>
+<p>
+<font face="Arial" size=2>An exception occurred: 'ExecuteWithConfig2'</font>
+<p>
+<font face="Arial" size=2>/ilab/soap.asp</font><font face="Arial" size=2>, line 55</font> ! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:57 JST 2005
+Content-Length: 464
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:37 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 511
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:38 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerResponse xmlns:m="http://soapinterop.org/"><outputInteger xsi:type="xsd:int">123</outputInteger></m:echoIntegerResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:58 JST 2005
+Content-Length: 471
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:38 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 518
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:38 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerResponse xmlns:m="http://soapinterop.org/"><outputInteger xsi:type="xsd:int">2147483647</outputInteger></m:echoIntegerResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:58 JST 2005
+Content-Length: 472
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:38 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 519
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:39 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerResponse xmlns:m="http://soapinterop.org/"><outputInteger xsi:type="xsd:int">-2147483648</outputInteger></m:echoIntegerResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:59 JST 2005
+Content-Length: 471
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:39 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:39 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputInteger'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:22:59 JST 2005
+Content-Length: 472
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:40 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:40 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputInteger'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:00 JST 2005
+Content-Length: 464
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:40 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 509
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:40 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerResponse xmlns:m="http://soapinterop.org/"><outputInteger xsi:type="xsd:int">0</outputInteger></m:echoIntegerResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:00 JST 2005
+Content-Length: 465
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:41 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 510
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:41 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerResponse xmlns:m="http://soapinterop.org/"><outputInteger xsi:type="xsd:int">-5</outputInteger></m:echoIntegerResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:01 JST 2005
+Content-Length: 473
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:41 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:42 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputInteger'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:01 JST 2005
+Content-Length: 464
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:42 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:42 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputInteger'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoIntegerArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:02 JST 2005
+Content-Length: 657
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:42 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 666
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:43 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerArrayResponse xmlns:m="http://soapinterop.org/"><outputIntegerArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:int[3]"><item xsi:type="xsd:int">1</item><item xsi:type="xsd:int">2</item><item xsi:type="xsd:int">3</item></outputIntegerArray></m:echoIntegerArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:03 JST 2005
+Content-Length: 588
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:43 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 567
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:43 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoIntegerArrayResponse xmlns:m="http://soapinterop.org/"><outputIntegerArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:int[0]"></outputIntegerArray></m:echoIntegerArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:03 JST 2005
+Content-Length: 467
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:43 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 510
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:44 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">3.141593</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:04 JST 2005
+Content-Length: 465
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:44 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 511
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:44 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">1.234E+37</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:04 JST 2005
+Content-Length: 465
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:45 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 511
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:45 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">1.234E+37</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:05 JST 2005
+Content-Length: 465
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:45 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 511
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:45 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">1.234E+37</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:05 JST 2005
+Content-Length: 459
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:46 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 506
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:46 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">-1.4</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:06 JST 2005
+Content-Length: 457
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:46 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 503
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:47 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">0</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:06 JST 2005
+Content-Length: 457
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:47 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 503
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:47 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">0</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:07 JST 2005
+Content-Length: 457
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:47 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 503
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:48 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">0</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:08 JST 2005
+Content-Length: 457
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:48 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 503
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:48 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatResponse xmlns:m="http://soapinterop.org/"><outputFloat xsi:type="xsd:float">0</outputFloat></m:echoFloatResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'inputFloat' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:08 JST 2005
+Content-Length: 458
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:48 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:49 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'inputFloat' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:09 JST 2005
+Content-Length: 458
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:49 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:49 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'inputFloat' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:09 JST 2005
+Content-Length: 459
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:50 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:50 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:10 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:50 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:50 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:10 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:51 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:51 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:11 JST 2005
+Content-Length: 458
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:51 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:51 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:11 JST 2005
+Content-Length: 458
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:52 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 555
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:52 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloatArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:12 JST 2005
+Content-Length: 662
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:52 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 674
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:53 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoFloatArrayResponse xmlns:m="http://soapinterop.org/"><outputFloatArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:float[3]"><item xsi:type="xsd:float">0.0001</item><item xsi:type="xsd:float">1000</item><item xsi:type="xsd:float">0</item></outputFloatArray></m:echoFloatArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'item' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:12 JST 2005
+Content-Length: 658
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:53 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 549
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:53 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'item'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:13 JST 2005
+Content-Length: 674
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:53 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 679
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:54 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructResponse xmlns:m="http://soapinterop.org/"><outputStruct xsi:type="ns1:SOAPStruct"  xmlns:ns1="http://soapinterop.org/xsd"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></outputStruct></m:echoStructResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStruct (nil members)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'varFloat' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:14 JST 2005
+Content-Length: 651
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:54 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 553
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:54 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'varFloat'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:14 JST 2005
+Content-Length: 1217
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:54 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:55 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">c</varString><varInt xsi:type="xsd:int">3</varInt><varFloat xsi:type="xsd:float">3.3</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:15 JST 2005
+Content-Length: 1392
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:55 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:55 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">c</varString><varInt xsi:type="xsd:int">3</varInt><varFloat xsi:type="xsd:float">3.3</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:15 JST 2005
+Content-Length: 1257
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-606054532"></item>
+        <item href="#id-606054532"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-606054532"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:55 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:55 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Expected = "SOAPBuildersInterop::SOAPStruct#-606110622"  //  Actual = "SOAPBuildersInterop::SOAPStruct#-606111682"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:15 JST 2005
+Content-Length: 1257
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-606084842"></item>
+        <item href="#id-606084842"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-606084842"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:56 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:56 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Expected = "SOAPBuildersInterop::SOAPStruct#-605248562"  //  Actual = "SOAPBuildersInterop::SOAPStruct#-605263642"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:16 JST 2005
+Content-Length: 1282
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item href="#id-606116742"></item>
+        <item href="#id-606116742"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-606116742"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">b</varString>
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+      <varInt xsi:type="xsd:int">2</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:56 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:56 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Expected = "String#-605192498"  //  Actual = "String#-605200908"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:16 JST 2005
+Content-Length: 1360
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString href="#id-605317032"></varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString href="#id-605317032"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605317032"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:56 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:57 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">3</varInt><varFloat xsi:type="xsd:float">3.3</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Expected = "String#-605637612"  //  Actual = "String#-605639512"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:17 JST 2005
+Content-Length: 1535
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString href="#id-605568042"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString href="#id-605568042"></varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605568042"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:57 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1146
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:57 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoStructArrayResponse xmlns:m="http://soapinterop.org/"><outputStructArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="ns1:SOAPStruct[3]" xmlns:ns1="http://soapinterop.org/xsd"><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></SOAPStruct><SOAPStruct xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">3</varInt><varFloat xsi:type="xsd:float">3.3</varFloat></SOAPStruct></outputStructArray></m:echoStructArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (now)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:17 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T10:23:17Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:57 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:58 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2005-07-23T10:23:17Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Expected = "0001-01-01T00:00:00Z"  //  Actual = "2001-01-01T00:00:00Z"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:18 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:58 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:58 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-01-01T00:00:00Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:18 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:58 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:59 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2038-12-31T00:00:00Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Expected = "-0010-01-01T00:00:00Z"  //  Actual = "1899-12-30T00:00:00Z"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:19 JST 2005
+Content-Length: 475
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:59 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:26:59 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>1899-12-30T00:00:00Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Expected = #<DateTime: 52964868805003/21600000,0,2299161>  //  Actual = #<DateTime: 10592973761/4320,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:19 JST 2005
+Content-Length: 478
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:26:59 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:00 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-16T18:13:40Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Expected = #<DateTime: 21185947522000000000001234567890123456789/8640000000000000000000000000000000,0,2299161>  //  Actual = #<DateTime: 10592973761/4320,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:20 JST 2005
+Content-Length: 515
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:00 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:00 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-16T18:13:40Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (positive TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:20 JST 2005
+Content-Length: 479
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:01 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:01 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-16T18:13:40Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (negative TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:21 JST 2005
+Content-Length: 479
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:01 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:01 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-17T01:13:40Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:21 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:02 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:02 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-17T01:13:40Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:22 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:02 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:03 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-17T01:13:40Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (min TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:22 JST 2005
+Content-Length: 479
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:03 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:03 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2001-06-15T23:59:01Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Expected = #<DateTime: 23214179021/4320,0,2299161>  //  Actual = #<DateTime: 57960451/24,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:23 JST 2005
+Content-Length: 480
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:03 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:04 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>1899-12-30T07:00:00Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (year < 0)
+
+Result: Expected = #<DateTime: 7435694381/4320,0,2299161>  //  Actual = #<DateTime: 57960451/24,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:24 JST 2005
+Content-Length: 480
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:04 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:04 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>1899-12-30T07:00:00Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Expected = #<DateTime: 0,0,2299161>  //  Actual = #<DateTime: 4830037/2,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:24 JST 2005
+Content-Length: 475
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:04 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:05 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>1899-12-30T00:00:00Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:25 JST 2005
+Content-Length: 474
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:05 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:05 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2000-05-18T16:52:20Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:25 JST 2005
+Content-Length: 472
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:05 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 521
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:06 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDateResponse xmlns:m="http://soapinterop.org/"><outputDate xsi:type='xsd:dateTime'>2005-05-18T16:52:20Z</outputDate></m:echoDateResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:26 JST 2005
+Content-Length: 471
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:06 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 543
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:06 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert to DATE value, whilst processing element inputDate</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:26 JST 2005
+Content-Length: 471
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:07 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 543
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:07 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert to DATE value, whilst processing element inputDate</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDate (empty: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:27 JST 2005
+Content-Length: 454
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:07 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 543
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:07 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert to DATE value, whilst processing element inputDate</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:27 JST 2005
+Content-Length: 510
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:08 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 556
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:08 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBase64Response xmlns:m="http://soapinterop.org/"><outputBase64 xsi:type="SOAP-ENC:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</outputBase64></m:echoBase64Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:28 JST 2005
+Content-Length: 466
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:08 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 512
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:09 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBase64Response xmlns:m="http://soapinterop.org/"><outputBase64 xsi:type="SOAP-ENC:base64"></outputBase64></m:echoBase64Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:29 JST 2005
+Content-Length: 566
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:09 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 556
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:09 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBase64Response xmlns:m="http://soapinterop.org/"><outputBase64 xsi:type="SOAP-ENC:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</outputBase64></m:echoBase64Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBase64 (\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:29 JST 2005
+Content-Length: 526
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:09 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 516
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:10 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBase64Response xmlns:m="http://soapinterop.org/"><outputBase64 xsi:type="SOAP-ENC:base64">AA==</outputBase64></m:echoBase64Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:30 JST 2005
+Content-Length: 534
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:10 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 524
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:10 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBase64Response xmlns:m="http://soapinterop.org/"><outputBase64 xsi:type="SOAP-ENC:base64">YQBiAABjAAAA</outputBase64></m:echoBase64Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:30 JST 2005
+Content-Length: 523
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:10 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 512
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:11 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBase64Response xmlns:m="http://soapinterop.org/"><outputBase64 xsi:type="SOAP-ENC:base64"></outputBase64></m:echoBase64Response></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoHexBinary
+
+Result: Expected = "Hello (∆¸À‹∏ÏJapanese) §≥§Û§À§¡§œ"  //  Actual = "„ŒπË.\202Ë]¥€¿∫\024 \201\f |\020.\000Î^ÙÎ^\204Îû˜Î\235Ω€@8\ap8\027p8\010\0208\vP8"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:31 JST 2005
+Content-Length: 541
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:11 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 570
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:11 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoHexBinaryResponse xmlns:m="http://soapinterop.org/"><return xsi:type="SOAP-ENC:base64">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4</return></m:echoHexBinaryResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoHexBinary(empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:31 JST 2005
+Content-Length: 475
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:12 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 506
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:12 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoHexBinaryResponse xmlns:m="http://soapinterop.org/"><return xsi:type="SOAP-ENC:base64"></return></m:echoHexBinaryResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Expected = "\000"  //  Actual = ""
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:32 JST 2005
+Content-Length: 477
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:12 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 506
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:12 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoHexBinaryResponse xmlns:m="http://soapinterop.org/"><return xsi:type="SOAP-ENC:base64"></return></m:echoHexBinaryResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Expected = "a\000b\000\000c\000\000\000"  //  Actual = "Î]4Îm4”N∑”M4"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:32 JST 2005
+Content-Length: 493
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:13 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 522
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:13 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoHexBinaryResponse xmlns:m="http://soapinterop.org/"><return xsi:type="SOAP-ENC:base64">6100620000630000</return></m:echoHexBinaryResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Expected = "lower case"  //  Actual = "ÈŒ\237ÔæπÔm¥Î~µÔ~\271"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:33 JST 2005
+Content-Length: 495
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:13 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 526
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:14 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoHexBinaryResponse xmlns:m="http://soapinterop.org/"><return xsi:type="SOAP-ENC:base64">6c6f7765722063617365</return></m:echoHexBinaryResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:33 JST 2005
+Content-Length: 479
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:14 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 510
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:14 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoHexBinaryResponse xmlns:m="http://soapinterop.org/"><return xsi:type="SOAP-ENC:base64">0FG7</return></m:echoHexBinaryResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBoolean (true)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:34 JST 2005
+Content-Length: 469
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:14 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 502
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:15 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBooleanResponse xmlns:m="http://soapinterop.org/"><return xsi:type="xsd:boolean">true</return></m:echoBooleanResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBoolean (false)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:35 JST 2005
+Content-Length: 470
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:15 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 503
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:15 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoBooleanResponse xmlns:m="http://soapinterop.org/"><return xsi:type="xsd:boolean">false</return></m:echoBooleanResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoBoolean (junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:35 JST 2005
+Content-Length: 469
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:15 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 509
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:16 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to boolean</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (123456)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'inputDecimal' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:36 JST 2005
+Content-Length: 483
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:16 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:16 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputDecimal'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: Expected = "0.12345678901234567"  //  Actual = "0.1235"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:36 JST 2005
+Content-Length: 484
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:16 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 504
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:17 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDecimalResponse xmlns:m="http://soapinterop.org/"><return xsi:type="xsd:decimal">0.1235</return></m:echoDecimalResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: Expected = "0.00000123456789012"  //  Actual = "0"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:37 JST 2005
+Content-Length: 484
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:17 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 499
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:17 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDecimalResponse xmlns:m="http://soapinterop.org/"><return xsi:type="xsd:decimal">0</return></m:echoDecimalResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: Expected = "-0.00000123456789012"  //  Actual = "0"
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:37 JST 2005
+Content-Length: 485
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:18 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 499
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:18 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDecimalResponse xmlns:m="http://soapinterop.org/"><return xsi:type="xsd:decimal">0</return></m:echoDecimalResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:38 JST 2005
+Content-Length: 485
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:18 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 518
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:18 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><m:echoDecimalResponse xmlns:m="http://soapinterop.org/"><return xsi:type="xsd:decimal">-123456789012345.008</return></m:echoDecimalResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (-123.)
+
+Result: Exception: Unable to convert value to required type, whilst processing element 'inputDecimal' (SOAP::FaultError)
+
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:38 JST 2005
+Content-Length: 483
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:19 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:19 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputDecimal'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:39 JST 2005
+Content-Length: 484
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:19 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:20 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputDecimal'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:40 JST 2005
+Content-Length: 484
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:20 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:20 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputDecimal'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:40 JST 2005
+Content-Length: 468
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:20 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:21 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputDecimal'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:23:41 JST 2005
+Content-Length: 468
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:27:21 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 557
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:27:21 GMT
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>Unable to convert value to required type, whilst processing element 'inputDecimal'</faultstring></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+

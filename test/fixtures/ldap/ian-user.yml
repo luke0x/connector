@@ -1,0 +1,41 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+--- 
+dbid: 
+- "1"
+objectclass: 
+- joyentUser
+- posixAccount
+- shadowAccount
+- ldapPublicKey
+mail: 
+- ian@joyent.joyent.com
+uid: 
+- ian@joyent.joyent.com
+userPassword: 
+- testpass
+maildir:
+- "joyent.joyent.com/ian/Maildir/"
+gid:
+- "1"
+homeDirectory:
+- "joyent.joyent.com/ian/"
+gidNumber:
+- "501"
+cn:
+- "Ian Kevin Curtis"
+unixHomeDir:
+- <%= "#{JoyentConfig.storage_root}1/users/ian/strongspace" %>
+sshPublicKey:
+- ""
+loginShell:
+- "/usr/local/bin/scponly"
+uidNumber:
+- "501"

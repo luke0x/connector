@@ -1,0 +1,23 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) ------------------------------------------- */
+
+	.actionRefreshAll a {	
+		width: 111px !important;
+		background-image: url(/images/lang/de/actionsConnect.png);
+		}
+	.actionCollapseAll a {	
+		width: 114px !important;
+		background-image: url(/images/lang/de/actionsConnect.png);
+		}
+	.actionExpandAll a, .actionShowNew a {	
+		width: 119px !important;
+		background-image: url(/images/lang/de/actionsConnect.png);
+		}

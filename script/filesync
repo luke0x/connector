@@ -1,0 +1,158 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+unless ARGV.size == 2
+  puts "usage: ./filesync <organization_domain> <username>"   
+  exit
+end                                                       
+           
+require File.dirname(__FILE__) + '/../config/boot'  
+require "#{RAILS_ROOT}/config/environment"
+          
+def log(message)
+  puts message  
+end     
+
+EXEMPT_FILES = ['..', '.', '.svn', '.DS_Store'] 
+def ensure_folder_proxies_for(path, folder_proxies, user)
+  Dir.foreach(path) do |file|
+    unless EXEMPT_FILES.index(file)
+      expanded_path = File.expand_path(File.join(path, file))
+      if File.directory?(expanded_path) && !File.symlink?(expanded_path)
+        unless folder_proxies.include?(expanded_path)
+          log "    Creating folder proxy for #{expanded_path}" 
+          parent = folder_proxies[File.dirname(expanded_path)]
+          proxy  = user.folders.create(:name => File.basename(expanded_path), :parent => parent)  
+          folder_proxies[expanded_path] = proxy 
+        end
+    
+        ensure_folder_proxies_for(expanded_path, folder_proxies, user)  
+      end
+    end
+  end
+end  
+  
+def ensure_file_proxies_for_files_in(path, folder_proxies, file_proxies, user) 
+  Dir.foreach(path) do |file|
+    unless EXEMPT_FILES.index(file)
+      expanded_path = File.expand_path(File.join(path, file))
+      if File.file?(expanded_path)                                      
+        unless file_proxies.include?(expanded_path)
+          folder = folder_proxies[File.dirname(expanded_path)]
+          if folder
+            log "    Creating file proxy for #{expanded_path}"
+            proxy = folder.add_file_from_disk(file)
+            file_proxies[expanded_path] = proxy 
+          else
+            log "    ERROR: Unable to create proxy for file #{expanded_path} because there is no corresponding folder proxy."
+          end
+        end                              
+      elsif File.directory?(expanded_path)
+        ensure_file_proxies_for_files_in(expanded_path, folder_proxies, file_proxies, user)  
+      end
+    end
+  end  
+end
+
+log "Loading #{RAILS_ENV} environment.\n"
+organizations = []
+
+if ARGV[0] == '*'
+  organizations = Organization.find(:all)
+else
+  domain        = Domain.find_by_email_domain(ARGV[0])
+  organizations = [domain.organization] if domain
+end       
+
+organizations.each do |org|            
+  log "\nSyncing files for organization #{org.name}"
+  Organization.current = org
+  
+  # Ensure that the default organization directories exist (root, icons, users)
+  FileUtils.mkdir_p org.icons_path, :noop=>Folder.dry_run 
+  FileUtils.mkdir_p org.users_path, :noop=>Folder.dry_run                                     
+  
+  # Ensure the person icons map to valid people and that there are not duplicate icons
+  icons_set = Set.new
+  Dir.glob(File.join(org.icons_path, '*')).each do |file|
+    id = File.basename(file, File.extname(file))
+    
+    if icons_set.include?(id) || !Person.exists?(id)
+      log "  Removing icon #{file}"
+      FileUtils.rm(file)    
+    end
+     
+    icons_set.add(id)
+  end 
+  
+  # Get the list of users to sync
+  users = (ARGV[1] == '*') ? org.users : [org.users.find_by_username(ARGV[1])].compact
+  
+  users.each do |user|
+    log "  Syncing files for user #{user.full_name} (#{user.username})" 
+    User.current = user
+    
+    # Ensure that the default user folder proxy exists (the folder on disk will be created later if it is missing)
+    user.documents_folder ||= user.folders.create(:name => 'Documents')
+    
+    # Ensure all folder proxies exist on disk, and that there are no duplicates
+    folder_proxies = {}
+    user.folders.each do |folder|
+      expanded_path = File.expand_path(folder.path_on_disk)
+      # Ensure that all of the files in this folder are owned by this user and this org
+      folder.joyent_files.each do |file|
+        if file.organization != org || file.owner != user 
+          log "    Updating the owner/organization for #{file.path_on_disk}."
+          file.organization = org
+          file.owner        = user
+          file.save  
+        end 
+      end
+      
+      if !folder_proxies.include?(expanded_path) 
+        FileUtils.mkdir_p expanded_path, :noop=>Folder.dry_run
+        folder_proxies[expanded_path] = folder
+      else
+        log "    Removing duplicate folder proxy for #{expanded_path} (#{folder.id})"
+        # Since none of the callbacks are called when using delete, we need to make sure
+        # we move any related things to the other proxy
+        folder.joyent_files.each do |file|          
+          # reassign the files
+          file.update_attribute(:folder, folder_proxies[expanded_path])  
+        end                                                            
+        # remove the permissions
+        folder.permissions.each{|perm| perm.destroy}
+        
+        Folder.delete(folder.id)          
+      end                                                             
+    end
+    
+    # Ensure all folders on disk exist as folder proxies
+    ensure_folder_proxies_for(user.root_path, folder_proxies, user)
+                                                                    
+    # Ensure all of the file proxies map to a real file and that there are no duplicate
+    file_proxies = {}
+    user.joyent_files.each do |file|
+      expanded_path = File.expand_path(file.path_on_disk)
+      if File.exists?(expanded_path) && !file_proxies.include?(expanded_path)
+        file_proxies[expanded_path] = file
+      else                        
+        log "    Removing non file proxy for non existent file or duplicate proxy #{expanded_path}"
+        # A call to #remove! will actually remove the file from disk, so we should be safe
+        # in the case of duplicates here
+        file.destroy
+      end
+    end
+    
+    # Ensure all the files on disk have a file proxy in the db
+    ensure_file_proxies_for_files_in(user.root_path, folder_proxies, file_proxies, user)    
+  end
+end

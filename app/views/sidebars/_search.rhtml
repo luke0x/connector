@@ -1,0 +1,15 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="search">
+  <% form_tag({:controller => 'connect', :action => 'search'}, {:method => 'get', :style => 'margin: 0 30px 0 0; padding: 0;'}) do -%>
+  	<input class="textInput" id="searchField" name="search_string" type="search" style="width:100%;" autosave="com.joyent.search" results="5" tabindex="1" />
+  <% end -%>
+  <%= javascript_tag("Event.observe(window, 'load', function(event){ Search.init(); });") %>
+</div>

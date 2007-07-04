@@ -1,0 +1,74 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_check_it:
+  id: 1
+  organization_id: 1
+  notifier_id: 2
+  notifiee_id: 1
+  item_id: 11
+  item_type: Event
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>  
+  acknowledged: false
+
+ian_checked_it_ages_back:
+  id: 3
+  organization_id: 1
+  notifier_id: 2
+  notifiee_id: 1
+  item_id: 12
+  item_type: Event
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>  
+  acknowledged: true
+
+peter_check_it:
+  id: 2
+  organization_id: 1
+  notifier_id: 1
+  notifiee_id: 2
+  item_id: 1
+  item_type: Event
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>  
+  acknowledged: false
+
+secret_person_notify_youself:
+  id: 4
+  organization_id: 2
+  notifier_id: 4
+  notifiee_id: 4
+  item_id: 6
+  item_type: Person
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>  
+  acknowledged: false
+
+ian_notifies_peter_of_mail:
+  id: 5
+  organization_id: 1
+  notifier_id: 1
+  notifiee_id: 2
+  item_id: 1
+  item_type: Message
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>  
+  acknowledged: false
+
+ian_check_this_sweet_list:
+  id: 6
+  organization_id: 1
+  notifier_id: 2
+  notifiee_id: 1
+  item_id: 1
+  item_type: List
+  created_at: <%= Time.now.to_s(:db) %>
+  updated_at: <%= Time.now.to_s(:db) %>
+  acknowledged: false

@@ -1,0 +1,20 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+xml.rss :version=>"2.0" do 
+  xml.channel do
+    xml.title _("Lists: %{i18n_group_name}")%{:i18n_group_name => "#{@group_name}"}
+    xml.link @lists_link
+    xml.description @group_name
+
+    render(:partial => "lists_rss", :locals=>{ :lists => @lists, :xm => xml })
+  end
+end

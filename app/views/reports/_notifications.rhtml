@@ -1,0 +1,59 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% if notifications.empty? -%>
+	<div class="notificationsNone"><div class="notificationsInset"><%= _('There are currently no %{i18n_unacknowledged}notifications.')%{:i18n_unacknowledged => (show_all ? '' : _("unacknowledged "))} -%></div></div>
+<% else -%>
+	<table id="notificationsTable" class="notificationsList tableList">
+		<colgroup>
+			<col style="width:200px;" />
+			<col style="width:44px;" />
+			<col />
+			<col style="width:90px;" />
+			<col style="width:32px;" />
+		</colgroup>
+		<tr>
+			<th class="firstCol"><%= _('Item') -%></th>
+			<th colspan="3"><%= _('Notification') -%></th>
+			<th class="detailView"><span>Peek</span></th>
+		</tr>
+		<% notifications.each_with_index do |notification, index| -%>
+		<%   dom_id = "#{params[:dom_prefix]}_#{notification.dom_id}" %>
+			<tr id="<%= dom_id %>_tr" itemDomId="<%= notification.item.dom_id %>" notifyDomId="<%= notification.dom_id%>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td style="padding-left:1em" class="firstCol">
+					<a href="<%= item_url(notification.item) %>" class="notificationsDoc <%= item_image_class notification.item %>">  	    		  
+						<strong><%= notification.item.name %></strong>
+						<br />
+						<%= _(notification.item.class_humanize) %>
+					</a>
+				</td>
+				<td>
+					<img src="<%= person_icon_url(:id => notification.notifier.person.id) %>" border="0" style="width:32px; height:32px;" />
+				</td>
+				<td>
+					<%= _('Notified by %{i18n_notifier_name}')%{:i18n_notifier_name => notification.notifier.full_name} -%>
+					<%= _('%{i18n_time_ago_in_words} ago')%{:i18n_time_ago_in_words => time_ago_in_words(notification.created_at)} -%>
+				</td>
+				<td align="center">
+					<% if notification.acknowledged? -%>
+						<%= _('Dismissed') -%>
+					<% else -%>
+						<%= joyent_button_to_remote _('Dismiss'), { :url => {:controller => 'notifications', :action => :acknowledge, :id => notification.id} }, { :style => 'width:7em;' } %>	
+					<% end -%>
+				</td>
+				<td id="<%= dom_id %>_td_details_icon" class="notificationDetails details">
+					<%= link_to_function _('Details'), "PeekView.toggle('#{dom_id}', '#{peek_url(notification.item, dom_id)}')" %>
+				</td>
+			</tr>
+			<tr id="<%= dom_id %>_tr_details" itemDomId="<%= notification.item.dom_id %>" notifyDomId="<%= notification.dom_id%>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td id="<%= dom_id %>_td_details" colspan="5" class="Details"></td>
+			</tr>
+		<% end -%>
+	</table>
+<% end -%>

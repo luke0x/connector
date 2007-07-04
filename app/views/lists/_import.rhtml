@@ -1,0 +1,20 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<h5><%= _('Import an OPML file (.opml)') %></h5>
+<% form_tag(list_import_url, {:multipart => true, :class => "item_editor", :style => "margin-bottom: 0;" }) do -%>
+	<fieldset>
+		<%= file_field_tag 'opml_file', {:style => ""} %>
+	</fieldset>
+
+	<div class="drawerButtons">
+		<input type="button" value="<%= _('Cancel') %>" onclick="return Drawers.hide('ImportOPML');" />
+		<%= submit_tag _('Import'), :name => 'command' %>
+	</div>
+<% end -%>

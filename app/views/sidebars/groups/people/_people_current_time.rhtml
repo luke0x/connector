@@ -1,0 +1,12 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<%= add_to_workspace(:current_time, User.selected) %>
+<hr />
+<%= link_to "RSS", current_time_report_rss_url(:id => User.selected), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

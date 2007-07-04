@@ -1,0 +1,42 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+--- 
+city: 
+- San Anselmo
+companyName: 
+- Joy Division
+st: 
+- CA
+objectclass: 
+- joyentContact
+dbid: 
+- "1"
+nickname: 
+- ian
+domain: 
+- joyent.joyent.com
+middleName: 
+- Kevin
+country: 
+- United States
+sn: 
+- Curtis
+phoneNumber: 
+- 0800 666 112
+postalCode: 
+- "90210"
+phoneNumberType: 
+- Mobile
+givenName: 
+- Ian
+addressType: 
+- Work
+street: 
+- 14 Kientz Lane

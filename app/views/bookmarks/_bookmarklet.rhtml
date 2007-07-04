@@ -1,0 +1,36 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<h5><%= _('Browser Bookmarklet') %></h5>
+<fieldset>
+	<table border="0" width="100%">
+		<tr>
+			<td width="50%" style="padding: 0 1em 0 0; border-right: 1px solid #B1B1B1; vertical-align: top;">
+				<h3><%= _('What is a bookmarklet?') -%></h3>
+				<p><%= _("A link you add to your browser's bookmarks toolbar.") -%></p>
+				<br />
+				<h3><%= _('And what does it do?') -%></h3>
+				<p><%= _("This bookmarklet helps you quickly bookmark a page while you're browsing the web.") -%></p>
+			</td>
+			<td width="50%" style="padding: 0 0 0 1em; vertical-align: top;">
+				<h3><%= _('Okay, I want it') -%></h3>
+				<p>
+				  <%= _('Drag this link up to your bookmarks toolbar') -%>:
+					<a href="javascript:location.href='http://<%= request.env['HTTP_HOST'] %>/bookmarks/create?uri='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'&via=bookmarklet'" class="buttonStandard" style="width: 9em;"><div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class=""><%= _('+Bookmark') %></span></div></div></div></a>
+				</p>
+				<br />
+        <h3><%= _("You're done") -%></h3>
+        <p><%= _("Just click it when you want to bookmark a page you're looking at.") -%></p>
+			</td>
+		</tr>
+	</table>
+</fieldset>
+<div class="drawerButtons">
+	<input type="button" value="<%= _('Done') %>" onclick="Drawers.hide('BookmarksBookmarklet');" />
+</div>

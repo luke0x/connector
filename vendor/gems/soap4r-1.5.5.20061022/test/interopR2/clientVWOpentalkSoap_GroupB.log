@@ -1,0 +1,972 @@
+File: clientVWOpentalkSoap_GroupB.log - Wiredumps for SOAP4R client / VWOpentalkSoap server.
+Date: Sat Jul 23 21:43:58 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:43:59 JST 2005
+Content-Length: 700
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1687:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:44:59 JST 2005
+Content-Length: 677
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1698:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:45:59 JST 2005
+Content-Length: 600
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1708:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:47:00 JST 2005
+Content-Length: 577
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echo2DStringArray
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1747:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:48:00 JST 2005
+Content-Length: 889
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1765:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:49:00 JST 2005
+Content-Length: 1088
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1828:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:50:01 JST 2005
+Content-Length: 1063
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605670444"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605670444"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605670444"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1852:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:51:01 JST 2005
+Content-Length: 1063
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605703494"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605703494"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605703494"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:52:02 JST 2005
+Content-Length: 920
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1894:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:53:02 JST 2005
+Content-Length: 874
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1907:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:54:02 JST 2005
+Content-Length: 1062
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605734114"></varString>
+        </varStruct>
+        <varString href="#id-605734114"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605734114"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedArray
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1917:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:55:03 JST 2005
+Content-Length: 931
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:56:03 JST 2005
+Content-Length: 998
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1938:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:57:03 JST 2005
+Content-Length: 1083
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605819184"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605819184"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605819184"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `gets'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1426:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1424:in `parse_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1380:in `read_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1212:in `get_status'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:465:in `do_get_header'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:435:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1949:in `doTestGroupB'
+clientVWOpentalkSoap.rb:18
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /r2groupb/interop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:58:04 JST 2005
+Content-Length: 1083
+Host: www.cincomsmalltalk.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605849514"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605849514"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605849514"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+

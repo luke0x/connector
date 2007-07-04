@@ -1,0 +1,4465 @@
+File: clientJSOAP_Base.log - Wiredumps for SOAP4R client / SpheonJSOAP server.
+Date: Sat Jul 23 21:19:20 JST 2005
+
+##########
+# echoVoid
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:22 JST 2005
+Content-Length: 400
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:07 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1a3
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoVoidResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:23 JST 2005
+Content-Length: 488
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:08 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ff
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">SOAP4R Interoperability Test</result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (Entity reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:24 JST 2005
+Content-Length: 549
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:09 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+23c
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (Character reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:25 JST 2005
+Content-Length: 487
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:10 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1eb
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">    </result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:25 JST 2005
+Content-Length: 494
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:10 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+205
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (EUC encoded)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:26 JST 2005
+Content-Length: 501
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:11 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+20c
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:27 JST 2005
+Content-Length: 501
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:11 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+20c
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:27 JST 2005
+Content-Length: 460
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:12 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1db
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string"/></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (space)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:28 JST 2005
+Content-Length: 461
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:13 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string"> </result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: Expected = "\r \n \t \r \n \t"  //  Actual = "\n \n \t \n \n \t"
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:29 JST 2005
+Content-Length: 479
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:13 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ee
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:string">
+ 
+ 	 
+ 
+ 	</result></n1:echoStringResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:29 JST 2005
+Content-Length: 684
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:14 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+2c8
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:string[3]" xsi:type="ns1:Array"><item xsi:type="xsd:string">SOAP4R
+</item><item xsi:type="xsd:string"> Interoperability </item><item xsi:type="xsd:string">	Test	</item></result></n1:echoStringArrayResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:30 JST 2005
+Content-Length: 843
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605833186"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605833186"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605833186"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:15 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+30f
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:string[3]" xsi:type="ns1:Array"><item href="#id1921a3b69"/><item xsi:type="xsd:string">SOAP4R</item><item href="#id1921a3b69"/></result></n1:echoStringArrayResponse><item xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:string" id="id1921a3b69">SOAP4R</item></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:31 JST 2005
+Content-Length: 843
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605851516"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605851516"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605851516"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:16 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+30f
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:string[3]" xsi:type="ns1:Array"><item href="#id1921a3b69"/><item xsi:type="xsd:string">SOAP4R</item><item href="#id1921a3b69"/></result></n1:echoStringArrayResponse><item xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:string" id="id1921a3b69">SOAP4R</item></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:32 JST 2005
+Content-Length: 831
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605869916"></item>
+        <item></item>
+        <item href="#id-605869916"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605869916"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:16 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+2d9
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStringArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:string[3]" xsi:type="ns1:Array"><item href="#id10"/><item href="#id10"/><item href="#id10"/></result></n1:echoStringArrayResponse><item xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="xsd:string" id="id10"/></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:32 JST 2005
+Content-Length: 464
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:17 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:int">123</result></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:33 JST 2005
+Content-Length: 471
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:18 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ec
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:int">2147483647</result></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:34 JST 2005
+Content-Length: 472
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:18 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ed
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:int">-2147483648</result></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:34 JST 2005
+Content-Length: 471
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:19 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:int"/></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:35 JST 2005
+Content-Length: 472
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:20 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:int"/></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:36 JST 2005
+Content-Length: 464
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:20 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:int"/></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:36 JST 2005
+Content-Length: 465
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:21 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:int"/></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:37 JST 2005
+Content-Length: 473
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:22 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:int"/></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:38 JST 2005
+Content-Length: 464
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:22 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:int"/></n1:echoIntegerResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoIntegerArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:38 JST 2005
+Content-Length: 657
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:23 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+2a2
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:int[3]" xsi:type="ns1:Array"><item xsi:type="xsd:int">1</item><item xsi:type="xsd:int">2</item><item xsi:type="xsd:int">3</item></result></n1:echoIntegerArrayResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:39 JST 2005
+Content-Length: 588
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:25 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+237
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoIntegerArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:int[0]" xsi:type="ns1:Array"/></n1:echoIntegerArrayResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:41 JST 2005
+Content-Length: 467
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:26 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e9
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">3.1415927</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:42 JST 2005
+Content-Length: 465
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:26 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e8
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">1.234E37</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:42 JST 2005
+Content-Length: 465
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:27 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e8
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">1.234E37</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:43 JST 2005
+Content-Length: 465
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:28 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e8
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">1.234E37</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:44 JST 2005
+Content-Length: 459
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:28 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">-1.4</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:44 JST 2005
+Content-Length: 457
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:29 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e3
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">0.0</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:45 JST 2005
+Content-Length: 457
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:30 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">-0.0</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:46 JST 2005
+Content-Length: 457
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:30 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e3
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">0.0</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:46 JST 2005
+Content-Length: 457
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:31 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">-0.0</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:47 JST 2005
+Content-Length: 458
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:32 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e3
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">NaN</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:48 JST 2005
+Content-Length: 458
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:32 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e3
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">INF</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:48 JST 2005
+Content-Length: 459
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:33 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:float">-INF</result></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:49 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:34 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:float"/></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:50 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:34 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:float"/></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:50 JST 2005
+Content-Length: 458
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:35 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:float"/></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:51 JST 2005
+Content-Length: 458
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:36 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:float"/></n1:echoFloatResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloatArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:51 JST 2005
+Content-Length: 662
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:36 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+2b2
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:float[3]" xsi:type="ns1:Array"><item xsi:type="xsd:float">1.0E-4</item><item xsi:type="xsd:float">1000.0</item><item xsi:type="xsd:float">0.0</item></result></n1:echoFloatArrayResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:52 JST 2005
+Content-Length: 658
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:37 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+2ad
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoFloatArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="xsd:float[3]" xsi:type="ns1:Array"><item xsi:type="xsd:float">NaN</item><item xsi:type="xsd:float">INF</item><item xsi:type="xsd:float">-INF</item></result></n1:echoFloatArrayResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:53 JST 2005
+Content-Length: 674
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:38 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+28e
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStructResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://soapinterop.org/xsd" xsi:type="ns1:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></result></n1:echoStructResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStruct (nil members)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:54 JST 2005
+Content-Length: 651
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:38 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+290
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStructResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://soapinterop.org/xsd" xsi:type="ns1:SOAPStruct"><varString xsi:nil="1" xsi:type="xsd:string"/><varInt xsi:nil="1" xsi:type="xsd:int"/><varFloat xsi:nil="1" xsi:type="xsd:float"/></result></n1:echoStructResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStructArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:54 JST 2005
+Content-Length: 1217
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:39 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+460
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStructArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="ns2:SOAPStruct[3]" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="ns1:Array"><item xsi:type="ns2:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></item><item xsi:type="ns2:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></item><item xsi:type="ns2:SOAPStruct"><varString xsi:type="xsd:string">c</varString><varInt xsi:type="xsd:int">3</varInt><varFloat xsi:type="xsd:float">3.3</varFloat></item></result></n1:echoStructArrayResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: Parameter 'inputStructArray': could not find encoding-class. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c67d80>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:55 JST 2005
+Content-Length: 1392
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:21:40 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+24d
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><env:Fault><faultcode>env:Server</faultcode><faultstring>Parameter &apos;inputStructArray&apos;: could not find encoding-class.</faultstring><faultactor/><detail><description>Parameter &apos;inputStructArray&apos;: could not find encoding-class.</description></detail><detail/></env:Fault></env:Body></env:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:56 JST 2005
+Content-Length: 1257
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605867026"></item>
+        <item href="#id-605867026"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605867026"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:41 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+45a
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStructArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="ns2:SOAPStruct[3]" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="ns1:Array"><item href="#id11d85e08"/><item href="#id11d85e08"/><item xsi:type="ns2:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></item></result></n1:echoStructArrayResponse><item xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="ns2:SOAPStruct" id="id11d85e08"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></item></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:57 JST 2005
+Content-Length: 1257
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605895666"></item>
+        <item href="#id-605895666"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605895666"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:41 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+45a
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStructArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="ns2:SOAPStruct[3]" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="ns1:Array"><item href="#id1196c880"/><item href="#id1196c880"/><item xsi:type="ns2:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></item></result></n1:echoStructArrayResponse><item xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="ns2:SOAPStruct" id="id1196c880"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></item></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: Parameter 'inputStructArray': could not find encoding-class. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7dfbdb8>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:57 JST 2005
+Content-Length: 1282
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item href="#id-605925686"></item>
+        <item href="#id-605925686"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605925686"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">b</varString>
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+      <varInt xsi:type="xsd:int">2</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:21:42 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+24d
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><env:Fault><faultcode>env:Server</faultcode><faultstring>Parameter &apos;inputStructArray&apos;: could not find encoding-class.</faultstring><faultactor/><detail><description>Parameter &apos;inputStructArray&apos;: could not find encoding-class.</description></detail><detail/></env:Fault></env:Body></env:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:58 JST 2005
+Content-Length: 1360
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString href="#id-605066816"></varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString href="#id-605066816"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605066816"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:43 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+4ce
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoStructArrayResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" ns1:arrayType="ns2:SOAPStruct[3]" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="ns1:Array"><item xsi:type="ns2:SOAPStruct"><varString href="#id261"/><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.1</varFloat></item><item xsi:type="ns2:SOAPStruct"><varString href="#id261"/><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.2</varFloat></item><item xsi:type="ns2:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">3</varInt><varFloat xsi:type="xsd:float">3.3</varFloat></item></result></n1:echoStructArrayResponse><varString xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="http://soapinterop.org/xsd" xsi:type="xsd:string" id="id261">a</varString></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: Parameter 'inputStructArray': could not find encoding-class. (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7d45b30>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:59 JST 2005
+Content-Length: 1535
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString href="#id-605362916"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString href="#id-605362916"></varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605362916"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:21:44 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+24d
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><env:Fault><faultcode>env:Server</faultcode><faultstring>Parameter &apos;inputStructArray&apos;: could not find encoding-class.</faultstring><faultactor/><detail><description>Parameter &apos;inputStructArray&apos;: could not find encoding-class.</description></detail><detail/></env:Fault></env:Body></env:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (now)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:00 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T12:20:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:45 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2005-07-23T12:20:00Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:01 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:46 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:02 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:46 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Expected = "-0010-01-01T00:00:00Z"  //  Actual = "0012-01-01T00:00:00Z"
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:02 JST 2005
+Content-Length: 475
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:47 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">0012-01-01T00:00:00Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Expected = #<DateTime: 52964868805003/21600000,0,2299161>  //  Actual = #<DateTime: 10592973761/4320,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:03 JST 2005
+Content-Length: 478
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:48 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-06-16T18:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Expected = #<DateTime: 21185947522000000000001234567890123456789/8640000000000000000000000000000000,0,2299161>  //  Actual = #<DateTime: 26482165967/10800,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:04 JST 2005
+Content-Length: 515
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:48 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-05-22T21:42:16Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (positive TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:04 JST 2005
+Content-Length: 479
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:49 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-06-16T18:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (negative TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:05 JST 2005
+Content-Length: 479
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:50 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:06 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:50 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:06 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:51 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (min TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:07 JST 2005
+Content-Length: 479
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:52 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">2001-06-15T23:59:01Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (year > 9999)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:08 JST 2005
+Content-Length: 480
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:52 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f6
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">10000-06-17T01:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (year < 0)
+
+Result: Expected = #<DateTime: 7435694381/4320,0,2299161>  //  Actual = #<DateTime: 7438847981/4320,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:08 JST 2005
+Content-Length: 480
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:53 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">0002-06-17T01:13:40Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Expected = #<DateTime: 0,0,2299161>  //  Actual = #<DateTime: 3442813,0,2299161>
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:09 JST 2005
+Content-Length: 475
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:54 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">4714-01-01T12:00:00Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:10 JST 2005
+Content-Length: 474
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:54 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">0001-05-18T16:52:20Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:10 JST 2005
+Content-Length: 472
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:55 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:dateTime">0005-05-18T16:52:20Z</result></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:12 JST 2005
+Content-Length: 471
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:57 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:dateTime"/></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:13 JST 2005
+Content-Length: 471
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:57 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:dateTime"/></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDate (empty: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:13 JST 2005
+Content-Length: 454
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:58 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDateResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:dateTime"/></n1:echoDateResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:14 JST 2005
+Content-Length: 510
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:59 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+215
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBase64Response xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</result></n1:echoBase64Response></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:15 JST 2005
+Content-Length: 466
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:21:59 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e1
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBase64Response xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:base64Binary"/></n1:echoBase64Response></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:15 JST 2005
+Content-Length: 566
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:00 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+215
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBase64Response xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</result></n1:echoBase64Response></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBase64 (\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:16 JST 2005
+Content-Length: 526
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:01 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ed
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBase64Response xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:base64Binary">AA==</result></n1:echoBase64Response></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:17 JST 2005
+Content-Length: 534
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:01 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f5
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBase64Response xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:base64Binary">YQBiAABjAAAA</result></n1:echoBase64Response></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:18 JST 2005
+Content-Length: 523
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:03 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e1
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBase64Response xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:base64Binary"/></n1:echoBase64Response></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoHexBinary
+
+Result: Expected = "Hello (∆¸À‹∏ÏJapanese) §≥§Û§À§¡§œ"  //  Actual = "Hello (\377\377\377∆ˇ\377\377¸ˇ\377\377Àˇ\377\377‹ˇ\377\377∏ˇ\377\377ÏJapanese) \377\377\377§ˇ\377\377≥ˇ\377\377§ˇ\377\377Ûˇ\377\377§ˇ\377\377Àˇ\377\377§ˇ\377\377¡ˇ\377\377§ˇ\377\377\317"
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:20 JST 2005
+Content-Length: 541
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:10 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+28e
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoHexBinaryResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:hexBinary">48656C6C6F2028FFFFFFC6FFFFFFFCFFFFFFCBFFFFFFDCFFFFFFB8FFFFFFEC4A6170616E6573652920FFFFFFA4FFFFFFB3FFFFFFA4FFFFFFF3FFFFFFA4FFFFFFCBFFFFFFA4FFFFFFC1FFFFFFA4FFFFFFCF</result></n1:echoHexBinaryResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoHexBinary(empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:26 JST 2005
+Content-Length: 475
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:10 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1e4
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoHexBinaryResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:hexBinary"/></n1:echoHexBinaryResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoHexBinary(\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:26 JST 2005
+Content-Length: 477
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:11 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ee
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoHexBinaryResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:hexBinary">00</result></n1:echoHexBinaryResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:27 JST 2005
+Content-Length: 493
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:12 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1fe
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoHexBinaryResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:hexBinary">610062000063000000</result></n1:echoHexBinaryResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:28 JST 2005
+Content-Length: 495
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:12 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+200
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoHexBinaryResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:hexBinary">6C6F7765722063617365</result></n1:echoHexBinaryResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:28 JST 2005
+Content-Length: 479
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 12:22:13 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+259
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><env:Fault><faultcode>env:Server</faultcode><faultstring>Parameter &apos;inputHexBinary&apos;: could not get encoding-class instance.</faultstring><faultactor/><detail><description>Parameter &apos;inputHexBinary&apos;: could not get encoding-class instance.</description></detail><detail/></env:Fault></env:Body></env:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (true)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:29 JST 2005
+Content-Length: 469
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:14 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ea
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBooleanResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:boolean">true</result></n1:echoBooleanResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBoolean (false)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:30 JST 2005
+Content-Length: 470
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:15 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1eb
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBooleanResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:boolean">false</result></n1:echoBooleanResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoBoolean (junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:31 JST 2005
+Content-Length: 469
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:15 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1eb
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoBooleanResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:boolean">false</result></n1:echoBooleanResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (123456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:31 JST 2005
+Content-Length: 483
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:16 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f8
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:decimal">123456789012345678</result></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:32 JST 2005
+Content-Length: 484
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:17 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f9
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:decimal">0.12345678901234567</result></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:33 JST 2005
+Content-Length: 484
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:17 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f9
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:decimal">0.00000123456789012</result></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:33 JST 2005
+Content-Length: 485
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:18 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1fa
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:decimal">-0.00000123456789012</result></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:34 JST 2005
+Content-Length: 485
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:19 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1fa
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:decimal">-123456789012345.008</result></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (-123.)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:35 JST 2005
+Content-Length: 483
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:19 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1f8
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:type="xsd:decimal">-12345678901234567</result></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:35 JST 2005
+Content-Length: 484
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:20 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ea
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:decimal"/></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:36 JST 2005
+Content-Length: 484
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:21 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ea
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:decimal"/></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:37 JST 2005
+Content-Length: 468
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:21 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ea
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:decimal"/></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+POST /RPC HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:20:37 JST 2005
+Content-Length: 468
+Host: soap.fmui.de
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 12:22:22 GMT
+Server: Apache/1.3.26 (Linux/SuSE) Resin/2.1.9 mod_ssl/2.8.10 OpenSSL/0.9.6g PHP/4.3.10
+Transfer-Encoding: chunked
+Content-Type: text/xml; charset=utf-8
+
+1ea
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Body><n1:echoDecimalResponse xmlns:n1="http://soapinterop.org/" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result xsi:nil="1" xsi:type="xsd:decimal"/></n1:echoDecimalResponse></env:Body></env:Envelope>
+0
+
+
+
+

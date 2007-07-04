@@ -1,0 +1,169 @@
+# Joyent Connector Spanish Localization.
+# Copyright (C) 2006-2007 Joyent Inc.
+# This file is distributed under the same license as the Joyent's Connector package.
+# Pedro José Palazón Candel <pedro@joyent.com>, 2007.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Date Time Gettextilize 1.0\n"
+"POT-Creation-Date: 2007-06-12 15:21+0200\n"
+"PO-Revision-Date: 2006-06-27 19:41+0200\n"
+"Last-Translator: Pedro José Palazón Candel <pedro@joyent.com>\n"
+"Language-Team: Joyent i18n <pedro@joyent.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: lib/date_time.rb:47
+msgid "January"
+msgstr "Janvier"
+
+#: lib/date_time.rb:47
+msgid "February"
+msgstr "Fevrier"
+
+#: lib/date_time.rb:48
+msgid "March"
+msgstr "Mars"
+
+#: lib/date_time.rb:48
+msgid "April"
+msgstr "Avril"
+
+#: lib/date_time.rb:48
+msgid "May"
+msgstr "Mai"
+
+#: lib/date_time.rb:49
+msgid "June"
+msgstr "Juin"
+
+#: lib/date_time.rb:49
+msgid "July"
+msgstr "Juillet"
+
+#: lib/date_time.rb:49
+msgid "August"
+msgstr "Aout"
+
+#: lib/date_time.rb:50
+msgid "September"
+msgstr "Septembre"
+
+#: lib/date_time.rb:50
+msgid "October"
+msgstr "Octobre"
+
+#: lib/date_time.rb:51
+msgid "November"
+msgstr "Novembre"
+
+#: lib/date_time.rb:51
+msgid "December"
+msgstr "Decembre"
+
+#: lib/date_time.rb:55
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: lib/date_time.rb:55
+msgid "Monday"
+msgstr "Lundi"
+
+#: lib/date_time.rb:56
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: lib/date_time.rb:56
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: lib/date_time.rb:57
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: lib/date_time.rb:57
+msgid "Friday"
+msgstr "Vendredi"
+
+#: lib/date_time.rb:58
+msgid "Saturday"
+msgstr "Samedi"
+
+#: lib/date_time.rb:61
+msgid "Abbreviation|Jan"
+msgstr "Jan"
+
+#: lib/date_time.rb:61
+msgid "Abbreviation|Feb"
+msgstr "Fev"
+
+#: lib/date_time.rb:61
+msgid "Abbreviation|Mar"
+msgstr "Mar"
+
+#: lib/date_time.rb:62
+msgid "Abbreviation|Apr"
+msgstr "Avr"
+
+#: lib/date_time.rb:62
+msgid "Abbreviation|May"
+msgstr "Mai"
+
+#: lib/date_time.rb:62
+msgid "Abbreviation|Jun"
+msgstr "Juin"
+
+#: lib/date_time.rb:63
+msgid "Abbreviation|Jul"
+msgstr "Juil"
+
+#: lib/date_time.rb:63
+msgid "Abbreviation|Aug"
+msgstr "Aou"
+
+#: lib/date_time.rb:63
+msgid "Abbreviation|Sep"
+msgstr "Sep"
+
+#: lib/date_time.rb:64
+msgid "Abbreviation|Oct"
+msgstr "Oct"
+
+#: lib/date_time.rb:64
+msgid "Abbreviation|Nov"
+msgstr "Nov"
+
+#: lib/date_time.rb:64
+msgid "Abbreviation|Dec"
+msgstr "Dec"
+
+#: lib/date_time.rb:67
+msgid "Sun"
+msgstr "Dim"
+
+#: lib/date_time.rb:67
+msgid "Mon"
+msgstr "Lun"
+
+#: lib/date_time.rb:67
+msgid "Tue"
+msgstr "Mar"
+
+#: lib/date_time.rb:68
+msgid "Wed"
+msgstr "Mer"
+
+#: lib/date_time.rb:68
+msgid "Thu"
+msgstr "Jeu"
+
+#: lib/date_time.rb:68
+msgid "Fri"
+msgstr "Ven"
+
+#: lib/date_time.rb:69
+msgid "Sat"
+msgstr "Sam"

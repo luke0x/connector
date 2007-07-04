@@ -1,0 +1,65 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table class="accountTypes">
+  <tr>
+    <td colspan="2">
+      <% if person.guest? -%>
+        <input type="text" disabled="disabled" size="20" maxlength="64" class="textInput" style="width:260px;" value="<%= person.user.username %>" />
+      <% else -%>
+        <input id="person_guest_username" type="text" name="person[guest_username]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:260px;" />
+      <% end -%>
+      <div class="infoGroupInputLabel"><%= _('username') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <input disabled="disabled" type="password" value="12345678" style="width:260px;" autocomplete="off" />
+      <div class="infoGroupInputLabel"><%= _('password') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <input id="person_guest_recovery_email" name="person[guest_recovery_email]" type="text" style="width:260px;" value="<%= person.user ? person.user.recovery_email : '' %>" />
+      <div class="infoGroupInputLabel"><%= _('password recovery email address') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top: 1em;">
+      <input id="person_guest_readwrite" name="person[guest_readwrite]" type="checkbox" <%= 'checked="checked"' if person.user and person.user.guest_rw? %> />
+      <%= _('Allow this guest to also create and delete files?') %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top: 1em;">
+      <%= tzinfo_timezone_select 'person', 'guest_time_zone', person.guest_time_zone %>
+      <div class="infoGroupInputLabel"><%= _('time zone') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <% languages = [['English', 'en'], ['Español', 'es'], ['Deutsch','de'], ['Italiano','it']] -%>
+      <% language_options = options_for_select(languages, (person.user ? person.user.language : nil)) -%>
+      <%= select_tag_with_id "person[guest_language]", language_options, {:id => "person_guest_language"} %>
+      <div class="infoGroupInputLabel"><%= _('language') %></div>
+    </td>
+  </tr>
+  <% if person.guest? -%>
+    <tr>
+      <td colspan="2">
+        <%= link_to_function _('Reset Guest Password'), "People.toggleResetGuestPassword();", { :id => 'personAccountGuestResetPasswordLink', :class => 'groupOption rename' } %>
+        <div id="personAccountGuestResetPassword" style="display: none;" class="groupOptionMenu">
+          <input id="person_guest_send_email" type="text" name="person_guest_send_email" style="width: 100%;" onkeypress="if (event.keyCode == Event.KEY_RETURN) { return <%= "People.submitResetGuestPassword('#{reset_guest_password_url}?id=#{person.user.id}')"%>; }" />
+          <div class="infoGroupInputLabel"><%= _('email address') %></div>
+          <%= button_to_function _('Reset'), "People.submitResetGuestPassword('#{reset_guest_password_url}?id=#{person.user.id}')" %>
+        </div>
+      </td>
+    </tr>
+  <% end -%>
+</table>

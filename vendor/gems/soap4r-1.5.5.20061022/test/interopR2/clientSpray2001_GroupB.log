@@ -1,0 +1,1408 @@
+File: clientSpray2001_GroupB.log - Wiredumps for SOAP4R client / Spray2001 server.
+Date: Sat Jul 23 21:21:54 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:54 JST 2005
+Content-Length: 700
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:43 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1687:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:55 JST 2005
+Content-Length: 677
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:43 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1698:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:55 JST 2005
+Content-Length: 600
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:44 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1708:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:56 JST 2005
+Content-Length: 577
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:44 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echo2DStringArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1747:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:56 JST 2005
+Content-Length: 889
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:45 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1765:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:57 JST 2005
+Content-Length: 1088
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:45 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1828:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:58 JST 2005
+Content-Length: 1063
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605710720"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605710720"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605710720"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:46 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1852:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:58 JST 2005
+Content-Length: 1063
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605736140"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605736140"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605736140"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:46 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:59 JST 2005
+Content-Length: 920
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:48 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1894:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:21:59 JST 2005
+Content-Length: 874
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:48 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1907:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:22:00 JST 2005
+Content-Length: 1062
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605792030"></varString>
+        </varStruct>
+        <varString href="#id-605792030"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605792030"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:49 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1917:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:22:01 JST 2005
+Content-Length: 931
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:49 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:22:01 JST 2005
+Content-Length: 998
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:50 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1938:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:22:02 JST 2005
+Content-Length: 1083
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605824600"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605824600"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605824600"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:50 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1949:in `doTestGroupB'
+clientSpray2001.rb:16
+
+Wire dump:
+
+= Request
+
+POST /services/interopB2001 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:22:02 JST 2005
+Content-Length: 1083
+Host: www.dolphinharbor.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605835820"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605835820"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605835820"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Content-Length: 1635
+Content-Type: text/html
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Sat, 23 Jul 2005 12:23:51 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>The page cannot be found</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<STYLE type="text/css">
+  BODY { font: 8pt/12pt verdana }
+  H1 { font: 13pt/15pt verdana }
+  H2 { font: 8pt/12pt verdana }
+  A:link { color: red }
+  A:visited { color: maroon }
+</STYLE>
+</HEAD><BODY><TABLE width=500 border=0 cellspacing=10><TR><TD>
+
+<h1>The page cannot be found</h1>
+The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+<hr>
+<p>Please try the following:</p>
+<ul>
+<li>Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact
+ the Web site administrator to alert them that the link is incorrectly formatted.
+</li>
+<li>Click the <a href="javascript:history.back(1)">Back</a> button to try another link.</li>
+</ul>
+<h2>HTTP Error 404 - File or directory not found.<br>Internet Information Services (IIS)</h2>
+<hr>
+<p>Technical Information (for support personnel)</p>
+<ul>
+<li>Go to <a href="http://go.microsoft.com/fwlink/?linkid=8180">Microsoft Product Support Services</a> and perform a title search for the words <b>HTTP</b> and <b>404</b>.</li>
+<li>Open <b>IIS Help</b>, which is accessible in IIS Manager (inetmgr),
+ and search for topics titled <b>Web Site Setup</b>, <b>Common Administrative Tasks</b>, and <b>About Custom Error Messages</b>.</li>
+</ul>
+
+</TD></TR></TABLE></BODY></HTML>
+
+
+

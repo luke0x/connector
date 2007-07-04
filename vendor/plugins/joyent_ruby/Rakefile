@@ -1,0 +1,43 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+desc 'Default: run unit tests.'
+task :default => :test
+
+desc 'Test the joyent_ruby plugin.'
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
+end
+
+desc 'Generate documentation for the joyent_ruby plugin.'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'JoyentRuby'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+
+task :insurance do
+  require 'rubygems'
+  require 'insurance_analyzer'
+  require 'init'
+  
+  PluginAnalyzer.run 'test/joyent_ruby_test.rb'
+end
+

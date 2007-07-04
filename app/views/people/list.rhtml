@@ -1,0 +1,72 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init(@people, 'list') -%>
+
+<div style="position: relative;" class="report">
+  <%= render_list_header(@group_name, @paginator, 'people') %>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:6%;" />
+			<col style="width:6%;" />
+			<col style="width:16%;" />
+			<col style="width:16%;" />
+			<col style="width:18%;" />
+			<col style="width:16%;" />
+			<col style="width:16%;" />
+			<col style="width:6%;" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th class="checkBox" align="center"><%= list_selection_tool %></th>
+				<%= toggle_sort_th(_('Person Type'), 'person_type', 'person', {:class => 'person', :title => 'Person Type'}) %>
+				<%= toggle_sort_th(_('First Name'), 'first_name') %>
+				<%= toggle_sort_th(_('Last Name'), 'last_name') %>
+				<%= toggle_sort_th(_('Email Address'), 'primary_email') %>
+				<%= toggle_sort_th(_('Phone Number'), 'primary_phone') %>
+				<%= toggle_sort_th(_('Company Name'), 'company_name') %>
+				<th class="detailView"><span>Peek</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @people.each_with_index do |person, index| -%>
+				<tr id="<%= person.dom_id %>_tr" itemDomId="<%= person.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+					<td class="checkbox">
+						<input class="listCheckbox" id="<%= person.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= person.dom_id %>" type="checkbox" />
+					</td>
+					<td class="person">
+						<% pt = {'0_Admin' => 'Admin', '1_User' => 'User', '1_User_Guest' => 'Guest', '2_Contact' => 'Contact'}[person.person_type] -%>
+						<%= link_to pt, person_show_url(:id => person.id), {:class => pt.downcase, :title => pt} %>
+					</td>
+					<td>
+						<%= link_to person.first_name.to_s, person_show_url(:id => person.id) %>
+					</td>
+					<td>
+						<%= link_to person.last_name.to_s, person_show_url(:id => person.id) %>
+					</td>
+					<td>
+						<%= link_to person.primary_email.to_s, {:controller => 'mail', :action => :compose, :to => "#{person.full_name} <#{person.primary_email}>"}, {:title => "Compose a new email to #{person.full_name}"} %>
+					</td>
+					<td>
+						<%= link_to person.primary_phone.to_s, person_show_url(:id => person.id) %>
+					</td>
+					<td>
+						<%= link_to person.company_name.to_s, person_show_url(:id => person.id) %>
+					</td>
+					<td id="<%= person.dom_id %>_td_details_icon" class="details">
+						<%= link_to_function _('Details'), "PeekView.toggle('#{person.dom_id}', '#{peek_url(person, person.dom_id)}')" %>
+					</td>
+				</tr>
+				<tr id="<%= person.dom_id %>_tr_details" itemDomId="<%= person.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+					<td id="<%= person.dom_id %>_td_details" colspan="8" class="accountDetails Details"></td>
+				</tr>
+			<% end -%>
+    </tbody>
+	</table>
+</div>

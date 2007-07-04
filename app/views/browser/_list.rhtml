@@ -1,0 +1,28 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="browser">
+	<h2>
+		<%= browser_title %>
+	</h2> 
+	<div id="browserFrame">
+		<div id="browserColumns">
+			<div id="browserRow">
+				<%= render_initial_column(params) %>
+			</div>
+		</div>
+	</div>
+	<div class="browserButton">
+		<%= render_cancel_button %>
+	</div>
+	<div class="browserButton" id="browser_action_button">
+		<%= render_action_button %>
+	</div>
+	<br />
+</div>

@@ -1,0 +1,731 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+
+/* general (ui 2.0) -------------------------------------------------------------- */
+
+	.sidebar {
+		display: none;
+		overflow: auto;
+		position: absolute;
+		top: 39px;
+		right: 31px;
+		bottom: 0px;
+		left: 17px;
+		z-index: 5500;
+		padding: 0 15px 0 0;
+	}
+	body.guest .sidebar {
+		top: 9px;
+	}
+	.sidebar.selected {
+		display: block;
+	}
+	#sidebars h3 {
+		color: #333;
+		margin: 1em 0 .5em 0;
+		padding: 0;
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		clear: left;
+		display: block;
+	}
+	#sidebars a  {
+		color: #000;
+	}
+	
+	.sidebarInset {
+		float: left;
+		list-style-type: none;
+		clear: left;
+	}
+	#groupsSidebar .sidebarInset {
+		float: none;
+	}
+	.sidebarWarning {
+		color: #C4C4C4;
+		font-size: .85em;
+		text-align: center;
+		line-height: 1.15em;
+		background-color: transparent !important;
+	}
+
+/* Access + Notify (ui 2.0) -------------------------------------------------------------- */
+
+
+
+	/* general */
+	
+	table.userList {
+		border-collapse: separate; 
+		border-spacing: 0px 2px
+	}
+	table.userList .viewIcon {
+		background-image: url(/images/icons/eye.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		float: right;
+	}
+	table.userList .notifyIcon {
+		background-image: url(/images/icons/notifyBubble.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		float: right;
+	}
+	table.userList tr td a.status {
+		width: 12px;
+		height: 12px;
+		display: block;
+		text-indent: -3000px;
+		margin: 2px 2px 0px 2px;
+		background-image: url(/images/icons/tdIcons.png);
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.userList .status {
+		background-position: -48px -24px;
+	}
+	
+	.userList .status.off {
+		background-position: 0 0px;
+	}
+	.userList .status.off:hover {
+		background-position: -24px 0px;
+	}
+	.userList .status.off:active {
+		background-position: -48px 0px;
+	}
+
+	.userList .status.some {
+		background-position: 0 -48px;
+	}
+	.userList .status.some:hover {
+		background-position: -24px -48px;
+	}
+	.userList .status.some:active {
+		background-position: -48px -48px;
+	}
+	
+	.userList .status.on {
+		background-position: 0 -24px;
+	}
+	.userList .status.on:hover {
+		background-position: -24px -24px;
+	}
+	.userList .status.on:active {
+		background-position: -48px -24px;
+	}
+
+	.userList .status.off.disabled {
+		background-position: 0 -216px;
+	}
+	.userList .status.some.disabled {
+		background-position: 0 -264px;
+	}
+	.userList .status.on.disabled {
+		background-position: -0 -240px;
+	}
+	
+	.userList .status.disabled {
+		cursor: default;
+	}
+	
+	
+/* Tags - Notify (ui 2.0) -------------------------------------------------------------- */
+
+
+
+	/* general */
+	
+	#tagsSidebar ul.tagList {
+		float: left;
+		list-style-type: none;
+		margin: 0 0 .5em 0;
+		clear: left;
+	}
+	#tagsSidebar ul.tagList li {
+		position: relative;
+		margin: 0 0 2px 2px;
+		display: inline-block;
+		float: left;
+		-moz-border-radius: .9em 0 0 .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		background-color: #909296;
+	}
+	#tagsSidebar .tagInfo, #tagsSidebar li a.tag, #tagsSidebar ul.tagsAssigned li a.tag {
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/tagBits.png);
+	}
+	#tagsSidebar ul.tagList li a.tag, #tagsSidebar ul.tagList li a.tagInfo {
+		float: left;
+		display: inline-block;
+		color: #000;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	#tagsSidebar ul.tagList li a.tagInfo {
+		padding: 2px 0px 2px 2px;
+		width: 8px;
+		text-indent: -3000px;
+		height: 16px;
+		background-position: 0 50%;
+	}
+	#tagsSidebar ul.tagList li a.tag {
+		-moz-border-radius: .9em 0 0 .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		padding: 2px 2px 2px 16px;
+		background-position: -2000px 50%;
+	}
+	#tagsSidebar ul.tagList li.expanded a.tagInfo {
+		background-position: -1000px 50%;
+	}
+	#tagsSidebar li a.tag:hover {
+		background-position: -3000px 50%;
+	}
+	#tagsSidebar .tagInfo:hover, #tagsSidebar li.expanded a.tagInfo {
+		background-position: -1000px 50%;
+	}
+
+
+	
+	/* assigned tags */
+	
+	#tagsSidebar ul.tagList.tagsAssigned li a.tag {
+		color: #000 !important;
+		background-position: -4000px 50%;
+	}
+	#tagsSidebar ul.tagList.tagsAssigned li a {
+		background-color: #FFBC00 !important;
+	}
+	#tagsSidebar ul.tagList.tagsAssigned li a.tag:hover {
+		background-position: -5000px 50%;
+		color: #000 !important;
+	}
+	#tagsSidebar ul.tagList.tagsAssigned li {
+		background-color: #FFBC00 !important;
+	}
+
+
+	
+	/* assigned by others */
+
+	#tagsSidebar ul.tagList.tagsAssignedByOthers li a {
+		background-color: #F4D87D !important;
+	}
+	#tagsSidebar ul.tagList.tagsAssignedByOthers li {
+		background-color: #F4D87D !important;
+	}
+
+
+
+	/* tag Pool */
+		
+	#tagsSidebar ul.tagList.tagsUnassigned li a {
+		background-color: #D3D4D3 !important;
+		color: #656565 !important;
+	}
+	#tagsSidebar ul.tagList.tagsUnassigned li a:hover {
+		color: #000 !important;
+	}
+	#tagsSidebar ul.tagList.tagsUnassigned li {
+		background-color: #D3D4D3 !important;
+	}
+
+	/* tag Info */
+	
+	
+	#tagsSidebar li.expanded a {
+	}	
+	#tagsSidebar ul.tagList li span {
+		float: left;
+		padding: 3px 4px 0 4px;
+	}
+	#tagsSidebar ul.tagList li span A {
+		background-color: transparent;
+	}
+		
+/* groups -------------------------------------------------------------- */
+
+
+	/* Palette Headers--------------------------------------------- */
+
+		#groupsSidebar .sidebarInset {
+			font-size: 11px;
+			line-height: 13px;
+			}
+		#groupsSidebar.expanded {
+			padding: 0;
+			margin: 0 0 1px 0;
+			}
+		#groupsSidebar.collapsed {
+			padding: 0 0 4px 0;
+			margin: 0 0 1px 0;
+			}
+		.collapsiblePalette h3 a {
+			padding:0px 0px 0px 17px;
+			}	
+		.collapsiblePalette.expanded h3 a {
+			background: url(/images/icons/diggerDown.png) left no-repeat;
+			}
+		.collapsiblePalette.collapsed h3 a {
+			background: url(/images/icons/diggerRight.png) left no-repeat;
+			}
+		.collapsiblePalette h3 a:hover {
+			background-color: transparent;
+			}
+	
+	/* Add to Group Buttons--------------------------------------------- */
+	
+		.header span {
+			float:right;
+			width:16px;
+			margin:0px;
+			}	
+		.header span a {
+			padding:0px;
+			margin:0 !important;
+			height:16px;
+			width:16px;
+			text-indent:-3000px;
+			display:block;
+			background-image: url(/images/icons/plus16b.png);
+			background-repeat: no-repeat !important;
+			background-position: 0 0;
+			padding:0px !important;
+			}
+		.header span a:hover {		
+			background-position: 0 -16px;
+			}
+		.header span a:active {		
+			background-position: 0 -32px;
+			}
+
+	
+	
+	ul.groupsList {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: block;
+		}
+	ul.groupsList > li {
+		padding-left: 0px !important;
+		}
+	.groupsList li ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		}	
+	.groupsList li {
+		padding: 0 0 0 12px;
+		}
+	a.groupInfo {
+		width: 16px;
+		height: 16px;
+		padding: 0;
+		text-indent: -3000px;
+		float: right;
+		margin-right: 2px !important;
+		background-color: transparent;
+		background-image: url(/images/icons/groupInfo.png);
+		background-position: 0 -16px;
+		background-repeat: no-repeat;
+		}
+	a.groupInfo:hover {
+		background-position: 0 0;
+		}
+	td.showInfo .expanded {
+		background-position: -16px -16px;
+		}
+	td.showInfo .expanded:hover {
+		background-position: -16px 0;
+		}
+	td.showInfo {
+		padding-left:4px;
+		}
+	
+	
+	#addGroup {
+		position: relative;
+	}
+	#addGroup a {
+	}
+	#addGroup a.plus {
+		display: block;
+		background-image: url(/images/icons/addRemove.png);
+		background-repeat: no-repeat;
+		background-position: 0 -200px;
+		margin: 4px 0 0 19px;
+		padding: 2px 0 2px 20px;
+	}
+	* html #addGroup a {
+	}
+	#addGroup a.plus:hover {
+		background-position: 0 -250px;
+	}
+	#addGroup a.minus {
+		background-image: url(/images/icons/addRemove.png);
+		background-position: 0 -300px;
+	}
+	#addGroup a.minus:hover {
+		background-position: 0 -350px;
+	}
+	#addGroup a.minus:active {
+		background-position: -16px 0;
+	}
+	#addGroupMenu {
+		position: absolute;
+		top: 15px;
+		left: 19px;
+		border-color: #1A9400 #B6B9BC #B6B9BC #B6B9BC;
+		border-width: 2px 1px 1px 1px;
+		border-style: solid;
+		background-color: #FFF;
+		padding: 2px;
+		width: 12em;
+	}
+	#addGroupMenu .folder {
+		background-position: 4px 50%;
+		padding: 4px 2px 4px 24px;
+	}
+	#addGroupMenu a {
+		display: block;
+		padding-top: 6px !important;
+		padding-bottom: 6px !important;
+		font-size: 1em;
+	}
+	* html #addGroupMenu a {
+	}
+	#addGroupMenu a:hover {
+		background-color: #1662D3;
+		color: #FFF;
+	}
+
+
+
+/* Round Group Boxes  ------------------------------------------- 	*/
+
+		
+.roundtl, .roundtr, .roundbl, .roundbr {
+	background-image: url(/images/bg/roundCorners.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	}
+div.highlighted, div.highlighted:hover {
+	background-color: #003BC9 !important;
+}
+a.highlighted  {		
+	color: #FFF !important;
+	}
+.roundtl {
+	background-position: left top;
+	}
+.roundtl:hover {
+	background-color: #D9D9D9;
+	}
+.roundtr {
+	background-position: right top;
+	}
+.roundbl {
+	background-position: left bottom;
+	}
+.roundbr {
+	background-position: right bottom;
+	}
+		
+		/* Groups Expand  ------------------------------------------- 	*/
+		
+		
+		.g-header  {
+			padding-left: 16px;
+			}
+		.groupInfo {		
+			background-color: #99C1ED;
+			}
+		.groupInfoMargin {		
+			padding: 10px;
+			}
+			
+		/* Group Info Options ---------------------------------------  */
+			
+				
+			.groupInfo a.groupOption {
+				padding: 5px 0 7px 36px;
+				background-repeat: no-repeat;
+				color: #000 !important;
+				display: block;
+				}
+			.groupInfo a.groupOption:hover {
+				}
+			.groupOptionMenu {
+				background-color: #D0E5FD;
+				padding: 4px;
+				border-color: #80A6CE #D6E9FD #D6E9FD #8EB8E5;
+				border-width: 1px;
+				border-style: solid;
+				}
+				
+			.groupInfo a.rename, 
+			.groupInfo a.move, 
+			.groupInfo a.access,
+			.groupInfo a.subscription {
+				background-image: url(/images/icons/groupInfoIcons.png);
+				}
+			.groupInfo a.rename {
+				background-position: 0 3px;
+			}
+			.groupInfo a.rename.expanded {
+				background-position: 0 -47px;
+			}
+			.groupInfo a.subscription {
+				background-position: 0 -97px;
+			}
+			.groupInfo a.subscription.expanded {
+				background-position: 0 -147px;
+			}
+			.groupInfo a.move {
+				background-position: 0 -197px;
+			}
+			.groupInfo a.move.expanded {
+				background-position: 0 -247px;
+			}
+			.groupInfo a.access {
+				background-position: 0 -297px;
+			}
+			.groupInfo a.access.expanded {
+				background-position: 0 -347px;
+			}
+
+			.groupInfo a.delete {
+				background-image: url(/images/icons/addRemove.png);
+				background-position: -491px 3px;
+				}
+			.groupInfo a.smart {
+				background-image: url(/images/icons/gear.png);
+				background-position: 9px 3px;
+				}
+
+.groupsList table {
+	border-collapse: collapse;
+	width: 100%;
+	padding: 0px;
+	}
+	
+td.showInfo {
+	width: 16px;
+	}
+
+td.dinger {
+	width: 20px;
+	}
+	
+td.dinger .collapsed, td.dinger .expanded {
+	width: 16px;
+	height: 16px;
+	display: block;
+	text-indent: -3000px;
+	background-repeat: no-repeat;
+	background-image: url(/images/icons/dinger.png);
+	margin: 0 0 0 4px;
+	}
+* html td.dinger .collapsed, * html td.dinger .expanded {
+	background-image: url(/images/ie/dinger.gif);
+	}
+td.dinger .collapsed {
+	background-position: 0 -100px;
+	}
+td.dinger .collapsed:hover {
+	background-position: 0 -150px;
+	}
+td.dinger .expanded {
+	background-position: 0 0;
+	}
+td.dinger .expanded:hover {
+	background-position: 0 -50px;
+	}
+
+a.folder  {
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding: 4px 2px 4px 20px;
+	display: block;
+	}
+.groupsList a {
+	overflow: hidden;
+	}
+.groupsList em {
+	margin: 0 0 0 .5em;
+	overflow: hidden;
+	font-style: normal;
+	}
+
+/* Groups and Smart Folders Content --------------------------------------------- */
+
+	.rssIcon, .vcardIcon, .iCalIcon {
+		padding:0px !important;
+		}
+	
+/* Groups Edit Dialog -----------------------------------------*/
+
+
+/* Forms --------------------------------------------- */
+	.groupsDialogBox {
+		padding:5px;
+		font-size:10px;
+		color: #000;
+		padding:0px;
+		}
+	.groupInfo fieldset {	
+		padding: 0.35em 0.5em 0.75em 0.5em;
+		margin: 0.5em 0;
+		border-color: #689FDD !important;
+	}
+	.groupInfo legend {	
+		margin: 0;
+		padding: 0 2px;
+		background-color: transparent;
+		color: #000;
+		}
+
+	#editSmartGroupKeywordList {	
+		}
+	.itemHighlighted input {
+		margin:2px 2px 2px 4px;
+		font-size:9px;
+		}
+	.groupInfo h4 span {
+		border:0px solid #DEDDDA;
+		color:#333;
+		background: #FFFBE2;
+		}
+	.groupInfo select {
+		width:130px;
+		font-size:9px;
+		}
+	.groupInfo input {
+		font-size:0.9em;
+		}
+	.groupInfo p {
+		margin: 0;
+		padding: 0;
+		}
+	.groupInfo .smallAdd {
+		margin: 5px 0 0 0;
+		font-weight: normal;
+		color: #215DB3 !important;
+		display: inline !important;
+		padding: 0px 0 0px 13px;
+		background-image: url(/images/icons/smallPlus.png);
+		background-repeat: no-repeat;
+		background-position: 0 2px;
+	}
+	.groupInfo .smallAdd:hover {
+		background-position: 0 -98px;
+	}
+	.groupInfo .smallAdd:active {
+		background-position: 0 -198px;
+	}
+	a.smallRemoveLink {	
+		background-image: url(/images/icons/smallMinus.png);
+		background-repeat: no-repeat !important;
+		background-position: 0 0 !important;
+		width: 9px !important;
+		height: 9px !important;
+		text-indent: -3000px;
+		padding: 0px !important;
+		float: right;
+		margin: 9px 0 0 0 !important;
+		}
+	a.smallRemoveLink:hover {	
+		background-position: 0px -100px !important;
+		}
+	a.smallRemoveLink:active {	
+		background-position: 0px -200px !important;
+		background-color: #A9CBF0 !important;
+		}
+	.groupInfo fieldset hr, .groupInfoMargin hr {
+		margin: 0.5em 0px;
+		background-color: #C3DBF9;
+		border-color: #659FE2;
+		border-width: 1px 0 0 0;
+		border-style: solid;
+		height: 1px;
+	}
+
+
+/* Icons / report -------------------------------------------- */
+	
+
+	.events {		
+		background-image: url(/images/icons/calendar16.png);
+		}
+	.messages {		
+		background-image: url(/images/icons/mailbox.png);
+		}
+	.joyent_files {		
+		background-image: url(/images/icons/filesAll.png);
+		}
+	.comments {		
+		background-image: url(/images/icons/commentBubble16.png);
+		}
+	.notifications {		
+		background-image: url(/images/icons/notifyBubble.png);
+		}
+	div#groupsSidebar .lightning {
+		background-image: url(/images/icons/lightning.gif);
+		}
+	.workspace {		
+		background-image: url(/images/icons/workspace.png);
+		}
+	.user {
+		background-image: url(/images/icons/user.png);
+		background-position: 0 0;
+		}
+	.currentUser {
+		background-image: url(/images/icons/userCurrent.png);
+		background-position: 0 0;
+		}
+	.orangeBadge {
+		width: 38px;
+		height: 14px;
+		display: block;
+		text-indent: -3000px;
+		background-image: url(/images/icons/orangeBadges.png);
+		background-repeat: no-repeat;
+		}
+	.rss {
+		background-position: 0 0;
+		}
+	.rss:hover {
+		background-position: 0 -50px;
+		}
+	.vcard {
+		background-position: -100px 0;
+		}
+	.vcard:hover {
+		background-position: -100px -50px;
+		}
+	.icsIcon {
+		background-position: -200px 0;
+		}
+	.icsIcon:hover {
+		background-position: -200px -50px;
+		}
+		

@@ -1,0 +1,54 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # use with render_smart_group -%>
+
+<li>
+  <% if smart_group_selected and smart_group == smart_group_selected -%>
+	  <div id="smartGroupEditSelection" class="roundtl highlighted"><div class="roundtr"><div id="smartGroupSelectedEditDivBL" class="roundbl"><div id="smartGroupSelectedEditDivBR" class="roundbr">
+  		<table><tr>
+				<td class="dinger">
+				</td>
+				<td>
+          <%= link_to smart_group.name, smart_list_url(smart_group.url_id), { :class => "smartGroup folder highlighted" } %>
+				</td>
+				<td class="showInfo">
+          <%= link_to_function(_('Show'), "SmartGroup.editToggle();", {:id => 'smartGroupSelectedEditDinger', :class => 'groupInfo collapsed', :title => _('View group info')}) %>
+				</td>
+			</tr></table>
+    </div></div></div></div>
+    <div id="smartGroupEdit" style="display: none;"><div>
+      <%= smart_group_edit_contents = render(:partial => "sidebars/groups/smart_group_edit", :locals => { :smart_group => smart_group, :content => content }, :use_full_path => true) %>
+    </div></div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+      <% tag_count = smart_group.tags ? smart_group.tags.length : 0 -%>
+      <% attribute_count = smart_group.smart_group_attributes.length -%>
+      SmartGroup.editContents                 = "<%= escape_javascript(smart_group_edit_contents) %>";
+      SmartGroup.editTagIndexes               = [<%= (1..tag_count).collect{|i| i}.join(", ") %>];
+      SmartGroup.editAttributeIndexes         = [<%= (1..attribute_count).collect{|i| i}.join(", ") %>];
+      SmartGroup.editTagOriginalIndexes       = [<%= (1..tag_count).collect{|i| i}.join(", ") %>];
+      SmartGroup.editAttributeOriginalIndexes = [<%= (1..attribute_count).collect{|i| i}.join(", ") %>];
+    //]]>
+    </script>
+  <% else -%>
+    <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+      <table><tr>
+        <td class="dinger">
+        </td>
+        <td>
+          <%= link_to smart_group.name, smart_list_url(smart_group.url_id), { :class => "smartGroup folder" } %>
+        </td>
+        <td class="showInfo">
+        </td>
+      </tr></table>  
+    </div></div></div></div>
+  <% end -%>
+</li>

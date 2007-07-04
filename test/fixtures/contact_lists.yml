@@ -1,0 +1,28 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian:
+  id: 1
+  user_id: 1
+  organization_id: 1
+
+peter:
+  id: 2
+  user_id: 2
+  organization_id: 1
+
+jason:
+  id: 3
+  user_id: 3
+  organization_id: 2
+
+user_with_restrictions:
+  id: 4
+  user_id: 4
+  organization_id: 2

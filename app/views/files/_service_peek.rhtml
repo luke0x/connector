@@ -1,0 +1,20 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div style="float: right;padding-right:1em;">
+	<%= link_to '<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="download joyentButtonIcon">'+_('Download')+'</span></div></div></div>', files_service_download_url(:file_id => @file.id), {:class => 'buttonStandard', :style => 'width: 120px; padding: 6px 0 8px 0;'} %>
+</div>
+<%= service_file_preview(@file) %>
+
+<dl>
+  <dt><%= _('Date Created') -%>:</dt>
+  <dd><%= format_date_time(localize_time(@file.created_at)) %></dd>
+  <dt><%= _('Date Modified') -%>:</dt>
+  <dd><%= format_date_time(localize_time(@file.updated_at)) %></dd>
+</dl>

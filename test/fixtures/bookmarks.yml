@@ -1,0 +1,32 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_bookmark_1:
+  id: 1
+  organization_id: 1
+  user_id: 1
+  bookmark_folder_id: 1
+  uri: http://www.joyent.com
+  uri_sha1: c2b1ec468226eb80ba2d052a76279208b4eeeccb
+  title: Joyent Homepage
+  notes: the design is pure hotness. but why do we still not have large screenshots?
+  created_at: <%= 3.days.ago.to_formatted_s(:db) %>
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+
+jason_bookmark_1:
+  id: 2
+  organization_id: 2
+  user_id: 3
+  bookmark_folder_id: 3
+  uri: http://www.joyent.com
+  uri_sha1: c2b1ec468226eb80ba2d052a76279208b4eeeccb
+  title: the Joyent Homepage
+  notes: check it out
+  created_at: <%= 2.hours.ago.to_formatted_s(:db) %>
+  updated_at: <%= 1.hour.ago.to_formatted_s(:db) %>

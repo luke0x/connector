@@ -1,0 +1,32 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% apps = ['Connect', 'Mail', 'Calendar', 'People', 'Files', 'Bookmarks', 'Lists'] -%>
+
+<% if User.current.guest? -%>
+  <ul id="Dock">
+    <% apps.each do |app| -%>
+  	  <li class="dock<%= app %>">
+        <% if app == 'Files' -%>
+      	  <%= link_to _(app), eval(app.downcase + '_home_url'), { :title=> _("#{app}")} %>
+        <% else -%>
+    	    <%= link_to_function _(app), '', { :class => "disabled", :title=> _("#{app}")} %>
+        <% end -%>
+    	</li>
+    <% end -%>
+  </ul>
+<% else -%>
+  <ul id="Dock">
+    <% apps.each do |app| -%>
+    	<li class="dock<%= app %>">
+    	  <%= link_to _(app), eval(app.downcase + '_home_url'), { :title=> _("#{app}")} %>
+    	</li>
+    <% end -%>
+  </ul>
+<% end -%>

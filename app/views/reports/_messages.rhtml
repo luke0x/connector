@@ -1,0 +1,58 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table id="tableList" class="tableList">
+	<colgroup>
+		<col style="width:6%;" />
+		<col style="width:19%;" />
+		<col style="width:25%;" />
+		<col style="width:44%;" />
+		<col style="width:6%;" />
+	</colgroup>
+  <thead>
+    <tr>
+	    <th class="has_attachments firstCol" title="Message has attachments?"><a href="#" class="attachments"><%= _('Attachments') %></a></th>
+	    <th><%= _('Date') %></th>
+	    <th><%= (mailbox && mailbox.full_name == 'INBOX.Sent') ? _('To') : _('From') -%></th>
+	    <th><%= _('Subject') %></th>
+      <th class="detailView"><span>Peek</span></th>
+    </tr>
+  </thead>
+  <tbody>
+		<% messages.each_with_index do |message, index| -%>
+		  <% dom_id = "#{params[:dom_prefix]}_#{message.dom_id}" %>
+  		<tr id="<%= dom_id %>_tr" itemDomId="<%= message.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+				<td class="enclosure firstCol">
+					<% if message.has_attachments? %>
+					  <%= image_tag 'icons/enclosure.png' %>
+					<% end %>
+				</td>
+    		<td>
+					<%= link_to message_date(message, false), message_url(mailbox_name, message) %>
+				</td>
+    		<td>
+		      <% if mailbox && mailbox.full_name == 'INBOX.Sent' -%>
+				    <%= link_to message.to.collect{|t| address_string(t)}.join(', '), message_url(mailbox_name, message) %>
+  		    <% else -%>
+				    <%= link_to address_string(message.from.first), message_url(mailbox_name, message) %>
+  		    <% end -%>
+				</td>
+    		<td>
+					<%= link_to h(decode(message.subject)), message_url(mailbox_name, message) %>
+				</td>
+    		<td id="<%= dom_id %>_td_details_icon" class="details">
+					<%= link_to_function _('Details'), "PeekView.toggle('#{dom_id}', '#{peek_url(message, dom_id)}')" %>
+    		</td>
+  		</tr>
+  		<tr id="<%= dom_id %>_tr_details" itemDomId="<%= message.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+    		<td id="<%= dom_id %>_td_details" colspan="6" class="Details"></td>
+			</tr>
+		<% end %>
+  </tbody>
+</table>

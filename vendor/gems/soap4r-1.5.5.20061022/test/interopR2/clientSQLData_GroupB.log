@@ -1,0 +1,770 @@
+File: clientSQLData_GroupB.log - Wiredumps for SOAP4R client / SQLDataSOAPServer server.
+Date: Sat Jul 23 21:24:03 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientSQLData.rb:17
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:03 JST 2005
+Content-Length: 677
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00229700778002170000120000587702674602037802690;path=/;expires=Sat, 23-Jul-2005 12:41:46 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 884
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoStructAsSimpleTypesResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><outputString xsi:type="xsd:string" xsi:nil="true"></outputString><outputInteger xsi:type="xsd:int" xsi:nil="true"></outputInteger><outputFloat xsi:type="xsd:float" xsi:nil="true"></outputFloat></mns:echoStructAsSimpleTypesResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:04 JST 2005
+Content-Length: 600
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00230302927602466001655802650600183202660302105;path=/;expires=Sat, 23-Jul-2005 12:41:47 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 860
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoSimpleTypesAsStructResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">+1.1</varFloat></return></mns:echoSimpleTypesAsStructResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:05 JST 2005
+Content-Length: 577
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00231001800502762103191701436700968500006001519;path=/;expires=Sat, 23-Jul-2005 12:41:48 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 899
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoSimpleTypesAsStructResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPStruct"><varString xsi:type="xsd:string" xsi:nil="true"></varString><varInt xsi:type="xsd:int" xsi:nil="true"></varInt><varFloat xsi:type="xsd:float" xsi:nil="true"></varFloat></return></mns:echoSimpleTypesAsStructResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:06 JST 2005
+Content-Length: 889
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00231600673403058101450800222901753900628500934;path=/;expires=Sat, 23-Jul-2005 12:41:49 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1127
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echo2DStringArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3,3]"><Item0 xsi:type="xsd:string">r0c0</Item0><Item1 xsi:type="xsd:string">r1c0</Item1><Item2 xsi:type="xsd:string">r2c0</Item2><Item3 xsi:type="xsd:string">r0c1</Item3><Item4 xsi:type="xsd:string">r1c1</Item4><Item5 xsi:type="xsd:string">r2c1</Item5><Item6 xsi:type="xsd:string">r0c2</Item6><Item7 xsi:type="xsd:string">r1c2</Item7><Item8 xsi:type="xsd:string">r2c2</Item8></return></mns:echo2DStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:07 JST 2005
+Content-Length: 1088
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00232302823100077302986602285802539201251000348;path=/;expires=Sat, 23-Jul-2005 12:41:50 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1127
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echo2DStringArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3,3]"><Item0 xsi:type="xsd:string">r0c0</Item0><Item1 xsi:type="xsd:string">r0c1</Item1><Item2 xsi:type="xsd:string">r0c2</Item2><Item3 xsi:type="xsd:string">r1c0</Item3><Item4 xsi:type="xsd:string">r1c1</Item4><Item5 xsi:type="xsd:string">r1c2</Item5><Item6 xsi:type="xsd:string">r2c0</Item6><Item7 xsi:type="xsd:string">r0c1</Item7><Item8 xsi:type="xsd:string">r2c2</Item8></return></mns:echo2DStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:08 JST 2005
+Content-Length: 1063
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-604613558"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-604613558"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-604613558"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00232901696000373401245701071900047801873503040;path=/;expires=Sat, 23-Jul-2005 12:41:51 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1127
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echo2DStringArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3,3]"><Item0 xsi:type="xsd:string">r0c0</Item0><Item1 xsi:type="xsd:string">r1c0</Item1><Item2 xsi:type="xsd:string">item</Item2><Item3 xsi:type="xsd:string">r0c1</Item3><Item4 xsi:type="xsd:string">r1c1</Item4><Item5 xsi:type="xsd:string">r2c1</Item5><Item6 xsi:type="xsd:string">item</Item6><Item7 xsi:type="xsd:string">r1c2</Item7><Item8 xsi:type="xsd:string">r2c2</Item8></return></mns:echo2DStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Expected = "String#-605199442"  //  Actual = "String#-605194162"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:25:10 JST 2005
+Content-Length: 1063
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605135772"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605135772"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605135772"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00233600568800669402781603134800833102496002454;path=/;expires=Sat, 23-Jul-2005 12:41:52 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1127
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echo2DStringArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3,3]"><Item0 xsi:type="xsd:string">r0c0</Item0><Item1 xsi:type="xsd:string">r1c0</Item1><Item2 xsi:type="xsd:string">item</Item2><Item3 xsi:type="xsd:string">r0c1</Item3><Item4 xsi:type="xsd:string">r1c1</Item4><Item5 xsi:type="xsd:string">r2c1</Item5><Item6 xsi:type="xsd:string">item</Item6><Item7 xsi:type="xsd:string">r1c2</Item7><Item8 xsi:type="xsd:string">r2c2</Item8></return></mns:echo2DStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientSQLData.rb:17
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:26:11 JST 2005
+Content-Length: 874
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00255102695500608101036202398200535100100502795;path=/;expires=Sat, 23-Jul-2005 12:42:53 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1106
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoNestedStructResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPStructStruct"><varString xsi:type="xsd:string" xsi:nil="true"></varString><varInt xsi:type="xsd:int" xsi:nil="true"></varInt><varFloat xsi:type="xsd:float" xsi:nil="true"></varFloat><varStruct xsi:type="s:SOAPStruct"><varString xsi:type="xsd:string" xsi:nil="true"></varString><varInt xsi:type="xsd:int" xsi:nil="true"></varInt><varFloat xsi:type="xsd:float" xsi:nil="true"></varFloat></varStruct></return></mns:echoNestedStructResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Expected = "String#-605301622"  //  Actual = "String#-605303502"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:26:12 JST 2005
+Content-Length: 1062
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605248792"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </varStruct>
+        <varString href="#id-605248792"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605248792"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00255801568400904202572101184301320500723002210;path=/;expires=Sat, 23-Jul-2005 12:42:54 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1026
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoNestedStructResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPStructStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">+1.1</varFloat><varStruct xsi:type="s:SOAPStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">+2.2</varFloat></varStruct></return></mns:echoNestedStructResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:26:13 JST 2005
+Content-Length: 931
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00256400441301200200831203247202105801345501624;path=/;expires=Sat, 23-Jul-2005 12:42:55 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1047
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoNestedArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPArrayStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">+1.1</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3]"><Item0 xsi:type="xsd:string">2</Item0><Item1 xsi:type="xsd:string">2.2</Item1><Item2 xsi:type="xsd:string">b</Item2></varArray></return></mns:echoNestedArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:26:14 JST 2005
+Content-Length: 998
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00257102591001496202367002033302891201968001039;path=/;expires=Sat, 23-Jul-2005 12:42:56 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1047
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoNestedArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPArrayStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">+1.1</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3]"><Item0 xsi:type="xsd:string">2</Item0><Item1 xsi:type="xsd:string">2.2</Item1><Item2 xsi:type="xsd:string">b</Item2></varArray></return></mns:echoNestedArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:26:15 JST 2005
+Content-Length: 1083
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605424112"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605424112"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605424112"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00257801463801792300626100819500399702590500453;path=/;expires=Sat, 23-Jul-2005 12:42:57 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1043
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoNestedArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPArrayStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">+1.1</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3]"><Item0 xsi:type="xsd:string">2</Item0><Item1 xsi:type="xsd:string"></Item1><Item2 xsi:type="xsd:string">b</Item2></varArray></return></mns:echoNestedArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Expected = "String#-605471812"  //  Actual = "String#-605472902"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /interop/InteropB.wsdl HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:26:16 JST 2005
+Content-Length: 1083
+Host: soapclient.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605450922"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605450922"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605450922"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Server: SQLData Server/3.01
+Connection: Close
+Set-Cookie:SessionId=00258400336702088302161902882401185103213003145;path=/;expires=Sat, 23-Jul-2005 12:42:58 GMT;Version=1
+Content-Type: text/xml; charset="utf-8"
+Content-Length: 1043
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soapinterop.org/" xmlns:s="http://soapinterop.org/xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ><SOAP-ENV:Body><mns:echoNestedArrayResponse xmlns:mns="http://soapinterop.org/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><return xsi:type="s:SOAPArrayStruct"><varString xsi:type="xsd:string"></varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">+1.1</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:string[3]"><Item0 xsi:type="xsd:string">2</Item0><Item1 xsi:type="xsd:string"></Item1><Item2 xsi:type="xsd:string">b</Item2></varArray></return></mns:echoNestedArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+

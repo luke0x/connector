@@ -1,0 +1,74 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init(@bookmarks, 'list') -%>
+
+<div style="position: relative;" class="report">		
+  <%= render_list_header(@group_name, @paginator, 'bookmarks') %>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:30px;" />
+			<col style="width:116px;" />
+			<col />
+			<col style="width:116px;" />
+			<% if @smart_group or @group_name == "Others' Bookmarks" -%>
+				<col />
+			<% end -%>
+			<col style="width:70px;" />
+			<col style="width:40px;" />
+		</colgroup>
+	  <thead>
+			<tr>
+				<th class="checkBox" align="center"><%= list_selection_tool %></th>
+				<th class="thumbnail"><%= _('Site Image') %></th>
+				<%= toggle_sort_th(_('Title'), 'title') %>
+				<%= toggle_sort_th(_('Date Added'), 'created_at') %>
+  			<% if @smart_group or @group_name == "Others' Bookmarks" -%>
+				  <th class="owner"><%= _('Owner') %></th>
+				<% end -%>
+			  <th class="jumpTos"><%= _('Link') %></th>
+				<th class="detailView"><span>Peek</span></th>
+			</tr>
+    </thead>
+    <tbody>
+			<% @bookmarks.each_with_index do |bookmark, index| -%>
+				<tr id="<%= bookmark.dom_id %>_tr" itemDomId="<%= bookmark.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>" style="height: 80px ! important;">
+					<td class="checkbox">
+						<input class="listCheckbox" id="<%= bookmark.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= bookmark.dom_id %>" type="checkbox" />
+					</td>
+					<td class="siteImage" style="height: 84px; padding: 2px;">
+					  <%= link_to "<img src=\"#{bookmark.icon_url}\" style=\"width: 110px;\" />", bookmarks_show_url(:id => bookmark.id) %>
+				  </td>
+					<td class="title" style="height: 100%;">
+					  <%= link_to h(bookmark.title), bookmarks_show_url(:id => bookmark.id), {:class => "" } %>
+					  <br />
+					  <%= link_to '<span style="color: grey;">' + h(bookmark.uri) + '</span>', bookmarks_show_url(:id => bookmark.id), {:class => "" } %>
+				  </td>
+					<td class="dateAdded">
+						<%= link_to _("%{i18n_time}")%{:i18n_time =>"#{format_local_words_or_date(bookmark.created_at)}"}, bookmarks_show_url(:id => bookmark.id) %>
+					</td>
+    			<% if @smart_group or @group_name == "Others' Bookmarks" -%>
+           	<td class="">
+  				   	<%= link_to h(bookmark.owner.full_name), bookmarks_show_url(:id => bookmark.id), {:class => "" } %>
+				   	</td>
+  				<% end -%>
+					<td class="goLink">
+					  <%= joyent_button_to _('Go'), bookmark.uri, {:button_class => 'jumpTo', :style => 'width: 55px;', :target => '_blank'} %>
+					</td>
+					<td id="<%= bookmark.dom_id %>_td_details_icon" class="details">
+						<%= link_to_function _('Details'), "PeekView.toggle('#{bookmark.dom_id}', '#{peek_url(bookmark, bookmark.dom_id)}')" %>
+					</td>
+				</tr>
+				<tr id="<%= bookmark.dom_id %>_tr_details" itemDomId="<%= bookmark.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+					<td id="<%= bookmark.dom_id %>_td_details" colspan="6" class="Details"></td>
+				</tr>
+	    <% end -%>
+    </tbody>
+	</table>
+</div>

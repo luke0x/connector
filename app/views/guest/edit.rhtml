@@ -1,0 +1,60 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% form_tag(guest_edit_url(:id => User.current.id), {:id => 'guestEditDialogForm', :style => "text-align: right; padding-top: 10px;"}) do -%>
+  <h2><%= _('Guest Preferences') %></h2>
+  <div class="content guestPreferences">
+    <fieldset>
+  		<legend>Guest Preferences</legend>
+      <table class="accountTypes">
+        <tr>
+          <td colspan="2">
+            <input type="text" disabled="disabled" size="20" maxlength="64" class="textInput" style="width:260px;" value="<%= @person.user.username %>" />
+            <div class="infoGroupInputLabel"><%= _('username') %></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          	<input id="user_person_password" type="password" name="person[password]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;"  />
+            <div class="infoGroupInputLabel"><%= _('password') %></div>
+          </td>
+          <td>
+          	<input id="user_person_password_confirmation" type="password" name="person[password_confirmation]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;"  />
+            <div class="infoGroupInputLabel"><%= _('confirm password') %></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+          	<input id="user_person_recovery_email" type="text" name="person[recovery_email]" class="textInput" style="width:260px;"  value="<%= @person.user.recovery_email %>" />
+            <div class="infoGroupInputLabel"><%= _('password recovery email address') %></div>
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-top: 1em;">
+            <%= tzinfo_timezone_select 'person', 'time_zone', @person.time_zone %>
+            <div class="infoGroupInputLabel"><%= _('time zone') %></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+      			<% # languages strings should be in their native language -%>
+            <% languages = [['English', 'en'], ['Español', 'es'], ['Deutsch','de'], ['Italiano','it']] -%>
+            <% language_options = options_for_select(languages, (@person.user ? @person.user.language : nil)) -%>
+            <%= select_tag_with_id "person[language]", language_options, {:id => "person_language"} %>
+            <div class="infoGroupInputLabel"><%= _('language') %></div>
+          </td>
+        </tr>
+      </table>
+  	</fieldset>
+  </div>
+  <%= joyent_button_to_function _('Cancel'), "JoyentPage.hideEverything()", {:style => 'width: 8em;'} %>
+  <%= joyent_button_to_function _('Save'), "$('guestEditDialogForm').submit()", {:style => 'width: 6em;'} %>
+<% end -%>
+<%= javascript_tag "$('user_person_password').focus();" %>

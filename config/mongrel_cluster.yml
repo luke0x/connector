@@ -1,0 +1,17 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+--- 
+port: "8000"
+environment: production
+address: 0.0.0.0
+pid_file: log/mongrel.pid
+servers: 10
+config_script: config/mongrel.conf
+

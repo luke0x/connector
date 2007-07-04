@@ -1,0 +1,40 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+					
+		#Drawers dl {
+			margin-bottom: 1em !important;
+		}
+		#Drawers dd+dt {	
+			margin-top:0 !important;
+			}
+		#Drawers dd {
+			margin:0.3em 0 0.3em 10.5em !important;
+			}
+		
+		#Drawers hr {
+			border-color: #A3A4A3 #A3A4A3 #FFF #A3A4A3;
+			border-width: 1px 0 1px 0;
+			border-style: solid;
+		}
+
+
+/* jajah ----------------------------------------*/
+
+ .your_number {
+ 	background-color: #D8D8D8;
+ 	-moz-border-radius: .8em .8em .8em .8em;
+ 	-webkit-border-top-left-radius: .8em;
+ 	-webkit-border-top-right-radius: .8em;
+ 	-webkit-border-bottom-left-radius: .8em;
+ 	-webkit-border-bottom-right-radius: .8em;
+ 	padding: 5px 0 1px 0;
+ 	margin-bottom: 1em;
+ }

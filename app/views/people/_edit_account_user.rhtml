@@ -1,0 +1,64 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table class="accountTypes">
+  <tr>
+    <td colspan="2">
+      <% if person.user -%>
+        <input type="text" disabled="disabled" size="20" maxlength="64" class="textInput" style="width:260px;" value="<%= person.user.username %>" />
+      <% else -%>
+        <input id="person_username" type="text" name="person[username]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:260px;"  />
+      <% end -%>
+      <div class="infoGroupInputLabel"><%= _('username') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    	<input id="person_password" type="password" name="person[password]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;" />
+      <div class="infoGroupInputLabel"><%= _('password') %></div>
+    </td>
+    <td>
+    	<input id="person_password_confirmation" type="password" name="person[password_confirmation]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;"  />
+      <div class="infoGroupInputLabel"><%= _('confirm password') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top: 1em;">
+      <span id="personRecoveryEmailSelectContainer">Loading&hellip;</span>
+      <%= javascript_tag("People.currentRecoveryEmail = '#{person.user.recovery_email rescue ''}';") %>
+      <%= javascript_tag("Event.observe(window, 'load', function(event){ People.drawEmailNoticeSelect(); });") %>
+      <div class="infoGroupInputLabel"><%= _('password recovery email address') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top: 1em;">
+      <% if person.admin? -%>
+        <input id="person_admin" type="checkbox" name="person[admin]" checked="checked" <%= 'disabled="disabled"' if person == User.current.person %> />
+        <%= _('Allow this user to create and delete other users?') %>
+      <% else -%>
+        <input id="person_admin" type="checkbox" name="person[admin]" />
+        <%= _('Allow this user to create and delete other users?') %>
+      <% end -%>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top: 1em;">
+      <%= tzinfo_timezone_select 'person', 'time_zone', person.time_zone %>
+      <div class="infoGroupInputLabel"><%= _('time zone') %></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <% languages = [['English', 'en'], ['Español', 'es'], ['Deutsch','de'], ['Italiano','it']] -%>
+      <% language_options = options_for_select(languages, (person.user ? person.user.language : nil)) -%>
+      <%= select_tag_with_id "person[language]", language_options, {:id => "person_language"} %>
+      <div class="infoGroupInputLabel"><%= _('language') %></div>
+    </td>
+  </tr>
+</table>

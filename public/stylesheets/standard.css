@@ -1,0 +1,175 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+* {
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+}
+
+body { 
+  margin: 0; 
+  padding: 0; 
+  background-color: #FFF;
+}
+
+
+table.header { 
+  margin: 0;
+  padding: 3px 5px;
+  background-color: #DEF;
+  border-bottom: 1px solid black;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.sitename {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.login {
+  vertical-align: middle;
+  text-align: right;
+}
+
+
+input {
+  border: thin solid #AAA;
+  padding: 0.1em 0.3em;
+}
+
+
+
+ul.menubar {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+ul.menubar li {
+  display: inline;
+  padding: 0 0.5em 0 0.5em;
+  margin: 0;
+}
+
+ul.menubar li.current {
+  background-color: #DDF;
+}
+
+ul.menubar li.current a {
+  color: #000;
+}
+
+ul.menubar li a {
+  text-decoration: none;
+}
+
+
+
+form.login_form table {
+  border: thin solid black;
+  background-color: #EEF;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+form.login_form table tr th {
+  font-size: 120%;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  margin: 0;
+  padding: 0.3em;
+}
+
+form.login_form table tr td input {
+  padding: 0.1em 1px 0.1em 0.3em;
+  border: thin solid black;
+}
+
+form.login_form table tr td textarea {
+  padding: 0.2em;
+  border: thin solid black;
+}
+
+form.login_form table tr td select {
+  padding: 0.2em;
+  border: thin solid black;
+}
+
+form.login_form table tr td.special {
+  text-align: center;
+}
+
+form.login_form table tr td.label {
+  text-align: right;
+}
+
+form.login_form div.buttonrow {
+  text-align: center;
+}
+
+form.login_form div.buttonrow input {
+  color: black;
+  background-color: white;
+}
+
+form.login_form div.buttonrow input:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
+table.user_list {
+  border: thin solid black;
+  background-color: #EEE;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.user_list th {
+  padding: 0 1em;
+  text-align: left;
+}
+
+table.user_list tr td {
+  padding: 0 1em;
+  border-top: thin solid #CCC;
+}
+
+
+.flash_error {
+  color: red;
+}
+
+
+table.standard_form {
+  background-color: #EFE;
+  border: thin solid #888;
+  margin: 0.1em;
+}
+
+table.standard_form input, table.standard_form textarea {
+  border: thin solid #888;
+}
+
+table.standard_form td.label {
+  text-align: right;
+  vertical-align: top;
+}
+
+table.standard_form tr th {
+  background-color: #DFD;
+  text-align: left;
+  border-bottom: thin solid #8C8;
+}

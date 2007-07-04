@@ -1,0 +1,55 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init(@items, 'list') -%>
+
+
+  <%= render_list_header(@group_name, @paginator, 'items') %>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:6%;" />
+			<col style="width:44%;" />
+			<col style="width:25%;" />
+			<col style="width:19%;" />
+			<col style="width:6%;" />
+		</colgroup>
+    <thead>
+			<tr>
+				<th class="checkBox" align="center"><%= list_selection_tool %></th>
+				<th><%= _('Title') %></th>
+				<th><%= _('Application') %></th>
+				<th><%= _('Modified') %></th>
+				<th class="detailView"><span>Peek</span></th>
+			</tr>
+    </thead>
+    <tbody>
+			<% @items.each_with_index do |item, index| -%>
+				<tr id="<%= item.dom_id %>_tr" itemDomId="<%= item.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+					<td class="checkbox">
+						<input class="listCheckbox" id="<%= item.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= item.dom_id %>" type="checkbox" />
+					</td>
+					<td>
+						<%= link_to h(item.name), item_url(item) %>
+					</td>
+					<td>
+						<%= link_to item_application(item), item_url(item) %>
+					</td>
+					<td>
+						<%= link_to item_modified(item), item_url(item) %>
+					</td>           
+					<td id="<%= item.dom_id %>_td_details_icon" class="details">
+						<%= link_to_function _('Details'), "PeekView.toggle('#{item.dom_id}', '#{peek_url(item, item.dom_id)}')" %>
+					</td>
+				</tr>           
+				<tr id="<%= item.dom_id %>_tr_details" itemDomId="<%= item.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+					<td id="<%= item.dom_id %>_td_details" colspan="5" class="Details"></td>
+				</tr>
+			<% end %>
+    </tbody>
+	</table>

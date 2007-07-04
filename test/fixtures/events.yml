@@ -1,0 +1,224 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+<% user_1_tz = TZInfo::Timezone.get('America/Detroit') %>
+<% user_2_tz = TZInfo::Timezone.get('America/Detroit') %>
+concert:
+  id: 1
+  user_id: 1
+  organization_id: 1
+  name: Concert
+  location: Stadium
+  notes:  I love Concerts
+  start_time: <%= user_1_tz.local_to_utc(user_1_tz.now.midnight + 20.hours).to_formatted_s(:db) %>
+  end_time: <%= (user_1_tz.local_to_utc(user_1_tz.now.midnight + 20.hours) + 2.5.hours).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+taxday:
+  id: 2
+  user_id: 1
+  organization_id: 1
+  name: Taxday
+  start_time: <%= user_1_tz.now.midnight.to_formatted_s(:db) %>
+  end_time: <%= (user_1_tz.now.midnight+ 40.minutes).to_formatted_s(:db) %>
+  all_day: true
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+dailyforever:
+  id: 3
+  user_id: 1
+  organization_id: 1
+  name: Keepin It Real
+  notes: all day, every day ;)
+  start_time: <%= user_1_tz.now.midnight.to_formatted_s(:db) %>
+  end_time: <%= (user_1_tz.now.midnight + 23.hours).to_formatted_s(:db) %>
+  recur_end_time: 
+  all_day: true
+  recurrence_description_id: 1
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+weekly:
+  id: 4
+  user_id: 1
+  organization_id: 1
+  name: Weekly Meeting
+  start_time: <%= user_1_tz.local_to_utc((user_1_tz.now - 1.day).midnight).to_formatted_s(:db) %>
+  end_time: <%= user_1_tz.local_to_utc((user_1_tz.now - 1.day).midnight + 1.hour).to_formatted_s(:db) %>
+  recur_end_time: 
+  all_day: false
+  recurrence_description_id: 2
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+monthly:
+  id: 5
+  user_id: 1
+  organization_id: 1
+  name: Monthly Meetup
+  start_time: <%= (user_1_tz.now + 1.week).midnight.to_formatted_s(:db) %>
+  end_time: <%= ((user_1_tz.now + 1.week).midnight + 34).to_formatted_s(:db) %>
+  all_day: true
+  recurrence_description_id: 3
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+yearly:
+  id: 6
+  user_id: 1
+  organization_id: 1
+  name: New Years Day
+  start_time: 2006-01-01 00:00:00
+  end_time: 2006-01-01 03:00:00
+  recur_end_time: 
+  all_day: true
+  recurrence_description_id: 4  
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+dailyforaweek:
+  id: 7
+  user_id: 1
+  organization_id: 1
+  name: Big Project
+  start_time: <%= user_1_tz.now.midnight.to_formatted_s(:db) %>
+  recur_end_time: <%= (user_1_tz.now.midnight + 1.week + 1).to_formatted_s(:db) %>
+  end_time: <%= (user_1_tz.now.midnight+ 1.hour + 1).to_formatted_s(:db)  %>
+  all_day: true
+  recurrence_description_id: 1
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+daily:
+  id: 8
+  user_id: 1
+  organization_id: 1
+  name: Daily Update
+  start_time: <%= user_1_tz.local_to_utc((user_1_tz.now - 14.days).midnight).to_formatted_s(:db) %>
+  end_time: <%= user_1_tz.local_to_utc((user_1_tz.now - 14.days).midnight + 10.minutes).to_formatted_s(:db) %>
+  recur_end_time: 
+  all_day: false
+  recurrence_description_id: 1
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+oneoff_over_midnight:
+  id: 9
+  user_id: 1
+  organization_id: 1
+  name: browse internet sites
+  start_time: <%= user_1_tz.local_to_utc(user_1_tz.now.midnight - 5.minutes).to_formatted_s(:db) %>
+  end_time: <%= user_1_tz.local_to_utc(user_1_tz.now.midnight + 5.minutes).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+five_minute_daily:
+  id: 10
+  user_id: 1
+  organization_id: 1
+  name: five minutes at midnight, daily
+  start_time: <%= user_1_tz.local_to_utc(user_1_tz.now.midnight).to_formatted_s(:db) %>
+  end_time: <%= user_1_tz.local_to_utc(user_1_tz.now.midnight + 5.minutes).to_formatted_s(:db) %>
+  all_day: false
+  recurrence_description_id: 1
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 2.days.ago.to_formatted_s(:db) %>
+
+peter_concert:
+  id: 11
+  user_id: 2
+  organization_id: 1
+  name: The Same Concert
+  start_time: <%=  user_2_tz.local_to_utc(user_1_tz.now.midnight + 20.hours).to_formatted_s(:db) %>
+  end_time: <%= user_2_tz.local_to_utc(user_1_tz.now.midnight + 22.5.hours).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+peter_daily_forever:
+  id: 12
+  user_id: 2
+  organization_id: 1
+  name: Keepin It Real
+  notes: all day, every day ;)
+  start_time: <%=  user_1_tz.now.midnight.to_formatted_s(:db) %>
+  end_time: <%= (user_1_tz.now.midnight + 23.hours).to_formatted_s(:db) %>
+  recur_end_time: 
+  all_day: true
+  recurrence_description_id: 1
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+yearly_with_end:
+  id: 13
+  user_id: 1
+  organization_id: 1
+  name: New Years Day
+  start_time: 2006-01-01 00:00:00
+  end_time: 2006-01-01 03:00:00
+  recur_end_time: 2006-08-01 00:00:00
+  all_day: true
+  recurrence_description_id: 4  
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+
+another_thing_event:
+  id: 14
+  user_id: 1
+  organization_id: 1
+  name: Writing code
+  location: Home
+  notes: Up late
+  start_time: <%= user_1_tz.local_to_utc(user_1_tz.now.midnight + 20.hours).to_formatted_s(:db) %>
+  end_time: <%=user_1_tz.local_to_utc(user_1_tz.now.midnight + 22.5.hours).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+
+for_busy_testing:
+  id: 15
+  user_id: 1
+  organization_id: 1
+  name: busy testing
+  start_time: <%= (Time.now.midnight - 5.minutes).to_formatted_s(:db) %>
+  end_time: <%= (Time.now.midnight + 5.minutes).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+
+repeating_forever_busy_testing:
+  id: 16
+  user_id: 1
+  organization_id: 1
+  name: repeating busy testing
+  start_time: <%= (Time.now.midnight + 1.day - 5.minutes).to_formatted_s(:db) %>
+  end_time:  <%= (Time.now.midnight + 1.day + 5.minutes).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  recurrence_description_id: 1
+  
+repeating_busy_testing:
+  id: 17
+  user_id: 1
+  organization_id: 1
+  name: repeating busy testing
+  start_time: <%= (Time.now.midnight + 1.day - 5.minutes).to_formatted_s(:db) %>
+  end_time:  <%= (Time.now.midnight + 1.day + 5.minutes).to_formatted_s(:db) %>
+  all_day: false
+  updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+  recurrence_description_id: 1
+  recur_end_time: <%= (Time.now.midnight + 1.week).to_formatted_s(:db) %>
+  
+repeating_fortnight_testing:
+    id: 18
+    user_id: 1
+    organization_id: 1
+    name: repeating fortnight testing
+    start_time: <%= (Time.now.midnight + 5.minutes).to_formatted_s(:db) %>
+    end_time:  <%= (Time.now.midnight + 1.hour + 5.minutes).to_formatted_s(:db) %>
+    all_day: false
+    updated_at: <%= 1.day.ago.to_formatted_s(:db) %>
+    created_at: <%= 1.day.ago.to_formatted_s(:db) %>
+    recurrence_description_id: 5
+    recur_end_time: <%= (Time.now.midnight + 1.week).to_formatted_s(:db) %>

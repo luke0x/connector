@@ -1,0 +1,99 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+connect_notifications:
+  id: 1            
+  name: connect_notifications
+mail_notifications:
+  id: 2  
+  name: mail_notifications    
+files_notifications:
+  id: 3
+  name: files_notifications   
+calendar_notifications:
+  id: 4
+  name: calendar_notifications
+people_notifications:
+  id: 5
+  name: people_notifications  
+connect_smart_group:
+  id: 6
+  name: connect_smart_group
+mail_smart_group:
+  id: 7
+  name: mail_smart_group
+files_smart_group:
+  id: 8
+  name: files_smart_group
+calendar_smart_group:
+  id: 9
+  name: calendar_smart_group
+people_smart_group:
+  id: 10
+  name: people_smart_group
+mailbox:
+  id: 11
+  name: mailbox
+folder:
+  id: 12
+  name: folder
+calendar:
+  id: 13
+  name: calendar
+calendar_all:
+  id: 14
+  name: calendar_all
+users:
+  id: 15
+  name: users
+contacts:
+  id: 16
+  name: contacts
+current_time:
+  id: 17
+  name: current_time    
+unread_messages:
+  id: 18
+  name: unread_messages
+recent_comments:
+  id: 19
+  name: recent_comments
+todays_events:
+  id: 20
+  name: todays_events
+weeks_events:
+  id: 21
+  name: weeks_events       
+bookmarks_notifications:
+  id: 22
+  name: bookmarks_notifications
+bookmarks_all:
+  id: 23
+  name: bookmarks_all
+bookmarks_everyone:
+  id: 24
+  name: bookmarks_everyone
+bookmarks_smart_group:
+  id: 25
+  name: bookmarks_smart_group
+files_strongspace:
+  id: 26
+  name: files_strongspace
+files_service:
+  id: 27
+  name: files_service
+lists_standard_group:
+  id: 28
+  name: lists_standard_group
+lists_smart_group:
+  id: 29
+  name: lists_smart_group
+lists_notifications:
+  id: 30
+  name: lists_notifications

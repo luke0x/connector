@@ -1,0 +1,26 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% if flash[:error] -%>
+  <div class="info4 fullwidth"><div class="info3"><div class="info2"><div class="info noPadding"><div class="infoError">
+    <%= flash[:error] -%>
+  </div></div></div></div></div>
+<% end -%>
+<% if flash[:message] -%>
+  <div class="info4 fullwidth infoMessageBG"><div class="info3"><div class="info2"><div class="info noPadding"><div class="infoMessage">
+    <%= flash[:message] -%>
+  </div></div></div></div></div>
+<% end -%>
+
+<% if User.current.admin? and User.current.recovery_email.blank? -%>
+  <div class="info4 fullwidth"><div class="info3"><div class="info2"><div class="info">
+    <%= _('Please add a password recovery email address to your account settings') -%>:
+	  <%= link_to(_("Your Preferences"), person_edit_url(:id => User.current.person.id), {:title => _("Edit your personal information")}) %>
+  </div></div></div></div>
+<% end -%>

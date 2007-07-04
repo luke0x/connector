@@ -1,0 +1,55 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+list1_row1_col1:
+  id: 1
+  list_column_id: 1
+  list_row_id: 1
+  value: "true"
+list1_row1_col2:
+  id: 2
+  list_column_id: 2
+  list_row_id: 1
+  value: "<%= 1.day.ago.to_s :db %>"
+list1_row1_col3:
+  id: 3
+  list_column_id: 3
+  list_row_id: 1
+  value: "42"
+list1_row1_col4:
+  id: 4
+  list_column_id: 4
+  list_row_id: 1
+  value: "God I hate typing out fixtures"
+
+checkbox_true_cell:
+  id: 100
+  list_column_id: 100
+  list_row_id: 100
+  value: 'true'
+checkbox_false_cell:
+  id: 101
+  list_column_id: 100
+  list_row_id: 100
+  value: 'false'
+date_cell:
+  id: 102
+  list_column_id: 100
+  list_row_id: 100
+  value: '15 May, 2007'
+number_cell:
+  id: 103
+  list_column_id: 100
+  list_row_id: 100
+  value: '42'
+text_cell:
+  id: 104
+  list_column_id: 100
+  list_row_id: 100
+  value: 'Whatever'

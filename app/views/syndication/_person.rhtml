@@ -1,0 +1,98 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="person">
+  <h2><%=h person.full_name %></h2> 
+  <h3><%=h person.company_name %></h3>
+  <h3><i><%=h person.title %></i></h3> 
+
+  <dl>
+	<% if !person.phone_numbers.empty? %>  
+    <dt><%= _('Phone') -%>:</dt>
+      <% person.phone_numbers.each do |phone_number| -%>
+        <dd>                                                                  
+          <% call_from = h(User.current.person.primary_phone).gsub(/[^0-9a-zA-Z]/, '') -%>
+          <% call_to   = h(phone_number.phone_number).gsub(/[^0-9a-zA-Z]/, '') -%>
+          <a href="callto:+<%= call_to %>" title="<%= _('Call this person via Skype') -%>" class="go toSkype">
+            &nbsp;
+          </a>
+          <%= h(phone_number.phone_number) %>
+          <em><%= h(_(phone_number.phone_number_type)) %></em>
+        </dd>
+      <% end -%>
+	<% end -%>  
+	
+	<% if !person.email_addresses.empty? -%>
+    <dt><%= _('Email') -%>:</dt>
+      <% person.email_addresses.each do |email_address| -%>
+    <dd>
+      <%= mail_to(email_address.email_address, nil, {:title =>_("Compose a new email to %{i18n_email_address}")%{:i18n_email_address => "#{email_address.email_address}"}}) %>
+      <em><%= h(_(email_address.email_type)) %></em>
+    </dd>
+      <% end -%>
+    <% end -%>  
+              
+    <% if !person.addresses.empty? %>
+    <dt><%= _('Address') -%>:</dt>    
+      <% person.addresses.each do |address| -%>
+    <dd>
+	  <em><%= h(_(address.address_type)) %></em>
+	  <br/>
+      <%= h(address.street) %> 
+      <br/>
+      <%= h(address.city) %>, <%= h(address.state) %> <%= h(address.postal_code) %>
+      <br/>
+      <%= h(address.country_name) %>
+      <br/>
+      <%= google_maps_link(address) %>
+      <br/>
+      &nbsp;
+    </dd>
+      <% end -%>                     
+    <% end -%>
+	          
+	<% if !person.im_addresses.empty? -%>
+    <dt><%= _('Instant Messaging') -%>:</dt>
+      <% person.im_addresses.each do |im| -%>
+    <dd>
+      <%= h(im.im_address) %>
+       <em><%= h(im.im_type) %></em>
+    </dd>
+      <% end -%>
+    <% end -%>   
+
+    <% if !person.websites.empty? -%>
+    <dt><%= _('Websites') -%>:</dt>
+      <% person.websites.each do |website| -%>
+    <dd>
+      <a target="_blank" href="<%= website.site_url %>"><%= h(website.site_title.length > 0 ? website.site_title : website.site_url) %></a>
+    </dd>
+      <% end -%>
+    <% end -%>
+          
+    <% if !person.special_dates.empty? -%>
+    <dt><%= _('Special Dates') -%>:</dt>
+      <% person.special_dates.each do |special_date| -%>
+    <dd>
+      <%= format_date(special_date.special_date) %>
+      <em><%= h(special_date.description) %></em>
+    </dd>
+      <% end -%>
+    <% end -%>  
+
+    <% if !person.notes.blank? -%>
+    <dt><%= _('Notes') -%>:</dt>
+    <dd>
+      <%= simple_format(h(person.notes)) %>
+    </dd>
+    <% end -%>
+  </dl>  
+	 
+  <%= render :partial => 'comments', :locals => {:comments => person.comments} %>    
+</div>	

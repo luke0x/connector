@@ -1,0 +1,10 @@
+MockFS is a test-obsessed library for mocking out the entire file system. It provides mock objects that clone the functionality of File, FileUtils, Dir, and other in-Ruby file-access libraries.
+
+http://rubyforge.org/projects/mockfs/
+
+REQUIREMENTS:
+* Extensions ( http://extensions.rubyforge.org/ )
+
+INSTALLATION:
+As root, run "./install.rb", which will copy the Ruby files into the right
+subdirectory. You can run "./install.rb --help" for information.

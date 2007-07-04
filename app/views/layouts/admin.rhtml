@@ -1,0 +1,25 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Admin Info</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <%= javascript_include_tag "lang/en" %>
+	<%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag 'login' %>
+</head>
+<body onload="" style="color: black; padding: 20px;">
+  <%= yield %>
+  <hr />
+  <div id="content">
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_jpg_orange:
+  id: 1
+  tag_id: 1
+  tagger_id: 1
+  taggable_id: 1
+  taggable_type: JoyentFile
+
+ian_daily_update_orange:
+  id: 2
+  tag_id: 1
+  tagger_id: 1
+  taggable_id: 8
+  taggable_type: Event
+pater_daily_update_raspberry:
+  id: 3
+  tag_id: 2
+  tagger_id: 2
+  taggable_id: 8
+  taggable_type: Event
+  
+person_rails:
+  id: 4
+  tag_id: 3
+  tagger_id: 1
+  taggable_id: 11
+  taggable_type: Person
+  
+person_solaris:
+  id: 5
+  tag_id: 4
+  tagger_id: 1
+  taggable_id: 11
+  taggable_type: Person
+
+message_tag:
+  id: 6
+  tag_id: 1
+  tagger_id: 1
+  taggable_id: 6
+  taggable_type: Message
+
+message_first_tag:
+  id: 7
+  tag_id: 1
+  tagger_id: 1
+  taggable_id: 1
+  taggable_type: Message
+
+list_orange:
+  id: 8
+  tag_id: 1
+  tagger_id: 1
+  taggable_id: 1
+  taggable_type: List

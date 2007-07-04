@@ -1,0 +1,26 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="person_photo_info">
+  <%= _("You can add an image (GIF, JPG, or PNG), which will be resized to 48x48 pixels") -%>.
+  <% if person.has_icon? -%>
+    <table style="margin-top: 10px;">
+      <tr>
+      	<td>
+      	  <img id="personPhotoPreview" width="64" src="<%= person_icon_url(:id => person.id) %>" height="64" class="icon_preview" style="display: inline;" />
+    	  </td>
+      	<td valign="middle">
+          <%= link_to_remote _('Delete'), { :url => { :action => 'remove_icon', :id => person.id }, :confirm => _('Immediately remove the photo from this person?') }, { :class => 'deleteItem', :style => 'vertical-align: middle;' } %>
+      	</td>
+      </tr>
+    </table>
+  <% end -%>
+  <br />
+  <input type="file" name="person[icon_file]" />
+</div>

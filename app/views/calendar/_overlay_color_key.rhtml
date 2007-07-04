@@ -1,0 +1,24 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% unless overlayed_users.blank? -%>
+  <ul class="overlayColorKey">
+  	<li style="padding-right: 0.25em;"><strong><%= _('Key') -%>:</strong></li>
+    <li>
+    	<span style="margin: 0; padding: 0 0.4em; line-height: 0; background-color: #2A5FCF">&nbsp;</span>
+    	<%= User.current.person.full_name %>
+    </li>
+    <% overlayed_users.each do |user| -%>
+      <li>
+        <span style="margin: 0; padding: 0 0.4em; line-height: 0; background-color: #<%= user.person.color %>">&nbsp;</span>
+        <%= "#{user.person.first_name} #{user.person.last_name}" %>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>

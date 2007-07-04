@@ -1,0 +1,72 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+
+/* Item View ------------------------------------------- */
+
+				
+	#bookmarks #contentPane dl {
+		}
+	#bookmarks #contentPane dt+dd {
+		margin-top:1em;
+		}
+	#bookmarks #contentPane dd+dt {	
+		margin-top:1em;
+		}
+	#bookmarks #contentPane dt {
+		width: 10em;
+		text-align: right;
+		display: block;
+		float: left;
+		margin: 0px 0 0 0;
+		font-weight: bold;
+	}
+	#bookmarks #contentPane dd {
+		margin:0.3em 0 0px 11em;
+		padding:0;
+		}
+
+		
+/* sidebar -------------------------------------------------- */
+
+
+	#bookmarks .all {
+		background-image: url(/images/icons/bookmark.png);
+		}
+	#bookmarks .everyones {
+		background-image: url(/images/icons/bookmarkEveryones.png);
+		}
+	#bookmarks .smartGroup {		
+		background-image: url(/images/icons/groupFolderSmart.png);
+		}
+	#bookmarks .group.subscription {
+		background-image: url(/images/icons/groupFolderSubscription.png);
+	}
+
+
+/* List View--------------------------------------------- */
+
+
+	.siteImage, th.siteImage {
+		width: 115px;;
+	}
+	.title, th.title {
+	}
+	.dateAdded, th.dateAdded {
+		width: 20%;
+	}
+	.goLink, th.goLink {
+		width:50px;
+	}
+
+	.saveBookmark {
+		background-image: url(/images/icons/bookmarkSave.png);
+		padding-left: 19px !important;
+	}	

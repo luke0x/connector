@@ -1,0 +1,115 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+first:
+  id: 1
+  user_id: 1
+  organization_id: 1
+  mailbox_id: 1
+  subject: a subject
+  date: <%= 3.hours.ago.to_s(:db) %>
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: false
+  size_in_bytes: 4096
+  internaldate: <%= 3.hours.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  filename: 1159907087.M423564P19340V01980007I0007604F_2.unknown,S=2358
+  active: true
+
+another:
+  id: 2
+  user_id: 1
+  organization_id: 1
+  mailbox_id: 1
+  subject: a subject
+  date: <%= 3.hours.ago.to_s(:db) %>
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: true
+  size_in_bytes: 10000
+  internaldate: <%= 2.hours.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  active: true
+
+trash:
+  id: 3
+  user_id: 1
+  organization_id: 1
+  mailbox_id: 3
+  subject: a subject
+  date: <%= 3.hours.ago.to_s(:db) %>
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: true
+  size_in_bytes: 1024
+  internaldate: <%= 2.hours.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  active: true
+
+trash2:
+  id: 4
+  user_id: 1
+  organization_id: 1
+  mailbox_id: 3
+  subject: a subject
+  date: <%= 3.hours.ago.to_s(:db) %>
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: true
+  size_in_bytes: 2345
+  internaldate: <%= 1.hour.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  active: true
+
+ian_message:
+  id: 5
+  mailbox_id: 1
+  user_id: 1
+  organization_id: 1
+  joyent_id: FOOBARBAZ
+  active: true
+  subject: a subject
+  date: <%= 3.hours.ago.to_s(:db) %>
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: true
+  size_in_bytes: 2345
+  internaldate: <%= 1.hour.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  active: true
+
+ian_message_base:
+  id: 6
+  mailbox_id: 13
+  user_id: 1
+  organization_id: 1
+  joyent_id: FEEDFACEDEADBEEF
+  active: true
+  subject: a subject
+  date: <%= 3.hours.ago.to_s(:db) %>
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: true
+  size_in_bytes: 2345
+  internaldate: <%= 1.hour.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  active: true

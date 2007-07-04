@@ -1,0 +1,5468 @@
+File: clientASP.NET_Base.log - Wiredumps for SOAP4R client / MSASPdotNETWebServices server.
+Date: Sat Jul 23 19:25:54 JST 2005
+
+##########
+# echoVoid
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:54 JST 2005
+Content-Length: 400
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:36 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:36 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 469
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoVoidResponse /></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:55 JST 2005
+Content-Length: 488
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:37 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:37 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 563
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string">SOAP4R Interoperability Test</return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (Entity reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:56 JST 2005
+Content-Length: 549
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:37 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:37 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 619
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string">&lt;&gt;"&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (Character reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:57 JST 2005
+Content-Length: 487
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:39 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:39 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 543
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string">    </return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:57 JST 2005
+Content-Length: 494
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:39 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:39 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 569
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (EUC encoded)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:58 JST 2005
+Content-Length: 501
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:40 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:40 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 576
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:59 JST 2005
+Content-Length: 501
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:40 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:40 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 576
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:59 JST 2005
+Content-Length: 460
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:41 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:41 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 528
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string" /></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (space)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:00 JST 2005
+Content-Length: 461
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:42 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:42 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 536
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string"> </return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:01 JST 2005
+Content-Length: 479
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:42 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:42 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 546
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringResponse><return xsi:type="xsd:string"> 
+ 	  
+ 	</return></types:echoStringResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:01 JST 2005
+Content-Length: 684
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:43 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:43 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 672
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringArrayResponse><return href="#id1" /></types:echoStringArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:string[3]"><Item>SOAP4R
+</Item><Item> Interoperability </Item><Item>	Test	</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:02 JST 2005
+Content-Length: 843
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605763876"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605763876"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605763876"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:43 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:43 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 659
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringArrayResponse><return href="#id1" /></types:echoStringArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:string[3]"><Item>SOAP4R</Item><Item>SOAP4R</Item><Item>SOAP4R</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Expected = "String#-605797256"  //  Actual = "String#-605797956"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:03 JST 2005
+Content-Length: 843
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605781826"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605781826"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605781826"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:45 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:45 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 659
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringArrayResponse><return href="#id1" /></types:echoStringArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:string[3]"><Item>SOAP4R</Item><Item>SOAP4R</Item><Item>SOAP4R</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Expected = "String#-605815356"  //  Actual = "String#-605816056"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:03 JST 2005
+Content-Length: 831
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605799866"></item>
+        <item></item>
+        <item href="#id-605799866"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605799866"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:45 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:45 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 626
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStringArrayResponse><return href="#id1" /></types:echoStringArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:string[3]"><Item /><Item /><Item /></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:04 JST 2005
+Content-Length: 464
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:46 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:46 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 537
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoIntegerResponse><return xsi:type="xsd:int">123</return></types:echoIntegerResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:05 JST 2005
+Content-Length: 471
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:46 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:46 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 544
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoIntegerResponse><return xsi:type="xsd:int">2147483647</return></types:echoIntegerResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:05 JST 2005
+Content-Length: 472
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:47 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:47 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 545
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoIntegerResponse><return xsi:type="xsd:int">-2147483648</return></types:echoIntegerResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:426:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:06 JST 2005
+Content-Length: 471
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:47 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:47 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 537
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 65). --&gt; Value was either too large or too small for an Int32.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:440:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:07 JST 2005
+Content-Length: 472
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:48 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:48 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 537
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 66). --&gt; Value was either too large or too small for an Int32.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:454:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:07 JST 2005
+Content-Length: 464
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:48 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:48 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 58). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:468:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:08 JST 2005
+Content-Length: 465
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:50 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:50 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 59). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:482:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:08 JST 2005
+Content-Length: 473
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:50 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:50 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 67). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:496:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:09 JST 2005
+Content-Length: 464
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:51 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:51 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 58). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoIntegerArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:10 JST 2005
+Content-Length: 657
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:51 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:51 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 643
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoIntegerArrayResponse><return href="#id1" /></types:echoIntegerArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:int[3]"><Item>1</Item><Item>2</Item><Item>3</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:11 JST 2005
+Content-Length: 588
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:53 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:53 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 587
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoIntegerArrayResponse><return href="#id1" /></types:echoIntegerArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:int[0]" /></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:12 JST 2005
+Content-Length: 467
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:54 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:54 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 542
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">3.14159274</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:13 JST 2005
+Content-Length: 465
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:54 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:54 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 541
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">1.234E+37</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:14 JST 2005
+Content-Length: 465
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:55 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:55 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 541
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">1.234E+37</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:14 JST 2005
+Content-Length: 465
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:55 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:55 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 541
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">1.234E+37</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:15 JST 2005
+Content-Length: 459
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:57 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:57 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 536
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">-1.4</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:16 JST 2005
+Content-Length: 457
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:58 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:58 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 533
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">0</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:17 JST 2005
+Content-Length: 457
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:58 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:58 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 533
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">0</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:17 JST 2005
+Content-Length: 457
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:59 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:59 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 533
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">0</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:18 JST 2005
+Content-Length: 457
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:59 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:14:59 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 533
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">0</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:19 JST 2005
+Content-Length: 458
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:00 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:00 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 535
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">NaN</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:19 JST 2005
+Content-Length: 458
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:00 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:00 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 535
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">INF</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:20 JST 2005
+Content-Length: 459
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:01 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:01 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 536
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatResponse><return xsi:type="xsd:float">-INF</return></types:echoFloatResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:672:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:21 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:01 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:02 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 72). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:686:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:21 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:02 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:02 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 72). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:700:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:22 JST 2005
+Content-Length: 458
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:04 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:04 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 56). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:714:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:22 JST 2005
+Content-Length: 458
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:04 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:04 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 56). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoFloatArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:23 JST 2005
+Content-Length: 662
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:05 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:05 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 649
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatArrayResponse><return href="#id1" /></types:echoFloatArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:float[3]"><Item>0.0001</Item><Item>1000</Item><Item>0</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:24 JST 2005
+Content-Length: 658
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:05 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:05 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 648
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoFloatArrayResponse><return href="#id1" /></types:echoFloatArrayResponse><soapenc:Array id="id1" soapenc:arrayType="xsd:float[3]"><Item>NaN</Item><Item>INF</Item><Item>-INF</Item></soapenc:Array></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:24 JST 2005
+Content-Length: 674
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:06 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:06 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 749
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructResponse><return href="#id1" /></types:echoStructResponse><q1:SOAPStruct id="id1" xsi:type="q1:SOAPStruct" xmlns:q1="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">1</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">1.1</varFloat></q1:SOAPStruct></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStruct (nil members)
+
+Result: Expected = #<SOAPBuildersInterop::SOAPStruct:0xb7cb47e8 @varFloat=nil, @varInt=nil, @varString=nil>  //  Actual = #<SOAPBuildersInterop::SOAPStruct:0xb7cacc78 @varFloat=0.0, @varInt=0>
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:25 JST 2005
+Content-Length: 651
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:06 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:06 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 701
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructResponse><return href="#id1" /></types:echoStructResponse><q1:SOAPStruct id="id1" xsi:type="q1:SOAPStruct" xmlns:q1="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">0</varInt><varFloat xsi:type="xsd:float">0</varFloat></q1:SOAPStruct></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStructArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:26 JST 2005
+Content-Length: 1217
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+        </item>
+        <item>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </item>
+        <item>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString xsi:type="xsd:string">c</varString>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:08 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:08 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1396
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructArrayResponse><return href="#id1" /></types:echoStructArrayResponse><soapenc:Array id="id1" xmlns:q1="http://soapinterop.org/xsd" soapenc:arrayType="q1:SOAPStruct[3]"><Item href="#id2" /><Item href="#id3" /><Item href="#id4" /></soapenc:Array><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">1</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">1.1</varFloat></q2:SOAPStruct><q3:SOAPStruct id="id3" xsi:type="q3:SOAPStruct" xmlns:q3="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">2</varInt><varString xsi:type="xsd:string">b</varString><varFloat xsi:type="xsd:float">2.2</varFloat></q3:SOAPStruct><q4:SOAPStruct id="id4" xsi:type="q4:SOAPStruct" xmlns:q4="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">3</varInt><varString xsi:type="xsd:string">c</varString><varFloat xsi:type="xsd:float">3.3</varFloat></q4:SOAPStruct></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:798:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:26 JST 2005
+Content-Length: 1392
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString xsi:type="xsd:string">c</varString>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:08 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:08 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 571
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (29, 26). --&gt; Cannot assign object of type System.Object[] to an object of type Simple.SOAPStruct[].</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:27 JST 2005
+Content-Length: 1257
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605776626"></item>
+        <item href="#id-605776626"></item>
+        <item>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605776626"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+      <varString xsi:type="xsd:string">a</varString>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:08 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:08 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1165
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructArrayResponse><return href="#id1" /></types:echoStructArrayResponse><soapenc:Array id="id1" xmlns:q1="http://soapinterop.org/xsd" soapenc:arrayType="q1:SOAPStruct[3]"><Item href="#id2" /><Item href="#id2" /><Item href="#id3" /></soapenc:Array><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">1</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">1.1</varFloat></q2:SOAPStruct><q3:SOAPStruct id="id3" xsi:type="q3:SOAPStruct" xmlns:q3="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">2</varInt><varString xsi:type="xsd:string">b</varString><varFloat xsi:type="xsd:float">2.2</varFloat></q3:SOAPStruct></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:27 JST 2005
+Content-Length: 1257
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605807356"></item>
+        <item href="#id-605807356"></item>
+        <item>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605807356"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+      <varString xsi:type="xsd:string">a</varString>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:09 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:09 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1165
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructArrayResponse><return href="#id1" /></types:echoStructArrayResponse><soapenc:Array id="id1" xmlns:q1="http://soapinterop.org/xsd" soapenc:arrayType="q1:SOAPStruct[3]"><Item href="#id2" /><Item href="#id2" /><Item href="#id3" /></soapenc:Array><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">1</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">1.1</varFloat></q2:SOAPStruct><q3:SOAPStruct id="id3" xsi:type="q3:SOAPStruct" xmlns:q3="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">2</varInt><varString xsi:type="xsd:string">b</varString><varFloat xsi:type="xsd:float">2.2</varFloat></q3:SOAPStruct></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:849:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:28 JST 2005
+Content-Length: 1282
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+        </item>
+        <item href="#id-605839656"></item>
+        <item href="#id-605839656"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605839656"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+      <varInt xsi:type="xsd:int">2</varInt>
+      <varString xsi:type="xsd:string">b</varString>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:09 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:09 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 571
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (19, 26). --&gt; Cannot assign object of type System.Object[] to an object of type Simple.SOAPStruct[].</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Expected = "String#-604804172"  //  Actual = "String#-604816362"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:28 JST 2005
+Content-Length: 1360
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString href="#id-605853216"></varString>
+        </item>
+        <item>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605853216"></varString>
+        </item>
+        <item>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605853216"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:10 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:10 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 1396
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoStructArrayResponse><return href="#id1" /></types:echoStructArrayResponse><soapenc:Array id="id1" xmlns:q1="http://soapinterop.org/xsd" soapenc:arrayType="q1:SOAPStruct[3]"><Item href="#id2" /><Item href="#id3" /><Item href="#id4" /></soapenc:Array><q2:SOAPStruct id="id2" xsi:type="q2:SOAPStruct" xmlns:q2="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">1</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">1.1</varFloat></q2:SOAPStruct><q3:SOAPStruct id="id3" xsi:type="q3:SOAPStruct" xmlns:q3="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">2</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">2.2</varFloat></q3:SOAPStruct><q4:SOAPStruct id="id4" xsi:type="q4:SOAPStruct" xmlns:q4="http://soapinterop.org/xsd"><varInt xsi:type="xsd:int">3</varInt><varString xsi:type="xsd:string">a</varString><varFloat xsi:type="xsd:float">3.3</varFloat></q4:SOAPStruct></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:907:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:29 JST 2005
+Content-Length: 1535
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-604896652"></varString>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString href="#id-604896652"></varString>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-604896652"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:10 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:10 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 571
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (29, 26). --&gt; Cannot assign object of type System.Object[] to an object of type Simple.SOAPStruct[].</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (now)
+
+Result: Expected = "2005-07-23T10:26:29Z"  //  Actual = "2005-07-23T03:26:29-0700"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:29 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T10:26:29Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:11 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:11 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2005-07-23T03:26:29.0000000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Expected = "0001-01-01T00:00:00Z"  //  Actual = "0001-01-01T16:00:00-0800"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:30 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:11 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:11 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">0001-01-01T16:00:00.0000000-08:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: Expected = "2038-12-31T00:00:00Z"  //  Actual = "2038-12-30T16:00:00-0800"
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:30 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:12 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:12 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2038-12-30T16:00:00.0000000-08:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1024:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:31 JST 2005
+Content-Length: 475
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:12 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:12 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 75). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:32 JST 2005
+Content-Length: 478
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:14 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:14 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2001-06-16T11:13:40.0120000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1046:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:32 JST 2005
+Content-Length: 515
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:14 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:14 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 531
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 115). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (positive TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:33 JST 2005
+Content-Length: 479
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:15 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:15 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2001-06-16T11:13:40.0000000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (negative TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:34 JST 2005
+Content-Length: 479
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:15 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:15 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:34 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:16 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:16 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:35 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:16 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:16 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (min TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:36 JST 2005
+Content-Length: 479
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:18 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:18 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 566
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDateResponse><return xsi:type="xsd:dateTime">2001-06-15T16:59:01.0000000-07:00</return></types:echoDateResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1112:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:36 JST 2005
+Content-Length: 480
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:18 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:18 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 80). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1123:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:37 JST 2005
+Content-Length: 480
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:19 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:19 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 80). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1134:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:38 JST 2005
+Content-Length: 475
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:19 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:19 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 75). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1145:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:38 JST 2005
+Content-Length: 474
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:20 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:20 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 74). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1159:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:39 JST 2005
+Content-Length: 472
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:20 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:20 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 72). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1173:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:40 JST 2005
+Content-Length: 471
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:22 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:22 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 71). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1187:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:40 JST 2005
+Content-Length: 471
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:22 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:22 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 71). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDate (empty: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1201:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:41 JST 2005
+Content-Length: 454
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:23 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:23 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 530
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 54). --&gt; String was not recognized as a valid DateTime.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:42 JST 2005
+Content-Length: 510
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:23 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:23 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 585
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBase64Response><return xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</return></types:echoBase64Response></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:42 JST 2005
+Content-Length: 466
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:24 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:24 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 534
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBase64Response><return xsi:type="xsd:base64Binary" /></types:echoBase64Response></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:43 JST 2005
+Content-Length: 566
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:24 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:24 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 585
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBase64Response><return xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</return></types:echoBase64Response></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBase64 (\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:44 JST 2005
+Content-Length: 526
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:25 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:25 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 545
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBase64Response><return xsi:type="xsd:base64Binary">AA==</return></types:echoBase64Response></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:44 JST 2005
+Content-Length: 534
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:25 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:25 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 553
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBase64Response><return xsi:type="xsd:base64Binary">YQBiAABjAAAA</return></types:echoBase64Response></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1273:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:45 JST 2005
+Content-Length: 523
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:27 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:27 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 520
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (9, 47). --&gt; Invalid length for a Base-64 string.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoHexBinary
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:46 JST 2005
+Content-Length: 541
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:28 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:28 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 610
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoHexBinaryResponse><return xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</return></types:echoHexBinaryResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoHexBinary(empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:46 JST 2005
+Content-Length: 475
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:28 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:28 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 544
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoHexBinaryResponse><return xsi:type="xsd:hexBinary"></return></types:echoHexBinaryResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoHexBinary(\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:47 JST 2005
+Content-Length: 477
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:29 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:29 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 546
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoHexBinaryResponse><return xsi:type="xsd:hexBinary">00</return></types:echoHexBinaryResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:48 JST 2005
+Content-Length: 493
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:29 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:29 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 562
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoHexBinaryResponse><return xsi:type="xsd:hexBinary">610062000063000000</return></types:echoHexBinaryResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:48 JST 2005
+Content-Length: 495
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:30 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:30 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 564
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoHexBinaryResponse><return xsi:type="xsd:hexBinary">6C6F7765722063617365</return></types:echoHexBinaryResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1344:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:49 JST 2005
+Content-Length: 479
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:30 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:30 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 548
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 48). --&gt; '0FG7' is not a valid BinHex text sequence. Line 8, position 48.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoBoolean (true)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:50 JST 2005
+Content-Length: 469
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:32 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:32 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 542
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBooleanResponse><return xsi:type="xsd:boolean">true</return></types:echoBooleanResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBoolean (false)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:50 JST 2005
+Content-Length: 470
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:32 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:32 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 543
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoBooleanResponse><return xsi:type="xsd:boolean">false</return></types:echoBooleanResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoBoolean (junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1379:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:51 JST 2005
+Content-Length: 469
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:33 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:33 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 531
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 63). --&gt; The string 'junk' is not a valid Boolean value.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDecimal (123456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:52 JST 2005
+Content-Length: 483
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:33 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:33 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 556
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDecimalResponse><return xsi:type="xsd:decimal">123456789012345678</return></types:echoDecimalResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:52 JST 2005
+Content-Length: 484
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:34 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:34 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 557
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDecimalResponse><return xsi:type="xsd:decimal">0.12345678901234567</return></types:echoDecimalResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:53 JST 2005
+Content-Length: 484
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:34 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:34 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 557
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDecimalResponse><return xsi:type="xsd:decimal">0.00000123456789012</return></types:echoDecimalResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:54 JST 2005
+Content-Length: 485
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:35 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:35 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 558
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDecimalResponse><return xsi:type="xsd:decimal">-0.00000123456789012</return></types:echoDecimalResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:54 JST 2005
+Content-Length: 485
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:35 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:35 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 558
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDecimalResponse><return xsi:type="xsd:decimal">-123456789012345.008</return></types:echoDecimalResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDecimal (-123.)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:55 JST 2005
+Content-Length: 483
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:37 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 200 OK
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:37 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private, max-age=0
+Content-Type: text/xml; charset=utf-8
+Content-Length: 556
+
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://soapinterop.org/" xmlns:types="http://soapinterop.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><types:echoDecimalResponse><return xsi:type="xsd:decimal">-12345678901234567</return></types:echoDecimalResponse></soap:Body></soap:Envelope>
+
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1458:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:56 JST 2005
+Content-Length: 484
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:37 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:37 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 78). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1472:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:56 JST 2005
+Content-Length: 484
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:38 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:38 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 78). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1486:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:57 JST 2005
+Content-Length: 468
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:38 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:38 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 62). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: Exception: 400: Bad Request (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1500:in `doTestBase'
+clientASP.NET.rb:15
+
+Wire dump:
+
+= Request
+
+POST /asmx/simple.asmx HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:26:57 JST 2005
+Content-Length: 468
+Host: www.mssoapinterop.org
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 100 Continue
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:39 GMT
+X-Powered-By: ASP.NET
+
+HTTP/1.1 400 Bad Request
+Server: Microsoft-IIS/5.0
+Date: Sat, 23 Jul 2005 11:15:39 GMT
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.40301
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 525
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. --&gt; There is an error in XML document (8, 62). --&gt; Input string was not in a correct format.</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+
+
+

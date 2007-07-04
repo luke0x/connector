@@ -1,0 +1,45 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<h5><%= _('Import events from an iCalendar file (.ics)') %></h5>
+<% form_tag(calendar_import_url, {:multipart => true, :onsubmit => 'return Calendar.validateSubmitImport(this);' , :class => "item_editor", :style => "margin-bottom: 0;" }) do -%>
+	<fieldset>
+		<% if flash['error'] -%>
+			<p class="warning"><%= flash['error'] %></p>
+		<% end -%>
+		<%= file_field_tag 'icalendar', {:style => ""} %>
+	</fieldset>
+	<h5><%= _('Add the events to') %>:</h5>
+	<fieldset>
+	  <table>
+	    <tr>
+		    <td><input id='existing_calendar_radio' type="radio" onclick="return CalendarImportDrawer.setToExisting();" name="calendar_type" value="existing" checked="checked" /></td>
+		    <td style="width: 100%;"><%= _('An existing calendar') %>:</td>
+	    </tr>
+	    <tr>
+        <td>&nbsp;</td>
+	      <td style="width: 100%;">
+          <%= hierarchical_groups_select(:id => 'existing_calendar', :name => 'existing_calendar', :groups => User.current.calendar_root_calendars, :selected => nil) %>
+    		</td>
+  		</tr>
+      <tr>
+        <td><input id='new_calendar_radio' type="radio" name="calendar_type" value="new" onclick="return CalendarImportDrawer.setToNew();" /></td>
+        <td style="width: 100%;"><%= _('A new calendar') %>:</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td style="width: 100%;"><input type="text" id="new_calendar" name="new_calendar" size="20" value="<%= _('New Calendar') %>" style="width: 200px;" disabled="disabled" /></td>
+      </tr>
+    </table>
+	</fieldset>
+	<div class="drawerButtons">
+		<input type="button" value="<%= _('Cancel') %>" onclick="return Drawers.hide('CalendarImport');" />
+		<%= submit_tag _('Import'), :name => 'command' %>
+	</div>
+<% end -%>

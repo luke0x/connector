@@ -1,0 +1,78 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init(@messages, 'list') -%>
+
+<div style="position: relative;" class="report">		
+  <%= render_list_header(@group_name, @paginator, 'messages') %>
+	<table id="tableList" class="tableList">
+		<colgroup>
+			<col style="width:6%;" />
+			<col style="width:6%;" />
+			<col style="width:6%;" />
+			<col style="width:20%;" />
+			<col style="width:36%;" />
+			<col style="width:20%;" />
+			<col style="width:6%;" />
+		</colgroup>
+    <thead>
+      <tr>
+        <th class="checkBox" align="center"><%= list_selection_tool %></th>
+		    <%= toggle_sort_th(_('Status'), 'seen', 'seen', {:class => 'status', :title => _('Read status')}) %>
+		    <%= toggle_sort_th(_('Attachments'), 'has_attachments', 'has_attachments', {:class => 'attachments', :title => _('Message has attachments?')}) %>
+		    <% if @mailbox && @mailbox.full_name == 'INBOX.Sent' -%>
+		      <%= toggle_sort_th(_('To'), 'recipients') %>
+		    <% else -%>
+		      <%= toggle_sort_th(_('From'), 'sender') %>
+		    <% end -%>
+		    <%= toggle_sort_th(_('Subject'), 'subject') %>
+		    <%= toggle_sort_th(_('Date'), 'date') %>
+        <th class="detailView"><span>Peek</span></th>
+      </tr>
+    </thead>
+    <tbody>
+			<% @messages.each_with_index do |message, index| -%>
+	  		<tr id="<%= message.dom_id %>_tr" itemDomId="<%= message.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
+	    		<td class="checkbox">
+	      		<input class="listCheckbox" id="<%= message.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= message.dom_id %>" type="checkbox" />
+	    		</td>
+					<td class="statusCol">
+					  <a href="<%= message_url(@mailbox_name, message) %>" id="status_icon_<%= message.dom_id %>">
+					    <%= status_icon(message) %>
+            </a>
+					</td>
+					<td class="enclosure">
+						<% if message.has_attachments? %>
+						  <%= image_tag 'icons/enclosure.png' %>
+						<% end %>
+					</td>
+	    		<td>
+  		      <% if @mailbox && @mailbox.full_name == 'INBOX.Sent' -%>
+					    <%= link_to message.to.collect{|t| address_string(t)}.join(', '), message_url(@mailbox_name, message) %>
+    		    <% else -%>
+					    <%= link_to address_string(message.from.first), message_url(@mailbox_name, message) %>
+    		    <% end -%>
+					</td>
+	    		<td>
+						<%= link_to h(decode(message.subject)), message_url(@mailbox_name, message) %>
+					</td>
+	    		<td>
+						<%= link_to message_date(message, false), message_url(@mailbox_name, message) %>
+					</td>
+	    		<td id="<%= message.dom_id %>_td_details_icon" class="details">
+						<%= link_to_function _('Details'), "PeekView.toggle('#{message.dom_id}', '#{peek_url(message, message.dom_id)}')" %>
+	    		</td>
+	  		</tr>
+	  		<tr id="<%= message.dom_id %>_tr_details" itemDomId="<%= message.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+	    		<td id="<%= message.dom_id %>_td_details" colspan="7" class="Details"></td>
+  			</tr>
+  		<% end %>
+    </tbody>
+	</table>
+</div>

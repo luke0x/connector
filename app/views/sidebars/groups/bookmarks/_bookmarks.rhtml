@@ -1,0 +1,33 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="defaultGroups groups"><ul class="groupsList">
+  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_all', { :icon_class => 'all', :name => _('Bookmarks'), :url => bookmarks_list_route_url(:bookmark_folder_id => User.current.bookmark_folder.id), :selected => (@bookmark_folder == User.current.bookmark_folder), :group => @bookmark_folder } %>
+  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_everyone', { :icon_class => 'everyones', :name => _("Others' Bookmarks"), :url => bookmarks_everyone_url, :selected => (@view_kind == 'list' and @bookmark_folder.blank? and @smart_group.blank? and @group_name == "Others' Bookmarks") } %>
+  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_notifications', { :icon_class => 'notifications', :name => _('Notifications'), :url => bookmarks_notifications_url, :selected => (@view_kind == 'notifications' and @bookmark_folder.blank? and @smart_group.blank?) } %>
+
+  <% @smart_groups.each do |smart_group| -%>
+    <%= render_smart_group 'sidebars/groups/bookmarks/bookmarks_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
+  <% end -%>
+
+	<% User.current.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
+		<%= render_standard_group 'sidebars/groups/bookmarks/bookmarks_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @bookmark_folder, :subscription => true, :css_class => 'group subscription' } %>
+	<% end -%>
+</ul></div>
+
+<div id="addGroup">
+	<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="<%= _('Add New Folder or Smart Folder') -%>"><%= _('New') -%>&hellip;</a>
+	<div id="addGroupMenu" style="display:none;">
+		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart Folder') -%></a>
+		<% if User.current.has_other_identities? -%>
+			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'Bookmarks', :context => 'subscribe')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
+		<% end -%>
+	</div>
+</div>
+<%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>

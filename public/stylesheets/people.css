@@ -1,0 +1,93 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Toolbar (actions) --------------------------------------------- */
+
+	.actionJajah a.disabled, .actionJajah a:hover.disabled {
+		background-position: 0px 0px;
+	}
+	.actionJajah a {
+		background-position: 0px -30px;
+	}
+	.actionJajah a:hover {
+		background-position: 0px -60px;
+	}
+	.actionJajah a:active, .actionJajah a.active {
+		background-position: 0px -90px;
+	}
+
+/* sidebar -------------------------------------------------- */
+
+	.people, #people .defaultGroupAll {		
+		background-image: url(/images/icons/addressBook16.png);
+		}
+	#people .smartGroup {		
+		background-image: url(/images/icons/groupFolderSmart.png);
+		}
+	#people .group {		
+		background-image: url(/images/icons/groupFolder.png);
+		}
+	#people .group.subscription {
+		background-image: url(/images/icons/contactSubscription.png);
+		}
+	#people a.smartGroup {		
+		background-image: url(/images/icons/contactSmart.png);
+		}
+	.userFolder {		
+		background-image: url(/images/icons/userFolder.png);
+		}
+
+/* item ------------------------------------------------------ */
+
+	.primaryItem {
+		height:12px;
+		width:12px;
+		margin:3px 0px 0px 0px;
+		background: url(/images/people/primary.png) no-repeat;
+		border:0px solid #000;
+		background-position: 50% 50%;
+		}
+	.primaryItem span {
+		display:none;
+		}
+	.makePrimaryItem {
+		height:12px;
+		width:12px;
+		background: url(/images/people/primaryMake.png) no-repeat;
+		border:0px solid #000;
+		background-position: 50% 50%;
+		}
+	.makePrimaryItem span {
+		display:none;
+		}
+		
+
+
+/* index view */
+
+td.person a, th.person a {
+  background-image: url(/images/icons/personType.png);
+  width: 12px;
+  height: 14px;
+  display: block;
+  text-indent: -3000px;
+  margin: 0 auto 0 auto;
+}
+th.person a.personType {	
+  background-position: 0 2px;
+}
+td.person a.user {	
+  background-position: 0 -98px;
+}
+td.person a.admin {	
+  background-position: 0 -198px;
+}
+td.person a.contact {	
+  background-position: 0 -298px;
+}

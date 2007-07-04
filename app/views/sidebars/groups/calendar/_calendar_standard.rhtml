@@ -1,0 +1,13 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<%= add_to_workspace(:calendar, standard_group) %>
+<hr />
+<%= link_to "ICS", calendar_ics_url(:calendar_id => standard_group.id), { :class => 'orangeBadge icsIcon', :style => 'margin-bottom:3px;', :title=> _('Subscribe to this ICS calendar')  } %>
+<%= link_to "RSS", calendar_rss_url(:calendar_id => standard_group.id), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

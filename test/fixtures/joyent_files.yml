@@ -1,0 +1,81 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_jpg:
+  id: 1
+  organization_id: 1
+  user_id: 1
+  folder_id: 1
+  filename: foo.jpg
+  size_in_bytes: 1024
+  notes: This is a picture
+  created_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  updated_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  joyent_file_type_description: Image
+
+ians_dog_jpg:
+  id: 2
+  organization_id: 1
+  user_id: 1
+  folder_id: 4
+  filename: dog.jpg
+  size_in_bytes: 1024
+  notes: This is a picture of my doggie!
+  created_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  updated_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  joyent_file_type_description: Image
+  
+peter_jpg:
+  id: 4
+  organization_id: 1
+  user_id: 2
+  folder_id: 5
+  filename: foopeter.jpg
+  size_in_bytes: 1024
+  notes: This is a picture that peter owns
+  created_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  updated_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  joyent_file_type_description: Image
+  
+
+jasons_cat:
+  id: 3
+  organization_id: 2
+  user_id: 4
+  folder_id: 7
+  filename: kitty.jpg
+  size_in_bytes: 1024
+  notes: Furry pussy cat.
+  created_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  updated_at: <%= (Time.now - 10.minutes).to_s(:db) %>
+  joyent_file_type_description: Image
+
+ian_html:
+  id: 5
+  organization_id: 1
+  user_id: 1
+  folder_id: 1
+  filename: bar.html
+  size_in_bytes: 2048
+  notes: Heya
+  created_at: <%= (Time.now - 10.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 10.days).to_s(:db) %>
+  joyent_file_type_description: HTML Document
+
+bernards_secret_file:
+  id: 6
+  organization_id: 1
+  user_id: 5
+  folder_id: 10
+  filename: bernard.txt
+  size_in_bytes: 12345
+  notes: infoz
+  created_at: <%= (Time.now - 10.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 10.days).to_s(:db) %>
+  joyent_file_type_description: Text

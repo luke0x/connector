@@ -1,0 +1,25 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="comments" class="<%= item.comments.empty? ? 'CommentsCollapsed' : 'CommentsExpanded' %>">
+	<h3 class=""><a href="#" onclick="return CommentList.toggle();"><%= _('Comments') -%> (<span id="comment-count"><%= item.comments.count %></span>)</a></h3>
+	<div id="commentsExpanded" style="<%= "display: none;" if item.comments.empty? %>">
+		<div id="comment-listing">
+			<%= render :partial => 'comments/comment', :collection => item.comments %>
+		</div>
+    <div class="commentForm">
+			<% form_remote_tag(:url => comment_add_url(:id => item), :after => "$('comment-submit').disabled = true;") do -%>
+		    <%= hidden_field_tag("item_type", item.class.to_s) %>
+		    <h4><%= User.current.person.full_name %> <%= _('Said') -%>&hellip;</h4>
+		    <textarea id="comment-body" name="body" cols="50" rows="10" style="width:44em; padding:.5em;"></textarea>
+				<div><input type="submit" id="comment-submit" value="<%= _('  Post  ') -%>" style="margin-top:1em;"></div>
+		  <% end -%>
+		</div>
+	</div>
+</div>

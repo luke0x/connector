@@ -1,0 +1,41 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<select id="organization_id" name="organization_id" onchange="new Ajax.Updater('content', '<%= url_for :controller => 'admin', :action => 'organization_info' %>' + '?organization_id=' + $F('organization_id'));">
+  <%= options_for_select(Organization.find(:all, :order => 'name').collect{|o| ["#{o.name} (#{o.system_domain.email_domain})", o.id]}, @organization.id) %>
+</select>
+
+<pre>
+<%= " Organization ID: #{@organization.id}"                                                                                                  %>
+<%= " Organization Name: #{@organization.name}"                                                                                                %>
+<%= " Active:          #{@organization.active}"                                                                                              %>
+<%= " Quotas/Usage:"                                                                                                                        %>
+<%= "   - Users:          #{@organization.quota.users} (#{@organization.users.size})"                                                         %>
+<%= "   - Disk:           #{@organization.quota.gigabytes}GB (#{((@organization.total_disk_usage / 1.megabyte.to_f) * 100).round / 100.0}MB)" %>
+<%= "   - Custom Domains: #{@organization.quota.custom_domains}"                                                                             %>
+<%= " Data Directory: "                                                                                                                     %>
+<%= "   - #{@organization.root_path} (#{`du -hs #{@organization.root_path} | awk '{print$1}'`.strip})"                                        %>
+<%= " Alias Domains:"                                                                                                                       %>
+<% @organization.domains.each do |domain|                                                                                                    -%>
+<%= "   #{domain.primary? ? 'P' : '-'}#{domain.system_domain? ? 'S' : '-'} #{domain.email_domain} (#{domain.web_domain})"                   %>
+<% end                                                                                                                                      -%>
+<%= " Users:"                                                                                                                               %>
+<% @organization.users.each do |user|                                                                                                        -%>
+<%= "   #{user.admin ? '*' : '-'} #{user.full_name} (#{user.username}/#{user.plaintext_password})"                                          %>
+<% end                                                                                                                                      -%>
+<%= " Data:"                                                                                                                                    %>
+<%= "   - Users/Contacts: #{@organization.users.size}/#{@organization.people.size - @organization.users.size}"                                     %>
+<%= "   - Events:         #{@organization.events.size}"                                                                                          %>
+<%= "   - Messages:       #{@organization.messages.size}"                                                                                        %>
+<%= "   - Files:          #{@organization.joyent_files.size}"                                                                                    %>
+<%= "   - Tags:           #{@organization.tags.size}"                                                                                            %>
+<%= "   - Taggings:       #{@organization.tags.inject(0){|sum, tag| sum + tag.taggings.size}}"                                                   %>
+<%= "   - Notifications:  #{@organization.notifications.size}"                                                                                   %>
+<%= "   - Comments:       #{@organization.users.inject(0){|sum, user| sum + user.comments.size}}"                                                %>
+</pre>

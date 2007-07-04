@@ -1,0 +1,159 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+	.addIconLeft {
+		padding: 2px 0 2px 18px;
+		background-repeat: no-repeat;
+	}
+	.addIconright {
+		padding: 2px 18px 2px 0;
+		background-repeat: no-repeat;
+	}
+
+/* General -------------------------------------------------- */
+
+	a.listDinger {
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/dinger.png);
+		margin: 0 0 0 5px;
+	}
+	a.listDinger {
+		background-position: 0 -200px;
+	}
+	a.dinger, a.dingerExpanded, span.dinger, span.dingerExpanded {	
+		background-image: url(/images/icons/dinger.png);
+	}
+	a.dinger, span.dinger, a.listDinger.collapsed {	
+		background-position: 0 -100px;
+	}
+	a.dinger:hover, span.dinger:hover, a.listDinger.collapsed:hover {
+		background-position: 0 -150px;
+	}
+	a.dingerExpanded, a.listDinger.expanded, span.dingerExpanded {
+		background-position: 0 0;
+	}
+	a.dingerExpanded:hover, a.listDinger.expanded:hover, span.dingerExpanded:hover {
+		background-position: 0 -50px;
+	}
+	.downloadDoc, .downloadDoc:active {
+		background-image: url(/images/icons/downloadDoc.png);
+		background-position: 0 0;
+		margin-bottom: 4px;
+		display: block;
+	}
+	.downloadDoc:hover {	
+		background-position: 0 -50px;
+	}
+	.tip {
+		background-image: url(/images/icons/tip.png);
+		background-repeat: no-repeat;
+		background-position: left center;
+		padding: 0 0 0 16px;
+		background-color: transparent;
+		font-style: italic;
+	}
+	
+/* Icons (file types) ------------------------------------*/
+	
+	.chris {
+		background: url(/images/icons/docs/16/chris.png) 0 50% no-repeat;
+		}
+	.doc  {
+		background: url(/images/icons/docs/16/doc.png) 0 50% no-repeat;
+		}
+	.file {
+		background: url(/images/icons/docs/16/text.png) 0 50% no-repeat;
+		}
+	.fla, .flv {
+		background: url(/images/icons/docs/16/fla.png) 0 50% no-repeat;
+		}
+	.html, .htm {
+		background: url(/images/icons/docs/16/html.png) 0 50% no-repeat;
+		}
+	.gruber {
+		background: url(/images/icons/docs/16/gruber.png) 0 50% no-repeat;
+		}
+	.ics  {
+		background: url(/images/icons/docs/16/ics.png) 0 50% no-repeat;
+		}
+	.joyent {
+		background: url(/images/icons/docs/16/joyent.png) 0 50% no-repeat;
+		}
+	.jpg, .jpeg, .gif, .png, .tif, .tiff, .bmp, .raw, .psd, .eps, .ai, .ps  {
+		background: url(/images/icons/docs/16/image.png) 0 50% no-repeat;
+		}
+	.luke {
+		background: url(/images/icons/docs/16/luke.png) 0 50% no-repeat;
+		}
+	.pdf  {
+		background: url(/images/icons/docs/16/pdf.png) 0 50% no-repeat;
+		}
+	.mov, .mpeg, .mpg, .mp4  {
+		background: url(/images/icons/docs/16/mov.png) 0 50% no-repeat;
+		}
+	.mp3, .aac, .wav, .wmv, .m4a, .m4p, .m4b, .aiff, .aif {
+		background: url(/images/icons/docs/16/sound.png) 0 50% no-repeat;
+		}
+	.ppt  {
+		background: url(/images/icons/docs/16/ppt.png) 0 50% no-repeat;
+		}
+	.psd  {
+		background: url(/images/icons/docs/16/psd.png) 0 50% no-repeat;
+		}
+	.qpw  {
+		background: url(/images/icons/docs/16/qpw.png) 0 50% no-repeat;
+		}
+	.raw  {
+		background: url(/images/icons/docs/16/raw.png) 0 50% no-repeat;
+		}
+	.slim, .bryan {
+		background: url(/images/icons/docs/16/bryan.png) 0 50% no-repeat;
+		}
+	.vcf  {
+		background: url(/images/icons/docs/16/vcf.png) 0 50% no-repeat;
+		}
+	.wmv  {
+		background: url(/images/icons/docs/16/wmv.png) 0 50% no-repeat;
+		}
+	.wpd, .wp  {
+		background: url(/images/icons/docs/16/wpd.png) 0 50% no-repeat;
+		}
+	.xls {
+		background: url(/images/icons/docs/16/xls.png) 0 50% no-repeat;
+		}
+	.young, .margaret {
+		background: url(/images/icons/docs/16/margaret.png) 0 50% no-repeat;
+		}
+		
+		
+/* 32x file icons ------------------------------------------- */
+
+
+	.files {
+		background-image: url(/images/icons/docs/32/files.png);
+	}
+	.peep {
+		background-image: url(/images/icons/docs/32/people.png);
+	}
+	.calendar {
+		background-image: url(/images/icons/docs/32/calendar.png);
+	}
+	.mail {
+		background-image: url(/images/icons/docs/32/mail.png);
+	}
+	.bookmark {
+		background-image: url(/images/icons/docs/32/bookmark.png);
+	}
+	.list {
+		background-image: url(/images/icons/docs/32/list.png);
+	}

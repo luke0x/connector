@@ -1,0 +1,159 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+# Ian's mailboxes simulate a courier imapd where things must be children of INBOX.
+ian_inbox:
+  id: 1
+  full_name: INBOX
+  uid_validity: 1234567
+  uid_next: 5
+  user_id: 1
+  organization_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  
+ian_sent:
+  id: 2
+  full_name: INBOX.Sent
+  uid_validity: 256457
+  uid_next: 10
+  user_id: 1
+  organization_id: 1
+  parent_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ian_trash:
+  id: 3
+  full_name: INBOX.Trash
+  uid_validity: 346445
+  uid_next: 54
+  user_id: 1
+  organization_id: 1
+  parent_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ian_drafts:
+  id: 4
+  full_name: INBOX.Drafts
+  uid_validity: 345732
+  uid_next: 2
+  user_id: 1
+  organization_id: 1
+  parent_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ian_inbox_concerts:
+  id: 5
+  full_name: INBOX.Concerts
+  uid_validity: 98765432
+  uid_next: 2
+  user_id: 1
+  organization_id: 1
+  parent_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ian_inbox_concerts_2006:
+  id: 6
+  full_name: INBOX.Concerts.2006
+  uid_validity: 246810
+  uid_next: 2
+  user_id: 1
+  organization_id: 1
+  parent_id: 5
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+# Peter's mailboxes simulate a cyrus-like imapd, where things can live at the
+# same level as INBOX.
+peter_inbox:
+  id: 7
+  full_name: INBOX
+  uid_validity: 345634
+  uid_next: 69
+  user_id: 2
+  organization_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+peter_trash:
+  id: 8
+  full_name: Trash
+  uid_validity: 435745
+  uid_next: 4
+  user_id: 2
+  organization_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+peter_sent:
+  id: 9
+  full_name: Sent
+  uid_validity: 3457345
+  uid_next: 4
+  user_id: 2
+  organization_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+peter_drafts:
+  id: 10
+  full_name: Drafts
+  uid_validity: 68866443
+  uid_next: 4
+  user_id: 2
+  organization_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+peter_inbox_love_notes:
+  id: 11
+  full_name: INBOX.love_notes
+  uid_validity: 4545
+  uid_next: 4
+  user_id: 2
+  organization_id: 1
+  parent_id: 7
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ian_delete_me:
+  id: 12
+  full_name: INBOX.delete_me
+  uid_validity: 2342544
+  uid_next: 4
+  user_id: 1
+  organization_id: 1
+  parent_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+ian_base:
+  id: 13
+  full_name: INBOX.base
+  uid_validity: 987654
+  uid_next: 2
+  user_id: 1
+  organization_id: 1
+  parent_id: 1
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+jason_inbox:
+  id: 14
+  full_name: INBOX
+  uid_validity: 123456723
+  uid_next: 7
+  user_id: 3
+  organization_id: 2
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>

@@ -1,0 +1,6171 @@
+File: clientSIMACE_Base.log - Wiredumps for SOAP4R client / SIM server.
+Date: Sat Jul 23 21:17:41 JST 2005
+
+##########
+# echoVoid
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoVoid'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoVoid'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:226:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:44 JST 2005
+Content-Length: 400
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:29 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:236:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:45 JST 2005
+Content-Length: 488
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:29 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (Entity reference)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:246:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:46 JST 2005
+Content-Length: 549
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:30 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (Character reference)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:257:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:46 JST 2005
+Content-Length: 487
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:31 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:267:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:47 JST 2005
+Content-Length: 494
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:31 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (EUC encoded)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:277:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:48 JST 2005
+Content-Length: 501
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:32 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:287:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:49 JST 2005
+Content-Length: 501
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (日本語Japanese) こんにちは</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:33 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (empty)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:297:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:50 JST 2005
+Content-Length: 460
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:34 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (space)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:307:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:50 JST 2005
+Content-Length: 461
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:35 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:317:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:51 JST 2005
+Content-Length: 479
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:35 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStringArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:327:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:52 JST 2005
+Content-Length: 684
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:36 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:351:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:55 JST 2005
+Content-Length: 843
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605479992"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605479992"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605479992"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:40 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:363:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:56 JST 2005
+Content-Length: 843
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605488832"></item>
+        <item>SOAP4R</item>
+        <item href="#id-605488832"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605488832"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:40 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:375:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:57 JST 2005
+Content-Length: 831
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-605497672"></item>
+        <item></item>
+        <item href="#id-605497672"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-605497672"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:41 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:398:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:57 JST 2005
+Content-Length: 464
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:42 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:408:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:58 JST 2005
+Content-Length: 471
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:43 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:418:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:17:59 JST 2005
+Content-Length: 472
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:43 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:429:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:01 JST 2005
+Content-Length: 471
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:46 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:443:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:02 JST 2005
+Content-Length: 472
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:46 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:457:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:03 JST 2005
+Content-Length: 464
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:47 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:471:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:03 JST 2005
+Content-Length: 465
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:48 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:485:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:04 JST 2005
+Content-Length: 473
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:48 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:499:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:05 JST 2005
+Content-Length: 464
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:49 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoIntegerArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:512:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:05 JST 2005
+Content-Length: 657
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:50 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:532:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:06 JST 2005
+Content-Length: 588
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:51 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:554:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:07 JST 2005
+Content-Length: 467
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:51 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:564:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:08 JST 2005
+Content-Length: 465
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:52 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:574:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:08 JST 2005
+Content-Length: 465
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:53 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:584:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:09 JST 2005
+Content-Length: 465
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:53 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:594:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:10 JST 2005
+Content-Length: 459
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:54 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:604:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:10 JST 2005
+Content-Length: 457
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:55 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:614:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:11 JST 2005
+Content-Length: 457
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:55 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:624:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:12 JST 2005
+Content-Length: 457
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:56 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:634:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:12 JST 2005
+Content-Length: 457
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:57 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:644:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:13 JST 2005
+Content-Length: 458
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:58 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:654:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:14 JST 2005
+Content-Length: 458
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:58 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:664:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:14 JST 2005
+Content-Length: 459
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:19:59 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:675:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:15 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:00 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:689:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:16 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:00 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:703:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:17 JST 2005
+Content-Length: 458
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:01 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:717:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:17 JST 2005
+Content-Length: 458
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:02 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloatArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:730:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:18 JST 2005
+Content-Length: 662
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:03 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:743:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:19 JST 2005
+Content-Length: 658
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:03 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStruct
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:765:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:20 JST 2005
+Content-Length: 674
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:04 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStruct (nil members)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:775:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:21 JST 2005
+Content-Length: 651
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:05 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:788:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:22 JST 2005
+Content-Length: 1217
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        </item>
+        <item>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </item>
+        <item>
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:06 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:801:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:22 JST 2005
+Content-Length: 1392
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:07 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:828:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:23 JST 2005
+Content-Length: 1257
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605205442"></item>
+        <item href="#id-605205442"></item>
+        <item>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605205442"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varInt xsi:type="xsd:int">1</varInt>
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:07 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:840:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:24 JST 2005
+Content-Length: 1257
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605217612"></item>
+        <item href="#id-605217612"></item>
+        <item>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605217612"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varInt xsi:type="xsd:int">1</varInt>
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:08 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:852:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:24 JST 2005
+Content-Length: 1282
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        </item>
+        <item href="#id-605231082"></item>
+        <item href="#id-605231082"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605231082"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varInt xsi:type="xsd:int">2</varInt>
+      <varString xsi:type="xsd:string">b</varString>
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:09 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:895:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:25 JST 2005
+Content-Length: 1360
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString href="#id-605257972"></varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        </item>
+        <item>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605257972"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </item>
+        <item>
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605257972"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:10 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:910:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:26 JST 2005
+Content-Length: 1535
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varInt xsi:type="xsd:int">1</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605302232"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varInt xsi:type="xsd:int">3</varInt>
+          <varString href="#id-605302232"></varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605302232"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:10 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (now)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:994:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:27 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T12:18:27Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:11 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1005:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:27 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:12 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1016:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:28 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:12 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1027:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:29 JST 2005
+Content-Length: 475
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:13 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1038:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:30 JST 2005
+Content-Length: 478
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:14 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1049:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:31 JST 2005
+Content-Length: 515
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:15 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (positive TZ)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1060:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:31 JST 2005
+Content-Length: 479
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:16 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (negative TZ)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1071:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:32 JST 2005
+Content-Length: 479
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:16 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1082:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:33 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:17 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1093:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:34 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:18 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (min TZ)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1104:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:34 JST 2005
+Content-Length: 479
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:19 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1115:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:35 JST 2005
+Content-Length: 480
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:19 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1126:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:36 JST 2005
+Content-Length: 480
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:20 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1137:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:36 JST 2005
+Content-Length: 475
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:21 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1148:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:37 JST 2005
+Content-Length: 474
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:21 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1162:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:38 JST 2005
+Content-Length: 472
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:22 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1176:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:38 JST 2005
+Content-Length: 471
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:23 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1190:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:39 JST 2005
+Content-Length: 471
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:24 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDate (empty: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1204:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:40 JST 2005
+Content-Length: 454
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:24 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1219:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:41 JST 2005
+Content-Length: 510
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:25 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1231:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:41 JST 2005
+Content-Length: 466
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:26 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1242:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:42 JST 2005
+Content-Length: 566
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:27 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBase64 (\0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1253:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:43 JST 2005
+Content-Length: 526
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:28 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1264:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:44 JST 2005
+Content-Length: 534
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:28 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1276:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:45 JST 2005
+Content-Length: 523
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:29 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoHexBinary
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1290:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:46 JST 2005
+Content-Length: 541
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:31 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoHexBinary(empty)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1301:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:47 JST 2005
+Content-Length: 475
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:31 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1312:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:48 JST 2005
+Content-Length: 477
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:32 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1323:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:48 JST 2005
+Content-Length: 493
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:33 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1335:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:49 JST 2005
+Content-Length: 495
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:33 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1347:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:50 JST 2005
+Content-Length: 479
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:34 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBoolean (true)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1360:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:50 JST 2005
+Content-Length: 469
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:35 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBoolean (false)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1370:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:51 JST 2005
+Content-Length: 470
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:36 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoBoolean (junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1382:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:52 JST 2005
+Content-Length: 469
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:36 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (123456)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1395:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:53 JST 2005
+Content-Length: 483
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:37 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1406:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:54 JST 2005
+Content-Length: 484
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:38 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1417:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:55 JST 2005
+Content-Length: 484
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:40 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1428:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:56 JST 2005
+Content-Length: 485
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:40 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1439:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:57 JST 2005
+Content-Length: 485
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:41 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (-123.)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1450:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:57 JST 2005
+Content-Length: 483
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:42 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1461:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:58 JST 2005
+Content-Length: 484
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:42 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1475:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:59 JST 2005
+Content-Length: 484
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:43 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1489:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:18:59 JST 2005
+Content-Length: 468
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:44 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: Exception: 404: Not Found (SOAP::HTTPStreamError)
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:183:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1503:in `doTestBase'
+clientSIMACE.rb:16
+
+Wire dump:
+
+= Request
+
+POST /round2 HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:19:00 JST 2005
+Content-Length: 468
+Host: soapinterop.simdb.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 404 Not Found
+Date: Sat, 23 Jul 2005 12:20:45 GMT
+Server: Apache/1.3.9 (Unix) mod_perl/1.21
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+104
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+</HEAD><BODY>
+<H1>Not Found</H1>
+The requested URL /round2 was not found on this server.<P>
+<HR>
+<ADDRESS>Apache/1.3.9 Server at oort Port 80</ADDRESS>
+</BODY></HTML>
+
+0
+
+
+
+

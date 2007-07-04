@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+if ARGV.size != 1 
+  puts "usage: ./add_domains <email_domain>"
+  exit
+end
+
+require File.dirname(__FILE__) + '/../config/boot'  
+puts "Loading #{RAILS_ENV} environment.\n"
+require "#{RAILS_ROOT}/config/environment"
+
+org_domain   = Domain.find_by_email_domain(ARGV[0])
+organization = org_domain.organization if org_domain
+  
+if organization.blank?
+  puts "#{ARGV[0]} is an invalid domain."  
+  exit
+end   
+
+puts "The current domains associated with #{organization.name} (#{organization.id}) are:"
+organization.domains.each do |domain|
+  puts " #{domain.primary? ? 'P' : '-'} #{domain.system_domain? ? 'S' : '-'} #{domain.email_domain} (#{domain.web_domain})"
+end
+   
+default_email_domain = "#{ARGV[0].split('.').first}.com"
+print "\nEmail domain [#{default_email_domain}]: "
+$stdout.flush
+email_domain = $stdin.gets.strip
+email_domain = default_email_domain if email_domain.blank?
+
+default_web_domain = "home.#{email_domain}"
+print "Email domain [#{default_web_domain}]: "  
+$stdout.flush
+web_domain = $stdin.gets.strip
+web_domain = default_web_domain if web_domain.blank?
+
+print "Primary domain [no]: "
+$stdout.flush
+primary_domain = $stdin.gets.strip
+primary_domain = primary_domain.downcase == 'yes'                                      
+                 
+puts "\nYou are about to add the following domain:"
+puts "  Email domain:    #{email_domain}"     
+puts "  Web domain:      #{web_domain}"
+puts "  Primary domain:  #{primary_domain}"
+
+print "\nAre you sure you want to create this domain [no]? " 
+$stdout.flush
+sure = $stdin.gets.strip                                              
+sure = 'no' unless sure.length > 0                  
+
+if sure.downcase == 'yes'    
+  puts "Verifying that the domain does not already exist."
+  if Domain.find_by_email_domain(email_domain) || Domain.find_by_web_domain(web_domain)
+    puts "Domain '#{email_domain}' or '#{web_domain}' already exists."
+    exit  
+  end
+  
+  puts "Adding the domain to the organization."                           
+  begin
+    Domain.transaction do
+      if primary_domain
+        organization.domains.each{|domain| domain.update_attribute(:primary, false) if domain.primary?}  
+      end                                                                          
+    
+      organization.domains.create(:email_domain => email_domain, :web_domain => web_domain, :primary => primary_domain, :system_domain => false)
+    end
+    
+    puts "Domain has successfully been added"                                                                                                                  
+  rescue => e
+    puts "Unable to add the domain: #{e.message}"
+  end
+else
+  puts "\nDomain creation has been cancelled!"  
+end

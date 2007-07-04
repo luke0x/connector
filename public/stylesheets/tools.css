@@ -1,0 +1,177 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+	#graph_container {
+		font-size: 10px;
+		position: absolute;
+		float: right;
+		margin: 0px !important;
+		display: block;
+		top: 22px;
+		right: 14px;
+		font-size: 70%;
+		white-space: nowrap;
+		}
+	#graphLabel {
+		position: absolute;
+		right: 35px;
+		top: 0;
+		width: 12em;
+		text-align: right;
+		}
+	#graph {	
+		position: absolute;
+		right: 0;
+		top: 1px;
+		display: Block;
+		width: 30px;
+		border: 1px solid gray;
+		padding: 0px;
+		margin-top: 3px;
+		text-align: right;
+		}
+	#graph .bar { 
+		display: block;
+		background: #f9a400;
+		text-align: center;
+		color: #333;
+		height: 6px;
+		line-height: 6px;
+		}
+	#graph .bar span {
+		position: absolute;
+		left: 1em;
+		}
+
+/* notifications palette --------------------------------------------- */
+
+  a.unavailable {
+  	background-color: #FED28E;
+  	}
+  a.unavailable:hover {
+  	background-color: #EAB86D !important;
+  	color: #000;
+  	text-decoration: none !important;
+  	}
+
+
+/* overlay List --------------------------------------------- */
+
+	#drawerCalendarOverlay ul.tagList {
+		float: left;
+		list-style-type: none;
+		margin: 0 0 .5em 0;
+		clear: left;
+	}
+	#drawerCalendarOverlay ul.tagList li {
+		position: relative;
+		margin: 0 0 2px 2px;
+		display: inline-block;
+		float: left;
+		-moz-border-radius: .9em .9em .9em .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		-webkit-border-top-right-radius: .9em;
+		-webkit-border-bottom-right-radius: .9em;
+		background-color: #CACCCB;
+	}
+	#drawerCalendarOverlay li a.tag, #drawerCalendarOverlay ul.tagsAssigned li a.tag {
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/tagBits.png);
+	}
+	#drawerCalendarOverlay ul.tagList li a.tag {
+		-moz-border-radius: .9em 0 0 .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		padding: 2px 8px 2px 18px;
+		background-position: -1997px 50%;
+		color: #666;
+	}
+	#drawerCalendarOverlay ul.tagList li a.tag:hover {
+		background-position: -2997px 50%;
+		color: #000;
+	}
+	
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li a.tag {
+		color: #8B5E00 !important;
+		background-position: -3997px 50%;
+	}
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li {
+		background-color: #FFBC00 !important;
+	}
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li a.tag:hover {
+		background-position: -4997px 50%;
+		color: #000 !important;
+	}
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li {
+		background-color: #FFBC00 !important;
+	}
+
+/* Autofill -------------------------------------------------------- */
+
+	.autocompleteMenu {
+		z-index: 5510 !important;
+	}
+	.autocompleteMenu ul {	
+		list-style-type: none;
+		margin:0px;
+		padding: 0;
+		min-width: 20em;
+		border: 1px solid #999;
+		background-color: #FFF;
+	}
+	.autocompleteMenu ul li {
+		padding: 2px 1.5em;
+		border-bottom: 1px solid #F3F3F3;
+		color: #393A3C;
+	}
+	.autocompleteMenu ul li.selected {
+		background: #2A5FCF url(/images/bg/highlightBG.png) top left repeat-x;
+		color: #CADEF7;
+	}
+	.autocompleteMenu ul li span.autoCompleteHighlite {
+		color: #3970D5;
+		font-weight: bold;
+	}
+	.autocompleteMenu ul li.selected span.autoCompleteHighlite {
+		color: #FFF;
+		font-weight: bold;
+	}
+
+/* Drawer -------------------------------------------------------- */
+
+	#Drawers .drawerContent {
+		background-color: #F9F9F9;
+		padding: 12px 12px 20px 12px;
+		background-image: url(/images/bg/drawer.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		border-color: #AAA;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+	}
+	#Drawers fieldset, #Drawers fieldset {
+		background-color: #EFEFEF;
+		background-position: 0 0;
+		padding: 1em;
+		border-color: #E2E2E2 #FFF #FFF #E2E2E2;
+		border-width: 1px;
+		border-style: solid;
+	}
+	#Drawers .drawerButtons {
+		padding: 7px 0 7px 1em;
+	}
+	#Drawers h5 {
+		display: block;
+		padding: 6px 0px 1px 1em;
+	}
+	#Drawers p {
+		margin: 0; 
+		padding: 0 0 1em 0; 
+	}

@@ -1,0 +1,76 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% # admins + self can edit -%>
+<% if User.current.admin? or person == User.current.person -%>
+    <% # already a user -%>
+    <% if person.admin? or person.user? -%>
+      <h2><%= _('Edit Account') %></h2>
+      <div id="person_user_account_area" class="infoGroup">
+      <%= render :partial => 'edit_account_user', :locals => {:person => person} %>
+      </div>
+    <% # already a guest -%>
+    <% elsif person.guest? -%>
+      <h2><%= _('Edit Account') %></h2>
+      <div id="person_user_account_area" class="infoGroup">
+      <%= render :partial => 'edit_account_guest', :locals => {:person => person} %>
+      </div>
+    <% # maybe make person a user -%>
+    <% else -%>
+      <h2><%= _('Account Type') %></h2>
+      <div id="person_user_account_area" class="infoGroup">
+      <% if Organization.current.can_add_user? -%>
+      	<table class="accountTypes">
+    			<tr>
+    				<td valign="top" style="padding-top: .2em;">
+    					<input id="personTypeContactRadio" type="radio" value="contact" name="person[type]"<%= 'disabled="disabled"' unless person.contact? %> <%= 'checked="checked"' if person.contact? %> onclick="People.setPersonContactAccount();" />
+    				</td>
+    				<td valign="top" style="padding-bottom: .5em;padding-left: .2em;">
+    					<strong style="display:block;"><%= _('None &ndash; Contact Only') -%></strong>
+    					<%= _('Will have no access to your Connector.') -%>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td valign="top" style="padding-top: .2em;">
+    					<input id="personTypeGuestRadio" type="radio" value="guest" name="person[type]" <%= 'disabled="disabled"' unless person.contact? %> <%= 'checked="checked"' if person.guest? %> onclick="People.setPersonGuestAccount();" />
+    				</td>
+    				<td valign="top" style="padding-bottom: .5em;padding-left: .2em;">
+    					<strong style="display:block;"><%= _('Guest') -%></strong>
+    					<%= _('Can only see or manage specified folders in your "Strongspace".') -%>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td valign="top" style="padding-top: .2em;">
+    					<input id="personTypeUserRadio" type="radio" value="user" name="person[type]" <%= 'disabled="disabled"' unless person.contact? %> <%= 'checked="checked"' if person.admin? or person.user? %> onclick="People.setPersonUserAccount();" />
+    				</td>
+    				<td valign="top" style="padding-bottom: .5em;padding-left: .2em;">
+    					<strong style="display:block;"><%= _('User') -%></strong>
+    					<%= _('Will have unrestricted access to the connector.') -%>
+    				</td>
+    			</tr>
+    		</table>
+    		<div id="personContactAccount" <%= 'style="display:none;"' unless person.contact? %>>
+    		</div>
+    		<div id="personGuestAccount" <%= 'style="display:none;"' unless person.guest? %>>
+    			<hr />
+    			<h3><%= _('Guest Info') -%></h3>
+    				<%= render :partial => 'edit_account_guest', :locals => {:person => person} %>
+    		</div>
+    		<div id="personUserAccount" <%= 'style="display:none;"' unless person.admin? or person.user? %>>
+    			<hr />
+    			<h3><%= _('User Info') -%></h3>
+    				<%= render :partial => 'edit_account_user', :locals => {:person => person} %>	
+    		</div>
+    	<% # org reached user quota -%>
+      <% else -%>
+        <%= _('Your have reached your user limit. To create a new user either delete a current one or <a target="_blank" class="goto" href="http://customer.joyent.com/login">upgrade your plan</a>') %>.
+      <% end -%>
+			</div>
+    <% end -%>
+<% end -%>

@@ -1,0 +1,16 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% if @view_kind == 'list' -%>
+  <%= link_to_function _('Delete'), "return Toolbar.deleteList('#{item_delete_url}');", { :title => _('Delete all selected items.'), :id => 'actionDeleteLink' } %>
+<% elsif @view_kind == 'strongspace' -%>
+  <%= link_to_function _('Delete'), "return Toolbar.deleteItem(this, '#{files_strongspace_delete_url}');", { :title => _('Delete this item.'), :id => 'actionDeleteLink' } %>
+<% else -%>
+  <%= link_to_function _('Delete'), "return Toolbar.deleteItem(this, '#{item_delete_url}');", { :title => _('Delete this item.'), :id => 'actionDeleteLink' } %>
+<% end -%>

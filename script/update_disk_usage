@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require 'optparse'
+
+diff = true
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: update_disk_usage [options] [environment]"
+  opts.on("-a", "--all",  "Updates the disk usage for all of the orgs.")                          {diff = false}
+  opts.on("-d", "--diff", "Updates the disk usage for just the orgs that have changed. (default)"){diff = true }
+end.parse!
+
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'production'
+
+require File.dirname(__FILE__) + '/../config/boot'  
+puts "Loading #{RAILS_ENV} environment.\n"
+require "#{RAILS_ROOT}/config/environment"
+
+usage_file = diff ? JoyentConfig.disk_usage_diff_file : JoyentConfig.disk_usage_new_file
+logger     = Logger.new("#{RAILS_ROOT}/log/update_disk_usage.log")
+
+# Will work with a diff file (only taking the changes in the new file) or a complete listing file
+ORG_AND_USAGE_REGEX = /^(> |)([0-9]*)\s+.*?\/([0-9]+)$/
+
+logger.info("#{Time.now.xmlschema} Running '#{diff ? 'diff' : 'full'}' disk usage update in '#{RAILS_ENV}'.")
+if File.exists?(usage_file)
+  IO.readlines(usage_file).each do |line|
+    begin
+      if line =~ ORG_AND_USAGE_REGEX
+        size_in_mb = $2.to_i / 1.megabyte
+        Organization.update($3, {'disk_usage' => size_in_mb}) 
+      end
+    rescue ActiveRecord::RecordNotFound
+      logger.error("Org #{$3} could not be found.")
+    end
+  end
+else
+  logger.error("ERROR: Usage file '#{usage_file}' does not exist.")
+end
+logger.info("#{Time.now.xmlschema} Update complete.")

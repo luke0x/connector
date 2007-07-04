@@ -1,0 +1,53 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table id="tableList" class="tableList">
+	<colgroup>
+		<col style="width:22%;" />
+		<col style="width:18%;" />
+		<col style="width:35%;" />
+		<col style="width:19%;" />
+		<col style="width:6%;" />
+	</colgroup>
+	<thead>
+		<tr>
+  		<th class="firstCol"><%= _('Item') -%></th>
+  		<th><%= _('Item Type') -%></th>
+  		<th><%= _('Comment') -%></th>
+  		<th><%= _('Added') -%></th>
+  		<th class="detailView"><span>Peek</span></th>
+  	</tr>
+  </thead>
+  <tbody>
+	<% comments.each_with_index do |comment, index| -%>
+	<% item = comment.commentable %> 
+	  <% dom_id = "#{params[:dom_prefix]}_#{index}_#{item.dom_id}" %>
+		<tr id="<%= dom_id %>_tr" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+  		<td class="firstCol">
+				<%= link_to h(item.name), item_url(item) %>
+			</td>
+  		<td>
+				<%= link_to item.class_humanize, item_url(item) %>
+			</td>
+			<td>
+				<%= link_to "\"#{comment.body}\" - " + comment.user.full_name, item_url(item) %>
+			</td>
+  		<td>
+				<%= link_to item_modified(comment), item_url(item) %>
+			</td>           
+			<td id="<%= dom_id %>_td_details_icon" class="details">
+				<%= link_to_function _('Details'), "PeekView.toggle('#{dom_id}', '#{peek_url(item, dom_id)}')" %>
+			</td>
+		</tr>           
+		<tr id="<%= dom_id %>_tr_details" itemDomId="<%= item.dom_id %>" style="display: none;" class="<%= index.odd? ? 'oddRow' : 'evenRow' %>">
+			<td id="<%= dom_id %>_td_details" colspan="5" class="Details"></td>
+		</tr>
+	<% end %> 
+	</tbody>
+</table>

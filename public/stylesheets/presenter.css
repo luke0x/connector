@@ -1,0 +1,90 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+
+.warning {
+  border: 1px solid red;
+  background-color: #ffc3cc;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+}
+
+.warning ul {
+  color: red;
+}
+
+.item_details {
+  border-spacing: 0;
+  width: auto;
+/*  display: none; */
+/*  background-color: #EEE; */
+  margin: 0.5em;
+}
+
+
+.item_details tr td {
+  padding: 0 1em;
+/*  border-bottom: thin solid #DDD; */
+}  
+
+.item_details tr td.label {
+  text-align: right;
+  font-weight: bold;
+}
+
+.item_details tr th {
+  font-weight: normal;
+  text-align: left;
+  padding-top: 0.5em;
+  border-bottom: thin solid #888;
+}
+
+
+h3.association_label {
+  border-bottom: thin solid black;
+  padding-top: 0.5em;
+}
+
+div.associated_item {
+/*  background-color: #FFF; */
+  margin: 0.5em;
+  padding: 0.3em;
+}
+
+form.item_editor {
+/*  border: thick solid #DDE; */
+  padding: 0.5em;
+/*  background-color: #EEF; */
+}
+
+form.item_editor input {
+/*  border: thin solid #888; */
+  padding: 0.1em 0.2em;
+}
+
+form.item_editor table.item_fields {
+/*  background-color: #EFE; */
+/*  border: thin solid #888; */
+}
+
+
+ul.condensed_items {
+/*  background-color: #EFE; */
+  margin: 0.2em;
+}
+
+
+input, select, textarea {
+/*  background-color: #EEF; */
+}
+
+

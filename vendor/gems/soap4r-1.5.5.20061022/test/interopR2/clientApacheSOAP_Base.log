@@ -1,0 +1,3171 @@
+File: clientApacheSOAP_Base.log - Wiredumps for SOAP4R client / ApacheSOAP2.2 server.
+Date: Sat Jul 23 19:25:32 JST 2005
+
+##########
+# echoVoid
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoVoid'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoVoid'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:223:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:233:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (Entity reference)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:243:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (Character reference)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:254:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:264:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (EUC encoded)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:274:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:284:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (empty)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:294:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (space)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:304:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoString'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoString'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:314:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStringArray
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:324:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:348:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:360:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:372:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:395:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:405:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:415:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:426:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:440:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:454:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:468:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:482:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoInteger'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoInteger'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:496:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoIntegerArray
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:509:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoIntegerArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoIntegerArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:529:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:551:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:561:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:571:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:581:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:591:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:601:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:611:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:621:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:631:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:641:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:651:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:661:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:672:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:686:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:700:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloat'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloat'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:714:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloatArray
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:727:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoFloatArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoFloatArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:740:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStruct
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:762:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStruct (nil members)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:772:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:785:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:798:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:825:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:837:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:849:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:892:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:907:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (now)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:991:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1002:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1013:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1024:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1035:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1046:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (positive TZ)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1057:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (negative TZ)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1068:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1079:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1090:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (min TZ)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1101:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1112:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1123:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1134:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1145:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1159:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1173:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1187:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDate (empty: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDate'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDate'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1201:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1216:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1228:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1239:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBase64 (\0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1250:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1261:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBase64'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBase64'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1273:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoHexBinary
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1287:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoHexBinary(empty)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1298:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1309:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1320:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1332:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoHexBinary'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoHexBinary'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1344:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBoolean (true)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1357:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBoolean (false)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1367:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoBoolean (junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoBoolean'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoBoolean'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1379:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (123456)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1392:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1403:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1414:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1425:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1436:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (-123.)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1447:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1458:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1472:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1486:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: Exception: Connection refused - connect(2) (nagoya.apache.org, #5049) (Errno::ECONNREFUSED)
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1071:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoDecimal'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoDecimal'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1500:in `doTestBase'
+clientApacheSOAP.rb:15
+
+Wire dump:
+
+= Request
+
+

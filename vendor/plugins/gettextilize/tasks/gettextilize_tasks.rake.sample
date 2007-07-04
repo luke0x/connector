@@ -1,0 +1,18 @@
+#
+# Added for Ruby-GetText-Package
+#
+# Remember to replace "appdomain" by the one of your application
+
+namespace :gettext do
+  require 'gettext/utils'
+  desc "Create mo-files for L10n"
+  task :makemo do
+    GetText.create_mofiles(true, "po", "locale")
+  end
+
+  desc "Update pot/po files to match new version."
+  task :updatepo do
+    GetText.update_pofiles("appdomain", Dir.glob("{app,lib}/**/*.{rb,rhtml}"),
+  			 "Your Application Name 0.0.1")
+  end
+end

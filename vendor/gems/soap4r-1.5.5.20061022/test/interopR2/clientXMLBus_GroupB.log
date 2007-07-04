@@ -1,0 +1,483 @@
+File: clientXMLBus_GroupB.log - Wiredumps for SOAP4R client / IONAXMLBus server.
+Date: Sat Jul 23 20:46:38 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1687:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1698:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1708:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echo2DStringArray
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1747:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1765:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1828:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echo2DStringArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echo2DStringArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1852:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1894:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1907:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedArray
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1917:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1938:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: execution expired (Timeout::Error)
+/usr/local/lib/ruby/1.9/timeout.rb:44:in `initialize'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1061:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1345:in `create_socket'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1310:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `timeout'
+/usr/local/lib/ruby/1.9/timeout.rb:63:in `timeout'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1309:in `connect'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:1169:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:891:in `query'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:433:in `do_get_block'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:370:in `conn_request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:285:in `request'
+/usr/local/lib/ruby/site_ruby/1.9/http-access2.rb:264:in `post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:164:in `send_post'
+/usr/local/lib/ruby/1.9/soap/streamHandler.rb:106:in `send'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:165:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1949:in `doTestGroupB'
+clientXMLBus.rb:18
+
+Wire dump:
+
+= Request
+
+

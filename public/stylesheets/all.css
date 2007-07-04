@@ -1,0 +1,3950 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Forms --------------------------------------------- */
+
+		fieldset {
+			border:1px solid #DDD;
+			padding:0.25em 0.5em 0.35em 15px;
+		}
+		legend {
+			margin:0px 0px 0px -17px;
+			background-color:#FFF;
+			padding: 0 10px 0 0;
+		}
+
+/* Warnings ------------------------------------- */
+
+	.requestStatus {	
+		position: relative;
+		height: 200px;
+		width: 400px;
+		margin: 40px auto;
+		text-align: left;
+		padding: 0;
+		background-color: #f5f5f5;
+		background-image: url(/images/bg/warningBGGray.jpg);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+	}
+	.loading, .warningDialog, .success, .viewUsersStuff {	
+		padding: 100px 20px 0px 20px;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-position: 50% 35px;
+	}
+	.loading {	
+		background-image: url(/images/animation/loading48Grey.gif);
+	}
+	.warningDialog {	
+		background-image: url(/images/icons/attention48.png);
+	}
+	.success {	
+		background-image: url(/images/icons/check48.png);
+	}
+	.viewUsersStuff {	
+		background-image: url(/images/icons/userSearch.png);
+	}
+	.loading h4, .warningDialog h4, .success h4, .viewUsersStuff h4 {	
+		margin:0 0 0.5em 0;
+	}
+
+
+/* View ------------------------------------*/
+	
+
+	#ContentCell h3 {
+		margin:0.25em 0;
+		}
+	#ContentCell dt {
+		width:9em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin:0px 0 0 0;
+		}
+	#ContentCell dd {
+		margin:0px 0 0px 9.5em;
+		padding:0;
+		}
+	#ContentCell dd h3 {	
+		margin: 0px;
+		padding: 0px;
+		font-size: 1.2em;
+		}
+	#ContentCell dt+dd {
+		margin-top:0.5em;
+		}
+	#ContentCell dd+dt {	
+		margin-top:0.5em;
+		}
+	#ContentCell .accountDetails dt+dd {
+		margin-top:0em;
+		}
+	#ContentCell .accountDetails dd+dt {	
+		margin-top:0em;
+		}
+	#ContentCell dd pre {
+		margin:0px;
+		padding:0;
+		white-space: normal;
+		font-family:inherit;
+		font-size:inherit;
+		}
+	#ContentCell dd p {
+		margin:0px;
+		padding:0 0 1em 0;
+		}
+	#ContentCell dd em {
+		margin-left:8px;
+		font-style:italic;
+		color:#AAA;
+		}
+	.preview {	
+		padding: 8px;
+		text-align: center;
+		border-bottom:1px solid #DDD;
+		border-right:1px solid #DDD;
+		border-left:1px solid #DDD;
+		}
+	.inlineList ul {
+		padding-left: 0;
+		margin-left: 0 !important;
+		}
+	.inlineList ul li {
+		display: inline;
+		list-style-type: none;
+		margin-right: 5px !important;
+		}
+	.userPhotoBorder {	
+		float: right;
+		padding: 4px;
+		margin-right:1em;
+		background-color: #FFF;
+		border: 1px solid #ECECEC;
+		border-bottom: 1px solid #CCC;
+		border-right: 1px solid #CCC;
+		}
+	.userPhoto {	
+		padding: 0;
+		width: 48px;
+		height: 48px;
+		background: #FFF url(/images/icons/unavailableUserIcon.png) 50% 50% no-repeat;
+		}
+/* List View ------------------------------------ */
+
+	.pager {
+		font-size:x-small;
+		color: #DCDCDC;
+		}
+		
+/* Peek ------------------------------------*/
+	
+	tr.expandedListItem {
+		border-bottom:0px solid #eee;
+		}
+	* html #contentWrapper #itemView,
+	* html .eventDetails #itemView,
+	* html .messageDetails #itemView {	
+		position: relative !important;
+		top: 0px !important;
+		}	
+	#contentWrapper .accountDetails h5 {
+		font-size:11px;
+		}	
+	#contentWrapper .accountDetails h5 span {
+		font-size:10px;
+		float:right;
+		font-weight:normal;
+		}		
+	#contentWrapper .accountDetails table {
+		border-collapse: collapse;
+		line-height:17px;
+		width:100%;
+		}	
+	.accountDetails tr th {
+		border-bottom:1px solid #BCB08E;
+		background-color:#CCC;
+		padding:2px 5px 0 0;
+		background:#FFF;
+		text-align:left;
+		}
+	#contentWrapper table tr td table tr th .edit {
+		float:right;
+		border:1px solid #330;
+		}	
+	#contentWrapper .accountDetails table {
+		width:auto;
+		margin-left:25px;
+		}	
+	#contentWrapper .accountDetails table tr td {
+		border:0px #000 solid;
+		}
+		
+		
+/* Edit ------------------------------------*/
+	
+	
+	* html #itemView {
+		position: absolute;
+		left: 0px;
+		top: 50px;
+		}
+	#itemView table tr td {
+		padding:2px 0px;
+		color:#666;
+		}
+	#itemView h4 {
+		margin:0px 0px 0px 0px;
+		padding:0px;
+		font-size:13px;
+		}
+	#itemView h5 {
+		margin:0px;
+		padding:10px 0px 5px 0px;
+		font-size:1.4em;
+		line-height:13px;
+		text-align:left;
+		}
+	#itemView table tr th {
+		margin:0px;
+		padding:20px 0px 5px 0px;
+		font-size:1.2em;
+		line-height:13px;
+		text-align:left;
+		color:#000;
+		}
+	#itemView ul, #itemView .titleInfo  {
+		margin:0px 0px 0px 35px;
+		padding:0px;
+		}
+	#itemView ul li  {
+		margin:0px 0px 5px 0px;
+		padding:0px;
+		}
+	fieldset hr {
+		border:#EEE 0px solid;
+		height:1px;
+		background-color:#EEE;
+		border-bottom:#EEE 0px solid;
+		}
+	.dateEntry {
+		padding: 3px 0 3px 0;
+		}
+	.timeEntry {
+		padding: 3px 0 3px 0;
+		}
+	.deleteItem span {
+		display:none;
+		}
+	.noWrap {
+		white-space:nowrap;
+		}
+
+
+		
+/* List View --------------------------------------------- */
+
+		
+	
+	.file {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 20px;
+		font-weight:normal;
+		margin:0;
+		}
+	#contentWrapper table.tableList tr td.Details {
+		height: 5em;
+		border-width: 0 1px 1px 1px !important;
+		border-style: solid;
+		border-color: #E0E6EE !important;
+		line-height: 1.2em;
+		padding: 10px 0 10px 0 !important;
+		}
+	#contentWrapper table.tableList {
+		border-collapse: separate;
+		border: outset 0px;
+		border-spacing: 0px;
+		line-height:17px;
+		width:100%;
+		border-top:1px solid #E3E4DE;
+		table-layout:fixed
+	}
+	#contentWrapper table.tableList tr {
+		border-top:1px solid #F7F8F1;
+	}
+	#contentWrapper table.tableList tr tr {
+		border-top:0px solid #F7F8F1;
+	}
+	#contentWrapper table.tableList tr th a {	
+		padding-right: 3%;
+		display: block;
+	}
+	th.firstName a:hover,     	th.lastName a:hover, 	th.companyName a:hover, th.emailAddress a:hover, 
+			th.phoneNumber a:hover, th.fileName a:hover, 	th.size a:hover, 
+			th.dateMod a:hover, 		th.type a:hover, 			th.from a:hover, 
+			th.subject a:hover, 		th.dateSent a:hover		th.name a:hover, th.unsorted a:hover {
+		text-decoration: none;
+		background: transparent;
+		background-image: url(/images/icons/listedByUpArrow.png) !important;
+		background-repeat: no-repeat;
+		background-position: 98% 50%;
+	}
+	#contentWrapper .listedByDescending a, 
+	#contentWrapper .listedByAscending a:hover, 
+	.listedByDescending span {
+		background-image: url(/images/icons/listedByDownArrow.png) !important;
+		background-repeat: no-repeat;
+		background-position: 98% 50%;
+	}
+	#contentWrapper .listedByAscending a, 
+	#contentWrapper .listedByDescending a:hover, 
+	.listedByAscending span {
+		background-image: url(/images/icons/listedByUpArrow.png) !important;
+		background-repeat: no-repeat;
+		background-position: 98% 50%;
+	}
+	.oddRow {
+		background-color: #F3F7FE;
+	}
+	th.dateBar {		
+		text-align: left;
+	}
+	td.checkbox {
+		text-align: center;
+	}
+	#contentWrapper td.checkbox, td.firstCol {
+		border-width: 1px !important;
+	}
+	#contentWrapper th.checkBox, th.firstCol {
+		border-width:0 1px 1px 1px !important;
+	}
+	.notificationDetails a, .notificationDetailsActivated a {	
+		text-indent: -6000px;
+		height: 16px;
+		width: 32px;
+		display: block;
+		margin: 0 auto;
+		background-image: url(/images/icons/info.png);
+		background-repeat: no-repeat;
+	}
+
+	/* temp hax */
+		.notificationDetails a {	
+			background-position: -38px 0;
+			}
+		.notificationDetails a:hover {
+			background-position: -38px -16px;
+			}
+		.notificationDetails a:active {
+			background-position: -38px -32px;
+			}
+		.notificationDetailsActivated a {
+			background-position: -6px -32px; 
+			}
+		.notificationDetailsActivated a:hover {
+			background-position: -6px -16px; 
+			}
+		.notificationDetailsActivated a:active {
+			background-position: -6px 0; 
+			}
+
+
+		
+		
+	.getInfo a {
+		background:#0055E9;
+		padding:3px 6px;
+		color:#fff;
+	}
+	
+	#AddressQuickInfo tr td {
+		border:0px solid #EBEADD;
+	}
+	#AddressQuickInfo .infoLabels {
+		text-align:right;
+		font-weight:bold;
+		padding-right:12px;
+	}
+	#AddressQuickInfo {
+		border-collapse: collapse;
+		border:0px solid #0c0;
+		margin:15px;
+	}
+
+	/* Columns --------------------------------------------- */
+		
+		.details {
+			width:2%;
+		}
+	
+		
+/* Comments ---------------------------------------------- */
+	
+	.CommentsExpanded h3, .CommentsCollapsed h3 {
+		background-image: url(/images/bg/commentsHeader.png);
+		background-position: left top;
+		padding-top: 6px;
+		background-repeat: no-repeat;
+		margin: 1em 0;
+	}
+	.CommentsExpanded h3 a, .CommentsCollapsed h3 a {	
+		padding: 5px 0 5px 38px;
+		background-repeat: no-repeat;
+		background-position: 6px 50%;
+		font-size: 11px !important;
+		margin:0px;
+		color: #000 !important;
+		}
+	.CommentsExpanded h3 a  {
+		background-image: url(/images/icons/commentBubble16-down.png);
+		}
+	.CommentsCollapsed h3 a {	
+		background-image: url(/images/icons/commentBubble16-up.png);	
+		}
+	#comments {
+		padding: 1em 0;
+		}
+	#comments hr {		
+		background-color: #ECECEC;
+		margin:1em 0;
+		}
+	.comment, .commentForm {
+		padding: .75em;
+		}
+	.commentInfo {
+		font-style:italic;
+		color: #000;
+		padding: 0 0 0.85em 16px;
+		margin: 0 0 0 51px;
+		background-image: url(/images/icons/commentBubble12.gif);
+		background-repeat: no-repeat;
+		background-position: 0 2px;
+		}
+	.commentInfoForm {
+		color: #000;
+		padding: 0 0 0 16px;
+		background-image: url(/images/icons/commentBubble12.gif);
+		background-repeat: no-repeat;
+		background-position: 0px 50%;
+		}
+	.commentUserPhoto {
+		}
+	.comment p {
+		padding: 0;
+		margin: 0 0 0.85em 0;
+		}
+	.commentEditControls {
+		font-size:0.85em;
+		}
+	.commentBody {
+		margin:0 0 0 51px;
+		color:#000;
+		}
+	.commentUserPhoto {
+		float:left;
+		}
+	.commentUserPhoto img {
+		height:44px;
+		width:44px;
+		padding:4px 5px 2px 0;
+		}
+
+/* Anime -------------------------------------------------- */
+
+
+	.loadingMessageSmall {	
+		background-image: url(/images/animation/loading16.gif);
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		padding: 1em 0 1em 38px;
+		}
+	.loadingMessageLarge {
+		background-image: url(/images/animation/loading48.gif);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		height:120px;
+		}
+	.loadingSmallBlue {	
+		background-image: url(/images/animation/loading16Blue.gif);
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		padding: 1em 0 1em 38px;
+		}
+	.loadingSmallGrey {	
+		background-image: url(/images/animation/loading16Grey.gif);
+		background-repeat: no-repeat;
+		background-position: 20px 50%;
+		padding: 1em 0 1em 38px;
+		}
+		
+/* Go Tos-------------------------------------------------------- */
+
+	.go {	
+		padding:1px 0 1px 18px;
+		line-height:16px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		}
+	.goto {	
+		padding:1px 0 1px 10px;
+		line-height:16px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-image: url(/images/icons/goTo.png);
+		}
+	.toGoogle {	
+		background-image: url(/images/icons/goToGoogle.png);
+		}
+	.toSkype {	
+		background-image: url(/images/icons/goToSkype.png);
+		}
+	.toJajah {
+		background-image: url(/images/icons/goToJajah.png);
+		}
+	.toContacts {	
+		background-image: url(/images/icons/doc/16/vcf.png);
+		}
+
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+	#graph_container {
+		font-size: 10px;
+		position: absolute;
+		float: right;
+		margin: 0px !important;
+		display: block;
+		top: 22px;
+		right: 14px;
+		font-size: 70%;
+		white-space: nowrap;
+		}
+	#graphLabel {
+		position: absolute;
+		right: 35px;
+		top: 0;
+		width: 12em;
+		text-align: right;
+		}
+	#graph {	
+		position: absolute;
+		right: 0;
+		top: 1px;
+		display: Block;
+		width: 30px;
+		border: 1px solid gray;
+		padding: 0px;
+		margin-top: 3px;
+		text-align: right;
+		}
+	#graph .bar { 
+		display: block;
+		background: #f9a400;
+		text-align: center;
+		color: #333;
+		height: 6px;
+		line-height: 6px;
+		}
+	#graph .bar span {
+		position: absolute;
+		left: 1em;
+		}
+
+/* notifications palette --------------------------------------------- */
+
+  a.unavailable {
+  	background-color: #FED28E;
+  	}
+  a.unavailable:hover {
+  	background-color: #EAB86D !important;
+  	color: #000;
+  	text-decoration: none !important;
+  	}
+
+
+/* overlay List --------------------------------------------- */
+
+	#drawerCalendarOverlay ul.tagList {
+		float: left;
+		list-style-type: none;
+		margin: 0 0 .5em 0;
+		clear: left;
+	}
+	#drawerCalendarOverlay ul.tagList li {
+		position: relative;
+		margin: 0 0 2px 2px;
+		display: inline-block;
+		float: left;
+		-moz-border-radius: .9em .9em .9em .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		-webkit-border-top-right-radius: .9em;
+		-webkit-border-bottom-right-radius: .9em;
+		background-color: #CACCCB;
+	}
+	#drawerCalendarOverlay li a.tag, #drawerCalendarOverlay ul.tagsAssigned li a.tag {
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/tagBits.png);
+	}
+	#drawerCalendarOverlay ul.tagList li a.tag {
+		-moz-border-radius: .9em 0 0 .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		padding: 2px 8px 2px 18px;
+		background-position: -1997px 50%;
+		color: #666;
+	}
+	#drawerCalendarOverlay ul.tagList li a.tag:hover {
+		background-position: -2997px 50%;
+		color: #000;
+	}
+	
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li a.tag {
+		color: #8B5E00 !important;
+		background-position: -3997px 50%;
+	}
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li {
+		background-color: #FFBC00 !important;
+	}
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li a.tag:hover {
+		background-position: -4997px 50%;
+		color: #000 !important;
+	}
+	#drawerCalendarOverlay ul.tagList.tagsAssigned li {
+		background-color: #FFBC00 !important;
+	}
+
+/* Autofill -------------------------------------------------------- */
+
+	.autocompleteMenu {
+		z-index: 5510 !important;
+	}
+	.autocompleteMenu ul {	
+		list-style-type: none;
+		margin:0px;
+		padding: 0;
+		min-width: 20em;
+		border: 1px solid #999;
+		background-color: #FFF;
+	}
+	.autocompleteMenu ul li {
+		padding: 2px 1.5em;
+		border-bottom: 1px solid #F3F3F3;
+		color: #393A3C;
+	}
+	.autocompleteMenu ul li.selected {
+		background: #2A5FCF url(/images/bg/highlightBG.png) top left repeat-x;
+		color: #CADEF7;
+	}
+	.autocompleteMenu ul li span.autoCompleteHighlite {
+		color: #3970D5;
+		font-weight: bold;
+	}
+	.autocompleteMenu ul li.selected span.autoCompleteHighlite {
+		color: #FFF;
+		font-weight: bold;
+	}
+
+/* Drawer -------------------------------------------------------- */
+
+	#Drawers .drawerContent {
+		background-color: #F9F9F9;
+		padding: 12px 12px 20px 12px;
+		background-image: url(/images/bg/drawer.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		border-color: #AAA;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+	}
+	#Drawers fieldset, #Drawers fieldset {
+		background-color: #EFEFEF;
+		background-position: 0 0;
+		padding: 1em;
+		border-color: #E2E2E2 #FFF #FFF #E2E2E2;
+		border-width: 1px;
+		border-style: solid;
+	}
+	#Drawers .drawerButtons {
+		padding: 7px 0 7px 1em;
+	}
+	#Drawers h5 {
+		display: block;
+		padding: 6px 0px 1px 1em;
+	}
+	#Drawers p {
+		margin: 0; 
+		padding: 0 0 1em 0; 
+	}/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+	
+	#addHeader {	
+		background-repeat: no-repeat;
+		background-position: left top;
+		padding: 0 0 5px 0;
+		font-size: 1.5em;
+		border-bottom: #CCC 1px solid;
+		}
+	* html #addHeader {	
+		background-image: none;
+		padding: 0 0 5px 0;
+		font-size: 1.5em;
+		}
+		
+	.workspace {
+		margin:0; 
+		display:block;
+		background-image: url(/images/icons/workspace.png);
+	}
+	.currentTime {
+		background-image: url(/images/icons/clock.png);
+	}
+	.files_report {
+		background-image: url(/images/icons/groupAllFiles.png);
+	}
+	.recentComments {
+		background-image: url(/images/icons/commentBubble16.png);
+	}
+	.eventsReport, .calendar_report {
+		background-image: url(/images/icons/calendar16.png);
+	}
+	.smart_group {
+		background-image: url(/images/icons/groupFolderSmart.png);
+	}
+	.unreadMessages {
+		background-image: url(/images/icons/groupMail.png);
+	}
+	.bookmarks_report {
+		background-image: url(/images/icons/bookmark.png);
+	}
+	.lists_report {
+		background-image: url(/images/icons/groupAllLists.png);
+	}
+		
+	.reportBody {
+		max-height: 250px;
+		overflow: auto;
+	}
+
+
+/* Connect --------------------------------------------- */
+
+	/* notifications --------------------------------------------- */
+		
+	
+		table.notificationsList {
+			width: 100%;
+			}
+		table.notificationsList tr {
+			background-color: #FFEEBC;
+			}
+		table.notificationsList tr td {
+			height: 4 em;
+			border-color: #CCB36A !important;
+			border-width: 0 0 1px 0 !important;
+			border-style: solid;
+			line-height: 1.2em;
+			padding-top: 5px !important;
+			padding-bottom: 5px !important;
+			}
+		table.notificationsList tr td.Details {
+			background-color: #FFF;
+			background-image: url(/images/bg/peekShadow.png);
+			background-repeat: repeat-x;
+			background-position: 0 0;
+			}
+		table.notificationsList tr.oddRow {
+			background-color: #FFE59B;
+			border-width: 0 1px 0 1px;
+			border-color: #E0E6EE;
+			border-style: solid;
+		}
+		table.notificationsList {
+			table-layout:fixed;
+			width: 100%;
+			}
+		table.notificationsList td {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			}
+		table.notificationsList td .userPhoto {
+			float: left;
+			margin: 0 .25em .25em 0;
+			}
+		.notificationsDoc {
+			height: 32px !important;
+			padding: 5px 0 5px 36px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			display: block;
+			}
+		.notificationsDoc:hover {
+			color: #000;
+			text-decoration: underline;
+			}
+		.notificationsFooter {
+			padding: .5em;
+			border-color: #C5A652;
+			border-width: 1px 0 0 0;
+			border-style: solid;
+			}
+		.notificationsNone {
+			padding: 5px;
+			background-color: #FDFDFD;
+			border-color: #EEE #DEDEDE #DEDEDE #EEE;
+			border-width: 1px;
+			border-style: solid;
+			margin: 1em;
+		}
+		.notificationsInset {
+			text-align: center;
+			padding: 1.5em;
+			border-color: #F0F0F0 #FFF #FFF #EFEFEF;
+			border-width: 1px;
+			border-style: solid;
+			background-color: #F9F9F9;
+			color: #AAA;
+		}
+	
+
+/* pagination --------------------------------------------- */
+
+	
+		.reportBoxHeader .arrowPrev a {
+			background-position: -192px -2px;
+		}
+		.reportBoxHeader .arrowPrev a:hover {
+			background-position: -192px -26px;
+		}
+		.reportBoxHeader .arrowNext a {
+			background-position: -216px -2px;
+		}
+		.reportBoxHeader .arrowNext a:hover {
+			background-position: -216px -26px;
+		}
+
+
+	/* Reports -------------------------------------------------- */
+		
+		.report {		
+			margin: 0;
+		}
+		* html .report {
+			padding: 0 0 1px 0;
+		}
+		.lastRow td {
+			padding-bottom: 1em !important;
+		}
+		.lastRow td a {
+			color: #3175D8 !important;
+		}
+		ul.reportBoxHeader {
+			padding: 4px 8px 0 8px;
+			border-width: 1px;
+			border-color: #516E99 #516E99 #374D69 #516E99;
+			border-style: solid;
+			position: relative;
+			height: 2.2em;
+			color: #FFF;
+			background-color: #758BA9;
+			background-position: left center;
+			list-style-type: none;
+			-moz-border-radius: .4em .4em 0 0;
+			-webkit-border-top-left-radius: .4em;
+			-webkit-border-top-right-radius: .4em;
+			background-image: url(/images/bg/reportHeaderBG.png);
+			background-repeat: repeat-x;
+		}
+		ul.reportBoxHeader li {
+			float: left;
+		}
+		ul.reportBoxHeader li.right {
+			float: right;
+		}
+		.arrowPrev a, .arrowNext a {
+			width: 24px;
+			height: 20px;
+			display: block;
+			text-indent: -3000px;
+			background-image: url(/images/icons/reportHeaderIcons.png);
+		}
+		.arrowPrev a {
+			background-position: -96px -2px;
+		}
+		.arrowPrev a:hover {
+			background-position: -96px -26px;
+		}
+		.arrowNext a {
+			background-position: -120px -2px;
+		}
+		.arrowNext a:hover {
+			background-position: -120px -26px;
+		}
+		h3.drag_handle {		
+			font-size: 1em;
+			margin: 0 48px 0 26px !important;
+			padding: .4em 0 .4em 20px;
+			background-repeat: no-repeat;
+			background-position: left center;
+		}
+			
+		/* header Icons / report ----------------------- */
+			
+		.events {		
+			background-image: url(/images/icons/calendar16.png);
+		}
+		.messages {		
+			background-image: url(/images/icons/mailbox.png);
+		}
+		.joyent_files {		
+			background-image: url(/images/icons/filesAll.png);
+		}
+			
+			
+		#report_list:first-child {
+			border-top: 0 !important;
+			}
+		.reportHeader .hideReport,
+		.reportHeader .showReport,
+		.reportHeader .reload,
+		.reportHeader .remove,
+		.reportHeader .goToReport {		
+			background-repeat: no-repeat;
+			top: 2px;
+			height: 24px;
+			width: 24px;
+			position: absolute;
+			text-indent: -3000px;
+			cursor: pointer;
+			background-image: url(/images/icons/reportHeaderIcons.png);
+			}
+		* html .reportHeader .hideReport,
+		* html .reportHeader .showReport,
+		* html .reportHeader .reload,
+		* html .reportHeader .remove,
+		* html .reportHeader .goToReport {		
+			background-image: url(/images/ie/reportHeaderIcons.gif);
+			}
+		.reportHeader .showReport {		
+			background-position: -48px 0px;
+			left: 0px;
+			}
+		.reportHeader .showReport:hover {		
+			background-position: -48px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .hideReport {	
+			background-position: -72px 0px;
+			left: 0px;
+			}
+		.reportHeader .hideReport:hover {	
+			background-position: -72px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .reload {		
+			background-position: 0px 0px;
+			right: 24px;
+			}
+		.reportHeader .reload:hover {		
+			background-position: 0px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .remove {		
+			background-position: -24px 0px;
+			right: 0px;
+			}
+		.reportHeader .remove:hover {		
+			background-position: -24px -24px;
+			background-color: transparent;
+			}
+		.reportHeader .goToReport {
+			background-position: -168px 0px;
+			right: 48px;
+		}
+		.reportHeader .goToReport:hover {		
+			background-position: -168px -24px;
+			background-color: transparent;
+			}
+
+		.reportsNone {
+			padding: 5px;
+			background-color: #FDFDFD;
+			border-color: #EEE #DEDEDE #DEDEDE #EEE;
+			border-width: 1px;
+			border-style: solid;
+			margin: 1em;
+		}
+		.reportsInset {
+			text-align: center;
+			padding: 1.5em;
+			border-color: #F0F0F0 #FFF #FFF #EFEFEF;
+			border-width: 1px;
+			border-style: solid;
+			background-color: #F9F9F9;
+			color: #AAA;
+		}
+			
+
+
+/* Contacts --------------------------------------------- */
+
+	/* Item View ------------------------------------------- */
+					
+		#people #contentPane dl {
+			padding: 0;
+			}
+		#people #contentPane dt+dd {
+			margin-top:1.5em;
+			}
+		#people #contentPane dd+dt {	
+			margin-top:1.5em;
+			}
+		#people #contentPane dt {
+			width:10em;
+			text-align:right;
+			display:block;
+			float:left;
+			margin:0px 0 0 0;
+			}
+		#people #contentPane dd {
+			margin:0.3em 0 0px 10.5em;
+			padding:0;
+			}
+			
+	/* Edit View Fix --------------------------------------- */
+	
+		#people #ContectCell legend, #people #ContectCell legend a {		
+			color: #777;
+			}
+		#people #item_editor legend, #people #item_editor legend a {		
+			font-weight: bold !important;
+			font-size: 1.1em !important;
+			margin: 0 0 0 0;
+			padding: 0 5px 0 5px;
+			}
+	
+		#people #item_editor fieldset {		
+			border: #DCDCDC;
+			border-width: 1px 0 0 0;
+			margin: 2.5em 0 1em 0;
+			padding-top: 0.75em;
+			border-style: solid;
+			border: #DCDCDC;
+			border-width: 1px 0 0 0;
+			margin: 1.75em 0 1em 0;
+			padding-top: 0.75em;
+			border-style: solid;
+			}
+		#people .addItem {
+			margin:1em 0 0 0;
+			margin:1em 0 0 0;
+			}
+		/*
+		#people fieldset {		
+			position: relative;
+			}
+		*/
+		#item_editor {
+			padding:0px;
+			margin:0px;
+			}
+	
+	/* Misc -------------------------------------------------- */
+		
+		.user_summary, .contact_summary {
+		  padding: 0 1em;
+		  border-style: solid;
+		  border-width: 1px;
+		  border-top-color: #FFF;
+		  border-left-color: #FFF;
+		  border-bottom-color: #BBB;
+		  border-right-color: #BBB;
+			}
+		
+		.contact_summary {
+		  background-color: #EDE;
+			}
+		
+		.user_summary {
+		  background-color: #DDE;
+			}
+		
+		.account_details {
+		  border-spacing: 0;
+		  width: auto;
+		/*  display: none; */
+			}
+		
+		
+		.account_details tr td {
+		  padding: 0 1em;
+		  border-bottom: thin solid #DDD;
+			}  
+		
+		.account_details tr td.label {
+		  text-align: right;
+		  font-weight: bold;
+			}
+		
+		.account_details tr th {
+		  font-weight: normal;
+		  text-align: left;
+		  padding-top: 0.5em;
+		  border-bottom: thin solid #888;
+			}
+		
+		
+		span.annotation {
+		  margin-left: 1em;
+		}
+
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+/* Pretty Forms ------------------------------------*/
+
+	input.textInput, input.textInputLarge, input.textInputSmall, textarea {
+		border-top: 1px solid #7c7c7c;
+		border-left: 1px solid #c3c3c3;
+		border-right: 1px solid #c3c3c3;
+		border-bottom: 1px solid #ddd;
+		background-color: #FFF;
+		background-image: url(/images/bg/fieldbg.gif);
+		background-repeat: repeat-x;
+		}
+	input.textInput {
+		padding: 3px 4px 3px 4px;
+		}
+	input.textInputLarge {
+		font-size: 1.2em;
+		line-height: 1.4em;
+		padding: 4px 5px;
+		}
+	input.textInputSmall {
+		font-size: 100%;
+		line-height: 1.4em;
+		}
+	
+	
+/*  ------------------------------------*/
+	
+	.dialog {
+		background-color: #D7E4EF;
+		padding: 1em 1em .5em 1em;
+		border-color: #9ABAD6;
+		border-width: 1px;
+		border-style: solid;
+		-moz-border-radius: .4em .4em .4em .4em;
+		-webkit-border-top-left-radius: .4em;
+		-webkit-border-top-right-radius: .4em;
+		-webkit-border-bottom-left-radius: .4em;
+		-webkit-border-bottom-right-radius: .4em;
+		margin-bottom: 1em;
+	}
+	.dialog.alt {
+		background-color: #FFEFB5;
+		border-color: #E5C797;
+	}
+	
+	.dialog.squareTopLeft {
+		-moz-border-radius: 0 .4em .4em .4em;
+		-webkit-border-top-left-radius: 0;
+	}
+	
+	.accountTypes {
+		margin-left: 1em;
+		margin-top: .7em;
+	}
+	.accountTypes td {
+		line-height: 1.3em;
+	}
+	
+	.infoGroup {
+		border-color: #B1CDE2 #EEF4F8 #EEF4F8 #B5D0E5;
+		border-width: 1px;
+		border-style: solid;
+		padding: 1em;
+		background-color: #DDE7EF;
+		margin: 1em 0 1em 0;
+	}
+	.alt .infoGroup {
+		border-color: #E5C797 #EEF4F8 #EEF4F8 #E5C797;
+		background-color: #FFF2D1;
+	}
+	.infoGroup .addItem {
+		margin-left:8px !important;
+		}
+	.infoGroupLabel {
+		padding: 7px 0 0 0;
+		width: 11em;
+		text-align: right;
+		color:#777;
+		}
+	.infoGroupInputLabel {
+		color: #9B9B9B;
+		font-size: .85em;
+		padding-left: 4px;
+		}
+	.infoGroup table td {
+		padding: 0;
+		}
+		
+	.infoGroup hr {	
+		border-top: 0px solid #B1CDE2;
+		border-bottom: 1px solid #EEF4F8;
+		border-left: 0px solid #AAA;
+		border-right: 0px solid #AAA;
+		height: 1px;
+		background-color: #B1CDE2;
+		}
+		
+	.alt .infoGroup hr {
+		height: 2px;
+		background-color: #E4CDB2;
+		border-color: #FFF;
+		border-width: 0px 0px 1px 0px;
+		border-style: solid;
+	}
+	
+	
+/*  ------------------------------------
+	
+	.dialog {
+		background-color: #FFF8CF;
+		padding: 1em;
+		width: 47.5em;
+		border-color: #F7E38F;
+		border-width: 1px;
+		border-style: solid;
+	}
+	
+	
+	.infoGroup {
+		border-color: #E8CE70 #FFF #FFF #F9DA74;
+		border-width: 1px;
+		border-style: solid;
+		padding: 1em;
+		background-color: #FFFAD8;
+		margin: 1em 0 1em 0;
+		width: 45em;
+	}
+	.infoGroup .addItem {
+		margin-left:8px !important;
+		}
+	.infoGroupLabel {
+		padding: 7px 0 0 0;
+		width: 11em;
+		text-align: right;
+		color:#777;
+		}
+	.infoGroupInputLabel {
+		color: #9B9B9B;
+		font-size: .85em;
+		padding-left: 4px;
+		}
+	.infoGroup table td {
+		padding: 0;
+		}
+		
+	.infoGroup hr {	
+		border-top: 0px solid #DAC58D;
+		border-bottom: 1px solid #FFF;
+		border-left: 0px solid #AAA;
+		border-right: 0px solid #AAA;
+		height: 1px;
+		background-color: #DAC58D;
+		}
+
+/* info ------------------------------------*/
+
+	.info, .info2, .info3, .info4 {	
+		background-image: url(/images/bg/infoBG.png);
+		background-repeat: no-repeat;
+	}
+	.info4 {
+		background-position: right bottom;
+		background-color: #FFEFB5;
+		width: 500px;
+		margin: 1em;
+	}
+	.info4.infoMessageBG {
+		background-color: #EFEFEF;
+	}
+	.info4.fullwidth {
+		width: 100%;
+		margin: 0 0 1em 0;
+	}
+	.info3 {	
+		background-position: left bottom;
+	}
+	.info2 {	
+		background-position: right top;
+	}
+	.info {	
+		background-position: left top;
+		padding: 2em;
+	}
+	.info.noPadding {	
+		padding: 0 !important;
+	}
+	.infoError, .infoMessage {
+		background-repeat: no-repeat;
+		background-position: 2em center;
+		padding: 2em 2em 2em 5.5em;
+	}
+	.infoError {
+		background-image: url(/images/icons/attention32.png);
+	}
+	.infoMessage {
+		background-image: url(/images/icons/ok32.png);
+	}
+		
+	.info .acceptDecline {
+		float: right;
+	}
+	.info hr {	
+		background-color: #E3D8A1;
+		margin: 1em 0;
+	}
+		
+	.yes, .no {	
+		background-image: url(/images/icons/yesNo.png);
+		padding: 2px 2px 2px 16px;
+		background-repeat: no-repeat;
+		}
+	.yes {	
+		background-position: 0 0;
+		}
+	.yes:hover {	
+		background-position: 0 -50px;
+		color: #000;
+		}
+	.no {	
+		background-position: 0 -100px;
+		}
+	.no:hover {	
+		background-position: 0 -150px;
+		color: #000;
+		}
+	.notAvailable {	
+		opacity: .30;
+		filter: alpha(opacity=30);
+		-moz-opacity: .30;
+		}
+		
+/* Warning --------------------------------- */
+
+	#warning {
+		background-color: #FFEAAB;
+		width: 350px;
+		padding: 10px 20px 20px 80px;
+		border-color: #E7CF8E;
+		border-width: 1px;
+		border-style: solid;
+		margin: 10px 0 0 0;
+		background-image: url(/images/bg/warningBG.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		}
+	#warning fieldset {
+		padding: 0.25em 0.5em 0.35em 15px;
+		border-color: #D8C487;
+		border-width: 1px;
+		border-style: solid;
+		}
+	#warning legend {
+		margin: 0 !important;
+		background-color: transparent !important;
+		padding: 0 10px;
+	}
+	.warningInline {
+		background-color: #FFEAAB;
+		padding: 4px 2em 4px 26px;
+		border-color: #E7CF8E;
+		border-width: 1px;
+		border-style: solid;
+		margin: 10px 0 0 0;
+		background-image: url(/images/bg/warningInline.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		}
+
+/* icons ------------------------------------*/
+
+	.deleteItem {	
+		height: 16px;
+		width: 16px;
+		background-position: -500px 0;
+		text-indent: -3000px;
+		display: block;
+		background-image: url(/images/icons/addRemove.png);
+		background-repeat: no-repeat;
+	}
+	.deleteItem:hover {
+		background-position: -500px -50px;
+	}	
+	a.addItem, .addItem {
+		height: 14px;
+		margin: 0px 0px 0px 0px;
+		padding: 2px 3px 2px 16px;
+		white-space: nowrap;
+		background-image: url(/images/icons/addRemove.png);
+		color: #000;
+		background-position: 0 0;
+	}
+	a.addItem:hover, .addItem a:hover {	
+		background-position: 0 -50px;
+	}
+
+
+
+/* Buttons ------------------------------------*/
+
+	a.buttonStandard {
+		height: 22px;
+		display: -moz-inline-stack;
+		display: inline-block;
+	}
+	.buttonStandardLeft {
+		/* firstwrapper */
+		background-image: url(/images/bg/buttons/buttonStandardLeft.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.buttonStandardRight {
+		background-image: url(/images/bg/buttons/buttonStandardRight.png);
+		background-repeat: no-repeat;
+		background-position: right 0;
+	}
+	.buttonStandardBG {
+		background-image: url(/images/bg/buttons/buttonStandardBG.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		margin: 0 11px;
+		text-align: center;
+		height: 22px;
+	}
+	a .buttonStandardBG span {
+		background-repeat: no-repeat;
+		color: #000;
+		font-size: 11px;
+		height: 22px;
+		margin-left: auto;
+		margin-right: auto;
+		vertical-align: middle;
+		display: inline-block;
+		display: -moz-inline-stack;
+		padding-top: 3px;
+		padding-left: 0px;
+	}
+	a .buttonStandardBG span.noIcon {
+		padding-left: 0;
+	}
+		
+	a:active .buttonStandardBG {
+		background-position: 0 -100px;
+	}
+	a:active .buttonStandardLeft {
+		background-position: 0 -100px;
+	}
+	a:active .buttonStandardRight {
+		background-position: right -100px;
+	}
+	a .buttonStandardBG span, a .buttonStandardBG span:hover, a .buttonStandardBG span:active {
+		background-position: 0 3px;
+	}
+	
+	
+	.addTag {
+		background-image: url(/images/icons/tag.png);
+		padding-left: 19px !important;
+	}
+	.jumpTo {
+		background-image: url(/images/icons/jumpTo.png);
+		padding-left: 19px !important;
+	}
+	.setAccess {
+		background-image: url(/images/icons/user.png);
+		padding-left: 19px !important;
+	}
+	.notifySomeone {
+		background-image: url(/images/icons/notifyBubble.png);
+		padding-left: 19px !important;
+	}
+	.download {
+		background-image: url(/images/icons/download.png);
+		padding-left: 19px !important;
+	}
+	
+	.disabled {
+		color:#6D6D6D;
+		width:11em;
+	}
+		/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+
+/* general (ui 2.0) -------------------------------------------------------------- */
+
+	.sidebar {
+		display: none;
+		overflow: auto;
+		position: absolute;
+		top: 39px;
+		right: 31px;
+		bottom: 0px;
+		left: 17px;
+		z-index: 5500;
+		padding: 0 15px 0 0;
+	}
+	body.guest .sidebar {
+		top: 9px;
+	}
+	.sidebar.selected {
+		display: block;
+	}
+	#sidebars h3 {
+		color: #333;
+		margin: 1em 0 .5em 0;
+		padding: 0;
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		clear: left;
+		display: block;
+	}
+	#sidebars a  {
+		color: #000;
+	}
+	
+	.sidebarInset {
+		float: left;
+		list-style-type: none;
+		clear: left;
+	}
+	#groupsSidebar .sidebarInset {
+		float: none;
+	}
+	.sidebarWarning {
+		color: #C4C4C4;
+		font-size: .85em;
+		text-align: center;
+		line-height: 1.15em;
+		background-color: transparent !important;
+	}
+
+/* Access + Notify (ui 2.0) -------------------------------------------------------------- */
+
+
+
+	/* general */
+	
+	table.userList {
+		border-collapse: separate; 
+		border-spacing: 0px 2px
+	}
+	table.userList .viewIcon {
+		background-image: url(/images/icons/eye.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		float: right;
+	}
+	table.userList .notifyIcon {
+		background-image: url(/images/icons/notifyBubble.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		float: right;
+	}
+	table.userList tr td a.status {
+		width: 12px;
+		height: 12px;
+		display: block;
+		text-indent: -3000px;
+		margin: 2px 2px 0px 2px;
+		background-image: url(/images/icons/tdIcons.png);
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.userList .status {
+		background-position: -48px -24px;
+	}
+	
+	.userList .status.off {
+		background-position: 0 0px;
+	}
+	.userList .status.off:hover {
+		background-position: -24px 0px;
+	}
+	.userList .status.off:active {
+		background-position: -48px 0px;
+	}
+
+	.userList .status.some {
+		background-position: 0 -48px;
+	}
+	.userList .status.some:hover {
+		background-position: -24px -48px;
+	}
+	.userList .status.some:active {
+		background-position: -48px -48px;
+	}
+	
+	.userList .status.on {
+		background-position: 0 -24px;
+	}
+	.userList .status.on:hover {
+		background-position: -24px -24px;
+	}
+	.userList .status.on:active {
+		background-position: -48px -24px;
+	}
+
+	.userList .status.off.disabled {
+		background-position: 0 -216px;
+	}
+	.userList .status.some.disabled {
+		background-position: 0 -264px;
+	}
+	.userList .status.on.disabled {
+		background-position: -0 -240px;
+	}
+	
+	.userList .status.disabled {
+		cursor: default;
+	}
+	
+	
+/* Tags - Notify (ui 2.0) -------------------------------------------------------------- */
+
+
+
+	/* general */
+	
+	#tagsSidebar ul.tagList {
+		float: left;
+		list-style-type: none;
+		margin: 0 0 .5em 0;
+		clear: left;
+	}
+	#tagsSidebar ul.tagList li {
+		position: relative;
+		margin: 0 0 2px 2px;
+		display: inline-block;
+		float: left;
+		-moz-border-radius: .9em 0 0 .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		background-color: #909296;
+	}
+	#tagsSidebar .tagInfo, #tagsSidebar li a.tag, #tagsSidebar ul.tagsAssigned li a.tag {
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/tagBits.png);
+	}
+	#tagsSidebar ul.tagList li a.tag, #tagsSidebar ul.tagList li a.tagInfo {
+		float: left;
+		display: inline-block;
+		color: #000;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	#tagsSidebar ul.tagList li a.tagInfo {
+		padding: 2px 0px 2px 2px;
+		width: 8px;
+		text-indent: -3000px;
+		height: 16px;
+		background-position: 0 50%;
+	}
+	#tagsSidebar ul.tagList li a.tag {
+		-moz-border-radius: .9em 0 0 .9em;
+		-webkit-border-top-left-radius: .9em;
+		-webkit-border-bottom-left-radius: .9em;
+		padding: 2px 2px 2px 16px;
+		background-position: -2000px 50%;
+	}
+	#tagsSidebar ul.tagList li.expanded a.tagInfo {
+		background-position: -1000px 50%;
+	}
+	#tagsSidebar li a.tag:hover {
+		background-position: -3000px 50%;
+	}
+	#tagsSidebar .tagInfo:hover, #tagsSidebar li.expanded a.tagInfo {
+		background-position: -1000px 50%;
+	}
+
+
+	
+	/* assigned tags */
+	
+	#tagsSidebar ul.tagList.tagsAssigned li a.tag {
+		color: #000 !important;
+		background-position: -4000px 50%;
+	}
+	#tagsSidebar ul.tagList.tagsAssigned li a {
+		background-color: #FFBC00 !important;
+	}
+	#tagsSidebar ul.tagList.tagsAssigned li a.tag:hover {
+		background-position: -5000px 50%;
+		color: #000 !important;
+	}
+	#tagsSidebar ul.tagList.tagsAssigned li {
+		background-color: #FFBC00 !important;
+	}
+
+
+	
+	/* assigned by others */
+
+	#tagsSidebar ul.tagList.tagsAssignedByOthers li a {
+		background-color: #F4D87D !important;
+	}
+	#tagsSidebar ul.tagList.tagsAssignedByOthers li {
+		background-color: #F4D87D !important;
+	}
+
+
+
+	/* tag Pool */
+		
+	#tagsSidebar ul.tagList.tagsUnassigned li a {
+		background-color: #D3D4D3 !important;
+		color: #656565 !important;
+	}
+	#tagsSidebar ul.tagList.tagsUnassigned li a:hover {
+		color: #000 !important;
+	}
+	#tagsSidebar ul.tagList.tagsUnassigned li {
+		background-color: #D3D4D3 !important;
+	}
+
+	/* tag Info */
+	
+	
+	#tagsSidebar li.expanded a {
+	}	
+	#tagsSidebar ul.tagList li span {
+		float: left;
+		padding: 3px 4px 0 4px;
+	}
+	#tagsSidebar ul.tagList li span A {
+		background-color: transparent;
+	}
+		
+/* groups -------------------------------------------------------------- */
+
+
+	/* Palette Headers--------------------------------------------- */
+
+		#groupsSidebar .sidebarInset {
+			font-size: 11px;
+			line-height: 13px;
+			}
+		#groupsSidebar.expanded {
+			padding: 0;
+			margin: 0 0 1px 0;
+			}
+		#groupsSidebar.collapsed {
+			padding: 0 0 4px 0;
+			margin: 0 0 1px 0;
+			}
+		.collapsiblePalette h3 a {
+			padding:0px 0px 0px 17px;
+			}	
+		.collapsiblePalette.expanded h3 a {
+			background: url(/images/icons/diggerDown.png) left no-repeat;
+			}
+		.collapsiblePalette.collapsed h3 a {
+			background: url(/images/icons/diggerRight.png) left no-repeat;
+			}
+		.collapsiblePalette h3 a:hover {
+			background-color: transparent;
+			}
+	
+	/* Add to Group Buttons--------------------------------------------- */
+	
+		.header span {
+			float:right;
+			width:16px;
+			margin:0px;
+			}	
+		.header span a {
+			padding:0px;
+			margin:0 !important;
+			height:16px;
+			width:16px;
+			text-indent:-3000px;
+			display:block;
+			background-image: url(/images/icons/plus16b.png);
+			background-repeat: no-repeat !important;
+			background-position: 0 0;
+			padding:0px !important;
+			}
+		.header span a:hover {		
+			background-position: 0 -16px;
+			}
+		.header span a:active {		
+			background-position: 0 -32px;
+			}
+
+	
+	
+	ul.groupsList {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: block;
+		}
+	ul.groupsList > li {
+		padding-left: 0px !important;
+		}
+	.groupsList li ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		}	
+	.groupsList li {
+		padding: 0 0 0 12px;
+		}
+	a.groupInfo {
+		width: 16px;
+		height: 16px;
+		padding: 0;
+		text-indent: -3000px;
+		float: right;
+		margin-right: 2px !important;
+		background-color: transparent;
+		background-image: url(/images/icons/groupInfo.png);
+		background-position: 0 -16px;
+		background-repeat: no-repeat;
+		}
+	a.groupInfo:hover {
+		background-position: 0 0;
+		}
+	td.showInfo .expanded {
+		background-position: -16px -16px;
+		}
+	td.showInfo .expanded:hover {
+		background-position: -16px 0;
+		}
+	td.showInfo {
+		padding-left:4px;
+		}
+	
+	
+	#addGroup {
+		position: relative;
+	}
+	#addGroup a {
+	}
+	#addGroup a.plus {
+		display: block;
+		background-image: url(/images/icons/addRemove.png);
+		background-repeat: no-repeat;
+		background-position: 0 -200px;
+		margin: 4px 0 0 19px;
+		padding: 2px 0 2px 20px;
+	}
+	* html #addGroup a {
+	}
+	#addGroup a.plus:hover {
+		background-position: 0 -250px;
+	}
+	#addGroup a.minus {
+		background-image: url(/images/icons/addRemove.png);
+		background-position: 0 -300px;
+	}
+	#addGroup a.minus:hover {
+		background-position: 0 -350px;
+	}
+	#addGroup a.minus:active {
+		background-position: -16px 0;
+	}
+	#addGroupMenu {
+		position: absolute;
+		top: 15px;
+		left: 19px;
+		border-color: #1A9400 #B6B9BC #B6B9BC #B6B9BC;
+		border-width: 2px 1px 1px 1px;
+		border-style: solid;
+		background-color: #FFF;
+		padding: 2px;
+		width: 12em;
+	}
+	#addGroupMenu .folder {
+		background-position: 4px 50%;
+		padding: 4px 2px 4px 24px;
+	}
+	#addGroupMenu a {
+		display: block;
+		padding-top: 6px !important;
+		padding-bottom: 6px !important;
+		font-size: 1em;
+	}
+	* html #addGroupMenu a {
+	}
+	#addGroupMenu a:hover {
+		background-color: #1662D3;
+		color: #FFF;
+	}
+
+
+
+/* Round Group Boxes  ------------------------------------------- 	*/
+
+		
+.roundtl, .roundtr, .roundbl, .roundbr {
+	background-image: url(/images/bg/roundCorners.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	}
+div.highlighted, div.highlighted:hover {
+	background-color: #003BC9 !important;
+}
+a.highlighted  {		
+	color: #FFF !important;
+	}
+.roundtl {
+	background-position: left top;
+	}
+.roundtl:hover {
+	background-color: #D9D9D9;
+	}
+.roundtr {
+	background-position: right top;
+	}
+.roundbl {
+	background-position: left bottom;
+	}
+.roundbr {
+	background-position: right bottom;
+	}
+		
+		/* Groups Expand  ------------------------------------------- 	*/
+		
+		
+		.g-header  {
+			padding-left: 16px;
+			}
+		.groupInfo {		
+			background-color: #99C1ED;
+			}
+		.groupInfoMargin {		
+			padding: 10px;
+			}
+			
+		/* Group Info Options ---------------------------------------  */
+			
+				
+			.groupInfo a.groupOption {
+				padding: 5px 0 7px 36px;
+				background-repeat: no-repeat;
+				color: #000 !important;
+				display: block;
+				}
+			.groupInfo a.groupOption:hover {
+				}
+			.groupOptionMenu {
+				background-color: #D0E5FD;
+				padding: 4px;
+				border-color: #80A6CE #D6E9FD #D6E9FD #8EB8E5;
+				border-width: 1px;
+				border-style: solid;
+				}
+				
+			.groupInfo a.rename, 
+			.groupInfo a.move, 
+			.groupInfo a.access,
+			.groupInfo a.subscription {
+				background-image: url(/images/icons/groupInfoIcons.png);
+				}
+			.groupInfo a.rename {
+				background-position: 0 3px;
+			}
+			.groupInfo a.rename.expanded {
+				background-position: 0 -47px;
+			}
+			.groupInfo a.subscription {
+				background-position: 0 -97px;
+			}
+			.groupInfo a.subscription.expanded {
+				background-position: 0 -147px;
+			}
+			.groupInfo a.move {
+				background-position: 0 -197px;
+			}
+			.groupInfo a.move.expanded {
+				background-position: 0 -247px;
+			}
+			.groupInfo a.access {
+				background-position: 0 -297px;
+			}
+			.groupInfo a.access.expanded {
+				background-position: 0 -347px;
+			}
+
+			.groupInfo a.delete {
+				background-image: url(/images/icons/addRemove.png);
+				background-position: -491px 3px;
+				}
+			.groupInfo a.smart {
+				background-image: url(/images/icons/gear.png);
+				background-position: 9px 3px;
+				}
+
+.groupsList table {
+	border-collapse: collapse;
+	width: 100%;
+	padding: 0px;
+	}
+	
+td.showInfo {
+	width: 16px;
+	}
+
+td.dinger {
+	width: 20px;
+	}
+	
+td.dinger .collapsed, td.dinger .expanded {
+	width: 16px;
+	height: 16px;
+	display: block;
+	text-indent: -3000px;
+	background-repeat: no-repeat;
+	background-image: url(/images/icons/dinger.png);
+	margin: 0 0 0 4px;
+	}
+* html td.dinger .collapsed, * html td.dinger .expanded {
+	background-image: url(/images/ie/dinger.gif);
+	}
+td.dinger .collapsed {
+	background-position: 0 -100px;
+	}
+td.dinger .collapsed:hover {
+	background-position: 0 -150px;
+	}
+td.dinger .expanded {
+	background-position: 0 0;
+	}
+td.dinger .expanded:hover {
+	background-position: 0 -50px;
+	}
+
+a.folder  {
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding: 4px 2px 4px 20px;
+	display: block;
+	}
+.groupsList a {
+	overflow: hidden;
+	}
+.groupsList em {
+	margin: 0 0 0 .5em;
+	overflow: hidden;
+	font-style: normal;
+	}
+
+/* Groups and Smart Folders Content --------------------------------------------- */
+
+	.rssIcon, .vcardIcon, .iCalIcon {
+		padding:0px !important;
+		}
+	
+/* Groups Edit Dialog -----------------------------------------*/
+
+
+/* Forms --------------------------------------------- */
+	.groupsDialogBox {
+		padding:5px;
+		font-size:10px;
+		color: #000;
+		padding:0px;
+		}
+	.groupInfo fieldset {	
+		padding: 0.35em 0.5em 0.75em 0.5em;
+		margin: 0.5em 0;
+		border-color: #689FDD !important;
+	}
+	.groupInfo legend {	
+		margin: 0;
+		padding: 0 2px;
+		background-color: transparent;
+		color: #000;
+		}
+
+	#editSmartGroupKeywordList {	
+		}
+	.itemHighlighted input {
+		margin:2px 2px 2px 4px;
+		font-size:9px;
+		}
+	.groupInfo h4 span {
+		border:0px solid #DEDDDA;
+		color:#333;
+		background: #FFFBE2;
+		}
+	.groupInfo select {
+		width:130px;
+		font-size:9px;
+		}
+	.groupInfo input {
+		font-size:0.9em;
+		}
+	.groupInfo p {
+		margin: 0;
+		padding: 0;
+		}
+	.groupInfo .smallAdd {
+		margin: 5px 0 0 0;
+		font-weight: normal;
+		color: #215DB3 !important;
+		display: inline !important;
+		padding: 0px 0 0px 13px;
+		background-image: url(/images/icons/smallPlus.png);
+		background-repeat: no-repeat;
+		background-position: 0 2px;
+	}
+	.groupInfo .smallAdd:hover {
+		background-position: 0 -98px;
+	}
+	.groupInfo .smallAdd:active {
+		background-position: 0 -198px;
+	}
+	a.smallRemoveLink {	
+		background-image: url(/images/icons/smallMinus.png);
+		background-repeat: no-repeat !important;
+		background-position: 0 0 !important;
+		width: 9px !important;
+		height: 9px !important;
+		text-indent: -3000px;
+		padding: 0px !important;
+		float: right;
+		margin: 9px 0 0 0 !important;
+		}
+	a.smallRemoveLink:hover {	
+		background-position: 0px -100px !important;
+		}
+	a.smallRemoveLink:active {	
+		background-position: 0px -200px !important;
+		background-color: #A9CBF0 !important;
+		}
+	.groupInfo fieldset hr, .groupInfoMargin hr {
+		margin: 0.5em 0px;
+		background-color: #C3DBF9;
+		border-color: #659FE2;
+		border-width: 1px 0 0 0;
+		border-style: solid;
+		height: 1px;
+	}
+
+
+/* Icons / report -------------------------------------------- */
+	
+
+	.events {		
+		background-image: url(/images/icons/calendar16.png);
+		}
+	.messages {		
+		background-image: url(/images/icons/mailbox.png);
+		}
+	.joyent_files {		
+		background-image: url(/images/icons/filesAll.png);
+		}
+	.comments {		
+		background-image: url(/images/icons/commentBubble16.png);
+		}
+	.notifications {		
+		background-image: url(/images/icons/notifyBubble.png);
+		}
+	div#groupsSidebar .lightning {
+		background-image: url(/images/icons/lightning.gif);
+		}
+	.workspace {		
+		background-image: url(/images/icons/workspace.png);
+		}
+	.user {
+		background-image: url(/images/icons/user.png);
+		background-position: 0 0;
+		}
+	.currentUser {
+		background-image: url(/images/icons/userCurrent.png);
+		background-position: 0 0;
+		}
+	.orangeBadge {
+		width: 38px;
+		height: 14px;
+		display: block;
+		text-indent: -3000px;
+		background-image: url(/images/icons/orangeBadges.png);
+		background-repeat: no-repeat;
+		}
+	.rss {
+		background-position: 0 0;
+		}
+	.rss:hover {
+		background-position: 0 -50px;
+		}
+	.vcard {
+		background-position: -100px 0;
+		}
+	.vcard:hover {
+		background-position: -100px -50px;
+		}
+	.icsIcon {
+		background-position: -200px 0;
+		}
+	.icsIcon:hover {
+		background-position: -200px -50px;
+		}
+		/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* file browser ---------------------------------------------- */
+	
+	#Drawers #browserFrame {
+		height: 210px;
+	}
+	#browserFrame {
+		border-color: #BEBEBE;
+		border-width: 1px;
+		border-style: solid;
+		overflow: auto;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		background-color: #FFF;
+		margin-top: 5px;
+		width: 100%;
+		height: 310px;
+	}
+	#browserColumns {
+		width: 150px;
+	}
+div.browserList {
+	width: 150px;
+	height: 293px !important;
+	background-color: #FFF;
+	border-color: #9D9D9D;
+	border-width: 0;
+	border-style: solid;
+	vertical-align: top;
+	float: left;
+}
+#Drawers  div.browserList, #Drawers  div.browserList ul {
+	height: 193px !important;
+}
+div.browserList ul {
+	height: 293px !important;
+}
+.browserList ul {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100%;
+	overflow: auto;
+	overflow-y: scroll !important;
+}
+.browserList ul li {
+	padding: 0 2px ! important;
+}
+.browserList ul li.selected {
+	background-color: #0055E9;
+}
+.browserList ul li.selected a {
+	color: #ffffff;
+}
+.browserList ul li a {
+	padding: 6px 3px 6px 27px;
+	color: #000;
+	display: block;
+	line-height: 1.3em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.browserList a.defaultFolder {
+	background: url(/images/icons/folderClosed.png) 2px 50% no-repeat;
+}
+.browserList a.fileBrowserUp {	
+	background: url(/images/icons/backToTop.png) 2px 50% no-repeat;
+}
+
+.onceClicked {
+	background-color: #D9D9D9;
+}
+#browserFrame .highlighted a {
+	color: #FFF !important;
+}
+
+.browserButton {
+	width:100px;
+	text-align:right; 
+	padding:5px;
+	float:right;
+}
+
+
+.attachSelector {
+	border-bottom: 1px solid #A2C4DE;
+	padding: 4px;
+	background-color: #A7C7E0;
+}
+* html .attachSelector {
+	display: inline;
+	clear: both;
+}
+#attachUI {
+	margin: 4px 0 0 0;
+	position: relative;
+	background-color: #CEDFEC;
+	border-color: #A2C4DE;
+	border-width: 1px;
+	border-style: solid;
+}
+* html #attachUI {	
+	z-index: 9 !important;
+	overflow: auto;
+}
+
+.browser_placeholder {
+	height: 250px;
+}
+
+
+/* icons -------------------------------------------- */
+
+	#browserColumns .roundtl, #browserColumns .roundtr, #browserColumns .roundbl, #browserColumns .roundbr {
+	background-image: url(/images/bg/roundCornersOnWhite.png);
+	}
+
+	#browserColumns li a {
+		background-repeat: no-repeat;
+		background-position: 7px center;
+		font-size: .9em;
+	}
+	#browserColumns ul li.browserUserShortcut a {
+		background-image: url(/images/icons/groupUser.png);
+	}
+	
+	#browserColumns #app_column ul li.browserFiles a {
+		background-image: url(/images/icons/groupAllFiles.png);
+	}
+	#browserColumns ul li.browserFiles a {
+		background-image: url(/images/icons/groupFolder.png);
+	}
+	
+	#browserColumns #app_column ul li.browserMail a {
+		background-image: url(/images/icons/groupMail.png);
+	}
+	#browserColumns ul li.browserMail a {
+		background-image: url(/images/icons/groupMail.png);
+	}
+	
+	#browserColumns #app_column ul li.browserPeople a {
+		background-image: url(/images/icons/groupPeople.png);
+	}
+	#browserColumns ul li.browserPeople a {
+		background-image: url(/images/icons/groupPeople.png);
+	}
+	
+	#browserColumns #app_column ul li.browserCalendar a {
+		background-image: url(/images/icons/calendar16.png);
+	}
+	#browserColumns ul li.browserCalendar a {
+		background-image: url(/images/icons/calendar16.png);
+	}
+	
+	#browserColumns #app_column ul li.browserBookmarks a {
+		background-image: url(/images/icons/bookmarkEveryones.png);
+	}
+	#browserColumns ul li.browserBookmarks a {
+		background-image: url(/images/icons/bookmark.png);
+	}
+
+	#browserColumns #app_column ul li.browserLists a {
+		background-image: url(/images/icons/groupFolder.png);
+	}
+	#browserColumns ul li.browserLists a {
+		background-image: url(/images/icons/groupFolder.png);
+	}
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+					
+		#Drawers dl {
+			margin-bottom: 1em !important;
+		}
+		#Drawers dd+dt {	
+			margin-top:0 !important;
+			}
+		#Drawers dd {
+			margin:0.3em 0 0.3em 10.5em !important;
+			}
+		
+		#Drawers hr {
+			border-color: #A3A4A3 #A3A4A3 #FFF #A3A4A3;
+			border-width: 1px 0 1px 0;
+			border-style: solid;
+		}
+
+
+/* jajah ----------------------------------------*/
+
+ .your_number {
+ 	background-color: #D8D8D8;
+ 	-moz-border-radius: .8em .8em .8em .8em;
+ 	-webkit-border-top-left-radius: .8em;
+ 	-webkit-border-top-right-radius: .8em;
+ 	-webkit-border-bottom-left-radius: .8em;
+ 	-webkit-border-bottom-right-radius: .8em;
+ 	padding: 5px 0 1px 0;
+ 	margin-bottom: 1em;
+ }/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+	.addIconLeft {
+		padding: 2px 0 2px 18px;
+		background-repeat: no-repeat;
+	}
+	.addIconright {
+		padding: 2px 18px 2px 0;
+		background-repeat: no-repeat;
+	}
+
+/* General -------------------------------------------------- */
+
+	a.listDinger {
+		width: 16px;
+		height: 16px;
+		display: block;
+		text-indent: -3000px;
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/dinger.png);
+		margin: 0 0 0 5px;
+	}
+	a.listDinger {
+		background-position: 0 -200px;
+	}
+	a.dinger, a.dingerExpanded, span.dinger, span.dingerExpanded {	
+		background-image: url(/images/icons/dinger.png);
+	}
+	a.dinger, span.dinger, a.listDinger.collapsed {	
+		background-position: 0 -100px;
+	}
+	a.dinger:hover, span.dinger:hover, a.listDinger.collapsed:hover {
+		background-position: 0 -150px;
+	}
+	a.dingerExpanded, a.listDinger.expanded, span.dingerExpanded {
+		background-position: 0 0;
+	}
+	a.dingerExpanded:hover, a.listDinger.expanded:hover, span.dingerExpanded:hover {
+		background-position: 0 -50px;
+	}
+	.downloadDoc, .downloadDoc:active {
+		background-image: url(/images/icons/downloadDoc.png);
+		background-position: 0 0;
+		margin-bottom: 4px;
+		display: block;
+	}
+	.downloadDoc:hover {	
+		background-position: 0 -50px;
+	}
+	.tip {
+		background-image: url(/images/icons/tip.png);
+		background-repeat: no-repeat;
+		background-position: left center;
+		padding: 0 0 0 16px;
+		background-color: transparent;
+		font-style: italic;
+	}
+	
+/* Icons (file types) ------------------------------------*/
+	
+	.chris {
+		background: url(/images/icons/docs/16/chris.png) 0 50% no-repeat;
+		}
+	.doc  {
+		background: url(/images/icons/docs/16/doc.png) 0 50% no-repeat;
+		}
+	.file {
+		background: url(/images/icons/docs/16/text.png) 0 50% no-repeat;
+		}
+	.fla, .flv {
+		background: url(/images/icons/docs/16/fla.png) 0 50% no-repeat;
+		}
+	.html, .htm {
+		background: url(/images/icons/docs/16/html.png) 0 50% no-repeat;
+		}
+	.gruber {
+		background: url(/images/icons/docs/16/gruber.png) 0 50% no-repeat;
+		}
+	.ics  {
+		background: url(/images/icons/docs/16/ics.png) 0 50% no-repeat;
+		}
+	.joyent {
+		background: url(/images/icons/docs/16/joyent.png) 0 50% no-repeat;
+		}
+	.jpg, .jpeg, .gif, .png, .tif, .tiff, .bmp, .raw, .psd, .eps, .ai, .ps  {
+		background: url(/images/icons/docs/16/image.png) 0 50% no-repeat;
+		}
+	.luke {
+		background: url(/images/icons/docs/16/luke.png) 0 50% no-repeat;
+		}
+	.pdf  {
+		background: url(/images/icons/docs/16/pdf.png) 0 50% no-repeat;
+		}
+	.mov, .mpeg, .mpg, .mp4  {
+		background: url(/images/icons/docs/16/mov.png) 0 50% no-repeat;
+		}
+	.mp3, .aac, .wav, .wmv, .m4a, .m4p, .m4b, .aiff, .aif {
+		background: url(/images/icons/docs/16/sound.png) 0 50% no-repeat;
+		}
+	.ppt  {
+		background: url(/images/icons/docs/16/ppt.png) 0 50% no-repeat;
+		}
+	.psd  {
+		background: url(/images/icons/docs/16/psd.png) 0 50% no-repeat;
+		}
+	.qpw  {
+		background: url(/images/icons/docs/16/qpw.png) 0 50% no-repeat;
+		}
+	.raw  {
+		background: url(/images/icons/docs/16/raw.png) 0 50% no-repeat;
+		}
+	.slim, .bryan {
+		background: url(/images/icons/docs/16/bryan.png) 0 50% no-repeat;
+		}
+	.vcf  {
+		background: url(/images/icons/docs/16/vcf.png) 0 50% no-repeat;
+		}
+	.wmv  {
+		background: url(/images/icons/docs/16/wmv.png) 0 50% no-repeat;
+		}
+	.wpd, .wp  {
+		background: url(/images/icons/docs/16/wpd.png) 0 50% no-repeat;
+		}
+	.xls {
+		background: url(/images/icons/docs/16/xls.png) 0 50% no-repeat;
+		}
+	.young, .margaret {
+		background: url(/images/icons/docs/16/margaret.png) 0 50% no-repeat;
+		}
+		
+		
+/* 32x file icons ------------------------------------------- */
+
+
+	.files {
+		background-image: url(/images/icons/docs/32/files.png);
+	}
+	.peep {
+		background-image: url(/images/icons/docs/32/people.png);
+	}
+	.calendar {
+		background-image: url(/images/icons/docs/32/calendar.png);
+	}
+	.mail {
+		background-image: url(/images/icons/docs/32/mail.png);
+	}
+	.bookmark {
+		background-image: url(/images/icons/docs/32/bookmark.png);
+	}
+	.list {
+		background-image: url(/images/icons/docs/32/list.png);
+	}
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+/* Autocomplete ----------------------------------------------------------------- */
+
+div.auto_complete { 
+  width: 350px; 
+  background: #fff;
+  margin:  0px !important;
+  padding: 0px !important;
+} 
+div.auto_complete ul { 
+  border: 1px solid #888; 
+  margin: 0px !important;
+  padding: 0px !important; 
+  width: 100%; 
+  list-style-type: none; 
+} 
+div.auto_complete ul li { 
+  margin:0px !important;
+  padding:3px !important;
+} 
+div.auto_complete ul li.selected { 
+  background-color: #ffb; 
+} 
+div.auto_complete ul strong.highlight { 
+  color: #800; 
+  margin:0;
+  padding:0; 
+}
+
+
+/* List Views ----------------------------------------------------------------- */
+
+
+table.tableList tr th, table.tableList tr th a {
+	color: #333;
+}
+table.tableList tr td a {
+	color: #333;
+}
+table.tableList tr th {
+	padding: 0px 5px 1px 5px;
+	text-align: left;
+	background-color: #FFF;
+	border-color: #DDD #DDD #D6D6D6 #DDD;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	background-image: url(/images/bg/thBG.png);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+
+table.tableList tr td, table.tableList tr th {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-indent: 1px;
+	cursor: default;
+	}
+table.tableList tr td {
+	padding: 0px 5px 1px 5px;
+	border-color: transparent #E0E6EE #E0E6EE #E0E6EE;
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+}
+
+.details a, .detailsActivated a {	
+	text-indent: -6000px;
+	height: 16px;
+	width: 16px;
+	display: block;
+	margin: 2px auto 0 auto !important;
+	background-image: url(/images/icons/peek.png);
+	background-repeat: no-repeat;
+	}
+.details a {	
+	background-position: -16px 0;
+	}
+.details a:hover {
+	background-position: -16px -16px;
+	}
+.details a:active {
+	background-position: -16px -32px;
+	}
+.detailsActivated a {
+	background-position: 0 -32px; 
+	}
+.detailsActivated a:hover {
+	background-position: 0 -16px; 
+	}
+.detailsActivated a:active {
+	background-position: 0 0; 
+	}
+.tableList a:hover {
+	color: #000;
+}
+
+	
+
+/* TH-TD icons ----------------------------------------------------- */
+	
+	
+	#listCheckboxToggle a,
+	th.status a,
+	td.status a,
+	th.attachment a,
+	td.attachment a,
+	th.userStatus a,
+	td.userStatus a {
+		text-indent: -3000px;
+		display: block;
+		height: 12px;
+		width: 12px;
+		margin: 4px auto 0 auto !important;
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/tdIcons.png);
+		}
+		
+	#listCheckboxToggle.all a {
+		background-position: 0 -24px;
+		}
+	#listCheckboxToggle.all a:hover {	
+		background-position: -24px -24px;
+		}
+	#listCheckboxToggle.all a:active {	
+		background-position: -48px -24px;
+		}
+	#listCheckboxToggle.some a {
+		background-position: 0 -48px;
+		}
+	#listCheckboxToggle.some a:hover {
+		background-position: -24px -48px;
+		}
+	#listCheckboxToggle.some a:active {
+		background-position: -48px -48px;
+		}
+	#listCheckboxToggle.none a {
+		background-position: 0 0;
+		}
+	#listCheckboxToggle.none a:hover {
+		background-position: -24px 0;
+		}
+	#listCheckboxToggle.none a:active {
+		background-position: -48px 0;
+		}
+		
+	th.status a {	
+		background-position: 0px -72px;
+		}
+	th.status a:hover {	
+		background-position: -24px -72px;
+		}
+	th.status a:active {	
+		background-position: -48px -72px;
+		}
+	td.status a {	
+		background-position: 0px -96px;
+		}
+	td.status a:hover {	
+		background-position: -24px -96px;
+		}
+	td.status a:active {	
+		background-position: -48px -96px;
+		}
+		
+		
+	th.attachment a {	
+		background-position: 0px -120px;
+		}
+	th.attachment a:hover {	
+		background-position: -24px -120px;
+		}
+	th.attachment a:active {	
+		background-position: -48px -120px;
+		}
+	td.attachment a {	
+		background-position: 0px -144px;
+		}
+	td.attachment a:hover {	
+		background-position: -24px -144px;
+		}
+	td.attachment a:active {	
+		background-position: -48px -144px;
+		}
+		
+		
+	th.userStatus a {	
+		background-position: 0px -168px;
+		}
+	th.userStatus a:hover {	
+		background-position: -24px -168px;
+		}
+	th.userStatus a:active {	
+		background-position: -48px -168px;
+		}
+	td.userStatus a {	
+		background-position: 0px -192px;
+		}
+	td.userStatus a:hover {	
+		background-position: -24px -192px;
+		}
+	td.userStatus a:active {	
+		background-position: -48px -192px;
+		}
+			
+	th.detailView span {
+		background-image: url(/images/icons/thInfo.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		display: block;
+		width: 16px;
+		height: 16px;
+		margin: auto;
+		text-indent: -3000px;
+	}
+		
+
+/* Reports -------------------------------------------------- */
+		
+	.lastRow td {
+		padding-bottom: 1em !important;
+		}
+	.lastRow td a {
+		color: #3175D8 !important;
+		}
+	.reportHeader {
+		padding: 0;
+		border-width: 1px;
+		border-color: #BCBDBC #C2C3C2 #BCBDBC #CACBCA;
+		border-style: solid;
+		background-repeat: repeat-x;
+		background-color: #E8E8E7;
+		background-position: left top;
+		overflow: hidden;
+		background-image: url(/images/bg/reportSubHeaderBG.png);
+	}
+	.reportHeader h3 {		
+		color: #3B4351;
+		float: left;
+		font-weight: bold;
+	}
+	h3.drag_handle {		
+		padding: 5px 0 4px 20px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		}
+	
+	
+	ul.reportHeaderControls {
+		float: right;
+		list-style-type: none;
+		width:30%;
+		}
+	ul.reportHeaderControls li {
+		float: right;
+		}
+	.reportHeader .hideReport a,		
+	.reportHeader .showReport a,
+	.reportHeader .reload a,
+	.reportHeader .remove a,
+	ul.reportHeaderControls li.paginationNext a, 						
+	ul.reportHeaderControls li.paginationPrevious a {
+		background-repeat: no-repeat;
+		height: 24px;
+		width: 24px;
+		text-indent: -3000px;
+		cursor: pointer;
+		display: block;
+		background-image: url(/images/icons/reportHeaderIcons.png);
+		}
+	ul.reportHeaderControls li.paginationNext a {
+		background-position: -120px 0px;
+		width: 26px !important;
+		}
+	ul.reportHeaderControls li.paginationNext a:hover {
+		background-position: -120px -24px;
+		}
+	ul.reportHeaderControls li.paginationPrevious a {
+		background-position: -96px 0px;
+		}
+	ul.reportHeaderControls li.paginationPrevious a:hover {
+		background-position: -96px -24px;
+		}
+	.reportHeader .pagination {		
+		height: 24px;
+		font-size: 85%;
+		color: #697691;
+		padding: 0px;
+		}
+	.reportHeader .pagination form {	
+		margin: 4px;
+		}
+	.reportHeader .showReport a {		
+		background-position: -48px 0px;
+		float: left;
+		}
+	.reportHeader .showReport a:hover {		
+		background-position: -48px -24px;
+		}
+	.reportHeader .hideReport a {		
+		background-position: -72px 0px;
+		float: left;
+		}
+	.reportHeader .hideReport a:hover {	
+		background-position: -72px -24px;
+		}
+	.reportHeader .reload a {		
+		background-position: 0px 0px;
+		}
+	.reportHeader .reload a:hover {		
+		background-position: 0px -24px;
+		}
+	.reportHeader .remove a {		
+		background-position: -24px 0px;
+		}
+	.reportHeader .remove a:hover {		
+		background-position: -24px -24px;
+		}
+	
+	.drag_handle {
+		cursor: move;
+		}
+
+
+/* General (ui 2.0) ----------------------------------------------------------------- */
+
+	body {
+		margin: 0;
+		font-size: 11px;
+		line-height: 18px;
+		font-family: "Lucida Grande", Verdana, sans-serif;
+		background-color: #F1F0EF;
+		background-image: url(/images/bg/sideBar.png);
+		background-repeat: repeat-y;
+	}
+	a { 
+		text-decoration: none;
+		color: #2662C6;
+		cursor:pointer;
+		cursor:hand
+	}
+	* {
+		margin: 0;
+		padding:0;
+		font-size: 11px;
+	}
+	a:focus {
+		-moz-outline: 0;
+	}
+	
+
+/* Dock (ui 2.0) ----------------------------------------------------------------- */
+
+
+	#Dock {
+		float: left;
+		width: 100%;
+		list-style-type: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		background-image: url(/images/bg/dockBG.png);
+		background-color: #1D2B45;
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		}
+	#Dock li {
+		float: left;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		}
+	#Dock li a {
+		float: left;
+		display: block;
+		margin: 0 0 0 3px;
+		color: #FFF;
+		text-decoration: none;
+		width: 40px;
+		height: 38px;
+		text-indent: -3000px;
+		background-image: url(/images/lang/en/apps.png);
+		background-repeat: no-repeat;
+		}
+		
+	.dockConnect a { 
+		background-position: 0 -76px;
+		}
+	.dockConnect a:hover { 
+		background-position: 0 -114px;
+		}
+	#connect .dockConnect a {	
+		background-position: 0 0px;
+		}
+	#connect .dockConnect a:hover {	
+		background-position: 0 -38px;
+		}
+	.dockConnect a.disabled { 
+		background-position: 0 -152px;
+		}
+		
+	.dockMail a { 
+		background-position: -200px -76px;
+		}
+	.dockMail a:hover { 
+		background-position: -200px -114px;
+		}
+	#mail .dockMail a {	
+		background-position: -200px 0px;
+		}
+	#mail .dockMail a:hover {	
+		background-position: -200px -38px;
+		}
+	.dockMail a.disabled { 
+		background-position: -200px -152px;
+		}
+		
+	.dockCalendar a { 
+		background-position: -400px -76px;
+		}
+	.dockCalendar a:hover { 
+		background-position: -400px -114px;
+		}
+	#calendar .dockCalendar a {	
+		background-position: -400px 0px;
+		}
+	#calendar .dockCalendar a:hover {	
+		background-position: -400px -38px;
+		}
+	.dockCalendar a.disabled { 
+		background-position: -400px -152px;
+		}
+		
+	.dockPeople a { 
+		background-position: -600px -76px;
+		}
+	.dockPeople a:hover { 
+		background-position: -600px -114px;
+		}
+	#people .dockPeople a {	
+		background-position: -600px 0px;
+		}
+	#people .dockPeople a:hover {	
+		background-position: -600px -38px;
+		}
+	.dockPeople a.disabled { 
+		background-position: -600px -152px;
+		}
+		
+	.dockFiles a { 
+		background-position: -800px -76px;
+		}
+	.dockFiles a:hover { 
+		background-position: -800px -114px;
+		}
+	#files .dockFiles a {	
+		background-position: -800px 0px;
+		}
+	#files .dockFiles a:hover {	
+		background-position: -800px -38px;
+		}
+	.dockFiles a.disabled { 
+		background-position: -800px -152px;
+		}
+		
+	.dockBookmarks a { 
+		background-position: -1000px -76px;
+		}
+	.dockBookmarks a:hover { 
+		background-position: -1000px -114px;
+		}
+	#bookmarks .dockBookmarks a {	
+		background-position: -1000px 0px;
+		}
+	#bookmarks .dockBookmarks a:hover {	
+		background-position: -1000px -38px;
+		}
+	.dockBookmarks a.disabled { 
+		background-position: -1000px -152px;
+		}
+
+	.dockLists a { 
+		background-position: -1400px -76px;
+		}
+	.dockLists a:hover { 
+		background-position: -1400px -114px;
+		}
+	#lists .dockLists a {	
+		background-position: -1400px 0px;
+		}
+	#lists .dockLists a:hover {	
+		background-position: -1400px -38px;
+		}
+	.dockLists a.disabled { 
+		background-position: -1400px -152px;
+		}
+		
+	.appLabel {
+		position: absolute;
+		top: 32px;
+		left: 20px;
+		background-color: transparent;
+		z-index: 10;
+		overflow: default;
+		width: 101px;
+		height: 50px;
+		display: block;
+		background-image: url(/images/bg/appNameBubble.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		text-align: center;
+		padding: 19px 0 0 0;
+	}
+	
+/* General Toolbar (actions) -------------------------------------------- */
+
+	.actionMove a.disabled, .actionMove a:hover.disabled {
+		background-position: -0 0px;
+	}
+	.actionMove a {
+		background-position: -0 -30px;
+	}
+	.actionMove a:hover {
+		background-position: -0 -60px;
+	}
+	.actionMove a:active, .actionMove a.active {
+		background-position: -0 -90px;
+	}
+	
+	.actionCopy a.disabled, .actionCopy a:hover.disabled {
+		background-position: -150px 0px;
+	}
+	.actionCopy a {
+		background-position: -150px -30px;
+	}
+	.actionCopy a:hover {
+		background-position: -150px -60px;
+	}
+	.actionCopy a:active, .actionCopy a.active {
+		background-position: -150px -90px;
+	}
+		
+	.actionCopyDirect a.disabled, .actionCopyDirect a:hover.disabled {
+		background-position: -300px 0px;
+	}
+	.actionCopyDirect a {
+		background-position: -300px -30px;
+	}
+	.actionCopyDirect a:hover {
+		background-position: -300px -60px;
+	}
+	.actionCopyDirect a:active, .actionCopyDirect a.active {
+		background-position: -300px -90px;
+	}
+		
+	.actionNew a.disabled, .actionNew a:hover.disabled {
+		background-position: -450px 0px;
+	}
+	.actionNew a {
+		background-position: -450px -30px;
+	}
+	.actionNew a:hover {
+		background-position: -450px -60px;
+	}
+	.actionNew a:active, .actionNew a.active {
+		background-position: -450px -90px;
+	}
+		
+	.actionImport a.disabled, .actionImport a:hover.disabled {
+		background-position: -600px 0px;
+	}
+	.actionImport a {
+		background-position: -600px -30px;
+	}
+	.actionImport a:hover {
+		background-position: -600px -60px;
+	}
+	.actionImport a:active, .actionImport a.active {
+		background-position: -600px -90px;
+	}
+		
+	.actionShowAll a.disabled, .actionShowAll a:hover.disabled {
+		background-position: -750px 0px;
+	}
+	.actionShowAll a {
+		background-position: -750px -30px;
+	}
+	.actionShowAll a:hover {
+		background-position: -750px -60px;
+	}
+	.actionShowAll a:active, .actionShowAll a.active {
+		background-position: -750px -90px;
+	}
+		
+	.actionShowNew a.disabled, .actionShowNew a:hover.disabled {
+		background-position: -900px 0px;
+	}
+	.actionShowNew a {
+		background-position: -900px -30px;
+	}
+	.actionShowNew a:hover {
+		background-position: -900px -60px;
+	}
+	.actionShowNew a:active, .actionShowNew a.active {
+		background-position: -900px -90px;
+	}
+
+	.actionDelete a.disabled, .actionDelete a:hover.disabled {
+		background-position: -1050px 0px;
+	}
+	.actionDelete a {
+		background-position: -1050px -30px;
+	}
+	.actionDelete a:hover {
+		background-position: -1050px -60px;
+	}
+	.actionDelete a:active, .actionDelete a.active {
+		background-position: -1050px -90px;
+	}
+		
+	.actionSaveSearch a.disabled, .actionSaveSearch a:hover.disabled {
+		background-position: -1200px 0px;
+	}
+	.actionSaveSearch a {
+		background-position: -1200px -30px;
+	}
+	.actionSaveSearch a:hover {
+		background-position: -1200px -60px;
+	}
+	.actionSaveSearch a:active, .actionSaveSearch a.active {
+		background-position: -1200px -90px;
+	}
+
+	.actionTools a.disabled, .actionTools a:hover.disabled {
+		background-position: -1350px 0px;
+	}
+	.actionTools a {
+		background-position: -1350px -30px;
+	}
+	.actionTools a:hover {
+		background-position: -1350px -60px;
+	}
+	.actionTools a:active, .actionTools a.active {
+		background-position: -1350px -90px;
+	}
+
+	.actionEdit a.disabled, .actionEdit a:hover.disabled {
+		background-position: -1500px 0px;
+	}
+	.actionEdit a {
+		background-position: -1500px -30px;
+	}
+	.actionEdit a:hover {
+		background-position: -1500px -60px;
+	}
+	.actionEdit a:active, .actionEdit a.active {
+		background-position: -1500px -90px;
+	}
+		
+
+
+/* Toolbar  & Peek Toolbar -------------------------------------------------------------- */
+
+	ul#Toolbar {
+		background-image: url(/images/bg/toolbarBG.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		background-color: #F3F3F3;
+		overflow: hidden;
+		float: left;
+		list-style-type: none;
+		position: absolute;
+		top: 38px;
+		height: 46px;
+		right: 0;
+		z-index: 1;
+		border-bottom: #CECECE;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		padding-left: 9px;
+	}
+	
+	ul.toolbar { /* Used for inline toolbars found in mail peek views*/
+		float: left;
+		list-style-type: none;
+		position: relative;
+		height: 30px;
+		width: 100%;
+	}
+	#Toolbar li, .toolbar li {
+		float: left;
+	}
+	
+	#Toolbar a, .toolbar li a {
+		float: left;
+		display: block;
+		text-decoration: none;
+		height: 30px;
+		text-indent: -3000px;
+	}
+	#Toolbar a {
+		margin-top: 14px;
+	}
+	.toolbar li a {
+		margin-top: 0px;
+	}
+	
+	#Toolbar li a, .toolbar li a {
+		background-repeat: no-repeat;
+	}
+	#Toolbar a.disabled, .toolbar li a.disabled {
+		cursor: default;		
+	}
+
+/* Sidebar (UI 2.0) -------------------------------------------------------------- */
+
+
+	#sidebars {
+		background-image: url(/images/bg/sideBarTopBG.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		background-color: transparent;
+		position: absolute;
+		top: 38px;
+		left: 0px;
+		z-index: 5500;
+		bottom: 0px;
+	}
+
+	#search {
+		position: absolute;
+		top: 12px;
+		right: 44px;
+		left: 16px;
+		z-index: 5500;
+		}
+	#search input {
+		font-size: 12px;
+		width: 100%;
+		}
+
+
+/* Sidebar Tabs (UI 2.0) ----------------------------------------------------------------- */
+
+
+	#sidebarTabs {
+		float: right;
+		width: 30px;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		overflow: hidden;
+	}
+	#sidebarTabs li {
+		margin: 0;
+		padding: 0;
+	}
+	.sidebarTab a {
+		background-color: transparent;
+		color: #999;
+		background-repeat: no-repeat;
+		text-indent: -3000px;
+		overflow: hidden;
+		text-decoration: none;
+		display: block;
+		width: 30px;
+	}
+		
+	#gripperSidebarTab a {
+		background-position: 0 0;
+		height: 8px;
+		cursor: col-resize;
+	}	
+	#gripperSidebarTab a:hover {
+		background-position: -60px 0;
+		}	
+	#gripperSidebarTab a:active {
+		background-position: -30px 0;
+		}	
+		
+	#groupsSidebarTab a {
+		background-position: 0 -8px;
+	}	
+	#groupsSidebarTab a:hover {
+		background-position: -60px -8px;
+		}	
+	#groupsSidebarTab a:active, #groupsSidebarTab.sidebarTab.selected a {
+		background-position: -30px -8px;
+		}	
+		
+	#rulesSidebarTab a {
+		background-position: 0 -150px;
+		}	
+	#rulesSidebarTab a:hover {
+		background-position: -60px -150px;
+		}	
+	#rulesSidebarTab a:active, #rulesSidebarTab.sidebarTab.selected a {
+		background-position: -30px -150px;
+		}	
+		
+	#tagsSidebarTab a {
+		background-position: 0 -300px;
+		}	
+	#tagsSidebarTab a:hover {
+		background-position: -60px -300px;
+		}	
+	#tagsSidebarTab a:active, #tagsSidebarTab.sidebarTab.selected a {
+		background-position: -30px -300px;
+		}	
+		
+	#accessSidebarTab a {
+		background-position: 0 -450px;
+		}	
+	#accessSidebarTab a:hover {
+		background-position: -60px -450px;
+		}	
+	#accessSidebarTab a:active, #accessSidebarTab.sidebarTab.selected a {
+		background-position: -30px -450px;
+		}	
+		
+	#notifySidebarTab a {
+		background-position: 0 -600px;
+		}	
+	#notifySidebarTab a:hover {
+		background-position: -60px -600px;
+		}	
+	#notifySidebarTab a:active, #notifySidebarTab.sidebarTab.selected a {
+		background-position: -30px -600px;
+		}	
+		
+
+
+
+/* Content (UI 2.0) -------------------------------------------------------------- */
+
+	#contentPane {
+		position: absolute;
+		top: 85px;
+		right: 0px;
+		bottom: 0px;
+		overflow: auto;
+	}
+	
+	#contentWrapper {
+		padding: 1em;
+	}	
+	.marginLarge {
+		padding:2em !important;
+	}
+	.itemShow a {
+		color:#296ECA;
+	}	
+	.itemShow table tr td {
+		padding:3px;
+	}
+		
+	#contentPane h2, #contentPane h2 a {
+		font-size: 14px;
+		color: #000;
+	}
+
+	.infobox {
+		border-color: #E6E9E9;
+		border-width: 1px;
+		border-style: solid;
+		-moz-border-radius: .4em .4em .4em .4em;
+		-webkit-border-top-left-radius: .4em;
+		-webkit-border-top-right-radius: .4em;
+		-webkit-border-bottom-left-radius: .4em;
+		-webkit-border-bottom-right-radius: .4em;
+		padding: 1em;
+		background-color: #FAFAFA;
+		margin-bottom: 10px;
+	}
+
+
+/* developerTools ---------------------------------------------------------------- */
+
+#developerTools {
+	z-index: 6000;
+}
+#developerToolsLink {
+	position: absolute;
+	top: 0px;
+	right: 47px;
+	height: 38px;
+	width: 38px;
+	text-indent: -3000px;
+	background-image: url(/images/icons/devMenu.gif);
+	z-index:6000;
+	}
+#developerToolsLink.collapsed {
+	background-position: 0 0;
+	}
+#developerToolsLink.collapsed:hover {
+	background-position: 0 -38px;
+	}
+#developerToolsLink.collapsed:active {
+	background-position: 0 -76px;
+	}
+#developerToolsLink.collapsed.pulsing {
+	background-position: 0 -190px;
+	}
+#developerToolsLink.expanded {
+	background-position: 0 -114px;
+	}
+#developerToolsLink.expanded:hover {
+	background-position: 0 -152px;
+	}
+#developerToolsLink.expanded.pulsing {
+	background-position: 0 -225px;
+}
+#developerTools ul {
+	position: absolute;
+	top: 38px;
+	right: 47px;
+	width: 240px;
+	z-index: 6000;
+	display: block;
+	background-color: #F6F7F7;
+	list-style-type: none;
+	border-color: #FFF #BBB #BBB #BBB;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	padding: 8px;
+}
+#developerTools ul li a {
+	padding: .4em 10px .4em 35px;
+	display: block;
+	width: 195px;
+	background-repeat: no-repeat;
+	font-size: 85%;
+	color: #000;
+	background-image: url(/images/icons/plusMenuIcons.png);
+	}
+
+
+
+/* plusMenu -------------------------------------------------------------- */
+
+
+	#plusMenu {
+		z-index:6000;
+	}
+	#plusMenuLink {
+		position: absolute;
+		top: 0px;
+		right: 9px;
+		height: 38px;
+		width: 38px;
+		text-indent: -3000px;
+		background-image: url(/images/icons/plusMenu.gif);
+		z-index:6000;
+		}
+	#plusMenuLink.collapsed {
+		background-position: 0 0;
+		}
+	#plusMenuLink.collapsed:hover {
+		background-position: 0 -38px;
+		}
+	#plusMenuLink.collapsed:active {
+		background-position: 0 -76px;
+		}
+	#plusMenuLink.collapsed.pulsing {
+		background-position: 0 -190px;
+		}
+	#plusMenuLink.expanded {
+		background-position: 0 -114px;
+		}
+	#plusMenuLink.expanded:hover {
+		background-position: 0 -152px;
+		}
+	#plusMenuLink.expanded.pulsing {
+		background-position: 0 -225px;
+	}
+	#plusMenu ul {
+		position: absolute;
+		top: 38px;
+		right: 9px;
+		width: 240px;
+		z-index: 6000;
+		display: block;
+		background-color: #F0F0F0;
+		list-style-type: none;
+		border-color: #FFF #BBB #BBB #BBB;
+		border-width: 1px 1px 1px 1px;
+		border-style: solid;
+		padding: 5px 5px 1em 5px;
+	}
+	#plusMenu ul li a {
+		padding: .4em 10px .4em 35px;
+		display: block;
+		width: 195px;
+		background-repeat: no-repeat;
+		font-size: 85%;
+		color: #000;
+		background-image: url(/images/icons/plusMenuIcons.png);
+		}
+	
+	#loggedInUser {
+		padding: .4em;
+		}
+	#loggedInUser a {
+		color:#000;
+		}
+	#yourPreferences a {	
+		background-position: 15px 3px;
+		}
+	#customerCenter a {	
+		background-position: 15px -97px;
+		}
+	#help a {
+		background-position: 15px -147px;
+		}
+	#domainSettings a {
+		background-position: 15px -47px;
+		}
+	#logout a {
+		background-position: 15px -197px;
+		}
+	.userShortcut a {
+		background-position: 15px -247px;
+		}
+	.userShortcut.selected a {
+		background-position: 15px -347px;
+		}
+	.userShortcutManage a {
+		background-position: 15px -297px;
+		}
+		
+	#plusMenu ul li h5 {
+		border-color: #CDCDCD;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		margin: 0 0 5px 0;
+		font-size: 9px;
+		padding: 0 0 0 7px;
+		color: #737373;
+	}
+
+/* Misc--------------------------------------------- */
+	
+
+	hr {	
+		border-top: 1px solid #B7B7B7;
+		border-bottom: 1px solid #FFF;
+		border-left: 0px solid #AAA;
+		border-right: 0px solid #AAA;
+		height: 0px;
+		background-color: #B7B7B7;
+		margin: .5em 0;
+		}
+	img {
+		border:0px;
+		}
+	td {	
+		font-size: inherit;
+		}
+		
+		
+/* Depricated (iems in this section might need to be deleted)  
+
+	a.promoteItem {
+		height:10px;
+		width:12px;
+		text-indent:-3000px;
+		display:block;
+		margin:0;
+		padding:0;
+		background: url(images/icons/upArrow.gif) no-repeat;
+		}
+	a.demoteItem {
+		height:10px;
+		width:12px;
+		text-indent:-3000px;
+		display:block;
+		margin:0;
+		padding:0;
+		background: url(images/icons/downArrow.gif) no-repeat;
+		}
+	.addPlusSmallNoLabel {	
+		height: 16px;
+		width: 16px;
+		display: block;
+		text-indent: -3000px;
+		background-image: url(images/icons/plus16.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		float: left;
+		margin: .25em .25em .25em 0;
+		}
+	.addPlusSmallNoLabel:hover {	
+		background-position: 0 -16px;
+		}
+		
+		
+	.typeJPG {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 18px;
+		font-weight:normal;
+		margin:0;
+		background: url(images/icons/doc-photo.png) left no-repeat;
+		}
+	.typeUser {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 15px;
+		font-weight:normal;
+		margin:0;
+		white-space:nowrap;
+		background: url(images/icons/user.png) left no-repeat;
+		}
+	.typeContact {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 15px;
+		font-weight:normal;
+		margin:0;
+		white-space:nowrap;
+		background: url(images/icons/people.png) left no-repeat;
+		}
+		
+	.notesTitleExpanded, .notesTitleCollapsed {
+		color:#000;
+		}
+	.itemNote {
+		padding: .5em 1.5em 1.5em 1.5em;
+		}
+	.itemHeader {
+		border-bottom:1px solid #BBB;
+		}
+	.itemInfo {
+		background: url(images/icons/dingerRight.png) left no-repeat;
+		padding-left: 16px;
+		}
+	#itemPreview {
+		padding: 1em 1.5em 1em 1.5em;
+		}
+	#itemPreview .thumbnail {	
+		background: url(images/icons/magnify.png) bottom right no-repeat;
+		padding: 10px 18px 0 0;
+		}
+	#itemPreview .thumbnail img {	
+		border-width: 1px;
+		border-color: #333;
+		border-style: solid;
+		}
+
+	.tagsList {	
+		overflow: auto;
+		}
+	.tagsList ul {
+		margin: 0;
+		padding-left: 0;
+		}
+	.tagsList ul li {	
+		list-style-type: none;
+		display: block;
+		float: left;
+		margin: 0 3px 3px 0;
+		padding: 0 0 0 2px !important;
+		white-space: nowrap;
+		font-size: 10px;
+		line-height:18px;
+		border-color: #FFF #DDD69A #B2AD85 #FFF;
+		border-width: 1px;
+		border-style: solid;
+		background: #FEF8BD url(images/bg/tagBG.png) bottom right no-repeat;
+		}
+	.tagsList ul li a:link, #navlist ul li a:visited {	
+		padding: 2px !important;
+		font-size: 10px;
+		line-height:18px;
+		color: #6C694C;
+		}					
+	.tagsList ul li a:hover {	
+		background-color: #EDE59C;
+		color: #000;
+		text-decoration: none !important;
+		}
+	.tagsList ul li.conflict {	
+		border-right: #C88585;
+		border-bottom: #C88585;
+		border-width: 0 1px 1px 0;
+		border-style: none solid solid solid;
+		background: #FFD5D5 url(images/bg/tagBGConflict.png) bottom right no-repeat;
+		}
+
+*/
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Title : Lightbox Kevin Hale http://particletree.com/features/lightbox-gone-wild/ 
+   Created : January 13, 2006 Modified : February 1, 2006 */
+
+#modalDialog {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	width: 500px;
+	height: 400px;
+	margin: -220px 0 0 -250px;
+	background: #F0F0F0;
+	text-align: left;
+	color: #000;
+	padding: 10px;
+	-moz-border-radius: .8em .8em .8em .8em;
+	-webkit-border-top-left-radius: .8em;
+	-webkit-border-top-right-radius: .8em;
+	-webkit-border-bottom-left-radius: .8em;
+	-webkit-border-bottom-right-radius: .8em;
+	-moz-opacity: 0.95;
+	opacity: .95;
+	filter: alpha(opacity=95);
+	border-color: #6F6F6F;
+	border-width: 1px;
+	border-style: solid;
+}
+
+/* ----------------------------------------------------------------- */
+
+	#modalDialog h2 {
+		background-color: #607A9C;
+		color: #FFF;
+		padding: 5px 15px;
+		border-color: #405A7A #FFF #FFF #405A7A;
+		border-width: 1px;
+		border-style: solid;
+	}
+	#modalDialog .content {
+		padding: 10px 20px 20px 80px;
+		margin: 10px 0 0 0;
+		background-image: url(/images/icons/attention48.png);
+		background-repeat: no-repeat;
+		background-position: 15px 20px;
+		height: 296px;
+		overflow: auto;
+	}
+	#modalDialog .userSwitching {
+		background-image: url(/images/icons/userSwitching48.png);
+	}
+	#modalDialog .content fieldset {
+		padding: 1.25em;
+		border-color: #C7C7C7;
+		border-width: 1px;
+		border-style: solid;
+		margin: 0 0 1em 0;
+	}
+	#modalDialog .content legend {
+		background-color: transparent !important;
+	}
+	
+	#modalDialog fieldset hr {
+		border: #BEBEBE 0px solid;
+		height: 1px;
+		background-color: #BEBEBE;
+		border-bottom: #BEBEBE 0px solid;
+	}
+	
+	#modalDialog .tip {
+		background-image: url(/images/icons/information.png);
+		background-repeat: no-repeat;
+		background-position: 0 3px;
+		padding: 0 0 .5em 23px;
+		background-color: #FFF;
+		background-color: transparent;
+	}
+
+
+/* ----------------------------------------------------------------- */
+
+#modalDialog[id]{
+	position:fixed;
+}
+
+.overlay{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:6500;
+	background-color:#000;
+	-moz-opacity: 0.35;
+	opacity:.35;
+	filter: alpha(opacity=35);
+}
+.overlay.transparent{
+	z-index:5000 !important;
+	-moz-opacity: 0.0;
+	opacity:.0;
+	filter: alpha(opacity=0);
+}
+.overlay[id]{
+	position:fixed;
+}
+
+#modalDialog.done #lbLoadMessage{
+	display:none;
+}
+#modalDialog.done #lbContent{
+	display:block;
+}
+#modalDialog.loading #lbContent{
+	display:none;
+}
+#modalDialog.loading #lbLoadMessage{
+	display:block;
+}
+
+#modalDialog.done img{
+	width:100%;
+	height:100%;
+}

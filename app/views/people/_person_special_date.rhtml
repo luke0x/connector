@@ -1,0 +1,33 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% index ||= params[:index] -%>
+
+<tr id="person_special_date_<%= index %>">
+	<td valign="top"><%= mark_as_primary_star(special_date, 'person', 'special_date', index) %></td>
+	<td>
+		<input id="person_special_dates_<%= index %>_description" size="20" value="<%= special_date.description %>" type="text" maxlength="100" name="person[special_dates][<%= index %>][description]" class="textInput" style="width:183px;" />
+		<div class="infoGroupInputLabel"><%= _('description') -%></div>
+	</td>
+	<td>
+		<input id="person_special_dates_<%= index %>_month" value="<%= special_date.special_date.month rescue nil %>" size="2" type="text" name="person[special_dates][<%= index %>][month]" class="textInput" />
+		<div class="infoGroupInputLabel"><%= _('mo') -%>.</div>
+	</td>
+	<td>
+		<input id="person_special_dates_<%= index %>_day" value="<%= special_date.special_date.day rescue nil %>" size="2" type="text" name="person[special_dates][<%= index %>][day]" class="textInput" />
+		<div class="infoGroupInputLabel"><%= _('day') -%></div>
+	</td>
+	<td>
+		<input id="person_special_dates_<%= index %>_year" value="<%= special_date.special_date.year rescue nil %>" size="4" type="text" name="person[special_dates][<%= index %>][year]" class="textInput" />
+		<div class="infoGroupInputLabel"><%= _('year') -%></div>
+	</td>
+	<td valign="top">
+		<a href="#" onclick="People.removeNewIndex('arrPersonSpecialDateIndexes', <%= index %>); $('person_special_date_<%= index %>').remove(); return false;" class="deleteItem">-</a>
+	</td>
+</tr>

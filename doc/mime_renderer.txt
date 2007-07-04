@@ -1,0 +1,31 @@
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+
+
+So, we've got a new mime renderer.  It's written in C so I'll give you instructions on setting it up locally.  It's relatively painless on OSX.
+
+It has two requirements:
+* glib2
+* gmime
+
+glib2 is in dports, so you can just 'port install glib2' if you haven't already.  gmime is in dports, but it's a very old version.  You may try to use that, but I make no guarantees about it working.
+
+It's best to install gmime by hand.  Grab the source tarball from: http://spruce.sourceforge.net/gmime/sources/v2.2/gmime-2.2.6.tar.gz
+
+Standard configure, make, make install:
+
+$ tar zxvf gmime-2.2.6.tar.gz
+$ cd gmime-2.2.6/
+$ ./configure
+$ make
+$ sudo make install
+
+That'll shove gmime into /usr/local
+
+Now, from your connector checkout run 'rake joyent:gmime' and it should build the mime parser and you can be on your way.

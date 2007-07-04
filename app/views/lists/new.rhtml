@@ -1,0 +1,45 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@list], 'new') -%>
+<%= javascript_tag("Event.observe(window, 'load', function(event){ $('list_name').activate(); });") %>
+<% # TODO: error_messages_for :list %>
+
+<div class="dialog">
+	<h2><%= _('New List') %></h2>
+  <% form_for :list, @list, :url => lists_path, :method => :create, :onsubmit => 'return List.validateSubmit(this);', :class => 'item_editor', :style => 'margin-bottom: 0;' do |f| -%>
+    <div class="infoGroup">
+			<table style="width: 100%;">
+				<tr>
+					<td class="infoGroupLabel" valign="top" style="width: 65px;"><%= _('Name') %>:</td>
+					<td style="padding-left: 5px; padding-bottom: 8px;">
+					  <%= f.text_field :name %>
+				  </td>
+				</tr>
+				<tr>
+					<td class="infoGroupLabel" valign="top" style="width: 65px;"><%= _('Folder') %>:</td>
+					<td style="padding-left: 5px; padding-bottom: 8px;">
+					  <%= hierarchical_groups_select(:id => 'list_list_folder_id', :name => 'list[list_folder_id]', :groups => [User.current.lists_list_folder], :selected => @list_folder) %>
+				  </td>
+				</tr>
+			</table>
+    </div>
+		<div class="infoGroup" style="text-align:center;">
+			<%= render :partial => 'partials/sidebar_buttons' %>
+		</div>
+    <div class="infoGroup">
+      <input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
+			<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
+			<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
+
+      <%= submit_tag _('Create') %>
+  	  <%= button_to_function _('Cancel'), "window.location = '#{lists_home_url}'" %>
+    </div>
+  <% end -%>
+</div>

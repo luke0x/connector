@@ -1,0 +1,191 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+file_name:
+  id: 1
+  smart_group_description_id: 2
+  name: Filename
+  attribute_name: filename
+file_owner_name:
+  id: 2
+  smart_group_description_id: 2
+  name: Owner Username
+  attribute_name: owner_name
+
+
+# all items
+anything_owner_name:
+  id: 3
+  smart_group_description_id: 1
+  name: Owner Username
+  attribute_name: owner_name
+anything_item_type:
+  id: 10
+  smart_group_description_id: 1
+  name: Item Type
+  attribute_name: item_type
+  
+person_first_name:
+  id: 4
+  smart_group_description_id: 3
+  name: First Name
+  attribute_name: first_name
+person_company_name:
+  id: 5
+  smart_group_description_id: 3
+  name: Company Name
+  attribute_name: company_name
+person_full_name:
+  id: 6
+  smart_group_description_id: 3
+  name: Full Name
+  attribute_name: full_name
+person_last_name:
+  id: 7
+  smart_group_description_id: 3
+  name: Last Name
+  attribute_name: last_name
+
+event_owner_name:
+  id: 12
+  smart_group_description_id: 3
+  name: Owner Username
+  attribute_name: owner_name
+event_location:
+  id: 8
+  smart_group_description_id: 4
+  name: Location
+  attribute_name: location
+event_notes:
+  id: 9
+  smart_group_description_id: 4
+  name: Notes
+  attribute_name: notes
+event_owner_name:
+  id: 11
+  smart_group_description_id: 4
+  name: Owner Username
+  attribute_name: owner_name
+event_name:
+  id: 14
+  smart_group_description_id: 4
+  name: Event Name
+  attribute_name: name
+event_repeat_name:
+  id: 15
+  smart_group_description_id: 4
+  name: Repeat Type
+  attribute_name: recurrence_name
+  
+message_owner_name:
+  id: 16
+  smart_group_description_id: 5
+  name: Owner Username
+  attribute_name: owner_name
+message_from:
+  id: 17
+  smart_group_description_id: 5
+  name: From
+  attribute_name: from
+message_to:
+  id: 18
+  smart_group_description_id: 5
+  name: To
+  attribute_name: to
+message_subject:
+  id: 19
+  smart_group_description_id: 5
+  name: Subject
+  attribute_name: subject
+
+all_any:
+  id: 20
+  smart_group_description_id: 1
+  name: Any Condition
+  body: true
+mail_any:
+  id: 21
+  smart_group_description_id: 5
+  name: Any Condition
+  body: true
+calendar_any:
+  id: 22
+  smart_group_description_id: 4
+  name: Any Condition
+  body: true
+people_any:
+  id: 23
+  smart_group_description_id: 3
+  name: Any Condition
+  body: true
+files_any:
+  id: 24
+  smart_group_description_id: 2
+  name: Any Condition
+  body: true
+
+mail_date:
+  id: 25
+  smart_group_description_id: 5
+  name: Date
+  attribute_name: date
+
+people_owner_name:
+  id: 26
+  smart_group_description_id: 3
+  name: Owner Username
+  attribute_name: owner_name
+
+mail_status:
+  id: 27
+  smart_group_description_id: 5
+  name: Status
+  attribute_name: status
+
+bookmarks_any:
+  id: 28
+  smart_group_description_id: 6
+  name: Any Condition
+  body: true
+bookmarks_address:
+  id: 29
+  smart_group_description_id: 6
+  name: Address
+  attribute_name: uri
+bookmarks_title:
+  id: 30
+  smart_group_description_id: 6
+  name: Title
+  attribute_name: title
+bookmarks_notes:
+  id: 31
+  smart_group_description_id: 6
+  name: Notes
+  attribute_name: notes
+bookmarks_owner_name:
+  id: 32
+  smart_group_description_id: 6
+  name: Owner Username
+  attribute_name: owner_name
+
+lists_item_type:
+  id: 33
+  smart_group_description_id: 7
+  name: Item Type
+  attribute_name: item_type
+lists_owner_name:
+  id: 34
+  smart_group_description_id: 7
+  name: Owner Username
+  attribute_name: owner_name
+lists_any:
+  id: 35
+  smart_group_description_id: 7
+  name: Any Condition
+  body: true

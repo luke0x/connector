@@ -1,0 +1,21 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% person = address.respond_to?(:person) ? address.person : Organization.current.find_contact_with_email(address_string(address, true)) -%>
+<% if person -%>
+  <% if person.user -%>
+    <%= link_to "&nbsp;", person_show_url(:id => person), {:title => _("Open person in users."), :class => 'go toContacts'} %>
+  <% else -%>
+    <%= link_to "&nbsp;", person_show_url(:id => person), {:title => _("Open person in contacts."), :class => 'typeUserNoLabel'} %>	        
+  <% end -%>
+<% else -%>   
+  <%= link_to_remote "&nbsp;", {:update => id, :url => mail_quick_contact_url(:name => address.respond_to?(:name) ? address.name : '' , :email => address_string(address, true))}, 
+                               {:title => _("Create new contact."), :class => 'typeAddContactNoLabel'} %>				
+<% end -%>
+<%= link_to(address_string(address), mail_compose_url(:to => address_string(address))) %>

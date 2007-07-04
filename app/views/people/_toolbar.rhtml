@@ -1,0 +1,38 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+  <% if @toolbar[:quota] -%>
+    <li><%= render :partial => 'toolbars/quota_users_meter' %></li>
+  <% end -%>
+  <% if @toolbar[:new] -%>
+    <li class="actionNew"><%= link_to _('New'), person_create_url %></li> 
+  <% end -%>
+  <% if @toolbar[:new_notifications] -%>
+    <li class="actionShowNew"><%= link_to _('Show New'), people_notifications_url %></li>
+  <% end -%>
+  <% if @toolbar[:all_notifications] -%>
+    <li class="actionShowAll"><%= link_to _('Show All'), people_notifications_url(:all => '') %></li>
+  <% end -%>
+  <% if @toolbar[:edit] and @person -%>
+		<li class="actionEdit"><%= link_to _('Edit'), person_edit_url(:id => @person.id) %></li>
+  <% end -%> 
+  <% if @toolbar[:copy] -%>
+		<li class="actionCopyDirect"><%= render :partial => 'toolbars/copy_to_contacts' %></li>      
+	<% end -%>
+	<% if @toolbar[:delete] -%>
+    <li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
+  <% end -%>
+  <% if @toolbar[:import] -%>
+  	<li class="actionImport"><%= link_to_function _('Import vCards'), "return Drawers.toggle('PeopleImport');", {:id => 'actionPeopleImportLink'} %></li>
+  <% end -%>
+  <% if @toolbar[:call] -%>
+  	<li class="actionJajah"><%= link_to_function _('Call'), "return Drawers.toggle('Jajah');", {:id => 'actionJajahLink'} %></li>
+  <% end -%>
+</ul>

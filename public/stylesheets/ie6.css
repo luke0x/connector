@@ -1,0 +1,140 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Master ------------------------------------------------------------------ */
+
+
+	#plusMenu ul {
+		top: 33px;
+	}
+	#loggedInUser a {
+		margin: 0;
+	}
+	#plusMenu ul li a {
+		background-image: url(/images/ie/plusMenuIcons.gif);
+	}
+		
+	#contentPane {
+		overflow: visible;
+		top: 85px;
+	}
+	#contentWrapper {
+		position: relative !important;
+		top: 0px !important;
+	}	
+	#sidebars {
+		position: relative !important;
+		overflow: visible;
+	}
+	
+	#gripperSidebarTab {
+		line-height: 0px !important;
+		height: 8px !important;
+		font-size: 2px;
+	}	
+
+/* tools ------------------------------------------------------------------ */
+
+	#Drawers .drawerContent {
+		z-index: 100;
+	}
+
+/* forms ------------------------------------------------------------------ */
+
+	
+	.infoGroup {
+		position: relative;
+	}
+	.deleteItem {	
+		background-image: url(/images/ie/addRemove.gif);
+	}
+	a.addItem, .addItem {
+		background-image: url(/images/ie/addRemove.gif);
+	}
+			
+	/* Buttons ------------------------------------*/
+	
+		.buttonStandardBG {
+			background-image: url(/images/ie/buttons/buttonStandardBG.gif);
+		}
+		.buttonStandardLeft {
+			background-image: url(/images/ie/buttons/buttonStandardLeft.gif);
+		}
+		.buttonStandardRight {
+			background-image: url(/images/ie/buttons/buttonStandardRight.gif);
+		}
+	
+/* Sidebars --------------------------------------------------------------- */
+
+	
+	#addGroup a.plus {
+		background-image: url(/images/ie/addRemove.gif);
+		}
+	.roundtl, .roundtr, .roundbl, .roundbr {
+		background-image: url(/images/ie/roundCorners.gif);
+		}
+	a.groupInfo {
+		background-image: url(/images/ie/groupInfo.gif);
+		}
+	#Mail .group {		
+		background-image: url(/images/ie/groupMail.gif);
+		}
+
+	.groupInfo a.access {
+		background-image: url(/images/ie/userOnBlue.gif);
+		}
+	.groupInfo a.move {
+		background-image: url(/images/ie/moveOnBlue.gif);
+		}
+	.groupInfo a.rename {
+		background-image: url(/images/ie/rename.gif);
+		}
+	.groupInfo a.delete {
+		background-image: url(/images/ie/addRemove.gif);
+		}
+	.groupInfo a.smart {
+		background-image: url(/images/ie/gearOnBlue.gif);
+		}
+	.orangeBadge {
+		background-image: url(/images/ie/orangeBadges.gif);
+		}
+		
+
+/* Apps --------------------------------------------------------------- */
+
+
+	th a.status {
+		background-image: url(/images/ie/readStatus.gif);
+		}
+	th a.attachments {
+		background-image: url(/images/ie/paperClip.gif);
+		}
+		
+
+/* 32x file icons --------------------------------------------------- */
+
+
+	.files {
+		background-image: url(/images/ie/docs/32/files.gif);
+		}
+	.peep {
+		background-image: url(/images/ie/docs/32/people.gif);
+		}
+	.calendar {
+		background-image: url(/images/ie/docs/32/calendar.gif);
+		}
+	.mail {
+		background-image: url(/images/ie/docs/32/mail.gif);
+		}
+	.bookmark {
+		background-image: url(/images/ie/docs/32/bookmark.gif);
+		}
+	.list {
+		background-image: url(/images/ie/docs/32/list.gif);
+		}

@@ -1,0 +1,64 @@
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+
+
+joyent.net
+----------
+web1.sr.joyent.net
+  ssh web1.sr.joyent.com
+  sudo su -
+  bash     
+  . /export/home/txd-chm/.bash_profile
+  cd /opt/joyent/connector/current
+  mongrel_rails cluster::stop
+  ruby script/joyent_job status
+  ruby script/joyent_job stop
+  svn up   
+  rm -rf tmp/cache/*
+  rake db:migrate
+  ruby script/joyent_job start
+  ruby script/joyent_job start_worker 5
+  mongrel_rails cluster::start         
+  
+imap1.sr.joyent.net
+  ssh imap1.sr.joyent.net
+  sudo su -
+  bash     
+  . /export/home/txd-chm/.bash_profile
+  cd /opt/joyent/connector/current
+  script/maildir_worker stop
+  svn up
+  script/maildir_worker start  
+
+
+connector.joyent.com
+--------------------
+update source + restart mongrel:
+  ssh root@koz.dev.joyent.com
+  bash
+  export RAILS_ENV=production
+  cd /opt/joyent/connector/current_remote
+  mongrel_rails cluster::stop
+  ruby script/joyent_job status
+  ruby script/joyent_job stop
+  svn up   
+  rm -rf tmp/cache/*
+  rake db:migrate
+  ruby script/joyent_job start
+  ruby script/joyent_job start_worker
+  mongrel_rails cluster::start
+
+update static resources + restart mail:
+  ssh connector.joyent.com
+  export RAILS_ENV=production
+  cd /opt/joyent/connector/current
+  script/maildir_worker stop
+  svn up
+  script/maildir_worker start
+

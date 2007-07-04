@@ -1,0 +1,130 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ian_documents:
+  id: 1
+  user_id: 1
+  organization_id: 1
+  name: Documents
+
+ian_attachments:
+  id: 2
+  user_id: 1
+  organization_id: 1
+  name: Attachments
+
+ian_pictures:
+  id: 3
+  user_id: 1
+  organization_id: 1
+  name: Pictures
+
+ian_pictures_vacation:
+  id: 4
+  user_id: 1
+  organization_id: 1
+  parent_id: 3
+  name: Vacation
+
+peter_documents:
+  id: 5
+  user_id: 2
+  organization_id: 1
+  name: Documents
+
+peter_attachments:
+  id: 6
+  user_id: 2
+  organization_id: 1
+  name: Attachments
+
+jason_documents:
+  id: 7
+  user_id: 3
+  organization_id: 1
+  name: Documents
+
+jason_attachments:
+  id: 8
+  user_id: 3
+  organization_id: 1
+  name: Attachments
+
+uwr_documents:
+  id: 9
+  user_id: 4
+  organization_id: 2
+  name: Documents
+
+bernard_documents:
+  id: 10
+  user_id: 5
+  organization_id: 1
+  name: Documents
+  
+peter_family_pictures:
+  id: 11
+  user_id: 2
+  organization_id: 1
+  name: Family Pictures
+  
+peter_family_pictures_vacation:
+    id: 12
+    user_id: 2
+    organization_id: 1
+    parent_id: 11
+    name: Vacation
+
+peter_family_pictures_vacation_beach:
+    id: 13
+    user_id: 2
+    organization_id: 1
+    parent_id: 12
+    name: Beach
+    
+# ends on 29
+<% 15.times do |f| %>
+peters_work_<%= 1+f %>:
+    id: <%= 14+f %>
+    user_id: 2
+    organization_id: 1
+    name: Work<%= 1+f %>
+<% end %>
+
+ians_christmas:
+    id: 30
+    user_id: 1
+    organization_id: 1
+    name: Christmas
+    
+# ends on 37
+<% 6.times do |f| %>
+ians_christmas_07_roll_<%= 1+f %>:
+    id: <%= 31+f %>
+    user_id: 1
+    organization_id: 1
+    parent_id: <%= (31+f) - 1 %>
+    name: Christmas 07 Roll - <%= 1+f %>
+<% end %>
+
+# ends on 52
+<% 15.times do |f| %>
+ians_christmas_06_roll_<%= 1+f %>:
+    id: <%= 38+f %>
+    user_id: 1
+    organization_id: 1
+    parent_id: 30
+    name: Christmas 06 Roll - <%= 1+f %>
+<% end %>
+
+ians_long_file_name:
+    id: 53
+    user_id: 1
+    organization_id: 1
+    name: Files which have no real place to go

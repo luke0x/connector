@@ -1,0 +1,21 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% index ||= params[:index] -%>
+
+<tr id="person_phone_number_<%= index %>">
+  <td><%= mark_as_primary_star(phone_number, 'person', 'phone_number', index) %></td>
+  <td style="width:80px;">
+    <% phone_types = [[_('Home'), 'Home'], [_('Fax'), 'Fax'], [_('Mobile'), 'Mobile'], [_('Other'), 'Other'], [_('Pager'), 'Pager'], [_('Work'), 'Work']] -%>
+    <% phone_types_options = options_for_select(phone_types, (phone_number ? phone_number.phone_number_type : nil)) -%>
+    <%= select_tag_with_id "person[phone_numbers][#{index}][phone_number_type]", phone_types_options, {:id => "person_phone_numbers_#{index}_phone_number_types"} %>
+  </td>
+  <td><input id="person_phone_numbers_<%= index %>_phone_number" size="20" value="<%= phone_number.phone_number %>" type="text" maxlength="20" name="person[phone_numbers][<%= index %>][phone_number]" class="textInput" style="width:200px;" /></td>
+  <td><a href="#" onclick="People.removeNewIndex('arrPersonPhoneNumberIndexes', <%= index %>); $('person_phone_number_<%= index %>').remove(); return false;" class="deleteItem">-</a></td>
+</tr>

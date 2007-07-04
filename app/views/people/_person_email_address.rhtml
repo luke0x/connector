@@ -1,0 +1,23 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% index ||= params[:index] -%>
+
+<tr id="person_email_address_<%= index %>">
+  <td><%= mark_as_primary_star(email_address, 'person', 'email_address', index) %></td>
+  <td style="width:80px;">
+    <% email_types = [[_('Home'), 'Home'], [_('Other'), 'Other'], [_('Work'), 'Work']] -%>
+    <% email_types_options = options_for_select email_types, (email_address ? email_address.email_type : nil) -%>
+    <%= select_tag_with_id "person[email_addresses][#{index}][email_type]", email_types_options, {:id => "person_email_addresses_#{index}_email_type"} %>
+  </td>
+  <td><input id="person_email_addresses_<%= index %>_email_address" size="20" value="<%= email_address.email_address %>" type="text" maxlength="100" name="person[email_addresses][<%= index %>][email_address]" class="textInput" style="width:199px;" /></td>
+  <td onclick="People.removeNewIndex('arrPersonEmailAddressIndexes', <%= index %>); $('person_email_address_<%= index %>').remove(); People.drawEmailNoticeSelect(); return false;" class="deleteItem">&nbsp;</td>
+</tr>
+
+<%= javascript_tag("Event.observe(\"person_email_addresses_#{index}_email_address\", 'change', function(event){ People.drawEmailNoticeSelect(); });") %>

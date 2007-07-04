@@ -1,0 +1,21 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% users_used = Organization.current.users.size -%>
+<% users_quota = Organization.current.quota.users -%>
+<% users_used_percentage = ((users_used.to_f / users_quota) * 100).round -%>
+
+<div id="graph_container">
+	<div id="graphLabel">
+		<%= users_used %>/<%= users_quota %> <%= _('Users Created') -%>
+	</div>
+	<div id="graph">
+		<strong class="bar" style="width: <%= users_used_percentage %>%;"></strong>
+	</div>
+</div>

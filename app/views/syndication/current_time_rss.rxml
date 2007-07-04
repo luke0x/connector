@@ -1,0 +1,29 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+xml.rss :version=>"2.0" do 
+  xml.channel do
+    xml.title @group_name
+    xml.link  current_time_report_url(:id => User.current)
+    xml.description @group_name
+    
+    @timezones.each do |detail|
+      xml.item do
+        xml.title "#{detail[:user].full_name} - #{format_date_time(detail[:time])} - #{detail[:timezone]}"
+        xml.description render(:partial => "person", :locals=>{ :person => detail[:user].person })
+        xml.pubDate feed_date(detail[:user].person)
+        xml.guid person_show_url(:id => detail[:user].person, :only_path => false)
+      end
+    end
+  end
+end
+
+      

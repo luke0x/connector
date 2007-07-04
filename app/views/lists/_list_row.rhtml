@@ -1,0 +1,34 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% list_row_class = '' -%>
+<% list_row_class << (list_row.parent ? "#{list_row.parent.dom_id}_child" : 'root') -%>
+<% list_row_class << ' selected ' if @selected_list_row == list_row -%>
+
+<tr id="<%= list_row.dom_id -%>" class="itemRow <%= list_row_class %>" <%= 'style="display: none;"' unless list_row.visible? %> arid="<%= list_row.id %>">
+  <td class="first checkbox" style="text-align: center;">
+    <%= link_to_function '&nbsp;', "ListRow.toggleSelected(#{list_row.id});", { :id => "#{list_row.dom_id}_selector", :class => 'rowSelector' } %>
+  </td>
+  <td class="listRowDinger" style="padding-left: <%= list_row.depth_cache * 12 %>px;">
+    <%= link_to_dinger(list_row) -%>
+  </td>
+  <% @list.list_columns_by_position.each_with_index do |list_column, index| -%>
+    <% list_cell = ListCell.find_by_row_and_column(list_row, list_column) -%>
+    <td class="listCell <%= list_cell.kind.downcase %> <%= "secondlastCol" if @list.list_columns_by_position.last == list_column %>" style="padding-left: <%= list_row.depth_cache * 12 + 5 %>px; padding-right: 0; <%= list_column_style(list_column) %>" columndomid="<%= list_column.dom_id %>">
+      <%= render_list_cell(list_cell, is_new) %>
+    </td>
+  <% end -%>
+  <td class="lastCol">&nbsp;</td>
+</tr>
+<% list_row.children.each do |child| -%>
+  <%= render :partial => 'lists/list_row', :locals => { :list_row => child } %>
+<% end -%>
+
+<%= javascript_tag "Event.observe($('#{list_row.dom_id}_selector'), 'mouseover', function(event){ List.highlightRow(#{list_row.id}); });" -%>
+<%= javascript_tag "Event.observe($('#{list_row.dom_id}_selector'), 'mouseout', function(event){ List.unhighlightRow(#{list_row.id}); });" -%>

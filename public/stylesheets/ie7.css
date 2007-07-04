@@ -1,0 +1,53 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+/* Master ----------------------------------------------------------------- */
+
+	.groupsList table {
+		width: 93%;
+	}
+	.sidebar {
+		padding: 0 15px 0 0;
+	}
+	
+	#gripperSidebarTab {
+		line-height: 0px !important;
+		height: 8px !important;
+		font-size: 2px;
+	}		
+	
+	
+/* Apps ----------------------------------------------------------------- */
+	
+	
+	#mail .message pre {
+		white-space: normal;
+	}
+	
+	
+/* Lists ----------------------------------------------------------------- */
+	
+	
+	#contentWrapper table.tableList {
+		border-collapse: collapse;
+		}	
+	#listsTbody tr.selected td {
+		border-top: 0px #0039C3 none;
+		border-bottom: 0px #0039C3 none;
+		border-right: 0px #0039C3 none;
+	}
+	#listsTbody tr.selected td.checkbox {
+		border-left: 0px #0039C3 none;
+	}
+	#listsTbody tr.selected td.lastCol {
+		border-right: 0px #0039C3 none;
+	}
+	
+		

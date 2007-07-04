@@ -1,0 +1,1014 @@
+File: clientgSOAP_GroupB.log - Wiredumps for SOAP4R client / gSOAP server.
+Date: Sat Jul 23 20:26:01 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: unclosed end tag `ns:echoStructAs' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1676:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:01 JST 2005
+Content-Length: 700
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:30:54 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 650
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoStructAsSimpleTypesResponse><outputString xsi:type="xsd:string">a</outputString><outputInteger xsi:type="xsd:int">1</outputInteger><outputFloat xsi:type="xsd:float">1.10000002</outputFloat></ns:echoStructAs! CONNECTION CLOSED
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: unclosed end tag `ns:echoStructAs' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoStructAsSimpleTypes'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoStructAsSimpleTypes'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1687:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:02 JST 2005
+Content-Length: 677
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:30:55 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 489
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoStructAsSimpleTypesResponse></ns:echoStructAs! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: Exception: unclosed end tag `ns:echoSimpleTy' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1698:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:03 JST 2005
+Content-Length: 600
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:30:56 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 665
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoSimpleTypesAsStructResponse><return xsi:type="s:SOAPStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat></return></ns:echoSimpleTy! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: unclosed end tag `ns:echoSimpleTy' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoSimpleTypesAsStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoSimpleTypesAsStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1708:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:04 JST 2005
+Content-Length: 577
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:30:56 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 530
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoSimpleTypesAsStructResponse><return xsi:type="s:SOAPStruct"></return></ns:echoSimpleTy! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:05 JST 2005
+Content-Length: 889
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:30:57 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 988
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echo2DStringArrayResponse><return xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0,0]" SOAP-ENC:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r1c0</item><item xsi:type="xsd:string">r2c0</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r2c1</item><item xsi:type="xsd:string">r0c2</item><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c2</item></return></ns:echo2DStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:07 JST 2005
+Content-Length: 1088
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:30:59 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 988
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echo2DStringArrayResponse><return xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0,0]" SOAP-ENC:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r0c2</item><item xsi:type="xsd:string">r1c0</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c0</item><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r2c2</item></return></ns:echo2DStringArrayResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:07 JST 2005
+Content-Length: 1063
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605189154"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605189154"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605189154"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:00 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 989
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echo2DStringArrayResponse><return xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0,0]" SOAP-ENC:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r1c0</item><item href="#_5"/><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r2c1</item><item href="#_5"/><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c2</item></return></ns:echo2DStringArrayResponse><id id="_5" xsi:type="xsd:string">item</id></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:08 JST 2005
+Content-Length: 1063
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605241234"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605241234"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605241234"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:01 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 989
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echo2DStringArrayResponse><return xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0,0]" SOAP-ENC:arrayType="xsd:string[3,3]"><item xsi:type="xsd:string">r0c0</item><item xsi:type="xsd:string">r1c0</item><item href="#_5"/><item xsi:type="xsd:string">r0c1</item><item xsi:type="xsd:string">r1c1</item><item xsi:type="xsd:string">r2c1</item><item href="#_5"/><item xsi:type="xsd:string">r1c2</item><item xsi:type="xsd:string">r2c2</item></return></ns:echo2DStringArrayResponse><id id="_5" xsi:type="xsd:string">item</id></SOAP-ENV:Body></SOAP-ENV:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct
+
+Result: Exception: unclosed end tag `ns:echoNestedStructRes' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1882:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:09 JST 2005
+Content-Length: 920
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString xsi:type="xsd:string">b</varString>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:02 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 853
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedStructResponse><return xsi:type="s:SOAPStructStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat><varStruct xsi:type="s:SOAPStruct"><varString xsi:type="xsd:string">b</varString><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.20000005</varFloat></varStruct></return></ns:echoNestedStructRes! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: unclosed end tag `ns:echoNestedStructRes' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1894:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:10 JST 2005
+Content-Length: 874
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+          <varString xsi:nil="true"></varString>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:02 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 583
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedStructResponse><return xsi:type="s:SOAPStructStruct"><varStruct xsi:type="s:SOAPStruct"></varStruct></return></ns:echoNestedStructRes! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Exception: unclosed start tag `id' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:696:in `found_unclosed_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:790:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedStruct'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedStruct'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1907:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:11 JST 2005
+Content-Length: 1062
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+          <varString href="#id-605400924"></varString>
+        </varStruct>
+        <varString href="#id-605400924"></varString>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605400924"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:03 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 846
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedStructResponse><return xsi:type="s:SOAPStructStruct"><varString href="#_2"/><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat><varStruct xsi:type="s:SOAPStruct"><varString href="#_2"/><varInt xsi:type="xsd:int">2</varInt><varFloat xsi:type="xsd:float">2.20000005</varFloat></varStruct></return></ns:echoNestedStructResponse><id id="_2" xsi:type="xsd:string"! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray
+
+Result: Exception: unclosed end tag `ns:echoNestedArrayRespo' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1917:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:11 JST 2005
+Content-Length: 931
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:04 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 884
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedArrayResponse><return xsi:type="s:SOAPArrayStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0]" SOAP-ENC:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item xsi:type="xsd:string">2.2</item><item xsi:type="xsd:string">b</item></varArray></return></ns:echoNestedArrayRespo! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: unclosed end tag `ns:echoNestedArrayRespo' meets EOF (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:649:in `found_unclosed_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:682:in `scan_etag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:814:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1927:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:12 JST 2005
+Content-Length: 998
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString xsi:type="xsd:string">a</varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:05 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 884
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedArrayResponse><return xsi:type="s:SOAPArrayStruct"><varString xsi:type="xsd:string">a</varString><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0]" SOAP-ENC:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item xsi:type="xsd:string">2.2</item><item xsi:type="xsd:string">b</item></varArray></return></ns:echoNestedArrayRespo! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: parse error at `<' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:730:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1938:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:13 JST 2005
+Content-Length: 1083
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605477234"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605477234"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605477234"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:06 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 880
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedArrayResponse><return xsi:type="s:SOAPArrayStruct"><varString href="#_2"/><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0]" SOAP-ENC:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item href="#_2"/><item xsi:type="xsd:string">b</item></varArray></return></ns:echoNestedArrayResponse><id id="_2" xsi:type="xsd:string"><! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: parse error at `<' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:730:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1949:in `doTestGroupB'
+clientgSOAP.rb:17
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /~engelen/interop2B.cgi HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 20:26:15 JST 2005
+Content-Length: 1083
+Host: websrv.cs.fsu.edu
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605500614"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+        <varString href="#id-605500614"></varString>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <item id="id-605500614"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 11:31:08 GMT
+Server: Apache/2.0.51 (Fedora)
+Connection: close
+Content-Length: 880
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://soapinterop.org/xsd" xmlns:ns="http://soapinterop.org/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" id="_0"><ns:echoNestedArrayResponse><return xsi:type="s:SOAPArrayStruct"><varString href="#_2"/><varInt xsi:type="xsd:int">1</varInt><varFloat xsi:type="xsd:float">1.10000002</varFloat><varArray xsi:type="SOAP-ENC:Array" SOAP-ENC:offset="[0]" SOAP-ENC:arrayType="xsd:string[3]"><item xsi:type="xsd:string">2</item><item href="#_2"/><item xsi:type="xsd:string">b</item></varArray></return></ns:echoNestedArrayResponse><id id="_2" xsi:type="xsd:string"><! CONNECTION CLOSED
+
+
+

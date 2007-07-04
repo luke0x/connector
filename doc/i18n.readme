@@ -1,0 +1,98 @@
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+
+
+== Connector Localization
+
+Localized version of Connector is bassed on GNU GetText - http://www.gnu.org/software/gettext/ - and the Ruby GetText Gem  - http://rubyforge.org/frs/?group_id=855 - by Masaoh Mutoh - http://www.yotabanana.com/hiki/ruby-gettext.html (version 1.9.0 at the moment of write this document - http://www.yotabanana.com/gettextapi/ ) using a customized plugin, which includes several additional utilities for Rails.
+
+In brief, use GetText to handle l10n of an application means that, among other considerations, you will have a serious ammount of calls to the <tt>gettext('MyString')</tt> function - aliased as <tt>_('MyString')</tt> for abbreviation - including both, .rb and .rhtml files, since the GetText Ruby Gem implements also a .rhtml files parser.
+
+Basically, the task to get an application's code ready to be localized means that you have to complete the next steps steps:
+
+- You should wrap any literal string in your code, which has a direct representation into your application interface, with a call to the <tt>_()</tt> function. In case of Ruby On Rails, this means either strings on .rb or .rhtml files.
+
+- You will run a rake task which will parse the code of the files you indicates it and generate a .pot file.
+
+- From this .pot file, you will create the localizations, and place them inside their own directories. These localization files ends with extension .po, but are just the .pot file with the localization of the original strings.
+
+- Once you've got the localization(s), you will run another rake task, which will create the binnary .mo files, from where GetText will read the localizations and will try to cache them - yes, this mean that modifications in a .mo file will not be reflected in a site until server reboot?.
+
+- And that's all, you add a call to the plugin function localize_with_gettext to your ApplicationController and everything should be localized "when required".
+
+"when required" means: GetText get the user prefered language from the params you pass to the function call. If no params are provided, it will looks for that language from the next places in this order:
+
+"lang" value of QUERY_STRING > "lang" value of Cookie > HTTP_ACCEPT_LANGUAGE value > Default locale(en)
+
+For the Connector application, we're not using the <em>language auto-discovery feature</em>, but allowing users to choose the preferred language as part of their user's profile. So, by default, English will be used unless the user chooses any other language.
+
+=== Some notes about GetText 'Tagging' of code
+
+There are some cases where has sense to use string interpolation, in order to give the properly order on the language we're going to localize to some expressions - remember that, for example, English uses to sort phrases just in the opposite order of latin languages. On these cases, you could just use '%s' in the middle of those phrases but, as you can suspect, it will be meaningless for translators.
+
+Ruby gettext gem provides us with a nice utility, which allows the usage of named params on these cases so, for example, when you have to add the gettext calls to this phrase on a view:
+
+    Move to <%= controller.class.group_name %>:
+    
+You can use the next:
+
+    <%= _("Move to %{i18n_controller_class_groupname}")%{:i18n_controller_class_groupname => "#{controller.class.group_name}"} -%>:
+    
+I use to start all those symbols intended to be used on the localization by "i18n_", in order to leave clear for coders that the name comes just from the need of localization. The remaining part of the name uses to be something meaningfull, but on these cases where there are too much introspection.
+
+You can find more information about GetText usage for developers at http://www.yotabanana.com/hiki/ruby-gettext-dev.html - with special mention of the notes for Rails http://www.yotabanana.com/hiki/ruby-gettext-howto-rails.html - and a nice introductory article, <em>Using Gettext To Translate Your Rails Application</em> at http://manuals.rubyonrails.com/read/chapter/105
+
+=== Connector localization tasks
+
+Connector provides some rake tasks related to localization, wich include the usual GetText ones described above, and some special tasks intended to extract strings to be localized from JavaScript files.
+
+All these tasks are namespaced <tt>gettext:</tt>.
+
+All the strings which need localization inside JavaScript files should be properties of the object <tt>JoyentL10n[]</tt>. You can browse source to code in order to see some examples of this.
+
+The usual localization procedure is as follows:
+
+- Before run rake gettext:updatepo 
+ 
+  1. Enclose any string which needs localization on a .rb/.rhtml 
+     file inside _() call.
+
+  2. Same thing for JS strings, but as property of the object JoyentL10n[]
+
+- When you run rake gettext:updatepo
+
+  3. The task gettext:getjs will parse all the .js files, trying to search any 
+     string inside JoyentL10n[]. All those strings will be writing to the temporary 
+     file <tt>"#{RAILS_ROOT}/lib/js_strings.rb"</tt>, in order to be available for 
+     GetText rb parser on the next step.
+
+  4. GetText will parse all the .rb/.rhtml files you send it on the <tt>Dir.glob</tt> call 
+     at the <tt>GetText.update_pofiles</tt> method call and, will place the strings it found 
+     at the file appdomain.pot - on this case, connector.pot - which is the starting 
+     point for new translations - and will do the same with any appdomain.po files 
+     inside all the localizations directories.
+
+  5. Once we've got also our javascript strings into the .pot/.po files, the 
+     gettext:cleanjs will remove the temporary file at lib/, since we doesn't need it.
+
+- Now, it's time for translators:
+
+  6. Translators update their respective .po files
+
+  7. You've got the upgraded versions of .po files in place
+
+- Then, time to compile localizations:
+
+  8. Usually, gettext:makemo task <em>simply</em> reads from .po files and create the binary 
+     files used by GetText command line tool when you ask it for a localization. Those 
+     are the .mo files. It will skip any fuzzy line.
+
+  9. In our case, since we need to have the localized strings into JavaScript too, 
+     that task will also run gettext:i18njs, which simply takes all the js strings and 
+     properly places them into their respective lang.js files.

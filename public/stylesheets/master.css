@@ -1,0 +1,1199 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+
+/* Autocomplete ----------------------------------------------------------------- */
+
+div.auto_complete { 
+  width: 350px; 
+  background: #fff;
+  margin:  0px !important;
+  padding: 0px !important;
+} 
+div.auto_complete ul { 
+  border: 1px solid #888; 
+  margin: 0px !important;
+  padding: 0px !important; 
+  width: 100%; 
+  list-style-type: none; 
+} 
+div.auto_complete ul li { 
+  margin:0px !important;
+  padding:3px !important;
+} 
+div.auto_complete ul li.selected { 
+  background-color: #ffb; 
+} 
+div.auto_complete ul strong.highlight { 
+  color: #800; 
+  margin:0;
+  padding:0; 
+}
+
+
+/* List Views ----------------------------------------------------------------- */
+
+
+table.tableList tr th, table.tableList tr th a {
+	color: #333;
+}
+table.tableList tr td a {
+	color: #333;
+}
+table.tableList tr th {
+	padding: 0px 5px 1px 5px;
+	text-align: left;
+	background-color: #FFF;
+	border-color: #DDD #DDD #D6D6D6 #DDD;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	background-image: url(/images/bg/thBG.png);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+
+table.tableList tr td, table.tableList tr th {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-indent: 1px;
+	cursor: default;
+	}
+table.tableList tr td {
+	padding: 0px 5px 1px 5px;
+	border-color: transparent #E0E6EE #E0E6EE #E0E6EE;
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+}
+
+.details a, .detailsActivated a {	
+	text-indent: -6000px;
+	height: 16px;
+	width: 16px;
+	display: block;
+	margin: 2px auto 0 auto !important;
+	background-image: url(/images/icons/peek.png);
+	background-repeat: no-repeat;
+	}
+.details a {	
+	background-position: -16px 0;
+	}
+.details a:hover {
+	background-position: -16px -16px;
+	}
+.details a:active {
+	background-position: -16px -32px;
+	}
+.detailsActivated a {
+	background-position: 0 -32px; 
+	}
+.detailsActivated a:hover {
+	background-position: 0 -16px; 
+	}
+.detailsActivated a:active {
+	background-position: 0 0; 
+	}
+.tableList a:hover {
+	color: #000;
+}
+
+	
+
+/* TH-TD icons ----------------------------------------------------- */
+	
+	
+	#listCheckboxToggle a,
+	th.status a,
+	td.status a,
+	th.attachment a,
+	td.attachment a,
+	th.userStatus a,
+	td.userStatus a {
+		text-indent: -3000px;
+		display: block;
+		height: 12px;
+		width: 12px;
+		margin: 4px auto 0 auto !important;
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/tdIcons.png);
+		}
+		
+	#listCheckboxToggle.all a {
+		background-position: 0 -24px;
+		}
+	#listCheckboxToggle.all a:hover {	
+		background-position: -24px -24px;
+		}
+	#listCheckboxToggle.all a:active {	
+		background-position: -48px -24px;
+		}
+	#listCheckboxToggle.some a {
+		background-position: 0 -48px;
+		}
+	#listCheckboxToggle.some a:hover {
+		background-position: -24px -48px;
+		}
+	#listCheckboxToggle.some a:active {
+		background-position: -48px -48px;
+		}
+	#listCheckboxToggle.none a {
+		background-position: 0 0;
+		}
+	#listCheckboxToggle.none a:hover {
+		background-position: -24px 0;
+		}
+	#listCheckboxToggle.none a:active {
+		background-position: -48px 0;
+		}
+		
+	th.status a {	
+		background-position: 0px -72px;
+		}
+	th.status a:hover {	
+		background-position: -24px -72px;
+		}
+	th.status a:active {	
+		background-position: -48px -72px;
+		}
+	td.status a {	
+		background-position: 0px -96px;
+		}
+	td.status a:hover {	
+		background-position: -24px -96px;
+		}
+	td.status a:active {	
+		background-position: -48px -96px;
+		}
+		
+		
+	th.attachment a {	
+		background-position: 0px -120px;
+		}
+	th.attachment a:hover {	
+		background-position: -24px -120px;
+		}
+	th.attachment a:active {	
+		background-position: -48px -120px;
+		}
+	td.attachment a {	
+		background-position: 0px -144px;
+		}
+	td.attachment a:hover {	
+		background-position: -24px -144px;
+		}
+	td.attachment a:active {	
+		background-position: -48px -144px;
+		}
+		
+		
+	th.userStatus a {	
+		background-position: 0px -168px;
+		}
+	th.userStatus a:hover {	
+		background-position: -24px -168px;
+		}
+	th.userStatus a:active {	
+		background-position: -48px -168px;
+		}
+	td.userStatus a {	
+		background-position: 0px -192px;
+		}
+	td.userStatus a:hover {	
+		background-position: -24px -192px;
+		}
+	td.userStatus a:active {	
+		background-position: -48px -192px;
+		}
+			
+	th.detailView span {
+		background-image: url(/images/icons/thInfo.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		display: block;
+		width: 16px;
+		height: 16px;
+		margin: auto;
+		text-indent: -3000px;
+	}
+		
+
+/* Reports -------------------------------------------------- */
+		
+	.lastRow td {
+		padding-bottom: 1em !important;
+		}
+	.lastRow td a {
+		color: #3175D8 !important;
+		}
+	.reportHeader {
+		padding: 0;
+		border-width: 1px;
+		border-color: #BCBDBC #C2C3C2 #BCBDBC #CACBCA;
+		border-style: solid;
+		background-repeat: repeat-x;
+		background-color: #E8E8E7;
+		background-position: left top;
+		overflow: hidden;
+		background-image: url(/images/bg/reportSubHeaderBG.png);
+	}
+	.reportHeader h3 {		
+		color: #3B4351;
+		float: left;
+		font-weight: bold;
+	}
+	h3.drag_handle {		
+		padding: 5px 0 4px 20px;
+		background-repeat: no-repeat;
+		background-position: left center;
+		}
+	
+	
+	ul.reportHeaderControls {
+		float: right;
+		list-style-type: none;
+		width:30%;
+		}
+	ul.reportHeaderControls li {
+		float: right;
+		}
+	.reportHeader .hideReport a,		
+	.reportHeader .showReport a,
+	.reportHeader .reload a,
+	.reportHeader .remove a,
+	ul.reportHeaderControls li.paginationNext a, 						
+	ul.reportHeaderControls li.paginationPrevious a {
+		background-repeat: no-repeat;
+		height: 24px;
+		width: 24px;
+		text-indent: -3000px;
+		cursor: pointer;
+		display: block;
+		background-image: url(/images/icons/reportHeaderIcons.png);
+		}
+	ul.reportHeaderControls li.paginationNext a {
+		background-position: -120px 0px;
+		width: 26px !important;
+		}
+	ul.reportHeaderControls li.paginationNext a:hover {
+		background-position: -120px -24px;
+		}
+	ul.reportHeaderControls li.paginationPrevious a {
+		background-position: -96px 0px;
+		}
+	ul.reportHeaderControls li.paginationPrevious a:hover {
+		background-position: -96px -24px;
+		}
+	.reportHeader .pagination {		
+		height: 24px;
+		font-size: 85%;
+		color: #697691;
+		padding: 0px;
+		}
+	.reportHeader .pagination form {	
+		margin: 4px;
+		}
+	.reportHeader .showReport a {		
+		background-position: -48px 0px;
+		float: left;
+		}
+	.reportHeader .showReport a:hover {		
+		background-position: -48px -24px;
+		}
+	.reportHeader .hideReport a {		
+		background-position: -72px 0px;
+		float: left;
+		}
+	.reportHeader .hideReport a:hover {	
+		background-position: -72px -24px;
+		}
+	.reportHeader .reload a {		
+		background-position: 0px 0px;
+		}
+	.reportHeader .reload a:hover {		
+		background-position: 0px -24px;
+		}
+	.reportHeader .remove a {		
+		background-position: -24px 0px;
+		}
+	.reportHeader .remove a:hover {		
+		background-position: -24px -24px;
+		}
+	
+	.drag_handle {
+		cursor: move;
+		}
+
+
+/* General (ui 2.0) ----------------------------------------------------------------- */
+
+	body {
+		margin: 0;
+		font-size: 11px;
+		line-height: 18px;
+		font-family: "Lucida Grande", Verdana, sans-serif;
+		background-color: #F1F0EF;
+		background-image: url(/images/bg/sideBar.png);
+		background-repeat: repeat-y;
+	}
+	a { 
+		text-decoration: none;
+		color: #2662C6;
+		cursor:pointer;
+		cursor:hand
+	}
+	* {
+		margin: 0;
+		padding:0;
+		font-size: 11px;
+	}
+	a:focus {
+		-moz-outline: 0;
+	}
+	
+
+/* Dock (ui 2.0) ----------------------------------------------------------------- */
+
+
+	#Dock {
+		float: left;
+		width: 100%;
+		list-style-type: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		background-image: url(/images/bg/dockBG.png);
+		background-color: #1D2B45;
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		}
+	#Dock li {
+		float: left;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		}
+	#Dock li a {
+		float: left;
+		display: block;
+		margin: 0 0 0 3px;
+		color: #FFF;
+		text-decoration: none;
+		width: 40px;
+		height: 38px;
+		text-indent: -3000px;
+		background-image: url(/images/lang/en/apps.png);
+		background-repeat: no-repeat;
+		}
+		
+	.dockConnect a { 
+		background-position: 0 -76px;
+		}
+	.dockConnect a:hover { 
+		background-position: 0 -114px;
+		}
+	#connect .dockConnect a {	
+		background-position: 0 0px;
+		}
+	#connect .dockConnect a:hover {	
+		background-position: 0 -38px;
+		}
+	.dockConnect a.disabled { 
+		background-position: 0 -152px;
+		}
+		
+	.dockMail a { 
+		background-position: -200px -76px;
+		}
+	.dockMail a:hover { 
+		background-position: -200px -114px;
+		}
+	#mail .dockMail a {	
+		background-position: -200px 0px;
+		}
+	#mail .dockMail a:hover {	
+		background-position: -200px -38px;
+		}
+	.dockMail a.disabled { 
+		background-position: -200px -152px;
+		}
+		
+	.dockCalendar a { 
+		background-position: -400px -76px;
+		}
+	.dockCalendar a:hover { 
+		background-position: -400px -114px;
+		}
+	#calendar .dockCalendar a {	
+		background-position: -400px 0px;
+		}
+	#calendar .dockCalendar a:hover {	
+		background-position: -400px -38px;
+		}
+	.dockCalendar a.disabled { 
+		background-position: -400px -152px;
+		}
+		
+	.dockPeople a { 
+		background-position: -600px -76px;
+		}
+	.dockPeople a:hover { 
+		background-position: -600px -114px;
+		}
+	#people .dockPeople a {	
+		background-position: -600px 0px;
+		}
+	#people .dockPeople a:hover {	
+		background-position: -600px -38px;
+		}
+	.dockPeople a.disabled { 
+		background-position: -600px -152px;
+		}
+		
+	.dockFiles a { 
+		background-position: -800px -76px;
+		}
+	.dockFiles a:hover { 
+		background-position: -800px -114px;
+		}
+	#files .dockFiles a {	
+		background-position: -800px 0px;
+		}
+	#files .dockFiles a:hover {	
+		background-position: -800px -38px;
+		}
+	.dockFiles a.disabled { 
+		background-position: -800px -152px;
+		}
+		
+	.dockBookmarks a { 
+		background-position: -1000px -76px;
+		}
+	.dockBookmarks a:hover { 
+		background-position: -1000px -114px;
+		}
+	#bookmarks .dockBookmarks a {	
+		background-position: -1000px 0px;
+		}
+	#bookmarks .dockBookmarks a:hover {	
+		background-position: -1000px -38px;
+		}
+	.dockBookmarks a.disabled { 
+		background-position: -1000px -152px;
+		}
+
+	.dockLists a { 
+		background-position: -1400px -76px;
+		}
+	.dockLists a:hover { 
+		background-position: -1400px -114px;
+		}
+	#lists .dockLists a {	
+		background-position: -1400px 0px;
+		}
+	#lists .dockLists a:hover {	
+		background-position: -1400px -38px;
+		}
+	.dockLists a.disabled { 
+		background-position: -1400px -152px;
+		}
+		
+	.appLabel {
+		position: absolute;
+		top: 32px;
+		left: 20px;
+		background-color: transparent;
+		z-index: 10;
+		overflow: default;
+		width: 101px;
+		height: 50px;
+		display: block;
+		background-image: url(/images/bg/appNameBubble.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		text-align: center;
+		padding: 19px 0 0 0;
+	}
+	
+/* General Toolbar (actions) -------------------------------------------- */
+
+	.actionMove a.disabled, .actionMove a:hover.disabled {
+		background-position: -0 0px;
+	}
+	.actionMove a {
+		background-position: -0 -30px;
+	}
+	.actionMove a:hover {
+		background-position: -0 -60px;
+	}
+	.actionMove a:active, .actionMove a.active {
+		background-position: -0 -90px;
+	}
+	
+	.actionCopy a.disabled, .actionCopy a:hover.disabled {
+		background-position: -150px 0px;
+	}
+	.actionCopy a {
+		background-position: -150px -30px;
+	}
+	.actionCopy a:hover {
+		background-position: -150px -60px;
+	}
+	.actionCopy a:active, .actionCopy a.active {
+		background-position: -150px -90px;
+	}
+		
+	.actionCopyDirect a.disabled, .actionCopyDirect a:hover.disabled {
+		background-position: -300px 0px;
+	}
+	.actionCopyDirect a {
+		background-position: -300px -30px;
+	}
+	.actionCopyDirect a:hover {
+		background-position: -300px -60px;
+	}
+	.actionCopyDirect a:active, .actionCopyDirect a.active {
+		background-position: -300px -90px;
+	}
+		
+	.actionNew a.disabled, .actionNew a:hover.disabled {
+		background-position: -450px 0px;
+	}
+	.actionNew a {
+		background-position: -450px -30px;
+	}
+	.actionNew a:hover {
+		background-position: -450px -60px;
+	}
+	.actionNew a:active, .actionNew a.active {
+		background-position: -450px -90px;
+	}
+		
+	.actionImport a.disabled, .actionImport a:hover.disabled {
+		background-position: -600px 0px;
+	}
+	.actionImport a {
+		background-position: -600px -30px;
+	}
+	.actionImport a:hover {
+		background-position: -600px -60px;
+	}
+	.actionImport a:active, .actionImport a.active {
+		background-position: -600px -90px;
+	}
+		
+	.actionShowAll a.disabled, .actionShowAll a:hover.disabled {
+		background-position: -750px 0px;
+	}
+	.actionShowAll a {
+		background-position: -750px -30px;
+	}
+	.actionShowAll a:hover {
+		background-position: -750px -60px;
+	}
+	.actionShowAll a:active, .actionShowAll a.active {
+		background-position: -750px -90px;
+	}
+		
+	.actionShowNew a.disabled, .actionShowNew a:hover.disabled {
+		background-position: -900px 0px;
+	}
+	.actionShowNew a {
+		background-position: -900px -30px;
+	}
+	.actionShowNew a:hover {
+		background-position: -900px -60px;
+	}
+	.actionShowNew a:active, .actionShowNew a.active {
+		background-position: -900px -90px;
+	}
+
+	.actionDelete a.disabled, .actionDelete a:hover.disabled {
+		background-position: -1050px 0px;
+	}
+	.actionDelete a {
+		background-position: -1050px -30px;
+	}
+	.actionDelete a:hover {
+		background-position: -1050px -60px;
+	}
+	.actionDelete a:active, .actionDelete a.active {
+		background-position: -1050px -90px;
+	}
+		
+	.actionSaveSearch a.disabled, .actionSaveSearch a:hover.disabled {
+		background-position: -1200px 0px;
+	}
+	.actionSaveSearch a {
+		background-position: -1200px -30px;
+	}
+	.actionSaveSearch a:hover {
+		background-position: -1200px -60px;
+	}
+	.actionSaveSearch a:active, .actionSaveSearch a.active {
+		background-position: -1200px -90px;
+	}
+
+	.actionTools a.disabled, .actionTools a:hover.disabled {
+		background-position: -1350px 0px;
+	}
+	.actionTools a {
+		background-position: -1350px -30px;
+	}
+	.actionTools a:hover {
+		background-position: -1350px -60px;
+	}
+	.actionTools a:active, .actionTools a.active {
+		background-position: -1350px -90px;
+	}
+
+	.actionEdit a.disabled, .actionEdit a:hover.disabled {
+		background-position: -1500px 0px;
+	}
+	.actionEdit a {
+		background-position: -1500px -30px;
+	}
+	.actionEdit a:hover {
+		background-position: -1500px -60px;
+	}
+	.actionEdit a:active, .actionEdit a.active {
+		background-position: -1500px -90px;
+	}
+		
+
+
+/* Toolbar  & Peek Toolbar -------------------------------------------------------------- */
+
+	ul#Toolbar {
+		background-image: url(/images/bg/toolbarBG.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		background-color: #F3F3F3;
+		overflow: hidden;
+		float: left;
+		list-style-type: none;
+		position: absolute;
+		top: 38px;
+		height: 46px;
+		right: 0;
+		z-index: 1;
+		border-bottom: #CECECE;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		padding-left: 9px;
+	}
+	
+	ul.toolbar { /* Used for inline toolbars found in mail peek views*/
+		float: left;
+		list-style-type: none;
+		position: relative;
+		height: 30px;
+		width: 100%;
+	}
+	#Toolbar li, .toolbar li {
+		float: left;
+	}
+	
+	#Toolbar a, .toolbar li a {
+		float: left;
+		display: block;
+		text-decoration: none;
+		height: 30px;
+		text-indent: -3000px;
+	}
+	#Toolbar a {
+		margin-top: 14px;
+	}
+	.toolbar li a {
+		margin-top: 0px;
+	}
+	
+	#Toolbar li a, .toolbar li a {
+		background-repeat: no-repeat;
+	}
+	#Toolbar a.disabled, .toolbar li a.disabled {
+		cursor: default;		
+	}
+
+/* Sidebar (UI 2.0) -------------------------------------------------------------- */
+
+
+	#sidebars {
+		background-image: url(/images/bg/sideBarTopBG.png);
+		background-repeat: repeat-x;
+		background-position: 0 0;
+		background-color: transparent;
+		position: absolute;
+		top: 38px;
+		left: 0px;
+		z-index: 5500;
+		bottom: 0px;
+	}
+
+	#search {
+		position: absolute;
+		top: 12px;
+		right: 44px;
+		left: 16px;
+		z-index: 5500;
+		}
+	#search input {
+		font-size: 12px;
+		width: 100%;
+		}
+
+
+/* Sidebar Tabs (UI 2.0) ----------------------------------------------------------------- */
+
+
+	#sidebarTabs {
+		float: right;
+		width: 30px;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		overflow: hidden;
+	}
+	#sidebarTabs li {
+		margin: 0;
+		padding: 0;
+	}
+	.sidebarTab a {
+		background-color: transparent;
+		color: #999;
+		background-repeat: no-repeat;
+		text-indent: -3000px;
+		overflow: hidden;
+		text-decoration: none;
+		display: block;
+		width: 30px;
+	}
+		
+	#gripperSidebarTab a {
+		background-position: 0 0;
+		height: 8px;
+		cursor: col-resize;
+	}	
+	#gripperSidebarTab a:hover {
+		background-position: -60px 0;
+		}	
+	#gripperSidebarTab a:active {
+		background-position: -30px 0;
+		}	
+		
+	#groupsSidebarTab a {
+		background-position: 0 -8px;
+	}	
+	#groupsSidebarTab a:hover {
+		background-position: -60px -8px;
+		}	
+	#groupsSidebarTab a:active, #groupsSidebarTab.sidebarTab.selected a {
+		background-position: -30px -8px;
+		}	
+		
+	#rulesSidebarTab a {
+		background-position: 0 -150px;
+		}	
+	#rulesSidebarTab a:hover {
+		background-position: -60px -150px;
+		}	
+	#rulesSidebarTab a:active, #rulesSidebarTab.sidebarTab.selected a {
+		background-position: -30px -150px;
+		}	
+		
+	#tagsSidebarTab a {
+		background-position: 0 -300px;
+		}	
+	#tagsSidebarTab a:hover {
+		background-position: -60px -300px;
+		}	
+	#tagsSidebarTab a:active, #tagsSidebarTab.sidebarTab.selected a {
+		background-position: -30px -300px;
+		}	
+		
+	#accessSidebarTab a {
+		background-position: 0 -450px;
+		}	
+	#accessSidebarTab a:hover {
+		background-position: -60px -450px;
+		}	
+	#accessSidebarTab a:active, #accessSidebarTab.sidebarTab.selected a {
+		background-position: -30px -450px;
+		}	
+		
+	#notifySidebarTab a {
+		background-position: 0 -600px;
+		}	
+	#notifySidebarTab a:hover {
+		background-position: -60px -600px;
+		}	
+	#notifySidebarTab a:active, #notifySidebarTab.sidebarTab.selected a {
+		background-position: -30px -600px;
+		}	
+		
+
+
+
+/* Content (UI 2.0) -------------------------------------------------------------- */
+
+	#contentPane {
+		position: absolute;
+		top: 85px;
+		right: 0px;
+		bottom: 0px;
+		overflow: auto;
+	}
+	
+	#contentWrapper {
+		padding: 1em;
+	}	
+	.marginLarge {
+		padding:2em !important;
+	}
+	.itemShow a {
+		color:#296ECA;
+	}	
+	.itemShow table tr td {
+		padding:3px;
+	}
+		
+	#contentPane h2, #contentPane h2 a {
+		font-size: 14px;
+		color: #000;
+	}
+
+	.infobox {
+		border-color: #E6E9E9;
+		border-width: 1px;
+		border-style: solid;
+		-moz-border-radius: .4em .4em .4em .4em;
+		-webkit-border-top-left-radius: .4em;
+		-webkit-border-top-right-radius: .4em;
+		-webkit-border-bottom-left-radius: .4em;
+		-webkit-border-bottom-right-radius: .4em;
+		padding: 1em;
+		background-color: #FAFAFA;
+		margin-bottom: 10px;
+	}
+
+
+/* developerTools ---------------------------------------------------------------- */
+
+#developerTools {
+	z-index: 6000;
+}
+#developerToolsLink {
+	position: absolute;
+	top: 0px;
+	right: 47px;
+	height: 38px;
+	width: 38px;
+	text-indent: -3000px;
+	background-image: url(/images/icons/devMenu.gif);
+	z-index:6000;
+	}
+#developerToolsLink.collapsed {
+	background-position: 0 0;
+	}
+#developerToolsLink.collapsed:hover {
+	background-position: 0 -38px;
+	}
+#developerToolsLink.collapsed:active {
+	background-position: 0 -76px;
+	}
+#developerToolsLink.collapsed.pulsing {
+	background-position: 0 -190px;
+	}
+#developerToolsLink.expanded {
+	background-position: 0 -114px;
+	}
+#developerToolsLink.expanded:hover {
+	background-position: 0 -152px;
+	}
+#developerToolsLink.expanded.pulsing {
+	background-position: 0 -225px;
+}
+#developerTools ul {
+	position: absolute;
+	top: 38px;
+	right: 47px;
+	width: 240px;
+	z-index: 6000;
+	display: block;
+	background-color: #F6F7F7;
+	list-style-type: none;
+	border-color: #FFF #BBB #BBB #BBB;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	padding: 8px;
+}
+#developerTools ul li a {
+	padding: .4em 10px .4em 35px;
+	display: block;
+	width: 195px;
+	background-repeat: no-repeat;
+	font-size: 85%;
+	color: #000;
+	background-image: url(/images/icons/plusMenuIcons.png);
+	}
+
+
+
+/* plusMenu -------------------------------------------------------------- */
+
+
+	#plusMenu {
+		z-index:6000;
+	}
+	#plusMenuLink {
+		position: absolute;
+		top: 0px;
+		right: 9px;
+		height: 38px;
+		width: 38px;
+		text-indent: -3000px;
+		background-image: url(/images/icons/plusMenu.gif);
+		z-index:6000;
+		}
+	#plusMenuLink.collapsed {
+		background-position: 0 0;
+		}
+	#plusMenuLink.collapsed:hover {
+		background-position: 0 -38px;
+		}
+	#plusMenuLink.collapsed:active {
+		background-position: 0 -76px;
+		}
+	#plusMenuLink.collapsed.pulsing {
+		background-position: 0 -190px;
+		}
+	#plusMenuLink.expanded {
+		background-position: 0 -114px;
+		}
+	#plusMenuLink.expanded:hover {
+		background-position: 0 -152px;
+		}
+	#plusMenuLink.expanded.pulsing {
+		background-position: 0 -225px;
+	}
+	#plusMenu ul {
+		position: absolute;
+		top: 38px;
+		right: 9px;
+		width: 240px;
+		z-index: 6000;
+		display: block;
+		background-color: #F0F0F0;
+		list-style-type: none;
+		border-color: #FFF #BBB #BBB #BBB;
+		border-width: 1px 1px 1px 1px;
+		border-style: solid;
+		padding: 5px 5px 1em 5px;
+	}
+	#plusMenu ul li a {
+		padding: .4em 10px .4em 35px;
+		display: block;
+		width: 195px;
+		background-repeat: no-repeat;
+		font-size: 85%;
+		color: #000;
+		background-image: url(/images/icons/plusMenuIcons.png);
+		}
+	
+	#loggedInUser {
+		padding: .4em;
+		}
+	#loggedInUser a {
+		color:#000;
+		}
+	#yourPreferences a {	
+		background-position: 15px 3px;
+		}
+	#customerCenter a {	
+		background-position: 15px -97px;
+		}
+	#help a {
+		background-position: 15px -147px;
+		}
+	#domainSettings a {
+		background-position: 15px -47px;
+		}
+	#logout a {
+		background-position: 15px -197px;
+		}
+	.userShortcut a {
+		background-position: 15px -247px;
+		}
+	.userShortcut.selected a {
+		background-position: 15px -347px;
+		}
+	.userShortcutManage a {
+		background-position: 15px -297px;
+		}
+		
+	#plusMenu ul li h5 {
+		border-color: #CDCDCD;
+		border-width: 0 0 1px 0;
+		border-style: solid;
+		margin: 0 0 5px 0;
+		font-size: 9px;
+		padding: 0 0 0 7px;
+		color: #737373;
+	}
+
+/* Misc--------------------------------------------- */
+	
+
+	hr {	
+		border-top: 1px solid #B7B7B7;
+		border-bottom: 1px solid #FFF;
+		border-left: 0px solid #AAA;
+		border-right: 0px solid #AAA;
+		height: 0px;
+		background-color: #B7B7B7;
+		margin: .5em 0;
+		}
+	img {
+		border:0px;
+		}
+	td {	
+		font-size: inherit;
+		}
+		
+		
+/* Depricated (iems in this section might need to be deleted)  
+
+	a.promoteItem {
+		height:10px;
+		width:12px;
+		text-indent:-3000px;
+		display:block;
+		margin:0;
+		padding:0;
+		background: url(images/icons/upArrow.gif) no-repeat;
+		}
+	a.demoteItem {
+		height:10px;
+		width:12px;
+		text-indent:-3000px;
+		display:block;
+		margin:0;
+		padding:0;
+		background: url(images/icons/downArrow.gif) no-repeat;
+		}
+	.addPlusSmallNoLabel {	
+		height: 16px;
+		width: 16px;
+		display: block;
+		text-indent: -3000px;
+		background-image: url(images/icons/plus16.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		float: left;
+		margin: .25em .25em .25em 0;
+		}
+	.addPlusSmallNoLabel:hover {	
+		background-position: 0 -16px;
+		}
+		
+		
+	.typeJPG {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 18px;
+		font-weight:normal;
+		margin:0;
+		background: url(images/icons/doc-photo.png) left no-repeat;
+		}
+	.typeUser {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 15px;
+		font-weight:normal;
+		margin:0;
+		white-space:nowrap;
+		background: url(images/icons/user.png) left no-repeat;
+		}
+	.typeContact {
+		width:16px;
+		height:16px;
+		padding:3px 0 3px 15px;
+		font-weight:normal;
+		margin:0;
+		white-space:nowrap;
+		background: url(images/icons/people.png) left no-repeat;
+		}
+		
+	.notesTitleExpanded, .notesTitleCollapsed {
+		color:#000;
+		}
+	.itemNote {
+		padding: .5em 1.5em 1.5em 1.5em;
+		}
+	.itemHeader {
+		border-bottom:1px solid #BBB;
+		}
+	.itemInfo {
+		background: url(images/icons/dingerRight.png) left no-repeat;
+		padding-left: 16px;
+		}
+	#itemPreview {
+		padding: 1em 1.5em 1em 1.5em;
+		}
+	#itemPreview .thumbnail {	
+		background: url(images/icons/magnify.png) bottom right no-repeat;
+		padding: 10px 18px 0 0;
+		}
+	#itemPreview .thumbnail img {	
+		border-width: 1px;
+		border-color: #333;
+		border-style: solid;
+		}
+
+	.tagsList {	
+		overflow: auto;
+		}
+	.tagsList ul {
+		margin: 0;
+		padding-left: 0;
+		}
+	.tagsList ul li {	
+		list-style-type: none;
+		display: block;
+		float: left;
+		margin: 0 3px 3px 0;
+		padding: 0 0 0 2px !important;
+		white-space: nowrap;
+		font-size: 10px;
+		line-height:18px;
+		border-color: #FFF #DDD69A #B2AD85 #FFF;
+		border-width: 1px;
+		border-style: solid;
+		background: #FEF8BD url(images/bg/tagBG.png) bottom right no-repeat;
+		}
+	.tagsList ul li a:link, #navlist ul li a:visited {	
+		padding: 2px !important;
+		font-size: 10px;
+		line-height:18px;
+		color: #6C694C;
+		}					
+	.tagsList ul li a:hover {	
+		background-color: #EDE59C;
+		color: #000;
+		text-decoration: none !important;
+		}
+	.tagsList ul li.conflict {	
+		border-right: #C88585;
+		border-bottom: #C88585;
+		border-width: 0 1px 1px 0;
+		border-style: none solid solid solid;
+		background: #FFD5D5 url(images/bg/tagBGConflict.png) bottom right no-repeat;
+		}
+
+*/

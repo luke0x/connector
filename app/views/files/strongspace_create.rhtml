@@ -1,0 +1,38 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@file], 'create') -%>
+
+<div class="dialog">
+	<h2><%= _('New File') %></h2>
+	<% if flash['error'] -%>
+		<p class="warning"><%= flash['error'] %></p>
+	<% end -%>
+	<% form_tag(files_strongspace_create_url(:path => @folder.relative_path), {:multipart => true, :onsubmit => 'return Files.validateSubmitNew(this);', :class => "item_editor", :style => "margin-bottom: 0;" }) do -%>
+		<div class="infoGroup">
+			<table style="width: 100%;">
+				<tr>
+					<td colspan="2" style="padding-bottom: 8px;">
+						<h3><%= _('Upload up to 5 files at once') %></h3>
+					</td>
+				</tr>
+				<% 5.times do |i| -%>
+					<tr>
+						<td class="infoGroupLabel" valign="top" style="width: 50px;"><%= _('File') + ' ' + (i + 1).to_s %>:</td>
+						<td style="padding-left: 5px; padding-bottom: 8px;"><%= file_field_tag "upload_#{i}" %></td>
+					</tr>
+				<% end -%>
+			</table>
+		</div>
+		<div class="infoGroup">
+			<%= submit_tag _('Create'), :name => 'command' %>
+			<input type="button" value="<%= _('Cancel') -%>" onclick="window.location = '<%= files_home_url %>';" />
+		</div>
+	<% end -%>
+</div>

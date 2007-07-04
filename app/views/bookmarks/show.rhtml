@@ -1,0 +1,48 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@bookmark], 'show') -%>
+
+<div class="infobox">
+	<div class="" style="float:right;">
+		<%= joyent_button_to _('Go'), @bookmark.uri, {:button_class => 'jumpTo', :style => 'width: 55px; padding: 6px 0 8px 0;', :target => '_blank'} %>
+	</div>
+	<h2><%= @bookmark.name %></h2>
+	<div><%= @bookmark.uri %></div>
+</div>
+
+<table><!-- safari 2.0.4 fix -->
+	<tr>
+		<td valign="top">
+			<dl>
+				<dt><%= _('Info') -%>:</dt>
+				<dd><%= _("Bookmarked by %{i18n_bookmark_user_count} users")%{:i18n_bookmark_user_count => @bookmark.user_count} -%>, <%= _('first by %{i18n_bookmark_first_user}')%{:i18n_bookmark_first_user => @bookmark.first_user.full_name} -%> <%= _("%{i18n_time_ago_in_words} ago")%{:i18n_time_ago_in_words =>"#{time_ago_in_words(@bookmark.first_bookmarked_at)}"} %></dd>
+				<dt><%= _('Date Created') -%>:</dt>
+				<dd><%= format_date_time(localize_time(@bookmark.created_at)) %></dd>
+				<dt><%= _('Date Modified') -%>:</dt>
+				<dd><%= format_date_time(localize_time(@bookmark.updated_at)) %></dd>
+				<% unless @bookmark.notes.blank? -%>
+					<dt><%= _('Notes') %></dt>
+					<dd><%= @bookmark.notes %></dd>
+				<% end -%>
+			</dl>
+		</td>
+		<td valign="top">
+			<img src="<%= @bookmark.icon_url %>" width="200" height="150" style="padding:1em;float:right"/>
+		</td>
+	</tr>
+</table>
+      
+<br clear="right"/>
+<div style="text-align:center;">
+<% unless @bookmark.bookmarked_by?(User.current) -%>
+  <%= joyent_button_to _('Save Bookmark'), bookmarks_create_url(:title => @bookmark.title, :uri => @bookmark.uri), {:button_class => 'saveBookmark addIconLeft', :style => 'width: 12em; padding: 6px 0 8px 0;'} %>
+<% end -%>
+</div>
+<%= render :partial => "comments/list", :locals => { :item => @bookmark } %>

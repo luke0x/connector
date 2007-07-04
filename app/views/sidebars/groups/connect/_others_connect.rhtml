@@ -1,0 +1,16 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul>
+  <% unless User.selected.application_smart_groups(@application_name).blank? -%>
+    <% User.selected.application_smart_groups(@application_name).each do |smart_group| -%>
+      <%= render_smart_group 'sidebars/groups/connect/connect_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
+    <% end -%>
+  <% end -%>
+</ul>

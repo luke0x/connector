@@ -1,0 +1,40 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<h5><%= _('Name') %></h5>
+<% form_remote_tag :url => list_url(@list), :method => :put, :loading => "List.editDisable();", :complete => "List.editEnable();" do -%>
+  <fieldset>
+  	<table>
+    		<tr>
+  			<td><%= text_field_tag 'list[name]', @list.name, {:id => 'list_name', :style => 'width: 250px;'} %></td>
+  		  	<td><%= submit_tag _('Save'), {:id => 'list_name_save'} -%></td>
+  			<td><div class="loadingMessageSmall" id="list_name_loading" style="background-position:0;display:none;float:left;"></div></td>
+  		</tr>
+  	</table>
+  </fieldset>
+<% end -%>
+<h5><%= _('Columns') %></h5>
+<fieldset>
+	<ul id="list_columns" style="list-style: none; padding: 0; margin: 0;">
+		<% @list.list_columns_by_position.each do |list_column|  -%>
+    	<%= render :partial => 'lists/list_column', :locals => {:list_column => list_column} %>
+		<% end -%>
+	</ul>
+	<div id="newColumnAdd">
+    <%= link_to_remote _('Add Column'), { :url => list_columns_url(:list_id => @list.id),
+										  :loading => "new Insertion.Bottom('list_columns', ListColumn.tempColumn); List.fadeDown('listContainer');",
+										  :complete => "List.rememberDrawerValues()" }, { :class => 'addItem', :style => '' } -%>
+	</div>
+	<div class="tip" style="margin-top:6px;">
+	  <%= _('Drag column headers below to change their order.') %>
+  </div>
+</fieldset>
+<div class="drawerButtons">
+  <%= button_to_function _('Done'), "List.drawerHide()" %>
+</div>

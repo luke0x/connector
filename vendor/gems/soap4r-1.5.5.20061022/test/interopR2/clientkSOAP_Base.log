@@ -1,0 +1,5625 @@
+File: clientkSOAP_Base.log - Wiredumps for SOAP4R client / kSOAP server.
+Date: Sat Jul 23 21:02:55 JST 2005
+
+##########
+# echoVoid
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:02:56 JST 2005
+Content-Length: 400
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoVoid xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+    </n1:echoVoid>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:44 GMT
+Server: Apache Coyote/1.0
+
+214
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoVoidResponse id="o0" SOAP-ENC:root="1" />
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:04 JST 2005
+Content-Length: 488
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">SOAP4R Interoperability Test</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:49 GMT
+Server: Apache Coyote/1.0
+
+278
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string">SOAP4R Interoperability Test</return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (Entity reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:05 JST 2005
+Content-Length: 549
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&lt;&gt;&quot;&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:50 GMT
+Server: Apache Coyote/1.0
+
+2b0
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string">&lt;&gt;"&amp; &amp;lt;&amp;gt;&amp;quot;&amp;amp; &amp;amp&amp;amp;&gt;&lt;&lt;&lt;</return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (Character reference)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:06 JST 2005
+Content-Length: 487
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> &#x20; &#32;&#x7f;&#127;</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:51 GMT
+Server: Apache Coyote/1.0
+
+264
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string">    </return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (Leading and trailing whitespace)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:07 JST 2005
+Content-Length: 494
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:53 GMT
+Server: Apache Coyote/1.0
+
+27e
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string">   SOAP4R
+Interoperability
+Test   </return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (EUC encoded)
+
+Result: Expected = "Hello (∆¸À‹∏ÏJapanese) §≥§Û§À§¡§œ"  //  Actual = "Hello (??????????????apanese) ???????????????????????"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:08 JST 2005
+Content-Length: 501
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:54 GMT
+Server: Apache Coyote/1.0
+
+2b5
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string">Hello (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩJapanese) ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ</return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (EUC encoded) again
+
+Result: Expected = "Hello (∆¸À‹∏ÏJapanese) §≥§Û§À§¡§œ"  //  Actual = "Hello (??????????????apanese) ???????????????????????"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:10 JST 2005
+Content-Length: 501
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">Hello (Êó•Êú¨Ë™ûJapanese) „Åì„Çì„Å´„Å°„ÅØ</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:55 GMT
+Server: Apache Coyote/1.0
+
+2b5
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string">Hello (ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩJapanese) ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ</return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:11 JST 2005
+Content-Length: 460
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"></inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:56 GMT
+Server: Apache Coyote/1.0
+
+25c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string"></return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (space)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:12 JST 2005
+Content-Length: 461
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string"> </inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:57 GMT
+Server: Apache Coyote/1.0
+
+25d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string"> </return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoString (whitespaces:\r \n \t \r \n \t)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:13 JST 2005
+Content-Length: 479
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoString xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">&#xd; 
+ 	 &#xd; 
+ 	</inputString>
+    </n1:echoString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:58 GMT
+Server: Apache Coyote/1.0
+
+267
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:string"> 
+ 	  
+ 	</return>
+  </n2:echoStringResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:14 JST 2005
+Content-Length: 684
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>SOAP4R
+</item>
+        <item> Interoperability </item>
+        <item>	Test	</item>
+      </inputStringArray>
+    </n1:echoStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:04:59 GMT
+Server: Apache Coyote/1.0
+
+32d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="xsd:string">SOAP4R
+</item>
+    <item xsi:type="xsd:string"> Interoperability </item>
+    <item xsi:type="xsd:string">	Test	</item>
+   </return>
+  </n2:echoStringArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:15 JST 2005
+Content-Length: 843
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-606064286"></item>
+        <item>SOAP4R</item>
+        <item href="#id-606064286"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-606064286"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:01 GMT
+Server: Apache Coyote/1.0
+
+320
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="xsd:string">SOAP4R</item>
+    <item xsi:type="xsd:string">SOAP4R</item>
+    <item xsi:type="xsd:string">SOAP4R</item>
+   </return>
+  </n2:echoStringArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (multi-ref: elem1 == elem3)
+
+Result: Expected = "String#-606098606"  //  Actual = "String#-606099306"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:16 JST 2005
+Content-Length: 843
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-606082706"></item>
+        <item>SOAP4R</item>
+        <item href="#id-606082706"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-606082706"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">SOAP4R</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:02 GMT
+Server: Apache Coyote/1.0
+
+320
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="xsd:string">SOAP4R</item>
+    <item xsi:type="xsd:string">SOAP4R</item>
+    <item xsi:type="xsd:string">SOAP4R</item>
+   </return>
+  </n2:echoStringArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStringArray (empty, multi-ref: elem1 == elem3)
+
+Result: Expected = "String#-606117086"  //  Actual = "String#-606117786"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:18 JST 2005
+Content-Length: 831
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStringArray n2:arrayType="xsd:string[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item href="#id-606101216"></item>
+        <item></item>
+        <item href="#id-606101216"></item>
+      </inputStringArray>
+    </n1:echoStringArray>
+    <item id="id-606101216"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:03 GMT
+Server: Apache Coyote/1.0
+
+30e
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStringArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="xsd:string"></item>
+    <item xsi:type="xsd:string"></item>
+    <item xsi:type="xsd:string"></item>
+   </return>
+  </n2:echoStringArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: 123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:19 JST 2005
+Content-Length: 464
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">123</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:04 GMT
+Server: Apache Coyote/1.0
+
+25e
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoIntegerResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:int">123</return>
+  </n2:echoIntegerResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: 2147483647)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:20 JST 2005
+Content-Length: 471
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483647</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:05 GMT
+Server: Apache Coyote/1.0
+
+265
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoIntegerResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:int">2147483647</return>
+  </n2:echoIntegerResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (Int: -2147483648)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:21 JST 2005
+Content-Length: 472
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:06 GMT
+Server: Apache Coyote/1.0
+
+266
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoIntegerResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:int">-2147483648</return>
+  </n2:echoIntegerResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (2147483648: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:22 JST 2005
+Content-Length: 471
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">2147483648</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:07 GMT
+Server: Apache Coyote/1.0
+
+234
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "2147483648"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (-2147483649: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:23 JST 2005
+Content-Length: 472
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-2147483649</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:08 GMT
+Server: Apache Coyote/1.0
+
+235
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "-2147483649"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (0.0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:24 JST 2005
+Content-Length: 464
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.0</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:09 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "0.0"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (-5.2: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:25 JST 2005
+Content-Length: 465
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">-5.2</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:11 GMT
+Server: Apache Coyote/1.0
+
+22e
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "-5.2"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (0.000000000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:33 JST 2005
+Content-Length: 473
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">0.000000000a</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:18 GMT
+Server: Apache Coyote/1.0
+
+236
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "0.000000000a"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoInteger (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:34 JST 2005
+Content-Length: 464
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoInteger xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputInteger xsi:type="xsd:int">+-5</inputInteger>
+    </n1:echoInteger>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:19 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "+-5"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoIntegerArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:35 JST 2005
+Content-Length: 657
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:20 GMT
+Server: Apache Coyote/1.0
+
+30a
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoIntegerArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="xsd:int">1</item>
+    <item xsi:type="xsd:int">2</item>
+    <item xsi:type="xsd:int">3</item>
+   </return>
+  </n2:echoIntegerArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoIntegerArray (empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:36 JST 2005
+Content-Length: 588
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoIntegerArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputIntegerArray n2:arrayType="xsd:int[0]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+      </inputIntegerArray>
+    </n1:echoIntegerArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:22 GMT
+Server: Apache Coyote/1.0
+
+289
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoIntegerArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[0]" />
+  </n2:echoIntegerArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:37 JST 2005
+Content-Length: 467
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+3.141592654</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:23 GMT
+Server: Apache Coyote/1.0
+
+262
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">3.1415927</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:38 JST 2005
+Content-Length: 465
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:24 GMT
+Server: Apache Coyote/1.0
+
+261
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">1.234E37</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation 2)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:40 JST 2005
+Content-Length: 465
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:25 GMT
+Server: Apache Coyote/1.0
+
+261
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">1.234E37</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation 3)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:41 JST 2005
+Content-Length: 465
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+1.234e+37</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:26 GMT
+Server: Apache Coyote/1.0
+
+261
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">1.234E37</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (scientific notation 4)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:42 JST 2005
+Content-Length: 459
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-1.4</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:27 GMT
+Server: Apache Coyote/1.0
+
+25d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">-1.4</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (positive lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:43 JST 2005
+Content-Length: 457
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:28 GMT
+Server: Apache Coyote/1.0
+
+25c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">0.0</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (negative lower boundary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:44 JST 2005
+Content-Length: 457
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:29 GMT
+Server: Apache Coyote/1.0
+
+25d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">-0.0</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: +0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:45 JST 2005
+Content-Length: 457
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:30 GMT
+Server: Apache Coyote/1.0
+
+25c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">0.0</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: -0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:46 JST 2005
+Content-Length: 457
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:31 GMT
+Server: Apache Coyote/1.0
+
+25d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">-0.0</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: NaN)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:47 JST 2005
+Content-Length: 458
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">NaN</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:33 GMT
+Server: Apache Coyote/1.0
+
+25c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:float">NaN</return>
+  </n2:echoFloatResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: INF)
+
+Result: Exception: For input string: "INF" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c3bd84>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:48 JST 2005
+Content-Length: 458
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:34 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "INF"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (special values: -INF)
+
+Result: Exception: For input string: "-INF" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c361b8>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:49 JST 2005
+Content-Length: 459
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">-INF</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:35 GMT
+Server: Apache Coyote/1.0
+
+22e
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "-INF"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (0.000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:51 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">0.0000000000000000a</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:36 GMT
+Server: Apache Coyote/1.0
+
+23d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "0.0000000000000000a"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (00a.0001: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:52 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">00a.000000000000001</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:37 GMT
+Server: Apache Coyote/1.0
+
+23d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "00a.000000000000001"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:53 JST 2005
+Content-Length: 458
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">+-5</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:38 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "+-5"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloat (5_0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:54 JST 2005
+Content-Length: 458
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloat xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloat xsi:type="xsd:float">5_0</inputFloat>
+    </n1:echoFloat>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:39 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "5_0"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloatArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:55 JST 2005
+Content-Length: 662
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>+0.0001</item>
+        <item>+1000</item>
+        <item>+0</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:40 GMT
+Server: Apache Coyote/1.0
+
+318
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoFloatArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="xsd:float">1.0E-4</item>
+    <item xsi:type="xsd:float">1000.0</item>
+    <item xsi:type="xsd:float">0.0</item>
+   </return>
+  </n2:echoFloatArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoFloatArray (special values: NaN, INF, -INF)
+
+Result: Exception: For input string: "INF" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c10c74>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:03:59 JST 2005
+Content-Length: 658
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoFloatArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputFloatArray n2:arrayType="xsd:float[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item>NaN</item>
+        <item>INF</item>
+        <item>-INF</item>
+      </inputFloatArray>
+    </n1:echoFloatArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:45 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "INF"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:01 JST 2005
+Content-Length: 674
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:46 GMT
+Server: Apache Coyote/1.0
+
+2f6
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="n1:SOAPStruct">
+    <varString xsi:type="xsd:string">a</varString>
+    <varInt xsi:type="xsd:int">1</varInt>
+    <varFloat xsi:type="xsd:float">1.1</varFloat>
+   </return>
+  </n2:echoStructResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStruct (nil members)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:02 JST 2005
+Content-Length: 651
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:47 GMT
+Server: Apache Coyote/1.0
+
+2c6
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="n1:SOAPStruct">
+    <varString xsi:nil="true" />
+    <varInt xsi:nil="true" />
+    <varFloat xsi:nil="true" />
+   </return>
+  </n2:echoStructResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:03 JST 2005
+Content-Length: 1217
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:48 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">c</varString>
+     <varInt xsi:type="xsd:int">3</varInt>
+     <varFloat xsi:type="xsd:float">3.3</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (anyType Array)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:04 JST 2005
+Content-Length: 1392
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString xsi:type="xsd:string">c</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:49 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">c</varString>
+     <varInt xsi:type="xsd:int">3</varInt>
+     <varFloat xsi:type="xsd:float">3.3</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:05 JST 2005
+Content-Length: 1257
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605304676"></item>
+        <item href="#id-605304676"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605304676"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:50 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref: elem1 == elem2)
+
+Result: Expected = "SOAPBuildersInterop::SOAPStruct#-605623246"  //  Actual = "SOAPBuildersInterop::SOAPStruct#-605626736"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:06 JST 2005
+Content-Length: 1257
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item href="#id-605556306"></item>
+        <item href="#id-605556306"></item>
+        <item>
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605556306"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">a</varString>
+      <varFloat xsi:type="xsd:float">+1.1</varFloat>
+      <varInt xsi:type="xsd:int">1</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:52 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: elem2 == elem3)
+
+Result: Expected = "SOAPBuildersInterop::SOAPStruct#-605699916"  //  Actual = "SOAPBuildersInterop::SOAPStruct#-605700976"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:12 JST 2005
+Content-Length: 1282
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item href="#id-605639796"></item>
+        <item href="#id-605639796"></item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <item xmlns:n4="http://soapinterop.org/xsd"
+        id="id-605639796"
+        xsi:type="n4:SOAPStruct"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <varString xsi:type="xsd:string">b</varString>
+      <varFloat xsi:type="xsd:float">+2.2</varFloat>
+      <varInt xsi:type="xsd:int">2</varInt>
+    </item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:57 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (multi-ref: varString of elem1 == varString of elem2)
+
+Result: Expected = "String#-605731546"  //  Actual = "String#-605733356"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:13 JST 2005
+Content-Length: 1360
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="n3:SOAPStruct[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xmlns:n3="http://soapinterop.org/xsd"
+          xsi:type="n2:Array">
+        <item>
+          <varString href="#id-605704316"></varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item>
+          <varString href="#id-605704316"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item>
+          <varString xsi:type="xsd:string">a</varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605704316"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">a</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:58 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">a</varString>
+     <varInt xsi:type="xsd:int">3</varInt>
+     <varFloat xsi:type="xsd:float">3.3</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoStructArray (anyType Array, multi-ref: varString of elem2 == varString of elem3)
+
+Result: Expected = "String#-605831166"  //  Actual = "String#-605834046"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:14 JST 2005
+Content-Length: 1535
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStructArray n2:arrayType="xsd:anyType[3]"
+          xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:Array">
+        <item xmlns:n3="http://soapinterop.org/xsd"
+            xsi:type="n3:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+1.1</varFloat>
+          <varInt xsi:type="xsd:int">1</varInt>
+        </item>
+        <item xmlns:n4="http://soapinterop.org/xsd"
+            xsi:type="n4:SOAPStruct">
+          <varString href="#id-605747416"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </item>
+        <item xmlns:n5="http://soapinterop.org/xsd"
+            xsi:type="n5:SOAPStruct">
+          <varString href="#id-605747416"></varString>
+          <varFloat xsi:type="xsd:float">+3.3</varFloat>
+          <varInt xsi:type="xsd:int">3</varInt>
+        </item>
+      </inputStructArray>
+    </n1:echoStructArray>
+    <varString id="id-605747416"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">b</varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:05:59 GMT
+Server: Apache Coyote/1.0
+
+4e8
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoStructArrayResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="xsd:anyType[3]">
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">1</varInt>
+     <varFloat xsi:type="xsd:float">1.1</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">2</varInt>
+     <varFloat xsi:type="xsd:float">2.2</varFloat>
+    </item>
+    <item xsi:type="n1:SOAPStruct">
+     <varString xsi:type="xsd:string">b</varString>
+     <varInt xsi:type="xsd:int">3</varInt>
+     <varFloat xsi:type="xsd:float">3.3</varFloat>
+    </item>
+   </return>
+  </n2:echoStructArrayResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (now)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:15 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2005-07-23T12:04:15Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:00 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2005-07-23T12:04:15.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (before 1970: 1-01-01T00:00:00Z)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:16 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0001-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:01 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">0001-01-01T00:00:00.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (after 2038: 2038-12-31T00:00:00Z)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:17 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2038-12-31T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:02 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2038-12-31T00:00:00.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (negative: -10-01-01T00:00:00Z)
+
+Result: Exception: For input string: "T0" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c38954>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:18 JST 2005
+Content-Length: 475
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0011-01-01T00:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:04 GMT
+Server: Apache Coyote/1.0
+
+22c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "T0"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (time precision: msec)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:19 JST 2005
+Content-Length: 478
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:05 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-16T18:13:40.012Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (time precision: long)
+
+Result: Expected = #<DateTime: 21185947522000000000001234567890123456789/8640000000000000000000000000000000,0,2299161>  //  Actual = #<DateTime: 10592973761/4320,0,2299161>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:21 JST 2005
+Content-Length: 515
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40.0000000000123456789012345678900000000000Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:06 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-16T18:13:40.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (positive TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:22 JST 2005
+Content-Length: 479
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40+07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:07 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-16T18:13:40.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (negative TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:23 JST 2005
+Content-Length: 479
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:08 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-17T01:13:40.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (+00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:24 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:09 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-17T01:13:40.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (-00:00 TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:25 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-17T01:13:40Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:10 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-17T01:13:40.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (min TZ)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:26 JST 2005
+Content-Length: 479
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2001-06-16T00:00:01+00:01</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:11 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">2001-06-15T23:59:01.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year > 9999)
+
+Result: Exception: For input string: "T1" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7dad29c>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:27 JST 2005
+Content-Length: 480
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">10000-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:12 GMT
+Server: Apache Coyote/1.0
+
+22c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "T1"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year < 0)
+
+Result: Exception: For input string: "T1" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7ce977c>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:28 JST 2005
+Content-Length: 480
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-0001-06-16T18:13:40-07:00</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:14 GMT
+Server: Apache Coyote/1.0
+
+22c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "T1"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year == -4713)
+
+Result: Exception: For input string: "T1" (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7cd9ac0>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:29 JST 2005
+Content-Length: 475
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">-4713-01-01T12:00:00Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:15 GMT
+Server: Apache Coyote/1.0
+
+22c
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "T1"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year 0000: junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:30 JST 2005
+Content-Length: 474
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">0000-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:16 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDateResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:dateTime">0001-05-18T16:52:20.000Z</return>
+  </n2:echoDateResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (year nn: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:32 JST 2005
+Content-Length: 472
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">05-05-18T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:17 GMT
+Server: Apache Coyote/1.0
+
+22e
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "05-0"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (no day part: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:33 JST 2005
+Content-Length: 471
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05T16:52:20Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:18 GMT
+Server: Apache Coyote/1.0
+
+232
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>String index out of range: 8</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (no sec part: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:34 JST 2005
+Content-Length: 471
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime">2002-05-18T16:52Z</inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:19 GMT
+Server: Apache Coyote/1.0
+
+232
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>String index out of range: 8</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDate (empty: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:35 JST 2005
+Content-Length: 454
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDate xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDate xsi:type="xsd:dateTime"></inputDate>
+    </n1:echoDate>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:20 GMT
+Server: Apache Coyote/1.0
+
+232
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>String index out of range: 4</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (xsd:base64Binary)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:36 JST 2005
+Content-Length: 510
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:21 GMT
+Server: Apache Coyote/1.0
+
+28d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBase64Response id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</return>
+  </n2:echoBase64Response>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (xsd:base64Binary, empty)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:37 JST 2005
+Content-Length: 466
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xsi:type="xsd:base64Binary"></inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:22 GMT
+Server: Apache Coyote/1.0
+
+261
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBase64Response id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:base64"></return>
+  </n2:echoBase64Response>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (SOAP-ENC:base64)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:38 JST 2005
+Content-Length: 566
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:23 GMT
+Server: Apache Coyote/1.0
+
+28d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBase64Response id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:base64">SGVsbG8gKMb8y9y47EphcGFuZXNlKSCks6TzpMukwaTP</return>
+  </n2:echoBase64Response>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:39 JST 2005
+Content-Length: 526
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">AA==</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:24 GMT
+Server: Apache Coyote/1.0
+
+265
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBase64Response id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:base64">AA==</return>
+  </n2:echoBase64Response>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (\0a\0)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:40 JST 2005
+Content-Length: 534
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">YQBiAABjAAAA</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:26 GMT
+Server: Apache Coyote/1.0
+
+26d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBase64Response id="o0" SOAP-ENC:root="1">
+   <return xsi:type="SOAP-ENC:base64">YQBiAABjAAAA</return>
+  </n2:echoBase64Response>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBase64 (-: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:41 JST 2005
+Content-Length: 523
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBase64 xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBase64 xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:base64">-</inputBase64>
+    </n1:echoBase64>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:27 GMT
+Server: Apache Coyote/1.0
+
+228
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>unexpected code: -</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary
+
+Result: Exception: InteropService.echoHexBinary(org.ksoap.SoapPrimitive) (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c502d4>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:43 JST 2005
+Content-Length: 541
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">48656C6C6F2028C6FCCBDCB8EC4A6170616E6573652920A4B3A4F3A4CBA4C1A4CF</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:28 GMT
+Server: Apache Coyote/1.0
+
+24b
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>InteropService.echoHexBinary(org.ksoap.SoapPrimitive)</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(empty)
+
+Result: Exception: InteropService.echoHexBinary(org.ksoap.SoapObject) (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c4a668>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:44 JST 2005
+Content-Length: 475
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary"></inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:29 GMT
+Server: Apache Coyote/1.0
+
+248
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>InteropService.echoHexBinary(org.ksoap.SoapObject)</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(\0)
+
+Result: Exception: InteropService.echoHexBinary(org.ksoap.SoapPrimitive) (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c449e8>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:45 JST 2005
+Content-Length: 477
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">00</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:30 GMT
+Server: Apache Coyote/1.0
+
+24b
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>InteropService.echoHexBinary(org.ksoap.SoapPrimitive)</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(\0a\0)
+
+Result: Exception: InteropService.echoHexBinary(org.ksoap.SoapPrimitive) (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c3ed54>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:46 JST 2005
+Content-Length: 493
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">610062000063000000</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:31 GMT
+Server: Apache Coyote/1.0
+
+24b
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>InteropService.echoHexBinary(org.ksoap.SoapPrimitive)</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary(lower case)
+
+Result: Exception: InteropService.echoHexBinary(org.ksoap.SoapPrimitive) (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c39084>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:47 JST 2005
+Content-Length: 495
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">6c6f7765722063617365</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:32 GMT
+Server: Apache Coyote/1.0
+
+24b
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>InteropService.echoHexBinary(org.ksoap.SoapPrimitive)</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoHexBinary (0FG7: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:48 JST 2005
+Content-Length: 479
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoHexBinary xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputHexBinary xsi:type="xsd:hexBinary">0FG7</inputHexBinary>
+    </n1:echoHexBinary>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:33 GMT
+Server: Apache Coyote/1.0
+
+24b
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>InteropService.echoHexBinary(org.ksoap.SoapPrimitive)</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (true)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:49 JST 2005
+Content-Length: 469
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">true</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:34 GMT
+Server: Apache Coyote/1.0
+
+263
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBooleanResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:boolean">true</return>
+  </n2:echoBooleanResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (false)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:50 JST 2005
+Content-Length: 470
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">false</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:35 GMT
+Server: Apache Coyote/1.0
+
+264
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBooleanResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:boolean">false</return>
+  </n2:echoBooleanResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoBoolean (junk)
+
+Result: Expected = "Fault"  //  Actual = "No error occurred."
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:51 JST 2005
+Content-Length: 469
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoBoolean xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputBoolean xsi:type="xsd:boolean">junk</inputBoolean>
+    </n1:echoBoolean>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:36 GMT
+Server: Apache Coyote/1.0
+
+264
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoBooleanResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:boolean">false</return>
+  </n2:echoBooleanResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (123456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:52 JST 2005
+Content-Length: 483
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">123456789012345678</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:38 GMT
+Server: Apache Coyote/1.0
+
+271
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDecimalResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:decimal">123456789012345678</return>
+  </n2:echoDecimalResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (+0.123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:53 JST 2005
+Content-Length: 484
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:39 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDecimalResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:decimal">0.12345678901234567</return>
+  </n2:echoDecimalResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (.00000123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:55 JST 2005
+Content-Length: 484
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:40 GMT
+Server: Apache Coyote/1.0
+
+272
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDecimalResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:decimal">0.00000123456789012</return>
+  </n2:echoDecimalResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (-.00000123)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:56 JST 2005
+Content-Length: 485
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-0.00000123456789012</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:41 GMT
+Server: Apache Coyote/1.0
+
+273
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDecimalResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:decimal">-0.00000123456789012</return>
+  </n2:echoDecimalResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (-123.456)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:57 JST 2005
+Content-Length: 485
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-123456789012345.008</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:42 GMT
+Server: Apache Coyote/1.0
+
+273
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDecimalResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:decimal">-123456789012345.008</return>
+  </n2:echoDecimalResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (-123.)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:58 JST 2005
+Content-Length: 483
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">-12345678901234567</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:43 GMT
+Server: Apache Coyote/1.0
+
+271
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <n2:echoDecimalResponse id="o0" SOAP-ENC:root="1">
+   <return xsi:type="xsd:decimal">-12345678901234567</return>
+  </n2:echoDecimalResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (0.000a: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:04:59 JST 2005
+Content-Length: 484
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">0.0000000000000000a</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:44 GMT
+Server: Apache Coyote/1.0
+
+228
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>00000000000000000a</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (00a.0001: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:05:00 JST 2005
+Content-Length: 484
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">00a.000000000000001</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:45 GMT
+Server: Apache Coyote/1.0
+
+228
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>00a000000000000001</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (+-5: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:05:01 JST 2005
+Content-Length: 468
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">+-5</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:46 GMT
+Server: Apache Coyote/1.0
+
+21a
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>null</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+
+##########
+# echoDecimal (5_0: junk)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ksoapinterop HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 21:05:02 JST 2005
+Content-Length: 468
+Host: kissen.cs.uni-dortmund.de:8080
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoDecimal xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputDecimal xsi:type="xsd:decimal">5_0</inputDecimal>
+    </n1:echoDecimal>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=utf-8
+Connection: close
+Transfer-Encoding: chunked
+Date: Sat, 23 Jul 2005 12:06:48 GMT
+Server: Apache Coyote/1.0
+
+22d
+
+<SOAP-ENV:Envelope xmlns:n2="http://soapinterop.org/" xmlns:n1="http://soapinterop.org/xsd" xmlns:n0="http://xml.apache.org/xml-soap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+ <SOAP-ENV:Body>
+  <SOAP-ENV:Fault>
+   <faultcode>Server</faultcode>
+   <faultstring>For input string: "5_0"</faultstring>
+   <detail />
+  </SOAP-ENV:Fault>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+0
+
+! CONNECTION CLOSED
+
+
+

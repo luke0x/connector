@@ -1,0 +1,27 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+jim:
+  id: 1
+  person_id: 1
+  im_type: AIM
+  im_address: jim
+  preferred: true
+joe:
+  id: 2
+  person_id: 1
+  im_type: AIM
+  im_address: joe
+  preferred: false
+yeah:
+  id: 3
+  person_id: 1
+  im_type: ICQ
+  im_address: 18089432
+  preferred: false

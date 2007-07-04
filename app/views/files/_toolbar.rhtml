@@ -1,0 +1,63 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+	<% if @toolbar[:quota] -%>
+		<li><%= render :partial => 'toolbars/quota_disk_meter' %></li>
+	<% end -%>
+  <% if @toolbar[:new] -%>
+		<% if @view_kind == 'strongspace' -%>
+    <li class="actionNew"><%= link_to _('New'), files_strongspace_create_url(:path => (@folder.relative_path rescue '')) %></li>
+		<% else -%>
+    <li class="actionNew"><%= link_to _('New'), files_create_url(:folder_id => (@folder.id rescue User.current.documents_folder.id)) %></li>
+		<% end -%>
+  <% end -%>
+	<% if @toolbar[:new_notifications] -%>
+		<li class="actionShowNew"><%= link_to _('Show New'), files_notifications_url %></li>
+	<% end -%>
+	<% if @toolbar[:all_notifications] -%>
+		<li class="actionShowAll"><%= link_to _('Show All'), files_notifications_url(:all => '') %></li>
+	<% end -%>
+	<% if @toolbar[:edit] and @file -%>
+		<% if @view_kind == 'strongspace' -%>
+			<li class="actionEdit"><%= link_to _('Edit'), files_strongspace_edit_url(:path => @file.relative_path) %></li>
+		<% else -%>
+			<li class="actionEdit"><%= link_to _('Edit'), files_edit_url(:owner_id => @file.owner.id, :id => @file.id) %></li>
+		<% end -%>
+	<% end -%>
+	<% if @toolbar[:copy] -%>
+		<% if @view_kind == 'strongspace' -%>
+		<li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy', 'StrongspaceFolder')", {:id => 'actionCopyLink'} %></li>
+		<% else -%>
+		<li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy')", {:id => 'actionCopyLink'} %></li>
+		<% end -%>
+	<% end -%>
+	<% if @toolbar[:move] -%>
+		<% if @view_kind == 'strongspace' -%>
+		<li class="actionMove"><%= link_to_function _('Move'), "return Drawers.toggleBrowser('Move', 'StrongspaceFolder')", {:id => 'actionMoveLink'} %></li>
+		<% else -%>
+		<li class="actionMove"><%= link_to_function _('Move'), "return Drawers.toggleBrowser('Move')", {:id => 'actionMoveLink'} %></li>
+		<% end -%>
+	<% end -%>
+	<% if @toolbar[:email] -%>
+	  <li>
+	  <% form_tag(mail_compose_url, {:id => 'toolbarEmailForm', :style => 'display: none;', :onsubmit => 'return Toolbar.emailSubmit(this);', :title => _('Email selected items as an attachment') }) do -%>
+          <% if @service -%> <input type="hidden" name="service" value="<%= @service.name %>"/> <% end -%>
+		  <input type="hidden" id="toolbarEmailIDs" name="ids" value="" />
+		  <input id="actionEmailButton" type="submit" value="<%= _('Email') %>" />
+	  <% end -%>
+	  </li>
+	  <li class="actionEmail">
+      <%= link_to_function _('Email'), "$('actionEmailButton').click(); return true;", {:id => 'actionEmailLink'} %>
+      </li>	  
+	<% end -%>
+	<% if @toolbar[:delete] -%>
+		<li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
+	<% end -%>
+</ul>

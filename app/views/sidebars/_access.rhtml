@@ -1,0 +1,34 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="accessSidebar" class="sidebar <%= class_name %>">
+  <div id="accessUnavailableContainer" class="sidebarWarning sidebarInset" style="display: none;"><%= _('Access unavailable') -%></div>
+  <div id="accessAvailableContainer">
+		<table style="width:100%;" class="userList">
+			<colgroup>
+				<col class="names" style="width:100%;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="names" style="text-align:left;"><span class="viewIcon"><%= _('View') -%></span><%= _('Access') -%></th>
+				</tr>
+			</thead>
+		</table>
+    <div id="accessAvailableInset" class="sidebarInset">
+			<table style="width:100%;" class="userList">
+				<colgroup>
+					<col class="names" style="width:98%;" />
+					<col class="view" style="width:16px;" />
+				</colgroup>
+				<tbody id="accessSidebarUsers">
+				</tbody>
+			</table>
+  	</div>
+  </div>
+</div>

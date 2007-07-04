@@ -1,0 +1,38 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="message">
+	<dl>
+		<dt><%= _('From') -%>:</dt>
+		<% message.from.each do |address| %>
+			<dd>
+				<%= decode(address.address) %>
+			</dd>
+		<% end %>
+		<dt><%= _('To') -%>:</dt>
+		<% message.to.each do |address| %>
+			<dd>
+				<%= decode(address.address) %>
+			</dd>
+		<% end %>
+    <dt><%= _('Date') -%>:</dt>
+    <dd><%= message_date(message) %></dd>  
+    <dt><%= _('Subject') -%>:</dt>
+    <dd><%= h decode(message.subject) %></dd>  
+    <% if message.has_attachments? -%>
+    <dt><%= _('Attachments') -%>:</dt>           
+      <% message.attachments.each do |attach| -%>
+    <dd><%= attach[:filename] %></dd>  
+      <% end -%>  
+    <% end -%>
+	</dl>
+
+	<pre><%= html_for_display(message) %></pre>
+	<%= render :partial => 'comments', :locals => {:comments => message.comments} %>    
+</div>

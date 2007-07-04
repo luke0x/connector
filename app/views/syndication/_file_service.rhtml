@@ -1,0 +1,25 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div class="file">   
+  <h2><%=h file.filename %></h2>
+  <h3><%=h _(file.joyent_file_type.description) %></h3>
+  <dl>
+    <dt><%= _('Location on disk') -%>:</dt>
+  	<dd><%=h file.logical_path %></dd>
+  	<dt><%= _('Where') -%>:</dt>
+  	<dd><%=h _("%{i18n_file_owner_person_name}'s Files")%{:i18n_file_owner_person_name => "#{file.owner.person.name}"} -%>:<%=h file.folder.logical_path %></dd>
+  	<dt><%= _('Date Created') -%>:</dt>
+  	<dd><%= format_date_time(localize_time(file.created_at)) %></dd>
+  	<dt><%= _('Date Modified') -%>:</dt>
+  	<dd><%= format_date_time(localize_time(file.updated_at)) %></dd>
+  	<dt><%= _('File Size') -%>:</dt>
+  	<dd><%= number_to_human_size(file.size_in_bytes) %></dd>
+  </dl>
+</div>

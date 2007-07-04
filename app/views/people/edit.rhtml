@@ -1,0 +1,46 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% @page_javascript << javascript_jsar_init([@person], 'edit') -%>
+<% @page_javascript << "arrPersonPhoneNumberIndexes  = [];" -%>
+<% @page_javascript << "arrPersonEmailAddressIndexes = [];" -%>
+<% @page_javascript << "arrPersonAddressIndexes      = [];" -%>
+<% @page_javascript << "arrPersonImAddressIndexes    = [];" -%>
+<% @page_javascript << "arrPersonWebsiteIndexes      = [];" -%>
+<% @page_javascript << "arrPersonSpecialDateIndexes  = [];" -%>
+<% @page_javascript << "Event.observe(window, 'load', function(event){ People.setupEdit(); });" -%>
+
+<form action='' id="item_editor" onsubmit="return People.validateSubmit(this);" class="item_editor" method="post" enctype="multipart/form-data">	
+  <div class="dialog" id="personEditContactContainer">
+  	<%= render :partial => 'edit_contact_information', :locals => { :person => @person } %>
+  </div>
+  <% if User.current.admin? or User.current.person == @person -%>
+    <div class="dialog alt" id="personEditAccountContainer">
+    	<%= render :partial => 'edit_account', :locals => { :person => @person } %>
+    </div>
+  <% end -%>
+	<div class="dialog">
+		<div class="infoGroup" style="text-align:center;">
+			<%= render :partial => 'partials/sidebar_buttons' %>
+		</div>
+		<div class="infoGroup">
+      <input id="person_account_type" value="<%= @person.account_type %>" type="hidden" name="person_account_type" />
+			<input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
+			<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
+			<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
+			<% if @view_kind == 'edit' -%>
+				<%= submit_tag _("Save") %>
+				<%= button_to_function _('Cancel'), "window.location = '#{people_list_url(:group => group_parameter)}'" %>
+			<% else -%>
+				<%= submit_tag _("Create") %>
+				<%= button_to_function _('Cancel'), "window.location = '#{people_home_url}'" %>
+			<% end -%>
+		</div>
+	</div>
+</form>

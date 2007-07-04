@@ -1,0 +1,27 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<h1>Listing services</h1>
+
+<table>
+  <tr>
+  </tr>
+  
+<% for service in @services %>
+  <tr>
+    <td><%= link_to 'Show', service_path(service) %></td>
+    <td><%= link_to 'Edit', edit_service_path(service) %></td>
+    <td><%= link_to 'Destroy', service_path(service), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New service', new_service_path %>

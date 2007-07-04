@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+require 'webrick'
+require 'yaml'
+
+conf = YAML::load(open(File.dirname(__FILE__) + '/../config/mongrel_cluster.yml'))
+
+HTML =<<EOS
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Joyent Connector: 404 Not Found Error</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body id="Login">
+  <div style="text-align: center;">
+    	<h1>Down for maintenance</h1>	
+    	<div>
+				<p>We are currently down for maintenance/upgrades.  We'll be back shortly.</p>
+				<p>We apologize for the inconvenience.</p>
+			</div>
+  </div>
+</body>
+</html>
+EOS
+
+
+case ARGV[0]
+when 'start'
+  fork do    
+    stdin  = open '/dev/null', 'r'
+    stdout = open '/dev/null', 'w'
+    stderr = open '/dev/null', 'w'
+    STDIN.reopen stdin
+    STDOUT.reopen stdout
+    STDERR.reopen stderr
+    $0 = 'maintenance'
+    
+    fork do
+      trap('CLD') do
+        pid = Process.wait
+      end
+      
+      File.open("/tmp/connector-maintenance.pid", 'w+') {|f| f.write(Process.pid)}
+      
+      s = WEBrick::GenericServer.new( :Port => conf['port'] )
+      trap("INT"){ s.shutdown }
+      s.start{|sock|
+        sock.print(HTML + "\r\n")
+      }
+      
+    end and exit!
+  end
+when 'stop'
+  pid = File.open("/tmp/connector-maintenance.pid").read.strip.to_i
+  Process.kill(2, pid)
+  File.unlink("/tmp/connector-maintenance.pid") rescue nil
+when 'status'
+  if File.exist?('/tmp/connector-maintenance.pid')
+    puts "Running"
+  else
+    puts "Not Running"
+  end
+end
+      

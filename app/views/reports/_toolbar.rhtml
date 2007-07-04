@@ -1,0 +1,14 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<ul id="Toolbar">
+  <li class='actionRefreshAll'><a href='#' onclick='return Report.refreshAll();' title='<%= _("Refresh all of the reports in the workspace.") -%>'><%= _('Refresh All') -%></a></li>
+  <li class='actionCollapseAll'><a href='#' onclick='return Report.hideAll();' title='<%= _("Collapse all of the reports in the workspace.") -%>'><%= _('Collapse All') -%></a></li>
+  <li class='actionExpandAll'><a href='#' onclick='return Report.showAll();' title='<%= _("Expand all of the reports in the workspace.") -%>'><%= _('Expand All') -%></a></li>
+</ul>

@@ -1,0 +1,101 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ARGV.unshift('development') unless ['production','development','test'].include?(ARGV[0])
+
+require File.dirname(__FILE__) + '/../config/boot'
+
+require 'optparse'
+options = { :sandbox => false }
+OptionParser.new do |opt|
+  opt.banner = "Usage: querycount [environment] [options] <uri>"
+  opt.on('-s', '--sandbox', 'Rollback database modifications on exit.') { |v| options[:sandbox] = v }
+  opt.on('-d', '--duplications', 'Show duplicate query report.') { options[:dupes] = true }
+  opt.parse!(ARGV)
+end
+
+require "#{RAILS_ROOT}/config/environment"
+require "console_app"
+require "console_sandbox" if options[:sandbox]
+require "console_with_helpers"
+
+ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'
+if options[:sandbox]
+  puts "Loading #{ENV['RAILS_ENV']} environment in sandbox."
+  puts "Any modifications you make will be rolled back on exit."
+else
+  puts "Loading #{ENV['RAILS_ENV']} environment."
+end
+
+ActiveRecord::Base.connection.class.class_eval do
+  cattr_accessor :query_count
+  cattr_accessor :executed_query_log
+  
+  # Array of regexes of queries that are not counted against query_count
+  @@ignore_list = [/^SELECT currval/, /^SELECT CAST/, /^SELECT \* FROM sessions/,
+                   /^INSERT INTO sessions/, /^BEGIN$/, /^COMMIT$/, /^ROLLBACK$/,
+                   /^\s*SELECT attr\.attname/, /^UPDATE sessions SET/]
+  
+  self.query_count        = 0
+  self.executed_query_log = []
+
+  alias_method :execute_without_query_counting, :execute
+
+  def execute_with_query_counting(sql, name = nil)
+    self.executed_query_log = [] if self.query_count == 0
+    unless @@ignore_list.any? { |r| sql =~ r }
+      self.query_count += 1 
+      self.executed_query_log << sql
+    end
+    
+    execute_without_query_counting(sql, name)
+  end
+
+  alias_method :execute, :execute_with_query_counting
+end
+
+user = ['production','development','test'].include?(ARGV[0]) ? ARGV[1] : ARGV[0]
+
+user = User.find_by_username(ARGV[1])
+if user.nil?
+  puts "Could not find user #{ARGV[1]}"
+  exit
+end
+puts "Setting up session environment for #{ARGV[1]}"
+app.host = user.organization.system_domain.web_domain
+app.post('/login', :username => user.username, :password => user.plaintext_password)
+if !app.redirect? && !(app.redirect_to_url =~ /\/login$/)
+  puts "Login failed, exiting"
+  exit
+end
+
+ActiveRecord::Base.connection.query_count = 0
+
+t1 = Time.now
+res = app.send(ARGV[2], ARGV[3])
+t2 = Time.now
+
+puts "URI:        #{ARGV[3]}"
+puts "Result:     #{res}"
+puts "Time:       #{t2 - t1}"
+puts "Queries:    #{ActiveRecord::Base.connection.query_count}"
+
+queries = ActiveRecord::Base.connection.executed_query_log
+
+unless queries.size == queries.uniq.size
+  queryhsh = queries.inject({}) { |hsh, a| hsh[a] = (hsh[a]||0) + 1; hsh }
+  puts "Duplicates: #{queryhsh.values.select { |g| g > 1 }.size}"
+  if options[:dupes]
+    queryhsh.each do |q, c|
+      puts "  (#{c} times): #{q}" if c > 1
+    end
+  end
+end

@@ -1,0 +1,72 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+  
+if ARGV.length != 1
+  puts "usage: ./organization_info <domain>"
+  exit
+end                                       
+
+DISPLAY_WIDTH = 78
+ 
+begin                                                       
+  require File.dirname(__FILE__) + '/../config/boot'  
+  puts "Loading #{RAILS_ENV} environment.\n"
+  require "#{RAILS_ROOT}/config/environment"
+
+  org_domain   = Domain.find_by_email_domain(ARGV[0]) || Domain.find_by_web_domain(ARGV[0])
+  organization = org_domain.organization if org_domain
+
+  if organization.blank?
+    puts "#{ARGV[0]} is an invalid domain."  
+    exit
+  end    
+
+  def print_line(text)
+    puts "|#{text.ljust(DISPLAY_WIDTH)}|"   
+  end
+
+  puts
+  puts              
+  puts "+#{''.ljust(DISPLAY_WIDTH, '-')}+"
+  puts "|#{"#{organization.name} (#{organization.system_domain.email_domain})".center(DISPLAY_WIDTH)}|"                
+  puts "+#{''.ljust(DISPLAY_WIDTH, '-')}+"
+  print_line(" Organization ID: #{organization.id}") 
+  print_line(" Active:          #{organization.active}")
+  print_line(" Quotas/Usage:")
+  print_line("   - Users:          #{organization.quota.users} (#{organization.users.size})")
+  print_line("   - Disk:           #{organization.quota.gigabytes}GB (#{((organization.total_disk_usage / 1.megabyte.to_f) * 100).round / 100.0}MB)")
+  print_line("   - Custom Domains: #{organization.quota.custom_domains}")
+  print_line(" Data Directory: ")
+  print_line("   - #{organization.root_path} (#{`du -hs #{organization.root_path} | awk '{print$1}'`.strip})") 
+  print_line(" Alias Domains:")
+  organization.domains.each do |domain|
+    print_line("   #{domain.primary? ? 'P' : '-'}#{domain.system_domain? ? 'S' : '-'} #{domain.email_domain} (#{domain.web_domain})")  
+  end  
+  print_line(" Users:")
+  organization.users.each do |user|
+    print_line("   #{user.admin ? '*' : '-'} #{user.full_name} (#{user.username}/#{user.plaintext_password})")
+  end
+  print_line(" Data:")
+  print_line("   - Users/Contacts: #{organization.users.size}/#{organization.people.size - organization.users.size}")  
+  print_line("   - Events:         #{organization.events.size}")
+  print_line("   - Messages:       #{organization.messages.size}")
+  print_line("   - Files:          #{organization.joyent_files.size}") 
+  print_line("   - Tags:           #{organization.tags.size}") 
+  print_line("   - Taggings:       #{organization.tags.inject(0){|sum, tag| sum + tag.taggings.size}}") 
+  print_line("   - Notifications:  #{organization.notifications.size}")                                 
+  print_line("   - Comments:       #{organization.users.inject(0){|sum, user| sum + user.comments.size}}") 
+  puts "+#{''.ljust(DISPLAY_WIDTH, '-')}+" 
+  puts
+  puts                                       
+rescue => e
+  puts e.message
+  puts "The organization #{ARGV[0]} may not exist in the system."
+end

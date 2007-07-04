@@ -1,0 +1,19 @@
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+imnew:
+  id: 2
+  user_id: 3
+  value: imnew
+  created_at: <%= 1.day.ago.to_s(:db) %>
+ianlogin:
+  id: 3
+  user_id: 1
+  value: old token
+  created_at: <%= 15.days.ago.to_s(:db) %>

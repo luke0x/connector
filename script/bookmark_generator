@@ -1,0 +1,79 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+ENV['RAILS_ENV'] ||= 'production'
+
+require File.dirname(__FILE__) + "/../config/boot.rb"
+require 'active_support' # JoyentConfig needs cattr_accessor
+require 'optparse'
+require 'drb'
+require 'drb/acl'
+require "#{RAILS_ROOT}/lib/joyent_config"
+require "#{RAILS_ROOT}/lib/bookmark_generator"
+
+log_level = 'DEBUG'
+
+ARGV.options do |o|
+  o.set_summary_indent('   ')
+  o.banner =    "Usage: #{File.basename($0)} [options] <start|stop>"
+  o.define_head 'Start the bookmark generator process'
+  o.separator   ''
+  o.on('-l', '=LEVEL', 'Set log level (debug|warn|error) (default: debug)') {|log_level|}
+  o.separator ''
+  o.on_tail('-h', 'Show this help message.') { puts o; exit }
+  o.parse!
+end
+
+case ARGV[0]
+when 'start'
+  acl = ACL.new(['deny', 'all', 'allow', 'localhost'] + JoyentConfig.bookmark_generator_request_hosts.collect{|h| ['allow', h]}.flatten)
+  DRb.install_acl(acl)
+
+  fork do
+    stdin  = open '/dev/null', 'r'
+    stdout = open '/dev/null', 'w'
+    stderr = open '/dev/null', 'w'
+    STDIN.reopen stdin
+    STDOUT.reopen stdout
+    STDERR.reopen stderr
+    $0 = 'bookmark_generator'
+
+    fork do
+      logger = Logger.new("#{RAILS_ROOT}/log/bookmark_generator.log")
+      Logger.const_get(log_level.upcase)
+      silence_warnings { Object.const_set "BOOKMARK_LOGGER", logger }
+      
+      trap('CLD') do
+        pid = Process.wait
+        logger.debug("Closing")
+      end
+
+      DRb.start_service("druby://#{JoyentConfig.bookmark_generator_host}:#{JoyentConfig.bookmark_generator_port}", BookmarkGenerator.new(logger))
+      logger.error("Starting bookmark generator on #{DRb.uri} (#{Process.pid})")
+
+      File.open("#{RAILS_ROOT}/log/bookmark_generator.pid", 'w+'){|f| f.write(Process.pid)}
+      DRb.thread.join
+    end and exit!
+  end
+
+when 'stop'
+  pid = File.open("#{RAILS_ROOT}/log/bookmark_generator.pid").read.strip.to_i
+
+  logger = Logger.new("#{RAILS_ROOT}/log/bookmark_generator.log")
+  Logger.const_get(log_level.upcase)
+  logger.error("Stopping bookmark generator (#{pid})")
+
+  Process.kill(9, pid)
+  File.unlink("#{RAILS_ROOT}/log/bookmark_generator.pid") rescue nil
+
+else
+  puts "Invalid option: '#{ARGV[0]}'"
+end

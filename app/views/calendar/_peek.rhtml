@@ -1,0 +1,126 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% invitation = @event.invitation_for(User.current) -%>
+<% if invitation && !(@event.owner == User.current) -%>
+	<div class="info4"><div class="info3"><div class="info2"><div class="info">
+    <% if ! invitation.pending -%>
+      <%= _("You have <strong>%{i18n_accepted_declined}</strong> this invitation from <strong>%{i18n_inviter}</strong>.")%{:i18n_accepted_declined => (invitation.accepted ? _('accepted') : _('declined')),:i18n_inviter => link_to(@event.owner.full_name, person_show_url(:id => @event.owner.person.id))} -%>
+    <% else -%>
+			<%= _("<strong>%{i18n_event_inviter}</strong> has invited you to this event.")%{:i18n_event_inviter => link_to(@event.owner.full_name, person_show_url(:id => @event.owner.person.id))} -%>
+		<% end -%>
+		<div class="acceptDecline">
+			<% show_decline = invitation.pending || invitation.accepted  -%>
+			<% show_accept  = invitation.pending || ! invitation.accepted -%>
+			<% if show_decline -%>
+				<a href="#" onclick="$('declineInvitationSubmitButton').click(); return false;" class="no"><%= _('Decline') -%></a>
+				<% form_tag calendar_invitations_decline_url(:id => @event.id), {:style => 'display:none;'} do -%>
+					<input type="submit" id="declineInvitationSubmitButton" style="display:none;" />
+				<% end -%>
+			<% end -%>
+			<% if show_accept -%>
+				<a href="#" onclick="$('infoMore').show();$('accept').addClassName('notAvailable'); return false;" id="accept" class="yes"><%= _('Accept') -%></a>
+			<% end -%>
+		</div>
+		<% if show_accept -%>
+			<div id="infoMore" style="display:none;">
+				<hr />
+				<%= _('To accept, select the calendar into which you would like this event saved') %>:
+				<% form_tag calendar_invitations_accept_url(:id => @event.id) do -%>
+					<table>
+						<tr>
+							<td align="right">
+								<%= _('Your Calendars') %>:
+								<input id='existing_calendar_radio' type="radio" name="calendar_type" value="existing" checked="checked" />
+							</td>
+							<td>
+								<select onclick="$('existing_calendar_radio').checked = true;" name='calendar_id'>
+									<%= options_from_collection_for_select(User.current.calendars, "id", "name")%>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								<%= _('New Calendar') %>:
+								<input id='new_calendar_radio' type="radio" name="calendar_type" value="new" />
+							</td>
+							<td>
+								<input onkeydown="$('new_calendar_radio').checked = true;" type="text" name="new_calendar" size="20" value="<%= _('New Calendar') -%>" />
+							</td>
+						</tr>
+					</table>
+					<div style="text-align:right;">
+						<%= submit_tag _('Cancel') %>
+						<%= submit_tag _('Save') %>
+					</div>
+				<% end -%>
+			</div>
+		<% end -%>
+	</div></div></div></div>
+<% end -%>
+
+<dl>
+	<dt><%= _('Date') %>:</dt>
+	<dd><%= format_date(@event.start_time_in_user_tz) %></dd>
+
+	<dt><%= _('Time') %>:</dt>
+	<% if @event.all_day? -%>
+		<dd><%= _('All Day') %></dd>
+	<% else -%>
+		<dd>
+			<%= "#{format_time(@event.start_time_in_user_tz)} - #{format_time(@event.end_time_in_user_tz)}" %>
+			<% unless @event.duration == 0 -%>
+				<em><%= duration_in_words(@event.duration) %></em>
+			<% end -%>
+		</dd>
+	<% end -%>
+
+	<% if @event.repeats? -%>
+		<dt><%= _('Repeat') %>:</dt>
+		<dd>
+			<%= _(@event.recurrence_description.name) %>
+			<% if @event.recur_end_time_in_user_tz && @event.recur_end_time_in_user_tz != '' -%>
+				<%= _('until') %>
+				<%= format_date(@event.recur_end_time_in_user_tz) %>
+			<% else -%>
+				<em><%= _('Forever') %></em>
+			<% end -%>
+		</dd>
+	<% end -%>
+
+	<% unless @event.location.blank? -%>
+		<dt><%= _('Location') %>:</dt>
+		<dd><%=h @event.location %></dd>
+	<% end -%>
+
+	<% unless @event.invitees_accepted.empty? -%>
+		<dt><%= _('Accepted By') %>:</dt>
+		<dd><%= @event.invitees_accepted.collect{|user| link_to(user.full_name, person_show_url(:id => user.person.id))}.join(', ') %></dd>
+	<% end -%>
+
+	<% unless @event.invitees_declined.empty? -%>
+		<dt><%= _('Declined By') %>:</dt>
+		<dd><%= @event.invitees_declined.collect{|user| link_to(user.full_name, person_show_url(:id => user.person.id))}.join(', ') %></dd>
+	<% end -%>
+
+	<% unless @event.invitees_pending.empty? -%>
+		<dt><%= _('Pending Invitees') %>:</dt>
+		<dd><%= @event.invitees_pending.collect{|user| link_to(user.full_name, person_show_url(:id => user.person.id))}.join(', ') %></dd>
+	<% end -%>
+
+	<% if @event.alarm? -%>
+      <dt><%= _('ICS Alarm') %>:</dt>
+      <dd><%=h @event.alarm_trigger_in_words %></dd>
+    <% end -%>
+
+	<% unless @event.notes.blank? -%>
+		<dt><%= _('Notes') %>:</dt>
+		<dd><%= simple_format(h(@event.notes)) %></dd>
+	<% end -%>
+</dl>

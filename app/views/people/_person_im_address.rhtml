@@ -1,0 +1,21 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<% index ||= params[:index] -%>
+
+<tr id="person_im_address_<%= index %>">
+  <td><%= mark_as_primary_star(im_address, 'person', 'im_address', index) %></td>
+  <td style="width:80px;">
+    <% im_types = [[_('AIM'), 'AIM'], [_('IRC'), 'IRC'], [_('Google Talk'), 'Google Talk'], [_('Jabber'), 'Jabber'], [_('MSN'), 'MSN'], [_('Other'), 'Other'], [_('Skype'), 'Skype'], [_('Yahoo'), 'Yahoo']] -%>
+    <% im_types_options = options_for_select im_types, (im_address ? im_address.im_type : nil) -%>
+    <%= select_tag_with_id "person[im_addresses][#{index}][im_type]", im_types_options, {:id => "person_im_addresses_#{index}_im_type"} %>
+  </td>
+  <td><input id="person_im_addresses_<%= index %>_im_address" size="40" value="<%= im_address.im_address %>" type="text" maxlength="100" name="person[im_addresses][<%= index %>][im_address]" class="textInput" style="width:199px;"  /></td>
+  <td onclick="People.removeNewIndex('arrPersonImAddressIndexes', <%= index %>); $('person_im_address_<%= index %>').remove(); return false;" class="deleteItem">&nbsp;</td>
+</tr>

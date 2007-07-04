@@ -1,0 +1,140 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+
+if ARGV.size > 11
+  puts "usage: ./create_organization <name> <system_domain> <username> <password> <affiliate> <first_name> <last_name> <recovery_email> <users> <megabytes> <custom_domains> <are_you_sure>"
+  exit
+end
+ 
+require File.dirname(__FILE__) + '/../vendor/rails/activesupport/lib/active_support/core_ext/blank'
+      
+# It is possible that the user has supplied command line 
+# arguments in the following fashion:
+# usage: ./create_organization <name> <domain> <username> <password> <first> <last> <users> <megs> <custom_domains>
+org_name, domain, username, password, affiliate, first_name, last_name, recovery_email, users, megs, custom_domains, sure = ARGV
+
+while org_name.blank?
+  print "Organization Name: "
+  org_name = $stdin.gets.strip
+end                  
+
+while domain.blank?
+  print "System domain name: "
+  domain = $stdin.gets.strip.downcase
+end                                       
+
+while username.blank?
+  print "First user's username: "
+  username = $stdin.gets.strip.downcase
+end                                    
+
+while password.blank?
+  print "First user's password: "
+  password = $stdin.gets.strip
+end       
+
+while affiliate.blank?
+  print "Affiliate name: "
+  affiliate = $stdin.gets.strip.downcase
+end       
+
+while first_name.blank?
+  print "First user's first name: "
+  first_name = $stdin.gets.strip
+end
+            
+while last_name.blank?
+  print "First user's last name: "
+  last_name = $stdin.gets.strip
+end   
+
+while recovery_email.blank?
+  print "Recovery Email: "
+  recovery_email = $stdin.gets.strip
+end
+
+while first_name.blank?
+  print "First user's first name: "
+  first_name = $stdin.gets.strip
+end                      
+                                        
+users = users.to_i
+while users.kind_of?(Fixnum) && users <= 0
+  print "Number of users: "
+  users = $stdin.gets.strip
+  users = users.to_i
+end
+                    
+megs = megs.to_i
+while megs.kind_of?(Fixnum) && megs <= 0
+  print "Number of megbytes of storage: "
+  megs = $stdin.gets.strip
+  megs = megs.to_i
+end          
+
+while custom_domains.blank?
+  print "Allow custom domains: "
+  custom_domains = $stdin.gets.strip
+end                                 
+
+custom_domains = ['T', 't', 'Y', 'y'].include?(custom_domains[0,1])
+
+puts "\nYou are about to create the following org:"
+puts "  Organization Name:    #{org_name}"     
+puts "  Domain Name:          #{domain}"
+puts "  User's Username:      #{username}"
+puts "  User's Password:      #{password}"
+puts "  Affiliate Name:       #{affiliate}"
+puts "  User's First Name:    #{first_name}"
+puts "  User's Last Name:     #{last_name}"
+puts "  Recovery Email:       #{recovery_email}"
+puts "  User Quota:           #{users}"
+puts "  Disk Quota (MB):      #{megs}"
+puts "  Allow Custom Domains: #{custom_domains}"
+                       
+unless sure
+  print "\nAre you sure you want to create this organization [no]? "
+  sure = $stdin.gets.strip                                              
+  sure = 'no' unless sure.length > 0
+end
+
+if sure.downcase == 'yes'    
+  require File.dirname(__FILE__) + '/../config/boot'  
+  puts "\nLoading #{RAILS_ENV} environment.\n\n"
+  require "#{RAILS_ROOT}/config/environment"
+  
+  puts "Verifying that the domain does not already exist."
+  if Domain.find_by_email_domain(domain)
+    puts "Domain '#{domain}' already exists."
+    exit  
+  end
+                                                                                                                    
+  puts "Creating the organization #{org_name} (#{domain})."
+  begin
+    org = Organization.setup(org_name, 
+                             domain, 
+                             username, 
+                             password, 
+                             affiliate,
+                             first_name, 
+                             last_name, 
+                             recovery_email,
+                             users, 
+                             megs, 
+                             custom_domains)
+    puts "Successfully created organization with id #{org.id}"
+  rescue => e
+    puts "Unable to create the organization: #{e.message}"
+  end
+else
+  puts "\nOrganization creation has been cancelled!"  
+end
+  

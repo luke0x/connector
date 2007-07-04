@@ -1,0 +1,19 @@
+=begin #(fold)
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+=end #(end)
+
+bookmarks.each do |bookmark|
+  xm.item do
+    xm.title bookmark.title
+    xm.description render(:partial => "bookmark", :locals => {:bookmark => bookmark})
+    xm.pubDate feed_date(bookmark)
+    xm.guid bookmarks_show_url(:id => bookmark.id, :only_path => false)
+  end
+end

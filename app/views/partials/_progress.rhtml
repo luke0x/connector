@@ -1,0 +1,23 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<div id="requestStatus" class="requestStatus">
+  <div id="<%= @css_class %>" class="<%= @css_class %>">
+    <%= @message %>
+  </div>
+  <% if @reload_status && @lr_req -%>
+    <script type="text/javascript"><!--
+      setTimeout("<%= remote_function :update => 'requestStatus', :url => {:action => 'check_status_ajax', :id => @lr_req.id} %>", 5000);
+    --></script>
+  <% elsif @redirect_url_options -%>
+    <script type="text/javascript"><!--
+      setTimeout("window.location = '<%= url_for @redirect_url_options %>'", 2000);
+    --></script>
+  <% end -%>
+</div>

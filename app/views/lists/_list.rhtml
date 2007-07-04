@@ -1,0 +1,29 @@
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% # -%>
+<% # Redistribution and/or modification of this code is governed -%>
+<% # by either the GPLv2 or Joyent Commercial Software licenses. -%>
+<% # -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% # -%>
+<% # $Id$ -%>
+
+<table class="tableList" id="tableList" style="width: 100%;">
+  <thead>
+    <tr id="listHeaderColumns">
+      <th class="listRadio checkbox firstCol" style="width:25px;"><%= link_to_function "Select First Row", "ListRow.selectFirst();" %></th>
+      <th class="listDinger" style="width: <%= (@list.depth + 2) * 12 %>px;" id="list_toggle_all"><%= link_to_function "Expand + Collapse", "List.toggleExpanded();" %></th>
+      <% @list.list_columns_by_position.each do |list_column| -%>
+        <th class="columnHeaderValue <%= "secondlastCol" if @list.list_columns_by_position.last == list_column %>" id="<%= list_column.dom_id -%>" style="<%= list_column_style(list_column) %> text-align: left;" columndomid="<%= list_column.dom_id %>"><%= list_column.name -%></th>
+      <% end -%>
+      <th style="width: 2px;">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody id="listsTbody" class="listsTableBody">
+    <% @list.roots.sort_by(&:position).each do |list_row| -%>
+		<% is_new = new_row.id == list_row.id rescue false  %>
+		<%= render :partial => 'lists/list_row', :locals => { :list_row => list_row, :selected_list_row => @selected_list_row, :is_new => is_new } %>
+    <% end -%>
+  </tbody>
+</table>
+
+<%= javascript_tag "List.init();" %>

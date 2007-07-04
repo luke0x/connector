@@ -1,0 +1,1000 @@
+File: client4S4C2_GroupB.log - Wiredumps for SOAP4R client / 4S4C2 server.
+Date: Sat Jul 23 19:24:52 JST 2005
+
+##########
+# echoStructAsSimpleTypes
+
+Result: Exception: -2147352561 (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c8177c>
+
+! CONNECTION CLOSED
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:52 JST 2005
+Content-Length: 700
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 
+Date: Sat, 23 Jul 2005 10:28:32 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 341
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:33 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=MMNLHJABEKLOKKGDJGFBIJKI; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><S:Fault><faultcode XI:type="XS:QName">S:Server</faultcode><faultstring XI:type="XS:string">-2147352561</faultstring><detail></detail></S:Fault></S:Body></S:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoStructAsSimpleTypes (nil)
+
+Result: Exception: -2147352561 (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c7ad14>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:53 JST 2005
+Content-Length: 677
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoStructAsSimpleTypes xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStruct">
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoStructAsSimpleTypes>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 
+Date: Sat, 23 Jul 2005 10:28:33 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 341
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:33 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=NMNLHJABIGDGPENDINJEJNFN; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><S:Fault><faultcode XI:type="XS:QName">S:Server</faultcode><faultstring XI:type="XS:string">-2147352561</faultstring><detail></detail></S:Fault></S:Body></S:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoSimpleTypesAsStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:53 JST 2005
+Content-Length: 600
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:type="xsd:string">a</inputString>
+      <inputInteger xsi:type="xsd:int">1</inputInteger>
+      <inputFloat xsi:type="xsd:float">+1.1</inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:28:34 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 732
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:34 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=OMNLHJABCGMGJGFCOOIKNLIG; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<S:Envelope
+	xmlns:Enc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:a="http://soapinterop.org/"
+	xmlns:b="http://soapinterop.org/xsd"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><a:echoSimpleTypesAsStructResponse S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result href="#382027c"/></a:echoSimpleTypesAsStructResponse><result S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" Enc:root="0" id="382027c" XI:type="b:SOAPStruct"><varInt XI:type="XS:int">1</varInt><varString XI:type="XS:string">a</varString><varFloat XI:type="XS:float">1.1</varFloat></result></S:Body></S:Envelope>
+
+
+##########
+# echoSimpleTypesAsStruct (nil)
+
+Result: Exception: -2147352571 (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7c6c2dc>
+
+Wire dump:
+
+= Request
+
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:54 JST 2005
+Content-Length: 577
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoSimpleTypesAsStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputString xsi:nil="true"></inputString>
+      <inputInteger xsi:nil="true"></inputInteger>
+      <inputFloat xsi:nil="true"></inputFloat>
+    </n1:echoSimpleTypesAsStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 
+Date: Sat, 23 Jul 2005 10:28:34 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 341
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:35 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=PMNLHJABOPOINEPIOPDIAICJ; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><S:Fault><faultcode XI:type="XS:QName">S:Server</faultcode><faultstring XI:type="XS:string">-2147352571</faultstring><detail></detail></S:Fault></S:Body></S:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:55 JST 2005
+Content-Length: 889
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item>r2c0</item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item>r0c2</item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:28:35 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 755
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:35 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=ANNLHJABFBEAKOJCEAECPCDM; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<S:Envelope
+	xmlns:Enc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:a="http://soapinterop.org/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><a:echo2DStringArrayResponse S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result XI:type="Enc:Array" Enc:arrayType="XS:string[3,3]"><i XI:type="XS:string">r0c0</i><i XI:type="XS:string">r1c0</i><i XI:type="XS:string">r2c0</i><i XI:type="XS:string">r0c1</i><i XI:type="XS:string">r1c1</i><i XI:type="XS:string">r2c1</i><i XI:type="XS:string">r0c2</i><i XI:type="XS:string">r1c2</i><i XI:type="XS:string">r2c2</i></result></a:echo2DStringArrayResponse></S:Body></S:Envelope>
+
+
+##########
+# echo2DStringArray (anyType array)
+
+Result: Exception: -2147352571 (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7dd5cb8>
+
+Wire dump:
+
+= Request
+
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:55 JST 2005
+Content-Length: 1088
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:anyType[3,3]">
+        <item xsi:type="xsd:string">r0c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r0c2</item>
+        <item xsi:type="xsd:string">r1c0</item>
+        <item xsi:type="xsd:string">r1c1</item>
+        <item xsi:type="xsd:string">r1c2</item>
+        <item xsi:type="xsd:string">r2c0</item>
+        <item xsi:type="xsd:string">r0c1</item>
+        <item xsi:type="xsd:string">r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 
+Date: Sat, 23 Jul 2005 10:28:36 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 341
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:36 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=BNNLHJABNMGCDKCAOGEEMIPD; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><S:Fault><faultcode XI:type="XS:QName">S:Server</faultcode><faultstring XI:type="XS:string">-2147352571</faultstring><detail></detail></S:Fault></S:Body></S:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echo2DStringArray (multi-ref)
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:56 JST 2005
+Content-Length: 1063
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605180048"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605180048"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605180048"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:28:36 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 755
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:37 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=CNNLHJABMDDDLGJCEHBFKMJD; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<S:Envelope
+	xmlns:Enc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:a="http://soapinterop.org/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><a:echo2DStringArrayResponse S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result XI:type="Enc:Array" Enc:arrayType="XS:string[3,3]"><i XI:type="XS:string">r0c0</i><i XI:type="XS:string">r1c0</i><i XI:type="XS:string">item</i><i XI:type="XS:string">r0c1</i><i XI:type="XS:string">r1c1</i><i XI:type="XS:string">r2c1</i><i XI:type="XS:string">item</i><i XI:type="XS:string">r1c2</i><i XI:type="XS:string">r2c2</i></result></a:echo2DStringArrayResponse></S:Body></S:Envelope>
+
+
+##########
+# echo2DStringArray (multi-ref: ele[2, 0] == ele[0, 2])
+
+Result: Expected = "String#-605408088"  //  Actual = "String#-605405128"
+
+Wire dump:
+
+= Request
+
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:57 JST 2005
+Content-Length: 1063
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echo2DStringArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <input2DStringArray xmlns:n2="http://soapinterop.org/xsd"
+          xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+          xsi:type="n2:ArrayOfString2D"
+          n3:arrayType="xsd:string[3,3]">
+        <item>r0c0</item>
+        <item>r1c0</item>
+        <item href="#id-605341518"></item>
+        <item>r0c1</item>
+        <item>r1c1</item>
+        <item>r2c1</item>
+        <item href="#id-605341518"></item>
+        <item>r1c2</item>
+        <item>r2c2</item>
+      </input2DStringArray>
+    </n1:echo2DStringArray>
+    <item id="id-605341518"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">item</item>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:28:37 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 755
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:37 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=DNNLHJABNGMDDONJJIJMGOON; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<S:Envelope
+	xmlns:Enc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:a="http://soapinterop.org/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><a:echo2DStringArrayResponse S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result XI:type="Enc:Array" Enc:arrayType="XS:string[3,3]"><i XI:type="XS:string">r0c0</i><i XI:type="XS:string">r1c0</i><i XI:type="XS:string">item</i><i XI:type="XS:string">r0c1</i><i XI:type="XS:string">r1c1</i><i XI:type="XS:string">r2c1</i><i XI:type="XS:string">item</i><i XI:type="XS:string">r1c2</i><i XI:type="XS:string">r2c2</i></result></a:echo2DStringArrayResponse></S:Body></S:Envelope>
+
+
+##########
+# echoNestedStruct
+
+Result: OK
+
+Wire dump:
+
+= Request
+
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:57 JST 2005
+Content-Length: 920
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString xsi:type="xsd:string">b</varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </varStruct>
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:28:38 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1006
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:38 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=ENNLHJABADCAJPGJGMDCNFCJ; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<S:Envelope
+	xmlns:Enc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:a="http://soapinterop.org/"
+	xmlns:b="http://soapinterop.org/xsd"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><a:echoNestedStructResponse S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result href="#380af24"/></a:echoNestedStructResponse><varStruct Enc:root="0" id="382027c" S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" XI:type="b:SOAPStruct"><varInt XI:type="XS:int">2</varInt><varString XI:type="XS:string">b</varString><varFloat XI:type="XS:float">2.2</varFloat></varStruct><result S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" Enc:root="0" id="380af24" XI:type="b:SOAPStructStruct"><varInt XI:type="XS:int">1</varInt><varString XI:type="XS:string">a</varString><varFloat XI:type="XS:float">1.1</varFloat><varStruct href="#382027c"/></result></S:Body></S:Envelope>
+
+
+##########
+# echoNestedStruct (nil)
+
+Result: Exception: -2147352571 (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7d233ec>
+
+Wire dump:
+
+= Request
+
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:58 JST 2005
+Content-Length: 874
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString xsi:nil="true"></varString>
+          <varFloat xsi:nil="true"></varFloat>
+          <varInt xsi:nil="true"></varInt>
+        </varStruct>
+        <varString xsi:nil="true"></varString>
+        <varFloat xsi:nil="true"></varFloat>
+        <varInt xsi:nil="true"></varInt>
+      </inputStruct>
+    </n1:echoNestedStruct>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 
+Date: Sat, 23 Jul 2005 10:28:38 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 341
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:38 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=FNNLHJABAMLFIEMFCLCJCFOG; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><S:Fault><faultcode XI:type="XS:QName">S:Server</faultcode><faultstring XI:type="XS:string">-2147352571</faultstring><detail></detail></S:Fault></S:Body></S:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedStruct (multi-ref: varString of StructStruct == varString of Struct)
+
+Result: Expected = "String#-605536988"  //  Actual = "String#-605537718"
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:59 JST 2005
+Content-Length: 1062
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedStruct xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPStructStruct">
+        <varStruct xsi:type="n2:SOAPStruct">
+          <varString href="#id-605483258"></varString>
+          <varFloat xsi:type="xsd:float">+2.2</varFloat>
+          <varInt xsi:type="xsd:int">2</varInt>
+        </varStruct>
+        <varString href="#id-605483258"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedStruct>
+    <varString id="id-605483258"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 200 OK
+Date: Sat, 23 Jul 2005 10:28:39 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 1002
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:39 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=GNNLHJABNLNFFMCMJLADDJKM; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+
+<S:Envelope
+	xmlns:Enc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:a="http://soapinterop.org/"
+	xmlns:b="http://soapinterop.org/xsd"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><a:echoNestedStructResponse S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><result href="#381fcc4"/></a:echoNestedStructResponse><varStruct Enc:root="0" id="17d4cc" S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" XI:type="b:SOAPStruct"><varInt XI:type="XS:int">2</varInt><varString XI:type="XS:string"></varString><varFloat XI:type="XS:float">2.2</varFloat></varStruct><result S:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" Enc:root="0" id="381fcc4" XI:type="b:SOAPStructStruct"><varInt XI:type="XS:int">1</varInt><varString XI:type="XS:string"></varString><varFloat XI:type="XS:float">1.1</varFloat><varStruct href="#17d4cc"/></result></S:Body></S:Envelope>
+
+
+##########
+# echoNestedArray
+
+Result: Exception: parse error at `size' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:717:in `found_stag_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:780:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1914:in `doTestGroupB'
+client4S4C2.rb:13
+
+Wire dump:
+
+= Request
+
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:24:59 JST 2005
+Content-Length: 931
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item>2.2</item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 10:28:39 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 270
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:40 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=HNNLHJABLCJMIANEEPMJABOP; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+ <font face="Arial" size=2>
+<p>soap</font> <font face="Arial" size=2>error '800a9c68'</font>
+<p>
+<font face="Arial" size=2>Application-defined or object-defined error</font>
+<p>
+<font face="Arial" size=2>/ilab2/soap.asp</font><font face="Arial" size=2>, line 114</font> ! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (anyType array)
+
+Result: Exception: -2147352571 (SOAP::FaultError)
+#<SOAP::Mapping::Object:0xb7ce2130>
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:00 JST 2005
+Content-Length: 998
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString xsi:type="xsd:string">a</varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:anyType[3]">
+          <item xsi:type="xsd:string">2</item>
+          <item xsi:type="xsd:string">2.2</item>
+          <item xsi:type="xsd:string">b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 
+Date: Sat, 23 Jul 2005 10:28:40 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 341
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:41 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=INNLHJABGFOPDNLPLGHLLJDF; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+<S:Envelope
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:XS="http://www.w3.org/2001/XMLSchema"
+	xmlns:XI="http://www.w3.org/2001/XMLSchema-instance"><S:Body><S:Fault><faultcode XI:type="XS:QName">S:Server</faultcode><faultstring XI:type="XS:string">-2147352571</faultstring><detail></detail></S:Fault></S:Body></S:Envelope>! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref)
+
+Result: Exception: parse error at `size' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:717:in `found_stag_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:780:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1935:in `doTestGroupB'
+client4S4C2.rb:13
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:01 JST 2005
+Content-Length: 1093
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString href="#id-605617448"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605617448"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <varString id="id-605617448"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 10:28:41 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 270
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:41 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=JNNLHJABCCHDBEJLMDGNJEEH; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+ <font face="Arial" size=2>
+<p>soap</font> <font face="Arial" size=2>error '800a9c68'</font>
+<p>
+<font face="Arial" size=2>Application-defined or object-defined error</font>
+<p>
+<font face="Arial" size=2>/ilab2/soap.asp</font><font face="Arial" size=2>, line 114</font> ! CONNECTION CLOSED
+
+
+
+##########
+# echoNestedArray (multi-ref: varString == varArray[1])
+
+Result: Exception: parse error at `size' (XSD::XMLParser::Parser::ParseError)
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:42:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:331:in `parse_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:717:in `found_stag_error'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:780:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:751:in `scan_stag'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:826:in `scan_content'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1051:in `scan_prolog'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1058:in `scan_document'
+/usr/local/lib/ruby/site_ruby/1.9/xmlscan/scanner.rb:1073:in `parse_document'
+/usr/local/lib/ruby/1.9/xsd/xmlparser/xmlscanner.rb:25:in `do_parse'
+/usr/local/lib/ruby/1.9/soap/parser.rb:92:in `parse'
+/usr/local/lib/ruby/1.9/soap/processor.rb:39:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:231:in `unmarshal'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:170:in `route'
+/usr/local/lib/ruby/1.9/soap/rpc/proxy.rb:137:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:177:in `call'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:231:in `echoNestedArray'
+/usr/local/lib/ruby/1.9/soap/rpc/driver.rb:226:in `echoNestedArray'
+/home/nahi/svn/soap4r/test/interopR2/clientBase.rb:1946:in `doTestGroupB'
+client4S4C2.rb:13
+
+Wire dump:
+
+= Request
+
+! CONNECTION ESTABLISHED
+POST /ilab2/soap.asp HTTP/1.1
+SOAPAction: "http://soapinterop.org/"
+Content-Type: text/xml; charset=utf-8
+User-Agent: SOAP4R/1.5.4 (/96, ruby 1.9.0 (2005-07-16) [i686-linux])
+Date: Sat Jul 23 19:25:02 JST 2005
+Content-Length: 1093
+Host: soap.4s4c.com
+
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <n1:echoNestedArray xmlns:n1="http://soapinterop.org/"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <inputStruct xmlns:n2="http://soapinterop.org/xsd"
+          xsi:type="n2:SOAPArrayStruct">
+        <varString href="#id-605649498"></varString>
+        <varFloat xsi:type="xsd:float">+1.1</varFloat>
+        <varArray xmlns:n3="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n3:Array"
+            n3:arrayType="xsd:string[3]">
+          <item>2</item>
+          <item href="#id-605649498"></item>
+          <item>b</item>
+        </varArray>
+        <varInt xsi:type="xsd:int">1</varInt>
+      </inputStruct>
+    </n1:echoNestedArray>
+    <varString id="id-605649498"
+        xsi:type="xsd:string"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></varString>
+  </env:Body>
+</env:Envelope>
+
+= Response
+
+HTTP/1.1 500 Internal Server Error
+Date: Sat, 23 Jul 2005 10:28:42 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Content-Length: 270
+Content-Type: text/xml; charset=UTF-8
+Expires: Sat, 23 Jul 2005 10:28:42 GMT
+Set-Cookie: ASPSESSIONIDSQDDDBSC=KNNLHJABGEFPLDGOHCBEABIL; path=/
+Cache-control: private
+X-Cache: MISS from mayhem.pocketsoap.com
+Connection: close
+
+ <font face="Arial" size=2>
+<p>soap</font> <font face="Arial" size=2>error '800a9c68'</font>
+<p>
+<font face="Arial" size=2>Application-defined or object-defined error</font>
+<p>
+<font face="Arial" size=2>/ilab2/soap.asp</font><font face="Arial" size=2>, line 114</font> ! CONNECTION CLOSED
+
+
+
