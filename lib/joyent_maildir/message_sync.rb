@@ -276,11 +276,7 @@ module JoyentMaildir
       data          = {}
       
       data[:subject]    = parsed_header[:subject]
-      begin
-        data[:date]     = Time.parse(parsed_header[:date]) unless parsed_header[:date].nil?
-      rescue
-        data[:date]     = Time.now
-      end
+      data[:date]       = parsed_header[:date]
       data[:sender]     = parsed_header[:from]
       data[:recipients] = parsed_header[:to]
       
