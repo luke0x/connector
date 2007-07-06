@@ -10,16 +10,16 @@
 development:
   adapter: mysql
   database: connector_development
-  username: mysql
-  password: mysql5
+  username: username
+  password: password
   host: localhost
   encoding: UTF8
 
 test:
   adapter: mysql
   database: connector_test
-  username: mysql
-  password: mysql5
+  username: username
+  password: password
   host: localhost
   encoding: UTF8
 
@@ -29,5 +29,4 @@ production:
   username: username
   password: password
   host: localhost
-  socket: /tmp/mysql.sock
   encoding: UTF8
