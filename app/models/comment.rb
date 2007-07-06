@@ -17,7 +17,7 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true
   
   def destroy
-    if User.current.nil? or (User.current == user) or (User.current == commentable.owner)
+    if User.current.nil? or (User.current == user) or (User.current == commentable.owner) or User.current.admin?
       super
     else
       raise "Can't delete this comment"

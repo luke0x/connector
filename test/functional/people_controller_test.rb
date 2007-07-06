@@ -622,45 +622,51 @@ class PeopleControllerTest < Test::Unit::TestCase
     get :show, :id => 1    
     assert_equal @response.headers['Content-Type'].downcase, 'text/html; charset=UTF-8'.downcase # huh
   end
-  
-  #######
+ 
+  # Regression test for case: 4062
+  def test_admin_deletes_user_with_comment_on_non_owned_item
+    login_person(:ian)
+    post :delete, {:ids => 2}
+
+    assert_nil User.find_by_username('peter')
+  end
+
   private
-  #######   
-  
-  def test_list_common_ajax
-    assert assigns(:group_name)
-    assert assigns(:people)
-    assert_template '_people'
-    assert_response :success  
-  end
 
-  def test_list_common
-    assert assigns(:group_name)
-    assert assigns(:people)
-    assert_template 'list'
-    assert_response :success 
-  end
+    def test_list_common_ajax
+      assert assigns(:group_name)
+      assert assigns(:people)
+      assert_template '_people'
+      assert_response :success  
+    end
 
-  def test_show_common
-    assert assigns(:group_name)
-    assert assigns(:person)
-    assert_response :success
-  end
+    def test_list_common
+      assert assigns(:group_name)
+      assert assigns(:people)
+      assert_template 'list'
+      assert_response :success 
+    end
 
-  def test_vcards_common
-    assert assigns(:people)
-    assert_response :success
-    assert_equal @response.headers['Content-Type'], 'application/octet-stream'
-  end
+    def test_show_common
+      assert assigns(:group_name)
+      assert assigns(:person)
+      assert_response :success
+    end
 
-  def test_edit_common
-    assert assigns(:group_name)
-    assert assigns(:person)
-    assert_response :success
-  end
+    def test_vcards_common
+      assert assigns(:people)
+      assert_response :success
+      assert_equal @response.headers['Content-Type'], 'application/octet-stream'
+    end
 
-  def test_delete_common
-    assert_response :redirect
-  end                      
+    def test_edit_common
+      assert assigns(:group_name)
+      assert assigns(:person)
+      assert_response :success
+    end
+
+    def test_delete_common
+      assert_response :redirect
+    end                      
 
 end
