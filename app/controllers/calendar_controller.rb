@@ -635,7 +635,8 @@ class CalendarController < AuthenticatedController
     logger.error "Exception occurred importing file #{e}"    
     @calendar.destroy if params[:calendar_type] == 'new' && !@calendar.blank? 
     @calendars = User.current.calendars(true)
-    flash['error'] = _("There was a problem importing the iCalendar %{i18n_calendar_file}.  Please be sure that it is a valid file.")%{:i18n_calendar_file => "#{uploaded_file.original_filename}"}
+    filename   = uploaded_file.original_filename rescue ''
+    flash['error'] = _("There was a problem importing the iCalendar %{i18n_calendar_file}.  Please be sure that it is a valid file.")%{:i18n_calendar_file => "#{filename}"}
 
     redirect_back_or_home
   end
