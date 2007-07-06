@@ -1,1 +1,572 @@
 # Logfile created on Tue Jul 03 17:53:32 -0400 2007 by logger.rb/1.5.2.9
+  [4;36;1mSQL (0.105035)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.167677)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE schema_info (version int(11))[0m
+  [4;36;1mSQL (0.000235)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000126)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000164)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000205)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000156)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000320)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000243)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000129)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000154)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000125)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000158)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000119)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000156)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000230)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000219)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000207)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000128)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000128)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000131)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000165)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000119)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000131)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000128)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000125)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000241)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000220)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000208)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000129)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000163)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000163)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000223)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ChangeGroupSubscribableType (155)
+  [4;35;1mSubscription Columns (1.140583)[0m   [0mSHOW FIELDS FROM subscriptions[0m
+  [4;36;1mSubscription Load (0.573153)[0m   [0;1mSELECT * FROM subscriptions WHERE (subscriptions.`subscribable_type` = 'Group') [0m
+  [4;35;1mSQL (0.023829)[0m   [0mBEGIN[0m
+  [4;36;1mSubscription Update (0.077131)[0m   [0;1mUPDATE subscriptions SET `user_id` = 1, `subscribable_type` = 'ContactList', `organization_id` = 1, `subscribable_id` = 2 WHERE id = 4[0m
+  [4;35;1mSQL (0.001546)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mBEGIN[0m
+  [4;35;1mSubscription Update (0.000381)[0m   [0mUPDATE subscriptions SET `user_id` = 3, `subscribable_type` = 'ContactList', `organization_id` = 1, `subscribable_id` = 1 WHERE id = 8[0m
+  [4;36;1mSQL (0.000518)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000237)[0m   [0mUPDATE schema_info SET version = 155[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateAuthKeys (156)
+  [4;35;1mSQL (0.090823)[0m   [0mCREATE TABLE auth_keys (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` varchar(255) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000313)[0m   [0;1mUPDATE schema_info SET version = 156[0m
+  [4;35;1mSQL (0.000326)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.032790)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.057076)[0m   [0mSHOW FIELDS FROM addresses[0m
+  [4;36;1mSQL (0.000819)[0m   [0;1mSHOW KEYS FROM addresses[0m
+  [4;35;1mSQL (0.008025)[0m   [0mSHOW FIELDS FROM affiliates[0m
+  [4;36;1mSQL (0.001905)[0m   [0;1mSHOW KEYS FROM affiliates[0m
+  [4;35;1mSQL (0.001670)[0m   [0mSHOW FIELDS FROM auth_keys[0m
+  [4;36;1mSQL (0.002078)[0m   [0;1mSHOW KEYS FROM auth_keys[0m
+  [4;35;1mSQL (0.019312)[0m   [0mSHOW FIELDS FROM bookmark_folders[0m
+  [4;36;1mSQL (0.001649)[0m   [0;1mSHOW KEYS FROM bookmark_folders[0m
+  [4;35;1mSQL (0.003548)[0m   [0mSHOW FIELDS FROM bookmarks[0m
+  [4;36;1mSQL (0.001893)[0m   [0;1mSHOW KEYS FROM bookmarks[0m
+  [4;35;1mSQL (0.003539)[0m   [0mSHOW FIELDS FROM calendars[0m
+  [4;36;1mSQL (0.002356)[0m   [0;1mSHOW KEYS FROM calendars[0m
+  [4;35;1mSQL (0.325678)[0m   [0mSHOW FIELDS FROM callings[0m
+  [4;36;1mSQL (0.001803)[0m   [0;1mSHOW KEYS FROM callings[0m
+  [4;35;1mSQL (0.193433)[0m   [0mSHOW FIELDS FROM calls[0m
+  [4;36;1mSQL (0.001715)[0m   [0;1mSHOW KEYS FROM calls[0m
+  [4;35;1mSQL (0.041042)[0m   [0mSHOW FIELDS FROM comments[0m
+  [4;36;1mSQL (0.002001)[0m   [0;1mSHOW KEYS FROM comments[0m
+  [4;35;1mSQL (0.090308)[0m   [0mSHOW FIELDS FROM contact_lists[0m
+  [4;36;1mSQL (0.002646)[0m   [0;1mSHOW KEYS FROM contact_lists[0m
+  [4;35;1mSQL (0.036415)[0m   [0mSHOW FIELDS FROM domains[0m
+  [4;36;1mSQL (0.001889)[0m   [0;1mSHOW KEYS FROM domains[0m
+  [4;35;1mSQL (0.003692)[0m   [0mSHOW FIELDS FROM email_addresses[0m
+  [4;36;1mSQL (0.002656)[0m   [0;1mSHOW KEYS FROM email_addresses[0m
+  [4;35;1mSQL (0.004439)[0m   [0mSHOW FIELDS FROM events[0m
+  [4;36;1mSQL (0.002378)[0m   [0;1mSHOW KEYS FROM events[0m
+  [4;35;1mSQL (0.037443)[0m   [0mSHOW FIELDS FROM folders[0m
+  [4;36;1mSQL (0.001890)[0m   [0;1mSHOW KEYS FROM folders[0m
+  [4;35;1mSQL (0.003272)[0m   [0mSHOW FIELDS FROM guest_paths[0m
+  [4;36;1mSQL (0.002428)[0m   [0;1mSHOW KEYS FROM guest_paths[0m
+  [4;35;1mSQL (0.003170)[0m   [0mSHOW FIELDS FROM identities[0m
+  [4;36;1mSQL (0.001548)[0m   [0;1mSHOW KEYS FROM identities[0m
+  [4;35;1mSQL (0.013810)[0m   [0mSHOW FIELDS FROM im_addresses[0m
+  [4;36;1mSQL (0.002546)[0m   [0;1mSHOW KEYS FROM im_addresses[0m
+  [4;35;1mSQL (0.003986)[0m   [0mSHOW FIELDS FROM invitations[0m
+  [4;36;1mSQL (0.001950)[0m   [0;1mSHOW KEYS FROM invitations[0m
+  [4;35;1mSQL (0.051316)[0m   [0mSHOW FIELDS FROM joyent_files[0m
+  [4;36;1mSQL (0.002809)[0m   [0;1mSHOW KEYS FROM joyent_files[0m
+  [4;35;1mSQL (0.077534)[0m   [0mSHOW FIELDS FROM list_cells[0m
+  [4;36;1mSQL (0.001647)[0m   [0;1mSHOW KEYS FROM list_cells[0m
+  [4;35;1mSQL (0.071208)[0m   [0mSHOW FIELDS FROM list_columns[0m
+  [4;36;1mSQL (0.001738)[0m   [0;1mSHOW KEYS FROM list_columns[0m
+  [4;35;1mSQL (0.004552)[0m   [0mSHOW FIELDS FROM list_folders[0m
+  [4;36;1mSQL (0.001850)[0m   [0;1mSHOW KEYS FROM list_folders[0m
+  [4;35;1mSQL (0.004364)[0m   [0mSHOW FIELDS FROM list_rows[0m
+  [4;36;1mSQL (0.001786)[0m   [0;1mSHOW KEYS FROM list_rows[0m
+  [4;35;1mSQL (0.045484)[0m   [0mSHOW FIELDS FROM lists[0m
+  [4;36;1mSQL (0.001766)[0m   [0;1mSHOW KEYS FROM lists[0m
+  [4;35;1mSQL (0.003884)[0m   [0mSHOW FIELDS FROM login_tokens[0m
+  [4;36;1mSQL (0.012234)[0m   [0;1mSHOW KEYS FROM login_tokens[0m
+  [4;35;1mSQL (0.027650)[0m   [0mSHOW FIELDS FROM mailboxes[0m
+  [4;36;1mSQL (0.002109)[0m   [0;1mSHOW KEYS FROM mailboxes[0m
+  [4;35;1mSQL (0.069311)[0m   [0mSHOW FIELDS FROM messages[0m
+  [4;36;1mSQL (0.002710)[0m   [0;1mSHOW KEYS FROM messages[0m
+  [4;35;1mSQL (0.103244)[0m   [0mSHOW FIELDS FROM notifications[0m
+  [4;36;1mSQL (0.003090)[0m   [0;1mSHOW KEYS FROM notifications[0m
+  [4;35;1mSQL (0.047482)[0m   [0mSHOW FIELDS FROM organizations[0m
+  [4;36;1mSQL (0.001901)[0m   [0;1mSHOW KEYS FROM organizations[0m
+  [4;35;1mSQL (0.010167)[0m   [0mSHOW FIELDS FROM people[0m
+  [4;36;1mSQL (0.004221)[0m   [0;1mSHOW KEYS FROM people[0m
+  [4;35;1mSQL (0.006973)[0m   [0mSHOW FIELDS FROM permissions[0m
+  [4;36;1mSQL (0.001742)[0m   [0;1mSHOW KEYS FROM permissions[0m
+  [4;35;1mSQL (0.005639)[0m   [0mSHOW FIELDS FROM phone_numbers[0m
+  [4;36;1mSQL (0.002430)[0m   [0;1mSHOW KEYS FROM phone_numbers[0m
+  [4;35;1mSQL (0.004441)[0m   [0mSHOW FIELDS FROM quotas[0m
+  [4;36;1mSQL (0.001606)[0m   [0;1mSHOW KEYS FROM quotas[0m
+  [4;35;1mSQL (0.003536)[0m   [0mSHOW FIELDS FROM report_descriptions[0m
+  [4;36;1mSQL (0.001531)[0m   [0;1mSHOW KEYS FROM report_descriptions[0m
+  [4;35;1mSQL (0.050530)[0m   [0mSHOW FIELDS FROM reports[0m
+  [4;36;1mSQL (0.006912)[0m   [0;1mSHOW KEYS FROM reports[0m
+  [4;35;1mSQL (0.003969)[0m   [0mSHOW FIELDS FROM services[0m
+  [4;36;1mSQL (0.001553)[0m   [0;1mSHOW KEYS FROM services[0m
+  [4;35;1mSQL (0.060751)[0m   [0mSHOW FIELDS FROM sessions[0m
+  [4;36;1mSQL (0.002924)[0m   [0;1mSHOW KEYS FROM sessions[0m
+  [4;35;1mSQL (0.003805)[0m   [0mSHOW FIELDS FROM smart_group_attribute_descriptions[0m
+  [4;36;1mSQL (0.001773)[0m   [0;1mSHOW KEYS FROM smart_group_attribute_descriptions[0m
+  [4;35;1mSQL (0.004915)[0m   [0mSHOW FIELDS FROM smart_group_attributes[0m
+  [4;36;1mSQL (0.001591)[0m   [0;1mSHOW KEYS FROM smart_group_attributes[0m
+  [4;35;1mSQL (0.003644)[0m   [0mSHOW FIELDS FROM smart_group_descriptions[0m
+  [4;36;1mSQL (0.001640)[0m   [0;1mSHOW KEYS FROM smart_group_descriptions[0m
+  [4;35;1mSQL (0.004153)[0m   [0mSHOW FIELDS FROM smart_groups[0m
+  [4;36;1mSQL (0.001841)[0m   [0;1mSHOW KEYS FROM smart_groups[0m
+  [4;35;1mSQL (0.003526)[0m   [0mSHOW FIELDS FROM special_dates[0m
+  [4;36;1mSQL (0.002037)[0m   [0;1mSHOW KEYS FROM special_dates[0m
+  [4;35;1mSQL (0.001538)[0m   [0mSHOW FIELDS FROM subscriptions[0m
+  [4;36;1mSQL (0.001712)[0m   [0;1mSHOW KEYS FROM subscriptions[0m
+  [4;35;1mSQL (0.031488)[0m   [0mSHOW FIELDS FROM taggings[0m
+  [4;36;1mSQL (0.002020)[0m   [0;1mSHOW KEYS FROM taggings[0m
+  [4;35;1mSQL (0.006444)[0m   [0mSHOW FIELDS FROM tags[0m
+  [4;36;1mSQL (0.001638)[0m   [0;1mSHOW KEYS FROM tags[0m
+  [4;35;1mSQL (0.053562)[0m   [0mSHOW FIELDS FROM user_options[0m
+  [4;36;1mSQL (0.001921)[0m   [0;1mSHOW KEYS FROM user_options[0m
+  [4;35;1mSQL (0.063025)[0m   [0mSHOW FIELDS FROM user_requests[0m
+  [4;36;1mSQL (0.003335)[0m   [0;1mSHOW KEYS FROM user_requests[0m
+  [4;35;1mSQL (0.025225)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mSQL (0.002915)[0m   [0;1mSHOW KEYS FROM users[0m
+  [4;35;1mSQL (0.004883)[0m   [0mSHOW FIELDS FROM websites[0m
+  [4;36;1mSQL (0.011540)[0m   [0;1mSHOW KEYS FROM websites[0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000852)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000249)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000874)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.004414)[0m   [0;1mSHOW FIELDS FROM addresses[0m
+  [4;35;1mSQL (0.100112)[0m   [0mSHOW KEYS FROM addresses[0m
+  [4;36;1mSQL (0.001338)[0m   [0;1mSHOW FIELDS FROM affiliates[0m
+  [4;35;1mSQL (0.001515)[0m   [0mSHOW KEYS FROM affiliates[0m
+  [4;36;1mSQL (0.001437)[0m   [0;1mSHOW FIELDS FROM auth_keys[0m
+  [4;35;1mSQL (0.001688)[0m   [0mSHOW KEYS FROM auth_keys[0m
+  [4;36;1mSQL (0.001243)[0m   [0;1mSHOW FIELDS FROM bookmark_folders[0m
+  [4;35;1mSQL (0.001475)[0m   [0mSHOW KEYS FROM bookmark_folders[0m
+  [4;36;1mSQL (0.001688)[0m   [0;1mSHOW FIELDS FROM bookmarks[0m
+  [4;35;1mSQL (0.099828)[0m   [0mSHOW KEYS FROM bookmarks[0m
+  [4;36;1mSQL (0.001589)[0m   [0;1mSHOW FIELDS FROM calendars[0m
+  [4;35;1mSQL (0.097754)[0m   [0mSHOW KEYS FROM calendars[0m
+  [4;36;1mSQL (0.001389)[0m   [0;1mSHOW FIELDS FROM callings[0m
+  [4;35;1mSQL (0.001501)[0m   [0mSHOW KEYS FROM callings[0m
+  [4;36;1mSQL (0.001365)[0m   [0;1mSHOW FIELDS FROM calls[0m
+  [4;35;1mSQL (0.001463)[0m   [0mSHOW KEYS FROM calls[0m
+  [4;36;1mSQL (0.001478)[0m   [0;1mSHOW FIELDS FROM comments[0m
+  [4;35;1mSQL (0.094625)[0m   [0mSHOW KEYS FROM comments[0m
+  [4;36;1mSQL (0.001964)[0m   [0;1mSHOW FIELDS FROM contact_lists[0m
+  [4;35;1mSQL (0.059196)[0m   [0mSHOW KEYS FROM contact_lists[0m
+  [4;36;1mSQL (0.001913)[0m   [0;1mSHOW FIELDS FROM domains[0m
+  [4;35;1mSQL (0.094600)[0m   [0mSHOW KEYS FROM domains[0m
+  [4;36;1mSQL (0.001749)[0m   [0;1mSHOW FIELDS FROM email_addresses[0m
+  [4;35;1mSQL (0.001944)[0m   [0mSHOW KEYS FROM email_addresses[0m
+  [4;36;1mSQL (0.002261)[0m   [0;1mSHOW FIELDS FROM events[0m
+  [4;35;1mSQL (0.101568)[0m   [0mSHOW KEYS FROM events[0m
+  [4;36;1mSQL (0.001868)[0m   [0;1mSHOW FIELDS FROM folders[0m
+  [4;35;1mSQL (0.099424)[0m   [0mSHOW KEYS FROM folders[0m
+  [4;36;1mSQL (0.001494)[0m   [0;1mSHOW FIELDS FROM guest_paths[0m
+  [4;35;1mSQL (0.001623)[0m   [0mSHOW KEYS FROM guest_paths[0m
+  [4;36;1mSQL (0.001298)[0m   [0;1mSHOW FIELDS FROM identities[0m
+  [4;35;1mSQL (0.003985)[0m   [0mSHOW KEYS FROM identities[0m
+  [4;36;1mSQL (0.001480)[0m   [0;1mSHOW FIELDS FROM im_addresses[0m
+  [4;35;1mSQL (0.001728)[0m   [0mSHOW KEYS FROM im_addresses[0m
+  [4;36;1mSQL (0.001454)[0m   [0;1mSHOW FIELDS FROM invitations[0m
+  [4;35;1mSQL (0.094413)[0m   [0mSHOW KEYS FROM invitations[0m
+  [4;36;1mSQL (0.001999)[0m   [0;1mSHOW FIELDS FROM joyent_files[0m
+  [4;35;1mSQL (0.137971)[0m   [0mSHOW KEYS FROM joyent_files[0m
+  [4;36;1mSQL (0.002059)[0m   [0;1mSHOW FIELDS FROM list_cells[0m
+  [4;35;1mSQL (0.011019)[0m   [0mSHOW KEYS FROM list_cells[0m
+  [4;36;1mSQL (0.001742)[0m   [0;1mSHOW FIELDS FROM list_columns[0m
+  [4;35;1mSQL (0.001760)[0m   [0mSHOW KEYS FROM list_columns[0m
+  [4;36;1mSQL (0.001739)[0m   [0;1mSHOW FIELDS FROM list_folders[0m
+  [4;35;1mSQL (0.095565)[0m   [0mSHOW KEYS FROM list_folders[0m
+  [4;36;1mSQL (0.002193)[0m   [0;1mSHOW FIELDS FROM list_rows[0m
+  [4;35;1mSQL (0.000413)[0m   [0mSHOW KEYS FROM list_rows[0m
+  [4;36;1mSQL (0.001593)[0m   [0;1mSHOW FIELDS FROM lists[0m
+  [4;35;1mSQL (0.000350)[0m   [0mSHOW KEYS FROM lists[0m
+  [4;36;1mSQL (0.001459)[0m   [0;1mSHOW FIELDS FROM login_tokens[0m
+  [4;35;1mSQL (0.001806)[0m   [0mSHOW KEYS FROM login_tokens[0m
+  [4;36;1mSQL (0.001719)[0m   [0;1mSHOW FIELDS FROM mailboxes[0m
+  [4;35;1mSQL (0.000641)[0m   [0mSHOW KEYS FROM mailboxes[0m
+  [4;36;1mSQL (0.002498)[0m   [0;1mSHOW FIELDS FROM messages[0m
+  [4;35;1mSQL (0.000570)[0m   [0mSHOW KEYS FROM messages[0m
+  [4;36;1mSQL (0.001706)[0m   [0;1mSHOW FIELDS FROM notifications[0m
+  [4;35;1mSQL (0.000478)[0m   [0mSHOW KEYS FROM notifications[0m
+  [4;36;1mSQL (0.046919)[0m   [0;1mSHOW FIELDS FROM organizations[0m
+  [4;35;1mSQL (0.000664)[0m   [0mSHOW KEYS FROM organizations[0m
+  [4;36;1mSQL (0.002605)[0m   [0;1mSHOW FIELDS FROM people[0m
+  [4;35;1mSQL (0.031500)[0m   [0mSHOW KEYS FROM people[0m
+  [4;36;1mSQL (0.001775)[0m   [0;1mSHOW FIELDS FROM permissions[0m
+  [4;35;1mSQL (0.001941)[0m   [0mSHOW KEYS FROM permissions[0m
+  [4;36;1mSQL (0.001704)[0m   [0;1mSHOW FIELDS FROM phone_numbers[0m
+  [4;35;1mSQL (0.002275)[0m   [0mSHOW KEYS FROM phone_numbers[0m
+  [4;36;1mSQL (0.002094)[0m   [0;1mSHOW FIELDS FROM quotas[0m
+  [4;35;1mSQL (0.002071)[0m   [0mSHOW KEYS FROM quotas[0m
+  [4;36;1mSQL (0.001318)[0m   [0;1mSHOW FIELDS FROM report_descriptions[0m
+  [4;35;1mSQL (0.001525)[0m   [0mSHOW KEYS FROM report_descriptions[0m
+  [4;36;1mSQL (0.001720)[0m   [0;1mSHOW FIELDS FROM reports[0m
+  [4;35;1mSQL (0.095009)[0m   [0mSHOW KEYS FROM reports[0m
+  [4;36;1mSQL (0.001291)[0m   [0;1mSHOW FIELDS FROM services[0m
+  [4;35;1mSQL (0.001355)[0m   [0mSHOW KEYS FROM services[0m
+  [4;36;1mSQL (0.001483)[0m   [0;1mSHOW FIELDS FROM sessions[0m
+  [4;35;1mSQL (0.001617)[0m   [0mSHOW KEYS FROM sessions[0m
+  [4;36;1mSQL (0.049710)[0m   [0;1mSHOW FIELDS FROM smart_group_attribute_descriptions[0m
+  [4;35;1mSQL (0.002776)[0m   [0mSHOW KEYS FROM smart_group_attribute_descriptions[0m
+  [4;36;1mSQL (0.001623)[0m   [0;1mSHOW FIELDS FROM smart_group_attributes[0m
+  [4;35;1mSQL (0.012442)[0m   [0mSHOW KEYS FROM smart_group_attributes[0m
+  [4;36;1mSQL (0.001846)[0m   [0;1mSHOW FIELDS FROM smart_group_descriptions[0m
+  [4;35;1mSQL (0.001574)[0m   [0mSHOW KEYS FROM smart_group_descriptions[0m
+  [4;36;1mSQL (0.001676)[0m   [0;1mSHOW FIELDS FROM smart_groups[0m
+  [4;35;1mSQL (0.094257)[0m   [0mSHOW KEYS FROM smart_groups[0m
+  [4;36;1mSQL (0.001664)[0m   [0;1mSHOW FIELDS FROM special_dates[0m
+  [4;35;1mSQL (0.001725)[0m   [0mSHOW KEYS FROM special_dates[0m
+  [4;36;1mSQL (0.001594)[0m   [0;1mSHOW FIELDS FROM subscriptions[0m
+  [4;35;1mSQL (0.001661)[0m   [0mSHOW KEYS FROM subscriptions[0m
+  [4;36;1mSQL (0.002210)[0m   [0;1mSHOW FIELDS FROM taggings[0m
+  [4;35;1mSQL (0.001990)[0m   [0mSHOW KEYS FROM taggings[0m
+  [4;36;1mSQL (0.001502)[0m   [0;1mSHOW FIELDS FROM tags[0m
+  [4;35;1mSQL (0.001608)[0m   [0mSHOW KEYS FROM tags[0m
+  [4;36;1mSQL (0.001549)[0m   [0;1mSHOW FIELDS FROM user_options[0m
+  [4;35;1mSQL (0.001515)[0m   [0mSHOW KEYS FROM user_options[0m
+  [4;36;1mSQL (0.046709)[0m   [0;1mSHOW FIELDS FROM user_requests[0m
+  [4;35;1mSQL (0.097870)[0m   [0mSHOW KEYS FROM user_requests[0m
+  [4;36;1mSQL (0.002397)[0m   [0;1mSHOW FIELDS FROM users[0m
+  [4;35;1mSQL (0.095380)[0m   [0mSHOW KEYS FROM users[0m
+  [4;36;1mSQL (0.001701)[0m   [0;1mSHOW FIELDS FROM websites[0m
+  [4;35;1mSQL (0.001749)[0m   [0mSHOW KEYS FROM websites[0m
+  [4;36;1mSQL (0.000126)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (1.056308)[0m   [0mDROP DATABASE IF EXISTS `connector_test`[0m
+  [4;36;1mSQL (0.041455)[0m   [0;1mCREATE DATABASE `connector_test`[0m
+  [4;35;1mSQL (0.000105)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'addresses': DROP TABLE addresses[0m
+  [4;35;1mSQL (0.031429)[0m   [0mCREATE TABLE addresses (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `preferred` tinyint(1) DEFAULT NULL, `address_type` varchar(255) DEFAULT '', `street` varchar(255) DEFAULT '', `city` varchar(255) DEFAULT '', `state` varchar(255) DEFAULT '', `postal_code` varchar(255) DEFAULT '', `geocode` varchar(255) DEFAULT '', `country_name` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.069267)[0m   [0;1mCREATE INDEX `addresses_person_id_index` ON addresses (`person_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'affiliates': DROP TABLE affiliates[0m
+  [4;36;1mSQL (0.029403)[0m   [0;1mCREATE TABLE affiliates (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.034236)[0m   [0mCREATE INDEX `index_affiliates_on_name` ON affiliates (`name`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'auth_keys': DROP TABLE auth_keys[0m
+  [4;35;1mSQL (0.001791)[0m   [0mCREATE TABLE auth_keys (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` varchar(255) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'bookmark_folders': DROP TABLE bookmark_folders[0m
+  [4;35;1mSQL (0.016482)[0m   [0mCREATE TABLE bookmark_folders (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.024987)[0m   [0;1mCREATE INDEX `bookmark_folders_user_id_index` ON bookmark_folders (`user_id`)[0m
+  [4;35;1mSQL (0.087336)[0m   [0mCREATE INDEX `index_bookmark_folders_on_organization_id` ON bookmark_folders (`organization_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'bookmarks': DROP TABLE bookmarks[0m
+  [4;35;1mSQL (0.002005)[0m   [0mCREATE TABLE bookmarks (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `bookmark_folder_id` int(11) DEFAULT NULL, `uri` text DEFAULT NULL, `uri_sha1` text DEFAULT NULL, `title` text DEFAULT NULL, `notes` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.029885)[0m   [0;1mCREATE INDEX `bookmarks_bookmark_folder_id_index` ON bookmarks (`bookmark_folder_id`)[0m
+  [4;35;1mSQL (0.020811)[0m   [0mCREATE INDEX `bookmarks_organization_id_index` ON bookmarks (`organization_id`)[0m
+  [4;36;1mSQL (0.023930)[0m   [0;1mCREATE INDEX `bookmarks_user_id_index` ON bookmarks (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'calendars': DROP TABLE calendars[0m
+  [4;36;1mSQL (0.017701)[0m   [0;1mCREATE TABLE calendars (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT '', `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `parent_id` int(11) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.243690)[0m   [0mCREATE INDEX `calendars_parent_id_index` ON calendars (`parent_id`)[0m
+  [4;36;1mSQL (0.005551)[0m   [0;1mCREATE INDEX `calendars_user_id_index` ON calendars (`user_id`)[0m
+  [4;35;1mSQL (0.288362)[0m   [0mCREATE INDEX `index_calendars_on_organization_id` ON calendars (`organization_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'callings': DROP TABLE callings[0m
+  [4;35;1mSQL (0.001923)[0m   [0mCREATE TABLE callings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `call_id` int(11) DEFAULT NULL, `callee_id` int(11) DEFAULT NULL, `phone_number` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'calls': DROP TABLE calls[0m
+  [4;35;1mSQL (0.002130)[0m   [0mCREATE TABLE calls (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `caller_id` int(11) DEFAULT NULL, `status_code` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'comments': DROP TABLE comments[0m
+  [4;35;1mSQL (0.002007)[0m   [0mCREATE TABLE comments (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `body` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `commentable_id` int(11) DEFAULT NULL, `commentable_type` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005843)[0m   [0;1mCREATE INDEX `comments_commentable_id_index` ON comments (`commentable_id`)[0m
+  [4;35;1mSQL (0.093972)[0m   [0mCREATE INDEX `comments_commentable_type_index` ON comments (`commentable_type`)[0m
+  [4;36;1mSQL (0.075193)[0m   [0;1mCREATE INDEX `comments_user_id_index` ON comments (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'contact_lists': DROP TABLE contact_lists[0m
+  [4;36;1mSQL (0.002059)[0m   [0;1mCREATE TABLE contact_lists (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006179)[0m   [0mCREATE INDEX `contact_lists_user_id_index` ON contact_lists (`user_id`)[0m
+  [4;36;1mSQL (0.005710)[0m   [0;1mCREATE INDEX `index_contact_lists_on_organization_id` ON contact_lists (`organization_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'domains': DROP TABLE domains[0m
+  [4;36;1mSQL (0.002891)[0m   [0;1mCREATE TABLE domains (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `web_domain` varchar(255) DEFAULT NULL, `email_domain` varchar(255) DEFAULT NULL, `primary` tinyint(1) DEFAULT NULL, `system_domain` tinyint(1) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006638)[0m   [0mCREATE INDEX `domains_organization_id_index` ON domains (`organization_id`)[0m
+  [4;36;1mSQL (0.006494)[0m   [0;1mCREATE INDEX `domains_web_domain_index` ON domains (`web_domain`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'email_addresses': DROP TABLE email_addresses[0m
+  [4;36;1mSQL (0.002394)[0m   [0;1mCREATE TABLE email_addresses (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `preferred` tinyint(1) DEFAULT 0, `email_type` varchar(255) DEFAULT '', `email_address` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006300)[0m   [0mCREATE INDEX `email_addresses_person_id_index` ON email_addresses (`person_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'events': DROP TABLE events[0m
+  [4;35;1mSQL (0.002759)[0m   [0mCREATE TABLE events (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `location` text DEFAULT NULL, `start_time` datetime DEFAULT NULL, `recur_end_time` datetime DEFAULT NULL, `notes` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `all_day` tinyint(1) DEFAULT NULL, `recurrence_description_id` int(11) DEFAULT NULL, `end_time` datetime DEFAULT NULL, `recurrence_name` varchar(255) DEFAULT NULL, `alarm_trigger_in_minutes` int(11) DEFAULT NULL, `by_day` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.047703)[0m   [0;1mCREATE INDEX `events_organization_id_index` ON events (`organization_id`)[0m
+  [4;35;1mSQL (0.045208)[0m   [0mCREATE INDEX `events_user_id_index` ON events (`user_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'folders': DROP TABLE folders[0m
+  [4;35;1mSQL (0.002275)[0m   [0mCREATE TABLE folders (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `parent_id` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.051845)[0m   [0;1mCREATE INDEX `folders_parent_id_index` ON folders (`parent_id`)[0m
+  [4;35;1mSQL (0.043382)[0m   [0mCREATE INDEX `folders_user_id_index` ON folders (`user_id`)[0m
+  [4;36;1mSQL (0.036029)[0m   [0;1mCREATE INDEX `index_folders_on_organization_id` ON folders (`organization_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'guest_paths': DROP TABLE guest_paths[0m
+  [4;36;1mSQL (0.029135)[0m   [0;1mCREATE TABLE guest_paths (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `guest_id` int(11) DEFAULT NULL, `relative_path` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006034)[0m   [0mCREATE INDEX `index_guest_paths_on_guest_id` ON guest_paths (`guest_id`)[0m
+  [4;36;1mSQL (0.049024)[0m   [0;1mCREATE INDEX `index_guest_paths_on_user_id` ON guest_paths (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'identities': DROP TABLE identities[0m
+  [4;36;1mSQL (0.001834)[0m   [0;1mCREATE TABLE identities (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'im_addresses': DROP TABLE im_addresses[0m
+  [4;36;1mSQL (0.026907)[0m   [0;1mCREATE TABLE im_addresses (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `preferred` tinyint(1) DEFAULT 0, `im_type` varchar(255) DEFAULT '', `im_address` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006363)[0m   [0mCREATE INDEX `im_addresses_person_id_index` ON im_addresses (`person_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'invitations': DROP TABLE invitations[0m
+  [4;35;1mSQL (0.002541)[0m   [0mCREATE TABLE invitations (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `event_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `calendar_id` int(11) DEFAULT NULL, `accepted` tinyint(1) DEFAULT NULL, `pending` tinyint(1) DEFAULT 1) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.006083)[0m   [0;1mCREATE INDEX `invitations_calendar_id_index` ON invitations (`calendar_id`)[0m
+  [4;35;1mSQL (0.030584)[0m   [0mCREATE INDEX `invitations_event_id_index` ON invitations (`event_id`)[0m
+  [4;36;1mSQL (0.008886)[0m   [0;1mCREATE INDEX `invitations_user_id_index` ON invitations (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'joyent_files': DROP TABLE joyent_files[0m
+  [4;36;1mSQL (0.002379)[0m   [0;1mCREATE TABLE joyent_files (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `size_in_bytes` int(11) NOT NULL, `notes` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `folder_id` int(11) DEFAULT NULL, `filename` varchar(255) DEFAULT NULL, `joyent_file_type_description` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006525)[0m   [0mCREATE INDEX `joyent_files_folder_id_index` ON joyent_files (`folder_id`)[0m
+  [4;36;1mSQL (0.035164)[0m   [0;1mCREATE INDEX `joyent_files_organization_id_index` ON joyent_files (`organization_id`)[0m
+  [4;35;1mSQL (0.007289)[0m   [0mCREATE INDEX `joyent_files_user_id_index` ON joyent_files (`user_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'list_cells': DROP TABLE list_cells[0m
+  [4;35;1mSQL (0.002407)[0m   [0mCREATE TABLE list_cells (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `list_column_id` int(11) DEFAULT NULL, `list_row_id` int(11) DEFAULT NULL, `value` text DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'list_columns': DROP TABLE list_columns[0m
+  [4;35;1mSQL (0.002263)[0m   [0mCREATE TABLE list_columns (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `list_id` int(11) DEFAULT NULL, `position` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `kind` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'list_folders': DROP TABLE list_folders[0m
+  [4;35;1mSQL (0.002364)[0m   [0mCREATE TABLE list_folders (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `parent_id` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'list_rows': DROP TABLE list_rows[0m
+  [4;35;1mSQL (0.002458)[0m   [0mCREATE TABLE list_rows (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `list_id` int(11) DEFAULT NULL, `parent_id` int(11) DEFAULT NULL, `position` int(11) DEFAULT NULL, `children_count` int(11) DEFAULT 0 NOT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `visible_children` tinyint(1) DEFAULT 1, `depth_cache` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'lists': DROP TABLE lists[0m
+  [4;35;1mSQL (0.002166)[0m   [0mCREATE TABLE lists (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `name` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `list_folder_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'login_tokens': DROP TABLE login_tokens[0m
+  [4;35;1mSQL (0.002489)[0m   [0mCREATE TABLE login_tokens (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `value` varchar(255) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005708)[0m   [0;1mCREATE INDEX `index_login_tokens_on_user_id` ON login_tokens (`user_id`)[0m
+  [4;35;1mSQL (0.006843)[0m   [0mCREATE INDEX `login_tokens_value_index` ON login_tokens (`value`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'mailboxes': DROP TABLE mailboxes[0m
+  [4;35;1mSQL (0.002470)[0m   [0mCREATE TABLE mailboxes (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `uid_validity` int(11) DEFAULT NULL, `uid_next` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `parent_id` int(11) DEFAULT NULL, `full_name` varchar(255) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005735)[0m   [0;1mCREATE INDEX `index_mailboxes_on_organization_id` ON mailboxes (`organization_id`)[0m
+  [4;35;1mSQL (0.006427)[0m   [0mCREATE INDEX `mailboxes_parent_id_index` ON mailboxes (`parent_id`)[0m
+  [4;36;1mSQL (0.007583)[0m   [0;1mCREATE INDEX `mailboxes_uid_next_index` ON mailboxes (`uid_next`)[0m
+  [4;35;1mSQL (0.006478)[0m   [0mCREATE INDEX `mailboxes_uid_validity_index` ON mailboxes (`uid_validity`)[0m
+  [4;36;1mSQL (0.006730)[0m   [0;1mCREATE INDEX `mailboxes_user_id_index` ON mailboxes (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'messages': DROP TABLE messages[0m
+  [4;36;1mSQL (0.002961)[0m   [0;1mCREATE TABLE messages (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `mailbox_id` int(11) DEFAULT NULL, `size_in_bytes` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `internaldate` datetime DEFAULT NULL, `has_attachments` tinyint(1) DEFAULT NULL, `sender` text DEFAULT NULL, `subject` text DEFAULT NULL, `date` datetime DEFAULT NULL, `seen` tinyint(1) DEFAULT NULL, `recipients` text DEFAULT NULL, `joyent_id` varchar(255) DEFAULT NULL, `active` tinyint(1) DEFAULT 1, `flagged` tinyint(1) DEFAULT 0, `draft` tinyint(1) DEFAULT 0, `answered` tinyint(1) DEFAULT 0, `forwarded` tinyint(1) DEFAULT 0, `status` text DEFAULT NULL, `filename` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006986)[0m   [0mCREATE INDEX `messages_mailbox_id_index` ON messages (`mailbox_id`)[0m
+  [4;36;1mSQL (0.007019)[0m   [0;1mCREATE INDEX `messages_organization_id_index` ON messages (`organization_id`)[0m
+  [4;35;1mSQL (0.007143)[0m   [0mCREATE INDEX `messages_user_id_index` ON messages (`user_id`)[0m
+  [4;36;1mSQL (0.007908)[0m   [0;1mCREATE INDEX `index_messages_on_filename` ON messages (`filename`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'notifications': DROP TABLE notifications[0m
+  [4;36;1mSQL (0.002121)[0m   [0;1mCREATE TABLE notifications (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `notifiee_id` int(11) DEFAULT NULL, `notifier_id` int(11) DEFAULT NULL, `item_id` int(11) DEFAULT NULL, `item_type` varchar(255) DEFAULT NULL, `acknowledged` tinyint(1) DEFAULT 0, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `message` text DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.009860)[0m   [0mCREATE INDEX `notifications_item_id_index` ON notifications (`item_id`)[0m
+  [4;36;1mSQL (0.006595)[0m   [0;1mCREATE INDEX `notifications_item_type_index` ON notifications (`item_type`)[0m
+  [4;35;1mSQL (0.007343)[0m   [0mCREATE INDEX `notifications_notifiee_id_index` ON notifications (`notifiee_id`)[0m
+  [4;36;1mSQL (0.007725)[0m   [0;1mCREATE INDEX `notifications_notifier_id_index` ON notifications (`notifier_id`)[0m
+  [4;35;1mSQL (0.040377)[0m   [0mCREATE INDEX `notifications_organization_id_index` ON notifications (`organization_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'organizations': DROP TABLE organizations[0m
+  [4;35;1mSQL (0.029096)[0m   [0mCREATE TABLE organizations (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `active` tinyint(1) DEFAULT 1, `affiliate_id` int(11) DEFAULT 1, `disk_usage` int(11) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.025505)[0m   [0;1mCREATE INDEX `index_organizations_on_affiliate_id` ON organizations (`affiliate_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'people': DROP TABLE people[0m
+  [4;36;1mSQL (0.027227)[0m   [0;1mCREATE TABLE people (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name_prefix` varchar(255) DEFAULT '', `first_name` varchar(255) DEFAULT '', `middle_name` varchar(255) DEFAULT '', `last_name` varchar(255) DEFAULT '', `name_suffix` varchar(255) DEFAULT '', `nickname` varchar(255) DEFAULT '', `company_name` varchar(255) DEFAULT '', `title` varchar(255) DEFAULT '', `time_zone` varchar(255) DEFAULT '', `notes` text DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `contact_list_id` int(11) DEFAULT NULL, `person_type` varchar(255) DEFAULT NULL, `primary_email` varchar(255) DEFAULT NULL, `primary_phone` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.044386)[0m   [0mCREATE INDEX `people_contact_list_id_index` ON people (`contact_list_id`)[0m
+  [4;36;1mSQL (0.025639)[0m   [0;1mCREATE INDEX `people_organization_id_index` ON people (`organization_id`)[0m
+  [4;35;1mSQL (0.032316)[0m   [0mCREATE INDEX `people_user_id_index` ON people (`user_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'permissions': DROP TABLE permissions[0m
+  [4;35;1mSQL (0.028886)[0m   [0mCREATE TABLE permissions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `item_id` int(11) DEFAULT NULL, `item_type` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005672)[0m   [0;1mCREATE INDEX `permissions_item_id_index` ON permissions (`item_id`)[0m
+  [4;35;1mSQL (0.059132)[0m   [0mCREATE INDEX `permissions_item_type_index` ON permissions (`item_type`)[0m
+  [4;36;1mSQL (0.006359)[0m   [0;1mCREATE INDEX `permissions_user_id_index` ON permissions (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'phone_numbers': DROP TABLE phone_numbers[0m
+  [4;36;1mSQL (0.001853)[0m   [0;1mCREATE TABLE phone_numbers (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `preferred` tinyint(1) DEFAULT 0, `phone_number_type` varchar(255) DEFAULT '', `phone_number` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.009034)[0m   [0mCREATE INDEX `phone_numbers_person_id_index` ON phone_numbers (`person_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'quotas': DROP TABLE quotas[0m
+  [4;35;1mSQL (0.002265)[0m   [0mCREATE TABLE quotas (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `organization_id` int(11) DEFAULT NULL, `users` int(11) DEFAULT NULL, `custom_domains` tinyint(1) DEFAULT NULL, `megabytes` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.006506)[0m   [0;1mCREATE INDEX `quotas_organization_id_index` ON quotas (`organization_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'report_descriptions': DROP TABLE report_descriptions[0m
+  [4;36;1mSQL (0.001735)[0m   [0;1mCREATE TABLE report_descriptions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.005550)[0m   [0mCREATE INDEX `report_descriptions_name_index` ON report_descriptions (`name`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'reports': DROP TABLE reports[0m
+  [4;35;1mSQL (0.002905)[0m   [0mCREATE TABLE reports (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `report_description_id` int(11) DEFAULT NULL, `reportable_id` int(11) DEFAULT NULL, `reportable_type` varchar(255) DEFAULT NULL, `position` int(11) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.006696)[0m   [0;1mCREATE INDEX `reports_organization_id_index` ON reports (`organization_id`)[0m
+  [4;35;1mSQL (0.007012)[0m   [0mCREATE INDEX `reports_report_description_id_index` ON reports (`report_description_id`)[0m
+  [4;36;1mSQL (0.006489)[0m   [0;1mCREATE INDEX `reports_reportable_id_index` ON reports (`reportable_id`)[0m
+  [4;35;1mSQL (0.008600)[0m   [0mCREATE INDEX `reports_reportable_type_index` ON reports (`reportable_type`)[0m
+  [4;36;1mSQL (0.007504)[0m   [0;1mCREATE INDEX `reports_user_id_index` ON reports (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'services': DROP TABLE services[0m
+  [4;36;1mSQL (0.002542)[0m   [0;1mCREATE TABLE services (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'sessions': DROP TABLE sessions[0m
+  [4;36;1mSQL (0.011355)[0m   [0;1mCREATE TABLE sessions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) DEFAULT NULL, `data` text DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006185)[0m   [0mCREATE INDEX `sessions_session_id_index` ON sessions (`session_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'smart_group_attribute_descriptions': DROP TABLE smart_group_attribute_descriptions[0m
+  [4;35;1mSQL (0.003634)[0m   [0mCREATE TABLE smart_group_attribute_descriptions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `attribute_name` varchar(255) DEFAULT NULL, `smart_group_description_id` int(11) DEFAULT NULL, `body` tinyint(1) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.006826)[0m   [0;1mCREATE INDEX `smart_group_attribute_descriptions_smart_group_description_id_i` ON smart_group_attribute_descriptions (`smart_group_description_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'smart_group_attributes': DROP TABLE smart_group_attributes[0m
+  [4;36;1mSQL (0.005190)[0m   [0;1mCREATE TABLE smart_group_attributes (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `value` varchar(255) DEFAULT NULL, `smart_group_id` int(11) DEFAULT NULL, `smart_group_attribute_description_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006455)[0m   [0mCREATE INDEX `smart_group_attributes_smart_group_attribute_description_id_ind` ON smart_group_attributes (`smart_group_attribute_description_id`)[0m
+  [4;36;1mSQL (0.007162)[0m   [0;1mCREATE INDEX `smart_group_attributes_smart_group_id_index` ON smart_group_attributes (`smart_group_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'smart_group_descriptions': DROP TABLE smart_group_descriptions[0m
+  [4;36;1mSQL (0.003020)[0m   [0;1mCREATE TABLE smart_group_descriptions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `item_type` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006406)[0m   [0mCREATE INDEX `smart_group_descriptions_item_type_index` ON smart_group_descriptions (`item_type`)[0m
+  [4;36;1mSQL (0.006792)[0m   [0;1mCREATE INDEX `smart_group_descriptions_name_index` ON smart_group_descriptions (`name`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'smart_groups': DROP TABLE smart_groups[0m
+  [4;36;1mSQL (0.002807)[0m   [0;1mCREATE TABLE smart_groups (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `smart_group_description_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL, `accept_any` tinyint(1) DEFAULT NULL, `tags` text DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006231)[0m   [0mCREATE INDEX `index_smart_groups_on_organization_id` ON smart_groups (`organization_id`)[0m
+  [4;36;1mSQL (0.006820)[0m   [0;1mCREATE INDEX `smart_groups_smart_group_description_id_index` ON smart_groups (`smart_group_description_id`)[0m
+  [4;35;1mSQL (0.010180)[0m   [0mCREATE INDEX `smart_groups_user_id_index` ON smart_groups (`user_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'special_dates': DROP TABLE special_dates[0m
+  [4;35;1mSQL (0.012856)[0m   [0mCREATE TABLE special_dates (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `preferred` tinyint(1) DEFAULT 0, `description` text DEFAULT NULL, `special_date` date DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005881)[0m   [0;1mCREATE INDEX `special_dates_person_id_index` ON special_dates (`person_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'subscriptions': DROP TABLE subscriptions[0m
+  [4;36;1mSQL (0.002486)[0m   [0;1mCREATE TABLE subscriptions (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `subscribable_id` int(11) DEFAULT NULL, `subscribable_type` varchar(255) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL, `user_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.007257)[0m   [0mCREATE INDEX `index_subscriptions_on_subscribable_id` ON subscriptions (`subscribable_id`)[0m
+  [4;36;1mSQL (0.005729)[0m   [0;1mCREATE INDEX `index_subscriptions_on_subscribable_type` ON subscriptions (`subscribable_type`)[0m
+  [4;35;1mSQL (0.007134)[0m   [0mCREATE INDEX `index_subscriptions_on_user_id` ON subscriptions (`user_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'taggings': DROP TABLE taggings[0m
+  [4;35;1mSQL (0.005710)[0m   [0mCREATE TABLE taggings (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL, `tagger_id` int(11) DEFAULT NULL, `taggable_id` int(11) DEFAULT NULL, `taggable_type` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005735)[0m   [0;1mCREATE INDEX `taggings_tag_id_index` ON taggings (`tag_id`)[0m
+  [4;35;1mSQL (0.006191)[0m   [0mCREATE INDEX `taggings_taggable_id_index` ON taggings (`taggable_id`)[0m
+  [4;36;1mSQL (0.006364)[0m   [0;1mCREATE INDEX `taggings_taggable_type_index` ON taggings (`taggable_type`)[0m
+  [4;35;1mSQL (0.009492)[0m   [0mCREATE INDEX `taggings_tagger_id_index` ON taggings (`tagger_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'tags': DROP TABLE tags[0m
+  [4;35;1mSQL (0.001897)[0m   [0mCREATE TABLE tags (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL, `organization_id` int(11) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.006526)[0m   [0;1mCREATE INDEX `tags_name_index` ON tags (`name`)[0m
+  [4;35;1mSQL (0.006287)[0m   [0mCREATE INDEX `tags_organization_id_index` ON tags (`organization_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'user_options': DROP TABLE user_options[0m
+  [4;35;1mSQL (0.014905)[0m   [0mCREATE TABLE user_options (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL, `key` text DEFAULT NULL, `value` text DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005954)[0m   [0;1mCREATE INDEX `user_options_user_id_index` ON user_options (`user_id`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'user_requests': DROP TABLE user_requests[0m
+  [4;36;1mSQL (0.005249)[0m   [0;1mCREATE TABLE user_requests (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` varchar(255) DEFAULT NULL, `organization` varchar(255) DEFAULT NULL, `username` varchar(255) DEFAULT NULL, `action` varchar(255) DEFAULT NULL, `created_at` datetime DEFAULT NULL, `duration` float DEFAULT NULL, `session_id` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.009402)[0m   [0mCREATE INDEX `user_requests_user_id_index` ON user_requests (`user_id`)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Unknown table 'users': DROP TABLE users[0m
+  [4;35;1mSQL (0.002973)[0m   [0mCREATE TABLE users (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `username` varchar(255) DEFAULT NULL, `password` varchar(255) DEFAULT NULL, `password_sha1` varchar(255) DEFAULT NULL, `admin` tinyint(1) DEFAULT 0 NOT NULL, `organization_id` int(11) DEFAULT NULL, `documents_id` int(11) DEFAULT NULL, `full_name` varchar(255) DEFAULT NULL, `identity_id` int(11) DEFAULT NULL, `guest` tinyint(1) DEFAULT 0 NOT NULL, `recovery_email` varchar(255) DEFAULT '', `recovery_token` varchar(255) DEFAULT '', `guest_rw` tinyint(1) DEFAULT 0 NOT NULL, `jajah_username` varchar(255) DEFAULT NULL, `jajah_password` varchar(255) DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.168737)[0m   [0;1mCREATE INDEX `index_users_on_identity_id` ON users (`identity_id`)[0m
+  [4;35;1mSQL (0.009622)[0m   [0mCREATE INDEX `users_documents_id_index` ON users (`documents_id`)[0m
+  [4;36;1mSQL (0.145041)[0m   [0;1mCREATE INDEX `users_organization_id_index` ON users (`organization_id`)[0m
+  [4;35;1mSQL (0.046110)[0m   [0mCREATE INDEX `users_person_id_index` ON users (`person_id`)[0m
+  [4;36;1mSQL (0.153754)[0m   [0;1mCREATE INDEX `users_username_index` ON users (`username`)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Unknown table 'websites': DROP TABLE websites[0m
+  [4;36;1mSQL (0.004704)[0m   [0;1mCREATE TABLE websites (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `person_id` int(11) DEFAULT NULL, `preferred` tinyint(1) DEFAULT 0, `site_title` varchar(255) DEFAULT '', `site_url` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.148927)[0m   [0mCREATE INDEX `websites_person_id_index` ON websites (`person_id`)[0m
+  [4;36;1mSQL (0.086531)[0m   [0;1mCREATE TABLE schema_info (version int(11))[0m
+  [4;35;1mSQL (0.050749)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.084850)[0m   [0;1mSHOW FIELDS FROM schema_info[0m
+  [4;35;1mSQL (0.081933)[0m   [0mUPDATE schema_info SET version = 156[0m
