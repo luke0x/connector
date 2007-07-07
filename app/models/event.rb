@@ -343,13 +343,17 @@ class Event < ActiveRecord::Base
        !event_params[:recur_end_month].blank?   &&
        !event_params[:recur_end_day].blank?
 
-      event_params[:recur_end_time] = Time.utc(event_params[:recur_end_year].to_i,
-                                               event_params[:recur_end_month].to_i,
-                                               event_params[:recur_end_day].to_i,
-                                               event_params[:start_hour].to_i,
-                                               event_params[:start_minute].to_i,
-                                               1,
-                                               0)
+       begin
+         event_params[:recur_end_time] = Time.utc(event_params[:recur_end_year].to_i,
+                                                  event_params[:recur_end_month].to_i,
+                                                  event_params[:recur_end_day].to_i,
+                                                  event_params[:start_hour].to_i,
+                                                  event_params[:start_minute].to_i,
+                                                  1,
+                                                  0)
+       rescue ArgumentError
+         return  
+       end                            
     else
       event_params[:recur_end_time] = nil
     end
