@@ -13,7 +13,7 @@ ian:
   identity_id: 1
   organization_id: 1
   username: ian
-  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password: "QpzgdxHyPCqXp5bDP6377A==\n" # testpass note: Changing the JoyentConfig.user_aes_salt will change these values
   password_sha1: fill me in
   full_name: Ian Kevin Curtis
   recovery_email: ian@something.com
@@ -27,7 +27,7 @@ peter:
   organization_id: 1
   documents_id: 5
   username: peter
-  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password: "6ehJSJQk180sv6I5H5+hSg==\n" # testpass note: Changing the JoyentConfig.user_aes_salt will change these values
   password_sha1: fill me in
   full_name: Peter Hook
   admin: false
@@ -39,7 +39,7 @@ bernard:
   organization_id: 1
   documents_id: 5
   username: bernard
-  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password: "buYMvPcD0bjxK/7DNEydgQ==\n" # testpass note: Changing the JoyentConfig.user_aes_salt will change these values
   password_sha1: fill me in
   full_name: Bernard Sumner
   admin: false
@@ -51,7 +51,7 @@ jason:
   organization_id: 2
   documents_id: 7
   username: jason
-  password: "4en3P491kIWnLyY/Wt1qCQ==\n" # testpass
+  password: "hy7/kH/x0denVE5wso8Daw==\n" # testpass note: Changing the JoyentConfig.user_aes_salt will change these values
   password_sha1: fill me in
   full_name: Jason Hoffman
   admin: true
