@@ -39,6 +39,8 @@ class JoyentFileType
     ['bmp',  nil,    'bmp', 'Image',           'image/bmp'],
     ['raw',  nil,    'raw', 'Image',           'image/raw'],
     ['psd',  nil,    'psd', 'Photoshop Image', 'image/photoshop'],
+    ['ai',  nil,    'ai', 'Illustrator Document', 'application/illustrator'],
+    ['indd',  nil,    'indd', 'Indesign Document', 'application/x-indesign'],
 
     # 'office'
     ['vcf', nil,  'vcf', 'vCard',        'text/x-vcard'],
@@ -73,7 +75,7 @@ class JoyentFileType
     # web
     ['html', :html, 'html',        'HTML Document',         'text/html'],
     ['htm',  :html, 'htm',         'HTML Document',         'text/html'],
-    ['css',  :text, 'style_sheet', 'Cascading Style Sheet', 'text/css'],
+    ['css',  :text, 'css', 'Cascading Style Sheet', 'text/css'],
 
     # code
     ['rb',  :text, 'code', 'Source Code', 'text/plain'],

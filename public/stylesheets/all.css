@@ -510,7 +510,7 @@ $Id$ */
 		background-image: url(/images/icons/goToJajah.png);
 		}
 	.toContacts {	
-		background-image: url(/images/icons/doc/16/vcf.png);
+		background-image: url(/images/icons/docs/16/vcf.png);
 		}
 
 /* Copyright 2004-2007 Joyent Inc.
@@ -2523,8 +2523,17 @@ $Id$ */
 	
 /* Icons (file types) ------------------------------------*/
 	
+	.ai  {
+		background: url(/images/icons/docs/16/ai.png) 0 50% no-repeat;
+		}
 	.chris {
 		background: url(/images/icons/docs/16/chris.png) 0 50% no-repeat;
+		}
+	.code {
+		background: url(/images/icons/docs/16/code.png) 0 50% no-repeat;
+		}
+	.css {
+		background: url(/images/icons/docs/16/css.png) 0 50% no-repeat;
 		}
 	.doc  {
 		background: url(/images/icons/docs/16/doc.png) 0 50% no-repeat;
@@ -2535,14 +2544,17 @@ $Id$ */
 	.fla, .flv {
 		background: url(/images/icons/docs/16/fla.png) 0 50% no-repeat;
 		}
-	.html, .htm {
-		background: url(/images/icons/docs/16/html.png) 0 50% no-repeat;
-		}
 	.gruber {
 		background: url(/images/icons/docs/16/gruber.png) 0 50% no-repeat;
 		}
+	.html, .htm {
+		background: url(/images/icons/docs/16/html.png) 0 50% no-repeat;
+		}
 	.ics  {
 		background: url(/images/icons/docs/16/ics.png) 0 50% no-repeat;
+		}
+	.indd  {
+		background: url(/images/icons/docs/16/indd.png) 0 50% no-repeat;
 		}
 	.joyent {
 		background: url(/images/icons/docs/16/joyent.png) 0 50% no-repeat;
