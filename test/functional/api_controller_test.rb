@@ -21,7 +21,7 @@ class ApiControllerTest < Test::Unit::TestCase
     @controller = ApiController.new
     @request    = ActionController::TestRequest.new
     @response   = ActionController::TestResponse.new
-    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64.encode64("joyent:p455w0rd")
+    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64.encode64("username:password")
   end
   
   def test_create_organization
