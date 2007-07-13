@@ -200,10 +200,10 @@ class User < ActiveRecord::Base
   end
 
   def set_option(key, value)
-    o = user_options.find_by_key(key)
-    o ||= UserOption.new(:user_id => self.id, :key => key)
+    o = user_options.find_or_create_by_key(key)
     o.value = value
     o.save
+    user_options.reload
     o
   end
   
