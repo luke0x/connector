@@ -462,6 +462,7 @@ class UserTest < Test::Unit::TestCase
   
   def test_disconnect_other_user
     User.current = users(:ian)
+    assert_equal 7, User.current.subscriptions.count
     assert_equal 3, User.current.identity.users.length
     assert_equal 4, Identity.count
     other_user = users(:peter)
@@ -470,7 +471,7 @@ class UserTest < Test::Unit::TestCase
     assert_equal 2, User.current.identity.users(true).length
     assert_equal 5, Identity.count
     
-    assert_equal 1, User.current.subscriptions.count
+    assert_equal 2, User.current.subscriptions.count
   end
 
   def test_invalid_disconnect_other_user
