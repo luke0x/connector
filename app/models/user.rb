@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   has_one    :login_token, :dependent => :destroy, :order => 'created_at DESC'
   
   has_many   :user_options,       :dependent => :destroy
-  has_many   :subject_of_reports, :dependent => :destroy, :as => :reportable
+  has_many   :subject_of_reports, :class_name => 'Report', :dependent => :destroy, :as => :reportable
 
   has_many   :smart_groups,     :order => 'LOWER(name)', :dependent => :destroy
   belongs_to :documents_folder, :class_name => 'Folder', :foreign_key => 'documents_id' # wack wording, but whatev
