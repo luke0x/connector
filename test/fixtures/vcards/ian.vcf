@@ -8,9 +8,9 @@ TITLE:Singer
 EMAIL;TYPE=other,pref:ian@textdrive.com
 EMAIL;TYPE=work:ian@joyent.com
 EMAIL;TYPE=home:ian@something.com
-ADR;TYPE=work,pref:;;14 Kientz Lane;San Anselmo;CA;48161;United States
-ADR;TYPE=home:;;123 Edgewood;Monroe;MI;48161;United States
-ADR;TYPE=home:;;613 Marsh St;Burlington;;1958;Australia
+ADR;TYPE=work,pref:;;14 Kientz Lane;San Anselmo;CA;90210;United States
+ADR;TYPE=home:;;123 Edgewood;Monroe;MI;90210;United States
+ADR;TYPE=home:;;613 Marsh St;Burlington;;90210;Australia
 TEL;TYPE=mobile,pref:0800 666 112
 TEL;TYPE=home:0800 666 111
 TEL;TYPE=fax:0800 666 111

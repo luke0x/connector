@@ -139,7 +139,7 @@ class VcardImportTest < Test::Unit::TestCase
     assert_equal 3,                        person.addresses.size
     assert_equal 'work',                   person.addresses.first.address_type
     assert_equal '14 Kientz Lane',         person.addresses.first.street
-    assert_equal '48161',                  person.addresses.first.postal_code
+    assert_equal '90210',                  person.addresses.first.postal_code
     assert_equal 'San Anselmo',            person.addresses.first.city
     assert_equal 'CA',                     person.addresses.first.state
     assert_equal 'United States',          person.addresses.first.country_name
