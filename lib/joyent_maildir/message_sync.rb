@@ -272,7 +272,8 @@ module JoyentMaildir
     #  internal date
     #  has attachments
     def message_data(header, filename)
-      parsed_header = JoyentMaildir::MailParser.parse_message StringIO.new(header)
+      message_path  = File.join(@path, 'cur', @curfiles[filename])
+      parsed_header = JoyentMaildir::MailParser.parse_message MockFS.file.open(message_path)
       data          = {}
       
       data[:subject]    = parsed_header[:subject]
@@ -280,7 +281,7 @@ module JoyentMaildir
       data[:sender]     = parsed_header[:from]
       data[:recipients] = parsed_header[:to]
       
-      data[:has_attachments] = parsed_header[:multipart] || parsed_header.has_key?(:filename) || false
+      data[:has_attachments] = has_attachments?(parsed_header)
       
       # Parse the statuses off the command line and set thingies
       flags = @curfiles[filename][/(D?F?P?R?S?T?)$/]
@@ -321,6 +322,16 @@ module JoyentMaildir
       # A message gets its mailbox's permissions automatically.
       @mailbox.permissions.each {|p| msg.permissions << p.clone}
       msg
+    end
+    
+    def has_attachments?(part)
+      return true if part.has_key?(:filename)
+      if part.has_key?(:parts)
+        part[:parts].each do |p|
+          return true if has_attachments? p
+        end
+      end
+      false
     end
     
   end
