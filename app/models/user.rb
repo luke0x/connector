@@ -131,6 +131,14 @@ class User < ActiveRecord::Base
     SystemMailer.deliver_reset_password(self)
   end
   
+  def auto_generate_password!
+    new_password = generate_login_token[0,10]
+    update_password(new_password, new_password)
+    save
+    
+    SystemMailer.deliver_generated_password(self)
+  end
+  
   # identity
 
   def switch_to(user_id)

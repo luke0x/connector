@@ -30,7 +30,14 @@ class SystemMailer < ActionMailer::Base
     body({"user" => user})
     from "support@joyent.com"
   end
-  
+
+  def generated_password(user)
+    recipients user.recovery_email
+    subject "Connector password reset"
+    body({"user" => user})
+    from "support@joyent.com"
+  end
+    
   def over_quota(user)
     recipients user.recovery_email || user.system_email
     bcc JoyentConfig.quota_email_list

@@ -1,0 +1,23 @@
+xml.userinfo do
+  xml.company_name @org.name
+  xml.subdomain    @org.system_domain.web_domain
+  xml.username     @user.username
+  xml.first_name   @user.person.first_name
+  xml.last_name    @user.person.last_name
+  xml.email        @user.person.primary_email
+  xml.plan_id      '2' # TODO hardcoded for now - but we need to get it for real
+  xml.quota do
+    xml.users do
+      xml.max      @org.quota.users
+      xml.used     @org.users.size
+    end
+    xml.disk do
+      xml.max      @org.quota.megabytes, :unitOfMeasure => 'MB'
+      if @org.total_disk_usage < 2**20
+        xml.used   @org.total_disk_usage / 1024, :unitOfMeasure => 'KB'
+      else
+        xml.used   @org.total_disk_usage / (2**20), :unitOfMeasure => 'MB'
+      end
+    end
+  end
+end
