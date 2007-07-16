@@ -1,9 +1,11 @@
 class CorelApiController < ActionController::Base
   session :off
   before_filter :load_user
+  before_filter :auth_user, :except => [:reset_password]
   
   def reset_password
     @user.auto_generate_password!
+    return fail_hard unless @user.recovery_email == params[:email]
     render :text => ''
   end
   
@@ -44,10 +46,12 @@ class CorelApiController < ActionController::Base
     return fail_hard unless @org = dom.organization
         
     return fail_hard unless @user = @org.users.find_by_username(params[:username])
-    
-    return fail_hard unless @user.authenticate(params[:password] || params[:old_password])
-    
+
     Organization.current = @org # Needed by SystemMailer
+  end
+  
+  def auth_user
+    return fail_hard unless @user.authenticate(params[:password] || params[:old_password])
   end
   
   def fail_hard(with='')

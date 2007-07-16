@@ -4,7 +4,7 @@ xml.userinfo do
   xml.username     @user.username
   xml.first_name   @user.person.first_name
   xml.last_name    @user.person.last_name
-  xml.email        @user.person.primary_email
+  xml.email        @user.recovery_email
   xml.plan_id      '2' # TODO hardcoded for now - but we need to get it for real
   xml.quota do
     xml.users do

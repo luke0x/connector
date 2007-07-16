@@ -107,25 +107,25 @@ class CorelApiControllerTest < Test::Unit::TestCase
 
   def test_reset_password_good
     pw = users(:ian).plaintext_password
-    post :reset_password, :username => users(:ian).username, :password => users(:ian).plaintext_password
+    post :reset_password, :username => users(:ian).username, :email => users(:ian).recovery_email
     
     assert_response :success
     assert_not_equal pw, users(:ian).reload.plaintext_password
   end
   
-  def test_reset_password_bad_password
-    post :reset_password, :username => users(:ian).username, :password => 'blahblahsdfa'    
+  def test_reset_password_bad_email
+    post :reset_password, :username => users(:ian).username, :email => 'foo@bar.com'
     assert_response 401
   end
   
   def test_reset_password_bad_domain
     @request.host = domains(:textdrive).web_domain
-    post :reset_password, :username => users(:ian).username, :password => 'blahblahsdfa'
+    post :reset_password, :username => users(:ian).username, :email => users(:ian).recovery_email
     assert_response 401
   end
   
-  def test_reset_password_bad_user_id_org_id_combo
-    post :reset_password, :username => users(:ian).username, :password => 'blahblahsdfa'
+  def test_reset_password_bad_username
+    post :reset_password, :username => 'foobar', :email => users(:ian).recovery_email
     assert_response 401    
   end
 
