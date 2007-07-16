@@ -18,4 +18,4 @@
   <%= link_to_remote "&nbsp;", {:update => id, :url => mail_quick_contact_url(:name => address.respond_to?(:name) ? address.name : '' , :email => address_string(address, true))}, 
                                {:title => _("Create new contact."), :class => 'typeAddContactNoLabel'} %>				
 <% end -%>
-<%= link_to(address_string(address), mail_compose_url(:to => address_string(address))) %>
+<%= link_to(address_string(address), mail_compose_url(:to => compose_string(address))) %>

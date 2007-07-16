@@ -22,6 +22,16 @@ module MailHelper
     end
   end                                        
   
+  def compose_string(address)
+    return address if address.is_a?(String)
+    return '' if address.nil?
+    if address.name.blank?
+      h(decode(address.address))
+    else
+      "#{h(decode(address.name))} <#{h(decode(address.address))}>"
+    end
+  end
+  
   def message_url(mailbox, message)
     case controller.action_name
     when 'notifications'
