@@ -14,6 +14,7 @@ class CorelApiController < ActionController::Base
       render :text => '16', :status => 400
       return
     end
+    @user.save
     render :text => ''
   end
   

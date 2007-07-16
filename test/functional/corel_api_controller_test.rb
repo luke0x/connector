@@ -136,7 +136,7 @@ class CorelApiControllerTest < Test::Unit::TestCase
     post :update_password, :username => users(:ian).username, :old_password => users(:ian).plaintext_password, :new_password => 'foobar'
     
     assert_response :success
-    assert_not_equal 'foobar', users(:ian).plaintext_password
+    assert_equal 'foobar', users(:ian).reload.plaintext_password
   end
   
   def test_update_password_bad_password
@@ -149,12 +149,7 @@ class CorelApiControllerTest < Test::Unit::TestCase
     post :update_password, :username => users(:ian).username, :old_password => 'blahblahsdfa', :new_password => 'foobar'
     assert_response 401
   end
-  
-  def test_update_password_bad_user_id_org_id_combo
-    post :update_password, :username => users(:ian).username, :old_password => 'blahblahsdfa', :new_password => 'foobar'
-    assert_response 401    
-  end
-  
+    
   def test_update_password_bad_new_password
     post :update_password, :username => users(:ian).username, :old_password => users(:ian).plaintext_password, :new_password => ''
     
