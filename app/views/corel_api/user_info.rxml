@@ -8,7 +8,7 @@ xml.userinfo do
     xml.recovery   @user.recovery_email
     xml.primary    @user.system_email
   end
-  xml.plan_id      '2' # TODO hardcoded for now - but we need to get it for real
+  xml.plan_id      'Free' # TODO hardcoded for now - but we need to get it for real
   xml.quota do
     xml.users do
       xml.max      @org.quota.users
