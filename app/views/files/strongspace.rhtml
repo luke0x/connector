@@ -43,7 +43,7 @@
 						<%= link_to number_to_human_size(file.size_in_bytes), files_strongspace_show_url(:owner_id => file.owner.id, :path => file.relative_path) %>
 					</td>
 					<td>
-						<%= link_to _("%{i18n_time}")%{:i18n_time =>"#{format_local_words_or_date(file.updated_at)}"}, files_strongspace_show_url(:owner_id => file.owner.id, :path => file.relative_path) %>
+						<%= link_to format_local_words_or_date(file.updated_at), files_strongspace_show_url(:owner_id => file.owner.id, :path => file.relative_path) %>
 					</td>
 					<td>
 						<%= link_to _(file.joyent_file_type.description), files_strongspace_show_url(:owner_id => file.owner.id, :path => file.relative_path) %>

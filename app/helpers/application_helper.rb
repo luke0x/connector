@@ -402,7 +402,7 @@ module ApplicationHelper
   # othwerwise it formats it like the OS X's Finder default-style
   def format_local_words_or_date(time)
     if localize_time(5.days.ago) < localize_time(time)
-      time_ago_in_words(time) << " ago"
+      _("%{i18n_time_in_words} ago") % {:i18n_time_in_words => time_ago_in_words(time)}
     else
       localize_time(time).strftime("%b %d, %Y, %I:%M %p")
     end

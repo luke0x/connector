@@ -51,7 +51,7 @@
 					  <%= link_to '<span style="color: grey;">' + h(bookmark.uri) + '</span>', bookmarks_show_url(:id => bookmark.id), {:class => "" } %>
 				  </td>
 					<td class="dateAdded">
-						<%= link_to _("%{i18n_time}")%{:i18n_time =>"#{format_local_words_or_date(bookmark.created_at)}"}, bookmarks_show_url(:id => bookmark.id) %>
+						<%= link_to format_local_words_or_date(bookmark.created_at), bookmarks_show_url(:id => bookmark.id) %>
 					</td>
     			<% if @smart_group or @group_name == "Others' Bookmarks" -%>
            	<td class="">

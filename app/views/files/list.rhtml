@@ -43,7 +43,7 @@
 						<%= link_to number_to_human_size(file.size_in_bytes), files_show_url(:id => file.id) %>
 					</td>
 					<td>
-						<%= link_to _("%{i18n_date}")%{:i18n_date =>"#{format_local_words_or_date(file.updated_at)}"}, files_show_url(:id => file.id) %>
+						<%= link_to format_local_words_or_date(file.updated_at), files_show_url(:id => file.id) %>
 					</td>
 					<td>
 						<%= link_to _(file.joyent_file_type.description), files_show_url(:id => file.id) %>
