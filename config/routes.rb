@@ -31,11 +31,21 @@ ActionController::Routing::Routes.draw do |map|
     m.bookmarks_home 'home/bookmarks'
     m.lists_home     'home/lists'
     m.lightning_home 'home/fileswpl'
+    m.wpl_home       'home/wpl'
   end
 
   map.with_options :controller => 'admin' do |m|
     m.heartbeat 'heartbeat', :action => 'heartbeat'
   end
+  
+  # Corel API
+  map.with_options(:controller => 'corel_api') do |m|
+    m.capi_set_language    'capi/set_language',    :action => 'set_language'
+    m.capi_user_info       'capi/userinfo',        :action => 'user_info'
+    m.capi_reset_password  'capi/reset_password',  :action => 'reset_password'
+    m.capi_update_password 'capi/update_password', :action => 'update_password'
+  end
+  
 
   map.with_options :controller => 'user' do |m|
     m.user_switch          'user/switch/:id',           :action => 'switch'
