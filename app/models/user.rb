@@ -134,9 +134,7 @@ class User < ActiveRecord::Base
   def auto_generate_password!
     new_password = generate_login_token[0,10]
     update_password(new_password, new_password)
-    save
-    
-    SystemMailer.deliver_generated_password(self)
+    SystemMailer.deliver_generated_password(self) if save
   end
   
   # identity
