@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   validates_presence_of     :password
   validates_format_of       :username, :with => /^[a-z]([_.]?[a-z0-9]+)*$/
   validates_length_of       :username, :maximum => 50
-  validates_length_of       :password, :minimum => 4, :maximum => 50
+  validates_length_of       :password, :minimum => 4
   validates_uniqueness_of   :username, :scope => 'organization_id'
   validates_uniqueness_of   :person_id
   validates_confirmation_of :password, :on => :create
