@@ -4,8 +4,8 @@ class CorelApiController < ActionController::Base
   before_filter :auth_user, :except => [:reset_password]
   
   def reset_password
-    @user.auto_generate_password!
     return fail_hard unless @user.recovery_email == params[:email]
+    @user.auto_generate_password!
     render :text => ''
   end
   
