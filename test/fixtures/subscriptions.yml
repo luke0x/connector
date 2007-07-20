@@ -67,3 +67,10 @@ ian_subscribes_to_non_existent_orgs_folder:
     subscribable_type: Folder
     organization_id: 3
     user_id: 1
+ian_subscribes_to_peters_contact_list:
+    id: 11
+    subscribable_id: 2
+    subscribable_type: ContactList
+    organization_id: 1
+    user_id: 1
+    

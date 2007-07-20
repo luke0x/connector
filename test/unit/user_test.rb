@@ -463,7 +463,7 @@ class UserTest < Test::Unit::TestCase
   
   def test_disconnect_other_user
     User.current = users(:ian)
-    assert_equal 7, User.current.subscriptions.count
+    assert_equal 8, User.current.subscriptions.count
     assert_equal 3, User.current.identity.users.length
     assert_equal 4, Identity.count
     other_user = users(:peter)
