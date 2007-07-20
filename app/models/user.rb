@@ -109,6 +109,7 @@ class User < ActiveRecord::Base
   def update_password(new_password, confirm_password)
     return false if new_password.blank?
     return false unless new_password == confirm_password
+    return false unless (4..50).include?(new_password.size)
 
     self.password = encrypt(new_password)
   end

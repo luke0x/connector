@@ -157,6 +157,13 @@ class CorelApiControllerTest < Test::Unit::TestCase
     assert_equal 16, @response.body.to_i
   end
 
+  def test_update_password_short_new_password
+    post :update_password, :username => users(:ian).username, :old_password => users(:ian).plaintext_password, :new_password => 'x'
+    
+    assert_response 400
+    assert_equal 16, @response.body.to_i
+  end
+
 
 
   
