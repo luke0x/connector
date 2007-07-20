@@ -137,7 +137,7 @@ class PersonTest < Test::Unit::TestCase
   def test_admin_can_create_user
     User.current = users(:ian)
     Organization.current = organizations(:joyent)
-    person_params = {'type' => 'user', 'username' => 'anewuser', 'password' => 'omg', 'password_confirmation' => 'omg', 'recovery_email' => 'a@b.com'}
+    person_params = {'type' => 'user', 'username' => 'anewuser', 'password' => 'pass', 'password_confirmation' => 'pass', 'recovery_email' => 'a@b.com'}
 
     assert User.current.admin?
     person = people(:stephen)
@@ -147,7 +147,7 @@ class PersonTest < Test::Unit::TestCase
   end
 
   def test_non_admin_cant_create_user
-    person_params = {:password => 'omg', :password_confirmation => 'omg', :username => 'anewuser'}
+    person_params = {:password => 'pass', :password_confirmation => 'pass', :username => 'anewuser'}
     User.current = users(:peter)
     Organization.current = organizations(:joyent)
     assert ! User.current.admin?

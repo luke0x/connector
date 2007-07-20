@@ -58,17 +58,18 @@ class UserTest < Test::Unit::TestCase
   end
   
   def test_password_format
-    @test_data['password'] = 'a' * 51
+    @test_data['password'] = 'aaa'
+    
     assert !User.new(@test_data).valid?
   end
   
   def test_username_unique_per_organization
     # Cannot add another user 'ian' to 'joyent'
     assert User.find(:first, :conditions => ["id = 1 AND organization_id = 1"])
-    assert !User.new(:person_id => 1, :organization_id => 1, :username => 'ian', :password => 'x', :identity_id => 999).valid?
+    assert !User.new(:person_id => 1, :organization_id => 1, :username => 'ian', :password => 'pass', :identity_id => 999).valid?
     
     # Can add user 'ian' to 'textdrive'
-    assert User.new(:person_id => 99999, :organization_id => 2, :username => 'ian', :password => 'x', :identity_id => 9999).valid?
+    assert User.new(:person_id => 99999, :organization_id => 2, :username => 'ian', :password => 'pass', :identity_id => 9999).valid?
   end
   
   def test_password_encrypted_on_create
@@ -82,9 +83,9 @@ class UserTest < Test::Unit::TestCase
   
   def test_update_password
     user = users(:ian)
-    user.update_password('new', 'new')
+    user.update_password('pass', 'pass')
     user.save
-    assert_equal 'new', user.plaintext_password
+    assert_equal 'pass', user.plaintext_password
   end
   
   def test_authenticate
