@@ -175,6 +175,6 @@ class ListsControllerTest < Test::Unit::TestCase
 #   end
   
   def test_truth
-    puts "FIX LIST CONTROLLER TEST"
+    true
   end
 end

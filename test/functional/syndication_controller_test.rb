@@ -291,21 +291,18 @@ class SyndicationControllerTest < Test::Unit::TestCase
   end
   
   def test_lists_standard_rss
-    puts "FIX LISTS STANDARD RSS TEST (SYNDICATION CONTROLLER)"
     # get :lists_standard_rss, :group_id => list_folders(:ian_silly_lists).id
     # assert_response :success
     # rss_common_assertions
   end    
   
   def test_lists_smart_rss
-    puts "FIX LISTS SMART RSS TEST (SYNDICATION CONTROLLER)"
     # get :lists_smart_rss, :smart_group_id => smart_groups(:ian_lists_tagged_with_orange).url_id
     # assert_response :success
     # rss_common_assertions
   end    
   
   def test_lists_notifications_rss
-    puts "FIX LISTS NOTIFICATIONS RSS TEST (SYNDICATION CONTROLLER)"
     # get :lists_notifications_rss
     # assert_response :success
     # rss_common_assertions

@@ -41,6 +41,6 @@ class ListRowsControllerTest < Test::Unit::TestCase
   # end
   
   def test_truth
-    puts "FIX LIST ROWS CONTROLLER TEST"
+    true
   end
 end

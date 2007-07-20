@@ -64,6 +64,6 @@ class ListCellsControllerTest < Test::Unit::TestCase
   # end
 
   def test_truth
-    puts "FIX LIST CELL CONTROLLER TEST"
+    true
   end
 end
