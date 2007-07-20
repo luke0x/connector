@@ -131,11 +131,12 @@ EOS
     l.list_rows.clear
     l.list_columns.clear
     l.send(:create_column_and_row)
+    l.reload
     
     assert_equal 1, l.list_rows.length
     assert_equal 1, l.list_columns.length
     assert_equal 1, l.list_rows.first.position
-    assert_equal 'Name', l.list_columns.first.name
+    assert_equal 'Text', l.list_columns.first.name
     assert_equal 'Text', l.list_columns.first.kind
   end
   
@@ -147,11 +148,12 @@ EOS
     assert_equal 0, l.list_rows.length
     assert_equal 0, l.list_columns.length
     assert l.save
+    l.reload
 
     assert_equal 1, l.list_rows.length
     assert_equal 1, l.list_columns.length
     assert_equal 1, l.list_rows.first.position
-    assert_equal 'Name', l.list_columns.first.name
+    assert_equal 'Text', l.list_columns.first.name
     assert_equal 'Text', l.list_columns.first.kind
   end
   
