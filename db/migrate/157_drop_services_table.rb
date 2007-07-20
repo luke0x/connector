@@ -9,13 +9,14 @@ Report issues and contribute at http://dev.joyent.com/
 $Id$
 =end #(end)
 
-require File.dirname(__FILE__) + '/../test_helper'
+# Reversing migration 151 cause that table was never used.
+class DropServicesTable < ActiveRecord::Migration
+  def self.up
+    drop_table :services
+  end
 
-class ServiceTest < Test::Unit::TestCase
-  fixtures :services
-
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def self.down
+    create_table :services do |t|
+    end
   end
 end

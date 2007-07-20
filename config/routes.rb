@@ -10,8 +10,6 @@ $Id$
 =end #(end)
 
 ActionController::Routing::Routes.draw do |map|
-  map.resources :services
-
   map.with_options :controller => 'authenticate' do |m|
     m.login                 'login',                 :action => 'login'
     m.logout                'logout',                :action => 'logout'
