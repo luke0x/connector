@@ -67,8 +67,10 @@ class AuthenticatedController < ApplicationController
 
   # specify the home page for each app
   def home
-    request.env['REQUEST_PATH'].match(/home\/(.*)/)
-    app_name = $1
+    if request.env['REQUEST_PATH']
+      request.env['REQUEST_PATH'].match(/home\/(.*)/)
+      app_name = $1
+    end
 
     redirect_to case app_name
     when 'connect'   then reports_index_url
@@ -79,7 +81,7 @@ class AuthenticatedController < ApplicationController
     when 'bookmarks' then bookmarks_list_route_url(:bookmark_folder_id => User.current.bookmark_folder.id)
     when 'lists'     then lists_url(:group => User.current.lists_list_folder.id)
     when 'fileswpl'  then files_service_url(:service_name => 'lightning', :group_id => nil)
-    when 'wpl'  then files_service_url(:service_name => 'lightning', :group_id => nil)
+    when 'wpl'       then files_service_url(:service_name => 'lightning', :group_id => nil)
     else 
       reports_index_url
     end

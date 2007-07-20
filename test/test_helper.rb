@@ -47,7 +47,7 @@ class Test::Unit::TestCase
   self.use_instantiated_fixtures  = false
   
   
-  # DO NOT F WITH, THIS IS BLACK MAGIC
+  # DO NOT CHANGE, THIS IS BLACK MAGIC
   if method_defined?(:setup)
     alias_method :pre_mock_fixtures_setup, :setup
     define_method(:setup) do
@@ -86,7 +86,7 @@ class Test::Unit::TestCase
       end
     end
   end
-  # END DO NOT F WITH
+  # END DO NOT CHANGE
   
 
   # Add more helper methods to be used by all tests here...
