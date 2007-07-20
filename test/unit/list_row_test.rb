@@ -15,8 +15,8 @@ class ListRowTest < Test::Unit::TestCase
   fixtures all_fixtures
   include CRUDTest
   
-  crud_data 'list_id' => 1            
-  crud_required 'list_id'
+  crud_data 'list_id' => 1, 'depth_cache' => 1, 'position' => 2
+  crud_required 'list_id', 'depth_cache', 'position'
   
   def setup
     User.current = users(:ian)  
