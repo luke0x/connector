@@ -76,6 +76,13 @@ class MessageTest < Test::Unit::TestCase
   end
   
   def test_build_reply_stub
+    body_mock = flexmock('messagebody')
+    
+    message_mock = flexmock('message')
+    message_mock.should_receive(:message_body).with(1, false).once.returns('')
+    
+    flexstub(JoyentMaildir::Base).should_receive(:connection).once.returns(message_mock)
+    
     msg = messages(:first).build_reply_stub
     assert_equal ["Foo Bar <foo@bar.com>"], msg.to
     assert_equal "Re: a subject", msg.subject
