@@ -12,10 +12,9 @@
 		<thead>
   		<tr id="listHeaderColumns">
   			<th class="listDinger" style="width: <%= (list.depth + 2) * 12 %>px;" id="list_toggle_all">
-    			<%= link_to_function "", "" %>
   			</th>
   			<% list.list_columns_by_position.each do |list_column| -%>
-  				<th class="columnHeaderValue <%= "secondlastCol" if list.list_columns_by_position.last == list_column %>" id="<%= list_column.dom_id -%>" style="<%= list_column_style(list_column) %> text-align: left;" columndomid="<%= list_column.dom_id %>">
+  				<th class="columnHeaderValue <%= "secondlastCol" if list.list_columns_by_position.last == list_column %>" id="<%= list_column.dom_id -%>" style="<%= list_column_style(list_column) %> text-align: left;">
     				<%= list_column.name -%>
   				</th>
 				<% end -%>
