@@ -24,3 +24,21 @@ list2:
   name: List of Stuff that Might Be Done
   created_at: <%= 15.days.ago.to_s :db %>
   updated_at: <%= 3.days.ago.to_s :db %>
+
+list3:
+  id: 3
+  organization_id: 1
+  user_id: 1
+  list_folder_id: 1
+  name: Collapsed list
+  created_at: <%= 15.days.ago.to_s :db %>
+  updated_at: <%= 3.days.ago.to_s :db %>
+
+list4:
+  id: 4
+  organization_id: 1
+  user_id: 1
+  list_folder_id: 1
+  name: expanded list
+  created_at: <%= 15.days.ago.to_s :db %>
+  updated_at: <%= 3.days.ago.to_s :db %>
