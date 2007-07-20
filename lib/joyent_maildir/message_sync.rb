@@ -9,7 +9,6 @@ Report issues and contribute at http://dev.joyent.com/
 $Id$
 =end #(end)
 
-require 'uuid'
 require 'fileutils'
 require File.dirname(__FILE__) + '/mail_parser'
 
