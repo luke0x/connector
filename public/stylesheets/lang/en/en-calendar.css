@@ -7,6 +7,12 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
+/* App Bar ----------------------------------------------------- */
+
+	#calendar .dockCalendar a {
+		width: 122px;
+		}
+
 /* Toolbar (actions) ------------------------------------------- */
 
 	.actionMonthView a {

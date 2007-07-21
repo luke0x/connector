@@ -357,7 +357,7 @@ table.tableList tr td {
 	}
 	
 
-/* Dock (ui 2.0) ----------------------------------------------------------------- */
+/* Dock (ui 2.0) --------------------------------------------------- */
 
 
 	#Dock {
@@ -388,120 +388,41 @@ table.tableList tr td {
 		width: 40px;
 		height: 38px;
 		text-indent: -3000px;
-		background-image: url(/images/lang/en/apps.png);
 		background-repeat: no-repeat;
 		}
 		
-	.dockConnect a { 
-		background-position: 0 -76px;
-		}
-	.dockConnect a:hover { 
-		background-position: 0 -114px;
-		}
-	#connect .dockConnect a {	
+	/* This stuff will be moved
+	to a new set of app specific
+	CSS files, that persist across
+	all apps */	
+	#connect .dockConnect a,
+	#mail .dockMail a,
+	#calendar .dockCalendar a,
+	#people .dockPeople a,
+	#files .dockFiles a,
+	#bookmarks .dockBookmarks a,
+	#lists .dockLists a {	
 		background-position: 0 0px;
 		}
-	#connect .dockConnect a:hover {	
+	#connect .dockConnect a:hover,
+	#mail .dockMail a:hover,
+	#calendar .dockCalendar a:hover,
+	#people .dockPeople a:hover,
+	#files .dockFiles a:hover,
+	#bookmarks .dockBookmarks a:hover,
+	#lists .dockLists a:hover {	
 		background-position: 0 -38px;
 		}
-	.dockConnect a.disabled { 
+	/* end stuff */
+	
+	#Dock li a { 
+		background-position: 0 -76px;
+		}
+	#Dock li a:hover { 
+		background-position: 0 -114px;
+		}
+	#Dock li a.disabled { 
 		background-position: 0 -152px;
-		}
-		
-	.dockMail a { 
-		background-position: -200px -76px;
-		}
-	.dockMail a:hover { 
-		background-position: -200px -114px;
-		}
-	#mail .dockMail a {	
-		background-position: -200px 0px;
-		}
-	#mail .dockMail a:hover {	
-		background-position: -200px -38px;
-		}
-	.dockMail a.disabled { 
-		background-position: -200px -152px;
-		}
-		
-	.dockCalendar a { 
-		background-position: -400px -76px;
-		}
-	.dockCalendar a:hover { 
-		background-position: -400px -114px;
-		}
-	#calendar .dockCalendar a {	
-		background-position: -400px 0px;
-		}
-	#calendar .dockCalendar a:hover {	
-		background-position: -400px -38px;
-		}
-	.dockCalendar a.disabled { 
-		background-position: -400px -152px;
-		}
-		
-	.dockPeople a { 
-		background-position: -600px -76px;
-		}
-	.dockPeople a:hover { 
-		background-position: -600px -114px;
-		}
-	#people .dockPeople a {	
-		background-position: -600px 0px;
-		}
-	#people .dockPeople a:hover {	
-		background-position: -600px -38px;
-		}
-	.dockPeople a.disabled { 
-		background-position: -600px -152px;
-		}
-		
-	.dockFiles a { 
-		background-position: -800px -76px;
-		}
-	.dockFiles a:hover { 
-		background-position: -800px -114px;
-		}
-	#files .dockFiles a {	
-		background-position: -800px 0px;
-		}
-	#files .dockFiles a:hover {	
-		background-position: -800px -38px;
-		}
-	.dockFiles a.disabled { 
-		background-position: -800px -152px;
-		}
-		
-	.dockBookmarks a { 
-		background-position: -1000px -76px;
-		}
-	.dockBookmarks a:hover { 
-		background-position: -1000px -114px;
-		}
-	#bookmarks .dockBookmarks a {	
-		background-position: -1000px 0px;
-		}
-	#bookmarks .dockBookmarks a:hover {	
-		background-position: -1000px -38px;
-		}
-	.dockBookmarks a.disabled { 
-		background-position: -1000px -152px;
-		}
-
-	.dockLists a { 
-		background-position: -1400px -76px;
-		}
-	.dockLists a:hover { 
-		background-position: -1400px -114px;
-		}
-	#lists .dockLists a {	
-		background-position: -1400px 0px;
-		}
-	#lists .dockLists a:hover {	
-		background-position: -1400px -38px;
-		}
-	.dockLists a.disabled { 
-		background-position: -1400px -152px;
 		}
 		
 	.appLabel {

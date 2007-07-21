@@ -7,6 +7,12 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
+/* Dock -------------------------------------------------------------- */
+
+	#connect .dockConnect a {	
+		width: 115px;
+		}
+
 /* Toolbar (actions) ------------------------------------------- */
 
 	.actionRefreshAll a {	

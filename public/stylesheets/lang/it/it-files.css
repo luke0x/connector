@@ -7,6 +7,12 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
+/* Dock -------------------------------------------------------------- */
+
+	#files .dockFiles a {	
+		width: 86px;
+		}
+
 /* Toolbar (actions) ------------------------------------------- */
 
 	.actionEmail a {	

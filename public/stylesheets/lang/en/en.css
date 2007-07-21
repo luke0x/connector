@@ -7,35 +7,37 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
-/* Dock ----------------------------------------------------------------- */
+/* Dock -------------------------------------------------------------- */
+	
+	/* This stuff will be moved
+	to a new set of app specific
+	CSS files, that persist across
+	all apps */	
+	.dockConnect a {	
+		background-image: url(/images/lang/en/app-connect.png);
+		}
+	.dockMail a {	
+		background-image: url(/images/lang/en/app-mail.png);
+		}
+	.dockCalendar a {		
+		background-image: url(/images/lang/en/app-calendar.png);
+		}
+	.dockPeople a {	
+		background-image: url(/images/lang/en/app-people.png);
+		}
+	.dockFiles a {	
+		background-image: url(/images/lang/en/app-files.png);
+		}
+	.dockBookmarks a {	
+		background-image: url(/images/lang/en/app-bookmarks.png);
+		}
+	.dockLists a {	
+		background-image: url(/images/lang/en/app-lists.png);
+		}
+	/* end stuff */
 
-	#Dock li a{
-		background-image: url(/images/lang/en/apps.png);
-		}
-	#connect .dockConnect a {	
-		width: 115px;
-		}
-	#mail .dockMail a {	
-		width: 85px;
-		}
-	#calendar .dockCalendar a {	
-		width: 122px;
-		}
-	#people .dockPeople a {	
-		width: 102px;
-		}
-	#files .dockFiles a {	
-		width: 86px;
-		}
-	#bookmarks .dockBookmarks a {	
-		width: 139px;
-		}
-	#lists .dockLists a {	
-		width: 82px;
-		}
 
-
-/* Sidebar Tabs ----------------------------------------------------------------- */
+/* Sidebar Tabs ------------------------------------------------------ */
 
 
 	.sidebarTab a {
@@ -58,7 +60,7 @@ $Id$ */
 		}	
 
 
-/* General Toolbar (actions) -------------------------------------------- */
+/* General Toolbar (actions) ----------------------------------------- */
 
 	.actionMove a {	
 		width: 66px !important;

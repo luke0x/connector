@@ -7,6 +7,16 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
+/* App Bar ----------------------------------------------------- */
+
+	#mail .dockMail a {	
+		background-position: 0 0px;
+		width: 85px;
+		}
+	#mail .dockMail a:hover {	
+		background-position: 0 -38px;
+		}
+
 /* Toolbar (actions) ------------------------------------------- */
 
 	.actionCompose a {	

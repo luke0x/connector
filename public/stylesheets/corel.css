@@ -7,26 +7,14 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
-/* Login  ----------------------------------------------------------------- */
+/* Login  ------------------------------------------------------------- */
 
 	#Login #contentPane {
 		background-image: url(/images/bg/loginBGCorel.png) !important;
 	}
 
-/* Dock  ----------------------------------------------------------------- */
-		
-	.dockConnect a { 
-		background-position: -1200px -76px !important;
-		}
-	.dockConnect a:hover { 
-		background-position: -1200px -114px !important;
-		}
-	#connect .dockConnect a {	
-		background-position: -1200px 0px !important;
-		}
-	#connect .dockConnect a:hover {	
-		background-position: -1200px -38px !important;
-		}
-	.dockConnect a.disabled { 
-		background-position: -1200px -152px !important;
+/* Dock  ------------------------------------------------------------- */
+			
+	.dockConnect a {	
+		background-image: url(/images/lang/en/app-connect-corel.png) !important;
 		}

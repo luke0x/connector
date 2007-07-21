@@ -7,6 +7,12 @@ Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
 
+/* Dock -------------------------------------------------------------- */
+
+	#people .dockPeople a {	
+		width: 112px;
+		}
+
 /* Toolbar (actions) ------------------------------------------- */
 
 	.actionJajah a {	

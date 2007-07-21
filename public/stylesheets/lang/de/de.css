@@ -9,30 +9,32 @@ $Id$ */
 
 /* Dock ----------------------------------------------------------------- */
 
-	#Dock li a{
-		background-image: url(/images/lang/de/apps.png);
+	/* This stuff will be moved
+	to a new set of app specific
+	CSS files, that persist across
+	all apps */	
+	.dockConnect a {	
+		background-image: url(/images/lang/de/app-connect.png);
 		}
-	#connect .dockConnect a {	
-		width: 115px;
+	.dockMail a {	
+		background-image: url(/images/lang/de/app-mail.png);
 		}
-	#mail .dockMail a {	
-		width: 100px;
+	.dockCalendar a {		
+		background-image: url(/images/lang/de/app-calendar.png);
 		}
-	#calendar .dockCalendar a {	
-		width: 122px;
+	.dockPeople a {	
+		background-image: url(/images/lang/de/app-people.png);
 		}
-	#people .dockPeople a {	
-		width: 128px;
+	.dockFiles a {	
+		background-image: url(/images/lang/de/app-files.png);
 		}
-	#files .dockFiles a {	
-		width: 110px;
+	.dockBookmarks a {	
+		background-image: url(/images/lang/de/app-bookmarks.png);
 		}
-	#bookmarks .dockBookmarks a {	
-		width: 145px;
+	.dockLists a {	
+		background-image: url(/images/lang/de/app-lists.png);
 		}
-	#lists .dockLists a {	
-		width: 92px;
-		}
+	/* end stuff */
 
 
 /* Sidebar Tabs ----------------------------------------------------------------- */

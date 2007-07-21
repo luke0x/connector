@@ -6,6 +6,12 @@ by either the GPLv2 or Joyent Commercial Software licenses.
 Report issues and contribute at http://dev.joyent.com/
 
 $Id$ */
+	
+/* App Bar ----------------------------------------------------- */
+
+	#files .dockFiles a {	
+		width: 86px;
+		}
 
 /* Toolbar (actions) ------------------------------------------- */
 
