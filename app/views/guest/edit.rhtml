@@ -46,6 +46,7 @@
           <td colspan="2">
       			<% # languages strings should be in their native language -%>
             <% languages = [['English', 'en'], ['Español', 'es'], ['Deutsch','de'], ['Italiano','it']] -%>
+						<% languages << ['Nederlands','nl'] if (request.env['SERVER_NAME'] == 'joyent.joyent.com' || request.env['SERVER_NAME'] == 'connector.joyent.com' || request.env['SERVER_NAME'] == 'i18n.joyent.net')  -%>
             <% language_options = options_for_select(languages, (@person.user ? @person.user.language : nil)) -%>
             <%= select_tag_with_id "person[language]", language_options, {:id => "person_language"} %>
             <div class="infoGroupInputLabel"><%= _('language') %></div>

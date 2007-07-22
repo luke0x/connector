@@ -1,0 +1,41 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* App Bar ----------------------------------------------------- */
+
+	#calendar .dockCalendar a {
+		width: 122px;
+		}
+
+/* Toolbar (actions) ------------------------------------------- */
+
+	.actionMonthView a {
+		width: 96px !important;
+		background-image: url(/images/lang/nl/actionsCalendar.png);
+		}
+	.actionListView a {
+		width: 78px !important;
+		background-image: url(/images/lang/nl/actionsCalendar.png);
+		}
+	.actionDayView a {
+		width: 78px !important;
+		background-image: url(/images/lang/nl/actionsCalendar.png);
+		}
+	.actionWeekView a {
+		width: 86px !important;
+		background-image: url(/images/lang/nl/actionsCalendar.png);
+		}
+	.actionOverlayUser a {
+		width: 106px !important;
+		background-image: url(/images/lang/nl/actionsCalendar.png);
+		}
+	.actionToday a {
+		width: 66px !important;
+		background-image: url(/images/lang/nl/actionsCalendar.png);
+		}

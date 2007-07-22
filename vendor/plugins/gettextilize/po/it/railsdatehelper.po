@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rails Date Helper Gettextilize 1.0\n"
-"POT-Creation-Date: 2007-06-12 15:21+0200\n"
+"POT-Creation-Date: 2007-07-19 19:32+0200\n"
 "PO-Revision-Date: 2007-43-24 14:43+0000\n"
 "Last-Translator:  Federico Caiazzo <neko@numerozero.com>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"

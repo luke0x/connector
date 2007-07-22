@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Date Time Gettextilize 1.0\n"
-"POT-Creation-Date: 2007-06-12 15:21+0200\n"
+"POT-Creation-Date: 2007-07-19 19:32+0200\n"
 "PO-Revision-Date: 2007-05-31 23:30+0200\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"

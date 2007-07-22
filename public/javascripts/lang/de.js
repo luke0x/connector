@@ -1,12 +1,3 @@
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
-
 JoyentL10n = {
 "can't change":'kann nicht verändern',
 "doesn't have access, ":'hat keinen Zugriff, ',

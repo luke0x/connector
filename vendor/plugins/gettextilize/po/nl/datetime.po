@@ -1,0 +1,169 @@
+# Date Time Gettextilize 0.0.1
+# Copyright (C) 2007
+# This file is distributed under the same license as the Date Time Gettextilize 0.0.1 package.
+#  <>, 2007.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Date Time Gettextilize 1.0\n"
+"POT-Creation-Date: 2007-07-19 19:32+0200\n"
+"PO-Revision-Date: 2007-09-17 15:09+0000\n"
+"Last-Translator:  <>\n"
+"Language-Team: nl <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: lib/date_time.rb:47
+msgid "January"
+msgstr "januari"
+
+#: lib/date_time.rb:47
+msgid "February"
+msgstr "februari"
+
+#: lib/date_time.rb:48
+msgid "March"
+msgstr "maart"
+
+#: lib/date_time.rb:48
+msgid "April"
+msgstr "april"
+
+#: lib/date_time.rb:48
+msgid "May"
+msgstr "mei"
+
+#: lib/date_time.rb:49
+msgid "June"
+msgstr "juni"
+
+#: lib/date_time.rb:49
+msgid "July"
+msgstr "juli"
+
+#: lib/date_time.rb:49
+msgid "August"
+msgstr "augustus"
+
+#: lib/date_time.rb:50
+msgid "September"
+msgstr "september"
+
+#: lib/date_time.rb:50
+msgid "October"
+msgstr "oktober"
+
+#: lib/date_time.rb:51
+msgid "November"
+msgstr "november"
+
+#: lib/date_time.rb:51
+msgid "December"
+msgstr "december"
+
+#: lib/date_time.rb:55
+msgid "Sunday"
+msgstr "zondag"
+
+#: lib/date_time.rb:55
+msgid "Monday"
+msgstr "maandag"
+
+#: lib/date_time.rb:56
+msgid "Tuesday"
+msgstr "dinsdag"
+
+#: lib/date_time.rb:56
+msgid "Wednesday"
+msgstr "woensdag"
+
+#: lib/date_time.rb:57
+msgid "Thursday"
+msgstr "donderdag"
+
+#: lib/date_time.rb:57
+msgid "Friday"
+msgstr "vrijdag"
+
+#: lib/date_time.rb:58
+msgid "Saturday"
+msgstr "zaterdag"
+
+#: lib/date_time.rb:61
+msgid "Abbreviation|Jan"
+msgstr "jan"
+
+#: lib/date_time.rb:61
+msgid "Abbreviation|Feb"
+msgstr "feb"
+
+#: lib/date_time.rb:61
+msgid "Abbreviation|Mar"
+msgstr "mrt"
+
+#: lib/date_time.rb:62
+msgid "Abbreviation|Apr"
+msgstr "apr"
+
+#: lib/date_time.rb:62
+msgid "Abbreviation|May"
+msgstr "mei"
+
+#: lib/date_time.rb:62
+msgid "Abbreviation|Jun"
+msgstr "jun"
+
+#: lib/date_time.rb:63
+msgid "Abbreviation|Jul"
+msgstr "jul"
+
+#: lib/date_time.rb:63
+msgid "Abbreviation|Aug"
+msgstr "aug"
+
+#: lib/date_time.rb:63
+msgid "Abbreviation|Sep"
+msgstr "sep"
+
+#: lib/date_time.rb:64
+msgid "Abbreviation|Oct"
+msgstr "okt"
+
+#: lib/date_time.rb:64
+msgid "Abbreviation|Nov"
+msgstr "nov"
+
+#: lib/date_time.rb:64
+msgid "Abbreviation|Dec"
+msgstr "dec"
+
+#: lib/date_time.rb:67
+msgid "Sun"
+msgstr "zo"
+
+#: lib/date_time.rb:67
+msgid "Mon"
+msgstr "ma"
+
+#: lib/date_time.rb:67
+msgid "Tue"
+msgstr "di"
+
+#: lib/date_time.rb:68
+msgid "Wed"
+msgstr "woe"
+
+#: lib/date_time.rb:68
+msgid "Thu"
+msgstr "do"
+
+#: lib/date_time.rb:68
+msgid "Fri"
+msgstr "vrij"
+
+#: lib/date_time.rb:69
+msgid "Sat"
+msgstr "za"

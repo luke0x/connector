@@ -35,7 +35,7 @@ class Date #:nodoc:
   # Provides localization for Date and Months names and abbreviations
   def self.translate_strings
     # prevent usage for locales not present
-    GetText.locale = 'en' unless GetText.locale && ['en','es','de','fr','it'].include?(GetText.locale.language)
+    GetText.locale = 'en' unless GetText.locale && ['en','es','de','fr','it','nl'].include?(GetText.locale.language)
     GetText.bindtextdomain('datetime', File.expand_path(File.join(File.dirname(__FILE__), "../data/locale/")))
     textdomain('datetime')
         

@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
   
   @@aes_salt = JoyentConfig.user_aes_salt
   @@current = nil
-  @@valid_languages = ['en', 'es', 'de','it']
+  @@valid_languages = ['en', 'es', 'de', 'it', 'nl']
 
   # login/password related
 

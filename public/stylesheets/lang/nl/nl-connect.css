@@ -1,0 +1,29 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* App Bar ----------------------------------------------------- */
+
+	#connect .dockConnect a {	
+		width: 115px;
+		}
+
+/* Toolbar (actions) ------------------------------------------- */
+
+	.actionRefreshAll a {	
+		width: 108px !important;
+		background-image: url(/images/lang/nl/actionsConnect.png);
+		}
+	.actionCollapseAll a {	
+		width: 94px !important;
+		background-image: url(/images/lang/nl/actionsConnect.png);
+		}
+	.actionExpandAll a, .actionShowNew a {	
+		width: 94px !important;
+		background-image: url(/images/lang/nl/actionsConnect.png);
+		}

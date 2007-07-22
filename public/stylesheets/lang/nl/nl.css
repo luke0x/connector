@@ -1,0 +1,108 @@
+/* Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is governed
+by either the GPLv2 or Joyent Commercial Software licenses.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$ */
+
+/* Dock -------------------------------------------------------------- */
+	
+	/* This stuff will be moved
+	to a new set of app specific
+	CSS files, that persist across
+	all apps */	
+	.dockConnect a {	
+		background-image: url(/images/lang/nl/app-connect.png);
+		}
+	.dockMail a {	
+		background-image: url(/images/lang/nl/app-mail.png);
+		}
+	.dockCalendar a {		
+		background-image: url(/images/lang/nl/app-calendar.png);
+		}
+	.dockPeople a {	
+		background-image: url(/images/lang/nl/app-people.png);
+		}
+	.dockFiles a {	
+		background-image: url(/images/lang/nl/app-files.png);
+		}
+	.dockBookmarks a {	
+		background-image: url(/images/lang/nl/app-bookmarks.png);
+		}
+	.dockLists a {	
+		background-image: url(/images/lang/nl/app-lists.png);
+		}
+	/* end stuff */
+
+
+/* Sidebar Tabs ------------------------------------------------------ */
+
+
+	.sidebarTab a {
+		background-image: url(/images/lang/nl/tabs.png);
+		}
+	#groupsSidebarTab a {
+		height: 83px;
+		}	
+	#rulesSidebarTab a {
+		height: 86px;
+		}	
+	#tagsSidebarTab a {
+		height: 80px;
+		}	
+	#accessSidebarTab a {
+		height: 82px;
+		}	
+	#notifySidebarTab a {
+		height: 87px;
+		}
+
+
+/* General Toolbar (actions) ----------------------------------------- */
+
+	.actionMove a {	
+		width: 100px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionCopy a {	
+		width: 84px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionCopyDirect a {	
+		width: 84px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionNew a {	
+		width: 64px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionImport a {
+		width: 96px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionShowAll a {
+		width: 77px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionShowNew a {
+		width: 86px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionDelete a {	
+		width: 94px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionSaveSearch a {	
+		width: 143px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionTools a {	
+		width: 104px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
+	.actionEdit a {	
+		width: 50px !important;
+		background-image: url(/images/lang/nl/actionsGeneral.png);
+		}
