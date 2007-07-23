@@ -1,16 +1,16 @@
-# Joyent Connector Spanish Localization.
-# Copyright (C) 2006-2007 Joyent Inc.
-# This file is distributed under the same license as the Joyent's Connector package.
-# Pedro José Palazón Candel <pedro@joyent.com>, 2007.
+# Date Time Gettextilize 0.0.1
+# Copyright (C) 2007
+# This file is distributed under the same license as the Date Time Gettextilize 0.0.1 package.
+#  <>, 2007.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Date Time Gettextilize 1.0\n"
-"POT-Creation-Date: 2007-07-19 19:32+0200\n"
-"PO-Revision-Date: 2006-06-27 19:41+0200\n"
-"Last-Translator: Pedro José Palazón Candel <pedro@joyent.com>\n"
-"Language-Team: Joyent i18n <pedro@joyent.com>\n"
+"POT-Creation-Date: 2007-07-23 16:19+0200\n"
+"PO-Revision-Date: 2007-39-14 16:39+0000\n"
+"Last-Translator:  <>\n"
+"Language-Team: fr <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr "Janvier"
 
 #: lib/date_time.rb:47
 msgid "February"
-msgstr "Fevrier"
+msgstr "Février"
 
 #: lib/date_time.rb:48
 msgid "March"
@@ -46,7 +46,7 @@ msgstr "Juillet"
 
 #: lib/date_time.rb:49
 msgid "August"
-msgstr "Aout"
+msgstr "Août"
 
 #: lib/date_time.rb:50
 msgid "September"
@@ -62,7 +62,7 @@ msgstr "Novembre"
 
 #: lib/date_time.rb:51
 msgid "December"
-msgstr "Decembre"
+msgstr "Décembre"
 
 #: lib/date_time.rb:55
 msgid "Sunday"
@@ -98,7 +98,7 @@ msgstr "Jan"
 
 #: lib/date_time.rb:61
 msgid "Abbreviation|Feb"
-msgstr "Fev"
+msgstr "Fév"
 
 #: lib/date_time.rb:61
 msgid "Abbreviation|Mar"
@@ -122,7 +122,7 @@ msgstr "Juil"
 
 #: lib/date_time.rb:63
 msgid "Abbreviation|Aug"
-msgstr "Aou"
+msgstr "Aoû"
 
 #: lib/date_time.rb:63
 msgid "Abbreviation|Sep"
@@ -138,7 +138,7 @@ msgstr "Nov"
 
 #: lib/date_time.rb:64
 msgid "Abbreviation|Dec"
-msgstr "Dec"
+msgstr "Déc"
 
 #: lib/date_time.rb:67
 msgid "Sun"

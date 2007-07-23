@@ -1,16 +1,16 @@
-# Joyent Connector Spanish Localization.
-# Copyright (C) 2006-2007 Joyent Inc.
-# This file is distributed under the same license as the Joyent's Connector package.
-# Pedro Palazón <pedro@joyent.com>, 2006-2007.
+# Rails Date Helper Gettextilize 0.0.1
+# Copyright (C) 2007
+# This file is distributed under the same license as the Rails Date Helper Gettextilize 0.0.1 package.
+#  <>, 2007.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Rails Date Helper Gettextilize 1.0\n"
 "POT-Creation-Date: 2007-07-23 16:19+0200\n"
-"PO-Revision-Date: 2006-06-28 15:54+0200\n"
-"Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
-"Language-Team: Joyent i18n <pedro@joyent.com>\n"
+"PO-Revision-Date: 2007-40-14 16:40+0000\n"
+"Last-Translator:  <>\n"
+"Language-Team: fr <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,60 +18,60 @@ msgstr ""
 
 #: lib/date_helper.rb:30 lib/date_helper.rb:36
 msgid "less than a minute"
-msgstr "menos de un minuto"
+msgstr "moins d’une minute"
 
 #: lib/date_helper.rb:30 lib/date_helper.rb:37
 msgid "1 minute"
-msgstr "1 minuto"
+msgstr "1 minute"
 
 #: lib/date_helper.rb:32
 msgid "less than 5 seconds"
-msgstr "menos de 5 segundos"
+msgstr "moins de 5 secondes"
 
 #: lib/date_helper.rb:33
 msgid "less than 10 seconds"
-msgstr "menos de 10 segundos"
+msgstr "moins de 10 secondes"
 
 #: lib/date_helper.rb:34
 msgid "less than 20 seconds"
-msgstr "menos de 20 segundos"
+msgstr "moins de 20 secondes"
 
 #: lib/date_helper.rb:35
 msgid "half a minute"
-msgstr "medio minuto"
+msgstr "30 secondes"
 
 #: lib/date_helper.rb:40
 msgid "%s minutes"
-msgstr "%s minutos"
+msgstr "%s minutes"
 
 #: lib/date_helper.rb:41
 msgid "about 1 hour"
-msgstr "sobre 1 hora"
+msgstr "à peu près une heure"
 
 #: lib/date_helper.rb:42
 msgid "about %s hours"
-msgstr "sobre %s horas"
+msgstr "environ %s heures"
 
 #: lib/date_helper.rb:43
 msgid "1 day"
-msgstr "1 día"
+msgstr "une journée"
 
 #: lib/date_helper.rb:44
 msgid "%s days"
-msgstr "%s días"
+msgstr "%s jours"
 
 #: lib/date_helper.rb:45
 msgid "about 1 month"
-msgstr "sobre un mes"
+msgstr "à peu près une mois"
 
 #: lib/date_helper.rb:46
 msgid "%s months"
-msgstr "%s meses"
+msgstr "%s mois"
 
 #: lib/date_helper.rb:47
 msgid "about 1 year"
-msgstr "sobre un año"
+msgstr "à peu près une année"
 
 #: lib/date_helper.rb:48
 msgid "over %s years"
-msgstr "sobre %s años"
+msgstr "environ %s années"
