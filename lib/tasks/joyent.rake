@@ -48,6 +48,7 @@ namespace 'joyent' do
     sh %{cat #{RAILS_ROOT}/config/openldap/joyent.ldif | ldapadd -c -D #{JoyentConfig.admin_dn} -w #{JoyentConfig.ldap_password}}
   end 
   
+  desc "build the gmime based mime parser"
   task :gmime do
     puts "Building gmime filter"
     sh "cd vendor/mime_filter/gmime && PATH=$PATH:/opt/joyent/applications/bin PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/joyent/applications/lib/pkgconfig make"
