@@ -64,14 +64,7 @@ end
 
 ActionMailer::Base.delivery_method= :smtp
 
-config.action_mailer.server_settings = {
-  :address => '1.2.3.4',
-  :port    => 25,
-  :domain  => 'domain',
-  :authentication => :login,
-  :user_name => 'username',
-  :password => 'password'
-  }
+config.action_mailer.server_settings = JoyentConfig.mailer_server_settings
 
 # as per http://mongrel.rubyforge.org/faq.html to deal with bug in the MySQL driver
 ActiveRecord::Base.verification_timeout = 14400 # mysql server set to 28800

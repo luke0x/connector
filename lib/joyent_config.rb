@@ -93,6 +93,14 @@ class JoyentConfig
   
   config_value :login_token_new_salt, "another salt"
   
+  # ActionMailer
+  config_value :mailer_server_settings, {:address        => '1.2.3.4',
+                                         :port           => 25,
+                                         :domain         => 'domain',
+                                         :authentication => :login,
+                                         :user_name      => 'username',
+                                         :password       => 'password' }
+  
   # Exception mailer
   config_value :exception_recipients,   ['user1@example.com', 'user2@example.com']
   config_value :exception_email_prefix, "[ERROR-TEST] "
