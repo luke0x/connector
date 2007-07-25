@@ -10,6 +10,7 @@ $Id$
 =end #(end)
 
 # Be sure to restart your web server when you modify this file.
+ENV['TZ'] = 'UTC'
 
 # Uncomment below to force Rails into production mode when 
 # you don't control web/app server and can't set it the proper way
@@ -86,7 +87,8 @@ require 'ezcrypto'
 require 'joyent_exceptions'
 require 'mockfs'
 
-ExceptionNotifier.exception_recipients = %w(user@domain.com, user2@domain.com)
+ExceptionNotifier.exception_recipients = JoyentConfig.exception_recipients
+ExceptionNotifier.email_prefix         = JoyentConfig.exception_email_prefix
 
 if File.exists? "#{RAILS_ROOT}/override_config.rb"
   require 'override_config'

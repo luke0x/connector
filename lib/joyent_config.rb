@@ -92,4 +92,8 @@ class JoyentConfig
   config_value :user_new_password_salt, "password salt"
   
   config_value :login_token_new_salt, "another salt"
+  
+  # Exception mailer
+  config_value :exception_recipients,   ['user1@example.com', 'user2@example.com']
+  config_value :exception_email_prefix, "[ERROR-TEST] "
 end
