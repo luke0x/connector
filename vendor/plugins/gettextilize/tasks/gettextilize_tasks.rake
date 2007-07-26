@@ -3,6 +3,12 @@
 #
 
 namespace :gettext do
+  # Freeze to GetText 1.9.0 until we can review some parser problems 
+  if Kernel.respond_to? :gem
+    gem 'gettext', '= 1.9.0'
+  else
+    require_gem 'gettext', '= 1.9.0'
+  end
   
   require 'gettext/utils'
   
@@ -17,7 +23,7 @@ namespace :gettext do
     Rake::Task['gettext:getjs'].invoke
     
     to_parse = Dir.glob("{app/controllers,app/helpers,app/views,lib}/**/*.{rb,rhtml,rxml}")
-    
+        
     # Add the models which need localization here:
     to_parse.push('app/models/list.rb', 'app/models/list_folder_observer.rb', 'app/models/smart_group.rb')
     

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-07-19 18:30+0200\n"
+"POT-Creation-Date: 2007-07-26 17:36+0200\n"
 "PO-Revision-Date: 2007-01-31 14:44+0000\n"
 "Last-Translator:  Federico Caiazzo <neko@numerozero.com>\n"
 "Language-Team: it <pedro@joyent.com>\n"
@@ -292,7 +292,7 @@ msgstr "Abbònati"
 #: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
 #: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
-#: app/views/guest/edit.rhtml:57 app/views/lists/_import.rhtml:17
+#: app/views/guest/edit.rhtml:58 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
 #: app/views/people/_call.rhtml:65
 #: app/views/people/confirm_user_delete.rhtml:40
@@ -515,7 +515,7 @@ msgstr "Sincronizza preferiti con del.icio.us"
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
 #: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
-#: app/views/guest/edit.rhtml:58 app/views/lists/_edit.rhtml:16
+#: app/views/guest/edit.rhtml:59 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:38
@@ -858,7 +858,7 @@ msgstr "anno"
 
 #: app/views/calendar/edit.rhtml:92
 msgid "This is an <strong>all-day</strong> event"
-msgstr "Tutto il giorno"
+msgstr "<strong>Tutto il giorno</strong>"
 
 #: app/views/calendar/edit.rhtml:100
 msgid "Start Time"
@@ -1135,8 +1135,8 @@ msgstr "indirizzo e-mail per recuperare la password"
 msgid "time zone"
 msgstr "fuso orario"
 
-#: app/views/guest/edit.rhtml:51 app/views/people/_edit_account_guest.rhtml:50
-#: app/views/people/_edit_account_user.rhtml:61
+#: app/views/guest/edit.rhtml:52 app/views/people/_edit_account_guest.rhtml:51
+#: app/views/people/_edit_account_user.rhtml:62
 msgid "language"
 msgstr "lingua"
 
@@ -1705,15 +1705,15 @@ msgstr ""
 msgid "Allow this guest to also create and delete files?"
 msgstr "Consenti all'ospite di creare ed eliminare file?"
 
-#: app/views/people/_edit_account_guest.rhtml:56
+#: app/views/people/_edit_account_guest.rhtml:57
 msgid "Reset Guest Password"
 msgstr "Azzera password ospite"
 
-#: app/views/people/_edit_account_guest.rhtml:59
+#: app/views/people/_edit_account_guest.rhtml:60
 msgid "email address"
 msgstr "Indirizzo email"
 
-#: app/views/people/_edit_account_guest.rhtml:60
+#: app/views/people/_edit_account_guest.rhtml:61
 msgid "Reset"
 msgstr "Azzera"
 
@@ -2624,7 +2624,7 @@ msgstr "Tag: %{i18n_group_name}"
 
 #: app/views/syndication/tag_rss.rxml:16
 msgid "Items tagged with: %{i18n_tag_name}"
-msgstr "Elementi segnati con tag: "
+msgstr "Elementi segnati con tag: %{i18n_tag_name}"
 
 #: lib/i18n_do_not_include.rb:20
 msgid "Mailboxes"

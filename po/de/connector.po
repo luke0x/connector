@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-07-19 18:30+0200\n"
+"POT-Creation-Date: 2007-07-26 17:36+0200\n"
 "PO-Revision-Date: 2007-05-31 23:32+0200\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -293,7 +293,7 @@ msgstr "Abonnieren"
 #: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
 #: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
-#: app/views/guest/edit.rhtml:57 app/views/lists/_import.rhtml:17
+#: app/views/guest/edit.rhtml:58 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
 #: app/views/people/_call.rhtml:65
 #: app/views/people/confirm_user_delete.rhtml:40
@@ -519,7 +519,7 @@ msgstr "Lesezeichen mit del.icio.us synchronisieren"
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
 #: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
-#: app/views/guest/edit.rhtml:58 app/views/lists/_edit.rhtml:16
+#: app/views/guest/edit.rhtml:59 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:38
@@ -711,8 +711,8 @@ msgid ""
 "You have <strong>%{i18n_accepted_declined}</strong> this invitation from "
 "<strong>%{i18n_inviter}</strong>."
 msgstr ""
-"Sie haben diese Einladung von <strong>%{i18n_inviter} %{i18n_inviter}</"
-"strong>."
+"Sie haben diese Einladung von <strong>%{i18n_accepted_declined} %"
+"{i18n_inviter}</strong>."
 
 #: app/views/calendar/_peek.rhtml:14 app/views/calendar/show.rhtml:24
 msgid "accepted"
@@ -1141,8 +1141,8 @@ msgstr "Email-Adresse für verlorenes Passwort"
 msgid "time zone"
 msgstr "Zeitzone"
 
-#: app/views/guest/edit.rhtml:51 app/views/people/_edit_account_guest.rhtml:50
-#: app/views/people/_edit_account_user.rhtml:61
+#: app/views/guest/edit.rhtml:52 app/views/people/_edit_account_guest.rhtml:51
+#: app/views/people/_edit_account_user.rhtml:62
 msgid "language"
 msgstr "Sprache"
 
@@ -1697,22 +1697,23 @@ msgid ""
 "joyent.com/login\">upgrade your plan</a>"
 msgstr ""
 "Sie haben die Höchstzahl der verfügbaren Nutzer erreicht. Um weitere Nutzer "
-"anzulegen müssen Sie entweder welche löschen oder <a class=\"goto\" href="
-"\"http://customer.joyent.com/login\">Ihren Vertrag erweitern.</a>"
+"anzulegen müssen Sie entweder welche löschen oder <a target=\"_blank\" class="
+"\"goto\" href=\"http://customer.joyent.com/login\">Ihren Vertrag erweitern.</"
+"a>"
 
 #: app/views/people/_edit_account_guest.rhtml:36
 msgid "Allow this guest to also create and delete files?"
 msgstr "Diesem Gast auch erlauben Dateien zu erstellen oder zu löschen?"
 
-#: app/views/people/_edit_account_guest.rhtml:56
+#: app/views/people/_edit_account_guest.rhtml:57
 msgid "Reset Guest Password"
 msgstr "Gast Passwort zurücksetzen"
 
-#: app/views/people/_edit_account_guest.rhtml:59
+#: app/views/people/_edit_account_guest.rhtml:60
 msgid "email address"
 msgstr "Email-Adresse"
 
-#: app/views/people/_edit_account_guest.rhtml:60
+#: app/views/people/_edit_account_guest.rhtml:61
 msgid "Reset"
 msgstr "Zurücksetzen"
 
