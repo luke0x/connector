@@ -17,33 +17,33 @@ $Id$ */
 
 	.actionCompose a {	
 		width: 85px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionEmptyTrash a {
 		width: 141px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionReply a {	
 		width: 85px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionReplyAll a {	
 		width: 115px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionForward a {	
 		width: 92px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionNotJunk a {	
 		width: 90px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionJunk a {	
 		width: 64px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
 	.actionDeleteAllJunk a {	
 		width: 137px !important;
-		background-image: url(/images/lang/de/actions.png);
+		background-image: url(/images/lang/de/actionsMail.png);
 		}
