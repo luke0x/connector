@@ -19,7 +19,6 @@ class SubscriptionsIntegration < ActionController::IntegrationTest
     define_method "test_should_not_expand_#{url.gsub('/', '_')}" do
       new_session_as(:ian) do |sess|
         sess.get url
-        # debugger
         sess.assert_select "div#groupsOthers[class=collapsiblePalette expanded]", false
       end
     end

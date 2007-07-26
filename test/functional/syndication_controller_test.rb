@@ -34,7 +34,7 @@ if($validator_installed == nil)
   end
 end
 
-# Fux it
+
 class Message < ActiveRecord::Base
   def body
     ''
@@ -148,6 +148,12 @@ class SyndicationControllerTest < Test::Unit::TestCase
     assert assigns(:group_name)
   end
   
+  # regression test for case #22
+  def test_ics_file_first_line_does_not_have_newline
+    get :all_calendar_ics, {}
+    assert_response :success
+    assert_nil @response.body =~ /^\n/
+  end
   
   def test_contacts_rss_works
     get :people_rss, {:group => users(:ian).contact_list.id}
