@@ -57,9 +57,6 @@ config.after_initialize do
     DRb::DRbObject.new(nil, "druby://#{JoyentConfig.joyent_job_host}:#{JoyentConfig.joyent_job_port}")
   Bookmark.thumbnail_server =
     DRb::DRbObject.new(nil, "druby://#{JoyentConfig.bookmark_generator_host}:#{JoyentConfig.bookmark_generator_port}")
-
-  JoyentConfig.maildir_owner = Etc.getpwnam('vmail').uid
-  JoyentConfig.maildir_group = Etc.getpwnam('vmail').gid
 end
 
 ActionMailer::Base.delivery_method= :smtp
