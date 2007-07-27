@@ -651,4 +651,16 @@ class MailControllerTest < Test::Unit::TestCase
     post :reparent_group, :group_id => mailboxes(:ian_inbox_concerts_2006).id, :new_parent_id => mailboxes(:ian_inbox).id
     assert_response :redirect
   end
+  
+  # regression test for case #21
+  def test_time_ago_and_localization
+  	flexstub(JoyentMaildir::Base).should_receive(:connection).once.returns {
+		  flexmock('mailbox') {|m| m.should_receive(:mailbox_sync).with(mailboxes(:ian_inbox).id).once}
+		}
+
+    login_person(:ian)
+    get :list, :id => mailboxes(:ian_inbox).id
+    assert_nil @response.body =~ /ago ago/
+  end
+  
 end
