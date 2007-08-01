@@ -1,0 +1,72 @@
+= Connector Images' Text
+
+== File: public/images/lang/it/actionsCalendar.png
+
+Month View    => Vista per mese
+List View     => Vista come elenco
+Day View      => Vista per giorno
+Week View     => Vista per settimana
+Overlay Users => Sovrapponi utenti
+Today         => Oggi
+
+== File: public/images/lang/it/actionsConnect.png
+
+Refresh All  => Aggiorna tutto
+Collapse All => Contrai tutto
+Expand All   => Espandi tutto
+
+== File: public/images/lang/it/actionsFiles.png
+
+Mail File => Invia per email
+
+== File: public/images/lang/it/actionsGeneral.png
+
+Move        => Sposta
+Copy        => Copia
+New         => Nuovo
+Import      => Importa
+Show All    => Mostra tutto
+Show New    => Mostra nuovo
+Delete      => Elimina
+Save Search => Salva ricerca
+Tools       => Strumenti
+Edit        => Modifica
+
+== File: public/images/lang/it/actionsLists.png
+
+Move       => Sposta
+Delete Row => Elimina riga
+Attributes => Attributi
+New Row    => Nuova riga
+
+== File: public/images/lang/it/actionsMail.png
+
+Compose         => Componi
+Empty Trash     => Vuota il cestino
+Reply           => Rispondi
+Reply All       => Rispondi a tutti
+Forward         => Inoltra
+Not Spam        => Accettata
+Spam            => Indesiderata
+Delete All Spam => Elimina indesiderata
+
+== File: public/images/lang/it/actionsPeople.png
+
+Call via Jajah => Chiama via Jajah
+
+== File: public/images/lang/it/apps.png
+
+Connect =>  <- Do not translate, since it is the application name
+Mail => Mail
+Calendar => Calendario
+People => Utenti
+Files => File
+Bookmarks => Preferiti
+Lists => Elenchi
+
+== File: public/images/lang/it/tabs.png
+
+Groups => Gruppi
+Tags => Tag
+Access => Accesso
+Notify => Notifica

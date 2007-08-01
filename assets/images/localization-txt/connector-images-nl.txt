@@ -1,0 +1,72 @@
+= Connector Images' Text
+
+== File: public/images/lang/nl/actionsCalendar.png
+
+Month View    => Maandoverzicht
+List View     => Lijstoverzicht
+Day View      => Dagoverzicht
+Week View     => Weekoverzicht
+Overlay Users => Agenda's combineren
+Today         => Vandaag
+
+== File: public/images/lang/nl/actionsConnect.png
+
+Refresh All  => Alles verversen
+Collapse All => Inklappen
+Expand All   => Uitklappen
+
+== File: public/images/lang/nl/actionsFiles.png
+
+Mail File => Bestand mailen
+
+== File: public/images/lang/nl/actionsGeneral.png
+
+Move        => Verplaatsen
+Copy        => Kopiëren
+New         => Nieuw
+Import      => Importeren
+Show All    => Alles laten zien
+Show New    => Nieuw(e) laten zien
+Delete      => Verwijderen
+Save Search => Zoekresultaat bewaren
+Tools       => Gereedschap
+Edit        => Bewerken
+
+== File: public/images/lang/nl/actionsLists.png
+
+Move       => Verplaatsen
+Delete Row => Regel wissen
+Attributes => Attributen
+New Row    => Nieuwe regel
+
+== File: public/images/lang/nl/actionsMail.png
+
+Compose         => Schrijven
+Empty Trash     => Prullenbak legen
+Reply           => Antwoorden
+Reply All       => Allen antwoorden
+Forward         => Doorsturen
+Not Spam        => Geen spam
+Spam            => Spam
+Delete All Spam => Alle spam verwijderen
+
+== File: public/images/lang/nl/actionsPeople.png
+
+Call via Jajah => Bellen via Jajah
+
+== File: public/images/lang/nl/apps.png
+
+Connect =>  <- Do not translate, since it is the application name
+Mail => Mail
+Calendar => Agenda
+People => Mensen
+Files => Bestanden
+Bookmarks => Bladwijzers
+Lists => Lijsten
+
+== File: public/images/lang/nl/tabs.png
+
+Groups => Groepen
+Tags => Tags
+Access => Toegang
+Notify => Melden

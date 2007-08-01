@@ -1,0 +1,72 @@
+= Connector Images' Text
+
+== File: public/images/lang/en/actionsCalendar.png
+
+Month View    =>
+List View     =>
+Day View      =>
+Week View     =>
+Overlay Users =>
+Today         =>
+
+== File: public/images/lang/en/actionsConnect.png
+
+Refresh All  =>
+Collapse All =>
+Expand All   =>
+
+== File: public/images/lang/en/actionsFiles.png
+
+Mail File =>
+
+== File: public/images/lang/en/actionsGeneral.png
+
+Move        =>
+Copy        =>
+New         =>
+Import      =>
+Show All    =>
+Show New    =>
+Delete      =>
+Save Search =>
+Tools       =>
+Edit        =>
+
+== File: public/images/lang/en/actionsLists.png
+
+Move       =>
+Delete Row =>
+Attributes =>
+New Row    =>
+
+== File: public/images/lang/en/actionsMail.png
+
+Compose         =>
+Empty Trash     =>
+Reply           =>
+Reply All       =>
+Forward         =>
+Not Spam        =>
+Spam            =>
+Delete All Spam =>
+
+== File: public/images/lang/en/actionsPeople.png
+
+Call via Jajah =>
+
+== File: public/images/lang/en/apps.png
+
+Connect =>  <- Do not translate, since it is the application name
+Mail =>
+Calendar =>
+People =>
+Files =>
+Bookmarks =>
+Lists =>
+
+== File: public/images/lang/en/tabs.png
+
+Groups =>
+Tags =>
+Access =>
+Notify =>

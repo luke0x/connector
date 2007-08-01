@@ -1,0 +1,72 @@
+= Connector Images' Text
+
+== File: public/images/lang/es/actionsCalendar.png
+
+Month View    => Ver Mes
+List View     => Ver Lista
+Day View      => Ver Día
+Week View     => Ver Semana
+Overlay Users => Superponer Usuarios
+Today         => Hoy
+
+== File: public/images/lang/es/actionsConnect.png
+
+Refresh All  => Recargar Todos
+Collapse All => Plegar Todos
+Expand All   => Expandir Todos
+
+== File: public/images/lang/es/actionsFiles.png
+
+Mail File => Enviar Archivo
+
+== File: public/images/lang/es/actionsGeneral.png
+
+Move        => Mover
+Copy        => Copiar
+New         => Nuevo
+Import      => Importar
+Show All    => Mostrar Todos
+Show New    => Mostrar Nuevos
+Delete      => Borrar
+Save Search => Guardar Búsqueda
+Tools       => Herramientas
+Edit        => Editar
+
+== File: public/images/lang/es/actionsLists.png
+
+Move       => Mover
+Delete Row => Borrrar Fila
+Attributes => Atributos
+New Row    => Nueva Fila
+
+== File: public/images/lang/es/actionsMail.png
+
+Compose         => Redactar
+Empty Trash     => Vaciar Papelera
+Reply           => Responder
+Reply All       => Responder a Todos
+Forward         => Reenviar
+Not Spam        => No es Spam
+Spam            => Spam
+Delete All Spam => Borrar Todo El Spam
+
+== File: public/images/lang/es/actionsPeople.png
+
+Call via Jajah => Llamar vía Jajah
+
+== File: public/images/lang/es/apps.png
+
+Connect =>  <- Do not translate, since it is the application name
+Mail => Correo
+Calendar => Calendario
+People => Personas
+Files => Archivos
+Bookmarks => Favoritos
+Lists => Listas
+
+== File: public/images/lang/es/tabs.png
+
+Groups => Grupos
+Tags => Tags
+Access => Acceder
+Notify => Notificar
