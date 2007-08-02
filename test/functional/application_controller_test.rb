@@ -60,4 +60,22 @@ class ApplicationControllerTest < Test::Unit::TestCase
     assert_redirected_to '/noaccount.html'
   end
   
+  def test_production_languages
+    get :login
+    host = 'textdrive.joyent.com'
+    assert ! JoyentConfig.staging_servers.includes?(host)
+    @controller.request.env['SERVER_NAME'] = host
+
+    assert_equal @controller.send(:connector_languages).length, JoyentConfig.production_languages.length
+  end
+  
+  def test_development_languages
+    get :login
+    host = 'staging.example.com'
+    assert JoyentConfig.staging_servers.includes?(host)
+    @controller.request.env['SERVER_NAME'] = host
+
+    assert_equal @controller.send(:connector_languages).length, (JoyentConfig.production_languages.length + JoyentConfig.development_languages.length)
+  end
+  
 end

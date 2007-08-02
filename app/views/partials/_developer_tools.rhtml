@@ -39,7 +39,8 @@
         <h2><%= _('Language') -%></h2>
         <% form_tag({:controller => 'developer_tools', :action => 'set_language'}) do -%>
           <select style="width: 100%;">
-            <% ['en - English', 'es - Español', 'de - Deutsch', 'it - Italiano', 'nl - Netherlands'].each do |language| -%>
+            <% languages = connector_languages.{|l| "#{l[1]} - #{l[0]}"} -%>
+            <% languages.each do |language| -%>
               <option value="<%= language %>"><%= language %></option>
             <% end -%>
           </select>

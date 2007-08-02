@@ -88,4 +88,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def connector_languages
+      if JoyentConfig.staging_servers.include?(request.env['SERVER_NAME'])
+        JoyentConfig.production_languages + JoyentConfig.development_languages
+      else
+        JoyentConfig.production_languages
+      end
+    end
+
 end
