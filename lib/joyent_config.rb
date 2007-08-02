@@ -104,4 +104,9 @@ class JoyentConfig
   # Exception mailer
   config_value :exception_recipients,   ['user1@example.com', 'user2@example.com']
   config_value :exception_email_prefix, "[ERROR-TEST] "
+  
+  # localization
+  config_value :production_languages,  [['English', 'en'], ['Español', 'es'], ['Deutsch','de'], ['Italiano','it'], ['Nederlands','nl']]
+  config_value :development_languages, [['Français', 'fr']]
+  config_value :staging_servers,       ['staging.example.com']
 end
