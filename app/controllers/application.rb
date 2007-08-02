@@ -24,6 +24,15 @@ class ApplicationController < ActionController::Base
   before_filter :load_application
   after_filter  :log_request
   
+  def connector_languages
+    if JoyentConfig.staging_servers.include?(request.env['SERVER_NAME'])
+      JoyentConfig.production_languages + JoyentConfig.development_languages
+    else
+      JoyentConfig.production_languages
+    end
+  end
+  helper_method :connector_languages
+
   private
 
     def capture_start_time
@@ -85,14 +94,6 @@ class ApplicationController < ActionController::Base
         redirect_to(:back)
       else
         redirect_to(connector_home_url)
-      end
-    end
-
-    def connector_languages
-      if JoyentConfig.staging_servers.include?(request.env['SERVER_NAME'])
-        JoyentConfig.production_languages + JoyentConfig.development_languages
-      else
-        JoyentConfig.production_languages
       end
     end
 
