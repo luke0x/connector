@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
   
   @@aes_salt = JoyentConfig.user_aes_salt
   @@current = nil
-  @@valid_languages = ['en', 'es', 'de', 'it', 'nl']
+  @@valid_languages = (JoyentConfig.production_languages + JoyentConfig.development_languages).collect{|l| l[1]} # TODO: make this consider the current hostname eventually
 
   # login/password related
 
