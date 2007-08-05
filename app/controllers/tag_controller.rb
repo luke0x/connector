@@ -15,11 +15,11 @@ class TagController < AuthenticatedController
   ERROR_MSG = _("You no longer have access to this item.")
 
   def tag_item
-    tag_name = params[:tag_name]
-    return if tag_name.blank?
+    tag_name = params[:tag_name] || ''
+    dom_ids = params[:dom_ids] || ''
     page_js = []
 
-    dom_ids = params[:dom_ids].split(',')
+    dom_ids = dom_ids.split(',')
     dom_ids.each do |dom_id|
       next unless @item = find_by_dom_id(dom_id)
       tagging = User.current.tag_item(@item, tag_name)
@@ -41,11 +41,11 @@ class TagController < AuthenticatedController
   end
 
   def untag_item
-    tag_name = params[:tag_name]
-    return if tag_name.blank?
+    tag_name = params[:tag_name] || ''
+    dom_ids = params[:dom_ids] || ''
     page_js = []
 
-    dom_ids = params[:dom_ids].split(',')
+    dom_ids = dom_ids.split(',')
     dom_ids.each do |dom_id|
       next unless @item = find_by_dom_id(dom_id)
       tagging = User.current.untag_item(@item, tag_name)

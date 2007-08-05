@@ -54,6 +54,14 @@ class TagControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   
+  def test_tag_blank_dom_ids
+    get :tag_item, {:dom_ids => nil, :tag_name => 'hi'}
+    assert_response :redirect
+
+    xhr :get, :tag_item, {:dom_ids => nil, :tag_name => 'hi'}
+    assert_response :success
+  end
+  
   def test_untag_item
     @request.env["HTTP_REFERER"] = '/files'
 
@@ -62,4 +70,11 @@ class TagControllerTest < Test::Unit::TestCase
     assert ! joyent_files(:ian_jpg).tags.find_by_name('orange')
   end
 
+  def test_untag_blank_dom_ids
+    get :untag_item, {:dom_ids => nil, :tag_name => 'hi'}
+    assert_response :redirect
+
+    xhr :get, :untag_item, {:dom_ids => nil, :tag_name => 'hi'}
+    assert_response :success
+  end
 end
