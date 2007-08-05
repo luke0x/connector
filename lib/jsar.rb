@@ -26,6 +26,8 @@ module JSAR
   private
   
     def tag_to_jsar(tag)
+      return '' unless tag
+
       "Tag.create({
         domId: '#{tag.dom_id}',
         arId:  #{tag.id},
@@ -34,6 +36,8 @@ module JSAR
     end
 
     def tagging_to_jsar(tagging)
+      return '' unless tagging
+
       "Tagging.create({
         domId:     '#{tagging.dom_id}',
         tagDomId:  '#{tagging.tag.dom_id}',
@@ -43,6 +47,8 @@ module JSAR
     end
 
     def user_to_jsar(user)
+      return '' unless user
+
       "User.create({
         domId:       '#{user.dom_id}',
         arId:        #{user.id},
@@ -56,6 +62,8 @@ module JSAR
     end
 
     def item_to_jsar(item, selected)
+      return '' unless item
+
       "Item.create({
         domId:             '#{item.dom_id}',
         arId:              '#{item.id || 'null'}',
@@ -72,6 +80,8 @@ module JSAR
     end
 
     def permission_to_jsar(permission)
+      return '' unless permission
+
       "Permission.create({
         domId:     '#{permission.dom_id}',
         userDomId: '#{permission.user.dom_id}',
@@ -80,6 +90,8 @@ module JSAR
     end
 
     def notification_to_jsar(notification)
+      return '' unless notification
+
       "Notification.create({
         domId:     '#{notification.dom_id}',
         userDomId: '#{notification.notifiee.dom_id}',
