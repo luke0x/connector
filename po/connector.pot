@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-07-26 17:36+0200\n"
+"POT-Creation-Date: 2007-08-06 15:36+0200\n"
 "PO-Revision-Date: 2006-05-24 20:40+020Å0\n"
 "Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -285,7 +285,7 @@ msgstr ""
 #: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
 #: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
-#: app/views/guest/edit.rhtml:58 app/views/lists/_import.rhtml:17
+#: app/views/guest/edit.rhtml:55 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
 #: app/views/people/_call.rhtml:65
 #: app/views/people/confirm_user_delete.rhtml:40
@@ -504,7 +504,7 @@ msgstr ""
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
 #: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
-#: app/views/guest/edit.rhtml:59 app/views/lists/_edit.rhtml:16
+#: app/views/guest/edit.rhtml:56 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:38
@@ -1121,8 +1121,8 @@ msgstr ""
 msgid "time zone"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:52 app/views/people/_edit_account_guest.rhtml:51
-#: app/views/people/_edit_account_user.rhtml:62
+#: app/views/guest/edit.rhtml:49 app/views/people/_edit_account_guest.rhtml:49
+#: app/views/people/_edit_account_user.rhtml:60
 msgid "language"
 msgstr ""
 
@@ -1668,15 +1668,15 @@ msgstr ""
 msgid "Allow this guest to also create and delete files?"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:57
+#: app/views/people/_edit_account_guest.rhtml:55
 msgid "Reset Guest Password"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:60
+#: app/views/people/_edit_account_guest.rhtml:58
 msgid "email address"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:61
+#: app/views/people/_edit_account_guest.rhtml:59
 msgid "Reset"
 msgstr ""
 

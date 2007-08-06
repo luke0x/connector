@@ -11,6 +11,7 @@ namespace :gettext do
   end
   
   require 'gettext/utils'
+  require 'gettext/rmsgmerge'
   
   desc "Create mo-files for L10n"
   task :makemo do
@@ -88,6 +89,49 @@ namespace :gettext do
     end
   end
   
+  desc "Get percentage localized for each translation"
+  task :percentage do
+    
+    # This is the project file in original language:
+    pot_file = parse_po(File.expand_path("#{RAILS_ROOT}/po/connector.pot"))
+    project_messages = pot_file.msgids.size - 1 # first message on a po/pot file is always the header
+
+    if /Project-Id-Version:(.*)/ =~ pot_file.instance_variable_get("@msgid2msgstr")['']
+      project_name = $~[1].strip!
+    else
+      project_name = 'Joyent Connector'
+    end
+    
+    po_files = Dir.glob("po/**/connector.po")
+    
+    unless po_files.nil? || po_files.empty?
+      puts
+      puts "Percentage localized for project <#{project_name}>:"
+      puts "-"*10
+      puts "Messages in project main file: #{project_messages}"
+      puts "-"*10
+      
+      po_files.each do |pofile|
+        puts "Localization: #{File.basename(File.dirname(pofile))}\n"
+        parsed = parse_po(pofile)
+        
+        localized = parsed.instance_variable_get("@msgid2msgstr")
+        # forget the header message
+        localization_messages = parsed.msgids.size - 1
+        localized.reject! { |k,v| k == ''}
+        # count the localized ones
+        localized.reject! { |k,v| v.empty?}
+        localized_messages = localized.size
+        puts "-"*10
+        puts "Messages in localization: #{localization_messages}"
+        puts "Messages localized: #{localized_messages}"
+        puts "Percentage localized: #{(localized_messages*100)/project_messages}%"
+        puts "-"*10
+      end
+    end
+      
+  end
+  
   def writejs(js_strings)
     puts "Writting temporary .rb file to hold strings from JavaScript\n"
     File.open("#{RAILS_ROOT}/lib/js_strings.rb",'w') do |f|
@@ -109,6 +153,19 @@ namespace :gettext do
       end
     end
     js_strings.uniq.sort_by{|s| s.downcase}
+  end
+  
+  private
+  
+  def parse_po(pofile)
+    parser = GetText::PoParser.new
+    # we're going to store raw data from file here
+    str = nil
+    # get the file from the given path
+    # should do a bit of error checking here
+    File.open(pofile){|f| str = f.read}
+    # parse and return the contents
+    postr = parser.parse(str, GetText::RMsgMerge::PoData.new, true)
   end
   
 end

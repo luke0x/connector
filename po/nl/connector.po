@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-07-26 17:36+0200\n"
+"POT-Creation-Date: 2007-08-06 15:36+0200\n"
 "PO-Revision-Date: 2007-09-17 15:09+0000\n"
 "Last-Translator: Kees Brandenburg <kb@co-web.org>\n"
 "Language-Team: nl <pedro@joyent.com>\n"
@@ -292,7 +292,7 @@ msgstr "Abonneren"
 #: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
 #: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
-#: app/views/guest/edit.rhtml:58 app/views/lists/_import.rhtml:17
+#: app/views/guest/edit.rhtml:55 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
 #: app/views/people/_call.rhtml:65
 #: app/views/people/confirm_user_delete.rhtml:40
@@ -515,7 +515,7 @@ msgstr "Bladwijzers synchroniseren met del.icio.us"
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
 #: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
-#: app/views/guest/edit.rhtml:59 app/views/lists/_edit.rhtml:16
+#: app/views/guest/edit.rhtml:56 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:38
@@ -1138,8 +1138,8 @@ msgstr "E-mail adres om een vergeten wachtwoord te kunnen herstellen"
 msgid "time zone"
 msgstr "tijdzone"
 
-#: app/views/guest/edit.rhtml:52 app/views/people/_edit_account_guest.rhtml:51
-#: app/views/people/_edit_account_user.rhtml:62
+#: app/views/guest/edit.rhtml:49 app/views/people/_edit_account_guest.rhtml:49
+#: app/views/people/_edit_account_user.rhtml:60
 msgid "language"
 msgstr "taal"
 
@@ -1707,15 +1707,15 @@ msgstr ""
 msgid "Allow this guest to also create and delete files?"
 msgstr "Mag deze gast ook bestanden aanmaken en verwijderen?"
 
-#: app/views/people/_edit_account_guest.rhtml:57
+#: app/views/people/_edit_account_guest.rhtml:55
 msgid "Reset Guest Password"
 msgstr "Gasten wachtwoord resetten"
 
-#: app/views/people/_edit_account_guest.rhtml:60
+#: app/views/people/_edit_account_guest.rhtml:58
 msgid "email address"
 msgstr "E-mail adres"
 
-#: app/views/people/_edit_account_guest.rhtml:61
+#: app/views/people/_edit_account_guest.rhtml:59
 msgid "Reset"
 msgstr "Resetten"
 
@@ -3135,6 +3135,3 @@ msgstr "Je moet of een naam of een bedrijfsnaam opgeven."
 #: app/models/smart_group.rb:98
 msgid "Search for %{i18n_search_param}"
 msgstr "Zoeken naar %{i18n_search_param}"
-
-#~ msgid "Peek"
-#~ msgstr "Bekijken"
