@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 157) do
+ActiveRecord::Schema.define(:version => 159) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 157) do
     t.column "preferred",     :boolean, :default => false
     t.column "email_type",    :string,  :default => ""
     t.column "email_address", :string,  :default => ""
+    t.column "notify",        :boolean
   end
 
   add_index "email_addresses", ["person_id"], :name => "email_addresses_person_id_index"
@@ -173,6 +174,7 @@ ActiveRecord::Schema.define(:version => 157) do
     t.column "preferred",  :boolean, :default => false
     t.column "im_type",    :string,  :default => ""
     t.column "im_address", :string,  :default => ""
+    t.column "notify",     :boolean
   end
 
   add_index "im_addresses", ["person_id"], :name => "im_addresses_person_id_index"
@@ -366,10 +368,14 @@ ActiveRecord::Schema.define(:version => 157) do
   add_index "permissions", ["user_id"], :name => "permissions_user_id_index"
 
   create_table "phone_numbers", :force => true do |t|
-    t.column "person_id",         :integer
-    t.column "preferred",         :boolean, :default => false
-    t.column "phone_number_type", :string,  :default => ""
-    t.column "phone_number",      :string,  :default => ""
+    t.column "person_id",           :integer
+    t.column "preferred",           :boolean, :default => false
+    t.column "phone_number_type",   :string,  :default => ""
+    t.column "phone_number",        :string,  :default => ""
+    t.column "confirmation_number", :string
+    t.column "confirmed",           :boolean, :default => false
+    t.column "provider",            :string
+    t.column "notify",              :boolean
   end
 
   add_index "phone_numbers", ["person_id"], :name => "phone_numbers_person_id_index"
