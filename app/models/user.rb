@@ -319,23 +319,15 @@ class User < ActiveRecord::Base
   end
   
   def notify_via_sms?
-    true
+    person.phone_numbers.any?(&:notify?)
   end
   
   def notify_via_email?
-    false
+    person.email_addresses.any?(&:notify?)
   end
 
   def notify_via_im?
-    notify_via_aim? || notify_via_jabber?
-  end
-
-  def notify_via_aim?
-    true
-  end
-
-  def notify_via_jabber?
-    true
+    person.im_addresses.any?(&:notify?)
   end
 
   # tags
