@@ -376,3 +376,17 @@ var NotificationsConfigurator = {
     return false;
   }
 }
+
+var EditAccountArea = {
+  toggle: function() {
+    if ($('show_edit_account').hasClassName('expanded')) { // collapse
+      $('show_edit_account').removeClassName('expanded');
+      if ($('person_user_account_area').visible())
+        Effect.BlindUp('person_user_account_area', { duration: Joyent.effectsDuration });
+    } else { // expand
+      $('show_edit_account').addClassName('expanded');
+      if (! $('person_user_account_area').visible())
+        Effect.BlindDown('person_user_account_area', { duration: Joyent.effectsDuration });
+    }
+  }
+}
