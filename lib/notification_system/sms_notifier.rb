@@ -12,7 +12,7 @@ module NotificationSystem
       tmail         = TMail::Mail.new
       tmail.body    = message
       tmail.to      = recipients
-      tmail.subject = 'Connecor Notification'
+      tmail.subject = 'Connector Notification'
 
       Net::SMTP.start(@@host, @@port, @@host, @@username, @@password, @@authorization) do |smtp|        
         smtp.send_message message, tmail.encoded, tmail.from, tmail.destinations

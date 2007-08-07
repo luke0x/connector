@@ -34,3 +34,13 @@ four:
   phone_number_type: Mobile
   phone_number: 0980 9809 809 8
   person_id: 4
+  
+ians_confirmed_for_sms:
+    id: 5
+    preferred: false
+    phone_number_type: Mobile
+    phone_number: 415 555 1542
+    person_id: 1
+    confirmation_number: 54282
+    confirmed: true
+    provider: tmobile
