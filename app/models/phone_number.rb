@@ -19,12 +19,15 @@ class PhoneNumber < ActiveRecord::Base
   after_save {|record| record.person.save if record.person}
   after_destroy {|record| record.person.save if record.person}
   
-  @@providers = { :virgin_mobile => 'vmobl.com',
-                  :tmobile   => 'tmomail.net',
-                  :cingular => 'cingularme.com',
-                  :sprint => 'messaging.sprintpcs.com',
-                  :verizon => 'vtext.com',
-                  :nextel => 'messaging.nextel.com' }
+  @@providers = {
+    :att           => 'txt.att.net',
+    :cingular      => 'cingularme.com',
+    :nextel        => 'messaging.nextel.com',
+    :sprint        => 'messaging.sprintpcs.com',
+    :tmobile       => 'tmomail.net',
+    :verizon       => 'vtext.com',
+    :virgin_mobile => 'vmobl.com'
+  }
                   
   def self.providers
     @@providers
