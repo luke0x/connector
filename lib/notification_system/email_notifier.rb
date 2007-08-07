@@ -1,5 +1,5 @@
 module NotificationSystem
-  class EmailNotificationSystem    
+  class EmailNotifier
     def self.notify(notifaction)
       host          = ENV['SMTP_HOST'] || JoyentConfig.smtp_host
       user          = ENV['SMTP_USER'] || nil
