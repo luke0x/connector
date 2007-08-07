@@ -76,6 +76,12 @@ class User < ActiveRecord::Base
   @@current = nil
   @@valid_languages = (JoyentConfig.production_languages + JoyentConfig.development_languages).collect{|l| l[1]} # TODO: make this consider the current hostname eventually
 
+  @@notification_systems = {#:none   => NullNotificationSystem.new,
+                            #:email  => EmailNotificationSystem.new, 
+                            #:jabber => JabberNotificationSystem.new,
+                            #:aim    => AimNotificationSystem.new,
+                            #:sms    => SmsNotificationSystem.new,
+                            :file   => FileNotificationSystem.new }
   # login/password related
 
   def self.current=(user)
@@ -639,6 +645,14 @@ class User < ActiveRecord::Base
   
   def jajah_password=(new_password)
     write_attribute(:jajah_password, encrypt(new_password))
+  end
+  
+  def notification_systems
+    [@@notification_systems[:file]]
+  end
+  
+  def notify(message)
+    notification_systems.each{ |system| system.notify(self.username, message) }
   end
   
   private
