@@ -8,7 +8,7 @@ module NotificationSystem
 
       tmail         = TMail::Mail.new
       tmail.body    = notification.message
-      tmail.to      = 1 # notification address
+      tmail.to      = notification.notifiee.system_email
       tmail.subject = 'Connector Notification'
 
       unless ENV['RAILS_ENV'] == 'test'
