@@ -66,7 +66,13 @@ $Id$ */
 	.makePrimaryItem span {
 		display:none;
 		}
-		
+	#show_edit_account a {
+		padding: 2px 0 2px 18px;
+		background-repeat: no-repeat;
+		background-image: url(/images/icons/dinger.png);
+		background-position: 0 3px;
+		display: block;
+	}
 
 
 /* index view */

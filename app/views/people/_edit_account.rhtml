@@ -11,7 +11,7 @@
 <% if User.current.admin? or person == User.current.person -%>
     <% # already a user -%>
     <% if person.admin? or person.user? -%>
-      <h2><%= _('Edit Account') %></h2>
+      <h2 id="show_edit_account"><a href=""><%= _('Edit Account') %></a></h2>
       <div id="person_user_account_area" class="infoGroup">
       <%= render :partial => 'edit_account_user', :locals => {:person => person} %>
       </div>
