@@ -1,5 +1,5 @@
 module NotificationSystem
-  class FileNotificationSystem
+  class FileNotifier
     cattr_accessor :base_path
     @@base_path = "/tmp"
   
