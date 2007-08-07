@@ -7,16 +7,15 @@ module NotificationSystem
       auth     = ENV['SMTP_AUTH'] || nil
 
       tmail         = TMail::Mail.new
-      tmail.body    = message
+      tmail.body    = notification.message
       tmail.to      = 1 # notification address
       tmail.subject = 'Connector Notification'
 
       unless ENV['RAILS_ENV'] == 'test'
         Net::SMTP.start(host, 25, host, user, pass, auth) do |smtp|
-          smtp.send_message @mail.encoded, @mail.from, @mail.destinations
+          smtp.send_message tmail.encoded, tmail.from, tmail.destinations
         end
       end
-      
     end
   end
 end
