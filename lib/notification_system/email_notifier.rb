@@ -1,13 +1,13 @@
 module NotificationSystem
   class EmailNotificationSystem    
     def self.notify(notifaction)
-      host     = ENV['SMTP_HOST'] || JoyentConfig.smtp_host
-      user     = ENV['SMTP_USER'] || nil
-      pass     = ENV['SMTP_PASS'] || nil
-      auth     = ENV['SMTP_AUTH'] || nil
+      host          = ENV['SMTP_HOST'] || JoyentConfig.smtp_host
+      user          = ENV['SMTP_USER'] || nil
+      pass          = ENV['SMTP_PASS'] || nil
+      auth          = ENV['SMTP_AUTH'] || nil
 
       tmail         = TMail::Mail.new
-      tmail.body    = "You are being notified of #{notifiacation.name} (#{notification.item.class_humanize}) by #{notification.notifier.full_name}."
+      tmail.body    = "You are being notified of #{notification.name} (#{notification.item.class_humanize}) by #{notification.notifier.full_name}."
       tmail.to      = notification.notifiee.system_email
       tmail.subject = "Connector Notification: #{notification.name}"
 
