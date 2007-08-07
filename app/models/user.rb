@@ -81,8 +81,7 @@ class User < ActiveRecord::Base
                             #:jabber => JabberNotificationSystem.new,
                             #:aim    => AimNotificationSystem.new,
                             #:sms    => SmsNotificationSystem.new,
-                            :file   => FileNotificationSystem.new }
-  # login/password related
+                            :file   => NotificationSystem::FileNotificationSystem.new }
 
   def self.current=(user)
     @@current  = user
