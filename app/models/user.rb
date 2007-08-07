@@ -650,7 +650,7 @@ class User < ActiveRecord::Base
     [@@notification_systems[:file]]
   end
   
-  def notify(message)
+  def send_notification(message)
     notification_systems.each{ |system| system.notify(self.username, message) }
   end
   
