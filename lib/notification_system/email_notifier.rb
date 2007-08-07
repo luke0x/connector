@@ -7,9 +7,9 @@ module NotificationSystem
       auth     = ENV['SMTP_AUTH'] || nil
 
       tmail         = TMail::Mail.new
-      tmail.body    = notification.message
+      tmail.body    = "You are being notified of #{notifiacation.name} (#{notification.item.class_humanize}) by #{notification.notifier.full_name}."
       tmail.to      = notification.notifiee.system_email
-      tmail.subject = 'Connector Notification'
+      tmail.subject = "Connector Notification: #{notification.name}"
 
       unless ENV['RAILS_ENV'] == 'test'
         Net::SMTP.start(host, 25, host, user, pass, auth) do |smtp|
