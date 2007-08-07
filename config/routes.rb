@@ -361,6 +361,7 @@ ActionController::Routing::Routes.draw do |map|
   # Heartbeat
   map.connect 'heartbeat/index', :controller => 'heartbeat', :action => 'index'
   
+  map.connect ':format/:controller/:action/:id', :requirements => {:format => /iphone/}
   
   # catchall
   map.connect '*path', :controller => 'connect', :action => 'index'

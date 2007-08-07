@@ -317,6 +317,26 @@ class User < ActiveRecord::Base
       notifications.count(:conditions => ['acknowledged = ?', false])
     end
   end
+  
+  def notify_via_sms?
+    true
+  end
+  
+  def notify_via_email?
+    false
+  end
+
+  def notify_via_im?
+    notify_via_aim? || notify_via_jabber?
+  end
+
+  def notify_via_aim?
+    true
+  end
+
+  def notify_via_jabber?
+    true
+  end
 
   # tags
 

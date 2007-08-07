@@ -361,3 +361,18 @@ var JajahDrawer = {
 		new Ajax.Updater('to_numbers', '/people/call_list?ids=' + ids, { asynchronous:true, evalScripts:true });
   }
 }
+
+var NotificationsConfigurator = {
+  update: function(method) {
+    if ($('person_notification_' + method).checked) {
+      if (! $('person_notification_' + method + '_area').visible()) {
+        Effect.BlindDown('person_notification_' + method + '_area', { duration: Joyent.effectsDuration });
+      }
+    } else {
+      if ($('person_notification_' + method + '_area').visible()) {
+        Effect.BlindUp('person_notification_' + method + '_area', { duration: Joyent.effectsDuration });
+      }
+    }
+    return false;
+  }
+}

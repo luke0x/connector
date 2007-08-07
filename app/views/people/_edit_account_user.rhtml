@@ -60,4 +60,30 @@
       <div class="infoGroupInputLabel"><%= _('language') %></div>
     </td>
   </tr>
+  <% if User.current.person == person -%>
+    <tr>
+      <td colspan="2">
+        <h2><%= _('Notifications') %></h2>
+        <p><%= _('Have notifications sent to you via SMS, email or instant message') %></p>
+        <br />
+        <input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if User.current.notify_via_sms? %> onchange="return NotificationsConfigurator.update('sms');" />
+        <%= _('Notifications via SMS') %>
+        <div id="person_notification_sms_area" style="<%= 'display: none;' unless User.current.notify_via_sms? %>">
+          sms...
+        </div>
+        <br />
+        <input id="person_notification_email" type="checkbox" name="person[notification_email]" <%= 'checked="checked"' if User.current.notify_via_email? %> onchange="return NotificationsConfigurator.update('email');" />
+        <%= _('Notifications via email') %>
+        <div id="person_notification_email_area" style="<%= 'display: none;' unless User.current.notify_via_email? %>">
+          email...
+        </div>
+        <br />
+        <input id="person_notification_im" type="checkbox" name="person[notification_im]" <%= 'checked="checked"' if User.current.notify_via_im? %> onchange="return NotificationsConfigurator.update('im');" />
+        <%= _('Notifications via instant message') %>
+        <div id="person_notification_im_area" style="<%= 'display: none;' unless User.current.notify_via_im? %>">
+          im...
+        </div>
+      </td>
+    </tr>
+  <% end -%>
 </table>

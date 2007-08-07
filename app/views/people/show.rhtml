@@ -45,10 +45,13 @@
     <dt><%= _('Phone') -%>:</dt>
     <% @person.phone_numbers.each do |phone_number| -%>
       <dd>                                                                  
-          <%= h(phone_number.phone_number) %>
+        <%= h(phone_number.phone_number) %>
         <em>
           <%= h(_(phone_number.phone_number_type)) %>
         </em>
+        <% if phone_number.phone_number_type == 'Mobile' -%>
+          <%= link_to_function _('Enable SMS'), "ModalDialog.showURL('#{url_for(:action => 'manage_sms', :controller => 'phone_number')}');" %>
+        <% end -%>
       </dd>
     <% end -%>
   <% end -%>

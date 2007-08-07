@@ -78,6 +78,7 @@ end
 # Include your application configuration below
 
 Mime::Type.register "text/x-opml", :opml, %w( application/xml text/xml )
+Mime::Type.register "text/html", :iphone
 
 require 'tzinfo'
 require 'vpim'
