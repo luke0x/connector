@@ -1,17 +1,24 @@
 module NotificationSystem
   class SmsNotifier
-    def self.notify(notifaction)
-      notifiable = notification.notifiee.phone_numbers.find_by_confirmed(true)
+    def self.notify(notification)
+      notifiable = notification.notifiee.person.phone_numbers.find_by_confirmed(true)
       
       host          = ENV['SMTP_HOST'] || JoyentConfig.smtp_host
       user          = ENV['SMTP_USER'] || nil
       pass          = ENV['SMTP_PASS'] || nil
       auth          = ENV['SMTP_AUTH'] || nil
+      
+      body =<<EOS
+#{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize}).
+
+#{MessageHelper.url_for(notification.item)}
+EOS
 
       tmail         = TMail::Mail.new
-      tmail.body    = "You are being notified of #{notification.name} (#{notification.item.class_humanize}) by #{notification.notifier.full_name}."
+      tmail.from    = notification.notifier.system_email
+      tmail.body    = body
       tmail.to      = notifiable.sms_address
-      tmail.subject = "Connector Notification: #{notification.name}"
+      tmail.subject = "Notification: #{notification.item.name}"
 
       unless ENV['RAILS_ENV'] == 'test' or notifiable.blank?
         Net::SMTP.start(host, 25, host, user, pass, auth) do |smtp|
