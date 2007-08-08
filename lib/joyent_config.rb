@@ -111,6 +111,6 @@ class JoyentConfig
   config_value :staging_servers,       ['staging.example.com']
   
   # Notifiers
-  config_value :jabber_notifier_sender   = 'user@account.com'
-  config_value :jabber_notifier_password = 'password'
+  config_value :jabber_notifier_sender,   'user@account.com'
+  config_value :jabber_notifier_password, 'password'
 end
