@@ -13,7 +13,7 @@ module NotificationSystem
       tmail.to      = notifiable.sms_address
       tmail.subject = "Connector Notification: #{notification.name}"
 
-      unless ENV['RAILS_ENV'] == 'test' and !notifiable.blank?
+      unless ENV['RAILS_ENV'] == 'test' or notifiable.blank?
         Net::SMTP.start(host, 25, host, user, pass, auth) do |smtp|
           smtp.send_message tmail.encoded, tmail.from, tmail.destinations
         end
