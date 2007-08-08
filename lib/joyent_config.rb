@@ -109,4 +109,8 @@ class JoyentConfig
   config_value :production_languages,  [['English', 'en'], ['Español', 'es'], ['Deutsch','de'], ['Italiano','it'], ['Nederlands','nl']]
   config_value :development_languages, [['Français', 'fr']]
   config_value :staging_servers,       ['staging.example.com']
+  
+  # Notifiers
+  config_value :jabber_notifier_sender   = 'user@account.com'
+  config_value :jabber_notifier_password = 'password'
 end
