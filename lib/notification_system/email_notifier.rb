@@ -13,7 +13,7 @@ module NotificationSystem
 EOS
 
       tmail         = TMail::Mail.new
-      tmail.to      = 'scott@joyent.com' # notification.notifiee.system_email # TODO needs to change to stored preference, which isn't done yet
+      tmail.to      = notification.notifiee.system_email # TODO needs to change to stored preference, which isn't done yet
       tmail.from    = notification.notifier.system_email
       tmail.subject = "Connector Notification: #{notification.item.name}"
       tmail.body    = body
