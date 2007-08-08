@@ -23,28 +23,28 @@ class PhoneNumber < ActiveRecord::Base
     :virgin_mobile => {
       :url => 'vmobl.com', 
       :text => 'Virgin Mobile'
-      },
+    },
     :tmobile => {
       :url => 'tmomail.net', 
       :text => 'T-Mobile'
-      },
-    :cingular => {
+    },
+    :att => {
       :url => 'txt.att.net', 
-      :text => 'Cingular/AT&T'
-      },
+      :text => 'AT&T'
+    },
     :sprint => {
       :url => 'messaging.sprintpcs.com', 
       :text => 'Sprint PCS'
-      },
+    },
     :verizon => {
       :url => 'vtext.com', 
       :text => 'Verizon'
-      },
+    },
     :nextel => { 
       :url => 'messaging.nextel.com', 
       :text => 'Nextel'
-      }
     }
+  }
 
                   
   def self.providers
