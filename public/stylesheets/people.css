@@ -73,6 +73,20 @@ $Id$ */
 		background-position: 0 3px;
 		display: block;
 	}
+	.notify_type {
+		padding: 1px 18px 2px 18px;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+	}
+	.notify_sms {
+		background-image: url(/images/icons/notify-sms.png);
+	}
+	.notify_email {
+		background-image: url(/images/icons/notify-email.png);
+	}
+	.notify_im {
+		background-image: url(/images/icons/notify-im.png);
+	}
 
 
 /* index view */

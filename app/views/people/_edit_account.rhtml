@@ -14,7 +14,7 @@
       <h2 id="show_edit_account">
         <%= link_to_function _('Edit Account'), "EditAccountArea.toggle();" %>
       </h2>
-      <div id="person_user_account_area" class="infoGroup" style="display: none;">
+      <div id="person_user_account_area" style="display: none;">
         <%= render :partial => 'edit_account_user', :locals => {:person => person} %>
       </div>
     <% # already a guest -%>

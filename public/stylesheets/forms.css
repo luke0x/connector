@@ -82,7 +82,7 @@ $Id$ */
 		margin-left:8px !important;
 		}
 	.infoGroupLabel {
-		padding: 7px 0 0 0;
+		padding-right: 4px !important;
 		width: 11em;
 		text-align: right;
 		color:#777;
@@ -91,6 +91,7 @@ $Id$ */
 		color: #9B9B9B;
 		font-size: .85em;
 		padding-left: 4px;
+		padding-right: 8px;
 		}
 	.infoGroup table td {
 		padding: 0;

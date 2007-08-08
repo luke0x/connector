@@ -6,84 +6,107 @@
 <% # Report issues and contribute at http://dev.joyent.com/ -%>
 <% # -%>
 <% # $Id$ -%>
-
-<table class="accountTypes">
-  <tr>
-    <td colspan="2">
-      <% if person.user -%>
-        <input type="text" disabled="disabled" size="20" maxlength="64" class="textInput" style="width:260px;" value="<%= person.user.username %>" />
-      <% else -%>
-        <input id="person_username" type="text" name="person[username]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:260px;"  />
-      <% end -%>
-      <div class="infoGroupInputLabel"><%= _('username') %></div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    	<input id="person_password" type="password" name="person[password]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;" />
-      <div class="infoGroupInputLabel"><%= _('password') %></div>
-    </td>
-    <td>
-    	<input id="person_password_confirmation" type="password" name="person[password_confirmation]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;"  />
-      <div class="infoGroupInputLabel"><%= _('confirm password') %></div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" style="padding-top: 1em;">
-      <span id="personRecoveryEmailSelectContainer">Loading&hellip;</span>
-      <%= javascript_tag("People.currentRecoveryEmail = '#{person.user.recovery_email rescue ''}';") %>
-      <%= javascript_tag("Event.observe(window, 'load', function(event){ People.drawEmailNoticeSelect(); });") %>
-      <div class="infoGroupInputLabel"><%= _('password recovery email address') %></div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" style="padding-top: 1em;">
-      <% if person.admin? -%>
-        <input id="person_admin" type="checkbox" name="person[admin]" checked="checked" <%= 'disabled="disabled"' if person == User.current.person %> />
-        <%= _('Allow this user to create and delete other users?') %>
-      <% else -%>
-        <input id="person_admin" type="checkbox" name="person[admin]" />
-        <%= _('Allow this user to create and delete other users?') %>
-      <% end -%>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" style="padding-top: 1em;">
-      <%= tzinfo_timezone_select 'person', 'time_zone', person.time_zone %>
-      <div class="infoGroupInputLabel"><%= _('time zone') %></div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <% language_options = options_for_select(connector_languages, (person.user ? person.user.language : nil)) -%>
-      <%= select_tag_with_id "person[language]", language_options, {:id => "person_language"} %>
-      <div class="infoGroupInputLabel"><%= _('language') %></div>
-    </td>
-  </tr>
-  <% if User.current.person == person -%>
-    <tr>
-      <td colspan="2">
-        <h2><%= _('Notifications') %></h2>
-        <p><%= _('Have notifications sent to you via SMS, email or instant message') %></p>
-        <br />
-        <input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if User.current.notify_via_sms? %> onchange="return NotificationsConfigurator.update('sms');" />
-        <%= _('Notifications via SMS') %>
-        <div id="person_notification_sms_area" style="<%= 'display: none;' unless User.current.notify_via_sms? %>">
-          sms...
-        </div>
-        <br />
-        <input id="person_notification_email" type="checkbox" name="person[notification_email]" <%= 'checked="checked"' if User.current.notify_via_email? %> onchange="return NotificationsConfigurator.update('email');" />
-        <%= _('Notifications via email') %>
-        <div id="person_notification_email_area" style="<%= 'display: none;' unless User.current.notify_via_email? %>">
-          email...
-        </div>
-        <br />
-        <input id="person_notification_im" type="checkbox" name="person[notification_im]" <%= 'checked="checked"' if User.current.notify_via_im? %> onchange="return NotificationsConfigurator.update('im');" />
-        <%= _('Notifications via instant message') %>
-        <div id="person_notification_im_area" style="<%= 'display: none;' unless User.current.notify_via_im? %>">
-          im...
-        </div>
-      </td>
-    </tr>
-  <% end -%>
-</table>
+<div class="infoGroup">
+	<table class="accountTypes">
+		<tr>
+			<td class="infoGroupLabel" valign="top" rowspan="6">
+				<%= _('Account') -%>:
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<% if person.user -%>
+					<input type="text" disabled="disabled" size="20" maxlength="64" class="textInput" style="width:260px;" value="<%= person.user.username %>" />
+				<% else -%>
+					<input id="person_username" type="text" name="person[username]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:260px;"  />
+				<% end -%>
+				<div class="infoGroupInputLabel"><%= _('username') %></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input id="person_password" type="password" name="person[password]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;" />
+				<div class="infoGroupInputLabel"><%= _('password') %></div>
+			</td>
+			<td>
+				<input id="person_password_confirmation" type="password" name="person[password_confirmation]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;"  />
+				<div class="infoGroupInputLabel"><%= _('confirm password') %></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding-top: 1em;">
+				<span id="personRecoveryEmailSelectContainer">Loading&hellip;</span>
+				<%= javascript_tag("People.currentRecoveryEmail = '#{person.user.recovery_email rescue ''}';") %>
+				<%= javascript_tag("Event.observe(window, 'load', function(event){ People.drawEmailNoticeSelect(); });") %>
+				<div class="infoGroupInputLabel"><%= _('password recovery email address') %></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding-top: 1em;">
+				<% if person.admin? -%>
+					<input id="person_admin" type="checkbox" name="person[admin]" checked="checked" <%= 'disabled="disabled"' if person == User.current.person %> />
+					<%= _('Allow this user to create and delete other users?') %>
+				<% else -%>
+					<input id="person_admin" type="checkbox" name="person[admin]" />
+					<%= _('Allow this user to create and delete other users?') %>
+				<% end -%>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="infoGroup">
+	<table>
+		<tr>
+			<td class="infoGroupLabel" valign="top" rowspan="2">
+				<%= _('International') -%>:
+			</td>
+			<td colspan="2">
+				<% language_options = options_for_select(connector_languages, (person.user ? person.user.language : nil)) -%>
+				<%= select_tag_with_id "person[language]", language_options, {:id => "person_language"} %>
+				<div class="infoGroupInputLabel"><%= _('language') %></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding-top: 1em;">
+				<%= tzinfo_timezone_select 'person', 'time_zone', person.time_zone %>
+				<div class="infoGroupInputLabel"><%= _('time zone') %></div>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="infoGroup">
+	<table>
+		<% if User.current.person == person -%>
+			<tr>
+				<td class="infoGroupLabel" valign="top">
+					<%= _('Notification Relay') -%>:
+				</td>
+				<td colspan="2">
+					<p><%= _('Have notifications sent to you via SMS, email or instant message') %></p>
+					<input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if User.current.notify_via_sms? %> onchange="return NotificationsConfigurator.update('sms');" />
+					<span class="notify_type notify_sms"><%= _('SMS') %></span>
+					
+					
+					<input id="person_notification_email" type="checkbox" name="person[notification_email]" <%= 'checked="checked"' if User.current.notify_via_email? %> onchange="return NotificationsConfigurator.update('email');" />
+					<span class="notify_type notify_email"><%= _('Email') %></span>
+					
+					
+					<input id="person_notification_im" type="checkbox" name="person[notification_im]" <%= 'checked="checked"' if User.current.notify_via_im? %> onchange="return NotificationsConfigurator.update('im');" />
+					<span class="notify_type notify_im"><%= _('Instant Message') %></span>
+					
+					
+					
+					<div id="person_notification_email_area" style="<%= 'display: none;' unless User.current.notify_via_email? %>">
+						email...
+					</div>
+					<div id="person_notification_sms_area" style="<%= 'display: none;' unless User.current.notify_via_sms? %>">
+						sms...
+					</div>
+					<div id="person_notification_im_area" style="<%= 'display: none;' unless User.current.notify_via_im? %>">
+						im...
+					</div>
+				</td>
+			</tr>
+		<% end -%>
+	</table>
+</div>
