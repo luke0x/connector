@@ -45,6 +45,8 @@ $Id$ */
 		-webkit-border-bottom-right-radius: .4em;
 		margin-bottom: 1em;
 		border: 1px transparent solid;
+		min-width: 470px;
+		max-width: 620px;
 	}
 	.dialog.alt {
 		background-color: #fff2c1;

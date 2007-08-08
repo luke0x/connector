@@ -12,7 +12,7 @@
     <% # already a user -%>
     <% if person.admin? or person.user? -%>
       <h2 id="show_edit_account">
-        <%= link_to_function _('Edit Account'), "EditAccountArea.toggle();" %>
+        <%= link_to_function _('Edit Preferences'), "EditAccountArea.toggle();" %>
       </h2>
       <div id="person_user_account_area" style="display: ;">
         <%= render :partial => 'edit_account_user', :locals => {:person => person} %>
