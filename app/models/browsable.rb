@@ -52,7 +52,6 @@ class Browsable
     when 'group'
       user = User.find(@current_user)
       user.browser_root_groups_for(@params[:app].downcase).compact.each do |item|
-        debugger
         add_details( item.dom_id,
                      get_group_name(params[:app], item),
                      @current_user.id,
