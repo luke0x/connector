@@ -10,6 +10,9 @@
 
 var People = {
 	currentRecoveryEmail: '',
+	currentNotifierSMS: '',
+	currentNotifierEmail: '',
+	currentNotifierIM: '',
 	
 	setupEdit: function() {
 		$('person_first_name').activate();
