@@ -1,5 +1,5 @@
 module NotificationSystem
-  class ItemUrlHelper
+  class MessageHelper
     def self.url_for(item)
       case item
       when Message
@@ -21,6 +21,11 @@ module NotificationSystem
       else
         ''
       end
+    end
+    
+    def self.notification_time(notification)
+      time = User.current.person.tz.utc_to_local(notification.created_at)
+      time.strftime('%I:%M%p on %m/%d/%Y').gsub(/ 0(\d)/, ' \1').gsub(/^0(\d)/, '\1').downcase
     end
   end
 end
