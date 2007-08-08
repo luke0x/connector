@@ -11,12 +11,26 @@ module NotificationSystem
     @@counter           = Time.now.to_i
     
     def self.notify(notification)
-      plain_msg = "#{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize}) at #{MessageHelper.notification_time(notification)}"
-      html_msg  = "#{notification.notifier.full_name} notified you about <a href=\"#{MessageHelper.url_for(notification.item)}\">#{notification.item.name} (#{notification.item.class_humanize})</a> at #{MessageHelper.notification_time(notification)}"
-      tos       = notification.notifiee.person.im_addresses.select{|im| im.notify? && im.type == 'Jabber'}
+      options              = {}
+      options[:subject]    = "Connector Notification"
+      options[:plain_body] = "#{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize}) at #{MessageHelper.notification_time(notification)}"
+      options[:html_body]  = "#{notification.notifier.full_name} notified you about <a href=\"#{MessageHelper.url_for(notification.item)}\">#{notification.item.name} (#{notification.item.class_humanize})</a> at #{MessageHelper.notification_time(notification)}"
       
-      tos.each do |jabber_address|
-        send_message(jabber_address.im_address, plain_msg, html_msg)
+      recipients(notification).each do |jabber_address|
+        options[:to] = jabber_address.im_address
+        send_message(options)
+      end
+    end
+    
+    def self.alarm(event)
+      options              = {}
+      options[:subject]    = "Connector Alarm"
+      options[:plain_body] = "Event Alarm: #{event.name} at #{event.start_time.strftime('%D %T')} (#{event.location})"
+      options[:html_body]  = "Event Alarm: <a href=\"#{MessageHelper.url_for(notification.item)}\">#{event.name}</a> at #{event.start_time.strftime('%D %T')} (#{event.location})"
+      
+      recipients(notification).each do |jabber_address|
+        options[:to] = jabber_address.im_address
+        send_message(options)
       end
     end
     
@@ -36,7 +50,7 @@ module NotificationSystem
 
         case message.body
         when /time/i
-          send_message(message.from, Time.now.rfc2822)
+          send_message(:to => message.from, :plain_body => Time.now.rfc2822)
         when /accept/i
           
         when /deny/i, /reject/i
@@ -48,19 +62,21 @@ module NotificationSystem
       @@client
     end
     
+    private
+    
     # Client will fall back to plain_text if the html_text won't work.
-    def self.send_message(recipient, plain_text, html_text=nil)
+    def self.send_message(options)
       @@counter += 1
-      message    = Jabber::Message.new(recipient, plain_text).set_type(:normal).set_id(@@counter.to_s).set_subject('Connector Notification')
+      message    = Jabber::Message.new(options[:to], options[:plain_body]).set_type(:normal).set_id(@@counter.to_s).set_subject(options[:subject])
       
-      if html_text
+      if options[:html_body]
         html = REXML::Element::new("html")
         html.add_namespace('http://jabber.org/protocol/xhtml-im')
 
         body = REXML::Element::new("body")
         body.add_namespace('http://www.w3.org/1999/xhtml')
 
-        text = REXML::Text.new(html_text, false, body, true, nil, %r/.^/ )
+        text = REXML::Text.new(options[:html_body], false, body, true, nil, %r/.^/ )
 
         html.add(body)
 
@@ -69,6 +85,10 @@ module NotificationSystem
       end
       
       client.send(message)
+    end
+    
+    def self.recipients(notification)
+      notification.notifiee.person.im_addresses.select{|im| im.use_notifier? && im.im_type == 'Jabber'}
     end
   end
 end
