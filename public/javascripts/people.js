@@ -365,15 +365,45 @@ var JajahDrawer = {
 var NotificationsConfigurator = {
   update: function(method) {
     if ($('person_notification_' + method).checked) {
+      $('person_notification_' + method + '_area').update(NotificationsConfigurator.drawSelect(method));
       if (! $('person_notification_' + method + '_area').visible()) {
         Effect.BlindDown('person_notification_' + method + '_area', { duration: Joyent.effectsDuration });
       }
     } else {
+      $('person_notification_' + method + '_area').update('');
       if ($('person_notification_' + method + '_area').visible()) {
         Effect.BlindUp('person_notification_' + method + '_area', { duration: Joyent.effectsDuration });
       }
     }
     return false;
+  },
+  
+  drawSelect: function(method) {
+    switch (method) {
+      case 'sms':
+        var rowValues = $$('input.person_phone_number').collect(function(item){
+          return item.value;
+        });
+        return rowValues;
+        break;
+      case 'email':
+        var rowValues = $$('input.person_email_address').collect(function(item){
+          return item.value;
+        });
+        return rowValues;
+        break;
+      case 'im':
+        var rowValues = $$('input.person_im_address').collect(function(item){
+          return item.value;
+        });
+        return rowValues;
+        break;
+      default:
+        return '';
+    }
+
+    alert(rowValues);
+    return '';
   }
 }
 

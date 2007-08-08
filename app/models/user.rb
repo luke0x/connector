@@ -319,7 +319,7 @@ class User < ActiveRecord::Base
   end
   
   def notify_via_sms?
-    person.phone_numbers.any?(&:notify?)
+    person.phone_numbers.any?(&:use_notifier?)
   end
 
   def sms_for_notifier
@@ -327,11 +327,11 @@ class User < ActiveRecord::Base
   end
   
   def notify_via_email?
-    person.email_addresses.any?(&:notify?)
+    person.email_addresses.any?(&:use_notifier?)
   end
 
   def notify_via_im?
-    person.im_addresses.any?(&:notify?)
+    person.im_addresses.any?(&:use_notifier?)
   end
 
   # tags
