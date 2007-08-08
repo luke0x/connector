@@ -19,29 +19,56 @@ class PhoneNumber < ActiveRecord::Base
   after_save {|record| record.person.save if record.person}
   after_destroy {|record| record.person.save if record.person}
   
-  @@providers = {
-    :att           => 'txt.att.net',
-    :cingular      => 'cingularme.com',
-    :nextel        => 'messaging.nextel.com',
-    :sprint        => 'messaging.sprintpcs.com',
-    :tmobile       => 'tmomail.net',
-    :verizon       => 'vtext.com',
-    :virgin_mobile => 'vmobl.com'
-  }
+  @@providers = { 
+    :virgin_mobile => {
+      :url => 'vmobl.com', 
+      :text => 'Virgin Mobile'
+      },
+    :tmobile => {
+      :url => 'tmomail.net', 
+      :text => 'T-Mobile'
+      },
+    :cingular => {
+      :url => 'txt.att.net', 
+      :text => 'Cingular/AT&T'
+      },
+    :sprint => {
+      :url => 'messaging.sprintpcs.com', 
+      :text => 'Sprint PCS'
+      },
+    :verizon => {
+      :url => 'vtext.com', 
+      :text => 'Verizon'
+      },
+    :nextel => { 
+      :url => 'messaging.nextel.com', 
+      :text => 'Nextel'
+      }
+    }
+
                   
   def self.providers
     @@providers
   end
   
   def provider_url
-    @@providers[self.provider.to_sym]
+    @@providers[provider.to_sym][:url]
+  end
+  
+  def provider_text
+    @@providers[provider.to_sym][:text]
+  end
+  
+  def sms_address
+    return nil unless confirmed?
+    "#{phone_number.gsub(/[^0-9]/, '')}@#{provider_url}"
   end
   
   # Used to confirm if the number is able to receive SMS via email
   # If the number matches, it saves as confirmed and returns true
   # Returns false if it does not confirm
   def confirm(number)
-    self.confirmation_number == number.strip ? self.update_attribute(:confirmed, true) : false
-  end
+    confirmation_number == number.strip ? self.update_attribute(:confirmed, true) : false
+  end 
   
 end
