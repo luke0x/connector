@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(:version => 159) do
     t.column "preferred",     :boolean, :default => false
     t.column "email_type",    :string,  :default => ""
     t.column "email_address", :string,  :default => ""
-    t.column "notify",        :boolean
+    t.column "notify",        :boolean, :default => false
   end
 
   add_index "email_addresses", ["person_id"], :name => "email_addresses_person_id_index"
@@ -174,7 +174,7 @@ ActiveRecord::Schema.define(:version => 159) do
     t.column "preferred",  :boolean, :default => false
     t.column "im_type",    :string,  :default => ""
     t.column "im_address", :string,  :default => ""
-    t.column "notify",     :boolean
+    t.column "notify",     :boolean, :default => false
   end
 
   add_index "im_addresses", ["person_id"], :name => "im_addresses_person_id_index"
@@ -375,7 +375,7 @@ ActiveRecord::Schema.define(:version => 159) do
     t.column "confirmation_number", :string
     t.column "confirmed",           :boolean, :default => false
     t.column "provider",            :string
-    t.column "notify",              :boolean
+    t.column "notify",              :boolean, :default => false
   end
 
   add_index "phone_numbers", ["person_id"], :name => "phone_numbers_person_id_index"
