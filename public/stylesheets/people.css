@@ -70,8 +70,19 @@ $Id$ */
 		padding: 2px 0 2px 18px;
 		background-repeat: no-repeat;
 		background-image: url(/images/icons/dinger.png);
-		background-position: 0 3px;
+		background-position: 0 -97px;
 		display: block;
+		padding-bottom: 8px !important;
+	}
+	#show_edit_account a:hover {
+		background-position: 0 -147px;
+	}
+	h2#show_edit_account.expanded a {
+		padding-bottom: 0px !important;
+		background-position: 0 3px;
+	}
+	h2#show_edit_account.expanded a:hover {
+		background-position: 0 -47px;
 	}
 	.notify_type {
 		padding: 1px 18px 2px 18px;

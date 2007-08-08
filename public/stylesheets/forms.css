@@ -38,19 +38,17 @@ $Id$ */
 	.dialog {
 		background-color: #D7E4EF;
 		padding: 1em 1em .5em 1em;
-		border-color: #9ABAD6;
-		border-width: 1px;
-		border-style: solid;
 		-moz-border-radius: .4em .4em .4em .4em;
 		-webkit-border-top-left-radius: .4em;
 		-webkit-border-top-right-radius: .4em;
 		-webkit-border-bottom-left-radius: .4em;
 		-webkit-border-bottom-right-radius: .4em;
 		margin-bottom: 1em;
+		border: 1px transparent solid;
 	}
 	.dialog.alt {
-		background-color: #FFEFB5;
-		border-color: #E5C797;
+		background-color: #fff2c1;
+		border: #F7D59C;
 	}
 	
 	.dialog.squareTopLeft {
@@ -58,25 +56,21 @@ $Id$ */
 		-webkit-border-top-left-radius: 0;
 	}
 	
-	.accountTypes {
-		margin-left: 1em;
-		margin-top: .7em;
-	}
 	.accountTypes td {
 		line-height: 1.3em;
 	}
 	
 	.infoGroup {
-		border-color: #B1CDE2 #EEF4F8 #EEF4F8 #B5D0E5;
-		border-width: 1px;
+		border-color: #BBCCD7;
+		border-width: 1px 0 0 0;
 		border-style: solid;
-		padding: 1em;
-		background-color: #DDE7EF;
+		padding: 1em 0 .2em 0;
 		margin: 1em 0 1em 0;
 	}
 	.alt .infoGroup {
-		border-color: #E5C797 #EEF4F8 #EEF4F8 #E5C797;
-		background-color: #FFF2D1;
+		border-width: 1px 0 0 0;
+		border-color: #F0CE97;
+		border-style: solid;
 	}
 	.infoGroup .addItem {
 		margin-left:8px !important;
@@ -85,8 +79,11 @@ $Id$ */
 		padding-right: 4px !important;
 		width: 11em;
 		text-align: right;
-		color:#777;
-		}
+		color: #4A545A;
+	}
+	.alt .infoGroupLabel {
+		color: #7A5E43;
+	}
 	.infoGroupInputLabel {
 		color: #9B9B9B;
 		font-size: .85em;
