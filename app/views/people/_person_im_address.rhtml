@@ -16,6 +16,6 @@
     <% im_types_options = options_for_select im_types, (im_address ? im_address.im_type : nil) -%>
     <%= select_tag_with_id "person[im_addresses][#{index}][im_type]", im_types_options, {:id => "person_im_addresses_#{index}_im_type"} %>
   </td>
-  <td><input id="person_im_addresses_<%= index %>_im_address" size="40" value="<%= im_address.im_address %>" type="text" maxlength="100" name="person[im_addresses][<%= index %>][im_address]" class="textInput" style="width:199px;"  /></td>
+  <td><input id="person_im_addresses_<%= index %>_im_address" size="40" value="<%= im_address.im_address %>" type="text" maxlength="100" name="person[im_addresses][<%= index %>][im_address]" class="textInput person_im_address" style="width:199px;"  /></td>
   <td onclick="People.removeNewIndex('arrPersonImAddressIndexes', <%= index %>); $('person_im_address_<%= index %>').remove(); return false;" class="deleteItem">&nbsp;</td>
 </tr>

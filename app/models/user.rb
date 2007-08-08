@@ -321,6 +321,10 @@ class User < ActiveRecord::Base
   def notify_via_sms?
     person.phone_numbers.any?(&:notify?)
   end
+
+  def sms_for_notifier
+    person.phone_numbers.detect(&:notify)
+  end
   
   def notify_via_email?
     person.email_addresses.any?(&:notify?)
