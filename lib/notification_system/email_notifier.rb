@@ -9,7 +9,7 @@ module NotificationSystem
       body =<<EOS
 #{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize}).
 
-#{ItemUrlHelper.url_for(notification.item)}
+#{MessageHelper.url_for(notification.item)}
 EOS
 
       tmail         = TMail::Mail.new
