@@ -247,14 +247,14 @@ class Person < ActiveRecord::Base
       self.phone_numbers.select(&:use_notifier?).each{|x|   x.update_attributes(:use_notifier => false)}
       self.email_addresses.select(&:use_notifier?).each{|x| x.update_attributes(:use_notifier => false)}
       self.im_addresses.select(&:use_notifier?).each{|x|    x.update_attributes(:use_notifier => false)}
-      if person_params.has_key?('notification_sms') and x = self.phone_numbers.find_by_phone_number(person_params['notification_sms'])
+      if person_params.has_key?('notifier_sms') and x = self.phone_numbers.find_by_phone_number(person_params['notifier_sms'])
         x.update_attributes(:use_notifier => true)
       end
-      if person_params.has_key?('notification_email') and x = self.email_addresses.find_by_email_address(person_params['notification_email'])
+      if person_params.has_key?('notifier_email') and x = self.email_addresses.find_by_email_address(person_params['notifier_email'])
         x.update_attributes(:use_notifier => true)
       end
-      if person_params.has_key?('notification_im') and x = self.im_addresses.find_by_im_address(person_params['notification_im'])
-        x.update_attributes(:use_notifier => true)
+      if person_params.has_key?('notifier_im') and x = self.im_addresses.find_by_im_address(person_params['notifier_im'])
+        x.update_attributes(:use_notifier => true) if x.im_type == 'Jabber'
       end
     end
 
