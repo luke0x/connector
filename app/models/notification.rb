@@ -21,12 +21,24 @@ class Notification < ActiveRecord::Base
   belongs_to :notifiee, :class_name => 'User', :foreign_key => 'notifiee_id'
   belongs_to :item, :polymorphic => true
 
+  after_create   :notify!
   after_save     :add_invitation
   before_destroy :remove_invitation
+
+  @@notification_systems = {:email  => NotificationSystem::EmailNotifier,
+                            :jabber => NotificationSystem::JabberNotifier,
+                            :sms    => NotificationSystem::SmsNotifier,
+                            :file   => NotificationSystem::FileNotifier }
 
   def acknowledge!
     self.acknowledged = true
     self.save!
+  end
+  
+  def notify!
+    @@notification_systems.each do |key, value|
+      value.notify(self) if notifiee.notify_via?(key)
+    end
   end
 
   def self.restricted_find(*args)

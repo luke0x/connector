@@ -76,13 +76,6 @@ class User < ActiveRecord::Base
   @@current = nil
   @@valid_languages = (JoyentConfig.production_languages + JoyentConfig.development_languages).collect{|l| l[1]} # TODO: make this consider the current hostname eventually
 
-  @@notification_systems = {#:none   => NullNotificationSystem.new,
-                            #:email  => EmailNotificationSystem.new, 
-                            #:jabber => JabberNotificationSystem.new,
-                            #:aim    => AimNotificationSystem.new,
-                            #:sms    => SmsNotificationSystem.new,
-                            :file   => NotificationSystem::FileNotifier }
-
   def self.current=(user)
     @@current  = user
     @@selected = user
@@ -318,20 +311,21 @@ class User < ActiveRecord::Base
     end
   end
   
-  def notify_via_sms?
-    person.phone_numbers.any?(&:use_notifier?)
-  end
-
   def sms_for_notifier
     person.phone_numbers.detect(&:notify)
   end
   
-  def notify_via_email?
-    person.email_addresses.any?(&:use_notifier?)
-  end
-
-  def notify_via_im?
-    person.im_addresses.any?(&:use_notifier?)
+  def notify_via?(type)
+    case type
+    when :email
+      person.email_addresses.any?(&:use_notifier?)
+    when :jabber
+      person.im_addresses.any?(&:use_notifier?)
+    when :sms
+      person.phone_numbers.any?(&:use_notifier?)
+    else
+      false
+    end
   end
 
   # tags
@@ -660,14 +654,6 @@ class User < ActiveRecord::Base
   
   def jajah_password=(new_password)
     write_attribute(:jajah_password, encrypt(new_password))
-  end
-  
-  def notification_systems
-    [@@notification_systems[:file]]
-  end
-  
-  def send_notification(message)
-    notification_systems.each{ |system| system.notify(self.username, message) }
   end
   
   private
