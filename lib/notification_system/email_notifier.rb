@@ -17,14 +17,14 @@ EOS
 
       send_message :subject => "Connector Notification: #{notification.item.name}", 
                    :body    => body,
-                   :to      => recipients(notification),
+                   :to      => notification.notifiee.user.notifier_email,
                    :from    => notification.notifier.system_email
     end
     
     def self.alarm(event)
       send_message :subject => "Connector Alarm: #{event.name}",
                    :body    => "#{event.start_time.strftime('%D %T')}\n#{event.name}\n#{event.location}",
-                   :to      => recipients(notification),
+                   :to      => notification.notifiee.user.notifier_email,
                    :from    => event.owner.system_email
     end
     
@@ -45,10 +45,6 @@ EOS
           smtp.send_message tmail.encoded, tmail.from, tmail.destinations
         end
       end
-    end
-
-    def self.recipients(notification)
-      notification.notifiee.person.email_addresses.select(&:use_notifier?)
     end
   end
 end
