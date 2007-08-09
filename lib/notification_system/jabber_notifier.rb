@@ -24,7 +24,7 @@ module NotificationSystem
       options[:plain_body] = "#{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize}) at #{MessageHelper.notification_time(notification)}"
       options[:html_body]  = "#{notification.notifier.full_name} notified you about <a href=\"#{MessageHelper.url_for(notification.item)}\">#{notification.item.name} (#{notification.item.class_humanize})</a> at #{MessageHelper.notification_time(notification)}"
       
-      recipients(notification).each do |jabber_address|
+      jabber_recipients(notification.notifiee).each do |jabber_address|
         options[:to] = jabber_address.im_address
         send_message(options)
       end
@@ -36,12 +36,14 @@ module NotificationSystem
       options[:plain_body] = "Event Alarm: #{event.name} at #{event.start_time.strftime('%D %T')} (#{event.location})"
       options[:html_body]  = "Event Alarm: <a href=\"#{MessageHelper.url_for(notification.item)}\">#{event.name}</a> at #{event.start_time.strftime('%D %T')} (#{event.location})"
       
-      recipients(notification).each do |jabber_address|
+      event_recipients(event).each do |jabber_address|
         options[:to] = jabber_address.im_address
         send_message(options)
       end
     end
     
+    private
+
     def self.client
       return @@client if @@client && @@client.is_connected?
       
@@ -70,9 +72,7 @@ module NotificationSystem
       
       @@client
     end
-    
-    private
-    
+        
     # Client will fall back to plain_text if the html_text won't work.
     def self.send_message(options)
       @@counter += 1
@@ -95,9 +95,14 @@ module NotificationSystem
       
       client.send(message)
     end
+  
+   
+    def self.event_recipients(event)
+      event.invitations.collect{ |invite| jabber_recipients(invite.user) }.flatten
+    end 
     
-    def self.recipients(notification)
-      notification.notifiee.person.im_addresses.select{|im| im.use_notifier? && im.im_type == 'Jabber'}
+    def self.jabber_recipients(user)
+      user.person.im_addresses.select{|im| im.use_notifier? && im.im_type == 'Jabber'}
     end
   end
 end
