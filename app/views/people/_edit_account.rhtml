@@ -12,9 +12,10 @@
     <% # already a user -%>
     <% if person.admin? or person.user? -%>
       <h2 id="show_edit_account">
-        <%= link_to_function _('Edit Preferences'), "EditAccountArea.toggle();" %>
+        <%= link_to_function _('Edit Preferences'), "EditAccountArea.toggle();", {:id => 'show_edit_account_link'} %>
       </h2>
-      <div id="person_user_account_area" style="display: ;">
+      <div id="person_user_account_area" style="display: none;">
+        <%= javascript_tag("Event.observe(window, 'load', function(event){ if (window.location.href.match(/#preferences$/)) $('show_edit_account_link').onclick(); });") %>
         <%= render :partial => 'edit_account_user', :locals => {:person => person} %>
       </div>
     <% # already a guest -%>

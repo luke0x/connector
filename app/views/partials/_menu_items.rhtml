@@ -59,7 +59,7 @@
   			<% if User.current.guest? -%>
   				<%= link_to_function(_("Your Preferences") + '&hellip;', "ModalDialog.showURL('#{guest_edit_url(:id => User.current.id)}')", {:title => _("Edit your personal information")}) %>
   			<% else -%>
-  				<%= link_to(_("Your Preferences"), person_edit_url(:id => User.current.person.id), {:title => _("Edit your personal information")}) %>
+  				<%= link_to(_("Your Preferences"), person_edit_url(:id => User.current.person.id, :anchor => 'preferences'), {:title => _("Edit your personal information")}) %>
   			<% end -%>
   		</div></div></div></div>
 		</li>
