@@ -132,7 +132,7 @@ class VcardImportTest < Test::Unit::TestCase
     assert_equal 'ian',                    person.nickname
     assert_equal 'Joy Division',           person.company_name
     assert_equal 'Singer',                 person.title
-    assert_equal 3,                        person.phone_numbers.size
+    assert_equal 4,                        person.phone_numbers.size
     assert_equal '0800 666 112',           person.phone_numbers.first.phone_number
     assert_equal 'mobile',                 person.phone_numbers.first.phone_number_type
     assert       person.phone_numbers.first.preferred
