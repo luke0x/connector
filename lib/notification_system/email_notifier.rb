@@ -18,14 +18,14 @@ EOS
       send_message :subject => "Connector Notification: #{notification.item.name}", 
                    :body    => body,
                    :to      => notification.notifiee.notifier_email,
-                   :from    => notification.notifier.system_email
+                   :from    => JoyentConfig.email_notifier_from_address
     end
     
     def self.alarm(event)
       send_message :subject => "Connector Alarm: #{event.name}",
                    :body    => "#{event.start_time.strftime('%D %T')}\n#{event.name}\n#{event.location}",
                    :to      => event.owner.notifier_email,
-                   :from    => event.owner.system_email
+                   :from    => JoyentConfig.email_notifier_from_address
     end
     
     def self.send_message(opts)
