@@ -85,7 +85,7 @@
       <dd>
         <%= im.im_address %>
         <em><%= h(im.im_type) %></em>
-        <% if im_address.use_notifier? %>
+        <% if im.use_notifier? %>
           <%= _('Send Notifications Here') %>
         <% end -%>
       </dd>
