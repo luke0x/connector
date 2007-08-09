@@ -212,12 +212,15 @@
 			<table>
 				<tr>
 					<td class="infoGroupLabel" valign="top">
-						<%= _('ICS Alarm') -%>:
+						<%= _('Alarm') -%>:
 					</td>
 					<td>
 						<% alarms = [[_('None'), 0], [_('15 minutes before'), 15], [_('1 hour before'), 60], [_('1 day before'), 1440]] -%>
 						<% alarm_options = options_for_select alarms, @event.alarm_trigger_in_minutes -%>
 						<%= select_tag "event[alarm_trigger_in_minutes]", alarm_options %>
+            <%= 'SMS' if @event.owner.notify_via?(:sms) %>
+            <%= 'Email' if @event.owner.notify_via?(:email) %>
+            <%= 'IM' if @event.owner.notify_via?(:jabber) %>
 					</td>
 				</tr>
 			</table>

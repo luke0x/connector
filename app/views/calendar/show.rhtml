@@ -126,8 +126,13 @@
     <% end -%>
   <% end -%>
   <% if @event.alarm? -%>
-    <dt><%= _('ICS Alarm') %>:</dt>
-    <dd><%=h @event.alarm_trigger_in_words %></dd>
+    <dt><%= _('Alarm') %>:</dt>
+    <dd>
+      <%=h @event.alarm_trigger_in_words %>
+      <%= 'SMS' if @event.owner.notify_via?(:sms) %>
+      <%= 'Email' if @event.owner.notify_via?(:email) %>
+      <%= 'IM' if @event.owner.notify_via?(:jabber) %>
+    </dd>
   <% end -%>
   <% unless @event.notes.blank? -%>
     <dt><%= _('Notes') %>:</dt>
