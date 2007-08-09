@@ -96,7 +96,6 @@ module NotificationSystem
       client.send(message)
     end
   
-   
     def self.event_recipients(event)
       event.invitations.collect{ |invite| jabber_recipients(invite.user) }.flatten
     end 

@@ -28,8 +28,7 @@ class Notification < ActiveRecord::Base
   cattr_accessor :notification_systems
   @@notification_systems = {:email  => NotificationSystem::EmailNotifier,
                             :jabber => NotificationSystem::JabberNotifier,
-                            :sms    => NotificationSystem::SmsNotifier,
-                            :file   => NotificationSystem::FileNotifier }
+                            :sms    => NotificationSystem::SmsNotifier }
 
   def acknowledge!
     self.acknowledged = true
