@@ -24,7 +24,7 @@ EOS
     def self.alarm(event)
       send_message :subject => "Connector Alarm: #{event.name}",
                    :body    => "#{event.start_time.strftime('%D %T')}\n#{event.name}\n#{event.location}",
-                   :to      => notification.notifiee.notifier_email,
+                   :to      => event.owner.notifier_email,
                    :from    => event.owner.system_email
     end
     
