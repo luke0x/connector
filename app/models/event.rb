@@ -14,6 +14,7 @@ class Event < ActiveRecord::Base
   include JoyentItem
 
   before_save   :set_sort_caches
+  after_create  :set_next_fire
   
   serialize :by_day, Array
 
@@ -496,5 +497,11 @@ class Event < ActiveRecord::Base
 
     def set_sort_caches
       self.recurrence_name = recurrence_description ? recurrence_description.name : ''
+    end
+    
+    def set_next_fire
+      if alarm?
+        update_attributes :next_fire => (start_time - alarm_trigger_in_minutes.minutes), :fired => false
+      end
     end
 end
