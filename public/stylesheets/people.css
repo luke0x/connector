@@ -24,19 +24,19 @@ $Id$ */
 
 /* sidebar -------------------------------------------------- */
 
-	.people, #people .defaultGroupAll {		
+	.people, .defaultGroupAll {		
 		background-image: url(/images/icons/addressBook16.png);
 		}
-	#people .smartGroup {		
+	.smartGroup {		
 		background-image: url(/images/icons/groupFolderSmart.png);
 		}
-	#people .group {		
+	.group {		
 		background-image: url(/images/icons/groupFolder.png);
 		}
-	#people .group.subscription {
+	.group.subscription {
 		background-image: url(/images/icons/contactSubscription.png);
 		}
-	#people a.smartGroup {		
+	a.smartGroup {		
 		background-image: url(/images/icons/contactSmart.png);
 		}
 	.userFolder {		
@@ -99,6 +99,69 @@ $Id$ */
 		background-image: url(/images/icons/notify-im.png);
 	}
 
+	#person_addresses tr:first-child td table {
+		margin-top: 0px !important;
+	}
+	#person_addresses tr td table {
+		margin-top: 2em !important;
+	}
+	
+	
+	#people a.addItem, #people .addItem {
+		margin-left: 17px !important;
+	}
+
+/* Item View ------------------------------------------- */
+				
+	#contentPane dl {
+		padding: 0;
+		}
+	#contentPane dt+dd {
+		margin-top:1.5em;
+		}
+	#contentPane dd+dt {	
+		margin-top:1.5em;
+		}
+	#contentPane dt {
+		width:10em;
+		text-align:right;
+		display:block;
+		float:left;
+		margin:0px 0 0 0;
+		}
+	#contentPane dd {
+		margin:0.3em 0 0px 10.5em;
+		padding:0;
+		}
+		
+/* Edit View Fix --------------------------------------- */
+
+	#ContectCell legend, #ContectCell legend a {		
+		color: #777;
+		}
+	#item_editor legend, #item_editor legend a {		
+		font-weight: bold !important;
+		font-size: 1.1em !important;
+		margin: 0 0 0 0;
+		padding: 0 5px 0 5px;
+		}
+
+	#item_editor fieldset {		
+		border: #DCDCDC;
+		border-width: 1px 0 0 0;
+		margin: 2.5em 0 1em 0;
+		padding-top: 0.75em;
+		border-style: solid;
+		border: #DCDCDC;
+		border-width: 1px 0 0 0;
+		margin: 1.75em 0 1em 0;
+		padding-top: 0.75em;
+		border-style: solid;
+		}
+	.addItem {
+		margin:1em 0 0 0;
+		margin:1em 0 0 0;
+		}
 
 /* index view */
 

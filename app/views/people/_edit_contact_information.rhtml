@@ -16,9 +16,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('General Info') -%>:
+				<%= _('General Info') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form">
 				<table>
 					<tr>
 						<td>
@@ -58,9 +58,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('Phone Numbers') -%>:
+				<%= _('Phone Numbers') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form has_stars">
 				<table>
 					<tbody id="person_phone_numbers">
 						<% @person.phone_numbers.each_with_index do |phone_number, index| -%>
@@ -78,9 +78,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('Email Addresses') -%>:
+				<%= _('Email Addresses') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form has_stars">
 				<table>
 					<tbody id="person_email_addresses">
 						<% @person.email_addresses.each_with_index do |email_address, index| -%>
@@ -98,9 +98,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('Addresses') -%>:
+				<%= _('Addresses') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form has_stars">
 				<table>
 					<tbody id="person_addresses">
 						<% @person.addresses.each_with_index do |address, index| -%>
@@ -118,9 +118,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('IM Address') -%>:
+				<%= _('IM Address') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form has_stars">
 				<table>
 					<tbody id="person_im_addresses">
 						<% @person.im_addresses.each_with_index do |im_address, index| -%>
@@ -138,9 +138,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('Websites') -%>:
+				<%= _('Websites') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form has_stars">
 				<table>
 					<tbody id="person_websites">
 						<% @person.websites.each_with_index do |website, index| -%>
@@ -158,9 +158,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('Special Dates') -%>:
+				<%= _('Special Dates') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form has_stars">
 				<table>
 					<tbody id="person_special_dates">
 						<% @person.special_dates.each_with_index do |special_date, index| -%>
@@ -178,9 +178,9 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top">
-				<%= _('Notes') -%>:
+				<%= _('Notes') -%>
 			</td>
-			<td>
+			<td class="inforgroup_form">
 				<textarea rows="5" name="person[notes]" style="width:295px;"><%= @person.notes %></textarea>
 			</td>
 		</tr>

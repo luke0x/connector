@@ -10,12 +10,10 @@
 <div class="infoGroup">
 	<table class="accountTypes">
 		<tr>
-			<td class="infoGroupLabel" valign="top" rowspan="6">
-				<%= _('Account') -%>:
+			<td class="infoGroupLabel" valign="top" rowspan="4">
+				<%= _('Account') -%>
 			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
+			<td colspan="2" class="inforgroup_form">
 				<% if person.user -%>
 					<input type="text" disabled="disabled" size="20" maxlength="64" class="textInput" style="width:260px;" value="<%= person.user.username %>" />
 				<% else -%>
@@ -25,7 +23,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td class="inforgroup_form">
 				<input id="person_password" type="password" name="person[password]" size="20" maxlength="64" autocomplete="off" class="textInput" style="width:130px;" />
 				<div class="infoGroupInputLabel"><%= _('password') %></div>
 			</td>
@@ -35,7 +33,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="padding-top: 1em;">
+			<td colspan="2" style="padding-top: 1em;" class="inforgroup_form">
 				<span id="personRecoveryEmailSelectContainer"><%= _('Loading') %>&hellip;</span>
 				<%= javascript_tag("People.currentRecoveryEmail = '#{person.user.recovery_email rescue ''}';") %>
 				<%= javascript_tag("Event.observe(window, 'load', function(event){ People.drawEmailNoticeSelect(); });") %>
@@ -43,7 +41,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="padding-top: 1em;">
+			<td colspan="2" style="padding-top: 1em;" class="inforgroup_form">
 				<% if person.admin? -%>
 					<input id="person_admin" type="checkbox" name="person[admin]" checked="checked" <%= 'disabled="disabled"' if person == User.current.person %> />
 					<%= _('Allow this user to create and delete other users?') %>
@@ -59,16 +57,16 @@
 	<table>
 		<tr>
 			<td class="infoGroupLabel" valign="top" rowspan="2">
-				<%= _('International') -%>:
+				<%= _('International') -%>
 			</td>
-			<td colspan="2">
+			<td colspan="2" class="inforgroup_form">
 				<% language_options = options_for_select(connector_languages, (person.user ? person.user.language : nil)) -%>
 				<%= select_tag_with_id "person[language]", language_options, {:id => "person_language"} %>
 				<div class="infoGroupInputLabel"><%= _('language') %></div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="padding-top: 1em;">
+			<td colspan="2" style="padding-top: 1em;" class="inforgroup_form">
 				<%= tzinfo_timezone_select 'person', 'time_zone', person.time_zone %>
 				<div class="infoGroupInputLabel"><%= _('time zone') %></div>
 			</td>
@@ -80,9 +78,9 @@
 		<% if User.current.person == person -%>
 			<tr>
 				<td class="infoGroupLabel" valign="top">
-					<%= _('Notifications') -%>:
+					<%= _('Notifications') -%>
 				</td>
-				<td colspan="2">
+				<td colspan="2" class="inforgroup_form">
 					<p><%= _('Send notifications and event alarms via SMS, email and instant message') %></p>
 					<br />
 					<input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if User.current.notify_via?(:sms) %> onchange="return NotificationsConfigurator.update('sms');" />

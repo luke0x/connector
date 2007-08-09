@@ -317,64 +317,6 @@ $Id$ */
 			
 
 
-/* Contacts --------------------------------------------- */
-
-	/* Item View ------------------------------------------- */
-					
-		#people #contentPane dl {
-			padding: 0;
-			}
-		#people #contentPane dt+dd {
-			margin-top:1.5em;
-			}
-		#people #contentPane dd+dt {	
-			margin-top:1.5em;
-			}
-		#people #contentPane dt {
-			width:10em;
-			text-align:right;
-			display:block;
-			float:left;
-			margin:0px 0 0 0;
-			}
-		#people #contentPane dd {
-			margin:0.3em 0 0px 10.5em;
-			padding:0;
-			}
-			
-	/* Edit View Fix --------------------------------------- */
-	
-		#people #ContectCell legend, #people #ContectCell legend a {		
-			color: #777;
-			}
-		#people #item_editor legend, #people #item_editor legend a {		
-			font-weight: bold !important;
-			font-size: 1.1em !important;
-			margin: 0 0 0 0;
-			padding: 0 5px 0 5px;
-			}
-	
-		#people #item_editor fieldset {		
-			border: #DCDCDC;
-			border-width: 1px 0 0 0;
-			margin: 2.5em 0 1em 0;
-			padding-top: 0.75em;
-			border-style: solid;
-			border: #DCDCDC;
-			border-width: 1px 0 0 0;
-			margin: 1.75em 0 1em 0;
-			padding-top: 0.75em;
-			border-style: solid;
-			}
-		#people .addItem {
-			margin:1em 0 0 0;
-			margin:1em 0 0 0;
-			}
-		/*
-		#people fieldset {		
-			position: relative;
-			}
-		*/
 		#item_editor {
 			padding:0px;
 			margin:0px;

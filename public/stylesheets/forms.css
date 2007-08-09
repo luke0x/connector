@@ -69,11 +69,20 @@ $Id$ */
 		padding: 1em 0 .2em 0;
 		margin: 1em 0 1em 0;
 	}
+	
 	.alt .infoGroup {
 		border-width: 1px 0 0 0;
 		border-color: #F0CE97;
 		border-style: solid;
 	}
+	
+	.inforgroup_form {
+		padding-left: 16px !important;
+	}
+	.has_stars {
+		padding-left: 0px !important;
+	}
+	
 	.infoGroup .addItem {
 		margin-left:8px !important;
 		}
@@ -89,21 +98,21 @@ $Id$ */
 	.infoGroupInputLabel {
 		color: #9B9B9B;
 		font-size: .85em;
-		padding-left: 4px;
-		padding-right: 8px;
-		}
+		line-height: 8px;
+		padding: 1px 8px 5px 4px;
+	}
 	.infoGroup table td {
 		padding: 0;
 		}
 		
-	.infoGroup hr {	
-		border-top: 0px solid #B1CDE2;
-		border-bottom: 1px solid #EEF4F8;
-		border-left: 0px solid #AAA;
-		border-right: 0px solid #AAA;
+	.infoGroup hr {
+		border-top: 0px #B1CDE2 solid;
+		border-bottom: 0px #BBCCD7 solid;
+		border-left: 0px #AAA solid;
+		border-right: 0px #AAA solid;
 		height: 1px;
-		background-color: #B1CDE2;
-		}
+		background-color: #BBCCD7;
+	}
 		
 	.alt .infoGroup hr {
 		height: 2px;
