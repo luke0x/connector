@@ -14,6 +14,7 @@ ADR;TYPE=home:;;613 Marsh St;Burlington;;90210;Australia
 TEL;TYPE=mobile,pref:0800 666 112
 TEL;TYPE=home:0800 666 111
 TEL;TYPE=fax:0800 666 111
+TEL;TYPE=mobile:415 555 1542
 URL;type=Koz:http\://www.koz.com
 URL;type=Koz:http\://www.koz.com
 URL;type=Koz:http\://www.koz.com
