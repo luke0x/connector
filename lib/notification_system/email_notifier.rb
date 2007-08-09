@@ -9,14 +9,14 @@ EOS
 
       send_message :subject => "Connector Notification: #{notification.item.name}", 
                    :body    => body,
-                   :to      => notification.notifiee.system_email, # TODO needs to change to stored pref
+                   :to      => recipients(notification),
                    :from    => notification.notifier.system_email
     end
     
     def self.alarm(event)
       send_message :subject => "Connector Alarm: #{event.name}",
                    :body    => "#{event.start_time.strftime('%D %T')}\n#{event.name}\n#{event.location}",
-                   :to      => event.owner.system_email, # TODO needs to change to stored pref
+                   :to      => recipients(notification),
                    :from    => event.owner.system_email
     end
     
@@ -37,6 +37,10 @@ EOS
           smtp.send_message tmail.encoded, tmail.from, tmail.destinations
         end
       end
+    end
+
+    def self.recipients(notification)
+      notification.notifiee.person.email_addresses.select(&:use_notifier?)
     end
   end
 end
