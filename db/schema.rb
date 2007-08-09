@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 160) do
+ActiveRecord::Schema.define(:version => 161) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(:version => 160) do
   end
 
   add_index "affiliates", ["name"], :name => "index_affiliates_on_name"
+
+  create_table "ass", :id => false, :force => true do |t|
+    t.column "f", :string
+  end
 
   create_table "auth_keys", :force => true do |t|
     t.column "key",             :string
@@ -138,6 +142,8 @@ ActiveRecord::Schema.define(:version => 160) do
     t.column "recurrence_name",           :string
     t.column "alarm_trigger_in_minutes",  :integer
     t.column "by_day",                    :string
+    t.column "next_fire",                 :datetime
+    t.column "fired",                     :boolean
   end
 
   add_index "events", ["organization_id"], :name => "events_organization_id_index"
@@ -412,6 +418,9 @@ ActiveRecord::Schema.define(:version => 160) do
   add_index "reports", ["reportable_type"], :name => "reports_reportable_type_index"
   add_index "reports", ["user_id"], :name => "reports_user_id_index"
 
+  create_table "services", :force => true do |t|
+  end
+
   create_table "sessions", :force => true do |t|
     t.column "session_id", :string
     t.column "data",       :text
@@ -543,6 +552,10 @@ ActiveRecord::Schema.define(:version => 160) do
   add_index "users", ["organization_id"], :name => "users_organization_id_index"
   add_index "users", ["person_id"], :name => "users_person_id_index"
   add_index "users", ["username"], :name => "users_username_index"
+
+  create_table "wankers", :force => true do |t|
+    t.column "name", :text
+  end
 
   create_table "websites", :force => true do |t|
     t.column "person_id",  :integer

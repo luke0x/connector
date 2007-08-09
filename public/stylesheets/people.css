@@ -84,21 +84,6 @@ $Id$ */
 	h2#show_edit_account.expanded a:hover {
 		background-position: 0 -47px;
 	}
-	.notify_type {
-		padding: 1px 18px 2px 18px;
-		background-repeat: no-repeat;
-		background-position: 0 50%;
-	}
-	.notify_sms {
-		background-image: url(/images/icons/notify-sms.png);
-	}
-	.notify_email {
-		background-image: url(/images/icons/notify-email.png);
-	}
-	.notify_im {
-		background-image: url(/images/icons/notify-im.png);
-	}
-
 	#person_addresses tr:first-child td table {
 		margin-top: 0px !important;
 	}
