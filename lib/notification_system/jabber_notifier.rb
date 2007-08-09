@@ -3,7 +3,7 @@ require 'xmpp4r/client'
 module NotificationSystem
   class JabberNotifier
     cattr_accessor :sender_account, :sender_password
-    @@sender_account    = JoyentConfig.jabber_notifier_sender
+    @@sender_account    = JoyentConfig.jabber_notifier_account
     @@sender_password   = JoyentConfig.jabber_notifier_password
 
     @@received_file_log = Logger.new("#{RAILS_ROOT}/log/received_jabbers.log")
@@ -39,7 +39,7 @@ module NotificationSystem
       
       @@client.close rescue
       
-      jid      = Jabber::JID.new("#{@@sender_account}/connector")
+      jid      = Jabber::JID.new("#{@@sender_account}/connector_#{(rand*10000).round}")
       @@client = Jabber::Client.new(jid)
       @@client.connect
       @@client.auth(@@sender_password)
@@ -49,13 +49,13 @@ module NotificationSystem
         @@received_file_log.info("#{Time.now.xmlschema} #{message.from.node}@#{message.from.domain}\t#{message.body}")
 
         case message.body
-        when /time/i
-          send_message(:to => message.from, :plain_body => Time.now.rfc2822)
+        when /\btime\b/i
+          send_message(:to => message.from, :plain_body => Time.now.rfc2822, :subject => "Time")
+        when /\bdismiss\b/i, /\back\b/i, /\backnowledge\b/i
         when /accept/i
-          
         when /deny/i, /reject/i
-          
-          # keep a hash for the last message sent and a link to the id of the notification
+          # keep a hash for the last message sent and a link to the id of the notification, or
+          # require the id of the object to come in too
         end
       end
       
