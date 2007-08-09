@@ -94,5 +94,15 @@ i18n_do_not_include = [
   _('Expand'),
   _('ListFolder'),
   _('Spacebar'),
-  _('Toggle First Checkbox')
+  _('Toggle First Checkbox'),
+
+  # images
+
+  # sidebar tabs
+  _('Groups'),
+  _('Tags'),
+  _('Access'),
+  _('Permissions'),
+  _('Notify'),
+  _('Notifications')
 ]
