@@ -380,6 +380,8 @@ class Event < ActiveRecord::Base
     self.owner                     = User.current
     self.by_day                    = event_params[:by_day]
     self.save
+    
+    set_next_fire
 
     if self.valid? && remember_to_renotify
       self.renotify!
@@ -478,7 +480,7 @@ class Event < ActiveRecord::Base
   private
 
     def to_utc(time)
-      if User.current && time
+      if User.current && time_4
         begin
           User.current.person.tz.local_to_utc(time)
         rescue TZInfo::AmbiguousTime 
@@ -502,6 +504,8 @@ class Event < ActiveRecord::Base
     def set_next_fire
       if alarm?
         update_attributes :next_fire => (start_time - alarm_trigger_in_minutes.minutes), :fired => false
+      else
+        update_attributes :fired => true
       end
     end
 end
