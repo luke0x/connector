@@ -14,14 +14,14 @@ module NotificationSystem
         "http://#{item.organization.system_domain.web_domain}/mail/#{item.mailbox_id}/#{item.id}"
       when Event, StubEvent
         if calendar = item.calendars.select{|cal| cal && (User.current.id == cal.user_id)}.first
-          "http://#{item.organization.system_domain.web_domain}/calendar/#{item.calendar_id}/#{item.id}"
+          "http://#{item.organization.system_domain.web_domain}/calendar/#{calendar.id}/#{item.id}"
         else
-          "http://#{item.organization.system_domain.web_domain}/calendar/#{item.calendars.first.id}/#{item.id}"
+          "http://#{item.organization.system_domain.web_domain}/calendar/#{item.primary_calendar.id}/#{item.id}"
         end
       when Person
         "http://#{item.organization.system_domain.web_domain}/person/#{item.id}"
       when JoyentFile
-        "http://#{item.organization.system_domain.web_domain}/files/#{item.folder_id}/#{itemid}"
+        "http://#{item.organization.system_domain.web_domain}/files/#{item.folder_id}/#{item.id}"
       when Bookmark
         "http://#{item.organization.system_domain.web_domain}/bookmarks/#{item.id}/show"
       when List
