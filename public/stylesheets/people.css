@@ -110,6 +110,12 @@ $Id$ */
 	#people a.addItem, #people .addItem {
 		margin-left: 17px !important;
 	}
+	.notification_types select {
+		margin-top: .25em;
+	}
+	.notification_type {
+		margin-top: .5em;
+	}
 
 /* Item View ------------------------------------------- */
 				
