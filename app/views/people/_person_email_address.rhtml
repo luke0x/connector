@@ -21,3 +21,4 @@
 </tr>
 
 <%= javascript_tag("Event.observe(\"person_email_addresses_#{index}_email_address\", 'change', function(event){ People.drawEmailNoticeSelect(); });") %>
+<%= javascript_tag("Event.observe(\"person_email_addresses_#{index}_email_address\", 'change', function(event){ NotificationsConfigurator.update('email'); });") %>

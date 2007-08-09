@@ -19,3 +19,5 @@
   <td><input id="person_phone_numbers_<%= index %>_phone_number" size="20" value="<%= phone_number.phone_number %>" type="text" maxlength="20" name="person[phone_numbers][<%= index %>][phone_number]" class="textInput person_phone_number" style="width:200px;" /></td>
   <td><a href="#" onclick="People.removeNewIndex('arrPersonPhoneNumberIndexes', <%= index %>); $('person_phone_number_<%= index %>').remove(); return false;" class="deleteItem">-</a></td>
 </tr>
+
+<%= javascript_tag("Event.observe(\"person_phone_numbers_#{index}_phone_number\", 'change', function(event){ NotificationsConfigurator.update('sms'); });") %>

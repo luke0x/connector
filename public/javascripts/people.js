@@ -328,13 +328,12 @@ var People = {
 	
 	drawEmailNoticeSelect: function() {
 		if (!(container = $('personRecoveryEmailSelectContainer'))) return;
+    var currentAddress = '';
 
 		if (e = $('person_recovery_email')) {
 		  currentAddress = e.value;
 		} else if (People.currentRecoveryEmail != '') {
 			currentAddress = People.currentRecoveryEmail;
-		} else {
-			currentAddress = '';
 		}
 		emailAddresses = People.getEditEmailAddresses().reject(function(address){
 			return address.strip() == '';
@@ -367,27 +366,46 @@ var JajahDrawer = {
 
 var NotificationsConfigurator = {
   update: function(method) {
+		if (!(container = $('person_notification_' + method + '_area'))) return;
+
     if ($('person_notification_' + method).checked) {
-      $('person_notification_' + method + '_area').update(NotificationsConfigurator.drawSelect(method));
-      if (! $('person_notification_' + method + '_area').visible()) {
-        Effect.BlindDown('person_notification_' + method + '_area', { duration: Joyent.effectsDuration });
+      container.update(NotificationsConfigurator.drawSelect(method));
+      if (! container.visible()) {
+        Effect.BlindDown(container, { duration: Joyent.effectsDuration });
       }
     } else {
-      $('person_notification_' + method + '_area').update('');
-      if ($('person_notification_' + method + '_area').visible()) {
-        Effect.BlindUp('person_notification_' + method + '_area', { duration: Joyent.effectsDuration });
+      container.update('');
+      if (container.visible()) {
+        Effect.BlindUp(container, { duration: Joyent.effectsDuration });
       }
     }
     return false;
   },
   
   drawSelect: function(method) {
+    draw = '';
+
     switch (method) {
       case 'sms':
+        var currentSMS = '';
+    		if (e = $('person_notifier_sms')) {
+    		  currentSMS = e.value;
+    		} else if (People.currentNotifierSMS != '') {
+    			currentSMS = People.currentNotifierSMS;
+    		}
+
         var rowValues = $$('input.person_phone_number').collect(function(item){
           return item.value;
         });
-        return rowValues;
+
+        draw += '<select id="person_notifier_sms" name="person[notifier_sms]" style="width:280px;">';
+    		rowValues.each(function(rowValue){
+    			draw += '<option ';
+    			if (People.currentNotifierSMS == rowValue) draw += 'selected="selected" ';
+    			draw += 'value="' + rowValue + '">' + rowValue + '</option>';
+    		});
+        draw += '</select>';
+        return draw;
         break;
       case 'email':
         var rowValues = $$('input.person_email_address').collect(function(item){
@@ -404,9 +422,6 @@ var NotificationsConfigurator = {
       default:
         return '';
     }
-
-    alert(rowValues);
-    return '';
   }
 }
 

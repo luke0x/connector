@@ -311,10 +311,6 @@ class User < ActiveRecord::Base
     end
   end
   
-  def sms_for_notifier
-    person.phone_numbers.detect(&:notify)
-  end
-  
   def notify_via?(type)
     case type
     when :email
@@ -326,6 +322,18 @@ class User < ActiveRecord::Base
     else
       false
     end
+  end
+
+  def notifier_sms
+    person.phone_numbers.detect(&:use_notifier?)
+  end
+
+  def notifier_email
+    person.email_addresses.detect(&:use_notifier?)
+  end
+
+  def notifier_im
+    person.im_addresses.detect(&:use_notifier?)
   end
 
   # tags

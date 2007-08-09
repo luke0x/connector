@@ -240,8 +240,22 @@ class Person < ActiveRecord::Base
       self.owner = self.user # ensure the user is their own owner
     end
     
+    # update other user settings
     if self.user and ! self.user.new_record?
       self.user.set_option('Language', person_params['language']) if person_params.has_key?('language')
+
+      self.phone_numbers.select(&:use_notifier?).each{|x|   x.update_attributes(:use_notifier => false)}
+      self.email_addresses.select(&:use_notifier?).each{|x| x.update_attributes(:use_notifier => false)}
+      self.im_addresses.select(&:use_notifier?).each{|x|    x.update_attributes(:use_notifier => false)}
+      if person_params.has_key?('notification_sms') and x = self.phone_numbers.find_by_phone_number(person_params['notification_sms'])
+        x.update_attributes(:use_notifier => true)
+      end
+      if person_params.has_key?('notification_email') and x = self.email_addresses.find_by_email_address(person_params['notification_email'])
+        x.update_attributes(:use_notifier => true)
+      end
+      if person_params.has_key?('notification_im') and x = self.im_addresses.find_by_im_address(person_params['notification_im'])
+        x.update_attributes(:use_notifier => true)
+      end
     end
 
     self.save

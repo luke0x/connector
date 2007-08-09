@@ -49,9 +49,7 @@
         <em>
           <%= h(_(phone_number.phone_number_type)) %>
         </em>
-        <% if phone_number.phone_number_type == 'Mobile' -%>
-          <%= link_to_function _('Enable SMS'), "ModalDialog.showURL('#{url_for(:action => 'manage_sms', :controller => 'phone_number')}');" %>
-        <% end -%>
+        <%= 'SMS' if phone_number.use_notifier? -%>
       </dd>
     <% end -%>
   <% end -%>

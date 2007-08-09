@@ -19,3 +19,5 @@
   <td><input id="person_im_addresses_<%= index %>_im_address" size="40" value="<%= im_address.im_address %>" type="text" maxlength="100" name="person[im_addresses][<%= index %>][im_address]" class="textInput person_im_address" style="width:199px;"  /></td>
   <td onclick="People.removeNewIndex('arrPersonImAddressIndexes', <%= index %>); $('person_im_address_<%= index %>').remove(); return false;" class="deleteItem">&nbsp;</td>
 </tr>
+
+<%= javascript_tag("Event.observe(\"person_im_addresses_#{index}_im_address\", 'change', function(event){ NotificationsConfigurator.update('im'); });") %>
