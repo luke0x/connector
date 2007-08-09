@@ -113,4 +113,6 @@ class JoyentConfig
   # Notifiers
   config_value :jabber_notifier_account,  'username'
   config_value :jabber_notifier_password, 'password'
+  config_value :sms_notifier_from_address, 'notifier@joyent.com'
+  config_value :email_notifier_from_address, 'notifier@joyent.com'
 end
