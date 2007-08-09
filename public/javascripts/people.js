@@ -387,6 +387,10 @@ var NotificationsConfigurator = {
 
     switch (method) {
       case 'sms':
+        var rowValues = $$('input.person_phone_number').collect(function(item){
+          return item.value;
+        });
+
         var currentSMS = '';
     		if (e = $('person_notifier_sms')) {
     		  currentSMS = e.value;
@@ -394,11 +398,7 @@ var NotificationsConfigurator = {
     			currentSMS = People.currentNotifierSMS;
     		}
 
-        var rowValues = $$('input.person_phone_number').collect(function(item){
-          return item.value;
-        });
-
-        draw += '<select id="person_notifier_sms" name="person[notifier_sms]" style="width:280px;">';
+        draw += '<select id="person_notifier_sms" name="person[notifier_sms]" style="width:200px;">';
     		rowValues.each(function(rowValue){
     			draw += '<option ';
     			if (People.currentNotifierSMS == rowValue) draw += 'selected="selected" ';
@@ -411,13 +411,56 @@ var NotificationsConfigurator = {
         var rowValues = $$('input.person_email_address').collect(function(item){
           return item.value;
         });
-        return rowValues;
+
+        var currentEmail = '';
+    		if (e = $('person_notifier_email')) {
+    		  currentEmail = e.value;
+    		} else if (People.currentNotifierEmail != '') {
+    			currentEmail = People.currentNotifierEmail;
+    		}
+
+        draw += '<select id="person_notifier_email" name="person[notifier_email]" style="width:200px;">';
+    		rowValues.each(function(rowValue){
+    			draw += '<option ';
+    			if (People.currentNotifierEmail == rowValue) draw += 'selected="selected" ';
+    			draw += 'value="' + rowValue + '">' + rowValue + '</option>';
+    		});
+        draw += '</select>';
+        return draw;
         break;
       case 'im':
-        var rowValues = $$('input.person_im_address').collect(function(item){
+        var rowValues = $$('input.person_im_address').select(function(item){
+          var itemId = item.id.match(/[0-9]/);
+          if (itemId) {
+            var typeItem = $('person_im_addresses_' + itemId.first() + '_im_type');
+            if (typeItem.value == 'Jabber') {
+              return true;
+            } else {
+              return false;
+            }
+            return true;
+          } else {
+            return false;
+          }
+        }).collect(function(item){
           return item.value;
         });
-        return rowValues;
+
+        var currentIM = '';
+    		if (e = $('person_notifier_im')) {
+    		  currentIM = e.value;
+    		} else if (People.currentNotifierIM != '') {
+    			currentIM = People.currentNotifierIM;
+    		}
+
+        draw += '<select id="person_notifier_im" name="person[notifier_im]" style="width:200px;">';
+    		rowValues.each(function(rowValue){
+    			draw += '<option ';
+    			if (People.currentNotifierIM == rowValue) draw += 'selected="selected" ';
+    			draw += 'value="' + rowValue + '">' + rowValue + '</option>';
+    		});
+        draw += '</select>';
+        return draw;
         break;
       default:
         return '';

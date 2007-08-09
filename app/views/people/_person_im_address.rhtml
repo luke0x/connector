@@ -21,3 +21,4 @@
 </tr>
 
 <%= javascript_tag("Event.observe(\"person_im_addresses_#{index}_im_address\", 'change', function(event){ NotificationsConfigurator.update('im'); });") %>
+<%= javascript_tag("Event.observe(\"person_im_addresses_#{index}_im_type\", 'change', function(event){ NotificationsConfigurator.update('im'); });") %>
