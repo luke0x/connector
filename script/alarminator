@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is governed
+# by either the GPLv2 or Joyent Commercial Software licenses.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+ENV['RAILS_ENV'] ||= 'production'
+
+require File.dirname(__FILE__) + '/../config/boot'
+require 'config/environment'
+
+# Get the following
+Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, false]).each do |event|
+  
+  # If the user has any way to send alarms, send it
+  Notification.notification_systems.each do |key, value|
+    value.alarm(event) if event.owner.notify_via?(key)
+  end
+  
+  if recurrence_description_id.nil?
+    event.update_attributes :fired => true
+  else
+    # If the event is recurring, update the next_fire
+    event.update_attributes :next_fire => (Time.now.utc + event.recurrence_in_seconds - event.alarm_trigger_in_minutes.minutes), :fired => false
+  end
+end

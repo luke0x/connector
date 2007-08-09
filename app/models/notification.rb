@@ -25,6 +25,7 @@ class Notification < ActiveRecord::Base
   after_save     :add_invitation
   before_destroy :remove_invitation
 
+  cattr_accessor :notification_systems
   @@notification_systems = {:email  => NotificationSystem::EmailNotifier,
                             :jabber => NotificationSystem::JabberNotifier,
                             :sms    => NotificationSystem::SmsNotifier,

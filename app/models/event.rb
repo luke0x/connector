@@ -397,6 +397,16 @@ class Event < ActiveRecord::Base
     end
   end
   
+  def recurrence_in_seconds
+    case self.recurrence_description_id
+    when 1 then 24.hours
+    when 2 then 1.week
+    when 3 then 1.month  # TODO I think this isn't quite right
+    when 4 then 1.year   # TODO or this
+    when 5 then 2.weeks
+    end
+  end
+  
   def self.recurrence_map
     { 'daily' => 1, 'weekly' => 2, 'monthly' => 3, 'yearly' => 4, 'fortnightly' => 5 }
   end
