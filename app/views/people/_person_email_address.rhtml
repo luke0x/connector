@@ -17,8 +17,7 @@
     <%= select_tag_with_id "person[email_addresses][#{index}][email_type]", email_types_options, {:id => "person_email_addresses_#{index}_email_type"} %>
   </td>
   <td><input id="person_email_addresses_<%= index %>_email_address" size="20" value="<%= email_address.email_address %>" type="text" maxlength="100" name="person[email_addresses][<%= index %>][email_address]" class="textInput person_email_address" style="width:199px;" /></td>
-  <td onclick="People.removeNewIndex('arrPersonEmailAddressIndexes', <%= index %>); $('person_email_address_<%= index %>').remove(); People.drawEmailNoticeSelect(); return false;" class="deleteItem">&nbsp;</td>
+  <td onclick="People.removeNewIndex('arrPersonEmailAddressIndexes', <%= index %>); $('person_email_address_<%= index %>').remove(); People.drawEmailNoticeSelect(); NotificationsConfigurator.update('email'); return false;" class="deleteItem">&nbsp;</td>
 </tr>
 
-<%= javascript_tag("Event.observe(\"person_email_addresses_#{index}_email_address\", 'change', function(event){ People.drawEmailNoticeSelect(); });") %>
-<%= javascript_tag("Event.observe(\"person_email_addresses_#{index}_email_address\", 'change', function(event){ NotificationsConfigurator.update('email'); });") %>
+<%= javascript_tag("Event.observe(\"person_email_addresses_#{index}_email_address\", 'change', function(event){ People.drawEmailNoticeSelect(); NotificationsConfigurator.update('email'); });") %>

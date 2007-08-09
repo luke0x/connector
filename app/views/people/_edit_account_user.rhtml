@@ -83,7 +83,7 @@
 					<%= _('Notifications') -%>:
 				</td>
 				<td colspan="2">
-					<p><%= _('Have notifications sent to you via SMS, email and instant message') %></p>
+					<p><%= _('Send notifications and event alarms via SMS, email and instant message') %></p>
 					<br />
 
 					<input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if User.current.notify_via?(:sms) %> onchange="return NotificationsConfigurator.update('sms');" />
