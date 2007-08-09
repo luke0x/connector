@@ -56,14 +56,15 @@ module NotificationSystem
         # log responses so we can see what people say back...maybe something useful could come out of this.
         @@received_file_log.info("#{Time.now.xmlschema} #{message.from.node}@#{message.from.domain}\t#{message.body}")
 
+        # Proof of concept
         case message.body
         when /\btime\b/i
           send_message(:to => message.from, :plain_body => Time.now.rfc2822, :subject => "Time")
-        when /\bdismiss\b/i, /\back\b/i, /\backnowledge\b/i
-        when /accept/i
-        when /deny/i, /reject/i
-          # keep a hash for the last message sent and a link to the id of the notification, or
-          # require the id of the object to come in too
+        # when /\bdismiss\b/i, /\back\b/i, /\backnowledge\b/i
+        # when /accept/i
+        # when /deny/i, /reject/i
+        #   # keep a hash for the last message sent and a link to the id of the notification, or
+        #   # require the id of the object to come in too
         end
       end
       
