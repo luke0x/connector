@@ -480,7 +480,7 @@ class Event < ActiveRecord::Base
   private
 
     def to_utc(time)
-      if User.current && time_4
+      if User.current && time
         begin
           User.current.person.tz.local_to_utc(time)
         rescue TZInfo::AmbiguousTime 
