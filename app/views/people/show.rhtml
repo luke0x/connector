@@ -49,7 +49,9 @@
         <em>
           <%= h(_(phone_number.phone_number_type)) %>
         </em>
-        <%= 'SMS' if phone_number.use_notifier? -%>
+        <% if phone_number.use_notifier? %>
+          <%= _('Sending Notifications Here') %>
+        <% end -%>
       </dd>
     <% end -%>
   <% end -%>
@@ -61,6 +63,9 @@
         <em>
           <%= h(_(email_address.email_type)) %>
         </em>
+        <% if email_address.use_notifier? %>
+          <%= _('Sending Notifications Here') %>
+        <% end -%>
       </dd>
     <% end -%>
   <% end -%>
@@ -80,6 +85,9 @@
       <dd>
         <%= im.im_address %>
         <em><%= h(im.im_type) %></em>
+        <% if im_address.use_notifier? %>
+          <%= _('Send Notifications Here') %>
+        <% end -%>
       </dd>
     <% end -%>
   <% end -%>

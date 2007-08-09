@@ -38,6 +38,9 @@
         </a>
         <%= h(phone_number.phone_number) %>
 				<em><%= h(_(phone_number.phone_number_type)) %></em>
+				<% if phone_number.use_notifier? %>
+          <%= _('Send Notifications Here') %>
+        <% end -%>
 			</dd>
 		<% end -%>
 	<% end -%>
@@ -47,6 +50,9 @@
 			<dd>
 				<%= link_to(h(email_address.email_address), {:controller => 'mail', :action => 'compose', :to => "#{@person.full_name} <#{email_address.email_address}>"}, {:title =>_("Compose a new email to")+" #{email_address.email_address}"}) %>
 				<em><%= h(_(email_address.email_type)) %></em>
+				<% if email_address.use_notifier? %>
+          <%= _('Send Notifications Here') %>
+        <% end -%>
 			</dd>
 		<% end -%>
 	<% end -%>
@@ -66,6 +72,9 @@
 			<dd>
 				<%= im.im_address %>
 				<em><%= h(im.im_type) %></em>
+				<% if im_address.use_notifier? %>
+          <%= _('Send Notifications Here') %>
+        <% end -%>
 			</dd>
 		<% end -%>
 	<% end -%>
