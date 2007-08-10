@@ -70,12 +70,20 @@ $Id$ */
 		background-repeat: no-repeat;
 		background-position: 0 50%;
 	}
+	.notify_type_left {
+		padding: 1px 0px 2px 25px !important;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+	}
 	.notify_type_nolabel {
 		background-repeat: no-repeat;
 		background-position: 0 0;
 		width: 16px;
 		height: 16px;
 		text-indent: -3000px;
+	}
+	.notify_via {
+		background-image: url(/images/icons/notify-via.png);
 	}
 	.notify_sms {
 		background-image: url(/images/icons/notify-sms.png);

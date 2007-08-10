@@ -44,24 +44,22 @@
   <% unless @person.phone_numbers.empty? -%>
     <dt><%= _('Phone') -%></dt>
     <% @person.phone_numbers.each do |phone_number| -%>
-      <dd>                                                                  
+      <dd <%= "class=\"notify_type_left notify_via\"" if phone_number.use_notifier? %>>                                                                  
         <%= h(phone_number.phone_number) %>
         <em>
           <%= h(_(phone_number.phone_number_type)) %>
         </em>
-        <%= "<img src='/images/icons/notifyBubble.png' alt=\"#{_('Send Notifications')}\" />" if phone_number.use_notifier? %>
       </dd>
     <% end -%>
   <% end -%>
   <% unless @person.email_addresses.empty? -%>
     <dt><%= _('Email') -%></dt>
     <% @person.email_addresses.each do |email_address| -%>
-      <dd>
+      <dd <%= " class=\"notify_type_left notify_via\"" if email_address.use_notifier? %>>
         <%= link_to(h(email_address.email_address), {:controller => 'mail', :action => 'compose', :to => "#{@person.full_name} <#{email_address.email_address}>"}, {:title => _("Compose a new email to %{i18n_email_address}")%{:i18n_email_address => "#{email_address.email_address}"}}) %>
         <em>
           <%= h(_(email_address.email_type)) %>
         </em>
-        <%= "<img src='/images/icons/notifyBubble.png' alt=\"#{_('Send Notifications')}\" />" if email_address.use_notifier? %>
       </dd>
     <% end -%>
   <% end -%>
@@ -78,10 +76,9 @@
   <% unless @person.im_addresses.empty? -%>
     <dt><%= _('Instant Messaging') -%></dt>
     <% @person.im_addresses.each do |im| -%>
-      <dd>
+      <dd <%= " class=\"notify_type_left notify_via\"" if im.use_notifier? %>>
         <%= im.im_address %>
         <em><%= h(im.im_type) %></em>
-        <%= "<img src='/images/icons/notifyBubble.png' alt=\"#{_('Send Notifications')}\" />" if im.use_notifier? %>
       </dd>
     <% end -%>
   <% end -%>
