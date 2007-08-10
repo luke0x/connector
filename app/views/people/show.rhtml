@@ -49,9 +49,7 @@
         <em>
           <%= h(_(phone_number.phone_number_type)) %>
         </em>
-        <% if phone_number.use_notifier? %>
-          <%= _('Sending Notifications Here') %>
-        <% end -%>
+        <%= "<img src='/images/icons/notifyBubble.png' alt=\"#{_('Send Notifications')}\" />" if phone_number.use_notifier? %>
       </dd>
     <% end -%>
   <% end -%>
@@ -63,9 +61,7 @@
         <em>
           <%= h(_(email_address.email_type)) %>
         </em>
-        <% if email_address.use_notifier? %>
-          <%= _('Sending Notifications Here') %>
-        <% end -%>
+        <%= "<img src='/images/icons/notifyBubble.png' alt=\"#{_('Send Notifications')}\" />" if email_address.use_notifier? %>
       </dd>
     <% end -%>
   <% end -%>
@@ -85,9 +81,7 @@
       <dd>
         <%= im.im_address %>
         <em><%= h(im.im_type) %></em>
-        <% if im.use_notifier? %>
-          <%= _('Send Notifications Here') %>
-        <% end -%>
+        <%= "<img src='/images/icons/notifyBubble.png' alt=\"#{_('Send Notifications')}\" />" if im.use_notifier? %>
       </dd>
     <% end -%>
   <% end -%>
