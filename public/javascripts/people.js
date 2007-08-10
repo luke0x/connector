@@ -11,8 +11,18 @@
 var People = {
 	currentRecoveryEmail: '',
 	currentNotifierSMS: '',
+	currentNotifierSMSProvider: '',
 	currentNotifierEmail: '',
 	currentNotifierIM: '',
+
+	providers: [
+    ['att', 'AT&T'],
+    ['nextel', 'Nextel'],
+    ['sprint', 'Sprint PCS'],
+    ['tmobile', 'T-Mobile'],
+    ['verizon', 'Verizon'],
+	  ['virgin_mobile', 'Virgin Mobile']
+	],
 	
 	setupEdit: function() {
 		$('person_first_name').activate();
@@ -404,7 +414,16 @@ var NotificationsConfigurator = {
     			if (People.currentNotifierSMS == rowValue) draw += 'selected="selected" ';
     			draw += 'value="' + rowValue + '">' + rowValue + '</option>';
     		});
+        draw += '</select> ';
+        draw += '<select id="person_notifier_sms_provider" name="person[notifier_sms_provider]" style="width:200px;">';
+
+        People.providers.each(function(provider){
+          draw += '<option ';
+          if (People.currentNotifierSMSProvider == provider[0]) draw += 'selected="selected" ';
+          draw += 'value="' + provider[0] + '">' + provider[1] + '</option>';
+        });
         draw += '</select>';
+
         return draw;
         break;
       case 'email':

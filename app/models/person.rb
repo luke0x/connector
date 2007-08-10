@@ -244,11 +244,12 @@ class Person < ActiveRecord::Base
     if self.user and ! self.user.new_record?
       self.user.set_option('Language', person_params['language']) if person_params.has_key?('language')
 
-      self.phone_numbers.select(&:use_notifier?).each{|x|   x.update_attributes(:use_notifier => false)}
+      self.phone_numbers.select(&:use_notifier?).each{|x|   x.update_attributes(:use_notifier => false, :confirmed => false, :provider => '')}
       self.email_addresses.select(&:use_notifier?).each{|x| x.update_attributes(:use_notifier => false)}
       self.im_addresses.select(&:use_notifier?).each{|x|    x.update_attributes(:use_notifier => false)}
       if person_params.has_key?('notifier_sms') and x = self.phone_numbers.find_by_phone_number(person_params['notifier_sms'])
-        x.update_attributes(:use_notifier => true)
+        x.update_attributes(:use_notifier => true, :confirmed => true)
+        x.update_attributes(:provider => person_params['notifier_sms_provider']) if person_params.has_key?('notifier_sms_provider')
       end
       if person_params.has_key?('notifier_email') and x = self.email_addresses.find_by_email_address(person_params['notifier_email'])
         x.update_attributes(:use_notifier => true)

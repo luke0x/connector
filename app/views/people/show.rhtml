@@ -42,7 +42,7 @@
 
 <dl>
   <% unless @person.phone_numbers.empty? -%>
-    <dt><%= _('Phone') -%>:</dt>
+    <dt><%= _('Phone') -%></dt>
     <% @person.phone_numbers.each do |phone_number| -%>
       <dd>                                                                  
         <%= h(phone_number.phone_number) %>
@@ -56,7 +56,7 @@
     <% end -%>
   <% end -%>
   <% unless @person.email_addresses.empty? -%>
-    <dt><%= _('Email') -%>:</dt>
+    <dt><%= _('Email') -%></dt>
     <% @person.email_addresses.each do |email_address| -%>
       <dd>
         <%= link_to(h(email_address.email_address), {:controller => 'mail', :action => 'compose', :to => "#{@person.full_name} <#{email_address.email_address}>"}, {:title => _("Compose a new email to %{i18n_email_address}")%{:i18n_email_address => "#{email_address.email_address}"}}) %>
@@ -70,7 +70,7 @@
     <% end -%>
   <% end -%>
   <% @person.addresses.each do |address| -%>
-    <dt><%= _('Address') -%>:</dt>
+    <dt><%= _('Address') -%></dt>
     <dd>
       <%= h(address.street) %> <em><%= h(_(address.address_type)) %></em>
       <br />
@@ -80,7 +80,7 @@
     </dd>
   <% end -%>
   <% unless @person.im_addresses.empty? -%>
-    <dt><%= _('Instant Messaging') -%>:</dt>
+    <dt><%= _('Instant Messaging') -%></dt>
     <% @person.im_addresses.each do |im| -%>
       <dd>
         <%= im.im_address %>
@@ -92,7 +92,7 @@
     <% end -%>
   <% end -%>
   <% unless @person.websites.empty? -%>
-    <dt><%= _('Websites') -%>:</dt>
+    <dt><%= _('Websites') -%></dt>
     <% @person.websites.each do |website| -%>
       <dd>
         <a target="_blank" href="<%= website.site_url %>">
@@ -102,7 +102,7 @@
     <% end -%>
   <% end -%>
   <% unless @person.special_dates.empty? -%>
-    <dt><%= _('Special Dates') -%>:</dt>
+    <dt><%= _('Special Dates') -%></dt>
     <% @person.special_dates.each do |special_date| -%>
       <dd>
         <%= h(special_date.special_date.to_s) %>
@@ -111,33 +111,33 @@
     <% end -%>
   <% end -%>
   <% unless @person.notes.blank? -%>
-    <dt><%= _('Notes') -%>:</dt>
+    <dt><%= _('Notes') -%></dt>
     <dd>
       <%= simple_format(h(@person.notes)) %>
     </dd>
   <% end -%>
   <% if @person.phone_numbers.empty? -%>
-    <dt><%= _('Phone') -%>:</dt>
+    <dt><%= _('Phone') -%></dt>
     <dd><em><%= _('None') %></em></dd>
   <% end -%>
   <% if @person.email_addresses.empty? -%>
-    <dt><%= _('Email') -%>:</dt>
+    <dt><%= _('Email') -%></dt>
     <dd><em><%= _('None') %></em></dd>
   <% end -%>
   <% if @person.im_addresses.empty? -%>
-    <dt><%= _('Instant Messaging') -%>:</dt>
+    <dt><%= _('Instant Messaging') -%></dt>
     <dd><em><%= _('None') %></em></dd>
   <% end -%>
   <% if @person.websites.empty? -%>
-    <dt><%= _('Websites') -%>:</dt>
+    <dt><%= _('Websites') -%></dt>
     <dd><em><%= _('None') %></em></dd>
   <% end -%>
   <% if @person.special_dates.empty? -%>
-    <dt><%= _('Special Dates') -%>:</dt>
+    <dt><%= _('Special Dates') -%></dt>
     <dd><em><%= _('None') %></em></dd>
   <% end -%>
   <% if @person.notes.blank? -%>
-    <dt><%= _('Notes') -%>:</dt>
+    <dt><%= _('Notes') -%></dt>
     <dd><em><%= _('None') %></em></dd>
   <% end -%>
 </dl>

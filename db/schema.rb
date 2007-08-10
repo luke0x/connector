@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 161) do
 
   add_index "affiliates", ["name"], :name => "index_affiliates_on_name"
 
-  create_table "ass", :id => false, :force => true do |t|
-    t.column "f", :string
+  create_table "application_domains", :force => true do |t|
+    t.column "domain",             :string
+    t.column "web_application_id", :integer
   end
 
   create_table "auth_keys", :force => true do |t|
@@ -553,8 +554,12 @@ ActiveRecord::Schema.define(:version => 161) do
   add_index "users", ["person_id"], :name => "users_person_id_index"
   add_index "users", ["username"], :name => "users_username_index"
 
-  create_table "wankers", :force => true do |t|
-    t.column "name", :text
+  create_table "web_applications", :force => true do |t|
+    t.column "name",            :string
+    t.column "state",           :string
+    t.column "user_id",         :integer
+    t.column "organization_id", :integer
+    t.column "settings",        :string
   end
 
   create_table "websites", :force => true do |t|

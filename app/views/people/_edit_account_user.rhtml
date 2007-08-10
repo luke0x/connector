@@ -88,8 +88,9 @@
 						<div id="person_notification_sms_area" style="<%= 'display: none;' unless User.current.notify_via?(:sms) %>">
 							<%= _('Loading') %>&hellip;
 						</div>
-						<%= javascript_tag("People.currentNotifierSMS = '#{person.user.notifier_sms.phone_number rescue ''}';") %>
-						<%= javascript_tag("Event.observe(window, 'load', function(event){ NotificationsConfigurator.update('sms'); });") %>
+  					<%= javascript_tag("People.currentNotifierSMS = '#{person.user.notifier_sms.phone_number rescue ''}';") %>
+  					<%= javascript_tag("People.currentNotifierSMSProvider = '#{person.user.notifier_sms.provider rescue ''}';") %>
+    				<%= javascript_tag("Event.observe(window, 'load', function(event){ NotificationsConfigurator.update('sms'); });") %>
 					</div>
 					<div class="notification_type">
 						<input id="person_notification_email" type="checkbox" name="person[notification_email]" <%= 'checked="checked"' if User.current.notify_via?(:email) %> onchange="return NotificationsConfigurator.update('email');" />
