@@ -8,6 +8,7 @@
 # $Id$
 module NotificationSystem
   class SmsNotifier
+      extend ActionView::Helpers::TextHelper
       
       @@host        = ENV['SMTP_HOST'] || JoyentConfig.smtp_host
       @@user        = ENV['SMTP_USER'] || nil
@@ -18,7 +19,8 @@ module NotificationSystem
       tmail         = TMail::Mail.new
       tmail.from    = JoyentConfig.sms_notifier_from_address
       tmail.subject = "Notification: #{notification.item.name}"
-      tmail.body    = "#{MessageHelper.url_for(notification.item)} #{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize})."
+      body          = "#{MessageHelper.url_for(notification.item)} #{notification.notifier.full_name} notified you about #{notification.item.name} (#{notification.item.class_humanize})."
+      tmail.body    = truncate(body, 140)
       
       send_messages(tmail, sms_recipients(notification.notifiee))
     end
@@ -27,7 +29,8 @@ module NotificationSystem
       tmail         = TMail::Mail.new
       tmail.from    = JoyentConfig.sms_notifier_from_address
       tmail.subject = "Connector Alarm"
-      tmail.body    = "Event Alarm: #{event.name} at #{event.start_time.strftime('%D %T')} (#{event.location})"
+      body          = "Event Alarm: #{event.name} at #{event.start_time.strftime('%D %T')} (#{event.location})"
+      tmail.body    = truncate(body, 140)
       
       send_messages(tmail, event_recipients(event))
     end
