@@ -1008,64 +1008,6 @@ $Id$ */
 			
 
 
-/* Contacts --------------------------------------------- */
-
-	/* Item View ------------------------------------------- */
-					
-		#people #contentPane dl {
-			padding: 0;
-			}
-		#people #contentPane dt+dd {
-			margin-top:1.5em;
-			}
-		#people #contentPane dd+dt {	
-			margin-top:1.5em;
-			}
-		#people #contentPane dt {
-			width:10em;
-			text-align:right;
-			display:block;
-			float:left;
-			margin:0px 0 0 0;
-			}
-		#people #contentPane dd {
-			margin:0.3em 0 0px 10.5em;
-			padding:0;
-			}
-			
-	/* Edit View Fix --------------------------------------- */
-	
-		#people #ContectCell legend, #people #ContectCell legend a {		
-			color: #777;
-			}
-		#people #item_editor legend, #people #item_editor legend a {		
-			font-weight: bold !important;
-			font-size: 1.1em !important;
-			margin: 0 0 0 0;
-			padding: 0 5px 0 5px;
-			}
-	
-		#people #item_editor fieldset {		
-			border: #DCDCDC;
-			border-width: 1px 0 0 0;
-			margin: 2.5em 0 1em 0;
-			padding-top: 0.75em;
-			border-style: solid;
-			border: #DCDCDC;
-			border-width: 1px 0 0 0;
-			margin: 1.75em 0 1em 0;
-			padding-top: 0.75em;
-			border-style: solid;
-			}
-		#people .addItem {
-			margin:1em 0 0 0;
-			margin:1em 0 0 0;
-			}
-		/*
-		#people fieldset {		
-			position: relative;
-			}
-		*/
 		#item_editor {
 			padding:0px;
 			margin:0px;
@@ -1160,19 +1102,19 @@ $Id$ */
 	.dialog {
 		background-color: #D7E4EF;
 		padding: 1em 1em .5em 1em;
-		border-color: #9ABAD6;
-		border-width: 1px;
-		border-style: solid;
 		-moz-border-radius: .4em .4em .4em .4em;
 		-webkit-border-top-left-radius: .4em;
 		-webkit-border-top-right-radius: .4em;
 		-webkit-border-bottom-left-radius: .4em;
 		-webkit-border-bottom-right-radius: .4em;
 		margin-bottom: 1em;
+		border: 1px transparent solid;
+		min-width: 470px;
+		max-width: 620px;
 	}
 	.dialog.alt {
-		background-color: #FFEFB5;
-		border-color: #E5C797;
+		background-color: #fff2c1;
+		border: #F7D59C;
 	}
 	
 	.dialog.squareTopLeft {
@@ -1180,52 +1122,61 @@ $Id$ */
 		-webkit-border-top-left-radius: 0;
 	}
 	
-	.accountTypes {
-		margin-left: 1em;
-		margin-top: .7em;
-	}
 	.accountTypes td {
 		line-height: 1.3em;
 	}
 	
 	.infoGroup {
-		border-color: #B1CDE2 #EEF4F8 #EEF4F8 #B5D0E5;
-		border-width: 1px;
+		border-color: #BBCCD7;
+		border-width: 1px 0 0 0;
 		border-style: solid;
-		padding: 1em;
-		background-color: #DDE7EF;
+		padding: 1em 0 .2em 0;
 		margin: 1em 0 1em 0;
 	}
+	
 	.alt .infoGroup {
-		border-color: #E5C797 #EEF4F8 #EEF4F8 #E5C797;
-		background-color: #FFF2D1;
+		border-width: 1px 0 0 0;
+		border-color: #F0CE97;
+		border-style: solid;
 	}
+	
+	.inforgroup_form {
+		padding-left: 16px !important;
+	}
+	.has_stars {
+		padding-left: 0px !important;
+	}
+	
 	.infoGroup .addItem {
 		margin-left:8px !important;
 		}
 	.infoGroupLabel {
-		padding: 7px 0 0 0;
+		padding-right: 4px !important;
 		width: 11em;
 		text-align: right;
-		color:#777;
-		}
+		color: #4A545A;
+	}
+	.alt .infoGroupLabel {
+		color: #7A5E43;
+	}
 	.infoGroupInputLabel {
 		color: #9B9B9B;
 		font-size: .85em;
-		padding-left: 4px;
-		}
+		line-height: 8px;
+		padding: 1px 8px 5px 4px;
+	}
 	.infoGroup table td {
 		padding: 0;
 		}
 		
-	.infoGroup hr {	
-		border-top: 0px solid #B1CDE2;
-		border-bottom: 1px solid #EEF4F8;
-		border-left: 0px solid #AAA;
-		border-right: 0px solid #AAA;
+	.infoGroup hr {
+		border-top: 0px #B1CDE2 solid;
+		border-bottom: 0px #BBCCD7 solid;
+		border-left: 0px #AAA solid;
+		border-right: 0px #AAA solid;
 		height: 1px;
-		background-color: #B1CDE2;
-		}
+		background-color: #BBCCD7;
+	}
 		
 	.alt .infoGroup hr {
 		height: 2px;
@@ -2520,6 +2471,31 @@ $Id$ */
 		background-color: transparent;
 		font-style: italic;
 	}
+	
+/* notification types ------------------------------------*/
+
+	.notify_type {
+		padding: 1px 18px 2px 18px;
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+	}
+	.notify_type_nolabel {
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		width: 16px;
+		height: 16px;
+		text-indent: -3000px;
+	}
+	.notify_sms {
+		background-image: url(/images/icons/notify-sms.png);
+	}
+	.notify_email {
+		background-image: url(/images/icons/notify-email.png);
+	}
+	.notify_im {
+		background-image: url(/images/icons/notify-im.png);
+	}
+
 	
 /* Icons (file types) ------------------------------------*/
 	
