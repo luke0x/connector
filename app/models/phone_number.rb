@@ -61,7 +61,8 @@ class PhoneNumber < ActiveRecord::Base
   
   def sms_address
     return nil unless confirmed?
-    "#{phone_number.gsub(/[^0-9]/, '')}@#{provider_url}"
+    num = phone_number.gsub(/[^0-9]/, '')
+    "#{num[(num.length - 10), num.length]}@#{provider_url}"
   end
   
   # Used to confirm if the number is able to receive SMS via email
