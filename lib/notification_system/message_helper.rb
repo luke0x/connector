@@ -11,21 +11,21 @@ module NotificationSystem
     def self.url_for(item)
       case item
       when Message
-        "http://#{item.organization.system_domain.web_domain}/mail/#{item.mailbox_id}/#{item.id}"
+        "http://#{item.organization.primary_domain.web_domain}/mail/#{item.mailbox_id}/#{item.id}"
       when Event, StubEvent
         if calendar = item.calendars.select{|cal| cal && (User.current.id == cal.user_id)}.first
-          "http://#{item.organization.system_domain.web_domain}/calendar/#{calendar.id}/#{item.id}"
+          "http://#{item.organization.primary_domain.web_domain}/calendar/#{calendar.id}/#{item.id}"
         else
-          "http://#{item.organization.system_domain.web_domain}/calendar/#{item.primary_calendar.id}/#{item.id}"
+          "http://#{item.organization.primary_domain.web_domain}/calendar/#{item.primary_calendar.id}/#{item.id}"
         end
       when Person
-        "http://#{item.organization.system_domain.web_domain}/person/#{item.id}"
+        "http://#{item.organization.primary_domain.web_domain}/person/#{item.id}"
       when JoyentFile
-        "http://#{item.organization.system_domain.web_domain}/files/#{item.folder_id}/#{item.id}"
+        "http://#{item.organization.primary_domain.web_domain}/files/#{item.folder_id}/#{item.id}"
       when Bookmark
-        "http://#{item.organization.system_domain.web_domain}/bookmarks/#{item.id}/show"
+        "http://#{item.organization.primary_domain.web_domain}/bookmarks/#{item.id}/show"
       when List
-        "http://#{item.organization.system_domain.web_domain}/lists/#{item.id}"
+        "http://#{item.organization.primary_domain.web_domain}/lists/#{item.id}"
       else
         ''
       end
