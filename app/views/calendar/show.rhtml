@@ -129,9 +129,9 @@
     <dt><%= _('Alarm') %>:</dt>
     <dd>
       <%=h @event.alarm_trigger_in_words %>
-      <%= "<img src='/images/icons/notify-sms.png' />" if @event.owner.notify_via?(:sms) %>
-      <%= "<img src='/images/icons/notify-email.png' />" if @event.owner.notify_via?(:email) %>
-      <%= "<img src='/images/icons/notify-im.png' />" if @event.owner.notify_via?(:jabber) %>
+      <%= "<img src='/images/icons/notify-sms.png' />"   if @event.owner && @event.owner.notify_via?(:sms) %>
+      <%= "<img src='/images/icons/notify-email.png' />" if @event.owner && @event.owner.notify_via?(:email) %>
+      <%= "<img src='/images/icons/notify-im.png' />"    if @event.owner && @event.owner.notify_via?(:jabber) %>
     </dd>
   <% end -%>
   <% unless @event.notes.blank? -%>
