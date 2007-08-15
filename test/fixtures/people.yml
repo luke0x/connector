@@ -194,3 +194,16 @@ guest:
   created_at: <%= (Time.now - 2.days).to_s(:db) %>
   updated_at: <%= (Time.now - 2.days).to_s(:db) %>
   person_type: 1_User_Guest
+  
+pedro:
+  id: 14
+  organization_id: 1
+  user_id: 7
+  first_name: Pedro
+  last_name: Candel
+  company_name: CandelInc
+  title: 
+  time_zone: Europe/Madrid
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+  person_type: 1_User

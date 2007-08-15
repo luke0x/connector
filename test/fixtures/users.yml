@@ -79,3 +79,14 @@ guest:
   admin: false
   guest: true
   full_name: Im JustaGuest
+  
+pedro:
+  id: 7
+  person_id: 14
+  identity_id: 1
+  organization_id: 1
+  username: pedro
+  password: "EpRFgOtiGTcPvZ9sgCKlLA==\n" # testpass
+  password_sha1: fill me in
+  admin: true
+  full_name: Pedro Candel

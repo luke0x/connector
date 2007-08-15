@@ -12,3 +12,9 @@ ian_lang:
   key: Language
   value: en
   user_id: 1
+  
+pedro_lang:
+  id: 2
+  key: Language
+  value: es
+  user_id: 7
