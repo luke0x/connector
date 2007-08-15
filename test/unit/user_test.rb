@@ -441,35 +441,35 @@ class UserTest < Test::Unit::TestCase
 
   def test_connect_other_user
     User.current = users(:ian)
-    assert_equal 3, User.current.identity.users.length
+    assert_equal 4, User.current.identity.users.length
     assert_equal 4, Identity.count
     User.current.connect_other_user('joyent.joyent.com', 'bernard', 'testpass')
     
-    assert_equal 4, User.current.reload.identity.users.length
+    assert_equal 5, User.current.reload.identity.users.length
     assert_equal 3, Identity.count
   end
   
   def test_invalid_connect_other_user
     User.current = users(:ian)
-    assert_equal 3, User.current.identity.users.length
+    assert_equal 4, User.current.identity.users.length
     assert_equal 4, Identity.count
     User.current.connect_other_user('asdf', 'bernard', 'testpass')
     User.current.connect_other_user('joyent.joyent.com', 'asdf', 'testpass')
     User.current.connect_other_user('joyent.joyent.com', 'bernard', 'asdf')
 
-    assert_equal 3, User.current.identity.users(true).length
+    assert_equal 4, User.current.identity.users(true).length
     assert_equal 4, Identity.count
   end
   
   def test_disconnect_other_user
     User.current = users(:ian)
     assert_equal 8, User.current.subscriptions.count
-    assert_equal 3, User.current.identity.users.length
+    assert_equal 4, User.current.identity.users.length
     assert_equal 4, Identity.count
     other_user = users(:peter)
     User.current.disconnect_other_user(other_user)
 
-    assert_equal 2, User.current.identity.users(true).length
+    assert_equal 3, User.current.identity.users(true).length
     assert_equal 5, Identity.count
     
     assert_equal 2, User.current.subscriptions.count
@@ -477,12 +477,12 @@ class UserTest < Test::Unit::TestCase
 
   def test_invalid_disconnect_other_user
     User.current = users(:ian)
-    assert_equal 3, User.current.identity.users.length
+    assert_equal 4, User.current.identity.users.length
     assert_equal 4, Identity.count
     other_user = users(:bernard)
     User.current.disconnect_other_user(other_user)
 
-    assert_equal 3, User.current.identity.users(true).length
+    assert_equal 4, User.current.identity.users(true).length
     assert_equal 4, Identity.count
   end
   

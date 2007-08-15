@@ -56,12 +56,12 @@ class OrganizationTest < Test::Unit::TestCase
   end
   
   def test_all_users
-    assert_equal [1,2,5,6], organizations(:joyent).users.map(&:id).sort
-    assert_equal [1,2,5,6], (organizations(:joyent).users_and_admins.map(&:id) + organizations(:joyent).guests.map(&:id)).sort
+    assert_equal [1,2,5,6,7], organizations(:joyent).users.map(&:id).sort
+    assert_equal [1,2,5,6,7], (organizations(:joyent).users_and_admins.map(&:id) + organizations(:joyent).guests.map(&:id)).sort
   end
   
   def test_all_users_and_admins
-    assert_equal [1,2,5], organizations(:joyent).users_and_admins.map(&:id).sort
+    assert_equal [1,2,5,7], organizations(:joyent).users_and_admins.map(&:id).sort
   end
   
   def test_all_guests

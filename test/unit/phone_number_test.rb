@@ -25,4 +25,8 @@ class PhoneNumberTest < Test::Unit::TestCase
   def test_sorting
     assert_equal 2, people(:ian).phone_numbers.first.id
   end
+  
+  def test_valid_sms_address
+    assert_equal "4155551542@tmomail.net", people(:ian).phone_numbers.find(5).sms_address
+  end
 end

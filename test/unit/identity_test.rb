@@ -18,6 +18,6 @@ class IdentityTest < Test::Unit::TestCase
   crud_data 'name' => ''
   
   def test_users
-    assert_equal 3, identities(:ian_peter_jason).users.length
+    assert_equal 4, identities(:ian_peter_jason).users.length
   end
 end

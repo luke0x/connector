@@ -112,7 +112,7 @@ class FolderTest < Test::Unit::TestCase
     f = folders(:ian_pictures)
     Organization.current = f.organization
     User.current = f.owner
-    assert_equal 3, Organization.current.users_and_admins.length
+    assert_equal 4, Organization.current.users_and_admins.length
     assert f.public?
     
     f.add_permission(f.owner)
@@ -124,6 +124,8 @@ class FolderTest < Test::Unit::TestCase
     assert ! f.public?
 
     f.add_permission(users(:bernard))
+    debugger
+    
     assert_equal 0, f.permissions.length # should reset to 0
     assert f.public?
   end
