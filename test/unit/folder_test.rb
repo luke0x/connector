@@ -122,7 +122,11 @@ class FolderTest < Test::Unit::TestCase
     f.add_permission(users(:peter))
     assert_equal 2, f.permissions.length
     assert ! f.public?
-
+    
+    f.add_permission(users(:pedro))
+    assert_equal 3, f.permissions.length
+    assert ! f.public?
+    
     f.add_permission(users(:bernard))
     
     assert_equal 0, f.permissions.length # should reset to 0
