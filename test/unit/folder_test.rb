@@ -124,7 +124,6 @@ class FolderTest < Test::Unit::TestCase
     assert ! f.public?
 
     f.add_permission(users(:bernard))
-    debugger
     
     assert_equal 0, f.permissions.length # should reset to 0
     assert f.public?
