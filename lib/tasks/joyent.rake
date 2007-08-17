@@ -25,22 +25,6 @@ namespace 'joyent' do
     end
   end
   
-  desc 'Bootstrap a production db'
-  task :bootstrap_production do
-    RAILS_ENV = 'production'
-    sh %{createdb -U postgres81 -E UTF8 connector_production}
-    Rake::Task['db:schema:load'].invoke
-    sh %{psql -U postgres81 connector_production < #{RAILS_ROOT}/db/reference_data.sql}
-  end 
-
-  desc 'Bootstrap a development db'
-  task :bootstrap_development do
-    RAILS_ENV = 'development'
-    sh %{createdb -U postgres81 -E UTF8 connector_development}
-    Rake::Task['db:schema:load'].invoke
-    sh %{psql -U postgres81 connector_development < #{RAILS_ROOT}/db/reference_data.sql}
-  end 
-  
   task :bootstrap_ldap do 
     puts "Initializing ldap"
     RAILS_ENV = 'production'
