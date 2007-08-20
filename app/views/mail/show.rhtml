@@ -27,8 +27,8 @@
     else
       ''
     end -%>
-	  <%= prev_url.blank? ? '' : link_to(_('Previous'), prev_url, {:class=> 'buttonPrevious addIconLeft'}) %>
-	  <%= next_url.blank? ? '' : link_to(_('Next'), next_url, { :class=> 'buttonNext addIconLeft' }) %>
+	  <%= prev_url.blank? ? '' : link_to(_('Newer'), prev_url, {:class=> 'buttonPrevious addIconLeft'}) %>
+	  <%= next_url.blank? ? '' : link_to(_('Older'), next_url, { :class=> 'buttonNext addIconLeft' }) %>
 	</div>
   <h2><%= h decode(@message.subject) %></h2>
 	<div id="report_issue" class="" style="float:right;">
