@@ -1,16 +1,16 @@
-# Joyent Connector Dutch Localization
-# Copyright (C) 2006-2007 Joyent Inc.
+# Joyent Connector
+# Copyright (C) 2007
 # This file is distributed under the same license as the Joyent Connector package.
-# Kees Brandenburg <kb@co-web.org>, 2006-2007.
+# Kees Brandenburg <kb@co-web.org>, 2007.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-08-06 15:36+0200\n"
-"PO-Revision-Date: 2007-09-17 15:09+0000\n"
+"POT-Creation-Date: 2007-08-27 16:55+0200\n"
+"PO-Revision-Date: 2007-07-25 09:35+0000\n"
 "Last-Translator: Kees Brandenburg <kb@co-web.org>\n"
-"Language-Team: nl <pedro@joyent.com>\n"
+"Language-Team: nl <kb@co-web.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,6 +58,7 @@ msgstr "Alle meldingen"
 #: app/controllers/syndication_controller.rb:234
 #: app/controllers/syndication_controller.rb:306
 #: app/helpers/people_helper.rb:51
+#: app/views/people/_edit_account_user.rhtml:81
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:13
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:13
 #: app/views/sidebars/groups/connect/_connect.rhtml:17
@@ -65,6 +66,7 @@ msgstr "Alle meldingen"
 #: app/views/sidebars/groups/lists/_lists.rhtml:15
 #: app/views/sidebars/groups/mail/_mail.rhtml:17
 #: app/views/sidebars/groups/people/_people.rhtml:14
+#: lib/i18n_do_not_include.rb:107
 msgid "Notifications"
 msgstr "Meldingen"
 
@@ -73,14 +75,14 @@ msgstr "Meldingen"
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:20
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:22
 msgid "Today's Events"
-msgstr "Afspraken van vandaag"
+msgstr "Afspraken vandaag"
 
 #: app/controllers/calendar_controller.rb:105
 #: app/controllers/syndication_controller.rb:441
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:16
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:18
 msgid "This Week's Events"
-msgstr "Afspraken van deze week"
+msgstr "Afspraken deze week"
 
 #: app/controllers/calendar_controller.rb:251
 #: app/controllers/calendar_controller.rb:277
@@ -289,8 +291,8 @@ msgstr "Abonneren"
 #: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
 #: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
 #: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
-#: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
-#: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
+#: app/views/calendar/edit.rhtml:253 app/views/calendar/edit.rhtml:255
+#: app/views/calendar/edit.rhtml:257 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
 #: app/views/guest/edit.rhtml:55 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
@@ -497,12 +499,12 @@ msgid "Date Modified"
 msgstr "Wijzigingsdatum"
 
 #: app/views/bookmarks/_peek.rhtml:23 app/views/bookmarks/edit.rhtml:37
-#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:123
-#: app/views/calendar/edit.rhtml:228 app/views/calendar/show.rhtml:133
+#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:128
+#: app/views/calendar/edit.rhtml:231 app/views/calendar/show.rhtml:138
 #: app/views/files/_peek.rhtml:21 app/views/files/edit.rhtml:36
 #: app/views/files/show.rhtml:39
 #: app/views/people/_edit_contact_information.rhtml:181
-#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:105
+#: app/views/people/_peek.rhtml:101 app/views/people/show.rhtml:105
 #: app/views/people/show.rhtml:131 app/views/syndication/_bookmark.rhtml:27
 #: app/views/syndication/_event.rhtml:60 app/views/syndication/_file.rhtml:25
 #: app/views/syndication/_person.rhtml:90
@@ -514,7 +516,7 @@ msgid "Sync Bookmarks with del.icio.us"
 msgstr "Bladwijzers synchroniseren met del.icio.us"
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
-#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
+#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:248
 #: app/views/guest/edit.rhtml:56 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
@@ -569,7 +571,7 @@ msgstr "Bladwijzer bewerken"
 msgid "New Bookmark"
 msgstr "Nieuwe bladwijzer"
 
-#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:54
+#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:60
 #: app/views/people/show.rhtml:67 app/views/syndication/_person.rhtml:42
 msgid "Address"
 msgstr "Adres"
@@ -580,7 +582,7 @@ msgstr "Adres"
 msgid "Title"
 msgstr "Titel"
 
-#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:247
+#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:250
 #: app/views/files/create.rhtml:54 app/views/files/strongspace_create.rhtml:34
 #: app/views/lists/new.rhtml:41 app/views/people/edit.rhtml:41
 msgid "Create"
@@ -741,7 +743,7 @@ msgstr ""
 
 #: app/views/calendar/_peek.rhtml:39 app/views/calendar/show.rhtml:49
 msgid "Your Calendars"
-msgstr "Jouw Agenda's"
+msgstr "Eigen Agenda's"
 
 #: app/views/calendar/_peek.rhtml:69 app/views/calendar/edit.rhtml:53
 #: app/views/calendar/show.rhtml:78 app/views/mail/list.rhtml:35
@@ -789,7 +791,8 @@ msgstr "Openstaande uitnodigingen"
 
 #: app/views/calendar/_peek.rhtml:118 app/views/calendar/edit.rhtml:215
 #: app/views/calendar/show.rhtml:129
-msgid "ICS Alarm"
+#, fuzzy
+msgid "Alarm"
 msgstr "ICS alarm"
 
 #: app/views/calendar/_toolbar.rhtml:26 app/views/files/_toolbar.rhtml:36
@@ -1011,8 +1014,9 @@ msgstr "Deze zoekvraag naar %{i18n_params_string} als slimme groep bewaren"
 #: app/views/connect/events_list.rhtml:21
 #: app/views/partials/_calendar_list_header.rhtml:20
 #: app/views/partials/_month_header.rhtml:18
+#, fuzzy
 msgid "events"
-msgstr "efspraken"
+msgstr "Afspraken"
 
 #: app/views/connect/list.rhtml:26 app/views/reports/_items.rhtml:20
 msgid "Application"
@@ -1034,7 +1038,8 @@ msgid "Email selected items as an attachment"
 msgstr "Geselecteerde voorwerpen als bijlage e-mailen."
 
 #: app/views/files/_toolbar.rhtml:53 app/views/files/_toolbar.rhtml:57
-#: app/views/people/_peek.rhtml:45 app/views/people/show.rhtml:56
+#: app/views/people/_edit_account_user.rhtml:97
+#: app/views/people/_peek.rhtml:48 app/views/people/show.rhtml:56
 #: app/views/people/show.rhtml:115 app/views/syndication/_person.rhtml:32
 msgid "Email"
 msgstr "E-mail"
@@ -1115,31 +1120,33 @@ msgid "Guest Preferences"
 msgstr "Voorkeuren voor gasten"
 
 #: app/views/guest/edit.rhtml:19 app/views/people/_edit_account_guest.rhtml:18
-#: app/views/people/_edit_account_user.rhtml:18
+#: app/views/people/_edit_account_user.rhtml:22
+#, fuzzy
 msgid "username"
-msgstr "gebruikersnaam"
+msgstr "Gebruikersnaam"
 
 #: app/views/guest/edit.rhtml:25 app/views/people/_edit_account_guest.rhtml:24
-#: app/views/people/_edit_account_user.rhtml:24
+#: app/views/people/_edit_account_user.rhtml:28
+#, fuzzy
 msgid "password"
-msgstr "wachtwoord"
+msgstr "Wachtwoord"
 
-#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:28
+#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:32
 msgid "confirm password"
 msgstr "wachtwoord bevestigen"
 
 #: app/views/guest/edit.rhtml:35 app/views/people/_edit_account_guest.rhtml:30
-#: app/views/people/_edit_account_user.rhtml:36
+#: app/views/people/_edit_account_user.rhtml:40
 msgid "password recovery email address"
 msgstr "E-mail adres om een vergeten wachtwoord te kunnen herstellen"
 
 #: app/views/guest/edit.rhtml:42 app/views/people/_edit_account_guest.rhtml:42
-#: app/views/people/_edit_account_user.rhtml:53
+#: app/views/people/_edit_account_user.rhtml:71
 msgid "time zone"
 msgstr "tijdzone"
 
 #: app/views/guest/edit.rhtml:49 app/views/people/_edit_account_guest.rhtml:49
-#: app/views/people/_edit_account_user.rhtml:60
+#: app/views/people/_edit_account_user.rhtml:65
 msgid "language"
 msgstr "taal"
 
@@ -1445,12 +1452,14 @@ msgid "Reply To Sender"
 msgstr "Afzender antwoorden"
 
 #: app/views/mail/show.rhtml:30
-msgid "Previous"
-msgstr "Vorige"
+#, fuzzy
+msgid "Newer"
+msgstr "Nieuw"
 
 #: app/views/mail/show.rhtml:31
-msgid "Next"
-msgstr "Volgende"
+#, fuzzy
+msgid "Older"
+msgstr "Map"
 
 #: app/views/mail/show.rhtml:35
 msgid "Does this message not look quite right?"
@@ -1468,10 +1477,10 @@ msgid ""
 "\n"
 "Send this message to Joyent engineers for further analysis?"
 msgstr ""
-"We hebben ontdekt dat sommige berichten met rich-text opmaak of met "
-"afbeeldingen als bijlage er niet altijd goed uitzien. Als je het goed vind "
-"zouden we, om in de toekomst complexe berichten toch goed weer te kunnen "
-"geven, dit bericht verder willen onderzoeken.\n"
+"Het kan zijn dat berichten met rich-text opmaak of met afbeeldingen als "
+"bijlage er niet altijd goed uitzien. Met je toestemming zouden we, om in de "
+"toekomst complexe berichten toch goed weer te kunnen geven, dit bericht "
+"verder willen onderzoeken.\n"
 "Je privacy is voor ons zeer belangrijk, we zullen dit bericht alleen "
 "gebruiken om bugs op te sporen.\n"
 "Wil je dit bericht doorsturen naar Joyent om het verder te kunnen "
@@ -1479,7 +1488,7 @@ msgstr ""
 
 #: app/views/mail/show.rhtml:42
 msgid "Your"
-msgstr "Jouw"
+msgstr "Eigen"
 
 #: app/views/mail/show.rhtml:42
 msgid "%{i18n_message_owner_name}'s"
@@ -1520,14 +1529,15 @@ msgid "Organization"
 msgstr "Organisatie"
 
 #: app/views/partials/_developer_tools.rhtml:29
-#: app/views/people/_edit_account.rhtml:53
+#: app/views/people/_edit_account.rhtml:56
 #: app/views/people/confirm_user_delete.rhtml:41
 msgid "User"
 msgstr "Gebruiker"
 
 #: app/views/partials/_developer_tools.rhtml:39
+#, fuzzy
 msgid "Language"
-msgstr "Taal"
+msgstr "taal"
 
 #: app/views/partials/_joyent_messages.rhtml:23
 msgid "Please add a password recovery email address to your account settings"
@@ -1539,7 +1549,7 @@ msgstr ""
 #: app/views/partials/_menu_items.rhtml:60
 #: app/views/partials/_menu_items.rhtml:62
 msgid "Your Preferences"
-msgstr "Je voorkeuren"
+msgstr "Voorkeuren"
 
 #: app/views/partials/_joyent_messages.rhtml:24
 #: app/views/partials/_menu_items.rhtml:60
@@ -1594,6 +1604,7 @@ msgid "Resize Sidebar"
 msgstr "Maat van het zijvak veranderen"
 
 #: app/views/partials/_sidebar.rhtml:18 lib/i18n_do_not_include.rb:23
+#: lib/i18n_do_not_include.rb:102
 msgid "Groups"
 msgstr "Groepen"
 
@@ -1601,15 +1612,18 @@ msgstr "Groepen"
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:19
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:13
 #: app/views/sidebars/groups/_smart_group_new.rhtml:31
+#: lib/i18n_do_not_include.rb:103
 msgid "Tags"
 msgstr "Tags"
 
 #: app/views/partials/_sidebar.rhtml:21 app/views/sidebars/_access.rhtml:19
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:11
+#: lib/i18n_do_not_include.rb:104
 msgid "Access"
 msgstr "Toegang"
 
 #: app/views/partials/_sidebar.rhtml:22 app/views/sidebars/_notify.rhtml:19
+#: lib/i18n_do_not_include.rb:106
 msgid "Notify"
 msgstr "Melding sturen"
 
@@ -1620,11 +1634,11 @@ msgstr "Tags toevoegen"
 
 #: app/views/partials/_sidebar_buttons.rhtml:11
 msgid "Set Access"
-msgstr "Toegangsrechten bepalen"
+msgstr "Toegangsrechten"
 
 #: app/views/partials/_sidebar_buttons.rhtml:12
 msgid "Notify Someone"
-msgstr "Iemand een melding sturen"
+msgstr "Melding sturen"
 
 #: app/views/people/_call.rhtml:11
 msgid "Balance"
@@ -1655,44 +1669,48 @@ msgstr "Je wachtwoord"
 msgid "Start Call"
 msgstr "Gesprek beginnen"
 
-#: app/views/people/_edit_account.rhtml:14
-#: app/views/people/_edit_account.rhtml:20
+#: app/views/people/_edit_account.rhtml:15
+#, fuzzy
+msgid "Edit Preferences"
+msgstr "Voorkeuren voor gasten"
+
+#: app/views/people/_edit_account.rhtml:23
 msgid "Edit Account"
 msgstr "Account bewerken"
 
-#: app/views/people/_edit_account.rhtml:26
+#: app/views/people/_edit_account.rhtml:29
 msgid "Account Type"
 msgstr "Soort account"
 
-#: app/views/people/_edit_account.rhtml:35
+#: app/views/people/_edit_account.rhtml:38
 msgid "None &ndash; Contact Only"
 msgstr "Geen &ndash; Alleen contact"
 
-#: app/views/people/_edit_account.rhtml:36
+#: app/views/people/_edit_account.rhtml:39
 msgid "Will have no access to your Connector."
 msgstr "Heeft geen toegang tot je Connector"
 
-#: app/views/people/_edit_account.rhtml:44
+#: app/views/people/_edit_account.rhtml:47
 msgid "Guest"
 msgstr "Gast"
 
-#: app/views/people/_edit_account.rhtml:45
+#: app/views/people/_edit_account.rhtml:48
 msgid "Can only see or manage specified folders in your \"Strongspace\"."
-msgstr "Kan alleen bepaalde mappen in je \"Strongspace\" zien of gebruiken. "
+msgstr "Kan alleen bepaalde mappen in \"Strongspace\" zien of gebruiken. "
 
-#: app/views/people/_edit_account.rhtml:54
+#: app/views/people/_edit_account.rhtml:57
 msgid "Will have unrestricted access to the connector."
 msgstr "Heeft onbeperkt toegang tot de Connector"
 
-#: app/views/people/_edit_account.rhtml:62
+#: app/views/people/_edit_account.rhtml:65
 msgid "Guest Info"
 msgstr "Gast info"
 
-#: app/views/people/_edit_account.rhtml:67
+#: app/views/people/_edit_account.rhtml:70
 msgid "User Info"
 msgstr "Gebruikers info"
 
-#: app/views/people/_edit_account.rhtml:72
+#: app/views/people/_edit_account.rhtml:75
 msgid ""
 "Your have reached your user limit. To create a new user either delete a "
 "current one or <a target=\"_blank\" class=\"goto\" href=\"http://customer."
@@ -1719,10 +1737,41 @@ msgstr "E-mail adres"
 msgid "Reset"
 msgstr "Resetten"
 
-#: app/views/people/_edit_account_user.rhtml:43
-#: app/views/people/_edit_account_user.rhtml:46
+#: app/views/people/_edit_account_user.rhtml:14
+#, fuzzy
+msgid "Account"
+msgstr "Account bewerken"
+
+#: app/views/people/_edit_account_user.rhtml:37
+#: app/views/people/_edit_account_user.rhtml:89
+#: app/views/people/_edit_account_user.rhtml:99
+#: app/views/people/_edit_account_user.rhtml:108
+#, fuzzy
+msgid "Loading"
+msgstr "Plaats"
+
+#: app/views/people/_edit_account_user.rhtml:47
+#: app/views/people/_edit_account_user.rhtml:50
 msgid "Allow this user to create and delete other users?"
 msgstr "Mag deze gebruiker andere gebruikers toevoegen of verwijderen? "
+
+#: app/views/people/_edit_account_user.rhtml:60
+msgid "International"
+msgstr ""
+
+#: app/views/people/_edit_account_user.rhtml:84
+msgid "Send notifications and event alarms via SMS, email and instant message"
+msgstr ""
+
+#: app/views/people/_edit_account_user.rhtml:87
+#, fuzzy
+msgid "SMS"
+msgstr "MSN"
+
+#: app/views/people/_edit_account_user.rhtml:106
+#, fuzzy
+msgid "Instant Message"
+msgstr "Instant Messaging"
 
 #: app/views/people/_edit_contact_information.rhtml:11
 msgid "Edit Person"
@@ -1746,7 +1795,7 @@ msgstr "tussenvoegsel"
 
 #: app/views/people/_edit_contact_information.rhtml:34
 msgid "last"
-msgstr "laatste"
+msgstr "achternaam"
 
 #: app/views/people/_edit_contact_information.rhtml:40
 msgid "company name"
@@ -1785,7 +1834,7 @@ msgid "Add IM Address"
 msgstr "IM adressen toevoegen"
 
 #: app/views/people/_edit_contact_information.rhtml:141
-#: app/views/people/_peek.rhtml:73 app/views/people/show.rhtml:86
+#: app/views/people/_peek.rhtml:82 app/views/people/show.rhtml:86
 #: app/views/people/show.rhtml:123 app/views/syndication/_person.rhtml:71
 msgid "Websites"
 msgstr "Websites"
@@ -1795,7 +1844,7 @@ msgid "Add Website"
 msgstr "Website toevoegen"
 
 #: app/views/people/_edit_contact_information.rhtml:161
-#: app/views/people/_peek.rhtml:83 app/views/people/show.rhtml:96
+#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:96
 #: app/views/people/show.rhtml:127 app/views/syndication/_person.rhtml:80
 msgid "Special Dates"
 msgstr "Speciale dagen"
@@ -1821,11 +1870,17 @@ msgstr "Telefoon"
 msgid "Call this person via Skype"
 msgstr "Bel deze relatie via Skype"
 
-#: app/views/people/_peek.rhtml:48
+#: app/views/people/_peek.rhtml:42 app/views/people/_peek.rhtml:54
+#: app/views/people/_peek.rhtml:76
+#, fuzzy
+msgid "Send Notifications Here"
+msgstr "Meldingen"
+
+#: app/views/people/_peek.rhtml:51
 msgid "Compose a new email to"
 msgstr "Een nieuwe e-mail schrijven aan"
 
-#: app/views/people/_peek.rhtml:64 app/views/people/show.rhtml:77
+#: app/views/people/_peek.rhtml:70 app/views/people/show.rhtml:77
 #: app/views/people/show.rhtml:119 app/views/syndication/_person.rhtml:61
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
@@ -1970,12 +2025,14 @@ msgid " Permanently"
 msgstr " Permanent"
 
 #: app/views/people/google_map.rhtml:12
+#, fuzzy
 msgid "City"
-msgstr "Stad"
+msgstr "stad"
 
 #: app/views/people/google_map.rhtml:14
+#, fuzzy
 msgid "State"
-msgstr "Provincie of staat"
+msgstr "provincie of staat"
 
 #: app/views/people/google_map.rhtml:16
 msgid "Zip"
@@ -2002,24 +2059,27 @@ msgid "Person Type"
 msgstr "Type relatie"
 
 #: app/views/people/list.rhtml:29 app/views/reports/_people.rhtml:22
+#, fuzzy
 msgid "First Name"
-msgstr "Voornaam"
+msgstr "voornaam"
 
 #: app/views/people/list.rhtml:30 app/views/reports/_people.rhtml:23
 msgid "Last Name"
 msgstr "Achternaam"
 
 #: app/views/people/list.rhtml:31 app/views/reports/_people.rhtml:24
+#, fuzzy
 msgid "Email Address"
-msgstr "E-mail adres"
+msgstr "E-mail adressen"
 
 #: app/views/people/list.rhtml:32 app/views/reports/_people.rhtml:25
 msgid "Phone Number"
 msgstr "Telefoonnummer"
 
 #: app/views/people/list.rhtml:33 lib/i18n_do_not_include.rb:34
+#, fuzzy
 msgid "Company Name"
-msgstr "Bedrijfsnaam"
+msgstr "bedrijfsnaam"
 
 #: app/views/people/show.rhtml:37
 msgid "Download vCard"
@@ -2071,8 +2131,9 @@ msgid "Dismiss"
 msgstr "Verwijderen"
 
 #: app/views/reports/_people.rhtml:21
+#, fuzzy
 msgid "Type"
-msgstr "Soort"
+msgstr "soort"
 
 #: app/views/reports/_people.rhtml:44
 msgid "Compose a new email to %{i18n_person_full_name}"
@@ -2123,12 +2184,14 @@ msgid "Drag to change order"
 msgstr "Verslepen om de volgorde te veranderen"
 
 #: app/views/reports/_timezones.rhtml:21
+#, fuzzy
 msgid "Day"
 msgstr "Dagelijks"
 
 #: app/views/reports/_timezones.rhtml:23
+#, fuzzy
 msgid "Time Zone"
-msgstr "Tijdzone"
+msgstr "tijdzone"
 
 #: app/views/reports/_toolbar.rhtml:11
 msgid "Refresh all of the reports in the workspace."
@@ -2168,7 +2231,7 @@ msgstr "Bekijken"
 
 #: app/views/sidebars/_groups.rhtml:11
 msgid "Your %{i18n_controller_class_groupname}"
-msgstr "Jouw %{i18n_controller_class_groupname}"
+msgstr "Eigen %{i18n_controller_class_groupname}"
 
 #: app/views/sidebars/_groups.rhtml:16
 msgid "Others' %{i18n_controller_class_groupname}"
@@ -2252,7 +2315,7 @@ msgstr "Voorwaarden bewaren"
 
 #: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:11
 msgid "Delete Smart"
-msgstr "Verwijder Slim(me)"
+msgstr "Verwijder Slimme"
 
 #: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:13
 msgid "Do you want to delete this smart group? No items will be deleted"
@@ -2643,7 +2706,7 @@ msgstr "Lijstenmappen"
 
 #: lib/i18n_do_not_include.rb:29
 msgid "Any Condition"
-msgstr "Om het even welke voorwaarde"
+msgstr "Een of meer voorwaarden"
 
 #: lib/i18n_do_not_include.rb:31
 msgid "Owner Username"
@@ -2690,6 +2753,7 @@ msgid "hour"
 msgstr "uur"
 
 #: lib/i18n_do_not_include.rb:48
+#, fuzzy
 msgid "hours"
 msgstr "uur"
 
@@ -2698,6 +2762,7 @@ msgid "minute"
 msgstr "minuut"
 
 #: lib/i18n_do_not_include.rb:50
+#, fuzzy
 msgid "minutes"
 msgstr "minuut"
 
@@ -2778,52 +2843,63 @@ msgid "vCard"
 msgstr "vCard"
 
 #: lib/i18n_do_not_include.rb:72
+#, fuzzy
 msgid "notifications"
-msgstr "meldingen"
+msgstr "Meldingen"
 
 #: lib/i18n_do_not_include.rb:73
+#, fuzzy
 msgid "people"
-msgstr "mensen"
+msgstr "Mensen"
 
 #: lib/i18n_do_not_include.rb:75
+#, fuzzy
 msgid "files"
-msgstr "bestanden"
+msgstr "Bestanden"
 
 #: lib/i18n_do_not_include.rb:76
+#, fuzzy
 msgid "bookmarks"
-msgstr "bladwijzers"
+msgstr "Bladwijzers"
 
 #: lib/i18n_do_not_include.rb:77
+#, fuzzy
 msgid "comments"
-msgstr "reacties"
+msgstr "Reacties"
 
 #: lib/i18n_do_not_include.rb:78
+#, fuzzy
 msgid "lists"
-msgstr "lijsten"
+msgstr "Lijsten"
 
 #: lib/i18n_do_not_include.rb:80
 msgid "listfolder"
 msgstr "lijstenmap"
 
 #: lib/i18n_do_not_include.rb:81
+#, fuzzy
 msgid "bookmark folder"
-msgstr "bladwijzermap"
+msgstr "Bladwijzermap"
 
 #: lib/i18n_do_not_include.rb:82
+#, fuzzy
 msgid "calendar"
-msgstr "agenda"
+msgstr "Agenda"
 
 #: lib/i18n_do_not_include.rb:83
+#, fuzzy
 msgid "mailbox"
-msgstr "postvak"
+msgstr "Postvak"
 
 #: lib/i18n_do_not_include.rb:84
+#, fuzzy
 msgid "folder"
-msgstr "map"
+msgstr "Map"
 
 #: lib/i18n_do_not_include.rb:85
+#, fuzzy
 msgid "group"
-msgstr "groep"
+msgstr "Groep"
 
 #: lib/i18n_do_not_include.rb:87
 msgid "Connect Notifications"
@@ -2854,6 +2930,7 @@ msgid "Expand"
 msgstr "Uitklappen"
 
 #: lib/i18n_do_not_include.rb:95
+#, fuzzy
 msgid "ListFolder"
 msgstr "Lijstenmap"
 
@@ -2864,6 +2941,11 @@ msgstr "Spatiebalk"
 #: lib/i18n_do_not_include.rb:97
 msgid "Toggle First Checkbox"
 msgstr "Selecteer het eerste keuzevak"
+
+#: lib/i18n_do_not_include.rb:105
+#, fuzzy
+msgid "Permissions"
+msgstr "Toegangsrechten bewaren"
 
 #: lib/js_strings.rb:1
 msgid "can't change"
@@ -3015,12 +3097,13 @@ msgid "Mark as primary"
 msgstr "Als eerste aanmerken"
 
 #: lib/js_strings.rb:39
+#, fuzzy
 msgid "New "
 msgstr "Nieuw"
 
 #: lib/js_strings.rb:40
 msgid "New Smart"
-msgstr "Nieuw(e) Slim(me)"
+msgstr "Nieuwe Slimme"
 
 #: lib/js_strings.rb:41
 msgid "No tag or condition fields may be blank."
@@ -3037,8 +3120,9 @@ msgid "Phone numbers can not be blank."
 msgstr "Telefoonnummers kunnen niet leeg gelaten worden."
 
 #: lib/js_strings.rb:45
+#, fuzzy
 msgid "Search "
-msgstr "Zoeken "
+msgstr "Zoeken"
 
 #: lib/js_strings.rb:46
 msgid "Search All"
@@ -3135,3 +3219,9 @@ msgstr "Je moet of een naam of een bedrijfsnaam opgeven."
 #: app/models/smart_group.rb:98
 msgid "Search for %{i18n_search_param}"
 msgstr "Zoeken naar %{i18n_search_param}"
+
+#~ msgid "Previous"
+#~ msgstr "Vorige"
+
+#~ msgid "Next"
+#~ msgstr "Volgende"

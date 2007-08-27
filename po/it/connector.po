@@ -1,16 +1,16 @@
-# Joyent Connector Italian Localization
-# Copyright (C) 2006-2007 Joyent Inc.
+# Joyent Connector
+# Copyright (C) 2007
 # This file is distributed under the same license as the Joyent Connector package.
-# Federico Caiazzo <neko@numerozero.com>, 2006-2007.
+#  Federico Caiazzo <neko@numerozero.com>, 2007.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-08-06 15:36+0200\n"
-"PO-Revision-Date: 2007-01-31 14:44+0000\n"
+"POT-Creation-Date: 2007-08-27 16:55+0200\n"
+"PO-Revision-Date: 2007-07-25 19:54+0000\n"
 "Last-Translator:  Federico Caiazzo <neko@numerozero.com>\n"
-"Language-Team: it <pedro@joyent.com>\n"
+"Language-Team: it <neko@numerozero.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,6 +58,7 @@ msgstr "Tutte le notifiche"
 #: app/controllers/syndication_controller.rb:234
 #: app/controllers/syndication_controller.rb:306
 #: app/helpers/people_helper.rb:51
+#: app/views/people/_edit_account_user.rhtml:81
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:13
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:13
 #: app/views/sidebars/groups/connect/_connect.rhtml:17
@@ -65,6 +66,7 @@ msgstr "Tutte le notifiche"
 #: app/views/sidebars/groups/lists/_lists.rhtml:15
 #: app/views/sidebars/groups/mail/_mail.rhtml:17
 #: app/views/sidebars/groups/people/_people.rhtml:14
+#: lib/i18n_do_not_include.rb:107
 msgid "Notifications"
 msgstr "Notifiche"
 
@@ -163,7 +165,7 @@ msgstr "Inoltrato"
 
 #: app/controllers/mail_controller.rb:661
 msgid "Flagged"
-msgstr "Segnalato"
+msgstr "Contrassegnato"
 
 #: app/controllers/mail_controller.rb:662
 msgid "Junk"
@@ -289,8 +291,8 @@ msgstr "Abbònati"
 #: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
 #: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
 #: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
-#: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
-#: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
+#: app/views/calendar/edit.rhtml:253 app/views/calendar/edit.rhtml:255
+#: app/views/calendar/edit.rhtml:257 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
 #: app/views/guest/edit.rhtml:55 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
@@ -497,12 +499,12 @@ msgid "Date Modified"
 msgstr "Modificato"
 
 #: app/views/bookmarks/_peek.rhtml:23 app/views/bookmarks/edit.rhtml:37
-#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:123
-#: app/views/calendar/edit.rhtml:228 app/views/calendar/show.rhtml:133
+#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:128
+#: app/views/calendar/edit.rhtml:231 app/views/calendar/show.rhtml:138
 #: app/views/files/_peek.rhtml:21 app/views/files/edit.rhtml:36
 #: app/views/files/show.rhtml:39
 #: app/views/people/_edit_contact_information.rhtml:181
-#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:105
+#: app/views/people/_peek.rhtml:101 app/views/people/show.rhtml:105
 #: app/views/people/show.rhtml:131 app/views/syndication/_bookmark.rhtml:27
 #: app/views/syndication/_event.rhtml:60 app/views/syndication/_file.rhtml:25
 #: app/views/syndication/_person.rhtml:90
@@ -514,7 +516,7 @@ msgid "Sync Bookmarks with del.icio.us"
 msgstr "Sincronizza preferiti con del.icio.us"
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
-#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
+#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:248
 #: app/views/guest/edit.rhtml:56 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
@@ -569,7 +571,7 @@ msgstr "Modifica preferito"
 msgid "New Bookmark"
 msgstr "Nuovo preferito"
 
-#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:54
+#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:60
 #: app/views/people/show.rhtml:67 app/views/syndication/_person.rhtml:42
 msgid "Address"
 msgstr "Indirizzo"
@@ -580,7 +582,7 @@ msgstr "Indirizzo"
 msgid "Title"
 msgstr "Titolo"
 
-#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:247
+#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:250
 #: app/views/files/create.rhtml:54 app/views/files/strongspace_create.rhtml:34
 #: app/views/lists/new.rhtml:41 app/views/people/edit.rhtml:41
 msgid "Create"
@@ -786,7 +788,8 @@ msgstr "Invitati in sospeso"
 
 #: app/views/calendar/_peek.rhtml:118 app/views/calendar/edit.rhtml:215
 #: app/views/calendar/show.rhtml:129
-msgid "ICS Alarm"
+#, fuzzy
+msgid "Alarm"
 msgstr "Allarme ICS"
 
 #: app/views/calendar/_toolbar.rhtml:26 app/views/files/_toolbar.rhtml:36
@@ -983,7 +986,7 @@ msgstr "Elimina"
 
 #: app/views/comments/_comment.rhtml:42
 msgid "Delete this comment?"
-msgstr "Elimina il commento?"
+msgstr "Elimina commento?"
 
 #: app/views/comments/_list.rhtml:11 app/views/syndication/_comments.rhtml:12
 msgid "Comments"
@@ -1008,8 +1011,9 @@ msgstr "Salva la ricerca per %{i18n_params_string} come gruppo smart"
 #: app/views/connect/events_list.rhtml:21
 #: app/views/partials/_calendar_list_header.rhtml:20
 #: app/views/partials/_month_header.rhtml:18
+#, fuzzy
 msgid "events"
-msgstr "eventi"
+msgstr "Evento"
 
 #: app/views/connect/list.rhtml:26 app/views/reports/_items.rhtml:20
 msgid "Application"
@@ -1031,7 +1035,8 @@ msgid "Email selected items as an attachment"
 msgstr "Invia gli elementi selezionati come allegati e-mail"
 
 #: app/views/files/_toolbar.rhtml:53 app/views/files/_toolbar.rhtml:57
-#: app/views/people/_peek.rhtml:45 app/views/people/show.rhtml:56
+#: app/views/people/_edit_account_user.rhtml:97
+#: app/views/people/_peek.rhtml:48 app/views/people/show.rhtml:56
 #: app/views/people/show.rhtml:115 app/views/syndication/_person.rhtml:32
 msgid "Email"
 msgstr "Email"
@@ -1112,31 +1117,33 @@ msgid "Guest Preferences"
 msgstr "Preferenze ospite"
 
 #: app/views/guest/edit.rhtml:19 app/views/people/_edit_account_guest.rhtml:18
-#: app/views/people/_edit_account_user.rhtml:18
+#: app/views/people/_edit_account_user.rhtml:22
+#, fuzzy
 msgid "username"
 msgstr "Nome utente"
 
 #: app/views/guest/edit.rhtml:25 app/views/people/_edit_account_guest.rhtml:24
-#: app/views/people/_edit_account_user.rhtml:24
+#: app/views/people/_edit_account_user.rhtml:28
+#, fuzzy
 msgid "password"
 msgstr "Password"
 
-#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:28
+#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:32
 msgid "confirm password"
 msgstr "conferma password"
 
 #: app/views/guest/edit.rhtml:35 app/views/people/_edit_account_guest.rhtml:30
-#: app/views/people/_edit_account_user.rhtml:36
+#: app/views/people/_edit_account_user.rhtml:40
 msgid "password recovery email address"
 msgstr "indirizzo e-mail per recuperare la password"
 
 #: app/views/guest/edit.rhtml:42 app/views/people/_edit_account_guest.rhtml:42
-#: app/views/people/_edit_account_user.rhtml:53
+#: app/views/people/_edit_account_user.rhtml:71
 msgid "time zone"
 msgstr "fuso orario"
 
 #: app/views/guest/edit.rhtml:49 app/views/people/_edit_account_guest.rhtml:49
-#: app/views/people/_edit_account_user.rhtml:60
+#: app/views/people/_edit_account_user.rhtml:65
 msgid "language"
 msgstr "lingua"
 
@@ -1146,7 +1153,7 @@ msgstr "Colonne"
 
 #: app/views/lists/_edit.rhtml:30
 msgid "Add Column"
-msgstr "Aggiungi colonne"
+msgstr "Aggiungi colonna"
 
 #: app/views/lists/_edit.rhtml:35
 msgid "Drag column headers below to change their order."
@@ -1442,12 +1449,14 @@ msgid "Reply To Sender"
 msgstr "Rispondi al mittente"
 
 #: app/views/mail/show.rhtml:30
-msgid "Previous"
-msgstr "Precedente"
+#, fuzzy
+msgid "Newer"
+msgstr "Nuovo"
 
 #: app/views/mail/show.rhtml:31
-msgid "Next"
-msgstr "Successivo"
+#, fuzzy
+msgid "Older"
+msgstr "Cartella"
 
 #: app/views/mail/show.rhtml:35
 msgid "Does this message not look quite right?"
@@ -1517,14 +1526,15 @@ msgid "Organization"
 msgstr "Organizzazione"
 
 #: app/views/partials/_developer_tools.rhtml:29
-#: app/views/people/_edit_account.rhtml:53
+#: app/views/people/_edit_account.rhtml:56
 #: app/views/people/confirm_user_delete.rhtml:41
 msgid "User"
 msgstr "Utente"
 
 #: app/views/partials/_developer_tools.rhtml:39
+#, fuzzy
 msgid "Language"
-msgstr "Lingua"
+msgstr "lingua"
 
 #: app/views/partials/_joyent_messages.rhtml:23
 msgid "Please add a password recovery email address to your account settings"
@@ -1591,6 +1601,7 @@ msgid "Resize Sidebar"
 msgstr "Ridimensiona colonna laterale"
 
 #: app/views/partials/_sidebar.rhtml:18 lib/i18n_do_not_include.rb:23
+#: lib/i18n_do_not_include.rb:102
 msgid "Groups"
 msgstr "Gruppi"
 
@@ -1598,15 +1609,18 @@ msgstr "Gruppi"
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:19
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:13
 #: app/views/sidebars/groups/_smart_group_new.rhtml:31
+#: lib/i18n_do_not_include.rb:103
 msgid "Tags"
 msgstr "Tag"
 
 #: app/views/partials/_sidebar.rhtml:21 app/views/sidebars/_access.rhtml:19
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:11
+#: lib/i18n_do_not_include.rb:104
 msgid "Access"
 msgstr "Accesso"
 
 #: app/views/partials/_sidebar.rhtml:22 app/views/sidebars/_notify.rhtml:19
+#: lib/i18n_do_not_include.rb:106
 msgid "Notify"
 msgstr "Notifica"
 
@@ -1652,46 +1666,50 @@ msgstr "La tua password"
 msgid "Start Call"
 msgstr "Inizia chiamata"
 
-#: app/views/people/_edit_account.rhtml:14
-#: app/views/people/_edit_account.rhtml:20
+#: app/views/people/_edit_account.rhtml:15
+#, fuzzy
+msgid "Edit Preferences"
+msgstr "Preferenze ospite"
+
+#: app/views/people/_edit_account.rhtml:23
 msgid "Edit Account"
 msgstr "Modifica account"
 
-#: app/views/people/_edit_account.rhtml:26
+#: app/views/people/_edit_account.rhtml:29
 msgid "Account Type"
 msgstr "Tipo di account"
 
-#: app/views/people/_edit_account.rhtml:35
+#: app/views/people/_edit_account.rhtml:38
 msgid "None &ndash; Contact Only"
 msgstr "Nessuno &ndash; Solo per contatto"
 
-#: app/views/people/_edit_account.rhtml:36
+#: app/views/people/_edit_account.rhtml:39
 msgid "Will have no access to your Connector."
 msgstr "Non avrà accesso al tuo Connector"
 
-#: app/views/people/_edit_account.rhtml:44
+#: app/views/people/_edit_account.rhtml:47
 msgid "Guest"
 msgstr "Ospite"
 
-#: app/views/people/_edit_account.rhtml:45
+#: app/views/people/_edit_account.rhtml:48
 msgid "Can only see or manage specified folders in your \"Strongspace\"."
 msgstr ""
 "Può solo visualizzare o modificare cartelle specificate nel tuo account "
 "\"Strongspace\"."
 
-#: app/views/people/_edit_account.rhtml:54
+#: app/views/people/_edit_account.rhtml:57
 msgid "Will have unrestricted access to the connector."
 msgstr "Avrà accesso illimitato a Connector."
 
-#: app/views/people/_edit_account.rhtml:62
+#: app/views/people/_edit_account.rhtml:65
 msgid "Guest Info"
 msgstr "Informazioni ospite"
 
-#: app/views/people/_edit_account.rhtml:67
+#: app/views/people/_edit_account.rhtml:70
 msgid "User Info"
 msgstr "Informazioni utente"
 
-#: app/views/people/_edit_account.rhtml:72
+#: app/views/people/_edit_account.rhtml:75
 msgid ""
 "Your have reached your user limit. To create a new user either delete a "
 "current one or <a target=\"_blank\" class=\"goto\" href=\"http://customer."
@@ -1717,10 +1735,41 @@ msgstr "Indirizzo email"
 msgid "Reset"
 msgstr "Azzera"
 
-#: app/views/people/_edit_account_user.rhtml:43
-#: app/views/people/_edit_account_user.rhtml:46
+#: app/views/people/_edit_account_user.rhtml:14
+#, fuzzy
+msgid "Account"
+msgstr "Modifica account"
+
+#: app/views/people/_edit_account_user.rhtml:37
+#: app/views/people/_edit_account_user.rhtml:89
+#: app/views/people/_edit_account_user.rhtml:99
+#: app/views/people/_edit_account_user.rhtml:108
+#, fuzzy
+msgid "Loading"
+msgstr "Luogo"
+
+#: app/views/people/_edit_account_user.rhtml:47
+#: app/views/people/_edit_account_user.rhtml:50
 msgid "Allow this user to create and delete other users?"
 msgstr "Consenti all'utente di creare ed eliminare altri utenti?"
+
+#: app/views/people/_edit_account_user.rhtml:60
+msgid "International"
+msgstr ""
+
+#: app/views/people/_edit_account_user.rhtml:84
+msgid "Send notifications and event alarms via SMS, email and instant message"
+msgstr ""
+
+#: app/views/people/_edit_account_user.rhtml:87
+#, fuzzy
+msgid "SMS"
+msgstr "MSN"
+
+#: app/views/people/_edit_account_user.rhtml:106
+#, fuzzy
+msgid "Instant Message"
+msgstr "Messaggeria istantanea"
 
 #: app/views/people/_edit_contact_information.rhtml:11
 msgid "Edit Person"
@@ -1783,7 +1832,7 @@ msgid "Add IM Address"
 msgstr "Aggiungi indirizzo messaggeria istantanea"
 
 #: app/views/people/_edit_contact_information.rhtml:141
-#: app/views/people/_peek.rhtml:73 app/views/people/show.rhtml:86
+#: app/views/people/_peek.rhtml:82 app/views/people/show.rhtml:86
 #: app/views/people/show.rhtml:123 app/views/syndication/_person.rhtml:71
 msgid "Websites"
 msgstr "Siti Web"
@@ -1793,7 +1842,7 @@ msgid "Add Website"
 msgstr "Aggiungi sito Web"
 
 #: app/views/people/_edit_contact_information.rhtml:161
-#: app/views/people/_peek.rhtml:83 app/views/people/show.rhtml:96
+#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:96
 #: app/views/people/show.rhtml:127 app/views/syndication/_person.rhtml:80
 msgid "Special Dates"
 msgstr "Ricorrenze"
@@ -1819,11 +1868,17 @@ msgstr "Telefono"
 msgid "Call this person via Skype"
 msgstr "Chiama questa persona tramite Skype"
 
-#: app/views/people/_peek.rhtml:48
+#: app/views/people/_peek.rhtml:42 app/views/people/_peek.rhtml:54
+#: app/views/people/_peek.rhtml:76
+#, fuzzy
+msgid "Send Notifications Here"
+msgstr "Notifiche"
+
+#: app/views/people/_peek.rhtml:51
 msgid "Compose a new email to"
 msgstr "Componi nuova email a"
 
-#: app/views/people/_peek.rhtml:64 app/views/people/show.rhtml:77
+#: app/views/people/_peek.rhtml:70 app/views/people/show.rhtml:77
 #: app/views/people/show.rhtml:119 app/views/syndication/_person.rhtml:61
 msgid "Instant Messaging"
 msgstr "Messaggeria istantanea"
@@ -1968,10 +2023,12 @@ msgid " Permanently"
 msgstr " In maniera permanente"
 
 #: app/views/people/google_map.rhtml:12
+#, fuzzy
 msgid "City"
-msgstr "Città"
+msgstr "città"
 
 #: app/views/people/google_map.rhtml:14
+#, fuzzy
 msgid "State"
 msgstr "provincia (stato)"
 
@@ -2000,6 +2057,7 @@ msgid "Person Type"
 msgstr "Tipo di persona"
 
 #: app/views/people/list.rhtml:29 app/views/reports/_people.rhtml:22
+#, fuzzy
 msgid "First Name"
 msgstr "nome"
 
@@ -2008,16 +2066,18 @@ msgid "Last Name"
 msgstr "Cognome"
 
 #: app/views/people/list.rhtml:31 app/views/reports/_people.rhtml:24
+#, fuzzy
 msgid "Email Address"
-msgstr "Indirizzo email"
+msgstr "Indirizzi email"
 
 #: app/views/people/list.rhtml:32 app/views/reports/_people.rhtml:25
 msgid "Phone Number"
 msgstr "Numero di telefono"
 
 #: app/views/people/list.rhtml:33 lib/i18n_do_not_include.rb:34
+#, fuzzy
 msgid "Company Name"
-msgstr "Nome azienda"
+msgstr "azienda"
 
 #: app/views/people/show.rhtml:37
 msgid "Download vCard"
@@ -2069,8 +2129,9 @@ msgid "Dismiss"
 msgstr "Ignora"
 
 #: app/views/reports/_people.rhtml:21
+#, fuzzy
 msgid "Type"
-msgstr "Tipo"
+msgstr "tipo"
 
 #: app/views/reports/_people.rhtml:44
 msgid "Compose a new email to %{i18n_person_full_name}"
@@ -2121,12 +2182,14 @@ msgid "Drag to change order"
 msgstr "Trascina per modificare l'ordine"
 
 #: app/views/reports/_timezones.rhtml:21
+#, fuzzy
 msgid "Day"
 msgstr "Ogni giorno"
 
 #: app/views/reports/_timezones.rhtml:23
+#, fuzzy
 msgid "Time Zone"
-msgstr "Fuso orario"
+msgstr "fuso orario"
 
 #: app/views/reports/_toolbar.rhtml:11
 msgid "Refresh all of the reports in the workspace."
@@ -2166,7 +2229,7 @@ msgstr "Visualizza"
 
 #: app/views/sidebars/_groups.rhtml:11
 msgid "Your %{i18n_controller_class_groupname}"
-msgstr "Il tuo %{i18n_controller_class_groupname}"
+msgstr "%{i18n_controller_class_groupname} personali"
 
 #: app/views/sidebars/_groups.rhtml:16
 msgid "Others' %{i18n_controller_class_groupname}"
@@ -2543,11 +2606,11 @@ msgstr "Dimensione"
 
 #: app/views/toolbars/_copy_to_bookmarks.rhtml:14
 msgid "Copy all selected items to your Bookmarks"
-msgstr "Copia tutti gli elementi selezionati nei tuoi preferiti"
+msgstr "Copia tutti gli elementi selezionati nei tuoi Preferiti"
 
 #: app/views/toolbars/_copy_to_contacts.rhtml:14
 msgid "Copy all selected items to your Contacts"
-msgstr "Copia tutti gli elementi selezionati nei tuoi contatti"
+msgstr "Copia tutti gli elementi selezionati nella tua Rubrica"
 
 #: app/views/toolbars/_delete.rhtml:11
 msgid "Delete all selected items."
@@ -2616,7 +2679,7 @@ msgstr "Mail: %{i18n_group_name}"
 
 #: app/views/syndication/people_rss.rxml:14
 msgid "People: %{i18n_group_name}"
-msgstr "Persone: %{i18n_group_name}"
+msgstr "Rubrica: %{i18n_group_name}"
 
 #: app/views/syndication/tag_rss.rxml:14
 msgid "Tag: %{i18n_group_name}"
@@ -2691,16 +2754,18 @@ msgid "hour"
 msgstr "ora"
 
 #: lib/i18n_do_not_include.rb:48
+#, fuzzy
 msgid "hours"
-msgstr "ore"
+msgstr "ora"
 
 #: lib/i18n_do_not_include.rb:49
 msgid "minute"
 msgstr "minuto"
 
 #: lib/i18n_do_not_include.rb:50
+#, fuzzy
 msgid "minutes"
-msgstr "minuti"
+msgstr "minuto"
 
 #: lib/i18n_do_not_include.rb:52
 msgid "Audio"
@@ -2708,16 +2773,15 @@ msgstr "Audio"
 
 #: lib/i18n_do_not_include.rb:53
 msgid "Cascading Style Sheet"
-msgstr ""
+msgstr "Foglio di stile"
 
 #: lib/i18n_do_not_include.rb:54
 msgid "Document"
 msgstr "Documento"
 
 #: lib/i18n_do_not_include.rb:55
-#, fuzzy
 msgid "Flash Video"
-msgstr "Video"
+msgstr "Video Flash"
 
 #: lib/i18n_do_not_include.rb:56
 msgid "HTML Document"
@@ -2729,7 +2793,7 @@ msgstr "Immagine"
 
 #: lib/i18n_do_not_include.rb:58
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: lib/i18n_do_not_include.rb:59
 msgid "PDF Document"
@@ -2737,7 +2801,7 @@ msgstr "Documento PDF"
 
 #: lib/i18n_do_not_include.rb:60
 msgid "Photoshop Image"
-msgstr ""
+msgstr "Immagine Photoshop"
 
 #: lib/i18n_do_not_include.rb:61
 msgid "Presentation"
@@ -2745,12 +2809,11 @@ msgstr "Presentazione"
 
 #: lib/i18n_do_not_include.rb:62
 msgid "Protected Audio"
-msgstr ""
+msgstr "File audio protetto"
 
 #: lib/i18n_do_not_include.rb:63
-#, fuzzy
 msgid "Source Code"
-msgstr "Fatto!"
+msgstr "Codice sorgente"
 
 #: lib/i18n_do_not_include.rb:64
 msgid "Spreadsheet"
@@ -2758,7 +2821,7 @@ msgstr "Foglio di calcolo"
 
 #: lib/i18n_do_not_include.rb:65
 msgid "TeX"
-msgstr ""
+msgstr "TeX"
 
 #: lib/i18n_do_not_include.rb:66 app/models/list.rb:358
 msgid "Text"
@@ -2773,61 +2836,71 @@ msgid "Video"
 msgstr "Video"
 
 #: lib/i18n_do_not_include.rb:69
-#, fuzzy
 msgid "vCalendar"
-msgstr "Calendario"
+msgstr "vCalendar"
 
 #: lib/i18n_do_not_include.rb:70
 msgid "vCard"
-msgstr ""
+msgstr "vCard"
 
 #: lib/i18n_do_not_include.rb:72
+#, fuzzy
 msgid "notifications"
-msgstr "notifiche"
+msgstr "Notifiche"
 
 #: lib/i18n_do_not_include.rb:73
+#, fuzzy
 msgid "people"
-msgstr "rubrica"
+msgstr "Rubrica"
 
 #: lib/i18n_do_not_include.rb:75
+#, fuzzy
 msgid "files"
-msgstr "file"
+msgstr "File"
 
 #: lib/i18n_do_not_include.rb:76
+#, fuzzy
 msgid "bookmarks"
-msgstr "preferiti"
+msgstr "Preferiti"
 
 #: lib/i18n_do_not_include.rb:77
+#, fuzzy
 msgid "comments"
-msgstr "commenti"
+msgstr "Commenti"
 
 #: lib/i18n_do_not_include.rb:78
+#, fuzzy
 msgid "lists"
-msgstr "elenchi"
+msgstr "Elenchi"
 
 #: lib/i18n_do_not_include.rb:80
 msgid "listfolder"
 msgstr "cartellaelenco"
 
 #: lib/i18n_do_not_include.rb:81
+#, fuzzy
 msgid "bookmark folder"
-msgstr "cartella preferiti"
+msgstr "Cartella preferiti"
 
 #: lib/i18n_do_not_include.rb:82
+#, fuzzy
 msgid "calendar"
-msgstr "calendario"
+msgstr "Calendario"
 
 #: lib/i18n_do_not_include.rb:83
+#, fuzzy
 msgid "mailbox"
-msgstr "casella"
+msgstr "Casella"
 
 #: lib/i18n_do_not_include.rb:84
+#, fuzzy
 msgid "folder"
-msgstr "cartella"
+msgstr "Cartella"
 
 #: lib/i18n_do_not_include.rb:85
+#, fuzzy
 msgid "group"
-msgstr "gruppo"
+msgstr "Gruppo"
 
 #: lib/i18n_do_not_include.rb:87
 msgid "Connect Notifications"
@@ -2858,8 +2931,9 @@ msgid "Expand"
 msgstr "Espandi"
 
 #: lib/i18n_do_not_include.rb:95
+#, fuzzy
 msgid "ListFolder"
-msgstr "CartellaElenco"
+msgstr "Cartella Elenco"
 
 #: lib/i18n_do_not_include.rb:96
 msgid "Spacebar"
@@ -2868,6 +2942,11 @@ msgstr "Barra spaziatrice"
 #: lib/i18n_do_not_include.rb:97
 msgid "Toggle First Checkbox"
 msgstr "Seleziona la prima casella"
+
+#: lib/i18n_do_not_include.rb:105
+#, fuzzy
+msgid "Permissions"
+msgstr "Salva permessi"
 
 #: lib/js_strings.rb:1
 msgid "can't change"
@@ -2911,7 +2990,7 @@ msgstr "Devi selezionare qualcosa per copiarlo in un altro gruppo."
 
 #: lib/js_strings.rb:11
 msgid "You must select something to copy."
-msgstr "Per copiare devi selezionare qualcosa."
+msgstr "Per copiare devi prima selezionare qualcosa."
 
 #: lib/js_strings.rb:12
 msgid "You must select something to delete."
@@ -2971,7 +3050,7 @@ msgstr "Vuoi copiare i preferiti selezionati nei tuoi preferiti?"
 
 #: lib/js_strings.rb:26
 msgid "Do you want to copy the selected people to your contacts?"
-msgstr "Vuoi copiare le persone selezionate nei tuoi contatti?"
+msgstr "Vuoi copiare i contatti selezionati nella tua Rubrica?"
 
 #: lib/js_strings.rb:27
 msgid "Do you want to delete the selected items?"
@@ -3018,8 +3097,9 @@ msgid "Mark as primary"
 msgstr "Segna come principale"
 
 #: lib/js_strings.rb:39
+#, fuzzy
 msgid "New "
-msgstr "Nuovo "
+msgstr "Nuovo"
 
 #: lib/js_strings.rb:40
 msgid "New Smart"
@@ -3038,12 +3118,13 @@ msgid "Phone numbers can not be blank."
 msgstr "Numeri di telefono non possono essere vuoti."
 
 #: lib/js_strings.rb:45
+#, fuzzy
 msgid "Search "
-msgstr "Cerca "
+msgstr "Cerca"
 
 #: lib/js_strings.rb:46
 msgid "Search All"
-msgstr "Cerca tutti"
+msgstr "Cerca tutto"
 
 #: lib/js_strings.rb:48
 msgid "Special date dates can not be blank."
@@ -3134,9 +3215,11 @@ msgid "You must specify either a name or company name."
 msgstr "Devi specificare nome o società."
 
 #: app/models/smart_group.rb:98
-#, fuzzy
 msgid "Search for %{i18n_search_param}"
-msgstr "Cerca: %{i18n_search_param}"
+msgstr "Cerca %{i18n_search_param}"
 
-#~ msgid "Peek"
-#~ msgstr "Controlla"
+#~ msgid "Previous"
+#~ msgstr "Precedente"
+
+#~ msgid "Next"
+#~ msgstr "Successivo"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-08-06 15:36+0200\n"
+"POT-Creation-Date: 2007-08-27 16:55+0200\n"
 "PO-Revision-Date: 2007-05-31 23:32+0200\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -58,6 +58,7 @@ msgstr "Alle Benachrichtigungen"
 #: app/controllers/syndication_controller.rb:234
 #: app/controllers/syndication_controller.rb:306
 #: app/helpers/people_helper.rb:51
+#: app/views/people/_edit_account_user.rhtml:81
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:13
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:13
 #: app/views/sidebars/groups/connect/_connect.rhtml:17
@@ -65,6 +66,7 @@ msgstr "Alle Benachrichtigungen"
 #: app/views/sidebars/groups/lists/_lists.rhtml:15
 #: app/views/sidebars/groups/mail/_mail.rhtml:17
 #: app/views/sidebars/groups/people/_people.rhtml:14
+#: lib/i18n_do_not_include.rb:107
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
@@ -290,8 +292,8 @@ msgstr "Abonnieren"
 #: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
 #: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
 #: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
-#: app/views/calendar/edit.rhtml:250 app/views/calendar/edit.rhtml:252
-#: app/views/calendar/edit.rhtml:254 app/views/comments/_comment.rhtml:18
+#: app/views/calendar/edit.rhtml:253 app/views/calendar/edit.rhtml:255
+#: app/views/calendar/edit.rhtml:257 app/views/comments/_comment.rhtml:18
 #: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
 #: app/views/guest/edit.rhtml:55 app/views/lists/_import.rhtml:17
 #: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
@@ -501,12 +503,12 @@ msgid "Date Modified"
 msgstr "Letzte Änderung"
 
 #: app/views/bookmarks/_peek.rhtml:23 app/views/bookmarks/edit.rhtml:37
-#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:123
-#: app/views/calendar/edit.rhtml:228 app/views/calendar/show.rhtml:133
+#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:128
+#: app/views/calendar/edit.rhtml:231 app/views/calendar/show.rhtml:138
 #: app/views/files/_peek.rhtml:21 app/views/files/edit.rhtml:36
 #: app/views/files/show.rhtml:39
 #: app/views/people/_edit_contact_information.rhtml:181
-#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:105
+#: app/views/people/_peek.rhtml:101 app/views/people/show.rhtml:105
 #: app/views/people/show.rhtml:131 app/views/syndication/_bookmark.rhtml:27
 #: app/views/syndication/_event.rhtml:60 app/views/syndication/_file.rhtml:25
 #: app/views/syndication/_person.rhtml:90
@@ -518,7 +520,7 @@ msgid "Sync Bookmarks with del.icio.us"
 msgstr "Lesezeichen mit del.icio.us synchronisieren"
 
 #: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
-#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:245
+#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:248
 #: app/views/guest/edit.rhtml:56 app/views/lists/_edit.rhtml:16
 #: app/views/people/edit.rhtml:38
 #: app/views/sidebars/groups/_smart_group_new.rhtml:43
@@ -573,7 +575,7 @@ msgstr "Lesezeichen bearbeiten"
 msgid "New Bookmark"
 msgstr "Neues Lesezeichen"
 
-#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:54
+#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:60
 #: app/views/people/show.rhtml:67 app/views/syndication/_person.rhtml:42
 msgid "Address"
 msgstr "Adresse"
@@ -584,7 +586,7 @@ msgstr "Adresse"
 msgid "Title"
 msgstr "Titel"
 
-#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:247
+#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:250
 #: app/views/files/create.rhtml:54 app/views/files/strongspace_create.rhtml:34
 #: app/views/lists/new.rhtml:41 app/views/people/edit.rhtml:41
 msgid "Create"
@@ -792,7 +794,8 @@ msgstr "Eingeladene die bisher nicht geantwortet haben"
 
 #: app/views/calendar/_peek.rhtml:118 app/views/calendar/edit.rhtml:215
 #: app/views/calendar/show.rhtml:129
-msgid "ICS Alarm"
+#, fuzzy
+msgid "Alarm"
 msgstr "ICS Alarm"
 
 #: app/views/calendar/_toolbar.rhtml:26 app/views/files/_toolbar.rhtml:36
@@ -1037,7 +1040,8 @@ msgid "Email selected items as an attachment"
 msgstr "Ausgewählte Elemente als Anhang versenden"
 
 #: app/views/files/_toolbar.rhtml:53 app/views/files/_toolbar.rhtml:57
-#: app/views/people/_peek.rhtml:45 app/views/people/show.rhtml:56
+#: app/views/people/_edit_account_user.rhtml:97
+#: app/views/people/_peek.rhtml:48 app/views/people/show.rhtml:56
 #: app/views/people/show.rhtml:115 app/views/syndication/_person.rhtml:32
 msgid "Email"
 msgstr "Email"
@@ -1118,31 +1122,31 @@ msgid "Guest Preferences"
 msgstr "Gäste Einstellungen"
 
 #: app/views/guest/edit.rhtml:19 app/views/people/_edit_account_guest.rhtml:18
-#: app/views/people/_edit_account_user.rhtml:18
+#: app/views/people/_edit_account_user.rhtml:22
 msgid "username"
 msgstr "Benutzername"
 
 #: app/views/guest/edit.rhtml:25 app/views/people/_edit_account_guest.rhtml:24
-#: app/views/people/_edit_account_user.rhtml:24
+#: app/views/people/_edit_account_user.rhtml:28
 msgid "password"
 msgstr "Passwort"
 
-#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:28
+#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:32
 msgid "confirm password"
 msgstr "Passwort bestätigen"
 
 #: app/views/guest/edit.rhtml:35 app/views/people/_edit_account_guest.rhtml:30
-#: app/views/people/_edit_account_user.rhtml:36
+#: app/views/people/_edit_account_user.rhtml:40
 msgid "password recovery email address"
 msgstr "Email-Adresse für verlorenes Passwort"
 
 #: app/views/guest/edit.rhtml:42 app/views/people/_edit_account_guest.rhtml:42
-#: app/views/people/_edit_account_user.rhtml:53
+#: app/views/people/_edit_account_user.rhtml:71
 msgid "time zone"
 msgstr "Zeitzone"
 
 #: app/views/guest/edit.rhtml:49 app/views/people/_edit_account_guest.rhtml:49
-#: app/views/people/_edit_account_user.rhtml:60
+#: app/views/people/_edit_account_user.rhtml:65
 msgid "language"
 msgstr "Sprache"
 
@@ -1450,12 +1454,14 @@ msgid "Reply To Sender"
 msgstr "Absender antworten"
 
 #: app/views/mail/show.rhtml:30
-msgid "Previous"
-msgstr "Vorherige"
+#, fuzzy
+msgid "Newer"
+msgstr "Neu"
 
 #: app/views/mail/show.rhtml:31
-msgid "Next"
-msgstr "Nächste"
+#, fuzzy
+msgid "Older"
+msgstr "Ordner"
 
 #: app/views/mail/show.rhtml:35
 msgid "Does this message not look quite right?"
@@ -1517,7 +1523,7 @@ msgid "Organization"
 msgstr "Organisation"
 
 #: app/views/partials/_developer_tools.rhtml:29
-#: app/views/people/_edit_account.rhtml:53
+#: app/views/people/_edit_account.rhtml:56
 #: app/views/people/confirm_user_delete.rhtml:41
 msgid "User"
 msgstr "Benutzer"
@@ -1591,6 +1597,7 @@ msgid "Resize Sidebar"
 msgstr "Seitenleiste in der Größe ändern"
 
 #: app/views/partials/_sidebar.rhtml:18 lib/i18n_do_not_include.rb:23
+#: lib/i18n_do_not_include.rb:102
 msgid "Groups"
 msgstr "Gruppen"
 
@@ -1598,15 +1605,18 @@ msgstr "Gruppen"
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:19
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:13
 #: app/views/sidebars/groups/_smart_group_new.rhtml:31
+#: lib/i18n_do_not_include.rb:103
 msgid "Tags"
 msgstr "Tags"
 
 #: app/views/partials/_sidebar.rhtml:21 app/views/sidebars/_access.rhtml:19
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:11
+#: lib/i18n_do_not_include.rb:104
 msgid "Access"
 msgstr "Zugriff"
 
 #: app/views/partials/_sidebar.rhtml:22 app/views/sidebars/_notify.rhtml:19
+#: lib/i18n_do_not_include.rb:106
 msgid "Notify"
 msgstr "Benachrichtigen"
 
@@ -1652,45 +1662,49 @@ msgstr "Ihr Passwort"
 msgid "Start Call"
 msgstr "Anrufen"
 
-#: app/views/people/_edit_account.rhtml:14
-#: app/views/people/_edit_account.rhtml:20
+#: app/views/people/_edit_account.rhtml:15
+#, fuzzy
+msgid "Edit Preferences"
+msgstr "Gäste Einstellungen"
+
+#: app/views/people/_edit_account.rhtml:23
 msgid "Edit Account"
 msgstr "Benutzeraccount bearbeiten"
 
-#: app/views/people/_edit_account.rhtml:26
+#: app/views/people/_edit_account.rhtml:29
 msgid "Account Type"
 msgstr "Account Typ"
 
-#: app/views/people/_edit_account.rhtml:35
+#: app/views/people/_edit_account.rhtml:38
 msgid "None &ndash; Contact Only"
 msgstr "Keiner &ndash; Nur Kontakt"
 
-#: app/views/people/_edit_account.rhtml:36
+#: app/views/people/_edit_account.rhtml:39
 msgid "Will have no access to your Connector."
 msgstr "Wird keinen Zugriff auf Ihren Connector haben"
 
-#: app/views/people/_edit_account.rhtml:44
+#: app/views/people/_edit_account.rhtml:47
 msgid "Guest"
 msgstr "Gast"
 
-#: app/views/people/_edit_account.rhtml:45
+#: app/views/people/_edit_account.rhtml:48
 msgid "Can only see or manage specified folders in your \"Strongspace\"."
 msgstr ""
 "Kann nur bestimmte Ordner in Ihrem \"Strongspace\" sehen oder verwalten."
 
-#: app/views/people/_edit_account.rhtml:54
+#: app/views/people/_edit_account.rhtml:57
 msgid "Will have unrestricted access to the connector."
 msgstr "Wird unbeschränkten Zugriff auf den Connector haben."
 
-#: app/views/people/_edit_account.rhtml:62
+#: app/views/people/_edit_account.rhtml:65
 msgid "Guest Info"
 msgstr "Gast Informationen"
 
-#: app/views/people/_edit_account.rhtml:67
+#: app/views/people/_edit_account.rhtml:70
 msgid "User Info"
 msgstr "Benutzer Informationen"
 
-#: app/views/people/_edit_account.rhtml:72
+#: app/views/people/_edit_account.rhtml:75
 msgid ""
 "Your have reached your user limit. To create a new user either delete a "
 "current one or <a target=\"_blank\" class=\"goto\" href=\"http://customer."
@@ -1717,10 +1731,41 @@ msgstr "Email-Adresse"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: app/views/people/_edit_account_user.rhtml:43
-#: app/views/people/_edit_account_user.rhtml:46
+#: app/views/people/_edit_account_user.rhtml:14
+#, fuzzy
+msgid "Account"
+msgstr "Benutzeraccount bearbeiten"
+
+#: app/views/people/_edit_account_user.rhtml:37
+#: app/views/people/_edit_account_user.rhtml:89
+#: app/views/people/_edit_account_user.rhtml:99
+#: app/views/people/_edit_account_user.rhtml:108
+#, fuzzy
+msgid "Loading"
+msgstr "Anmeldung"
+
+#: app/views/people/_edit_account_user.rhtml:47
+#: app/views/people/_edit_account_user.rhtml:50
 msgid "Allow this user to create and delete other users?"
 msgstr "Diesem Benutzer erlauben andere Benuter zu erstellen oder zu löschen?"
+
+#: app/views/people/_edit_account_user.rhtml:60
+msgid "International"
+msgstr ""
+
+#: app/views/people/_edit_account_user.rhtml:84
+msgid "Send notifications and event alarms via SMS, email and instant message"
+msgstr ""
+
+#: app/views/people/_edit_account_user.rhtml:87
+#, fuzzy
+msgid "SMS"
+msgstr "MSN"
+
+#: app/views/people/_edit_account_user.rhtml:106
+#, fuzzy
+msgid "Instant Message"
+msgstr "Instant Messaging"
 
 #: app/views/people/_edit_contact_information.rhtml:11
 msgid "Edit Person"
@@ -1783,7 +1828,7 @@ msgid "Add IM Address"
 msgstr "IM Adresse hinzufügen"
 
 #: app/views/people/_edit_contact_information.rhtml:141
-#: app/views/people/_peek.rhtml:73 app/views/people/show.rhtml:86
+#: app/views/people/_peek.rhtml:82 app/views/people/show.rhtml:86
 #: app/views/people/show.rhtml:123 app/views/syndication/_person.rhtml:71
 msgid "Websites"
 msgstr "Websites"
@@ -1793,7 +1838,7 @@ msgid "Add Website"
 msgstr "Website hinzufügen"
 
 #: app/views/people/_edit_contact_information.rhtml:161
-#: app/views/people/_peek.rhtml:83 app/views/people/show.rhtml:96
+#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:96
 #: app/views/people/show.rhtml:127 app/views/syndication/_person.rhtml:80
 msgid "Special Dates"
 msgstr "Besondere Tage"
@@ -1819,11 +1864,17 @@ msgstr "Telefon"
 msgid "Call this person via Skype"
 msgstr "Diese Person per Skype anrufen"
 
-#: app/views/people/_peek.rhtml:48
+#: app/views/people/_peek.rhtml:42 app/views/people/_peek.rhtml:54
+#: app/views/people/_peek.rhtml:76
+#, fuzzy
+msgid "Send Notifications Here"
+msgstr "Benachrichtigungen"
+
+#: app/views/people/_peek.rhtml:51
 msgid "Compose a new email to"
 msgstr "Neue Email verfassen an"
 
-#: app/views/people/_peek.rhtml:64 app/views/people/show.rhtml:77
+#: app/views/people/_peek.rhtml:70 app/views/people/show.rhtml:77
 #: app/views/people/show.rhtml:119 app/views/syndication/_person.rhtml:61
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
@@ -2871,6 +2922,11 @@ msgstr "Leertaste"
 msgid "Toggle First Checkbox"
 msgstr "Erstes Ankreuzfeld umschalten"
 
+#: lib/i18n_do_not_include.rb:105
+#, fuzzy
+msgid "Permissions"
+msgstr "Rechte sichern"
+
 #: lib/js_strings.rb:1
 msgid "can't change"
 msgstr "kann nicht verändern"
@@ -3142,6 +3198,12 @@ msgstr "Sie müssen entweder einen Namen oder eine Firma angeben."
 #, fuzzy
 msgid "Search for %{i18n_search_param}"
 msgstr "Suche: %{i18n_search_param}"
+
+#~ msgid "Previous"
+#~ msgstr "Vorherige"
+
+#~ msgid "Next"
+#~ msgstr "Nächste"
 
 #~ msgid "Peek"
 #~ msgstr "Vorschau"
