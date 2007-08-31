@@ -227,6 +227,17 @@ class CalendarControllerTest < Test::Unit::TestCase
     assert flash['error'] =~ /^There was a /
   end
   
+  # regression test for case 23
+  def test_upload_ics_with_missing_summary
+    login_person(:ian)
+    post :import, :icalendar=>fixture_file_upload('/ical/ICAL-missing_summary.ics', 'text/plain'),
+                  :existing_calendar=>calendars(:concerts).id,
+                  :calendar_type=>'existing'
+                  
+    assert_redirected_to calendar_month_route_url(:calendar_id => calendars(:concerts).id)
+    assert_nil flash['error']
+  end
+  
   def test_smart_group_attributes_are_right
     login_person(:ian)
     get :list, {:calendar_id=>calendars(:concerts).id}    
