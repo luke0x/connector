@@ -21,7 +21,7 @@ class IcalendarConverter
           event.all_day               = (vevent.duration == 1.day || vevent.duration == 0) && (vevent.dtstart == vevent.dtstart.at_midnight)
           event.start_time_in_user_tz = localize_start_time(vevent)
           event.end_time_in_user_tz   = event.start_time_in_user_tz + vevent.duration
-          event.name                  = vevent.summary
+          event.name                  = vevent.summary.blank? ? 'Untitled Event' : vevent.summary
           event.location              = vevent.location
           event.notes                 = vevent.description || ''
           
