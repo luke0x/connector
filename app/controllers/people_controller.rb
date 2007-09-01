@@ -649,7 +649,7 @@ class PeopleController < AuthenticatedController
     end            
 
     def valid_sort_fields
-      ['person_type', 'first_name', 'last_name', 'company_name', 'primary_email', 'primary_phone']
+      ['person_type', 'first_name', 'last_name', 'company_name', 'primary_email_cache', 'primary_phone_cache']
     end
 
     def default_sort_field

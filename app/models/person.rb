@@ -48,8 +48,8 @@ class Person < ActiveRecord::Base
       'people.title',
       'people.notes',
       'people.person_type',
-      'people.primary_email',
-      'people.primary_phone'
+      'people.primary_email_cache',
+      'people.primary_phone_cache'
     ]
   end
   
@@ -351,6 +351,16 @@ class Person < ActiveRecord::Base
     time_zone
   end
   
+  # find the first email marked as preferred to use as the primary email
+  def primary_email
+    email_addresses.find(:first, :conditions => {:preferred => true})
+  end
+  
+  # find the first phone number marked as preferred to use as the primary number
+  def primary_phone
+    phone_numbers.find(:first, :conditions => {:preferred => true})
+  end
+  
   private
 
     def save_icon
@@ -371,7 +381,7 @@ class Person < ActiveRecord::Base
       else
         '2_Contact'
       end
-      self.primary_email = email_addresses.first.email_address rescue ''
-      self.primary_phone = phone_numbers.first.phone_number rescue ''
+      self.primary_email_cache = primary_email.email_address rescue ''
+      self.primary_phone_cache = primary_phone.phone_number rescue ''
     end
 end

@@ -28,8 +28,8 @@
 				<%= toggle_sort_th(_('Person Type'), 'person_type', 'person', {:class => 'person', :title => 'Person Type'}) %>
 				<%= toggle_sort_th(_('First Name'), 'first_name') %>
 				<%= toggle_sort_th(_('Last Name'), 'last_name') %>
-				<%= toggle_sort_th(_('Email Address'), 'primary_email') %>
-				<%= toggle_sort_th(_('Phone Number'), 'primary_phone') %>
+				<%= toggle_sort_th(_('Email Address'), 'primary_email_cache') %>
+				<%= toggle_sort_th(_('Phone Number'), 'primary_phone_cache') %>
 				<%= toggle_sort_th(_('Company Name'), 'company_name') %>
 				<th class="detailView"><span>Peek</span></th>
 			</tr>
@@ -51,10 +51,10 @@
 						<%= link_to person.last_name.to_s, person_show_url(:id => person.id) %>
 					</td>
 					<td>
-						<%= link_to person.primary_email.to_s, {:controller => 'mail', :action => :compose, :to => "#{person.full_name} <#{person.primary_email}>"}, {:title => "Compose a new email to #{person.full_name}"} %>
+						<%= link_to person.primary_email_cache.to_s, {:controller => 'mail', :action => :compose, :to => "#{person.full_name} <#{person.primary_email_cache}>"}, {:title => "Compose a new email to #{person.full_name}"} %>
 					</td>
 					<td>
-						<%= link_to person.primary_phone.to_s, person_show_url(:id => person.id) %>
+						<%= link_to person.primary_phone_cache.to_s, person_show_url(:id => person.id) %>
 					</td>
 					<td>
 						<%= link_to person.company_name.to_s, person_show_url(:id => person.id) %>

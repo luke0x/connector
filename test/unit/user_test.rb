@@ -214,7 +214,7 @@ class UserTest < Test::Unit::TestCase
   end
   
   def test_from_addresses_put_preferred_first
-    assert_equal people(:ian).primary_email, users(:ian).from_addresses.first
+    assert_equal people(:ian).primary_email_cache, users(:ian).from_addresses.first
   end
   
   def test_from_addresses_with_no_preferred_puts_system_email_first

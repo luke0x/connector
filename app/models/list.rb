@@ -123,7 +123,7 @@ class List < ActiveRecord::Base
         h.dateCreated self.created_at
     		h.dateModified self.updated_at
     		h.ownerName self.owner.person.full_name
-    		h.ownerEmail self.owner.person.primary_email
+    		h.ownerEmail self.owner.person.primary_email_cache
         h.expansionState self.expansion_state
       end
       o.body do |b|

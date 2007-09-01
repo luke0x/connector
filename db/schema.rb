@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 161) do
+ActiveRecord::Schema.define(:version => 162) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -340,24 +340,24 @@ ActiveRecord::Schema.define(:version => 161) do
   add_index "organizations", ["affiliate_id"], :name => "index_organizations_on_affiliate_id"
 
   create_table "people", :force => true do |t|
-    t.column "name_prefix",     :string,   :default => ""
-    t.column "first_name",      :string,   :default => ""
-    t.column "middle_name",     :string,   :default => ""
-    t.column "last_name",       :string,   :default => ""
-    t.column "name_suffix",     :string,   :default => ""
-    t.column "nickname",        :string,   :default => ""
-    t.column "company_name",    :string,   :default => ""
-    t.column "title",           :string,   :default => ""
-    t.column "time_zone",       :string,   :default => ""
-    t.column "notes",           :text
-    t.column "created_at",      :datetime
-    t.column "updated_at",      :datetime
-    t.column "organization_id", :integer
-    t.column "user_id",         :integer
-    t.column "contact_list_id", :integer
-    t.column "person_type",     :string
-    t.column "primary_email",   :string
-    t.column "primary_phone",   :string
+    t.column "name_prefix",         :string,   :default => ""
+    t.column "first_name",          :string,   :default => ""
+    t.column "middle_name",         :string,   :default => ""
+    t.column "last_name",           :string,   :default => ""
+    t.column "name_suffix",         :string,   :default => ""
+    t.column "nickname",            :string,   :default => ""
+    t.column "company_name",        :string,   :default => ""
+    t.column "title",               :string,   :default => ""
+    t.column "time_zone",           :string,   :default => ""
+    t.column "notes",               :text
+    t.column "created_at",          :datetime
+    t.column "updated_at",          :datetime
+    t.column "organization_id",     :integer
+    t.column "user_id",             :integer
+    t.column "contact_list_id",     :integer
+    t.column "person_type",         :string
+    t.column "primary_email_cache", :string
+    t.column "primary_phone_cache", :string
   end
 
   add_index "people", ["contact_list_id"], :name => "people_contact_list_id_index"

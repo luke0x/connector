@@ -47,7 +47,7 @@ class PersonTest < Test::Unit::TestCase
   end
   
   def test_user_email
-    assert_equal "ian@textdrive.com", people(:ian).primary_email
+    assert_equal "ian@textdrive.com", people(:ian).primary_email.email_address
     assert people(:jason).primary_email.blank?
   end
   
@@ -57,7 +57,7 @@ class PersonTest < Test::Unit::TestCase
   end
   
   def test_primary_phone
-    assert_equal '0800 666 112', people(:ian).primary_phone
+    assert_equal '0800 666 112', people(:ian).primary_phone.phone_number
   end
   
   def test_exportable?

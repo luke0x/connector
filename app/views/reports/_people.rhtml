@@ -41,10 +41,10 @@
 					<%= link_to person.last_name.to_s, person_show_url(:id => person.id) %>
 				</td>
 				<td class="emailAddress">
-					<%= link_to person.primary_email.to_s, {:controller => 'mail', :action => :compose, :to => "#{person.full_name} <#{person.primary_email}>"}, {:title => _("Compose a new email to %{i18n_person_full_name}")%{:i18n_person_full_name => "#{person.full_name}"}} %>
+					<%= link_to person.primary_email_cache, {:controller => 'mail', :action => :compose, :to => "#{person.full_name} <#{person.primary_email}>"}, {:title => _("Compose a new email to %{i18n_person_full_name}")%{:i18n_person_full_name => "#{person.full_name}"}} %>
 				</td>
 				<td class="phoneNumber">
-					<%= link_to person.primary_phone.to_s, person_show_url(:id => person.id) %>
+					<%= link_to person.primary_phone_cache, person_show_url(:id => person.id) %>
 				</td>
 				<td id="<%= dom_id %>_td_details_icon" class="details">
 					<%= link_to_function _('Details'), "PeekView.toggle('#{dom_id}', '#{peek_url(person, dom_id)}')" %>

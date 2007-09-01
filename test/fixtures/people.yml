@@ -22,8 +22,8 @@ ian:
   created_at: <%= (Time.now - 7.days).to_s(:db) %>
   updated_at: <%= (Time.now - 5.days).to_s(:db) %>
   person_type: 0_Admin
-  primary_email: ian@textdrive.com
-  primary_phone: 0800 666 112
+  primary_email_cache: ian@textdrive.com
+  primary_phone_cache: 0800 666 112
 peter:
   id: 2
   organization_id: 1
@@ -36,8 +36,8 @@ peter:
   created_at: <%= (Time.now - 7.days).to_s(:db) %>
   updated_at: <%= (Time.now - 5.days).to_s(:db) %>
   person_type: 1_User
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 stephen:
   id: 3
   user_id: 1
@@ -51,8 +51,8 @@ stephen:
   created_at: <%= (Time.now - 7.days).to_s(:db) %>
   updated_at: <%= (Time.now - 5.days).to_s(:db) %>
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 
 jason:
   id: 4
@@ -66,8 +66,8 @@ jason:
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   person_type: 0_Admin
-  primary_email: 
-  primary_phone: 0980 9809 809 8
+  primary_email_cache: 
+  primary_phone_cache: 0980 9809 809 8
 notuser:
   id: 5
   organization_id: 2
@@ -81,8 +81,8 @@ notuser:
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 secret_person:
   id: 6
   organization_id: 2
@@ -93,8 +93,8 @@ secret_person:
   title: CEO
   time_zone: America/Detroit
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
 user_with_restrictions:
@@ -107,8 +107,8 @@ user_with_restrictions:
   title: CEO
   time_zone: America/Detroit
   person_type: 0_Admin
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
 chris:
@@ -124,8 +124,8 @@ chris:
   created_at: <%= (Time.now - 7.days).to_s(:db) %>
   updated_at: <%= (Time.now - 5.days).to_s(:db) %>
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 
 o1notuser:
   id: 9
@@ -139,8 +139,8 @@ o1notuser:
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 
 crud_fred:
   id: 10
@@ -151,8 +151,8 @@ crud_fred:
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
      
 tagged_with_rails_solaris:
   id: 11
@@ -164,8 +164,8 @@ tagged_with_rails_solaris:
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   person_type: 2_Contact
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 
 bernard:
   id: 12
@@ -179,8 +179,8 @@ bernard:
   created_at: <%= (Time.now - 7.days).to_s(:db) %>
   updated_at: <%= (Time.now - 5.days).to_s(:db) %>
   person_type: 1_User
-  primary_email: 
-  primary_phone: 
+  primary_email_cache: 
+  primary_phone_cache: 
 
 guest:
   id: 13
