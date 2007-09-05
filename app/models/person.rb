@@ -353,12 +353,12 @@ class Person < ActiveRecord::Base
   
   # find the first email marked as preferred to use as the primary email
   def primary_email
-    email_addresses.find(:first, :conditions => {:preferred => true})
+    email_addresses.find(:first, :conditions => {:preferred => true}) || email_addresses.first
   end
   
   # find the first phone number marked as preferred to use as the primary number
   def primary_phone
-    phone_numbers.find(:first, :conditions => {:preferred => true})
+    phone_numbers.find(:first, :conditions => {:preferred => true}) || phone_numbers.first
   end
   
   private
@@ -381,7 +381,7 @@ class Person < ActiveRecord::Base
       else
         '2_Contact'
       end
-      self.primary_email_cache = primary_email.email_address rescue ''
-      self.primary_phone_cache = primary_phone.phone_number rescue ''
+      self.primary_email_cache = primary_email.blank? ? '' : primary_email.email_address
+      self.primary_phone_cache = primary_phone.blank? ? '' : primary_phone.phone_number
     end
 end
