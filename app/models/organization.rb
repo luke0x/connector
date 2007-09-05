@@ -61,10 +61,12 @@ class Organization < ActiveRecord::Base
     self.save!
   end
 
+  # mycompany.joyent.net, where 'joyent.net' is the suffix set by convention by the customer application
   def system_domain
     @system_domain ||= self.domains.find(:first, :conditions=>["system_domain = ?", true])
   end
   
+  # a domain like mycompany.com, marked primary in the customer application
   def primary_domain
     @primary_domain ||= self.domains.find_by_primary(true)
   end
