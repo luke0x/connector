@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-08-27 16:55+0200\n"
+"POT-Creation-Date: 2007-09-05 16:04-0400\n"
 "PO-Revision-Date: 2006-05-24 20:40+0200\n"
 "Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
 "Language-Team: Spanish <pedro@joyent.com>\n"
@@ -2912,6 +2912,10 @@ msgstr "Marcar primer checkbox"
 #: lib/i18n_do_not_include.rb:105
 msgid "Permissions"
 msgstr "Permisos"
+
+#: lib/icalendar_converter.rb:29
+msgid "Untitled Event"
+msgstr "Editar Evento"
 
 #: lib/js_strings.rb:1
 msgid "can't change"

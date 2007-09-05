@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-08-27 16:55+0200\n"
+"POT-Creation-Date: 2007-09-05 16:04-0400\n"
 "PO-Revision-Date: 2007-05-31 23:32+0200\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -2926,6 +2926,10 @@ msgstr "Erstes Ankreuzfeld umschalten"
 #, fuzzy
 msgid "Permissions"
 msgstr "Rechte sichern"
+
+#: lib/icalendar_converter.rb:29
+msgid "Untitled Event"
+msgstr "Ereignis bearbeiten"
 
 #: lib/js_strings.rb:1
 msgid "can't change"
