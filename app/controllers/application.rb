@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   before_filter :capture_start_time
   before_filter :set_mysql_charset
   before_filter :pre_clean
+  before_filter :en_locale
   before_filter :load_domain
   before_filter :load_organization
   before_filter :load_application
@@ -52,6 +53,13 @@ class ApplicationController < ActionController::Base
       Domain.current = nil
       List.current = nil
       true
+    end
+
+    # always login with english until we save language in a cookie
+    def en_locale
+      GetText.locale = 'en'
+      Date.translate_strings
+      GetText.locale
     end
 
     def load_domain
