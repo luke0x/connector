@@ -17,7 +17,9 @@ class JoyentConfig
     cattr_accessor name
     self.send("#{name}=", default)
   end
-
+                                
+  config_value :svn_revision, YAML::load(`svn info`)['Revision']
+  
   config_value :mongrel_cluster_host, 'hostname'
   config_value :asset_host, [1, 2, 3, 4].map{|i| "assets#{i}.domain"}
 
@@ -115,4 +117,5 @@ class JoyentConfig
   config_value :jabber_notifier_password,    'password'
   config_value :sms_notifier_from_address,   'Joyent Connector'
   config_value :email_notifier_from_address, 'Joyent Connector <notifier@example.com>'
+  
 end
