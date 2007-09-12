@@ -454,9 +454,7 @@ module ApplicationHelper
   end
 
   def svn_version
-    return '' unless ENV['SHOW_VERSION_IN_OUTPUT']
-    version = YAML::load(`svn info`)['Revision'] rescue 'Unknown'
-    "<!-- Joyent Connecter rev. #{version} -->"
+    "<!-- Joyent Connecter rev. #{JoyentConfig.svn_revision} -->"
   end
 
   def group_parameter
