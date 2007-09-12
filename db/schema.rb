@@ -24,11 +24,6 @@ ActiveRecord::Schema.define(:version => 162) do
 
   add_index "affiliates", ["name"], :name => "index_affiliates_on_name"
 
-  create_table "application_domains", :force => true do |t|
-    t.column "domain",             :string
-    t.column "web_application_id", :integer
-  end
-
   create_table "auth_keys", :force => true do |t|
     t.column "key",             :string
     t.column "organization_id", :integer
@@ -419,9 +414,6 @@ ActiveRecord::Schema.define(:version => 162) do
   add_index "reports", ["reportable_type"], :name => "reports_reportable_type_index"
   add_index "reports", ["user_id"], :name => "reports_user_id_index"
 
-  create_table "services", :force => true do |t|
-  end
-
   create_table "sessions", :force => true do |t|
     t.column "session_id", :string
     t.column "data",       :text
@@ -553,14 +545,6 @@ ActiveRecord::Schema.define(:version => 162) do
   add_index "users", ["organization_id"], :name => "users_organization_id_index"
   add_index "users", ["person_id"], :name => "users_person_id_index"
   add_index "users", ["username"], :name => "users_username_index"
-
-  create_table "web_applications", :force => true do |t|
-    t.column "name",            :string
-    t.column "state",           :string
-    t.column "user_id",         :integer
-    t.column "organization_id", :integer
-    t.column "settings",        :string
-  end
 
   create_table "websites", :force => true do |t|
     t.column "person_id",  :integer
