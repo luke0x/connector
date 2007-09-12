@@ -297,6 +297,8 @@ class Person < ActiveRecord::Base
         cpp['person_id'] = self.id.to_i
       end
     end
+    
+    # This is a pretty intensive line...it does a lot of deletes and adds for all of the associations
     self.update_attributes(person_params.limit_keys_to(collection_params))
     self.reload
 

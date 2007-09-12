@@ -57,6 +57,7 @@ class ApiController < ActionController::Base
   end
   
   def create_organization 
+    # TODO: This needs some validation for proper XML if organization isn't present...it's a no go
     o = params[:organization]
     # Verify that the domain does not already exist, if it does, return it 
     unless org = Domain.find_by_email_domain(o[:system_domain])
@@ -76,8 +77,13 @@ class ApiController < ActionController::Base
     render :xml=>org.to_xml
   end
   
+  def show_organization
+    # NEED TO IMPLEMENT THIS -- usage, domains, etc  
+  end
+  
   def organization_dispatch
     case request.method
+    when :get    then show_organization
     when :put    then update_organization
     when :delete then destroy_organization
     end
