@@ -16,6 +16,7 @@ var Mail = {
 
 	validateSubmit: function(form) {
 		if ($F('command') == 'discard') return confirm('Would you like to discard the current draft message?');
+		if ($F('command') == 'save') return true; // a draft should not require a recipient - ticket 28
 	  
 	  arrErrors = [];
 
