@@ -39,5 +39,16 @@ class BookmarkFolderTest < Test::Unit::TestCase
     assert_equal 1, bookmark_folders(:ian_bookmark_folder).bookmarks.first.permissions.length
     assert_equal users(:ian), bookmark_folders(:ian_bookmark_folder).bookmarks.first.permissions.first.user
   end
-
+   
+  def test_name
+    assert_equal "Bookmarks", bookmark_folders(:ian_bookmark_folder).name
+  end                                                                    
+  
+  def test_children
+    assert_equal [], bookmark_folders(:ian_bookmark_folder).children
+  end                                                               
+  
+  def test_descendent
+    assert_equal false, bookmark_folders(:ian_bookmark_folder).descendent?(bookmark_folders(:peter_bookmark_folder))
+  end
 end
