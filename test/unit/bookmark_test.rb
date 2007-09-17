@@ -145,5 +145,46 @@ class BookmarkTest < Test::Unit::TestCase
       assert_equal "http://www.google.com/search?q=ruby+on+rails#anchor", b.uri
     end
   end
-
+  
+  def test_class_humanize
+    assert_equal "Bookmark", bookmarks(:ian_bookmark_1).class_humanize
+  end                                                                 
+  
+  def test_name
+    assert_equal "Joyent Homepage", bookmarks(:ian_bookmark_1).name
+  end                                                              
+  
+  def test_icon_url_cameray_shy
+    assert_equal "/images/bookmarks/cameraShy.png", bookmarks(:ian_bookmark_1).icon_url
+  end                          
+  
+  def test_icon_url_good
+    MockFS.mock = true           
+    icon_path   = bookmarks(:ian_bookmark_1).send(:icon_path)
+    
+    MockFS.fill_path File.dirname(icon_path)
+    
+    MockFS.file.open(icon_path, File::CREAT ) do |f|
+      f.puts "image content"
+    end                    
+    
+    assert_equal "/bookmarks/1/#{bookmarks(:ian_bookmark_1).uri_sha1}-clipped.png", bookmarks(:ian_bookmark_1).icon_url    
+  end               
+  
+  def test_destroy_icon
+    MockFS.mock = true           
+    icon_path   = bookmarks(:ian_bookmark_1).send(:icon_path)
+    
+    MockFS.fill_path File.dirname(icon_path)
+    
+    MockFS.file.open(icon_path, File::CREAT ) do |f|
+      f.puts "image content"
+    end
+           
+    assert MockFS.file.exist?(icon_path)
+   
+    bookmarks(:ian_bookmark_1).destroy_icon!
+    
+    assert !MockFS.file.exist?(icon_path)
+  end
 end

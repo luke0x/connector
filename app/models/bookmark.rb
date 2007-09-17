@@ -24,13 +24,7 @@ class Bookmark < ActiveRecord::Base
   after_save     :create_icon!
   before_destroy :destroy_icon!
 
-  def self.thumbnail_server=(thumbnail_server)
-    @@thumbnail_server = thumbnail_server
-  end
-
-  def self.thumbnail_server
-    @@thumbnail_server
-  end
+  cattr_accessor :thumbnail_server
 
   def self.search_fields
     [
