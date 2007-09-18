@@ -43,7 +43,7 @@ class UserController < AuthenticatedController
     
     if params[:id].blank? or
        params[:person_guest_send_email].blank? or
-       ! (user = Organization.current.users.find_by_id(params[:id]))
+       ! (user = current_organization.users.find_by_id(params[:id]))
       flash[:error] = "Password recovery for this guest is unavailable. No email was sent."
     else
       user.reset_password!(params[:person_guest_send_email])

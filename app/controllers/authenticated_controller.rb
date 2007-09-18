@@ -42,7 +42,7 @@ class AuthenticatedController < ApplicationController
   # return a ul of children groups
   def children_groups
     parent_group  = group_type(self.class.group_name).find(params[:id], :scope => :read)
-    User.selected = parent_group.owner
+    selected_user = parent_group.owner
     children      = parent_group.children.find(:all, :scope => :read)
 
     render :partial => "sidebars/groups/children_groups", :locals => { :children => children }
@@ -51,7 +51,7 @@ class AuthenticatedController < ApplicationController
   end
 
   def others_groups
-    User.selected = User.find(params[:user_id], :scope => :read)
+    selected_user = User.find(params[:user_id], :scope => :read)
     render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}"
   end
 
@@ -113,7 +113,7 @@ class AuthenticatedController < ApplicationController
     end
     
     def authkey_check
-      if params[:authkey] && (key = AuthKey.verify(params[:authkey], Organization.current))
+      if params[:authkey] && (key = AuthKey.verify(params[:authkey], current_organization))
         current_user               = key.user
         session[:sso_verified]     = true
         LoginToken.current         = current_user.create_login_token
@@ -128,11 +128,11 @@ class AuthenticatedController < ApplicationController
     def sso
       # first see if already logged in
       if session[:sso_verified] and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_by_value(request.cookies['sso_token_value'])
-        current_user = Organization.current.users.find(LoginToken.current.user_id, :include => [:user_options])
+        current_user = current_organization.users.find(LoginToken.current.user_id, :include => [:user_options])
       # now see if they have a remember cookie
       elsif request.cookies['sso_remember'] and request.cookies['sso_remember'][0] == 'true' and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_for_cookie(request.cookies['sso_token_value'][0])
         session[:sso_verified] = true
-        current_user = Organization.current.users.find(LoginToken.current.user_id)
+        current_user = current_organization.users.find(LoginToken.current.user_id)
       # remember the page and let them log in
       else
         session[:post_login_url] = request.env['REQUEST_URI']

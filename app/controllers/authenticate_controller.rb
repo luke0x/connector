@@ -28,16 +28,16 @@ class AuthenticateController < PublicController
   def login
     # first try the sso stuff
     if session[:sso_verified] and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_by_value(request.cookies['sso_token_value'])
-      current_user = Organization.current.users.find(LoginToken.current.user_id)
+      current_user = current_organization.users.find(LoginToken.current.user_id)
 
       redirect_to connector_home_url and return
     # more sso see if they have a remember cookie
     elsif request.cookies['sso_remember'] and request.cookies['sso_remember'][0] == 'true' and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_for_cookie(request.cookies['sso_token_value'][0])
       session[:sso_verified] = true
-      current_user = Organization.current.users.find(LoginToken.current.user_id)
+      current_user = current_organization.users.find(LoginToken.current.user_id)
 
       redirect_to connector_home_url and return
-    elsif request.post? and user = Domain.current.authenticate_user(params[:username], params[:password])
+    elsif request.post? and user = current_domain.authenticate_user(params[:username], params[:password])
       return set_user_credentials(user)
     elsif ! request.post?
       return
@@ -72,7 +72,7 @@ class AuthenticateController < PublicController
   def reset_password
     return unless request.post?
     
-    if user = Organization.current.users.find_by_username(params[:username]) and ! user.recovery_email.blank?
+    if user = current_organization.users.find_by_username(params[:username]) and ! user.recovery_email.blank?
       user.reset_password!
       flash[:message] = "Recovery email sent to '#{user.recovery_email}.' Click the link in the email to reset your password."
     else
@@ -111,7 +111,7 @@ class AuthenticateController < PublicController
         cookies.delete 'sso_remember'
       end
 
-      if Organization.current.partner?
+      if current_organization.partner?
         redirect_to session[:post_login_url] || lightning_portal_url
       else
         redirect_to session[:post_login_url] || connector_home_url

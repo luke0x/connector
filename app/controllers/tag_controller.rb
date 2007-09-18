@@ -86,7 +86,7 @@ class TagController < AuthenticatedController
     end
 
     # get the matched tag definitions
-    @tags = Organization.current.tags.find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{@needle.downcase}%"],
+    @tags = current_organization.tags.find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{@needle.downcase}%"],
                                            :order => 'LOWER(name)', :limit => 20)
   end
 end

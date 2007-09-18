@@ -55,7 +55,7 @@ class SyndicationController < ApplicationController
   def mail_mailbox_rss
     @mailbox       = Mailbox.find(params[:id], :scope => :read)
     @mailbox.sync
-    User.selected  = @mailbox.owner
+    selected_user  = @mailbox.owner
     @group_name    = _(@mailbox.name)
     if @mailbox.owner != current_user
       @group_name = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@mailbox.owner.full_name}",:i18n_group_name => "#{@group_name}"}
@@ -70,7 +70,7 @@ class SyndicationController < ApplicationController
     if @smart_group.owner != current_user
       @group_name = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@smart_group.owner.full_name}",:i18n_group_name => "#{@group_name}"}
     end
-    User.selected  = @smart_group.owner
+    selected_user  = @smart_group.owner
     @group_name    = @smart_group.name
     @messages      = @smart_group.items(nil, 25, 0)
     @connector_link  = mail_smart_list_url(:smart_group_id=>params[:smart_group_id], :full_path=>false)
@@ -79,7 +79,7 @@ class SyndicationController < ApplicationController
   
   def mail_notifications_rss
     @group_name = _('Notifications')
-    notifications = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Message' and notifiee_id = ?", current_user.id], :limit => 25)
+    notifications = current_organization.notifications.find(:all, :conditions => ["item_type = 'Message' and notifiee_id = ?", current_user.id], :limit => 25)
     @messages = notifications.inject([]) do |arr, notification|
       if !notification.item.exist?
         notification.destroy rescue nil # In case it's owned by someone else
@@ -145,13 +145,13 @@ class SyndicationController < ApplicationController
   
   def notifications_calendar_ics
     @group_name = _('Notifications')
-    @events     = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Event' and notifiee_id = ?", current_user.id]).collect(&:item)
+    @events     = current_organization.notifications.find(:all, :conditions => ["item_type = 'Event' and notifiee_id = ?", current_user.id]).collect(&:item)
     send_data render_to_string(:action => 'ics', :layout => false), :filename => "#{@group_name}.ics".gsub(/[ \']/, '_')
   end
   
   def notifications_calendar_rss
     @group_name = _('Notifications')
-    @events     = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Event' and notifiee_id = ?", current_user.id]).collect(&:item).sort_by(&:updated_at).reverse
+    @events     = current_organization.notifications.find(:all, :conditions => ["item_type = 'Event' and notifiee_id = ?", current_user.id]).collect(&:item).sort_by(&:updated_at).reverse
     
     # Don't want to deal with repeating events here b/c it is more important to know about the events that you have been notified on
     @connector_link = calendar_notifications_url(:full_path=>false)
@@ -193,7 +193,7 @@ class SyndicationController < ApplicationController
 
   def people_contacts_rss
     @contact_list = ContactList.find(params[:group], :scope => :read)
-    User.selected = @contact_list.owner
+    selected_user = @contact_list.owner
     @group_name = _('Contacts')
     if @contact_list.owner != current_user
       @group_name   = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@contact_list.owner.full_name}",:i18n_group_name => "#{@group_name}"}
@@ -205,14 +205,14 @@ class SyndicationController < ApplicationController
   
   def people_users_rss
     @group_name = _('Users')
-    @people = Organization.current.people.select{|p| p.user}
+    @people = current_organization.people.select{|p| p.user}
     @connector_link = people_list_url(:group => 'users', :full_path => false)
     render :action=>'people_rss'
   end
   
   def people_notifications_rss
     @group_name = _('Notifications')
-    @people = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Person' and notifiee_id = ?", current_user.id]).collect(&:item)
+    @people = current_organization.notifications.find(:all, :conditions => ["item_type = 'Person' and notifiee_id = ?", current_user.id]).collect(&:item)
     @connector_link = people_notifications_url(:full_path => false)
     render :action=>'people_rss'
   end
@@ -232,7 +232,7 @@ class SyndicationController < ApplicationController
 
   def files_notications_rss
     @group_name  = _("Notifications")
-    @files       = Organization.current.notifications.find(:all, :conditions => ["item_type = 'JoyentFile' and notifiee_id = ?", current_user.id]).collect(&:item)
+    @files       = current_organization.notifications.find(:all, :conditions => ["item_type = 'JoyentFile' and notifiee_id = ?", current_user.id]).collect(&:item)
     @connector_link  = files_notifications_url(:full_path=>false)
     render :action=>'files_rss'
   end
@@ -261,7 +261,7 @@ class SyndicationController < ApplicationController
   
   def files_strongspace_rss
     @folder       = StrongspaceFolder.find(current_user, params[:path] || '', current_user)
-    User.selected = @folder.owner
+    selected_user = @folder.owner
     @group_name   = @folder.name
     @files        = @folder.files
 
@@ -272,7 +272,7 @@ class SyndicationController < ApplicationController
 
   def files_service_rss
     @service = Service.find(params[:service_name], current_user)
-    User.selected = @service.owner    
+    selected_user = @service.owner    
     @folder       = params[:group_id] ? @service.find_folder(params[:group_id]) : nil
     @folder     ||= @service.root_folder
     @group_name   = @folder.name
@@ -346,7 +346,7 @@ class SyndicationController < ApplicationController
   
   def lists_notifications_rss
     @group_name   = "Notifications"
-    @lists        = Organization.current.notifications.find(:all, :conditions => ["item_type = 'List' and notifiee_id = ?", current_user.id]).collect(&:item)
+    @lists        = current_organization.notifications.find(:all, :conditions => ["item_type = 'List' and notifiee_id = ?", current_user.id]).collect(&:item)
     @lists_link   = lists_notifications_url(:full_path=>false)
     render :action => 'lists_rss'
   end
@@ -356,7 +356,7 @@ class SyndicationController < ApplicationController
   def current_time_rss
     @group_name   = _("Current Time")
     @timezones    = []
-    Organization.current.users.each do |user|
+    current_organization.users.each do |user|
       @timezones << {:user => user, :time => user.now, :timezone => user.tz.to_s}  
     end                                                
   
@@ -370,7 +370,7 @@ class SyndicationController < ApplicationController
     comments      = Comment.find(:all, 
                                  :include    => 'user',
                                  :conditions => ['users.organization_id = ? AND created_at >= ?', 
-                                                 Organization.current.id, 
+                                                 current_organization.id, 
                                                  Time.now - 7.days],
                                  :order      => 'created_at DESC')
   
@@ -404,8 +404,8 @@ class SyndicationController < ApplicationController
   end 
   
   def unread_messages_rss
-    User.selected  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
-    @mailbox       = User.selected.inbox
+    selected_user  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+    @mailbox       = selected_user.inbox
     @mailbox.sync
     
     @group_name    = @mailbox_name  = _("Unread Messages")
@@ -418,29 +418,29 @@ class SyndicationController < ApplicationController
                                             :offset     => @paginator.current.offset,
                                             :scope => :read)
   
-    @connector_link  = mail_unread_messages_url(:id=>User.selected.id, :full_path=>false)
+    @connector_link  = mail_unread_messages_url(:id=>selected_user.id, :full_path=>false)
     render :action=>'mail_rss'  
   end 
   
   def todays_events_rss           
-    User.selected  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
-    @start_date = User.selected.today
+    selected_user  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+    @start_date = selected_user.today
     @end_date   = @start_date + 1
     
     @group_name = _("Today's Events")
-    @events     = User.selected.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
-    @connector_link  = calendar_todays_events_url(:id => User.selected, :full_path=>false)
+    @events     = selected_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    @connector_link  = calendar_todays_events_url(:id => selected_user, :full_path=>false)
     render :action=>'calendar_rss'
   end                  
   
   def weeks_events_rss                                               
-    User.selected  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
-    @start_date = User.selected.today
+    selected_user  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+    @start_date = selected_user.today
     @end_date   = @start_date + 7
     
     @group_name = _("This Week's Events")
-    @events     = User.selected.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
-    @connector_link  = calendar_weeks_events_url(:id => User.selected, :full_path=>false)
+    @events     = selected_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    @connector_link  = calendar_weeks_events_url(:id => selected_user, :full_path=>false)
     render :action=>'calendar_rss'
   end            
   

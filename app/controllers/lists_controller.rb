@@ -48,7 +48,7 @@ class ListsController < AuthenticatedController
     @list = List.find(params[:id], :include => [:list_columns, {:list_rows => [:list_cells]}], :scope => :read)
     List.current = @list
 
-    User.selected = @list.owner
+    selected_user = @list.owner
     @list_folder = @list.list_folder
     @group_name = @list_folder.name
 
@@ -90,7 +90,7 @@ class ListsController < AuthenticatedController
     @list = List.find(params[:id], :include => [:list_columns, {:list_rows => [:list_cells]}], :scope => :edit)
     List.current = @list
 
-    User.selected = @list.owner
+    selected_user = @list.owner
     @list_folder = @list.list_folder
     @group_name = @list_folder.name
 
@@ -361,7 +361,7 @@ class ListsController < AuthenticatedController
   
     def index_list_folder
       @list_folder   = ListFolder.find(params[:group], :scope => :read)
-      User.selected = @list_folder.owner
+      selected_user = @list_folder.owner
       @group_name   = @list_folder.name
       @paginator    = Paginator.new self, @list_folder.lists.count, JoyentConfig.page_limit, params[:page]
       @lists  = List.find(:all,
@@ -374,7 +374,7 @@ class ListsController < AuthenticatedController
 
     def index_smart_group
       @smart_group = SmartGroup.find(SmartGroup.param_to_id(params[:group]), :scope => :read)
-      User.selected = @smart_group.owner
+      selected_user = @smart_group.owner
       @group_name = @smart_group.name
 
       @paginator        = Paginator.new self, @smart_group.items.size, JoyentConfig.page_limit, params[:page]

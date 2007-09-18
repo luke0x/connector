@@ -23,7 +23,7 @@ class DeveloperToolsController < AuthenticatedController
     # return unless u = User.find(params[:user_id])
     # session[:user_id] = u.id
     # current_user = u
-    # User.selected = u
+    # selected_user = u
   ensure
     redirect_back_or_home
   end

@@ -189,7 +189,7 @@ class PeopleController < AuthenticatedController
         Person.transaction do
           people.each do |person|             
             person.owner        = current_user
-            person.organization = Organization.current
+            person.organization = current_organization
             person.contact_list = current_user.contact_list
             person.save
           end
@@ -280,7 +280,7 @@ class PeopleController < AuthenticatedController
     if params.has_key?(:all)
       @group_name = _('All Notifications')
       @show_all = true
-      @notifications = User.selected.notifications.find(:all, 
+      @notifications = selected_user.notifications.find(:all, 
                                                         :conditions => ["notifications.item_type = 'Person' "],
                                                         :include    => {:notifier => [:person]},
                                                         :order      => "notifications.created_at DESC",
@@ -290,7 +290,7 @@ class PeopleController < AuthenticatedController
     else                    
       @group_name = _('Notifications')
       @show_all = false
-      @notifications = User.selected.current_notifications.find(:all, 
+      @notifications = selected_user.current_notifications.find(:all, 
                                                                 :conditions => ["notifications.item_type = 'Person' "], 
                                                                 :include    => {:notifier => [:person]},
                                                                 :order      => "notifications.created_at DESC",
@@ -310,7 +310,7 @@ class PeopleController < AuthenticatedController
     @view_kind    = 'report'
     @group_name   = "Current Time"
     timezones     = {} # So we can properly sort the users within a timezone and they will all have the same time
-    @people       = Organization.current.users(:include => :person).sort do |user_a, user_b|
+    @people       = current_organization.users(:include => :person).sort do |user_a, user_b|
       a_time = (timezones[user_a.tz.to_s] ||= user_a.now)
       b_time = (timezones[user_b.tz.to_s] ||= user_b.now)      
       
@@ -415,7 +415,7 @@ class PeopleController < AuthenticatedController
 
     def contacts_list
       @contact_list     = ContactList.find(params[:group], :scope => :read)
-      User.selected     = @contact_list.owner
+      selected_user     = @contact_list.owner
       @group_name       = _('Contacts')
     
       people_count      = Person.restricted_count(:conditions => ['contact_list_id = ?', @contact_list.id])
@@ -442,9 +442,9 @@ class PeopleController < AuthenticatedController
 
     def users_list
       @group_name  = _('Users')
-      people_count = Organization.current.people.restricted_count(:conditions => [ "person_type IN (?)", ['0_Admin', '1_User', '1_User_Guest'] ])
+      people_count = current_organization.people.restricted_count(:conditions => [ "person_type IN (?)", ['0_Admin', '1_User', '1_User_Guest'] ])
       @paginator   = Paginator.new(self, people_count, JoyentConfig.page_limit, params[:page])
-      @people      = Organization.current.people.find(:all,
+      @people      = current_organization.people.find(:all,
                                                       :conditions => [ "person_type IN (?)", ['0_Admin', '1_User', '1_User_Guest'] ],
                                                       :order      => "LOWER(#{@sort_field}) #{@sort_order}",
                                                       :include    => [:user, :permissions, :notifications, :taggings],
@@ -465,7 +465,7 @@ class PeopleController < AuthenticatedController
 
     def smart_list
       @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:group]), :scope => :read)
-      User.selected = @smart_group.owner
+      selected_user = @smart_group.owner
       @group_name   = @smart_group.name
     
       @paginator = Paginator.new self, @smart_group.items_count, JoyentConfig.page_limit, params[:page]
@@ -489,8 +489,8 @@ class PeopleController < AuthenticatedController
     # show
   
     def contacts_show
-      User.selected     = @person.owner
-      @contact_list     = User.selected.contact_list
+      selected_user     = @person.owner
+      @contact_list     = selected_user.contact_list
       @group_name       = _('Contacts')
 
       @toolbar[:edit]   = current_user.can_edit?(@person)           
@@ -529,7 +529,7 @@ class PeopleController < AuthenticatedController
 
     def smart_show
       @smart_group  = SmartGroup.find(SmartGroup.param_to_id(@smart_group_id), :scope => :read)
-      User.selected = @smart_group.owner
+      selected_user = @smart_group.owner
       @group_name   = @smart_group.name
 
       @toolbar[:edit]   = current_user.can_edit?(@person)
@@ -551,7 +551,7 @@ class PeopleController < AuthenticatedController
 
     def contacts_edit
       @contact_list = current_user.contact_list
-      User.selected = @contact_list.owner
+      selected_user = @contact_list.owner
       @group_name   = _('Contacts')
       @person       = Person.find(params[:id], :scope => :read)
 
@@ -597,7 +597,7 @@ class PeopleController < AuthenticatedController
   
     def contacts_vcards
       @contact_list = current_user.contact_list
-      User.selected = @contact_list.owner
+      selected_user = @contact_list.owner
       @people       = @contact_list.people.find(:all, :scope => :read)
       vcards        = VcardConverter.create_vcards_from_people(@people)
       send_data vcards, :filename => "Contacts.vcf"
@@ -616,7 +616,7 @@ class PeopleController < AuthenticatedController
     end
 
     def notifications_vcards
-      @people     = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Person' and notifiee_id = ?", current_user.id]).collect(&:item)
+      @people     = current_organization.notifications.find(:all, :conditions => ["item_type = 'Person' and notifiee_id = ?", current_user.id]).collect(&:item)
       vcards      = VcardConverter.create_vcards_from_people(@people)
       send_data vcards, :filename => "Notifications.vcf"
     rescue 
@@ -625,7 +625,7 @@ class PeopleController < AuthenticatedController
 
     def smart_vcards
       @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:group]), :scope => :read)
-      User.selected = @smart_group.owner
+      selected_user = @smart_group.owner
       @group_name   = @smart_group.name
       @people       = @smart_group.items
       vcards        = VcardConverter.create_vcards_from_people(@people)

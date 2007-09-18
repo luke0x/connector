@@ -48,7 +48,7 @@ class CorelApiController < ActionController::Base
         
     return fail_hard unless @user = @org.users.find_by_username(params[:username])
 
-    Organization.current = @org # Needed by SystemMailer
+    current_organization = @org # Needed by SystemMailer
   end
   
   def auth_user

@@ -23,7 +23,7 @@ class BookmarksController < AuthenticatedController
   def list
     @view_kind       = 'list'
     @bookmark_folder = BookmarkFolder.find(params[:bookmark_folder_id], :scope => :read)
-    User.selected    = @bookmark_folder.owner
+    selected_user    = @bookmark_folder.owner
     @group_name      = _('Bookmarks')
 
     bookmark_count = Bookmark.restricted_count(:conditions => ['bookmark_folder_id = ?', @bookmark_folder.id])
@@ -48,7 +48,7 @@ class BookmarksController < AuthenticatedController
     @group_name    = _("Others' Bookmarks")
     bookmark_count = Bookmark.restricted_count(:conditions => ["bookmarks.user_id != ?", current_user.id])
     @paginator     = Paginator.new(self, bookmark_count, JoyentConfig.page_limit, params[:page])
-    @bookmarks     = Organization.current.bookmarks.find(:all, 
+    @bookmarks     = current_organization.bookmarks.find(:all, 
                                                          :conditions => ["bookmarks.user_id != ?", current_user.id],
                                                          :order      => "LOWER(bookmarks.#{@sort_field}) #{@sort_order}",
                                                          :limit      => @paginator.items_per_page,
@@ -67,7 +67,7 @@ class BookmarksController < AuthenticatedController
   def show
     @view_kind       = 'show'
     @bookmark        = Bookmark.find(params[:id], :scope => :read)
-    User.selected    = @bookmark.owner
+    selected_user    = @bookmark.owner
     @bookmark_folder = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
 
     @toolbar[:edit] = true if current_user.can_edit?(@bookmark)
@@ -96,7 +96,7 @@ class BookmarksController < AuthenticatedController
 
     if request.post?
       @bookmark = current_user.bookmark_folder.bookmarks.create(:user_id => current_user.id,
-                                                                :organization_id => Organization.current.id,
+                                                                :organization_id => current_organization.id,
                                                                 :title => params[:title],
                                                                 :notes => params[:notes],
                                                                 :uri => params[:uri])
@@ -131,7 +131,7 @@ class BookmarksController < AuthenticatedController
   def edit
     @view_kind = 'edit'
     @bookmark = Bookmark.find(params[:id], :scope => :edit)
-    User.selected    = @bookmark.owner
+    selected_user    = @bookmark.owner
     @bookmark_folder = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
     @group_name      = _('Bookmarks')
     
@@ -222,7 +222,7 @@ class BookmarksController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    User.selected = @smart_group.owner
+    selected_user = @smart_group.owner
     @group_name   = @smart_group.name
 
     @paginator = Paginator.new(self, @smart_group.items_count, JoyentConfig.page_limit, params[:page])

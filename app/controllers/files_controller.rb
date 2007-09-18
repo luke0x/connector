@@ -30,7 +30,7 @@ class FilesController < AuthenticatedController
   def list
     @view_kind    = 'list'
     @folder       = Folder.find(params[:folder_id], :scope => :read)
-    User.selected = @folder.owner
+    selected_user = @folder.owner
     @group_name   = @folder.name
     file_count    = JoyentFile.restricted_count(:conditions => ['folder_id = ?', @folder.id])
     @paginator    = Paginator.new self, file_count, JoyentConfig.page_limit, params[:page]
@@ -88,7 +88,7 @@ class FilesController < AuthenticatedController
     @view_kind = 'show'
     if params[:folder_id]
       @folder       = Folder.find(params[:folder_id], :scope => :read)
-      User.selected = @folder.owner
+      selected_user = @folder.owner
       @file         = @folder.joyent_files.find(params[:id], :scope => :read)
       @group_name   = @folder.name
 
@@ -99,7 +99,7 @@ class FilesController < AuthenticatedController
       @toolbar[:delete] = current_user.can_delete?(@file)
     else
       @file         = JoyentFile.find(params[:id], :scope => :read)
-      User.selected = @file.owner
+      selected_user = @file.owner
       @folder       = @file.folder
       @group_name   = @folder.name
     end
@@ -127,7 +127,7 @@ class FilesController < AuthenticatedController
   def edit
     @view_kind    = 'edit'
     @folder       = Folder.find(params[:folder_id], :scope => :read)
-    User.selected = @folder.owner
+    selected_user = @folder.owner
     @file         = @folder.joyent_files.find(params[:id], :scope => :edit)
     @group_name   = @folder.name
 
@@ -184,7 +184,7 @@ class FilesController < AuthenticatedController
     if params.has_key?(:all)
       @group_name = _('All Notifications')
       @show_all = true
-      @notifications = User.selected.notifications.find(:all, 
+      @notifications = selected_user.notifications.find(:all, 
                                                         :conditions => ["notifications.item_type = 'JoyentFile' "],
                                                         :include    => {:notifier => [:person]},
                                                         :order      => "notifications.created_at DESC",
@@ -194,7 +194,7 @@ class FilesController < AuthenticatedController
     else
       @group_name = _('Notifications')
       @show_all = false
-      @notifications = User.selected.current_notifications.find(:all, 
+      @notifications = selected_user.current_notifications.find(:all, 
                                                                 :conditions => ["notifications.item_type = 'JoyentFile' "], 
                                                                 :include    => {:notifier => [:person]},
                                                                 :order      => "notifications.created_at DESC",
@@ -213,7 +213,7 @@ class FilesController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    User.selected = @smart_group.owner
+    selected_user = @smart_group.owner
     @group_name   = @smart_group.name
 
     @paginator = Paginator.new self, @smart_group.items_count, JoyentConfig.page_limit, params[:page]
@@ -344,7 +344,7 @@ class FilesController < AuthenticatedController
       parent_id = (params[:parent_id] == current_user.files_documents_folder.id.to_s) ? nil : params[:parent_id]
       current_user.folders.create(:name            => params[:group_name],
                                   :parent_id       => parent_id,
-                                  :organization_id => Organization.current.id)
+                                  :organization_id => current_organization.id)
     end
   ensure
     redirect_back_or_home
@@ -433,7 +433,7 @@ class FilesController < AuthenticatedController
     def strongspace_children_groups
       @view_kind = 'strongspace'
       parent_group  = StrongspaceFolder.find(current_user, params[:path], current_user)
-      User.selected = parent_group.owner
+      selected_user = parent_group.owner
       children      = parent_group.children
 
       render :partial => "sidebars/groups/strongspace_children_groups", :locals => { :children => children }
@@ -492,9 +492,9 @@ class FilesController < AuthenticatedController
     def strongspace_show
       @view_kind = 'strongspace'
 
-      owner = Organization.current.users.find(params[:owner_id])
+      owner = current_organization.users.find(params[:owner_id])
       @file = StrongspaceFile.find(owner, params[:path], current_user)
-      User.selected = @file.owner
+      selected_user = @file.owner
       @folder = StrongspaceFolder.find(owner, params[:path][0..-2], current_user)
       @group_name = @folder.name
 
@@ -549,22 +549,22 @@ class FilesController < AuthenticatedController
       end
 
       if params[:owner_id]
-        owner         = Organization.current.users.find(params[:owner_id])
+        owner         = current_organization.users.find(params[:owner_id])
         @folder       = StrongspaceFolder.find(owner, params[:path] || '', current_user)
-        User.selected = @folder.owner
+        selected_user = @folder.owner
         @files        = @folder.files
         file_count    = @folder.children.size
         @group_name   = @folder.name
       elsif current_user.guest?
         @folder       = StrongspaceFolder.blank
-        User.selected = current_user
+        selected_user = current_user
         @files        = []
         @file_count   = 0
         @group_name   = _('Strongspace')
       else
         # TODO: should this block execute ?
         @folder       = StrongspaceFolder.new(current_user, '')
-        User.selected = current_user
+        selected_user = current_user
         @files        = []
         file_count    = 0
         @group_name   = _('Strongspace')
@@ -586,7 +586,7 @@ class FilesController < AuthenticatedController
 
     def strongspace_download
       @view_kind = 'strongspace'
-      owner = Organization.current.users.find(params[:owner_id])
+      owner = current_organization.users.find(params[:owner_id])
       @joyent_file = StrongspaceFile.find(owner, params[:path], current_user)
       send_joyent_file @joyent_file, true
   #    render :nothing => true
@@ -594,7 +594,7 @@ class FilesController < AuthenticatedController
 
     def strongspace_download_inline
       @view_kind = 'strongspace'
-      owner = Organization.current.users.find(params[:owner_id])
+      owner = current_organization.users.find(params[:owner_id])
       @joyent_file = StrongspaceFile.find(owner, params[:path], current_user)
       send_joyent_file(@joyent_file, false)
   #    render :nothing => true
@@ -670,7 +670,7 @@ class FilesController < AuthenticatedController
         return
       end
 
-      User.selected = @service.owner    
+      selected_user = @service.owner    
       @folder       = @service.find_folder(params[:group_id])
       unless @folder
         redirect_to files_home_url
@@ -766,7 +766,7 @@ class FilesController < AuthenticatedController
     def service_children_groups
       @service      = Service.find(params[:service_name], current_user)
       parent_group  = @service.find_folder(params[:group_id])
-      User.selected = parent_group.owner
+      selected_user = parent_group.owner
       children      = parent_group.children
 
       render :partial => "sidebars/groups/service_children_groups", :locals => { :children => children }

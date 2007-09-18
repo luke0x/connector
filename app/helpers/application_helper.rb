@@ -772,7 +772,7 @@ module ApplicationHelper
         css << stylesheet_link_tag(c)
       end
     end
-  	css << stylesheet_link_tag(Organization.current.affiliate.name)
+  	css << stylesheet_link_tag(current_organization.affiliate.name)
   	css << stylesheet_link_tag(@application_name)
   	css << stylesheet_link_tag("lang/#{current_user.language}/#{current_user.language}-#{@application_name}")
   	css << stylesheet_link_tag("lang/#{current_user.language}/#{current_user.language}")

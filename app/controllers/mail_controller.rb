@@ -37,7 +37,7 @@ class MailController < AuthenticatedController
 
     @mailbox.sync
     
-    User.selected = @mailbox.owner
+    selected_user = @mailbox.owner
     message_count = Message.restricted_count(:conditions => ['mailbox_id = ? AND messages.active = ?', @mailbox.id, true])
     @paginator    = Paginator.new self, message_count, JoyentConfig.page_limit, params[:page]
     @messages     = @mailbox.messages.find(:all, 
@@ -67,7 +67,7 @@ class MailController < AuthenticatedController
     @mailbox       = Mailbox.find(params[:id], :include => [:owner], :scope => :read)
     @mailbox.sync
     
-    User.selected  = @mailbox.owner
+    selected_user  = @mailbox.owner
     @mailbox_name  = @mailbox.id
     @group_name    = (@mailbox.name == 'INBOX') ? 'Inbox' : @mailbox.name
     @paginator     = Paginator.new self, @mailbox.messages.count(:conditions => ["messages.active = ?", true]), JoyentConfig.page_limit, params[:page]
@@ -96,7 +96,7 @@ class MailController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    User.selected = @smart_group.owner
+    selected_user = @smart_group.owner
     @group_name   = @smart_group.name
 
     @messages  = @smart_group.items("messages.#{@sort_field} #{@sort_order}", nil, nil)
@@ -119,7 +119,7 @@ class MailController < AuthenticatedController
   end   
   
   def unread_messages
-    @mailbox       = User.selected.inbox
+    @mailbox       = selected_user.inbox
     @mailbox.sync
     @group_name    = "Unread Messages"
     @mailbox_name  = @mailbox.id
@@ -153,7 +153,7 @@ class MailController < AuthenticatedController
     mailbox       = params[:mailbox] == 'inbox' ? 'INBOX' : "INBOX.#{params[:mailbox].capitalize}"
     @mailbox      = current_user.mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', mailbox], :include => [:owner], :scope => :read)
     @mailbox.sync
-    User.selected = @mailbox.owner
+    selected_user = @mailbox.owner
     @message      = @mailbox.messages.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
     
     @message.seen!
@@ -186,7 +186,7 @@ class MailController < AuthenticatedController
     @view_kind = 'show'
     @mailbox      = Mailbox.find(params[:mailbox], :include => [:owner], :scope => :read)
 
-    User.selected = @mailbox.owner
+    selected_user = @mailbox.owner
     @mailbox_name = @mailbox.id
     @group_name   = (@mailbox.name == 'INBOX') ? 'Inbox' : @mailbox.name
     @message      = @mailbox.messages.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
@@ -236,7 +236,7 @@ class MailController < AuthenticatedController
   def smart_show
     @view_kind    = 'show'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    User.selected = @smart_group.owner
+    selected_user = @smart_group.owner
     @group_name   = @smart_group.name
     @message      = Message.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
     @message.seen!
@@ -374,7 +374,7 @@ class MailController < AuthenticatedController
     person.last_name    = last_name
     person.contact_list = current_user.contact_list
     person.owner        = current_user
-    person.organization = Organization.current
+    person.organization = current_organization
     person.save
     
     address = OpenStruct.new
@@ -524,8 +524,8 @@ class MailController < AuthenticatedController
   end
   
   def others_groups
-    User.selected = User.find(params[:user_id], :scope => :read)
-    Mailbox.list(User.selected)
+    selected_user = User.find(params[:user_id], :scope => :read)
+    Mailbox.list(selected_user)
     render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}"
   end
 
@@ -576,7 +576,7 @@ class MailController < AuthenticatedController
     if params.has_key?(:all)
       @group_name = 'All Notifications'
       @show_all = true
-      @notifications = User.selected.notifications.find(:all, 
+      @notifications = selected_user.notifications.find(:all, 
                                                         :conditions => ["notifications.item_type = 'Message' "],
                                                         :include    => {:notifier => [:person]},
                                                         :order      => "notifications.created_at DESC",
@@ -586,7 +586,7 @@ class MailController < AuthenticatedController
     else
       @group_name = 'Notifications'
       @show_all = false
-      @notifications = User.selected.current_notifications.find(:all, 
+      @notifications = selected_user.current_notifications.find(:all, 
                                                                 :conditions => ["notifications.item_type = 'Message' "], 
                                                                 :include    => {:notifier => [:person]},
                                                                 :order      => "notifications.created_at DESC",
