@@ -326,7 +326,11 @@ class UserTest < Test::Unit::TestCase
   #  9            |       [-----|----]       busy
   #  10    [------]             |            !busy
   #  11           |             [------]     !busy
-  def test_busy_during_for_non_repeating_events 
+  def test_busy_during_for_non_repeating_events   
+    # These events are breaking the tests during certain times of the day
+    # so keep only the ones that we want
+    users(:ian).events.each{|e| e.destroy unless e.name =~ /busy/}
+    
     User.current = users(:ian)
     u = users(:ian)
     e = Event.new
@@ -334,7 +338,7 @@ class UserTest < Test::Unit::TestCase
     e.start_time = Time.now.midnight - 1.minute
     e.end_time   = Time.now.midnight + 1.minute
     assert u.busy_during?(e)
-    
+
     # test 2
     e.start_time = Time.now.midnight - 25.minutes
     e.end_time   = Time.now.midnight - 20.minutes
