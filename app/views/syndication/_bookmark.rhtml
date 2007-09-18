@@ -11,7 +11,7 @@
 	<h2><%= link_to "#{bookmark.name}: #{bookmark.uri}", bookmark.uri, {:target => '_blank'} %></h2>
 </div>
 
-<% unless bookmark.bookmarked_by?(User.current) -%>
+<% unless bookmark.bookmarked_by?(current_user) -%>
   <%= link_to _('Save Bookmark'), bookmarks_create_url(:title => bookmark.title, :uri => bookmark.uri) %>
 <% end -%>
 

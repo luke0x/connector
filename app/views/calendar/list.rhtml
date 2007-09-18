@@ -82,7 +82,7 @@
 				<tr>
 					<td style="border-right: none;" />
 					<td colspan="2" style="border-right: none;">
-						<% create_url = User.current.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_view.date.strftime('%Y-%m-%d')) : calendar_create_url(:date => day_view.date.strftime('%Y-%m-%d')) -%>
+						<% create_url = current_user.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_view.date.strftime('%Y-%m-%d')) : calendar_create_url(:date => day_view.date.strftime('%Y-%m-%d')) -%>
 						<%= link_to _('New Event'), create_url, { :class => "addPlusSmall" } %>
 					</td>
 					<td style="border-right: none;" />

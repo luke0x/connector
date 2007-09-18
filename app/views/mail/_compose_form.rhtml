@@ -13,8 +13,8 @@
   new Autocompleter.Local('message_cc_complete', 'message_cc_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
   new Autocompleter.Local('message_bcc_complete', 'message_bcc_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
 " -%>
-<% cc_visible = ((! @message.blank? and ! @message.cc.blank?) or (User.current.get_option('Cc Visible') == 'true')) -%>
-<% bcc_visible = ((! @message.blank? and ! @message.bcc.blank?) or (User.current.get_option('Bcc Visible') == 'true')) -%>
+<% cc_visible = ((! @message.blank? and ! @message.cc.blank?) or (current_user.get_option('Cc Visible') == 'true')) -%>
+<% bcc_visible = ((! @message.blank? and ! @message.bcc.blank?) or (current_user.get_option('Bcc Visible') == 'true')) -%>
 
 <% if flash["error"] %>
 	<p class="warning"><%= flash["error"] %></p>
@@ -31,7 +31,7 @@
 			<td style="text-align: right;"><%= _('From') -%>:&nbsp;</td>
 			<td>
 				<select name="message[from]" style="width: 50%;">
-					<%= options_for_select User.current.from_addresses %>
+					<%= options_for_select current_user.from_addresses %>
 				</select>
 			</td>
 		</tr>

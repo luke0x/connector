@@ -9,7 +9,7 @@
 
 <%= render :partial => 'sidebars/groups/standard_group_edit_permissions', :locals => { :group => group } %>
 <%= render :partial => 'sidebars/groups/standard_group_edit_subscriptions', :locals => { :group => group } %>
-<% if group and group.owner == User.current -%><hr /><% end -%>
+<% if group and group.owner == current_user -%><hr /><% end -%>
 <%= add_to_workspace(:contacts, User.selected) %>
 <hr />
 <%= link_to "VCARD", people_vcards_url(:group => User.selected.contact_list.id), { :class => 'orangeBadge vcard', :style => 'margin-bottom:3px;', :title=> _('Download contacts as a vCard file')  } %>

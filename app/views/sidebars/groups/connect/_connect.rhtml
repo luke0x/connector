@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% # cache(:action => "sidebar", :user_id => User.current.id, :group_id => controller.current_group_id) do %>
+<% # cache(:action => "sidebar", :user_id => current_user.id, :group_id => controller.current_group_id) do %>
   <div class="defaultGroups groups"><ul class="groupsList"> 
     <% if Organization.current.partner? -%>
       <%= render_default_group 'sidebars/groups/connect/connect_lightning_portal', { :icon_class => 'lightning', :name => _('Lightning Portal'), :url => lightning_portal_url, :selected => (@group_name == 'Lightning Portal' and @smart_group.blank?) } %>
@@ -18,10 +18,10 @@
 
     <%= render_default_group 'sidebars/groups/connect/connect_report', { :icon_class => 'recentComments',
                                                                          :name       => _('Recent Comments'),
-                                                                         :url        => recent_comments_report_url(:id => User.current), 
+                                                                         :url        => recent_comments_report_url(:id => current_user), 
                                                                          :selected   => (@group_name == 'Recent Comments'),
                                                                          :report_description_name => :recent_comments,
-                                                                         :rss_url    => recent_comments_report_rss_url(:id => User.current) }%>
+                                                                         :rss_url    => recent_comments_report_rss_url(:id => current_user) }%>
 
     <% @smart_groups.each do |smart_group| -%>
       <%= render_smart_group 'sidebars/groups/connect/connect_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>

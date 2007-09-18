@@ -39,7 +39,7 @@
 	</div>
   <div>
     <a href="<%= mail_mailbox_url(:id => @message.mailbox.id) %>" style="color: black;">
-      <%= @message.owner == User.current ? _('Your') : _("%{i18n_message_owner_name}'s")%{:i18n_message_owner_name => "#{@message.owner.full_name}"} %>
+      <%= @message.owner == current_user ? _('Your') : _("%{i18n_message_owner_name}'s")%{:i18n_message_owner_name => "#{@message.owner.full_name}"} %>
       <%= @message.mailbox.name == 'INBOX' ? _('Inbox') : @message.mailbox.name %>
     </a>
     &bull;

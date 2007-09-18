@@ -12,9 +12,9 @@
   <div id="groupsYourInset" class="sidebarInset" style="margin-bottom:15px;">
     <%= render :partial => "sidebars/groups/#{@application_name}/#{@application_name}" %>
   </div>
-  <div id="groupsOthers" class="collapsiblePalette <%= User.current == User.selected || @is_subscription ? 'collapsed' : 'expanded' %>">
+  <div id="groupsOthers" class="collapsiblePalette <%= current_user == User.selected || @is_subscription ? 'collapsed' : 'expanded' %>">
     <h3><%= link_to_function _("Others' %{i18n_controller_class_groupname}")%{:i18n_controller_class_groupname => _(controller.class.group_name.pluralize.titlecase)}, "CollapsiblePalette.toggle('groupsOthers');" %></h3>
-  	<div id="groupsOthersInset" class="content sidebarInset" <%= 'style="display: none;"' if User.current == User.selected || @is_subscription %>>
+  	<div id="groupsOthersInset" class="content sidebarInset" <%= 'style="display: none;"' if current_user == User.selected || @is_subscription %>>
       <%= render :partial => 'sidebars/groups/others_groups' %>
   	</div>
   </div>

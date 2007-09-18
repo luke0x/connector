@@ -31,7 +31,7 @@
 		<dt><%= _('Phone') -%>:</dt>
 		<% @person.phone_numbers.each do |phone_number| -%>
       <dd>                                                                  
-        <% call_from = h(User.current.person.primary_phone_cache).gsub(/[^0-9a-zA-Z]/, '') -%>
+        <% call_from = h(current_user.person.primary_phone_cache).gsub(/[^0-9a-zA-Z]/, '') -%>
         <% call_to   = h(phone_number.phone_number).gsub(/[^0-9a-zA-Z]/, '') -%>
         <a href="callto:+<%= call_to %>" title="<%= _('Call this person via Skype') -%>" class="go toSkype">
           &nbsp;

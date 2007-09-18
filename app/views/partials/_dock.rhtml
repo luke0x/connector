@@ -9,7 +9,7 @@
 
 <% apps = ['Connect', 'Mail', 'Calendar', 'People', 'Files', 'Bookmarks', 'Lists'] -%>
 
-<% if User.current.guest? -%>
+<% if current_user.guest? -%>
   <ul id="Dock">
     <% apps.each do |app| -%>
   	  <li class="dock<%= app %>">

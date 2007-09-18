@@ -9,7 +9,7 @@
 
 <div id="others_groups">
   <ul class="groupsList">
-    <% User.current.other_users.sort.each do |user| -%>
+    <% current_user.other_users.sort.each do |user| -%>
       <% update_id = "groups_user_#{user.id}" -%>
       <li>
         <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">

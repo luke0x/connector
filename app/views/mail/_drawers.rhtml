@@ -9,9 +9,9 @@
 
 <div id="Drawers">
   <% if @toolbar[:copy] -%>
-    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => User.current.mailboxes.select{|m| m.parent.blank?}, :selected => @mailbox} %></div>
+    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => current_user.mailboxes.select{|m| m.parent.blank?}, :selected => @mailbox} %></div>
   <% end -%>
   <% if @toolbar[:move] -%>
-    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => User.current.mailboxes.select{|m| m.parent.blank?}, :selected => @mailbox} %></div>
+    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => current_user.mailboxes.select{|m| m.parent.blank?}, :selected => @mailbox} %></div>
   <% end -%>
 </div>

@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <% # admins + self can edit -%>
-<% if User.current.admin? or person == User.current.person -%>
+<% if current_user.admin? or person == current_user.person -%>
     <% # already a user -%>
     <% if person.admin? or person.user? -%>
       <h2 id="show_edit_account">

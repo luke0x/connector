@@ -16,27 +16,27 @@
 					<tr>
 						<td style="width: 48px;">
 							<div class="userPhoto">
-								<% if User.current.person.has_icon? -%>
-  								<img src="<%= person_icon_url(:id => User.current.person.id) %>" border="0" style="width:48px; height: 48px;" />
+								<% if current_user.person.has_icon? -%>
+  								<img src="<%= person_icon_url(:id => current_user.person.id) %>" border="0" style="width:48px; height: 48px;" />
 								<% end -%>
 							</div>
 						</td>
 						<td>
-							<h4 style="margin-left: 5px;"><%= User.current.full_name %> (<%= User.current.username %>)</h4>
+							<h4 style="margin-left: 5px;"><%= current_user.full_name %> (<%= current_user.username %>)</h4>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</li>
-		<% unless User.current.guest? -%>
+		<% unless current_user.guest? -%>
   		<li>
   			<h5><%= _('Account Switching') -%></h5>
   		</li>
-  		<% if User.current.has_other_identities? -%>
-    		<% User.current.identity.users.each do |user| -%>
-      		<li class="userShortcut <%= User.current == user ? 'selected' : '' %>">
+  		<% if current_user.has_other_identities? -%>
+    		<% current_user.identity.users.each do |user| -%>
+      		<li class="userShortcut <%= current_user == user ? 'selected' : '' %>">
       			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
-      			  <% if User.current == user -%>
+      			  <% if current_user == user -%>
         			  <%= link_to_function "#{user.organization.name} - #{user.username}", "", {:style => 'font-weight: bold; font-style: italic;'} %>
       			  <% else -%>
         			  <%= link_to "#{user.organization.name} - #{user.username}", user_switch_url(:id => user.id) %>
@@ -56,14 +56,14 @@
 		</li>
 		<li id="yourPreferences">
 			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
-  			<% if User.current.guest? -%>
-  				<%= link_to_function(_("Your Preferences") + '&hellip;', "ModalDialog.showURL('#{guest_edit_url(:id => User.current.id)}')", {:title => _("Edit your personal information")}) %>
+  			<% if current_user.guest? -%>
+  				<%= link_to_function(_("Your Preferences") + '&hellip;', "ModalDialog.showURL('#{guest_edit_url(:id => current_user.id)}')", {:title => _("Edit your personal information")}) %>
   			<% else -%>
-  				<%= link_to(_("Your Preferences"), person_edit_url(:id => User.current.person.id, :anchor => 'preferences'), {:title => _("Edit your personal information")}) %>
+  				<%= link_to(_("Your Preferences"), person_edit_url(:id => current_user.person.id, :anchor => 'preferences'), {:title => _("Edit your personal information")}) %>
   			<% end -%>
   		</div></div></div></div>
 		</li>
-		<% if User.current.admin? -%>
+		<% if current_user.admin? -%>
   		<li id="customerCenter">
   			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
 	          <% if Organization.current.affiliate.name == 'corel' -%>

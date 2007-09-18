@@ -40,7 +40,7 @@
 					<td class="<%= td_class %>">
 						<div class="calMonthDayHeader">
 							<% day_date_formatted = day.date.strftime('%Y-%m-%d') %>
-							<% create_url = User.current.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_date_formatted) : calendar_create_url(:date => day_date_formatted) -%>
+							<% create_url = current_user.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_date_formatted) : calendar_create_url(:date => day_date_formatted) -%>
 							<%= link_to "+", create_url, {:class => 'addEventMonthView'} %>
 							<%= link_to(day.date.mday, calendar_list_url(day_date_formatted, day_date_formatted), {:class => "monthDay"}) %>
 						</div>
@@ -68,10 +68,10 @@
 						<% if regular_events.length > 0 -%>
 							<ul class="monthViewEvent">
 								<% regular_events.sort_by(&:start_time).each do |event| -%>
-									<% li_style = (event.owner == User.current) ? '' : "color: ##{event.owner.person.color};" -%>
+									<% li_style = (event.owner == current_user) ? '' : "color: ##{event.owner.person.color};" -%>
 									<li style="<%= li_style %>">
-										<% a_class = (event.owner == User.current) ? 'monthViewCurrentUserEvent monthViewEvent' : 'monthViewEvent' -%>
-										<% a_style = (event.owner == User.current) ? '' : "color: ##{event.owner.person.color};" -%>
+										<% a_class = (event.owner == current_user) ? 'monthViewCurrentUserEvent monthViewEvent' : 'monthViewEvent' -%>
+										<% a_style = (event.owner == current_user) ? '' : "color: ##{event.owner.person.color};" -%>
 										<a href="<%= calendar_show_url(:id => event.id) %>" class="<%= a_class %>" style="<%= a_style %>">
 											<strong><%= "#{event.start_time_in_user_tz.strftime('%I:%M%p')[0,6].downcase.gsub(/^0(\d)/, '\1').gsub(/:00(.)/, '\1')}" %></strong>
 											<%= event.name %>

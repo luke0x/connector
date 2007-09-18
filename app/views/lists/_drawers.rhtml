@@ -9,10 +9,10 @@
 
 <div id="Drawers">
   <% if @toolbar[:copy] -%>
-    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => User.current.lists_root_folders, :selected => @list_folder} %></div>
+    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => current_user.lists_root_folders, :selected => @list_folder} %></div>
   <% end -%>
   <% if @toolbar[:move] -%>
-    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => User.current.lists_root_folders, :selected => @list_folder} %></div>
+    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => current_user.lists_root_folders, :selected => @list_folder} %></div>
   <% end -%>
 	<% if @toolbar[:import] -%>
     <div class="drawerContent" id="drawerImportOPML" style="display: none;"><%= render :partial => 'import' %></div>

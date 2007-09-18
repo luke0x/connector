@@ -12,7 +12,7 @@
   	<li style="padding-right: 0.25em;"><strong><%= _('Key') -%>:</strong></li>
     <li>
     	<span style="margin: 0; padding: 0 0.4em; line-height: 0; background-color: #2A5FCF">&nbsp;</span>
-    	<%= User.current.person.full_name %>
+    	<%= current_user.person.full_name %>
     </li>
     <% overlayed_users.each do |user| -%>
       <li>

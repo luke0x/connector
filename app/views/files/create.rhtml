@@ -38,7 +38,7 @@
 						<%= _('Folder') %>:
 					</td>
 					<td style="padding-top: 6px; padding-left: 5px;">
-						<%= hierarchical_groups_select(:id => 'folder_id', :name => 'folder_id', :groups => User.current.folders.select{|f| f.parent_id == nil}, :selected => (User.current.can_create_on?(@folder) ? @folder : nil rescue nil)) %>
+						<%= hierarchical_groups_select(:id => 'folder_id', :name => 'folder_id', :groups => current_user.folders.select{|f| f.parent_id == nil}, :selected => (current_user.can_create_on?(@folder) ? @folder : nil rescue nil)) %>
 					</td>
 				</tr>
 			</table>
@@ -47,7 +47,7 @@
 			<%= render :partial => 'partials/sidebar_buttons' %>
 		</div>
 		<div class="infoGroup">
-			<input type="hidden" name="folder_id" value="<%= User.current.can_create_on?(@folder) ? @folder.id : '' rescue '' %>" />
+			<input type="hidden" name="folder_id" value="<%= current_user.can_create_on?(@folder) ? @folder.id : '' rescue '' %>" />
 			<input id="new_item_tags" value="" type="hidden" name="new_item_tags" />
 			<input id="new_item_permissions" value="" type="hidden" name="new_item_permissions" />
 			<input id="new_item_notifications" value="" type="hidden" name="new_item_notifications" />
