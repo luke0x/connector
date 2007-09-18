@@ -57,9 +57,8 @@ class Calendar < ActiveRecord::Base
     Event.find(:first, :include => [:invitations], :conditions => [ 'events.id = ? and invitations.id IN (?)', id, invitations.collect(&:id) ], :scope => :read)
   end
 
-  def rename!(name)
-    self.name = name
-    self.save
+  def rename!(name)  
+    update_attribute(:name, name)
   end
 
   # is this calendar a descendent of me?

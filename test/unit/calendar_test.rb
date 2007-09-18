@@ -72,11 +72,11 @@ class CalendarTest < Test::Unit::TestCase
   def test_delete_calendar
     c = calendars(:concerts)
     cal_count = c.events.size
-    all_count = Event.find(:all).size
+    all_count = Event.count
     
     c.destroy            
     
-    assert_equal Event.find(:all).size, (all_count - cal_count)
+    assert_equal Event.count, (all_count - cal_count)
   end
 
   def test_cascade_permissions
@@ -101,4 +101,76 @@ class CalendarTest < Test::Unit::TestCase
     assert_not_nil calendars(:anotherthing).subscriptions.find_by_user_id(User.current.id)
   end
   
+  def test_rename
+    assert "Concerts", calendars(:concerts).name
+    
+    calendars(:concerts).rename!("Fun stuff")
+    
+    assert "Fun Stuff", calendars(:concerts).name
+  end                
+  
+  def test_reparent_to_self
+    assert_nil calendars(:anotherthing).reparent!(calendars(:anotherthing))
+  end                      
+  
+  def test_reparent_to_descendent
+    assert_nil calendars(:anotherthing).reparent!(calendars(:anotherthingchild))
+  end
+  
+  def test_reparent
+    assert_equal 0, calendars(:concerts).children.size
+    assert       calendars(:anotherthing).reparent!(calendars(:concerts))
+    assert_equal 1, calendars(:concerts).children.reload.size
+  end                                                        
+  
+  def test_descendent                                               
+    assert !calendars(:concerts).descendent?(nil)
+    assert !calendars(:concerts).descendent?(calendars(:anotherthing))
+    assert !calendars(:anotherthingchild).descendent?(calendars(:anotherthing))
+    assert  calendars(:anotherthing).descendent?(calendars(:anotherthingchild))
+    
+    calendars(:anotherthing).reparent!(calendars(:concerts))
+    assert calendars(:concerts).reload.descendent?(calendars(:anotherthingchild))
+  end
+  
+  def test_add_and_save_events             
+    total_count = Event.count
+    cal_count   = calendars(:concerts).events.size
+    owner_count = calendars(:concerts).owner.events.size
+    org_count   = calendars(:concerts).organization.events.size
+    
+    events = [Event.new(:name       => "birthday party",
+                        :location   => "house",
+                        :start_time => Time.now,
+                        :end_time   => Time.now + 60),
+              Event.new(:name       => "fun time",
+                        :location   => "house",
+                        :start_time => Time.now,
+                        :end_time   => Time.now + 60)]                       
+    
+    calendars(:concerts).add_and_save_events(events)
+    
+    assert_equal total_count + 2, Event.count
+    assert_equal cal_count + 2,   calendars(:concerts).reload.events.size
+    assert_equal owner_count + 2, calendars(:concerts).owner.events.size
+    assert_equal org_count + 2,   calendars(:concerts).organization.events.size 
+  end
+  
+  def test_remove_events_on_destoy
+    # add peter's event to concerts calendar
+    invite_count = users(:ian).invitations.count
+    cal_count    = calendars(:concerts).events.count
+    
+    invite = events(:peter_concert).invite(users(:ian))
+    invite.accept!(calendars(:concerts))
+             
+    assert       invite.accepted?
+    assert_equal calendars(:concerts), invite.calendar
+    assert_equal invite_count + 1, users(:ian).reload.invitations.count
+    assert_equal cal_count + 1,    calendars(:concerts).reload.events.count
+    
+    calendars(:concerts).destroy
+    assert       !invite.reload.accepted?
+    assert_nil   invite.calendar
+  end  
 end
