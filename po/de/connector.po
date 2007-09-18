@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-09-05 16:04-0400\n"
-"PO-Revision-Date: 2007-05-31 23:32+0200\n"
+"POT-Creation-Date: 2007-09-18 16:01+0200\n"
+"PO-Revision-Date: 2007-09-11 07:11+0200\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
 "MIME-Version: 1.0\n"
@@ -280,15 +280,15 @@ msgstr "Karte"
 msgid "Look up address in Google Maps"
 msgstr "Adresse in Google Maps nachschlagen"
 
-#: app/helpers/application_helper.rb:514
+#: app/helpers/application_helper.rb:512
 msgid "Visible in your Workspace"
 msgstr "Auf Ihrem Arbeitsplatz sichtbar"
 
-#: app/helpers/application_helper.rb:700
+#: app/helpers/application_helper.rb:698
 msgid "Subscribe"
 msgstr "Abonnieren"
 
-#: app/helpers/application_helper.rb:709 app/helpers/application_helper.rb:710
+#: app/helpers/application_helper.rb:707 app/helpers/application_helper.rb:708
 #: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
 #: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
 #: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
@@ -346,30 +346,30 @@ msgid "Subdomain"
 msgstr "Subdomain"
 
 #: app/views/authenticate/affiliate_login.rhtml:36
-#: app/views/authenticate/login.rhtml:39
+#: app/views/authenticate/login.rhtml:40
 #: app/views/authenticate/reset_password.rhtml:43
 #: app/views/user/connect.rhtml:38
 msgid "Username"
 msgstr "Benutzername"
 
 #: app/views/authenticate/affiliate_login.rhtml:44
-#: app/views/authenticate/login.rhtml:47
+#: app/views/authenticate/login.rhtml:48
 #: app/views/authenticate/verify_reset_password.rhtml:38
 #: app/views/user/connect.rhtml:42
 msgid "Password"
 msgstr "Passwort"
 
 #: app/views/authenticate/affiliate_login.rhtml:58
-#: app/views/authenticate/login.rhtml:61
+#: app/views/authenticate/login.rhtml:62
 msgid "Remember my password for 2 weeks"
 msgstr "Passwort für 2 Wochen sichern"
 
 #: app/views/authenticate/affiliate_login.rhtml:63
-#: app/views/authenticate/login.rhtml:66
+#: app/views/authenticate/login.rhtml:67
 msgid " Sign In "
 msgstr "Anmelden"
 
-#: app/views/authenticate/login.rhtml:69
+#: app/views/authenticate/login.rhtml:70
 msgid "Reset your password"
 msgstr "Passwort zurücksetzen"
 
@@ -794,9 +794,8 @@ msgstr "Eingeladene die bisher nicht geantwortet haben"
 
 #: app/views/calendar/_peek.rhtml:118 app/views/calendar/edit.rhtml:215
 #: app/views/calendar/show.rhtml:129
-#, fuzzy
 msgid "Alarm"
-msgstr "ICS Alarm"
+msgstr "Alarm"
 
 #: app/views/calendar/_toolbar.rhtml:26 app/views/files/_toolbar.rhtml:36
 #: app/views/files/_toolbar.rhtml:38 app/views/lists/_toolbar.rhtml:21
@@ -1454,14 +1453,12 @@ msgid "Reply To Sender"
 msgstr "Absender antworten"
 
 #: app/views/mail/show.rhtml:30
-#, fuzzy
 msgid "Newer"
-msgstr "Neu"
+msgstr "Neuer"
 
 #: app/views/mail/show.rhtml:31
-#, fuzzy
 msgid "Older"
-msgstr "Ordner"
+msgstr "Älter"
 
 #: app/views/mail/show.rhtml:35
 msgid "Does this message not look quite right?"
@@ -1663,9 +1660,8 @@ msgid "Start Call"
 msgstr "Anrufen"
 
 #: app/views/people/_edit_account.rhtml:15
-#, fuzzy
 msgid "Edit Preferences"
-msgstr "Gäste Einstellungen"
+msgstr "Einstellungen bearbeiten"
 
 #: app/views/people/_edit_account.rhtml:23
 msgid "Edit Account"
@@ -1732,17 +1728,15 @@ msgid "Reset"
 msgstr "Zurücksetzen"
 
 #: app/views/people/_edit_account_user.rhtml:14
-#, fuzzy
 msgid "Account"
-msgstr "Benutzeraccount bearbeiten"
+msgstr "Benutzeraccount"
 
 #: app/views/people/_edit_account_user.rhtml:37
 #: app/views/people/_edit_account_user.rhtml:89
 #: app/views/people/_edit_account_user.rhtml:99
 #: app/views/people/_edit_account_user.rhtml:108
-#, fuzzy
 msgid "Loading"
-msgstr "Anmeldung"
+msgstr "Lade"
 
 #: app/views/people/_edit_account_user.rhtml:47
 #: app/views/people/_edit_account_user.rhtml:50
@@ -1751,21 +1745,19 @@ msgstr "Diesem Benutzer erlauben andere Benuter zu erstellen oder zu löschen?"
 
 #: app/views/people/_edit_account_user.rhtml:60
 msgid "International"
-msgstr ""
+msgstr "International"
 
 #: app/views/people/_edit_account_user.rhtml:84
 msgid "Send notifications and event alarms via SMS, email and instant message"
-msgstr ""
+msgstr "Benachrichtigungen und Termine per SMS, Email und IM senden"
 
 #: app/views/people/_edit_account_user.rhtml:87
-#, fuzzy
 msgid "SMS"
-msgstr "MSN"
+msgstr "SMS"
 
 #: app/views/people/_edit_account_user.rhtml:106
-#, fuzzy
 msgid "Instant Message"
-msgstr "Instant Messaging"
+msgstr "Instant Message"
 
 #: app/views/people/_edit_contact_information.rhtml:11
 msgid "Edit Person"
@@ -1866,9 +1858,8 @@ msgstr "Diese Person per Skype anrufen"
 
 #: app/views/people/_peek.rhtml:42 app/views/people/_peek.rhtml:54
 #: app/views/people/_peek.rhtml:76
-#, fuzzy
 msgid "Send Notifications Here"
-msgstr "Benachrichtigungen"
+msgstr "Benachrichtigungen hierhin senden"
 
 #: app/views/people/_peek.rhtml:51
 msgid "Compose a new email to"
@@ -2761,16 +2752,15 @@ msgstr "Audio"
 
 #: lib/i18n_do_not_include.rb:53
 msgid "Cascading Style Sheet"
-msgstr ""
+msgstr "Cascading Style Sheet"
 
 #: lib/i18n_do_not_include.rb:54
 msgid "Document"
 msgstr "Dokument"
 
 #: lib/i18n_do_not_include.rb:55
-#, fuzzy
 msgid "Flash Video"
-msgstr "Video"
+msgstr "Flash Video"
 
 #: lib/i18n_do_not_include.rb:56
 msgid "HTML Document"
@@ -2782,7 +2772,7 @@ msgstr "Bild"
 
 #: lib/i18n_do_not_include.rb:58
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: lib/i18n_do_not_include.rb:59
 msgid "PDF Document"
@@ -2790,7 +2780,7 @@ msgstr "PDF Dokument"
 
 #: lib/i18n_do_not_include.rb:60
 msgid "Photoshop Image"
-msgstr ""
+msgstr "Photoshop Bild"
 
 #: lib/i18n_do_not_include.rb:61
 msgid "Presentation"
@@ -2798,12 +2788,11 @@ msgstr "Präsentation"
 
 #: lib/i18n_do_not_include.rb:62
 msgid "Protected Audio"
-msgstr ""
+msgstr "Geschützte Audiodatei"
 
 #: lib/i18n_do_not_include.rb:63
-#, fuzzy
 msgid "Source Code"
-msgstr "Und schon sind Sie fertig"
+msgstr "Quelltext"
 
 #: lib/i18n_do_not_include.rb:64
 msgid "Spreadsheet"
@@ -2811,7 +2800,7 @@ msgstr "Tabelle"
 
 #: lib/i18n_do_not_include.rb:65
 msgid "TeX"
-msgstr ""
+msgstr "TeX"
 
 #: lib/i18n_do_not_include.rb:66 app/models/list.rb:358
 msgid "Text"
@@ -2826,13 +2815,12 @@ msgid "Video"
 msgstr "Video"
 
 #: lib/i18n_do_not_include.rb:69
-#, fuzzy
 msgid "vCalendar"
-msgstr "Kalender"
+msgstr "vCalendar"
 
 #: lib/i18n_do_not_include.rb:70
 msgid "vCard"
-msgstr ""
+msgstr "vCard"
 
 #: lib/i18n_do_not_include.rb:72
 msgid "notifications"
@@ -2923,13 +2911,12 @@ msgid "Toggle First Checkbox"
 msgstr "Erstes Ankreuzfeld umschalten"
 
 #: lib/i18n_do_not_include.rb:105
-#, fuzzy
 msgid "Permissions"
-msgstr "Rechte sichern"
+msgstr "Rechte"
 
 #: lib/icalendar_converter.rb:29
 msgid "Untitled Event"
-msgstr "Ereignis bearbeiten"
+msgstr "Unbenanntes Ereignis"
 
 #: lib/js_strings.rb:1
 msgid "can't change"
@@ -3199,15 +3186,6 @@ msgid "You must specify either a name or company name."
 msgstr "Sie müssen entweder einen Namen oder eine Firma angeben."
 
 #: app/models/smart_group.rb:98
-#, fuzzy
 msgid "Search for %{i18n_search_param}"
-msgstr "Suche: %{i18n_search_param}"
+msgstr "Suche nach %{i18n_search_param}"
 
-#~ msgid "Previous"
-#~ msgstr "Vorherige"
-
-#~ msgid "Next"
-#~ msgstr "Nächste"
-
-#~ msgid "Peek"
-#~ msgstr "Vorschau"

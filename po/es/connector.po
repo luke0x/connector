@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-09-05 16:04-0400\n"
+"POT-Creation-Date: 2007-09-18 16:01+0200\n"
 "PO-Revision-Date: 2006-05-24 20:40+0200\n"
 "Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
 "Language-Team: Spanish <pedro@joyent.com>\n"
@@ -279,15 +279,15 @@ msgstr "Mapa"
 msgid "Look up address in Google Maps"
 msgstr "Buscar dirección en Mapas de Google"
 
-#: app/helpers/application_helper.rb:514
+#: app/helpers/application_helper.rb:512
 msgid "Visible in your Workspace"
 msgstr "Visible en tu Espacio de Trabajo"
 
-#: app/helpers/application_helper.rb:700
+#: app/helpers/application_helper.rb:698
 msgid "Subscribe"
 msgstr "Suscribir"
 
-#: app/helpers/application_helper.rb:709 app/helpers/application_helper.rb:710
+#: app/helpers/application_helper.rb:707 app/helpers/application_helper.rb:708
 #: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
 #: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
 #: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
@@ -345,30 +345,30 @@ msgid "Subdomain"
 msgstr "Subdominio"
 
 #: app/views/authenticate/affiliate_login.rhtml:36
-#: app/views/authenticate/login.rhtml:39
+#: app/views/authenticate/login.rhtml:40
 #: app/views/authenticate/reset_password.rhtml:43
 #: app/views/user/connect.rhtml:38
 msgid "Username"
 msgstr "Nombre de usuario"
 
 #: app/views/authenticate/affiliate_login.rhtml:44
-#: app/views/authenticate/login.rhtml:47
+#: app/views/authenticate/login.rhtml:48
 #: app/views/authenticate/verify_reset_password.rhtml:38
 #: app/views/user/connect.rhtml:42
 msgid "Password"
 msgstr "Contraseña"
 
 #: app/views/authenticate/affiliate_login.rhtml:58
-#: app/views/authenticate/login.rhtml:61
+#: app/views/authenticate/login.rhtml:62
 msgid "Remember my password for 2 weeks"
 msgstr "Recordar durante 2 semanas"
 
 #: app/views/authenticate/affiliate_login.rhtml:63
-#: app/views/authenticate/login.rhtml:66
+#: app/views/authenticate/login.rhtml:67
 msgid " Sign In "
 msgstr "Conectar "
 
-#: app/views/authenticate/login.rhtml:69
+#: app/views/authenticate/login.rhtml:70
 msgid "Reset your password"
 msgstr "Resetear tu contraseña"
 
