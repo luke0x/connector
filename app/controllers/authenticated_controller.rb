@@ -59,8 +59,8 @@ class AuthenticatedController < ApplicationController
     sort_field = valid_sort_fields.include?(params[:sort_field]) ? params[:sort_field] : default_sort_field
     sort_order = [ 'ASC', 'DESC' ].include?(params[:sort_order]) ? params[:sort_order] : default_sort_order
 
-    User.current.set_option("#{@application_name.capitalize} Sort Field", sort_field)
-    User.current.set_option("#{@application_name.capitalize} Sort Order", sort_order)
+    current_user.set_option("#{@application_name.capitalize} Sort Field", sort_field)
+    current_user.set_option("#{@application_name.capitalize} Sort Order", sort_order)
   ensure
     redirect_back_or_home
   end
@@ -76,10 +76,10 @@ class AuthenticatedController < ApplicationController
     when 'connect'   then reports_index_url
     when 'mail'      then mail_special_list_url(:id => 'inbox')
     when 'calendar'  then calendar_all_month_url
-    when 'people'    then people_list_url(:group => User.current.contact_list.id)
-    when 'files'     then files_list_route_url(:folder_id => User.current.documents_folder.id)
-    when 'bookmarks' then bookmarks_list_route_url(:bookmark_folder_id => User.current.bookmark_folder.id)
-    when 'lists'     then lists_url(:group => User.current.lists_list_folder.id)
+    when 'people'    then people_list_url(:group => current_user.contact_list.id)
+    when 'files'     then files_list_route_url(:folder_id => current_user.documents_folder.id)
+    when 'bookmarks' then bookmarks_list_route_url(:bookmark_folder_id => current_user.bookmark_folder.id)
+    when 'lists'     then lists_url(:group => current_user.lists_list_folder.id)
     when 'fileswpl'  then files_service_url(:service_name => 'lightning', :group_id => nil)
     when 'wpl'       then files_service_url(:service_name => 'lightning', :group_id => nil)
     else 
@@ -90,8 +90,8 @@ class AuthenticatedController < ApplicationController
   private
   
     def load_sort_order
-      @sort_field = User.current.get_option("#{@application_name.capitalize} Sort Field") || default_sort_field
-      @sort_order = User.current.get_option("#{@application_name.capitalize} Sort Order") || default_sort_order
+      @sort_field = current_user.get_option("#{@application_name.capitalize} Sort Field") || default_sort_field
+      @sort_order = current_user.get_option("#{@application_name.capitalize} Sort Order") || default_sort_order
     end
 
     def default_sort_field
@@ -104,7 +104,7 @@ class AuthenticatedController < ApplicationController
 
     def setup_vars
       @page_javascript = []
-      @smart_groups    = User.current.application_smart_groups(@application_name)
+      @smart_groups    = current_user.application_smart_groups(@application_name)
       true
     end                     
   
@@ -114,9 +114,9 @@ class AuthenticatedController < ApplicationController
     
     def authkey_check
       if params[:authkey] && (key = AuthKey.verify(params[:authkey], Organization.current))
-        User.current               = key.user
+        current_user               = key.user
         session[:sso_verified]     = true
-        LoginToken.current         = User.current.create_login_token
+        LoginToken.current         = current_user.create_login_token
         cookies['sso_token_value'] = {:value => LoginToken.current.value, :expires => Time.now + 2.weeks}
         key.destroy
         
@@ -128,11 +128,11 @@ class AuthenticatedController < ApplicationController
     def sso
       # first see if already logged in
       if session[:sso_verified] and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_by_value(request.cookies['sso_token_value'])
-        User.current = Organization.current.users.find(LoginToken.current.user_id, :include => [:user_options])
+        current_user = Organization.current.users.find(LoginToken.current.user_id, :include => [:user_options])
       # now see if they have a remember cookie
       elsif request.cookies['sso_remember'] and request.cookies['sso_remember'][0] == 'true' and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_for_cookie(request.cookies['sso_token_value'][0])
         session[:sso_verified] = true
-        User.current = Organization.current.users.find(LoginToken.current.user_id)
+        current_user = Organization.current.users.find(LoginToken.current.user_id)
       # remember the page and let them log in
       else
         session[:post_login_url] = request.env['REQUEST_URI']
@@ -142,17 +142,17 @@ class AuthenticatedController < ApplicationController
       redirect_to logout_url and return false
     end
 
-    # NOTE: quite a few exception emails seem to be due to calling methods on a nil User.current, which should never
+    # NOTE: quite a few exception emails seem to be due to calling methods on a nil current_user, which should never
     # happen. i think this is due to proxy errors, but it's hard to say. since, within the app, it should be safe
-    # to assume User.current is set, i'd like to try catching this problem earlier + specifically for a while.
+    # to assume current_user is set, i'd like to try catching this problem earlier + specifically for a while.
     def ensure_user_loaded
-      raise "Current user nil" if User.current.blank?
-      raise "Current user not class User" unless User.current.is_a?(User)
+      raise "Current user nil" if current_user.blank?
+      raise "Current user not class User" unless current_user.is_a?(User)
       true
     end
 
     def verify_app_enabled
-      if User.current.guest?
+      if current_user.guest?
         redirect_to files_strongspace_url and return false
       else
         true
@@ -194,7 +194,7 @@ class AuthenticatedController < ApplicationController
     end
 
     def default_locale
-      GetText.locale = User.current.language
+      GetText.locale = current_user.language
       Date.translate_strings
       GetText.locale
     end
@@ -218,7 +218,7 @@ class AuthenticatedController < ApplicationController
     
     def subscribed_by_action(list, name, id)
       if list.include? self.action_name
-        @is_subscription = User.current.subscribed_to?(nil, name, id.to_i)
+        @is_subscription = current_user.subscribed_to?(nil, name, id.to_i)
       end
       true
     end

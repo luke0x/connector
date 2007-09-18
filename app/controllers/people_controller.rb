@@ -21,7 +21,7 @@ class PeopleController < AuthenticatedController
   end
 
   def index
-    redirect_to people_list_url(:group => User.current.contact_list.id)
+    redirect_to people_list_url(:group => current_user.contact_list.id)
   end
 
   def create
@@ -35,7 +35,7 @@ class PeopleController < AuthenticatedController
       @person.save_from_params(params[:person])
 
       params[:new_item_tags].split(',,').each do |tag_name|
-        User.current.tag_item(@person, tag_name)
+        current_user.tag_item(@person, tag_name)
       end unless params[:new_item_tags].blank?
       params[:new_item_permissions].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
@@ -43,7 +43,7 @@ class PeopleController < AuthenticatedController
       end unless params[:new_item_permissions].blank?
       params[:new_item_notifications].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
-        user.notify_of(@person, User.current)
+        user.notify_of(@person, current_user)
       end unless params[:new_item_notifications].blank?
 
       redirect_to person_show_url(:id => @person.id) and return
@@ -54,7 +54,7 @@ class PeopleController < AuthenticatedController
   
   def copy
     person_ids   = params[:id] ? Array(params[:id]) : params[:ids].split(',') 
-    contact_list = User.current.contact_list
+    contact_list = current_user.contact_list
     new_person   = nil
             
     if person_ids && contact_list    
@@ -65,7 +65,7 @@ class PeopleController < AuthenticatedController
       end
          
       if person_ids.size > 1
-        redirect_to people_list_url(:group => User.current.contact_list.id)
+        redirect_to people_list_url(:group => current_user.contact_list.id)
       elsif new_person
         redirect_to person_show_url(:id => new_person.id)
       else
@@ -91,7 +91,7 @@ class PeopleController < AuthenticatedController
         item = Person.find(id, :scope => :delete)
         item_person = item
         item = item.user if item.user
-        if User.current.can_delete?(item)
+        if current_user.can_delete?(item)
           item.destroy
           deleted_items << item_person
         end
@@ -164,7 +164,7 @@ class PeopleController < AuthenticatedController
   end
 
   def delete_confirm
-    raise unless User.current.admin?
+    raise unless current_user.admin?
 
     @people = Person.find(params[:ids].split(','), :scope => :delete)
     raise if @people.blank?
@@ -188,9 +188,9 @@ class PeopleController < AuthenticatedController
          
         Person.transaction do
           people.each do |person|             
-            person.owner        = User.current
+            person.owner        = current_user
             person.organization = Organization.current
-            person.contact_list = User.current.contact_list
+            person.contact_list = current_user.contact_list
             person.save
           end
         end
@@ -274,7 +274,7 @@ class PeopleController < AuthenticatedController
     @view_kind = 'notifications'
     @toolbar[:import] = false
     @toolbar[:call] = false
-    notice_count = User.current.notifications_count('Person', params.has_key?(:all))
+    notice_count = current_user.notifications_count('Person', params.has_key?(:all))
     @paginator   = Paginator.new(self, notice_count, JoyentConfig.page_limit, params[:page])
 
     if params.has_key?(:all)
@@ -326,13 +326,13 @@ class PeopleController < AuthenticatedController
   end
   
   def call
-    User.current.update_attributes({:jajah_username => params[:jajah_username],
+    current_user.update_attributes({:jajah_username => params[:jajah_username],
                                     :jajah_password => params[:jajah_password]})
     phone_numbers  = PhoneNumber.find(params[:jajah_to_numbers])
     actual_numbers = phone_numbers.collect{|p| p.phone_number}
 
     begin
-      status_code    = User.jajah_system.call(User.current, params[:jajah_from_number], actual_numbers)
+      status_code    = User.jajah_system.call(current_user, params[:jajah_from_number], actual_numbers)
       flash[:status] = "Dialing..."
     rescue JajahError => e
       status_code    = e.code
@@ -340,7 +340,7 @@ class PeopleController < AuthenticatedController
     end
 
     # create the log entry
-    call = User.current.calls.create(:status_code => status_code)
+    call = current_user.calls.create(:status_code => status_code)
     phone_numbers.each do |phone|
       call.callings.create(:callee_id => phone.person_id, :phone_number => phone.phone_number)
     end
@@ -359,7 +359,7 @@ class PeopleController < AuthenticatedController
          :only => :call_list
   def call_list
     person_ids   = params[:id] ? Array(params[:id]) : params[:ids].split(',') 
-    contact_list = User.current.contact_list
+    contact_list = current_user.contact_list
     people       = []
     
     if person_ids && contact_list    
@@ -388,7 +388,7 @@ class PeopleController < AuthenticatedController
         balance = User.jajah_system.get_balance(params[:jajah_username], params[:jajah_password])      
         balance = "%.2f (#{balance[1]})" % balance[0]
       
-        User.current.update_attributes({:jajah_username => params[:jajah_username],
+        current_user.update_attributes({:jajah_username => params[:jajah_username],
                                         :jajah_password => params[:jajah_password]})
       
         flash[:status] = "Valid login."
@@ -428,9 +428,9 @@ class PeopleController < AuthenticatedController
                                                     :include => [:user, :permissions, :notifications, :taggings],
                                                     :scope => :read)
 
-      @toolbar[:copy]   = User.current.can_copy_from?(@contact_list)
-      @toolbar[:call]   = User.current.can_copy_from?(@contact_list)
-      @toolbar[:delete] = User.current.can_delete_from?(@contact_list)
+      @toolbar[:copy]   = current_user.can_copy_from?(@contact_list)
+      @toolbar[:call]   = current_user.can_copy_from?(@contact_list)
+      @toolbar[:delete] = current_user.can_delete_from?(@contact_list)
     
       respond_to do |wants|
         wants.html { render :action  => 'list'   }
@@ -455,7 +455,7 @@ class PeopleController < AuthenticatedController
       @toolbar[:quota]  = true
       @toolbar[:copy]   = true
       @toolbar[:call]   = true
-      @toolbar[:delete] = User.current.admin?
+      @toolbar[:delete] = current_user.admin?
 
       respond_to do |wants|
         wants.html { render :action  => 'list'   }
@@ -474,9 +474,9 @@ class PeopleController < AuthenticatedController
       # It appears that the pagination doesn't do much, so lets page now
       @people      = @people[@paginator.current.offset, @paginator.items_per_page]
 
-      @toolbar[:copy]   = User.current.can_copy_from?(@smart_group) 
-      @toolbar[:call]   = User.current.can_copy_from?(@smart_group)       
-      @toolbar[:delete] = User.current.can_delete_from?(@smart_group) 
+      @toolbar[:copy]   = current_user.can_copy_from?(@smart_group) 
+      @toolbar[:call]   = current_user.can_copy_from?(@smart_group)       
+      @toolbar[:delete] = current_user.can_delete_from?(@smart_group) 
 
       respond_to do |wants|
         wants.html { render :action  => 'list'   }
@@ -493,10 +493,10 @@ class PeopleController < AuthenticatedController
       @contact_list     = User.selected.contact_list
       @group_name       = _('Contacts')
 
-      @toolbar[:edit]   = User.current.can_edit?(@person)           
-      @toolbar[:copy]   = User.current.can_copy?(@person)
-      @toolbar[:call]   = User.current.can_copy?(@person)      
-      @toolbar[:delete] = User.current.can_delete?(@person)
+      @toolbar[:edit]   = current_user.can_edit?(@person)           
+      @toolbar[:copy]   = current_user.can_copy?(@person)
+      @toolbar[:call]   = current_user.can_copy?(@person)      
+      @toolbar[:delete] = current_user.can_delete?(@person)
 
       respond_to do |wants|
         wants.html { render :action => 'show' }
@@ -512,10 +512,10 @@ class PeopleController < AuthenticatedController
       @group_name       = _('Users')
 
       @toolbar[:quota]  = true
-      @toolbar[:edit]   = User.current.can_edit?(@person)
-      @toolbar[:copy]   = User.current.can_copy?(@person) 
-      @toolbar[:call]   = User.current.can_copy?(@person)       
-      @toolbar[:delete] = User.current.can_delete?(@person)
+      @toolbar[:edit]   = current_user.can_edit?(@person)
+      @toolbar[:copy]   = current_user.can_copy?(@person) 
+      @toolbar[:call]   = current_user.can_copy?(@person)       
+      @toolbar[:delete] = current_user.can_delete?(@person)
                                                
       respond_to do |wants|
         wants.html { render :action => 'show' }
@@ -532,10 +532,10 @@ class PeopleController < AuthenticatedController
       User.selected = @smart_group.owner
       @group_name   = @smart_group.name
 
-      @toolbar[:edit]   = User.current.can_edit?(@person)
-      @toolbar[:copy]   = User.current.can_copy?(@person)
-      @toolbar[:call]   = User.current.can_copy?(@person)      
-      @toolbar[:delete] = User.current.can_delete?(@person)
+      @toolbar[:edit]   = current_user.can_edit?(@person)
+      @toolbar[:copy]   = current_user.can_copy?(@person)
+      @toolbar[:call]   = current_user.can_copy?(@person)      
+      @toolbar[:delete] = current_user.can_delete?(@person)
 
       respond_to do |wants|
         wants.html { render :action => 'show' }
@@ -550,15 +550,15 @@ class PeopleController < AuthenticatedController
     # edit
 
     def contacts_edit
-      @contact_list = User.current.contact_list
+      @contact_list = current_user.contact_list
       User.selected = @contact_list.owner
       @group_name   = _('Contacts')
       @person       = Person.find(params[:id], :scope => :read)
 
       @toolbar[:quota]  = true
-      @toolbar[:copy]   = User.current.can_copy?(@person) 
-      @toolbar[:call]   = User.current.can_copy?(@person)       
-      @toolbar[:delete] = User.current.can_delete?(@person)
+      @toolbar[:copy]   = current_user.can_copy?(@person) 
+      @toolbar[:call]   = current_user.can_copy?(@person)       
+      @toolbar[:delete] = current_user.can_delete?(@person)
                       
       if request.post?
         @failed = @person.save_from_params(params[:person])
@@ -574,11 +574,11 @@ class PeopleController < AuthenticatedController
       @person           = Person.find(params[:id], :scope => :edit)
       @group_name       = _('Users')
       @toolbar[:quota]  = true
-      @toolbar[:copy]   = User.current.can_copy?(@person) 
-      @toolbar[:call]   = User.current.can_copy?(@person)       
-      @toolbar[:delete] = User.current.can_delete?(@person)
+      @toolbar[:copy]   = current_user.can_copy?(@person) 
+      @toolbar[:call]   = current_user.can_copy?(@person)       
+      @toolbar[:delete] = current_user.can_delete?(@person)
     
-      if ! User.current.can_edit?(@person)
+      if ! current_user.can_edit?(@person)
         redirect_to people_list_url(:group => 'users')
         return true
       end                                               
@@ -596,7 +596,7 @@ class PeopleController < AuthenticatedController
     # vcards
   
     def contacts_vcards
-      @contact_list = User.current.contact_list
+      @contact_list = current_user.contact_list
       User.selected = @contact_list.owner
       @people       = @contact_list.people.find(:all, :scope => :read)
       vcards        = VcardConverter.create_vcards_from_people(@people)
@@ -616,7 +616,7 @@ class PeopleController < AuthenticatedController
     end
 
     def notifications_vcards
-      @people     = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Person' and notifiee_id = ?", User.current.id]).collect(&:item)
+      @people     = Organization.current.notifications.find(:all, :conditions => ["item_type = 'Person' and notifiee_id = ?", current_user.id]).collect(&:item)
       vcards      = VcardConverter.create_vcards_from_people(@people)
       send_data vcards, :filename => "Notifications.vcf"
     rescue 

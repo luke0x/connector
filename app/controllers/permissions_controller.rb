@@ -137,7 +137,7 @@ class PermissionsController < AuthenticatedController
       if params.has_key?(:user_ids)
         users += [ User.find(params[:user_ids], :scope => :read) ].flatten
       end
-      users << User.current unless users.include?(User.current)
+      users << current_user unless users.include?(current_user)
 
       group.restrict_to!(users)
     elsif params[:access_mode] == 'public'

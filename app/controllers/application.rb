@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     end
 
     def pre_clean
-      User.current = nil # also resets User.selected
+      current_user = nil # also resets User.selected
       Organization.current = nil
       Domain.current = nil
       List.current = nil
@@ -94,7 +94,7 @@ class ApplicationController < ActionController::Base
                          :action       => "#{self.class.to_s}##{action_name}",
                          :duration     => (Time.now - @log_start_time) * 1000,
                          :session_id   => (session.is_a?(Hash) ? '' : session.session_id),
-                         :username     => (User.current ? User.current.username : ''))
+                         :username     => (current_user ? current_user.username : ''))
     end
 
     def redirect_back_or_home

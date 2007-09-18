@@ -28,7 +28,7 @@ class ConnectController < AuthenticatedController
   def notifications
     @view_kind = 'notifications'
     @toolbar[:import] = false
-    notice_count = User.current.notifications_count(nil, params.has_key?(:all))
+    notice_count = current_user.notifications_count(nil, params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     if params.has_key?(:all)
@@ -102,7 +102,7 @@ class ConnectController < AuthenticatedController
                                                  Organization.current.id, Time.now - 7.days],
                                  :order      => 'created_at DESC')
 
-    @comments = @comments.select{|comment| User.current.can_view?(comment.commentable)}
+    @comments = @comments.select{|comment| current_user.can_view?(comment.commentable)}
     @paginator = Paginator.new(self, @comments.size, JoyentConfig.page_limit, params[:page])
     @comments = @comments[@paginator.current_page.offset..@paginator.items_per_page] || []
 

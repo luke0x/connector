@@ -14,7 +14,7 @@ class CommentsController < AuthenticatedController
 
   def add
     item = item_type(params[:item_type]).find(params[:id], :scope => :read)
-    User.current.comment_on_item(item, params[:body])
+    current_user.comment_on_item(item, params[:body])
 
     render :update do |page|
       page['comment-listing'].replace_html :partial => 'comments/comment', :collection => item.comments(true)

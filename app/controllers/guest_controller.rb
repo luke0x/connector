@@ -16,7 +16,7 @@ class GuestController < AuthenticatedController
 
   # should only work for a guest to edit himself
   def edit
-    @person = User.current.person
+    @person = current_user.person
     
     if request.post?
       if @person.update_guest_from_params(params[:person])
@@ -32,6 +32,6 @@ class GuestController < AuthenticatedController
   private
 
     def verify_app_enabled
-      User.current.guest?
+      current_user.guest?
     end
 end

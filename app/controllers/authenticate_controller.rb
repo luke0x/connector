@@ -28,13 +28,13 @@ class AuthenticateController < PublicController
   def login
     # first try the sso stuff
     if session[:sso_verified] and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_by_value(request.cookies['sso_token_value'])
-      User.current = Organization.current.users.find(LoginToken.current.user_id)
+      current_user = Organization.current.users.find(LoginToken.current.user_id)
 
       redirect_to connector_home_url and return
     # more sso see if they have a remember cookie
     elsif request.cookies['sso_remember'] and request.cookies['sso_remember'][0] == 'true' and request.cookies['sso_token_value'] and LoginToken.current = LoginToken.find_for_cookie(request.cookies['sso_token_value'][0])
       session[:sso_verified] = true
-      User.current = Organization.current.users.find(LoginToken.current.user_id)
+      current_user = Organization.current.users.find(LoginToken.current.user_id)
 
       redirect_to connector_home_url and return
     elsif request.post? and user = Domain.current.authenticate_user(params[:username], params[:password])
@@ -59,8 +59,8 @@ class AuthenticateController < PublicController
     if request.cookies['sso_token_value'] and token = LoginToken.find_by_value(request.cookies['sso_token_value'])
       token.destroy
     end
-    if User.current and User.current.login_token
-      User.current.login_token.destroy
+    if current_user and current_user.login_token
+      current_user.login_token.destroy
     end
     cookies.delete 'sso_remember'
     cookies.delete 'sso_token_value'
@@ -100,10 +100,10 @@ class AuthenticateController < PublicController
   private
   
     def set_user_credentials(user)
-      User.current = user
+      current_user = user
 
       session[:sso_verified]     = true
-      LoginToken.current         = User.current.create_login_token
+      LoginToken.current         = current_user.create_login_token
       cookies['sso_token_value'] = {:value => LoginToken.current.value, :expires => Time.now + 2.weeks}
       if params[:sso_remember]
         cookies['sso_remember'] = {:value => 'true', :expires => Time.now + 2.weeks}

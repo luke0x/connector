@@ -19,7 +19,7 @@ class ReportsController < AuthenticatedController
   # NOTE: A report_description_id, reportable_id and user_id is a unique combination
   # don't need to worry about reportable_type_id since each report_description only deals with one type
   def create
-    User.current.create_report(params[:report_description_id], params[:reportable_id])
+    current_user.create_report(params[:report_description_id], params[:reportable_id])
 
     render :nothing => true
   rescue

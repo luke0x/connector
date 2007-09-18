@@ -24,7 +24,7 @@ class FilesController < AuthenticatedController
   end
 
   def index
-    redirect_to files_list_route_url(:folder_id => User.current.documents_folder.id)
+    redirect_to files_list_route_url(:folder_id => current_user.documents_folder.id)
   end
 
   def list
@@ -41,10 +41,10 @@ class FilesController < AuthenticatedController
                                               :include    => [:owner, :permissions, :notifications, :taggings],
                                               :scope      => :read)
 
-    @toolbar[:move]   = User.current.can_move_from?(@folder)
-    @toolbar[:copy]   = User.current.can_copy_from?(@folder)
-    @toolbar[:email]  = User.current.can_email_from?(@folder)
-    @toolbar[:delete] = User.current.can_delete_from?(@folder)
+    @toolbar[:move]   = current_user.can_move_from?(@folder)
+    @toolbar[:copy]   = current_user.can_copy_from?(@folder)
+    @toolbar[:email]  = current_user.can_email_from?(@folder)
+    @toolbar[:delete] = current_user.can_delete_from?(@folder)
          
     respond_to do |wants|
       wants.html
@@ -92,11 +92,11 @@ class FilesController < AuthenticatedController
       @file         = @folder.joyent_files.find(params[:id], :scope => :read)
       @group_name   = @folder.name
 
-      @toolbar[:edit]   = User.current.can_edit?(@file)
-      @toolbar[:move]   = User.current.can_move?(@file)
-      @toolbar[:copy]   = User.current.can_copy?(@file)
-      @toolbar[:email]  = User.current.can_email?(@file)
-      @toolbar[:delete] = User.current.can_delete?(@file)
+      @toolbar[:edit]   = current_user.can_edit?(@file)
+      @toolbar[:move]   = current_user.can_move?(@file)
+      @toolbar[:copy]   = current_user.can_copy?(@file)
+      @toolbar[:email]  = current_user.can_email?(@file)
+      @toolbar[:delete] = current_user.can_delete?(@file)
     else
       @file         = JoyentFile.find(params[:id], :scope => :read)
       User.selected = @file.owner
@@ -131,10 +131,10 @@ class FilesController < AuthenticatedController
     @file         = @folder.joyent_files.find(params[:id], :scope => :edit)
     @group_name   = @folder.name
 
-    @toolbar[:move]   = User.current.can_move?(@file)
-    @toolbar[:copy]   = User.current.can_copy?(@file)
-    @toolbar[:email]  = User.current.can_email?(@file)
-    @toolbar[:delete] = User.current.can_delete?(@file)
+    @toolbar[:move]   = current_user.can_move?(@file)
+    @toolbar[:copy]   = current_user.can_copy?(@file)
+    @toolbar[:email]  = current_user.can_email?(@file)
+    @toolbar[:delete] = current_user.can_delete?(@file)
 
     if request.post? and params[:file]
       @file.notes = params[:file][:notes]
@@ -178,7 +178,7 @@ class FilesController < AuthenticatedController
 
   def notifications
     @view_kind = 'notifications'
-    notice_count = User.current.notifications_count('JoyentFile', params.has_key?(:all))
+    notice_count = current_user.notifications_count('JoyentFile', params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     if params.has_key?(:all)
@@ -222,10 +222,10 @@ class FilesController < AuthenticatedController
     # It appears that the pagination doesn't do much, so lets page now - PDI
     @files         = @files[@paginator.current.offset, @paginator.items_per_page]
 
-    @toolbar[:move]   = User.current.can_move_from?(@smart_group)
-    @toolbar[:copy]   = User.current.can_copy_from?(@smart_group)
-    @toolbar[:email]  = User.current.can_email_from?(@smart_group)
-    @toolbar[:delete] = User.current.can_delete_from?(@smart_group)
+    @toolbar[:move]   = current_user.can_move_from?(@smart_group)
+    @toolbar[:copy]   = current_user.can_copy_from?(@smart_group)
+    @toolbar[:email]  = current_user.can_email_from?(@smart_group)
+    @toolbar[:delete] = current_user.can_delete_from?(@smart_group)
  
     respond_to do |wants|
       wants.html { render :action  => 'list'  }
@@ -241,11 +241,11 @@ class FilesController < AuthenticatedController
     @group_name  = @smart_group.name
     @file        = JoyentFile.find(params[:id], :scope => :read)
 
-    @toolbar[:edit]   = User.current.can_edit?(@file)
-    @toolbar[:move]   = User.current.can_move?(@file)
-    @toolbar[:copy]   = User.current.can_copy?(@file)
-    @toolbar[:email]  = User.current.can_email?(@file)
-    @toolbar[:delete] = User.current.can_delete?(@file)
+    @toolbar[:edit]   = current_user.can_edit?(@file)
+    @toolbar[:move]   = current_user.can_move?(@file)
+    @toolbar[:copy]   = current_user.can_copy?(@file)
+    @toolbar[:email]  = current_user.can_email?(@file)
+    @toolbar[:delete] = current_user.can_delete?(@file)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -263,10 +263,10 @@ class FilesController < AuthenticatedController
     @group_name  = @smart_group.name  
     @file        = JoyentFile.find(params[:id], :scope => :edit)
     
-    @toolbar[:move]   = User.current.can_move?(@file)
-    @toolbar[:copy]   = User.current.can_copy?(@file)
-    @toolbar[:email]  = User.current.can_email?(@file)
-    @toolbar[:delete] = User.current.can_delete?(@file)
+    @toolbar[:move]   = current_user.can_move?(@file)
+    @toolbar[:copy]   = current_user.can_copy?(@file)
+    @toolbar[:email]  = current_user.can_email?(@file)
+    @toolbar[:delete] = current_user.can_delete?(@file)
     
     if request.post? and params[:file]
       @file.notes = params[:file][:notes]
@@ -300,7 +300,7 @@ class FilesController < AuthenticatedController
     begin
       @folder = Folder.find(params[:folder_id], :scope => :create_on)
     rescue ActiveRecord::RecordNotFound
-      @folder = User.current.documents_folder
+      @folder = current_user.documents_folder
     end
     @group_name = @folder.name
 
@@ -314,7 +314,7 @@ class FilesController < AuthenticatedController
           @file = @folder.add_file(uploaded_file)
 
           params[:new_item_tags].split(',,').each do |tag_name|
-            User.current.tag_item(@file, tag_name)
+            current_user.tag_item(@file, tag_name)
           end unless params[:new_item_tags].blank?
           params[:new_item_permissions].split(',').each do |user_dom_id|
             next unless user = find_by_dom_id(user_dom_id)
@@ -322,7 +322,7 @@ class FilesController < AuthenticatedController
           end unless params[:new_item_permissions].blank?
           params[:new_item_notifications].split(',').each do |user_dom_id|
             next unless user = find_by_dom_id(user_dom_id)
-            user.notify_of(@file, User.current)
+            user.notify_of(@file, current_user)
           end unless params[:new_item_notifications].blank?
         end
       end
@@ -339,10 +339,10 @@ class FilesController < AuthenticatedController
 
   def create_folder
     if params[:parent_path]
-      StrongspaceFolder.create(User.current, File.join(params[:parent_path], params[:group_name]))
+      StrongspaceFolder.create(current_user, File.join(params[:parent_path], params[:group_name]))
     else
-      parent_id = (params[:parent_id] == User.current.files_documents_folder.id.to_s) ? nil : params[:parent_id]
-      User.current.folders.create(:name            => params[:group_name],
+      parent_id = (params[:parent_id] == current_user.files_documents_folder.id.to_s) ? nil : params[:parent_id]
+      current_user.folders.create(:name            => params[:group_name],
                                   :parent_id       => parent_id,
                                   :organization_id => Organization.current.id)
     end
@@ -357,7 +357,7 @@ class FilesController < AuthenticatedController
       @files    = @folder.joyent_files
     rescue ActiveRecord::RecordNotFound
       @folder   = nil
-      @children = User.current.folders.find(:all, :conditions => ["folders.parent_id IS NULL"], :scope => :read)
+      @children = current_user.folders.find(:all, :conditions => ["folders.parent_id IS NULL"], :scope => :read)
       @files    = []
     end
 
@@ -432,7 +432,7 @@ class FilesController < AuthenticatedController
 
     def strongspace_children_groups
       @view_kind = 'strongspace'
-      parent_group  = StrongspaceFolder.find(User.current, params[:path], User.current)
+      parent_group  = StrongspaceFolder.find(current_user, params[:path], current_user)
       User.selected = parent_group.owner
       children      = parent_group.children
 
@@ -442,7 +442,7 @@ class FilesController < AuthenticatedController
     end
 
     def set_guest_access
-      folder = StrongspaceFolder.find(User.current, params[:path], User.current)
+      folder = StrongspaceFolder.find(current_user, params[:path], current_user)
 
       if params[:access_mode] == 'guests_restricted'
         folder.remove_guest_access!
@@ -460,11 +460,11 @@ class FilesController < AuthenticatedController
     def strongspace_move 
       @view_kind = 'strongspace'
       paths      = params[:ids].split(',')
-      new_folder = StrongspaceFolder.find(User.current, params[:new_group_id], User.current)
+      new_folder = StrongspaceFolder.find(current_user, params[:new_group_id], current_user)
 
       paths.each do |path|
         begin
-          file = StrongspaceFile.find(User.current, path, User.current)
+          file = StrongspaceFile.find(current_user, path, current_user)
           file.move_to(new_folder)
         rescue StrongspaceFile::FileNotFound
         end
@@ -476,11 +476,11 @@ class FilesController < AuthenticatedController
     def strongspace_copy
       @view_kind = 'strongspace'
       paths      = params[:ids].split(',')
-      new_folder = StrongspaceFolder.find(User.current, params[:new_group_id], User.current)
+      new_folder = StrongspaceFolder.find(current_user, params[:new_group_id], current_user)
 
       paths.each do |path|
         begin
-          file = StrongspaceFile.find(User.current, path, User.current)
+          file = StrongspaceFile.find(current_user, path, current_user)
           file.copy_to(new_folder)
         rescue StrongspaceFile::FileNotFound
         end
@@ -493,16 +493,16 @@ class FilesController < AuthenticatedController
       @view_kind = 'strongspace'
 
       owner = Organization.current.users.find(params[:owner_id])
-      @file = StrongspaceFile.find(owner, params[:path], User.current)
+      @file = StrongspaceFile.find(owner, params[:path], current_user)
       User.selected = @file.owner
-      @folder = StrongspaceFolder.find(owner, params[:path][0..-2], User.current)
+      @folder = StrongspaceFolder.find(owner, params[:path][0..-2], current_user)
       @group_name = @folder.name
 
-      @toolbar[:edit]   = User.current.owns?(@file)
-      @toolbar[:move]   = User.current.can_move?(@file)
-      @toolbar[:copy]   = User.current.can_move?(@file) # use for copy, since can_copy? relies on permissions
-      @toolbar[:email]  = User.current.can_email?(@file)
-      @toolbar[:delete] = User.current.can_delete?(@file)
+      @toolbar[:edit]   = current_user.owns?(@file)
+      @toolbar[:move]   = current_user.can_move?(@file)
+      @toolbar[:copy]   = current_user.can_move?(@file) # use for copy, since can_copy? relies on permissions
+      @toolbar[:email]  = current_user.can_email?(@file)
+      @toolbar[:delete] = current_user.can_delete?(@file)
 
       respond_to do |wants|
         wants.html { render :action => 'strongspace_show' }
@@ -511,7 +511,7 @@ class FilesController < AuthenticatedController
         end }
       end
     rescue Errno::ENOENT
-      redirect_to files_strongspace_url(:owner_id => User.current.id)
+      redirect_to files_strongspace_url(:owner_id => current_user.id)
     end  
 
     def strongspace_delete
@@ -521,7 +521,7 @@ class FilesController < AuthenticatedController
 
       paths.each do |path|
         begin
-          file = StrongspaceFile.find(User.current, path, User.current)
+          file = StrongspaceFile.find(current_user, path, current_user)
           file.remove!
           deleted_files << file
         rescue StrongspaceFile::FileNotFound
@@ -544,27 +544,27 @@ class FilesController < AuthenticatedController
     def strongspace
       @view_kind    = 'strongspace'
 
-      if !User.current.guest? && params[:owner_id].nil?
-        params[:owner_id] = User.current.id
+      if !current_user.guest? && params[:owner_id].nil?
+        params[:owner_id] = current_user.id
       end
 
       if params[:owner_id]
         owner         = Organization.current.users.find(params[:owner_id])
-        @folder       = StrongspaceFolder.find(owner, params[:path] || '', User.current)
+        @folder       = StrongspaceFolder.find(owner, params[:path] || '', current_user)
         User.selected = @folder.owner
         @files        = @folder.files
         file_count    = @folder.children.size
         @group_name   = @folder.name
-      elsif User.current.guest?
+      elsif current_user.guest?
         @folder       = StrongspaceFolder.blank
-        User.selected = User.current
+        User.selected = current_user
         @files        = []
         @file_count   = 0
         @group_name   = _('Strongspace')
       else
         # TODO: should this block execute ?
-        @folder       = StrongspaceFolder.new(User.current, '')
-        User.selected = User.current
+        @folder       = StrongspaceFolder.new(current_user, '')
+        User.selected = current_user
         @files        = []
         file_count    = 0
         @group_name   = _('Strongspace')
@@ -572,11 +572,11 @@ class FilesController < AuthenticatedController
 
       @paginator = Paginator.new self, file_count, JoyentConfig.page_limit, params[:page]
 
-      @toolbar[:new]    = User.current.can_create_on?(@folder)
-      @toolbar[:move]   = User.current.can_move_from?(@folder)
-      @toolbar[:copy]   = User.current.can_copy_from?(@folder)
-      @toolbar[:email]  = User.current.can_email_from?(@folder)
-      @toolbar[:delete] = User.current.can_delete_from?(@folder)
+      @toolbar[:new]    = current_user.can_create_on?(@folder)
+      @toolbar[:move]   = current_user.can_move_from?(@folder)
+      @toolbar[:copy]   = current_user.can_copy_from?(@folder)
+      @toolbar[:email]  = current_user.can_email_from?(@folder)
+      @toolbar[:delete] = current_user.can_delete_from?(@folder)
 
       respond_to do |wants|
         wants.html
@@ -587,7 +587,7 @@ class FilesController < AuthenticatedController
     def strongspace_download
       @view_kind = 'strongspace'
       owner = Organization.current.users.find(params[:owner_id])
-      @joyent_file = StrongspaceFile.find(owner, params[:path], User.current)
+      @joyent_file = StrongspaceFile.find(owner, params[:path], current_user)
       send_joyent_file @joyent_file, true
   #    render :nothing => true
     end
@@ -595,7 +595,7 @@ class FilesController < AuthenticatedController
     def strongspace_download_inline
       @view_kind = 'strongspace'
       owner = Organization.current.users.find(params[:owner_id])
-      @joyent_file = StrongspaceFile.find(owner, params[:path], User.current)
+      @joyent_file = StrongspaceFile.find(owner, params[:path], current_user)
       send_joyent_file(@joyent_file, false)
   #    render :nothing => true
     rescue
@@ -605,9 +605,9 @@ class FilesController < AuthenticatedController
     def strongspace_create
       @view_kind = 'strongspace'
       begin
-        @folder = StrongspaceFolder.find(User.current, params[:path], User.current)
+        @folder = StrongspaceFolder.find(current_user, params[:path], current_user)
       rescue
-        @folder = User.current.strongspace_folder
+        @folder = current_user.strongspace_folder
       end
       @group_name = @folder.name
 
@@ -631,14 +631,14 @@ class FilesController < AuthenticatedController
     end
 
     def rename_strongspace_group
-      @folder = StrongspaceFolder.find(User.current, params[:path], User.current)
+      @folder = StrongspaceFolder.find(current_user, params[:path], current_user)
       @folder.rename! params[:name]
     ensure
       redirect_to files_strongspace_list_url(:owner_id => @folder.owner.id, :path => @folder.relative_path)
     end
 
     def delete_strongspace_group
-      @folder = StrongspaceFolder.find(User.current, params[:path], User.current)
+      @folder = StrongspaceFolder.find(current_user, params[:path], current_user)
       @folder.destroy
       redirect_to files_home_url
     end
@@ -647,10 +647,10 @@ class FilesController < AuthenticatedController
       return unless params[:path]
       return unless params[:new_parent_path]
 
-      group = StrongspaceFolder.find(User.current, params[:path], User.current)
+      group = StrongspaceFolder.find(current_user, params[:path], current_user)
       return unless group
 
-      new_parent = StrongspaceFolder.find(User.current, params[:new_parent_path], User.current)
+      new_parent = StrongspaceFolder.find(current_user, params[:new_parent_path], current_user)
 
       group.reparent!(new_parent)
     ensure
@@ -663,7 +663,7 @@ class FilesController < AuthenticatedController
     
     def service
       @view_kind    = 'service'
-      @service      = Service.find(params[:service_name], User.current)
+      @service      = Service.find(params[:service_name], current_user)
 
       unless @service
         redirect_to files_home_url 
@@ -683,10 +683,10 @@ class FilesController < AuthenticatedController
 
       # TODO what are we doing about these?
       @toolbar[:new] = false
-      # @toolbar[:move]   = User.current.can_move_from?(@folder)
-      # @toolbar[:copy]   = User.current.can_copy_from?(@folder)
-      @toolbar[:email]  = User.current.can_email_from?(@folder)
-      # @toolbar[:delete] = User.current.can_delete_from?(@folder)
+      # @toolbar[:move]   = current_user.can_move_from?(@folder)
+      # @toolbar[:copy]   = current_user.can_copy_from?(@folder)
+      @toolbar[:email]  = current_user.can_email_from?(@folder)
+      # @toolbar[:delete] = current_user.can_delete_from?(@folder)
 
       respond_to do |wants|
         wants.html
@@ -696,7 +696,7 @@ class FilesController < AuthenticatedController
 
     def service_show
       @view_kind = 'service'
-      @service    = Service.find(params[:service_name], User.current)
+      @service    = Service.find(params[:service_name], current_user)
 
       unless @service
         redirect_to files_home_url 
@@ -709,10 +709,10 @@ class FilesController < AuthenticatedController
 
       # TODO what are we doing about these?
       @toolbar[:new] = false
-      # @toolbar[:move]   = User.current.can_move_from?(@folder)
-      # @toolbar[:copy]   = User.current.can_copy_from?(@folder)
-      @toolbar[:email]  = User.current.can_email?(@file)
-      # @toolbar[:delete] = User.current.can_delete_from?(@folder)
+      # @toolbar[:move]   = current_user.can_move_from?(@folder)
+      # @toolbar[:copy]   = current_user.can_copy_from?(@folder)
+      @toolbar[:email]  = current_user.can_email?(@file)
+      # @toolbar[:delete] = current_user.can_delete_from?(@folder)
 
       respond_to do |wants|
         wants.html
@@ -724,14 +724,14 @@ class FilesController < AuthenticatedController
     end
 
     def service_download
-      @service     = Service.find(params[:service_name], User.current)
+      @service     = Service.find(params[:service_name], current_user)
       @joyent_file = @service.find_file(params[:file_id])
       send_joyent_file @joyent_file, true
   #    render :nothing => true    
     end
 
     def service_download_inline
-      @service     = Service.find(params[:service_name], User.current)
+      @service     = Service.find(params[:service_name], current_user)
       @joyent_file = @service.find_file(params[:file_id])
 
       if @joyent_file
@@ -764,7 +764,7 @@ class FilesController < AuthenticatedController
     end
 
     def service_children_groups
-      @service      = Service.find(params[:service_name], User.current)
+      @service      = Service.find(params[:service_name], current_user)
       parent_group  = @service.find_folder(params[:group_id])
       User.selected = parent_group.owner
       children      = parent_group.children
@@ -780,7 +780,7 @@ class FilesController < AuthenticatedController
       # TODO: needs different actions based on rw ability
       strongspace_actions = ['strongspace', 'strongspace_children_groups', 'strongspace_download', 'strongspace_download_inline', 'strongspace_show']
 
-      if User.current.guest?
+      if current_user.guest?
         if strongspace_actions.include?(action_name)
           true
         else

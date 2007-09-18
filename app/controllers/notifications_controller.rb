@@ -21,7 +21,7 @@ class NotificationsController < AuthenticatedController
     dom_ids.each do |dom_id|
       next unless item = find_by_dom_id(dom_id)
       @user.active_notifications_for(item).map(&:acknowledge!) # only have 1 active notification at a time for now
-      @user.notify_of(item, User.current)
+      @user.notify_of(item, current_user)
       page_js << "Notification.findAllBy('itemDomId', '#{item.dom_id}').each(function(notification){ Notification.destroy(notification.domId); });"
       item.active_notifications.each do |notification|
         page_js << notification_to_jsar(notification)

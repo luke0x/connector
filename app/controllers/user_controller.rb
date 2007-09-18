@@ -12,7 +12,7 @@ $Id$
 class UserController < AuthenticatedController
   def connect
     if request.post?
-      if User.current.connect_other_user(params[:web_domain], params[:username], params[:password])
+      if current_user.connect_other_user(params[:web_domain], params[:username], params[:password])
         @message = _('The shortcut was created.')
       elsif request.post?
         @error = _('The shortcut could not be created. Please try again.')
@@ -23,13 +23,13 @@ class UserController < AuthenticatedController
   end
   
   def disconnect
-    User.current.disconnect_other_user(User.find_by_id(params[:id]))
+    current_user.disconnect_other_user(User.find_by_id(params[:id]))
     
     render :action => 'connect', :layout => false
   end
   
   def switch
-    new_user = User.current.switch_to(params[:id])
+    new_user = current_user.switch_to(params[:id])
     domain   = new_user.organization.primary_domain.web_domain
     port     = request.port == 80 ? '' : ":#{request.port}"
 
@@ -39,7 +39,7 @@ class UserController < AuthenticatedController
   end
   
   def reset_guest_password
-    return unless User.current.admin?
+    return unless current_user.admin?
     
     if params[:id].blank? or
        params[:person_guest_send_email].blank? or
