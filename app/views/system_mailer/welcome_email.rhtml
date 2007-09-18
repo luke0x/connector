@@ -13,11 +13,11 @@ Welcome to your Joyent Connector! Your administrator has given you a Joyent Conn
 
 The sign in information for your account is:
 
-Web Site: https://<%= Organization.current.system_domain.web_domain %> 
+Web Site: https://<%= current_organization.system_domain.web_domain %> 
 Username: <%= @user.username %> 
 Password: <%= @user.plaintext_password %> 
 
-This information is provided for your reference. You can always access your account at https://<%= Organization.current.system_domain.web_domain %>. 
+This information is provided for your reference. You can always access your account at https://<%= current_organization.system_domain.web_domain %>. 
 Your administrator may provide you with an additional address from which you can access your account.
 
 Thanks,

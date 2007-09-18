@@ -66,7 +66,7 @@
 		<% if current_user.admin? -%>
   		<li id="customerCenter">
   			<div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
-	          <% if Organization.current.affiliate.name == 'corel' -%>
+	          <% if current_organization.affiliate.name == 'corel' -%>
 				<%= link_to _("Customer Center"), "http://corel.joyent.com/login", {:target => '_blank', :title => _('Go to the Joyent Customer Center')} %>
 			  <% else -%>
     			<%= link_to _("Customer Center"), "http://customer.joyent.com/login", {:target => '_blank', :title => _('Go to the Joyent Customer Center')} %>

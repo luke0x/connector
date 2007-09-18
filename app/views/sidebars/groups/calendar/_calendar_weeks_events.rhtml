@@ -7,6 +7,6 @@
 <% # -%>
 <% # $Id$ -%>
 
-<%= add_to_workspace(:weeks_events, User.selected) %>
+<%= add_to_workspace(:weeks_events, selected_user) %>
 <hr />
-<%= link_to "RSS", calendar_weeks_events_rss_url(:id => User.selected), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>
+<%= link_to "RSS", calendar_weeks_events_rss_url(:id => selected_user), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

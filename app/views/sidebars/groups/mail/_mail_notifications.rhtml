@@ -7,6 +7,6 @@
 <% # -%>
 <% # $Id$ -%>
 
-<%= add_to_workspace(:mail_notifications, User.selected) %>
+<%= add_to_workspace(:mail_notifications, selected_user) %>
 <hr />
 <%= link_to "RSS", mail_notifications_rss_url, { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

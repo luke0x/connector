@@ -8,16 +8,16 @@
 <% # $Id$ -%>
 
 <% group_name = @group_name || '' -%>
-<% documents_folder = User.selected.files_documents_folder -%>
+<% documents_folder = selected_user.files_documents_folder -%>
 
 <ul>
   <%= render_default_group 'sidebars/groups/files/files_documents', { :icon_class => 'all', :name => _('Documents'), :url => files_list_route_url(:folder_id => documents_folder.id), :selected => @folder == documents_folder, :group => documents_folder } if documents_folder %>
 
-  <% User.selected.application_smart_groups(@application_name).each do |smart_group| -%>
+  <% selected_user.application_smart_groups(@application_name).each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/files/files_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
 
-  <% User.selected.files_root_folders.each do |folder| -%>
+  <% selected_user.files_root_folders.each do |folder| -%>
     <%= render_standard_group 'sidebars/groups/files/files_standard', { :standard_group => folder, :url => files_list_route_url(:folder_id => folder.id), :selected_group => @folder, :others => true } %>
   <% end -%>
 </ul>

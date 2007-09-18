@@ -10,11 +10,11 @@
 <% parent_id = @calendar.id rescue nil -%>
 
 <ul>
-  <% User.selected.application_smart_groups(@application_name).each do |smart_group| -%>
+  <% selected_user.application_smart_groups(@application_name).each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/calendar/calendar_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
 
-  <% User.selected.calendar_root_calendars.each do |calendar| -%>
+  <% selected_user.calendar_root_calendars.each do |calendar| -%>
     <%= render_standard_group 'sidebars/groups/calendar/calendar_standard', { :standard_group => calendar, :url => calendar_list_route_url(:calendar_id => calendar.id), :selected_group => @calendar, :others => true } %>
   <% end -%>
 </ul>

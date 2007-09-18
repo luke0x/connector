@@ -10,7 +10,7 @@
 <%= render :partial => 'sidebars/groups/standard_group_edit_permissions', :locals => { :group => group } %>
 <%= render :partial => 'sidebars/groups/standard_group_edit_subscriptions', :locals => { :group => group } %>
 <% if group and group.owner == current_user -%><hr /><% end -%>
-<%= add_to_workspace(:contacts, User.selected) %>
+<%= add_to_workspace(:contacts, selected_user) %>
 <hr />
-<%= link_to "VCARD", people_vcards_url(:group => User.selected.contact_list.id), { :class => 'orangeBadge vcard', :style => 'margin-bottom:3px;', :title=> _('Download contacts as a vCard file')  } %>
-<%= link_to "RSS", people_rss_url(:group => User.selected.contact_list.id), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>
+<%= link_to "VCARD", people_vcards_url(:group => selected_user.contact_list.id), { :class => 'orangeBadge vcard', :style => 'margin-bottom:3px;', :title=> _('Download contacts as a vCard file')  } %>
+<%= link_to "RSS", people_rss_url(:group => selected_user.contact_list.id), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

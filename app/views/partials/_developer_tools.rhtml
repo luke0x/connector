@@ -20,7 +20,7 @@
         <% form_tag({:controller => 'developer_tools', :action => 'set_organization'}) do -%>
           <select name="organization_id" style="width: 100%;" onchange="this.parentNode.submit();">
             <% Organization.find(:all, :order => ['name']).each do |organization| -%>
-              <option <%= 'selected="selected"' if organization == Organization.current %> value="<%= organization.id %>"><%= organization.name %> - <%= organization.id %></option>
+              <option <%= 'selected="selected"' if organization == current_organization %> value="<%= organization.id %>"><%= organization.name %> - <%= organization.id %></option>
             <% end -%>
           </select>
         <% end -%>
@@ -29,7 +29,7 @@
         <h2><%= _('User') -%></h2>
         <% form_tag({:controller => 'developer_tools', :action => 'set_user'}) do -%>
           <select name="user_id" style="width: 100%;" onchange="this.parentNode.submit();">
-            <% Organization.current.users.sort_by(&:username).each do |user| -%>
+            <% current_organization.users.sort_by(&:username).each do |user| -%>
               <option <%= 'selected="selected"' if user == current_user %> value="<%= user.id %>"><%= user.username %> - <%= user.full_name %> - <%= user.id %></option>
             <% end -%>
           </select>

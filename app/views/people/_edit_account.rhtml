@@ -28,7 +28,7 @@
     <% else -%>
       <h2><%= _('Account Type') %></h2>
       <div id="person_user_account_area" class="infoGroup">
-      <% if Organization.current.can_add_user? -%>
+      <% if current_organization.can_add_user? -%>
       	<table class="accountTypes">
     			<tr>
     				<td valign="top" style="padding-top: .2em;">

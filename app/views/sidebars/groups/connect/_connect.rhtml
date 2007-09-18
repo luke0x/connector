@@ -9,7 +9,7 @@
 
 <% # cache(:action => "sidebar", :user_id => current_user.id, :group_id => controller.current_group_id) do %>
   <div class="defaultGroups groups"><ul class="groupsList"> 
-    <% if Organization.current.partner? -%>
+    <% if current_organization.partner? -%>
       <%= render_default_group 'sidebars/groups/connect/connect_lightning_portal', { :icon_class => 'lightning', :name => _('Lightning Portal'), :url => lightning_portal_url, :selected => (@group_name == 'Lightning Portal' and @smart_group.blank?) } %>
     <% end -%>
 

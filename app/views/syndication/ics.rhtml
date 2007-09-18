@@ -33,7 +33,7 @@ SUMMARY:<%= event.name %>
 LOCATION:<%= event.location %>
 <% end -%>
 DESCRIPTION:<%= event.notes && event.notes.gsub("\r\n", "\n").gsub("\r", "\n").gsub("\n", '\n') %>
-UID:<%= event.id %>@<%= Organization.current.primary_domain.web_domain %>
+UID:<%= event.id %>@<%= current_organization.primary_domain.web_domain %>
 <% if event.alarm? -%>
 BEGIN:VALARM
 ACTION:DISPLAY
