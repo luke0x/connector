@@ -58,6 +58,16 @@ class CalendarTest < Test::Unit::TestCase
     assert Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, Time.now + 7.days).size == 0
   end
   
+  def test_events_between_no_start_time
+    User.current = users(:ian)
+    assert_raises(ArgumentError) {Calendar.find(calendars(:peter).id).events_between('', Time.now + 7.days)}
+  end
+  
+  def test_events_between_no_end_time
+    User.current = users(:ian)
+    assert_raises(ArgumentError) {Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, '')}
+  end
+  
   def test_event_find_event_but_not_on_calendar
     User.current = users(:ian)
     c = calendars(:concerts)
