@@ -31,6 +31,11 @@ class CommentsController < AuthenticatedController
 
   def remove
     comment = Comment.find(params[:id], :scope => :read) # don't have polymorphic delete scope yet
+    
+    unless comment.user == current_user || comment.commentable.owner == current_user || curren_user.admin?
+      return render :nothing => true
+    end
+    
     item = comment.commentable
     comment.destroy
 
