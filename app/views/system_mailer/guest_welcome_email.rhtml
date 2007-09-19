@@ -13,14 +13,14 @@ Welcome to your Joyent Connector! Your administrator has given you a guest-acces
 
 Before you can sign in you'll need to set your password by following this link:
 
-https://<%= current_organization.system_domain.web_domain %>/verify_reset_password?token=<%= @user.recovery_token %>
+https://<%= @user.organization.system_domain.web_domain %>/verify_reset_password?token=<%= @user.recovery_token %>
 
 Afterwards, to sign in to your account use the following information:
 
-Web Site: https://<%= current_organization.system_domain.web_domain %>
+Web Site: https://<%= @user.organization.system_domain.web_domain %>
 Username: <%= @user.username %>
 
-You can always access your account at <%= current_organization.system_domain.web_domain %>. Your administrator may provide you with an additional address from which you can access your account.
+You can always access your account at <%= @user.organization.system_domain.web_domain %>. Your administrator may provide you with an additional address from which you can access your account.
 
 
 Thanks,
