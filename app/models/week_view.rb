@@ -12,13 +12,15 @@ $Id$
 class WeekView < BaseView
   attr_reader :date, :start_of_week
   
-  def initialize(date, start_of_week, current_user)
+  def initialize(date, start_of_week=0)
+    super()
     @start_of_week = start_of_week
     offset         = (date.wday - start_of_week) % 7 # Determine the first date for the week
     @date          = date - offset
-    @days          = Array.new                      
-    (0..6).each{|num| @days << DayView.new(@date+num, current_user)}  
-    super(@days[0].start_time, @days[-1].end_time, current_user)
+    @days          = Array.new
+    (0..6).each{|num| @days << DayView.new(@date+num)}
+    @start_time    = @days[0].start_time
+    @end_time      = @days[-1].end_time
   end
 
   def events

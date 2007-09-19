@@ -12,19 +12,21 @@ $Id$
 class DayView < BaseView
   attr_reader :date
 
-  def initialize(date, current_user)
-    @date = date           
-    super(@date.to_time(:utc), (@date + 1).to_time(:utc), current_user)
+  def initialize(date)
+    super()
+    @date       = date
+    @start_time = @date.to_time(:utc)
+    @end_time   = (@date + 1).to_time(:utc)
   end
 
   # todo: actually now that i think about it i don't think this respects the user's timezone
   def today?
-    start_time.midnight == current_user.now.midnight
+    start_time.midnight == User.current.now.midnight
   end
 
   # todo: this neither
   def tomorrow?
-    start_time.midnight == (current_user.now + 1.day).midnight
+    start_time.midnight == (User.current.now + 1.day).midnight
   end
   
   def take_events(events)
@@ -57,11 +59,11 @@ class DayView < BaseView
   end
 
   def users
-    [current_user] + @others_events.collect{|key, value| Organization.current.users.find(key)}
+    [User.current] + @others_events.collect{|key, value| Organization.current.users.find(key)}
   end
 
   def events_for_user(user)
-    return @events if user == current_user
+    return @events if user == User.current
     return @others_events[user.id] if @others_events.has_key?(user.id)
     return []
   end

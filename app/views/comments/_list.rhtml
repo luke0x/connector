@@ -16,7 +16,7 @@
     <div class="commentForm">
 			<% form_remote_tag(:url => comment_add_url(:id => item), :after => "$('comment-submit').disabled = true;") do -%>
 		    <%= hidden_field_tag("item_type", item.class.to_s) %>
-		    <h4><%= current_user.person.full_name %> <%= _('Said') -%>&hellip;</h4>
+		    <h4><%= User.current.person.full_name %> <%= _('Said') -%>&hellip;</h4>
 		    <textarea id="comment-body" name="body" cols="50" rows="10" style="width:44em; padding:.5em;"></textarea>
 				<div><input type="submit" id="comment-submit" value="<%= _('  Post  ') -%>" style="margin-top:1em;"></div>
 		  <% end -%>

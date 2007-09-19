@@ -48,7 +48,7 @@ class ListsController < AuthenticatedController
     @list = List.find(params[:id], :include => [:list_columns, {:list_rows => [:list_cells]}], :scope => :read)
     List.current = @list
 
-    self.selected_user = @list.owner
+    User.selected = @list.owner
     @list_folder = @list.list_folder
     @group_name = @list_folder.name
 
@@ -57,7 +57,7 @@ class ListsController < AuthenticatedController
 
     respond_to do |format|
       format.html do
-        if current_user.can_edit?(@list)
+        if User.current.can_edit?(@list)
           redirect_to edit_list_url(@list)
         else
           render :action => 'show'
@@ -79,7 +79,7 @@ class ListsController < AuthenticatedController
   # GET /lists/new
   def new
     @list = List.new
-    @list_folder = current_user.lists_list_folder
+    @list_folder = User.current.lists_list_folder
     
     @toolbar[:new] = true
     @toolbar[:import] = true
@@ -90,14 +90,14 @@ class ListsController < AuthenticatedController
     @list = List.find(params[:id], :include => [:list_columns, {:list_rows => [:list_cells]}], :scope => :edit)
     List.current = @list
 
-    self.selected_user = @list.owner
+    User.selected = @list.owner
     @list_folder = @list.list_folder
     @group_name = @list_folder.name
 
     @toolbar[:new_row] = true
     @toolbar[:move_row] = true
     @toolbar[:delete_row] = true
-    @toolbar[:edit] = current_user.can_edit?(@list)
+    @toolbar[:edit] = User.current.can_edit?(@list)
     @toolbar[:new] = true
     @toolbar[:tools] = true
     
@@ -111,7 +111,7 @@ class ListsController < AuthenticatedController
   # POST /lists
   # POST /lists.xml
   def create
-    list_params = params[:list].merge(:organization_id => current_user.organization.id, :user_id => current_user.id)
+    list_params = params[:list].merge(:organization_id => User.current.organization.id, :user_id => User.current.id)
     @list = List.new(list_params)
 
     respond_to do |format|
@@ -207,7 +207,7 @@ class ListsController < AuthenticatedController
   
   def notifications
     @view_kind = 'notifications'
-    notice_count = current_user.notifications_count('List', params.has_key?(:all))
+    notice_count = User.current.notifications_count('List', params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     @toolbar[:new] = true
@@ -215,12 +215,12 @@ class ListsController < AuthenticatedController
     if params.has_key?(:all)
       @group_name = _('All Notifications')
       @show_all = true
-      @notifications = current_user.notifications.find(:all, :conditions => ["notifications.item_type = 'List' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
+      @notifications = User.current.notifications.find(:all, :conditions => ["notifications.item_type = 'List' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
       @toolbar[:new_notifications] = true
     else
       @group_name = _('Notifications')
       @show_all = false
-      @notifications = current_user.current_notifications.find(:all, :conditions => ["notifications.item_type = 'List' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
+      @notifications = User.current.current_notifications.find(:all, :conditions => ["notifications.item_type = 'List' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
       @toolbar[:all_notifications] = true
     end
     
@@ -310,7 +310,7 @@ class ListsController < AuthenticatedController
   # TODO: non-crud non-list actions, should go to list_folder_controller eventually
   
   def create_list_folder
-    @list_folder = current_user.list_folders.build(:name => params[:group_name], :parent_id => params[:parent_id], :organization_id => current_user.organization_id)
+    @list_folder = User.current.list_folders.build(:name => params[:group_name], :parent_id => params[:parent_id], :organization_id => User.current.organization_id)
 
     if @list_folder.save
       flash[:message] = _('List folder successfully created.')
@@ -322,7 +322,7 @@ class ListsController < AuthenticatedController
   end
 
   def rename_group
-    @list_folder = current_user.list_folders.find(params[:id])
+    @list_folder = User.current.list_folders.find(params[:id])
 
     if @list_folder.rename! params[:name]
       flash[:message] = _('List folder successfully renamed.')
@@ -334,7 +334,7 @@ class ListsController < AuthenticatedController
   end
 
   def delete_group
-    @list_folder = current_user.list_folders.find(params[:id])
+    @list_folder = User.current.list_folders.find(params[:id])
     @list_folder.destroy
 
     respond_to do |format|
@@ -347,10 +347,10 @@ class ListsController < AuthenticatedController
     return unless params[:group_id]
     return unless params[:new_parent_id]
 
-    group = current_user.list_folders.find_by_id(params[:group_id])
+    group = User.current.list_folders.find_by_id(params[:group_id])
     return unless group
 
-    new_parent = current_user.list_folders.find(params[:new_parent_id]) rescue nil
+    new_parent = User.current.list_folders.find(params[:new_parent_id]) rescue nil
 
     group.reparent!(new_parent)
   ensure
@@ -361,7 +361,7 @@ class ListsController < AuthenticatedController
   
     def index_list_folder
       @list_folder   = ListFolder.find(params[:group], :scope => :read)
-      self.selected_user = @list_folder.owner
+      User.selected = @list_folder.owner
       @group_name   = @list_folder.name
       @paginator    = Paginator.new self, @list_folder.lists.count, JoyentConfig.page_limit, params[:page]
       @lists  = List.find(:all,
@@ -374,7 +374,7 @@ class ListsController < AuthenticatedController
 
     def index_smart_group
       @smart_group = SmartGroup.find(SmartGroup.param_to_id(params[:group]), :scope => :read)
-      self.selected_user = @smart_group.owner
+      User.selected = @smart_group.owner
       @group_name = @smart_group.name
 
       @paginator        = Paginator.new self, @smart_group.items.size, JoyentConfig.page_limit, params[:page]

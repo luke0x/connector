@@ -41,7 +41,7 @@
       
 <br clear="right"/>
 <div style="text-align:center;">
-<% unless @bookmark.bookmarked_by?(current_user) -%>
+<% unless @bookmark.bookmarked_by?(User.current) -%>
   <%= joyent_button_to _('Save Bookmark'), bookmarks_create_url(:title => @bookmark.title, :uri => @bookmark.uri), {:button_class => 'saveBookmark addIconLeft', :style => 'width: 12em; padding: 6px 0 8px 0;'} %>
 <% end -%>
 </div>

@@ -17,7 +17,7 @@
 <% @page_javascript << "Event.observe(window, 'load', function(event){ People.setupEdit(); });" -%>
 
 <form action='' id="item_editor" onsubmit="return People.validateSubmit(this);" class="item_editor" method="post" enctype="multipart/form-data">	
-  <% if current_user.admin? or current_user.person == @person -%>
+  <% if User.current.admin? or User.current.person == @person -%>
     <div class="dialog alt" id="personEditAccountContainer">
     	<%= render :partial => 'edit_account', :locals => { :person => @person } %>
     </div>

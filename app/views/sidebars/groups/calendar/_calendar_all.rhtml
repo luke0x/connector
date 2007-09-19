@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<%= add_to_workspace(:calendar_all, current_user) %>
+<%= add_to_workspace(:calendar_all, User.current) %>
 <hr />
 <%= link_to "ICS", calendar_all_ics_url, { :class => 'orangeBadge icsIcon', :style => 'margin-bottom:3px;', :title=> _('Subscribe to this ICS calendar')  } %>
 <%= link_to "RSS", calendar_all_rss_url, { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

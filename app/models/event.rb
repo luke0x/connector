@@ -376,6 +376,8 @@ class Event < ActiveRecord::Base
     self.location                  = event_params[:location]
     self.notes                     = event_params[:notes]
     self.alarm_trigger_in_minutes  = event_params[:alarm_trigger_in_minutes]
+    self.organization              = Organization.current
+    self.owner                     = User.current
     self.by_day                    = event_params[:by_day]
     self.save
     
@@ -478,11 +480,21 @@ class Event < ActiveRecord::Base
   private
 
     def to_utc(time)
-      User.current.to_utc(time)
+      if User.current && time
+        begin
+          User.current.person.tz.local_to_utc(time)
+        rescue TZInfo::AmbiguousTime 
+          User.current.person.tz.local_to_utc(time, true) 
+        rescue TZInfo::PeriodNotFound
+          User.current.person.tz.local_to_utc(time + 1.hour)
+        end
+      end
     end
   
     def to_local(time)
-      User.current.to_local(time)
+      if User.current && time
+        User.current.person.tz.utc_to_local(time)
+      end
     end
 
     def set_sort_caches

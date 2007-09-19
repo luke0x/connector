@@ -40,7 +40,7 @@ module ListsHelper
                     determine_checked(list_cell.value),
                     { :onclick => "ListCell.updateCheckbox(#{list_cell.id});",
                       :id => list_cell.dom_id,
-                      :disabled => ("disabled" unless current_user.can_edit?(list_cell.list) && ! peek),
+                      :disabled => ("disabled" unless User.current.can_edit?(list_cell.list) && ! peek),
                       :class => 'listEditable checkbox' }
                    )
     when 'Date', 'Number', 'Text'

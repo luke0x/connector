@@ -25,7 +25,7 @@
 				<tr>
 					<td class="infoGroupLabel" valign="top" style="width: 65px;"><%= _('Folder') %>:</td>
 					<td style="padding-left: 5px; padding-bottom: 8px;">
-					  <%= hierarchical_groups_select(:id => 'list_list_folder_id', :name => 'list[list_folder_id]', :groups => [current_user.lists_list_folder], :selected => @list_folder) %>
+					  <%= hierarchical_groups_select(:id => 'list_list_folder_id', :name => 'list[list_folder_id]', :groups => [User.current.lists_list_folder], :selected => @list_folder) %>
 				  </td>
 				</tr>
 			</table>

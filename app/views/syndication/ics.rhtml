@@ -16,8 +16,8 @@ BEGIN:VEVENT
 DTSTART;VALUE=DATE:<%= event.start_time_in_user_tz.strftime("%Y%m%d") %>
 DTEND;VALUE=DATE:<%= event.end_time_in_user_tz.strftime("%Y%m%d") %>
 <% else -%>
-DTSTART;TZID=<%= current_user.person.tz.identifier %>:<%= event.start_time_in_user_tz.strftime("%Y%m%dT%H%M%S") %>
-DTEND;TZID=<%= current_user.person.tz.identifier %>:<%= event.end_time_in_user_tz.strftime("%Y%m%dT%H%M%S") %>
+DTSTART;TZID=<%= User.current.person.tz.identifier %>:<%= event.start_time_in_user_tz.strftime("%Y%m%dT%H%M%S") %>
+DTEND;TZID=<%= User.current.person.tz.identifier %>:<%= event.end_time_in_user_tz.strftime("%Y%m%dT%H%M%S") %>
 <% end -%>
 <% if event.repeats? -%>
 <%   if event.all_day? -%>
@@ -33,7 +33,7 @@ SUMMARY:<%= event.name %>
 LOCATION:<%= event.location %>
 <% end -%>
 DESCRIPTION:<%= event.notes && event.notes.gsub("\r\n", "\n").gsub("\r", "\n").gsub("\n", '\n') %>
-UID:<%= event.id %>@<%= current_organization.primary_domain.web_domain %>
+UID:<%= event.id %>@<%= Organization.current.primary_domain.web_domain %>
 <% if event.alarm? -%>
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -37,7 +37,7 @@ class ListRowsController < AuthenticatedController
   def destroy
     @list_row = ListRow.find(params[:id])
     @list = @list_row.list
-    if @list and current_user.can_edit?(@list)
+    if @list and User.current.can_edit?(@list)
       @list_row.destroy
     end
 
@@ -50,7 +50,7 @@ class ListRowsController < AuthenticatedController
   def expand
     @list_row = ListRow.find(params[:id])
     @list = @list_row.list
-    if @list and current_user.can_edit?(@list)
+    if @list and User.current.can_edit?(@list)
       @list_row.expand!
     end
 
@@ -63,7 +63,7 @@ class ListRowsController < AuthenticatedController
   def collapse
     @list_row = ListRow.find(params[:id])
     @list = @list_row.list
-    if @list and current_user.can_edit?(@list)
+    if @list and User.current.can_edit?(@list)
       @list_row.collapse!
     end
 

@@ -40,7 +40,7 @@
 						</td>
 						<td style="padding-top: 6px;">
 							<div>
-								<%= hierarchical_groups_select(:id => 'calendar_id', :name => 'calendar_id', :groups => current_user.calendar_root_calendars, :selected => @calendar) %>
+								<%= hierarchical_groups_select(:id => 'calendar_id', :name => 'calendar_id', :groups => User.current.calendar_root_calendars, :selected => @calendar) %>
 							</div>
 						</td>
 					</tr>

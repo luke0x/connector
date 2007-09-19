@@ -10,9 +10,9 @@
 <% group_name = @group_name || '' -%>
 
 <ul>
-  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_all', { :icon_class => 'all', :name => _('Bookmarks'), :url => bookmarks_list_route_url(:bookmark_folder_id => selected_user.bookmark_folder), :selected => (@bookmark_folder == selected_user.bookmarks_bookmark_folder), :group => selected_user.bookmarks_bookmark_folder } if selected_user.bookmarks_bookmark_folder %>
+  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_all', { :icon_class => 'all', :name => _('Bookmarks'), :url => bookmarks_list_route_url(:bookmark_folder_id => User.selected.bookmark_folder), :selected => (@bookmark_folder == User.selected.bookmarks_bookmark_folder), :group => User.selected.bookmarks_bookmark_folder } if User.selected.bookmarks_bookmark_folder %>
 
-  <%  selected_user.application_smart_groups(@application_name).each do |smart_group| -%>
+  <%  User.selected.application_smart_groups(@application_name).each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/files/files_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
 </ul>

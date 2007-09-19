@@ -7,22 +7,22 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% # cache(:action => "sidebar", :user_id => current_user.id, :group_id => controller.current_group_id) do %>
-  <% parent_id = current_user.owns?(@list_folder) ? @list_folder.id : current_user.lists_list_folder.id -%>
+<% # cache(:action => "sidebar", :user_id => User.current.id, :group_id => controller.current_group_id) do %>
+  <% parent_id = User.current.owns?(@list_folder) ? @list_folder.id : User.current.lists_list_folder.id -%>
 
   <div class="defaultGroups groups"><ul class="groupsList">
-    <%= render_default_group 'sidebars/groups/lists/lists_lists', { :icon_class => 'all', :name => _('Lists'), :url => lists_url(:group => current_user.lists_list_folder.id), :selected => (@list_folder == current_user.lists_list_folder), :group => current_user.lists_list_folder } %>
+    <%= render_default_group 'sidebars/groups/lists/lists_lists', { :icon_class => 'all', :name => _('Lists'), :url => lists_url(:group => User.current.lists_list_folder.id), :selected => (@list_folder == User.current.lists_list_folder), :group => User.current.lists_list_folder } %>
     <%= render_default_group 'sidebars/groups/lists/lists_notifications', { :icon_class => 'notifications', :name => _('Notifications'), :url => lists_notifications_url, :selected => (@group_name == 'Notifications' and @list_folder.blank? and @smart_group.blank?) } %>
 
     <% @smart_groups.each do |smart_group| -%>
       <%= render_smart_group 'sidebars/groups/lists/lists_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
     <% end -%>
 
-    <% current_user.lists_root_folders.each do |list_folder| -%>
+    <% User.current.lists_root_folders.each do |list_folder| -%>
       <%= render_standard_group 'sidebars/groups/lists/lists_standard', { :standard_group => list_folder, :url => lists_list_url, :selected_group => @list_folder } %>
     <% end -%>
 
-  	<% current_user.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
+  	<% User.current.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
   		<%= render_standard_group 'sidebars/groups/lists/lists_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @list_folder, :subscription => true, :css_class => 'group subscription' } %>
   	<% end %>
   </ul></div>
@@ -32,11 +32,11 @@
   	<div id="addGroupMenu" style="display:none;">
   		<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');"><%= _('List Folder') -%></a>
   		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart List Folder') -%></a>
-  		<% if current_user.has_other_identities? -%>
+  		<% if User.current.has_other_identities? -%>
   			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'Lists', :context => 'subscribe')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
   		<% end -%>
   	</div>
   </div>
   <%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>
-  <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => current_user.lists_root_folders, :parent_id => parent_id } %>
+  <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => User.current.lists_root_folders, :parent_id => parent_id } %>
 <% # end -%>

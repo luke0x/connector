@@ -7,6 +7,6 @@
 <% # -%>
 <% # $Id$ -%>
 
-<%= add_to_workspace(:current_time, selected_user) %>
+<%= add_to_workspace(:current_time, User.selected) %>
 <hr />
-<%= link_to "RSS", current_time_report_rss_url(:id => selected_user), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>
+<%= link_to "RSS", current_time_report_rss_url(:id => User.selected), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

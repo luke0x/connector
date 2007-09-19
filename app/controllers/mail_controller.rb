@@ -29,7 +29,7 @@ class MailController < AuthenticatedController
 
     params[:id] ||= ''
     mailbox       = params[:id] == 'inbox' ? 'INBOX' : "INBOX.#{params[:id].capitalize}"
-    @mailbox      = current_user.mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', mailbox], :include => [:owner], :scope => :read)
+    @mailbox      = User.current.mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', mailbox], :include => [:owner], :scope => :read)
     raise ActiveRecord::RecordNotFound if @mailbox.blank? # do this manually since we're not using id
 
     @group_name   = params[:id].capitalize 
@@ -37,7 +37,7 @@ class MailController < AuthenticatedController
 
     @mailbox.sync
     
-    self.selected_user = @mailbox.owner
+    User.selected = @mailbox.owner
     message_count = Message.restricted_count(:conditions => ['mailbox_id = ? AND messages.active = ?', @mailbox.id, true])
     @paginator    = Paginator.new self, message_count, JoyentConfig.page_limit, params[:page]
     @messages     = @mailbox.messages.find(:all, 
@@ -67,7 +67,7 @@ class MailController < AuthenticatedController
     @mailbox       = Mailbox.find(params[:id], :include => [:owner], :scope => :read)
     @mailbox.sync
     
-    self.selected_user = @mailbox.owner
+    User.selected  = @mailbox.owner
     @mailbox_name  = @mailbox.id
     @group_name    = (@mailbox.name == 'INBOX') ? 'Inbox' : @mailbox.name
     @paginator     = Paginator.new self, @mailbox.messages.count(:conditions => ["messages.active = ?", true]), JoyentConfig.page_limit, params[:page]
@@ -96,7 +96,7 @@ class MailController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
+    User.selected = @smart_group.owner
     @group_name   = @smart_group.name
 
     @messages  = @smart_group.items("messages.#{@sort_field} #{@sort_order}", nil, nil)
@@ -119,7 +119,7 @@ class MailController < AuthenticatedController
   end   
   
   def unread_messages
-    @mailbox       = selected_user.inbox
+    @mailbox       = User.selected.inbox
     @mailbox.sync
     @group_name    = "Unread Messages"
     @mailbox_name  = @mailbox.id
@@ -151,9 +151,9 @@ class MailController < AuthenticatedController
     @group_name   = params[:mailbox].capitalize
     @mailbox_name = params[:mailbox]
     mailbox       = params[:mailbox] == 'inbox' ? 'INBOX' : "INBOX.#{params[:mailbox].capitalize}"
-    @mailbox      = current_user.mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', mailbox], :include => [:owner], :scope => :read)
+    @mailbox      = User.current.mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', mailbox], :include => [:owner], :scope => :read)
     @mailbox.sync
-    self.selected_user = @mailbox.owner
+    User.selected = @mailbox.owner
     @message      = @mailbox.messages.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
     
     @message.seen!
@@ -167,9 +167,9 @@ class MailController < AuthenticatedController
     @toolbar[:reply]     = true
     @toolbar[:reply_all] = true
     @toolbar[:forward]   = true
-    @toolbar[:move]      = current_user.can_move?(@message)
-    @toolbar[:copy]      = current_user.can_copy?(@message)
-    @toolbar[:delete]    = current_user.can_delete?(@message)
+    @toolbar[:move]      = User.current.can_move?(@message)
+    @toolbar[:copy]      = User.current.can_copy?(@message)
+    @toolbar[:delete]    = User.current.can_delete?(@message)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -186,7 +186,7 @@ class MailController < AuthenticatedController
     @view_kind = 'show'
     @mailbox      = Mailbox.find(params[:mailbox], :include => [:owner], :scope => :read)
 
-    self.selected_user = @mailbox.owner
+    User.selected = @mailbox.owner
     @mailbox_name = @mailbox.id
     @group_name   = (@mailbox.name == 'INBOX') ? 'Inbox' : @mailbox.name
     @message      = @mailbox.messages.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
@@ -201,9 +201,9 @@ class MailController < AuthenticatedController
     @toolbar[:reply]     = true
     @toolbar[:reply_all] = true
     @toolbar[:forward]   = true
-    @toolbar[:move]      = current_user.can_move?(@message)
-    @toolbar[:copy]      = current_user.can_copy?(@message)
-    @toolbar[:delete]    = current_user.can_delete?(@message)
+    @toolbar[:move]      = User.current.can_move?(@message)
+    @toolbar[:copy]      = User.current.can_copy?(@message)
+    @toolbar[:delete]    = User.current.can_delete?(@message)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -236,7 +236,7 @@ class MailController < AuthenticatedController
   def smart_show
     @view_kind    = 'show'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
+    User.selected = @smart_group.owner
     @group_name   = @smart_group.name
     @message      = Message.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
     @message.seen!
@@ -250,9 +250,9 @@ class MailController < AuthenticatedController
     @toolbar[:reply]     = true
     @toolbar[:reply_all] = true
     @toolbar[:forward]   = true
-    @toolbar[:move]      = current_user.can_move?(@message)
-    @toolbar[:copy]      = current_user.can_copy?(@message)
-    @toolbar[:delete]    = current_user.can_delete?(@message)
+    @toolbar[:move]      = User.current.can_move?(@message)
+    @toolbar[:copy]      = User.current.can_copy?(@message)
+    @toolbar[:delete]    = User.current.can_delete?(@message)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -301,7 +301,7 @@ class MailController < AuthenticatedController
     end
     
     message_ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
-    mailbox     = current_user.mailboxes.find(params[:new_group_id])
+    mailbox     = User.current.mailboxes.find(params[:new_group_id])
     Message.find(message_ids, :conditions => ["messages.active = ?", true], :scope => :move).each do |msg|
       msg.move_to mailbox
     end
@@ -314,7 +314,7 @@ class MailController < AuthenticatedController
 
   def copy
     message_ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
-    mailbox     = current_user.mailboxes.find(params[:new_group_id])
+    mailbox     = User.current.mailboxes.find(params[:new_group_id])
     Message.find(message_ids, :conditions => ["messages.active = ?", true], :scope => :copy).each do |msg|
       msg.copy_to mailbox
     end
@@ -332,12 +332,12 @@ class MailController < AuthenticatedController
       
       if params[:service]
         # From services
-        service               = Service.find(params[:service], current_user)
+        service               = Service.find(params[:service], User.current)
         @files                = ids.collect{|id| service.find_file(id)}.compact if service
         @file_attachment_type = 'service_files'
       elsif ids.first.to_i == 0
         # From strongspace
-        @files                = ids.collect{|id| StrongspaceFile.find(current_user, id, current_user) rescue nil}.compact
+        @files                = ids.collect{|id| StrongspaceFile.find(User.current, id, User.current) rescue nil}.compact
         @file_attachment_type = 'strongspace_files'
       else
         # From regular files
@@ -372,9 +372,9 @@ class MailController < AuthenticatedController
     person              = Person.new   
     person.first_name   = first_name
     person.last_name    = last_name
-    person.contact_list = current_user.contact_list
-    person.owner        = current_user
-    person.organization = current_organization
+    person.contact_list = User.current.contact_list
+    person.owner        = User.current
+    person.organization = Organization.current
     person.save
     
     address = OpenStruct.new
@@ -391,9 +391,9 @@ class MailController < AuthenticatedController
   
   def create_mailbox
     if params[:parent_id].blank?
-      @parent = current_user.inbox
+      @parent = User.current.inbox
     else
-      @parent = current_user.mailboxes.find(params[:parent_id])
+      @parent = User.current.mailboxes.find(params[:parent_id])
     end
     
     @parent.create_child(params[:group_name])
@@ -512,7 +512,7 @@ class MailController < AuthenticatedController
   end
   
   def empty_trash
-    Mailbox.empty_trash(current_user)
+    Mailbox.empty_trash(User.current)
     redirect_to mail_special_list_url(:id => 'trash')
   end
   
@@ -524,14 +524,14 @@ class MailController < AuthenticatedController
   end
   
   def others_groups
-    self.selected_user = User.find(params[:user_id], :scope => :read)
-    Mailbox.list(selected_user)
+    User.selected = User.find(params[:user_id], :scope => :read)
+    Mailbox.list(User.selected)
     render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}"
   end
 
   def reparent_group
     mailbox = Mailbox.find(params[:group_id], :scope => :move)
-    new_parent = current_user.mailboxes.find(params[:new_parent_id], :scope => :create_on)
+    new_parent = User.current.mailboxes.find(params[:new_parent_id], :scope => :create_on)
     mailbox.reparent!(new_parent)
   ensure
     redirect_back_or_home
@@ -562,7 +562,7 @@ class MailController < AuthenticatedController
   end
 
   def inbox_unread_count
-    @mailbox = current_user.inbox
+    @mailbox = User.current.inbox
     render :text => @mailbox.count.unseen
   rescue
     render :text => '0'
@@ -570,13 +570,13 @@ class MailController < AuthenticatedController
 
   def notifications
     @view_kind = 'notifications'
-    notice_count = current_user.notifications_count('Message', params.has_key?(:all))
+    notice_count = User.current.notifications_count('Message', params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     if params.has_key?(:all)
       @group_name = 'All Notifications'
       @show_all = true
-      @notifications = selected_user.notifications.find(:all, 
+      @notifications = User.selected.notifications.find(:all, 
                                                         :conditions => ["notifications.item_type = 'Message' "],
                                                         :include    => {:notifier => [:person]},
                                                         :order      => "notifications.created_at DESC",
@@ -586,7 +586,7 @@ class MailController < AuthenticatedController
     else
       @group_name = 'Notifications'
       @show_all = false
-      @notifications = selected_user.current_notifications.find(:all, 
+      @notifications = User.selected.current_notifications.find(:all, 
                                                                 :conditions => ["notifications.item_type = 'Message' "], 
                                                                 :include    => {:notifier => [:person]},
                                                                 :order      => "notifications.created_at DESC",
@@ -671,8 +671,8 @@ class MailController < AuthenticatedController
 
     def send_mail(opts={})
       # FIXME command is coming through blank from send_compose
-      params[:message][:from] = "#{current_user.full_name} <#{params[:message][:from]}>"
-      opts.merge! :params => params[:message], :user => current_user
+      params[:message][:from] = "#{User.current.full_name} <#{params[:message][:from]}>"
+      opts.merge! :params => params[:message], :user => User.current
     
       case params[:command]
       when 'send'
@@ -683,11 +683,11 @@ class MailController < AuthenticatedController
     
       # data is handing back :filename, :joyent_id, :size_in_bytes, :mailbox_id
       # Create a proxy, then tag/comment/permissionize it
-      new_msg = Message.create(data.merge({:owner        => current_user,
-                                           :organization => current_user.organization}))
+      new_msg = Message.create(data.merge({:owner        => User.current,
+                                           :organization => User.current.organization}))
     
       params[:new_item_tags].split(',,').each do |tag_name|
-        current_user.tag_item(new_msg, tag_name)
+        User.current.tag_item(new_msg, tag_name)
       end unless params[:new_item_tags].blank?
       params[:new_item_permissions].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
@@ -695,7 +695,7 @@ class MailController < AuthenticatedController
       end unless params[:new_item_permissions].blank?
       params[:new_item_notifications].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
-        user.notify_of(new_msg, current_user)
+        user.notify_of(new_msg, User.current)
       end unless params[:new_item_notifications].blank?
     
       new_msg.draft! if params[:command] == 'save'
@@ -713,8 +713,8 @@ class MailController < AuthenticatedController
     end
 
     def sync_mailboxes
-      @mailboxes    = Mailbox.list(current_user)
-      @mailbox_list = current_user.mailboxes
+      @mailboxes    = Mailbox.list(User.current)
+      @mailbox_list = User.current.mailboxes
     end
   
     def valid_sort_fields

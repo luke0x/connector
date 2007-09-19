@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
-  <% if group.owner == current_user -%>
+  <% if group.owner == User.current -%>
   	<% # render :partial => 'sidebars/groups/standard_group_edit_subscriptions', :locals => { :group => group } %>
     <hr />
     <%= content %>

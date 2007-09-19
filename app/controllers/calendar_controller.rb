@@ -36,21 +36,21 @@ class CalendarController < AuthenticatedController
   def list
     @view_kind = 'list'
     @toolbar[:list] = false
-    @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
+    @start_date = params['start_date'] ? Date.parse(params['start_date']) : User.current.today
     @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + 7)
     @paginator  = Paginator.new self, 1, JoyentConfig.page_limit, 1
 
-    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
-    self.selected_user = @calendar.owner
-    @group_name        = @calendar.name
-    @events            = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
-    @day_views         = group_into_day_views(@events, @start_date, @end_date)
+    @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
+    User.selected     = @calendar.owner
+    @group_name       = @calendar.name
+    @events           = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
+    @day_views        = group_into_day_views(@events, @start_date, @end_date)
 
-    @toolbar[:new_on] = current_user.can_create_on?(@calendar)
+    @toolbar[:new_on] = User.current.can_create_on?(@calendar)
     @toolbar[:new]    = !@toolbar[:new_on]
-    @toolbar[:move]   = current_user.can_move_from?(@calendar)
-    @toolbar[:copy]   = current_user.can_copy_from?(@calendar)
-    @toolbar[:delete] = current_user.can_delete_from?(@calendar)
+    @toolbar[:move]   = User.current.can_move_from?(@calendar)
+    @toolbar[:copy]   = User.current.can_copy_from?(@calendar)
+    @toolbar[:delete] = User.current.can_delete_from?(@calendar)
     
     unless request.xhr?
       @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
@@ -72,16 +72,16 @@ class CalendarController < AuthenticatedController
 
   def month
     @view_kind = 'month'
-    month_date = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date, 0, current_user)
+    month_date = Date.parse(params['date']) rescue User.current.today
+    @month_view = MonthView.new(month_date)
 
-    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
-    self.selected_user = @calendar.owner
-    @group_name        = @calendar.name
-    @events            = @calendar.events_between(@month_view.start_time, @month_view.end_time)
-    @toolbar[:month]   = false
-    @toolbar[:new_on]  = current_user.can_create_on?(@calendar)
-    @toolbar[:new]     = !@toolbar[:new_on]
+    @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
+    User.selected     = @calendar.owner
+    @group_name       = @calendar.name
+    @events           = @calendar.events_between(@month_view.start_time, @month_view.end_time)
+    @toolbar[:month]  = false
+    @toolbar[:new_on] = User.current.can_create_on?(@calendar)
+    @toolbar[:new]    = !@toolbar[:new_on]
 
     @month_view.add_events(@events)
     @start_date = month_date.to_time.beginning_of_month.to_date
@@ -109,10 +109,10 @@ class CalendarController < AuthenticatedController
     @start_date = Date.parse(params[:chart_date])
     @end_date   = @start_date + 1
 
-    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
-    self.selected_user = @calendar.owner
-    @group_name        = @calendar.name
-    @events            = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
+    @calendar     = Calendar.find(params[:calendar_id], :scope => :read)
+    User.selected = @calendar.owner
+    @group_name   = @calendar.name
+    @events       = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
 
     @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
     setup_users_overlay
@@ -129,19 +129,19 @@ class CalendarController < AuthenticatedController
 
   def show
     @view_kind = 'show'
-    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
-    self.selected_user = @calendar.owner
-    @group_name        = @calendar.name
-    @event             = @calendar.event_find(params[:id]) # TODO: get rid of this lameness
-    @start_date        = @event.start_time_in_user_tz.to_date if @event
-    @end_date          = @event.end_time_in_user_tz.to_date if @event
+    @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
+    User.selected     = @calendar.owner
+    @group_name       = @calendar.name
+    @event            = @calendar.event_find(params[:id]) # TODO: get rid of this lameness
+    @start_date       = @event.start_time_in_user_tz.to_date if @event
+    @end_date         = @event.end_time_in_user_tz.to_date if @event
 
-    @toolbar[:new_on] = current_user.can_create_on?(@calendar)
+    @toolbar[:new_on] = User.current.can_create_on?(@calendar)
     @toolbar[:new]    = !@toolbar[:new_on]
-    @toolbar[:edit]   = current_user.can_edit?(@event)
-    @toolbar[:move]   = current_user.can_move?(@event)
-    @toolbar[:copy]   = current_user.can_copy?(@event)
-    @toolbar[:delete] = current_user.can_delete?(@event)
+    @toolbar[:edit]   = User.current.can_edit?(@event)
+    @toolbar[:move]   = User.current.can_move?(@event)
+    @toolbar[:copy]   = User.current.can_copy?(@event)
+    @toolbar[:delete] = User.current.can_delete?(@event)
 
     if @event
       respond_to do |wants|
@@ -166,19 +166,19 @@ class CalendarController < AuthenticatedController
   end
 
   def edit
-    @view_kind         = 'edit'
-    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
-    self.selected_user = @calendar.owner
-    @group_name        = @calendar.name
-    @event             = Event.find(params[:id], :scope => :edit)
-    @start_date        = @event.start_time_in_user_tz.to_date if @event
-    @end_date          = @event.end_time_in_user_tz.to_date if @event
+    @view_kind    = 'edit'
+    @calendar     = Calendar.find(params[:calendar_id], :scope => :read)
+    User.selected = @calendar.owner
+    @group_name   = @calendar.name
+    @event        = Event.find(params[:id], :scope => :edit)
+    @start_date   = @event.start_time_in_user_tz.to_date if @event
+    @end_date     = @event.end_time_in_user_tz.to_date if @event
     
-    @toolbar[:new_on] = current_user.can_create_on?(@calendar)
+    @toolbar[:new_on] = User.current.can_create_on?(@calendar)
     @toolbar[:new]    = !@toolbar[:new_on]
-    @toolbar[:move]   = current_user.can_move?(@event)
-    @toolbar[:copy]   = current_user.can_copy?(@event)
-    @toolbar[:delete] = current_user.can_delete?(@event)
+    @toolbar[:move]   = User.current.can_move?(@event)
+    @toolbar[:copy]   = User.current.can_copy?(@event)
+    @toolbar[:delete] = User.current.can_delete?(@event)
 
     if request.post? && @event.update_from_params(params[:event])
       redirect_to calendar_show_url(:id => @event.id)
@@ -244,12 +244,12 @@ class CalendarController < AuthenticatedController
     @toolbar[:copy]   = true
     @toolbar[:delete] = true
     
-    @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
+    @start_date = params['start_date'] ? Date.parse(params['start_date']) : User.current.today
     @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + 7)
     @paginator  = Paginator.new self, 1, JoyentConfig.page_limit, 1
 
     @group_name = _('All Events')
-    @events     = current_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    @events     = User.current.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
     @day_views  = group_into_day_views(@events, @start_date, @end_date)
     
     unless request.xhr?    
@@ -271,11 +271,11 @@ class CalendarController < AuthenticatedController
   def all_month
     @view_kind = 'month'
     @toolbar[:month]  = false
-    month_date  = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date, 0, current_user)
+    month_date  = Date.parse(params['date']) rescue User.current.today
+    @month_view = MonthView.new(month_date)
 
     @group_name = _('All Events')
-    @events     = current_user.calendars.collect{|c| c.events_between(@month_view.start_time, @month_view.end_time)}.flatten
+    @events     = User.current.calendars.collect{|c| c.events_between(@month_view.start_time, @month_view.end_time)}.flatten
     @month_view.add_events(@events)
     @start_date = month_date.to_time.beginning_of_month.to_date
     @end_date   = month_date.to_time.end_of_month.to_date
@@ -294,7 +294,7 @@ class CalendarController < AuthenticatedController
     @end_date   = @start_date + 1
 
     @group_name = _('All Events')
-    @events     = current_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    @events     = User.current.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
 
     @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
     setup_users_overlay
@@ -316,10 +316,10 @@ class CalendarController < AuthenticatedController
     @start_date       = @event.start_time_in_user_tz.to_date if @event
     @end_date         = @event.end_time_in_user_tz.to_date if @event
 
-    @toolbar[:edit]   = current_user.can_edit?(@event)
-    @toolbar[:move]   = current_user.can_move?(@event)
-    @toolbar[:copy]   = current_user.can_copy?(@event)
-    @toolbar[:delete] = current_user.can_delete?(@event)
+    @toolbar[:edit]   = User.current.can_edit?(@event)
+    @toolbar[:move]   = User.current.can_move?(@event)
+    @toolbar[:copy]   = User.current.can_copy?(@event)
+    @toolbar[:delete] = User.current.can_delete?(@event)
 
     if @event
       respond_to do |wants|
@@ -341,9 +341,9 @@ class CalendarController < AuthenticatedController
     @event            = Event.find(params[:id], :scope => :edit)
     @start_date       = @event.start_time_in_user_tz.to_date if @event
     @end_date         = @event.end_time_in_user_tz.to_date if @event
-    @toolbar[:move]   = current_user.can_move?(@event)
-    @toolbar[:copy]   = current_user.can_copy?(@event)
-    @toolbar[:delete] = current_user.can_delete?(@event)
+    @toolbar[:move]   = User.current.can_move?(@event)
+    @toolbar[:copy]   = User.current.can_copy?(@event)
+    @toolbar[:delete] = User.current.can_delete?(@event)
 
     if request.post? && @event.update_from_params(params[:event])
       redirect_to calendar_all_show_url(:id => @event.id)
@@ -365,13 +365,13 @@ class CalendarController < AuthenticatedController
     @toolbar[:month] = false
     @toolbar[:today] = false
     @toolbar[:import] = false
-    notice_count = current_user.notifications_count('Event', params.has_key?(:all))
+    notice_count = User.current.notifications_count('Event', params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     if params.has_key?(:all)
       @group_name = _('All Notifications')
       @show_all = true
-      @notifications = selected_user.notifications.find(:all, 
+      @notifications = User.selected.notifications.find(:all, 
                                                         :conditions => ["notifications.item_type = 'Event' "],
                                                         :include    => {:notifier => [:person]},
                                                         :order      => "notifications.created_at DESC",
@@ -381,7 +381,7 @@ class CalendarController < AuthenticatedController
     else
       @group_name = _('Notifications')
       @show_all = false
-      @notifications = selected_user.current_notifications.find(:all, 
+      @notifications = User.selected.current_notifications.find(:all, 
                                                                 :conditions => ["notifications.item_type = 'Event' "], 
                                                                 :include    => {:notifier => [:person]},
                                                                 :order      => "notifications.created_at DESC",
@@ -401,12 +401,12 @@ class CalendarController < AuthenticatedController
     calendar = if params[:calendar_type] == 'existing'
       Calendar.find(params[:calendar_id], :scope => :create_on)
     elsif params[:new_calendar]
-      current_user.calendars.create(:name => params[:new_calendar].strip, :parent_id => nil, :organization_id => current_organization.id)
+      User.current.calendars.create(:name => params[:new_calendar].strip, :parent_id => nil, :organization_id => Organization.current.id)
     end
 
     event = Event.find(params[:id], :scope => :read)
     if calendar && event
-      invitation = event.invitation_for(current_user)
+      invitation = event.invitation_for(User.current)
       invitation.accept!(calendar) if invitation && calendar
     end
   ensure
@@ -415,7 +415,7 @@ class CalendarController < AuthenticatedController
   
   def invitations_decline
     event      = Event.find(params[:id], :scope => :read)
-    invitation = event.invitation_for(current_user)
+    invitation = event.invitation_for(User.current)
     invitation.decline! if invitation
   ensure
     redirect_back_or_home
@@ -423,21 +423,21 @@ class CalendarController < AuthenticatedController
 
   def smart_list
     @view_kind  = 'list'
-    @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
+    @start_date = params['start_date'] ? Date.parse(params['start_date']) : User.current.today
     @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + 7)  
     @paginator  = Paginator.new self, 1, JoyentConfig.page_limit, 1
 
-    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
-    @group_name        = @smart_group.name
-    @events            = @smart_group.items
-    @events            = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
-    @day_views         = group_into_day_views(@events, @start_date, @end_date)
+    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    User.selected = @smart_group.owner
+    @group_name   = @smart_group.name
+    @events       = @smart_group.items
+    @events       = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
+    @day_views    = group_into_day_views(@events, @start_date, @end_date)
 
     @toolbar[:list]   = false
-    @toolbar[:move]   = current_user.can_move_from?(@smart_group)
-    @toolbar[:copy]   = current_user.can_copy_from?(@smart_group)
-    @toolbar[:delete] = current_user.can_delete_from?(@smart_group)
+    @toolbar[:move]   = User.current.can_move_from?(@smart_group)
+    @toolbar[:copy]   = User.current.can_copy_from?(@smart_group)
+    @toolbar[:delete] = User.current.can_delete_from?(@smart_group)
     
     unless request.xhr?                            
       @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
@@ -460,14 +460,14 @@ class CalendarController < AuthenticatedController
   def smart_month
     @view_kind = 'month'
     @toolbar[:month]  = false 
-    month_date = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date, current_user)
+    month_date = Date.parse(params['date']) rescue User.current.today
+    @month_view = MonthView.new(month_date)
 
-    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
-    @group_name        = @smart_group.name
-    @events            = @smart_group.items
-    @events            = @events.collect{|e| e.occurrences_between(@month_view.start_time, @month_view.end_time)}.flatten.sort
+    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    User.selected = @smart_group.owner
+    @group_name  = @smart_group.name
+    @events      = @smart_group.items
+    @events      = @events.collect{|e| e.occurrences_between(@month_view.start_time, @month_view.end_time)}.flatten.sort
     
     @month_view.add_events(@events)           
     @start_date = month_date.to_time.beginning_of_month.to_date
@@ -488,11 +488,11 @@ class CalendarController < AuthenticatedController
     @start_date = Date.parse(params[:chart_date])      
     @end_date   = @start_date + 1
 
-    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
-    @group_name        = @smart_group.name
-    @events            = @smart_group.items
-    @events            = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
+    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    User.selected = @smart_group.owner
+    @group_name  = @smart_group.name
+    @events      = @smart_group.items
+    @events      = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
 
     @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
     setup_users_overlay
@@ -513,16 +513,16 @@ class CalendarController < AuthenticatedController
     @view_kind    = 'show'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
     if @smart_group
-      self.selected_user = @smart_group.owner
-      @group_name        = @smart_group.name
-      @event             = Event.find(params[:id], :scope => :read)
-      @start_date        = @event.start_time_in_user_tz.to_date if @event
-      @end_date          = @event.end_time_in_user_tz.to_date if @event
+      User.selected     = @smart_group.owner
+      @group_name       = @smart_group.name
+      @event            = Event.find(params[:id], :scope => :read)
+      @start_date       = @event.start_time_in_user_tz.to_date if @event
+      @end_date         = @event.end_time_in_user_tz.to_date if @event
 
-      @toolbar[:edit]   = current_user.can_edit?(@event) 
-      @toolbar[:move]   = current_user.can_move?(@event)
-      @toolbar[:copy]   = current_user.can_copy?(@event)
-      @toolbar[:delete] = current_user.can_delete?(@event)
+      @toolbar[:edit]   = User.current.can_edit?(@event) 
+      @toolbar[:move]   = User.current.can_move?(@event)
+      @toolbar[:copy]   = User.current.can_copy?(@event)
+      @toolbar[:delete] = User.current.can_delete?(@event)
 
       if @event
         respond_to do |wants|
@@ -542,17 +542,17 @@ class CalendarController < AuthenticatedController
   end
 
   def smart_edit
-    @view_kind         = 'edit'
-    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
-    @group_name        = @smart_group.name
-    @event             = Event.find(params[:id], :scope => :edit)
-    @start_date        = @event.start_time_in_user_tz.to_date if @event
-    @end_date          = @event.end_time_in_user_tz.to_date if @event
+    @view_kind    = 'edit'
+    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    User.selected = @smart_group.owner
+    @group_name   = @smart_group.name
+    @event        = Event.find(params[:id], :scope => :edit)
+    @start_date   = @event.start_time_in_user_tz.to_date if @event
+    @end_date     = @event.end_time_in_user_tz.to_date if @event
 
-    @toolbar[:move]   = current_user.can_move?(@event)
-    @toolbar[:copy]   = current_user.can_copy?(@event)
-    @toolbar[:delete] = current_user.can_delete?(@event)
+    @toolbar[:move]   = User.current.can_move?(@event)
+    @toolbar[:copy]   = User.current.can_copy?(@event)
+    @toolbar[:delete] = User.current.can_delete?(@event)
     
     if request.post? && @event.update_from_params(params[:event])
       redirect_to calendar_smart_show_url(:smart_group_id => @smart_group.url_id, :id => @event.id)
@@ -574,10 +574,10 @@ class CalendarController < AuthenticatedController
     begin
       @calendar = Calendar.find(params[:calendar_id], :scope => :create_on)
     rescue ActiveRecord::RecordNotFound
-      @calendar = current_user.calendars.first
+      @calendar = User.current.calendars.first
     end
     @group_name = @calendar.name
-    @start_date = @end_date = current_user.today
+    @start_date = @end_date = User.current.today
 
     @event = Event.new
 
@@ -586,7 +586,7 @@ class CalendarController < AuthenticatedController
       @calendar.add_event(@event)
 
       params[:new_item_tags].split(',,').each do |tag_name|
-        current_user.tag_item(@event, tag_name)
+        User.current.tag_item(@event, tag_name)
       end unless params[:new_item_tags].blank?
       params[:new_item_permissions].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
@@ -594,7 +594,7 @@ class CalendarController < AuthenticatedController
       end unless params[:new_item_permissions].blank?
       params[:new_item_notifications].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
-        user.notify_of(@event, current_user)
+        user.notify_of(@event, User.current)
       end unless params[:new_item_notifications].blank?
 
       redirect_to calendar_show_url(:id => @event.id)
@@ -617,7 +617,7 @@ class CalendarController < AuthenticatedController
       if params[:calendar_type] == 'existing'
         @calendar = Calendar.find(params[:existing_calendar], :scope => :create_on)
       elsif params[:new_calendar]
-        @calendar = current_user.calendars.create(:name => params[:new_calendar].strip, :parent_id => nil, :organization_id => current_organization.id)
+        @calendar = User.current.calendars.create(:name => params[:new_calendar].strip, :parent_id => nil, :organization_id => Organization.current.id)
       end
       
       if ! @calendar.blank?
@@ -634,7 +634,7 @@ class CalendarController < AuthenticatedController
     # Just created a new calendar which we need to destroy now
     logger.error "Exception occurred importing file #{e}"    
     @calendar.destroy if params[:calendar_type] == 'new' && !@calendar.blank? 
-    @calendars = current_user.calendars(true)
+    @calendars = User.current.calendars(true)
     filename   = uploaded_file.original_filename rescue ''
     flash['error'] = _("There was a problem importing the iCalendar %{i18n_calendar_file}.  Please be sure that it is a valid file.")%{:i18n_calendar_file => "#{filename}"}
 
@@ -662,9 +662,9 @@ class CalendarController < AuthenticatedController
   end
 
   def create_calendar
-    current_user.calendars.create(:name            => params[:group_name],
+    User.current.calendars.create(:name            => params[:group_name],
                                   :parent_id       => params[:parent_id],
-                                  :organization_id => current_organization.id)
+                                  :organization_id => Organization.current.id)
   ensure
     redirect_back_or_home
   end
@@ -743,13 +743,13 @@ class CalendarController < AuthenticatedController
   
     def events_report(name, day_span)
       @view_kind = 'report'
-      self.selected_user = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+      User.selected = User.find(params[:id], :scope => :read) if params.has_key?(:id)
       @group_name = name      
-      @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
+      @start_date = params['start_date'] ? Date.parse(params['start_date']) : User.current.today
       @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + day_span)
-      @events     = selected_user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten
+      @events     = User.selected.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
       @day_views  = (@start_date...@end_date).collect do |curr_date| 
-        view = DayView.new(curr_date, current_user)
+        view = DayView.new(curr_date)
         view.take_events(@events)
         view
       end  
@@ -782,7 +782,7 @@ class CalendarController < AuthenticatedController
         # get the events for each user for this date range
         session[:calendar][:overlay_users].each do |user_id|
           user = User.find(user_id, :scope => :read)
-          overlay_events[user.id] = user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(start_time, end_time) : []}.flatten
+          overlay_events[user.id] = user.calendars.collect{|c| c.events_between(start_time, end_time)}.flatten
         end
       end
     
@@ -795,7 +795,7 @@ class CalendarController < AuthenticatedController
       else
         []
       end
-      @non_overlayed_users = (current_organization.users.find(:all, :conditions => ["guest = ?", false], :include => [:person], :scope => :read) - [current_user] - @overlayed_users).sort
+      @non_overlayed_users = (Organization.current.users.find(:all, :conditions => ["guest = ?", false], :include => [:person], :scope => :read) - [User.current] - @overlayed_users).sort
 
       @toolbar[:overlay_users] = true
 
@@ -804,7 +804,7 @@ class CalendarController < AuthenticatedController
 
     def group_into_day_views(events, start_date, end_date)
       (start_date..end_date).collect do |curr_date| 
-        view = DayView.new(curr_date, current_user)
+        view = DayView.new(curr_date)
         view.take_events(events)
         view
       end

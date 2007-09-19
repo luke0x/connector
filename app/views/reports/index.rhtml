@@ -18,8 +18,8 @@
   	</ul>
   </div>
   <div id='report_list'>
-    <% unless current_user.reports.empty? -%>
-      <%= render :partial => 'report', :collection => current_user.reports %>
+    <% unless User.current.reports.empty? -%>
+      <%= render :partial => 'report', :collection => User.current.reports %>
     <% else -%>                
       <div class="reportsNone"><div class="reportsInset"><%= _('There are no reports in your workspace.') -%></div></div>
 		  <%= javascript_tag("Event.observe(window, 'load', function(event){ DefaultGroup.editShow(); });") %>

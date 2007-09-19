@@ -37,7 +37,7 @@ class ListColumnsController < AuthenticatedController
     @list = @list_column.list
 
     respond_to do |format|
-      if current_user.can_edit?(@list) and @list_column.update_attributes(params[:list_column])
+      if User.current.can_edit?(@list) and @list_column.update_attributes(params[:list_column])
         format.js  { render :partial => 'lists/list' }
         format.xml  { head :ok }
       else
@@ -50,7 +50,7 @@ class ListColumnsController < AuthenticatedController
   def destroy
     @list_column = ListColumn.find(params[:id])
     @list = @list_column.list
-    if current_user.can_edit?(@list)
+    if User.current.can_edit?(@list)
       @list_column.destroy
     end
 

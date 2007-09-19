@@ -18,9 +18,9 @@
   </div></div></div></div></div>
 <% end -%>
 
-<% if current_user.admin? and current_user.recovery_email.blank? -%>
+<% if User.current.admin? and User.current.recovery_email.blank? -%>
   <div class="info4 fullwidth"><div class="info3"><div class="info2"><div class="info">
     <%= _('Please add a password recovery email address to your account settings') -%>:
-	  <%= link_to(_("Your Preferences"), person_edit_url(:id => current_user.person.id, :anchor => 'preferences'), {:title => _("Edit your personal information")}) %>
+	  <%= link_to(_("Your Preferences"), person_edit_url(:id => User.current.person.id, :anchor => 'preferences'), {:title => _("Edit your personal information")}) %>
   </div></div></div></div>
 <% end -%>

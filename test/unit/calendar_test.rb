@@ -44,9 +44,7 @@ class CalendarTest < Test::Unit::TestCase
     assert calendars(:concerts).event_find(events(:concert).id)
   end                    
                
-  # Regression test for #3060                                
-  # FIXME: This should break now because the test is assuming User.current is controlling access, where this
-  #        is no longer the case.
+  # Regression test for #3060
   def test_events_between_with_no_access
     User.current = users(:ian)
     assert Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, Time.now + 7.days).size > 0
@@ -56,16 +54,6 @@ class CalendarTest < Test::Unit::TestCase
 
     User.current = users(:ian)
     assert Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, Time.now + 7.days).size == 0
-  end
-  
-  def test_events_between_no_start_time
-    User.current = users(:ian)
-    assert_raises(ArgumentError) {Calendar.find(calendars(:peter).id).events_between('', Time.now + 7.days)}
-  end
-  
-  def test_events_between_no_end_time
-    User.current = users(:ian)
-    assert_raises(ArgumentError) {Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, '')}
   end
   
   def test_event_find_event_but_not_on_calendar

@@ -12,20 +12,22 @@ $Id$
 class MonthView < BaseView
   attr_reader   :date, :start_of_week
 
-  def initialize(date, start_of_week, current_user)
+  def initialize(date, start_of_week=0)
+    super()
     @date          = date - (date.mday() -1)
     @start_of_week = start_of_week
     @weeks         = Array.new
-    @weeks[0]      = WeekView.new(@date, @start_of_week, current_user)
+    @weeks[0]      = WeekView.new(@date, @start_of_week)
     
     # Get the rest of the weeks, as long as the first day of the next week is in the same month
     next_week = @weeks[-1].date + 7
     while @date.month == next_week.month do
-      @weeks << WeekView.new(next_week, 0, current_user)
+      @weeks << WeekView.new(next_week)
       next_week = @weeks[-1].date + 7
     end
-      
-    super(@weeks[0].start_time, @weeks[-1].end_time, current_user)
+    
+    @start_time = @weeks[0].start_time
+    @end_time   = @weeks[-1].end_time
   end
 
   def events

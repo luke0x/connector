@@ -15,7 +15,7 @@
 		<% if @view_kind == 'strongspace' -%>
     <li class="actionNew"><%= link_to _('New'), files_strongspace_create_url(:path => (@folder.relative_path rescue '')) %></li>
 		<% else -%>
-    <li class="actionNew"><%= link_to _('New'), files_create_url(:folder_id => (@folder.id rescue current_user.documents_folder.id)) %></li>
+    <li class="actionNew"><%= link_to _('New'), files_create_url(:folder_id => (@folder.id rescue User.current.documents_folder.id)) %></li>
 		<% end -%>
   <% end -%>
 	<% if @toolbar[:new_notifications] -%>

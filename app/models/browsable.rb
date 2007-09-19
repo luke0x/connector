@@ -21,7 +21,7 @@ class Browsable
     @items = []
     case @params[:type]
     when 'org'
-      current_user.identity_other_users.each do |item|
+      User.current.identity_other_users.each do |item|
         add_details( item.dom_id, 
                      "#{item.organization.name} - #{item.username}",
                      item.id,

@@ -30,7 +30,7 @@
   			</tr>
   		</table>
     </div></div></div></div>
-    <% if ! current_user.subscribed_to?(standard_group) or (current_user.subscribed_to?(standard_group) and subscription) -%>
+    <% if ! User.current.subscribed_to?(standard_group) or (User.current.subscribed_to?(standard_group) and subscription) -%>
       <div id="standardGroupSelectionEdit" style="display: none;"><div>
         <%= render :partial => 'sidebars/groups/standard_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription} %>
       </div></div>

@@ -13,7 +13,7 @@ class UserOptionsController < AuthenticatedController
   def set
     return unless params.has_key?(:key)
     return unless params.has_key?(:value)
-    current_user.set_option(params[:key], params[:value])
+    User.current.set_option(params[:key], params[:value])
     render :nothing => true
   end
   

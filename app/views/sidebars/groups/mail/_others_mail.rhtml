@@ -8,16 +8,16 @@
 <% # $Id$ -%>
 
 <ul>
-  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.inbox, :css_class => 'defaultGroupInbox',  :selected_group => @mailbox, :skip_children => true, :name => _('Inbox')} if selected_user.inbox %>
-  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.sent, :css_class => 'defaultGroupSent',   :selected_group => @mailbox, :skip_children => true, :name => _('Sent')} if selected_user.sent %>
-  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.drafts, :css_class => 'defaultGroupDrafts', :selected_group => @mailbox, :skip_children => true, :name => _('Drafts')} if selected_user.drafts %>
-  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.trash, :css_class => 'defaultGroupTrash',  :selected_group => @mailbox, :skip_children => true, :name => _('Trash')} if selected_user.trash %>
+  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => User.selected.inbox, :css_class => 'defaultGroupInbox',  :selected_group => @mailbox, :skip_children => true, :name => _('Inbox')} if User.selected.inbox %>
+  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => User.selected.sent, :css_class => 'defaultGroupSent',   :selected_group => @mailbox, :skip_children => true, :name => _('Sent')} if User.selected.sent %>
+  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => User.selected.drafts, :css_class => 'defaultGroupDrafts', :selected_group => @mailbox, :skip_children => true, :name => _('Drafts')} if User.selected.drafts %>
+  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => User.selected.trash, :css_class => 'defaultGroupTrash',  :selected_group => @mailbox, :skip_children => true, :name => _('Trash')} if User.selected.trash %>
 
-  <%  selected_user.application_smart_groups(@application_name).each do |smart_group| -%>
+  <%  User.selected.application_smart_groups(@application_name).each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/mail/mail_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
 
-  <% selected_user.mail_root_mailboxes.each do |mailbox| -%>
+  <% User.selected.mail_root_mailboxes.each do |mailbox| -%>
     <%= render_standard_group 'sidebars/groups/mail/mail_standard', { :standard_group => mailbox, :selected_group => @mailbox, :others => true } %>
   <% end -%>
 </ul>

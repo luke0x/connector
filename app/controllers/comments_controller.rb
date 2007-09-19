@@ -14,7 +14,7 @@ class CommentsController < AuthenticatedController
 
   def add
     item = item_type(params[:item_type]).find(params[:id], :scope => :read)
-    current_user.comment_on_item(item, params[:body])
+    User.current.comment_on_item(item, params[:body])
 
     render :update do |page|
       page['comment-listing'].replace_html :partial => 'comments/comment', :collection => item.comments(true)
@@ -30,8 +30,8 @@ class CommentsController < AuthenticatedController
   end
 
   def remove
-    comment = Comment.find_for_deletion(params[:id], current_user)
-    item    = comment.commentable
+    comment = Comment.find(params[:id], :scope => :read) # don't have polymorphic delete scope yet
+    item = comment.commentable
     comment.destroy
 
     render :update do |page|

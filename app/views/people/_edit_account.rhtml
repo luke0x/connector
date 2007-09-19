@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <% # admins + self can edit -%>
-<% if current_user.admin? or person == current_user.person -%>
+<% if User.current.admin? or person == User.current.person -%>
     <% # already a user -%>
     <% if person.admin? or person.user? -%>
       <h2 id="show_edit_account">
@@ -28,7 +28,7 @@
     <% else -%>
       <h2><%= _('Account Type') %></h2>
       <div id="person_user_account_area" class="infoGroup">
-      <% if current_organization.can_add_user? -%>
+      <% if Organization.current.can_add_user? -%>
       	<table class="accountTypes">
     			<tr>
     				<td valign="top" style="padding-top: .2em;">

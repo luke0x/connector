@@ -9,7 +9,7 @@
 
 <% # use with render_standard_group -%>
 <% name = standard_group.name # HAX -%>
-<% selected = standard_group_selected && (standard_group == standard_group_selected) && ((! others) or (others and ! current_user.subscribed_to?(standard_group))) -%>
+<% selected = standard_group_selected && (standard_group == standard_group_selected) && ((! others) or (others and ! User.current.subscribed_to?(standard_group))) -%>
 
 <li>
   <% if selected -%>

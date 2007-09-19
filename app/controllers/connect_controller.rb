@@ -28,13 +28,13 @@ class ConnectController < AuthenticatedController
   def notifications
     @view_kind = 'notifications'
     @toolbar[:import] = false
-    notice_count = current_user.notifications_count(nil, params.has_key?(:all))
+    notice_count = User.current.notifications_count(nil, params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     if params.has_key?(:all)
       @group_name = _('All Notifications')
       @show_all = true
-      @notifications = selected_user.notifications.find(:all, 
+      @notifications = User.selected.notifications.find(:all, 
                                                         :include => {:notifier => [:person]},
                                                         :order   => "notifications.created_at DESC",
                                                         :limit   => @paginator.items_per_page, 
@@ -43,7 +43,7 @@ class ConnectController < AuthenticatedController
     else
       @group_name = _('Notifications')
       @show_all = false
-      @notifications = selected_user.current_notifications.find(:all,
+      @notifications = User.selected.current_notifications.find(:all,
                                                                 :include => {:notifier => [:person]},
                                                                 :order   => "notifications.created_at DESC",
                                                                 :limit   => @paginator.items_per_page, 
@@ -63,7 +63,7 @@ class ConnectController < AuthenticatedController
     @toolbar[:save_search] = true
     @group_name = _("Search: %{i18n_search_param}")%{:i18n_search_param => "'#{params[:search_string]}'"}
 
-    @items = current_organization.search(params[:search_string])
+    @items = Organization.current.search(params[:search_string])
     @paginator = Paginator.new self, @items.length, (@items.length > 0 ? @items.length : 1), 1
 
     render :action => 'list'
@@ -79,7 +79,7 @@ class ConnectController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
+    User.selected = @smart_group.owner
     @group_name   = @smart_group.name
     
     @paginator = Paginator.new self, @smart_group.items_count, JoyentConfig.page_limit, params[:page]
@@ -99,10 +99,10 @@ class ConnectController < AuthenticatedController
     @comments     = Comment.find(:all, 
                                  :include    => 'user',
                                  :conditions => ['users.organization_id = ? AND created_at >= ?',
-                                                 current_organization.id, Time.now - 7.days],
+                                                 Organization.current.id, Time.now - 7.days],
                                  :order      => 'created_at DESC')
 
-    @comments = @comments.select{|comment| current_user.can_view?(comment.commentable)}
+    @comments = @comments.select{|comment| User.current.can_view?(comment.commentable)}
     @paginator = Paginator.new(self, @comments.size, JoyentConfig.page_limit, params[:page])
     @comments = @comments[@paginator.current_page.offset..@paginator.items_per_page] || []
 

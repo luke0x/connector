@@ -12,21 +12,21 @@
                            { :icon_class => 'defaultGroupInbox',
                              :name => _('Inbox'),
                              :url => mail_special_list_url(:id => 'inbox'),
-                             :selected => (@mailbox == current_user.inbox && @group_name == 'Inbox'),
-                             :group => current_user.inbox } %>
+                             :selected => (@mailbox == User.current.inbox && @group_name == 'Inbox'),
+                             :group => User.current.inbox } %>
   <%= render_default_group 'sidebars/groups/mail/mail_notifications', { :icon_class => 'notifications', :name => _('Notifications'), :url => mail_notifications_url, :selected => (@view_kind == 'notifications' and @mailbox.blank? and @smart_group.blank?) } %>
-  <% if current_user.sent -%>
-    <%= render_default_group 'sidebars/groups/mail/mail_sent',   { :icon_class => 'defaultGroupSent', :name => _('Sent'), :url => mail_special_list_url(:id => 'sent'), :selected => (@mailbox == current_user.sent), :group => current_user.sent } %>
+  <% if User.current.sent -%>
+    <%= render_default_group 'sidebars/groups/mail/mail_sent',   { :icon_class => 'defaultGroupSent', :name => _('Sent'), :url => mail_special_list_url(:id => 'sent'), :selected => (@mailbox == User.current.sent), :group => User.current.sent } %>
   <% end -%>        
-  <% if current_user.drafts -%>
-    <%= render_default_group 'sidebars/groups/mail/mail_drafts', { :icon_class => 'defaultGroupDrafts', :name => _('Drafts'), :url => mail_special_list_url(:id => 'drafts'), :selected => (@mailbox == current_user.drafts), :group => current_user.drafts } %>
+  <% if User.current.drafts -%>
+    <%= render_default_group 'sidebars/groups/mail/mail_drafts', { :icon_class => 'defaultGroupDrafts', :name => _('Drafts'), :url => mail_special_list_url(:id => 'drafts'), :selected => (@mailbox == User.current.drafts), :group => User.current.drafts } %>
   <% end -%>
-  <% if current_user.trash -%>
-    <%= render_default_group 'sidebars/groups/mail/mail_trash',  { :icon_class => 'defaultGroupTrash', :name => _('Trash'), :url => mail_special_list_url(:id => 'trash'), :selected => (@mailbox == current_user.trash), :group => current_user.trash } %>
+  <% if User.current.trash -%>
+    <%= render_default_group 'sidebars/groups/mail/mail_trash',  { :icon_class => 'defaultGroupTrash', :name => _('Trash'), :url => mail_special_list_url(:id => 'trash'), :selected => (@mailbox == User.current.trash), :group => User.current.trash } %>
   <% end -%>
   <%= render_default_group 'sidebars/groups/mail/mail_unread_messages', { :icon_class => 'unreadMessages',
                                                                           :name       => _('Unread Messages'),
-                                                                          :url        => mail_unread_messages_url(:id => current_user), 
+                                                                          :url        => mail_unread_messages_url(:id => User.current), 
                                                                           :selected   => (@group_name == 'Unread Messages')}%>
   <% @smart_groups.each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/mail/mail_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
@@ -36,7 +36,7 @@
     <%= render_standard_group 'sidebars/groups/mail/mail_standard', { :standard_group => mailbox, :selected_group => @mailbox } %>
   <% end -%>
 
-	<% current_user.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
+	<% User.current.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
 		<%= render_standard_group 'sidebars/groups/mail/mail_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @mailbox, :subscription => true, :css_class => 'group subscription' } %>
 	<% end %>
 </ul></div>
@@ -46,13 +46,13 @@
 	<div id="addGroupMenu" style="display:none;">
 		<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');"><%= _('Mailbox') -%></a>
 		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart Mailbox') -%></a>
-		<% if current_user.has_other_identities? -%>
+		<% if User.current.has_other_identities? -%>
 			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'Mail', :context => 'subscribe')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
 		<% end -%>
 	</div>
 </div>
 <%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>
-<% parent_id = @mailbox && current_user.can_create_on?(@mailbox) ? @mailbox.id : nil -%>
+<% parent_id = @mailbox && User.current.can_create_on?(@mailbox) ? @mailbox.id : nil -%>
 <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => [], :parent_id => parent_id } %>
 <%= javascript_tag "Event.observe(window, 'load', function(event){ Mail.updateInboxUnreadCount(); });" %>
 <%= javascript_tag "new PeriodicalExecuter(function(){ Mail.updateInboxUnreadCount(); }, 120);" %>

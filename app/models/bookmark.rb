@@ -44,19 +44,19 @@ class Bookmark < ActiveRecord::Base
   end
 
   def use_count
-    owner.organization.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).length
+    Organization.current.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).length
   end
 
   def user_count
-    owner.organization.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).map(&:owner).uniq.length
+    Organization.current.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).map(&:owner).uniq.length
   end
   
   def first_user
-    owner.organization.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).owner
+    Organization.current.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).owner
   end
 
   def first_bookmarked_at
-    owner.organization.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).created_at
+    Organization.current.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).created_at
   end
 
   def bookmarked_by?(user)
@@ -82,7 +82,9 @@ class Bookmark < ActiveRecord::Base
   end
   
   def destroy_icon!
-    return if     self.use_count > 1
+    unless User.current.blank? # for when deleteing an org via the api, quick fix for now
+      return if self.use_count > 1
+    end
     return unless MockFS.file.exist?(self.icon_path)
 
     begin

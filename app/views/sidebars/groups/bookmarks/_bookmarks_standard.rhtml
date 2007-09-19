@@ -7,6 +7,6 @@
 <% # -%>
 <% # $Id$ -%>
 
-<%= add_to_workspace(:bookmarks_all, selected_user) %>
+<%= add_to_workspace(:bookmarks_all, User.selected) %>
 <hr />
 <%= link_to "RSS", bookmarks_rss_url(:bookmark_folder_id => standard_group.id), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

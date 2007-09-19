@@ -15,9 +15,9 @@
     <div class="drawerContent" id="drawerCalendarImport" style="display: none;"><%= render :partial => 'import' %></div>
   <% end -%>
   <% if @toolbar[:copy] -%>
-    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => current_user.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>
+    <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => User.current.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>
   <% end -%>
   <% if @toolbar[:move] -%>
-    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => current_user.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>
+    <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => User.current.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>
   <% end -%>
 </div>

@@ -28,13 +28,13 @@ class BrowserController < AuthenticatedController
     case session[:browser_context]
     when 'move', 'copy'
       params[:type] == 'group'
-      params[:user_id] == current_user
+      params[:user_id] == User.current
     end
     render :partial => 'list', :locals => {:params => params}
   end
   
   def column
-    browsable = Browsable.new(params, current_user)
+    browsable = Browsable.new(params, User.current)
     @items = browsable.items
   end
   

@@ -48,10 +48,10 @@ class ApplicationController < ActionController::Base
     end
 
     def pre_clean
-      self.current_user   = nil
-      self.selected_user  = nil
-      self.current_domain = nil
-      List.current   = nil
+      User.current = nil # also resets User.selected
+      Organization.current = nil
+      Domain.current = nil
+      List.current = nil
       true
     end
 
@@ -63,7 +63,7 @@ class ApplicationController < ActionController::Base
     end
 
     def load_domain
-      unless current_domain
+      unless Domain.current = Domain.find_by_web_domain(request.host)
         if ! request.host.blank? and request.host.split('.').size == 2
           redirect_to affiliate_login_url(:affiliate => params[:affiliate] || Affiliate.find(1).name)
         else
@@ -74,10 +74,12 @@ class ApplicationController < ActionController::Base
     end
 
     def load_organization
-      if current_organization.blank? || !current_organization.active?
+      organization = Domain.current.organization
+      if organization.blank? or ! organization.active?
         redirect_to '/deactivated.html'
         false
       else
+        Organization.current = organization
         true
       end
     end
@@ -88,11 +90,11 @@ class ApplicationController < ActionController::Base
 
     def log_request
       UserRequest.create(:user_id      => LoginToken.current ? LoginToken.current.user_id : '',
-                         :organization => current_organization ? current_organization.name : '',
+                         :organization => Organization.current ? Organization.current.name : '',
                          :action       => "#{self.class.to_s}##{action_name}",
                          :duration     => (Time.now - @log_start_time) * 1000,
                          :session_id   => (session.is_a?(Hash) ? '' : session.session_id),
-                         :username     => (current_user ? current_user.username : ''))
+                         :username     => (User.current ? User.current.username : ''))
     end
 
     def redirect_back_or_home
@@ -101,38 +103,6 @@ class ApplicationController < ActionController::Base
       else
         redirect_to(connector_home_url)
       end
-    end 
-
-    # Current user logged in
-    def current_user
-      @current_user ||= current_organization.users.find(LoginToken.current.user_id) rescue nil # there may not be a user Logged in yet
-    end
-    helper_method :current_user
-
-    def current_user=(new_user)
-      @current_user = new_user
     end
 
-    def current_domain
-      @current_domain ||= Domain.find_by_web_domain(request.host)
-    end
-    helper_method :current_domain
-    
-    def current_domain=(new_domain)
-      @current_domain = new_domain
-    end
-  
-    def current_organization
-      current_domain.organization if current_domain
-    end
-    helper_method :current_organization
-    
-    def selected_user
-      @selected_user ||= current_user
-    end
-    helper_method :selected_user
-    
-    def selected_user=(new_user)
-      @selected_user = new_user
-    end
 end

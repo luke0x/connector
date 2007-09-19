@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div class="comment" id="comment-<%= comment.id %>">
-  <% if comment.user == current_user -%>
+  <% if comment.user == User.current -%>
     <div id='editComment<%= comment.id %>' style='display: none;'>
       <div class="dialog">
         <% form_remote_tag(:url => comment_edit_url(:id => comment), :after => 'preventFormResubmission(this);') do -%>
@@ -34,11 +34,11 @@
       <div class="commentBody">
         <%= auto_link(simple_format(h(comment.body))) %>
         <div class="commentEditControls">
-          <% if comment.user == current_user -%>
+          <% if comment.user == User.current -%>
             <%= link_to_function _('Edit'), "$('viewComment#{comment.id}').hide(); $('editComment#{comment.id}').show(); $('editComment#{comment.id}Text').activate()" %>
             |
           <% end -%>
-          <% if (comment.user == current_user || comment.commentable.owner == current_user) -%>
+          <% if (comment.user == User.current || comment.commentable.owner == User.current) -%>
             <%= link_to_remote(_('Delete'), :url => comment_delete_url(:id => comment), :confirm => _('Delete this comment?')) %>
           <% end -%>
         </div>

@@ -10,5 +10,4 @@ $Id$
 =end #(end)
 
 class PublicController < ApplicationController
-  # This controller is used for public pages during authentication
 end

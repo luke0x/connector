@@ -8,10 +8,10 @@
 <% # $Id$ -%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= current_user.language -%>" lang="<%= current_user.language -%>">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= User.current.language -%>" lang="<%= User.current.language -%>">
 <head>
 	<title>
-		<%=h "#{current_organization.name} #{_('Connector')} : #{_(@application_name.capitalize)} : #{_(@group_name) || _(controller.action_name.split('_').map(&:capitalize).join(' '))}" %>
+		<%=h "#{Organization.current.name} #{_('Connector')} : #{_(@application_name.capitalize)} : #{_(@group_name) || _(controller.action_name.split('_').map(&:capitalize).join(' '))}" %>
 	</title>
   <meta name="copyright" content="Copyright 2004-2007 Joyent Inc." />
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -19,17 +19,17 @@
   <%= joyent_javascript_include_tags %>
   <%= joyent_stylesheet_link_tags %>
 	<style type="text/css">
-    #sidebars {width: <%= (current_user.get_option('Sidebar Width') || 300).to_i + 29 %>px;}
-    #searchField {width: <%= (current_user.get_option('Sidebar Width') || 300).to_i - 35 %>px;}
-    .sidebar {width: <%= (current_user.get_option('Sidebar Width') || 300).to_i - 34 %>px;}
-    #contentPane {left: <%= (current_user.get_option('Sidebar Width') || 300).to_i + 29 %>px;}
-    #Toolbar {left: <%= (current_user.get_option('Sidebar Width') || 300).to_i + 29 %>px;}
-    #Toolbar {width: expression((document.body.clientWidth - <%= (current_user.get_option('Sidebar Width') || 300).to_i + 29 %>) + "px");}
-    #contentPane {width: expression((document.body.clientWidth - <%= (current_user.get_option('Sidebar Width') || 300).to_i + 29 %>) + "px");}
-    body {background-position: <%= current_user.get_option('Sidebar Width') || 300 %>px;}
+    #sidebars {width: <%= (User.current.get_option('Sidebar Width') || 300).to_i + 29 %>px;}
+    #searchField {width: <%= (User.current.get_option('Sidebar Width') || 300).to_i - 35 %>px;}
+    .sidebar {width: <%= (User.current.get_option('Sidebar Width') || 300).to_i - 34 %>px;}
+    #contentPane {left: <%= (User.current.get_option('Sidebar Width') || 300).to_i + 29 %>px;}
+    #Toolbar {left: <%= (User.current.get_option('Sidebar Width') || 300).to_i + 29 %>px;}
+    #Toolbar {width: expression((document.body.clientWidth - <%= (User.current.get_option('Sidebar Width') || 300).to_i + 29 %>) + "px");}
+    #contentPane {width: expression((document.body.clientWidth - <%= (User.current.get_option('Sidebar Width') || 300).to_i + 29 %>) + "px");}
+    body {background-position: <%= User.current.get_option('Sidebar Width') || 300 %>px;}
 	</style>
 </head>
-<body id="<%= @application_name %>" <%= 'class="guest"' if current_user.guest? %>>
+<body id="<%= @application_name %>" <%= 'class="guest"' if User.current.guest? %>>
 	<%= render :partial => 'partials/dock' %>
 	<% # render :partial => 'partials/developer_tools' %>
 	<%= render :partial => 'partials/menu_items' %>

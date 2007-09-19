@@ -22,7 +22,7 @@ class TagController < AuthenticatedController
     dom_ids = dom_ids.split(',')
     dom_ids.each do |dom_id|
       next unless @item = find_by_dom_id(dom_id)
-      tagging = current_user.tag_item(@item, tag_name)
+      tagging = User.current.tag_item(@item, tag_name)
       page_js << tagging_to_jsar(tagging)
     end
 
@@ -48,7 +48,7 @@ class TagController < AuthenticatedController
     dom_ids = dom_ids.split(',')
     dom_ids.each do |dom_id|
       next unless @item = find_by_dom_id(dom_id)
-      tagging = current_user.untag_item(@item, tag_name)
+      tagging = User.current.untag_item(@item, tag_name)
       if tagging
         page_js << "Tagging.destroy('#{tagging.dom_id}');"
       else
@@ -86,7 +86,7 @@ class TagController < AuthenticatedController
     end
 
     # get the matched tag definitions
-    @tags = current_organization.tags.find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{@needle.downcase}%"],
+    @tags = Organization.current.tags.find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{@needle.downcase}%"],
                                            :order => 'LOWER(name)', :limit => 20)
   end
 end

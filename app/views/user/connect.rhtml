@@ -51,8 +51,8 @@
   <fieldset>
 		<legend><%= _('Current Shortcuts') %></legend>
 		<table style="margin-left:2em;">
-		  <% if current_user.has_other_identities? -%>
-  			<% current_user.identity_other_users.each do |user| -%>
+		  <% if User.current.has_other_identities? -%>
+  			<% User.current.identity_other_users.each do |user| -%>
     			<tr>
     				<td>
     				  <%= link_to_remote _('Disconnect User'), {:url => user_disconnect_url(:id => user.id), :loading => "ModalDialog.showSpinner();", :update => 'modalDialog'}, {:class => 'deleteItem'} %>

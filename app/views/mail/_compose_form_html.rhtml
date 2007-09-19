@@ -29,7 +29,7 @@
 			<td style="text-align: right;"><%= _('From') -%>:&nbsp;</td>
 			<td>
 				<select name="message[from]" style="width: 50%;">
-					<%= options_for_select current_user.from_addresses %>
+					<%= options_for_select User.current.from_addresses %>
 				</select>
 			</td>
 		</tr>

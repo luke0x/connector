@@ -7,8 +7,8 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% users_used = current_organization.users.size -%>
-<% users_quota = current_organization.quota.users -%>
+<% users_used = Organization.current.users.size -%>
+<% users_quota = Organization.current.quota.users -%>
 <% users_used_percentage = ((users_used.to_f / users_quota) * 100).round -%>
 
 <div id="graph_container">

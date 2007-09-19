@@ -76,7 +76,7 @@ module CalendarHelper
     # figure out the arrangement by column instead of by event
     # { :user => { :col_index => [event1_id, event2_id] } }
     column_events_by_user = {}
-    columns_by_user.partition{|user, col_hash| user == current_user}.each do |part|
+    columns_by_user.partition{|user, col_hash| user == User.current}.each do |part|
       part.each do |user, col_hash|
         column_events_by_user[user] = col_hash.flip
       end
@@ -90,7 +90,7 @@ module CalendarHelper
   def draw_day_view(column_events_by_user, day_view)
     partial = ''
     # users in order
-    users = [current_user] + column_events_by_user.keys.reject{|u| u == current_user}.sort
+    users = [User.current] + column_events_by_user.keys.reject{|u| u == User.current}.sort
     # calculate total number of columns needed + change the index to a count
     main_colspan = users.collect{|user| column_events_by_user[user].keys.max}.max + 1 rescue 1
     main_column_width = 100 / main_colspan # %
@@ -113,7 +113,7 @@ module CalendarHelper
 
       partial << "<td colspan=\"#{user_colspan}\" style=\"vertical-align: top; width: #{main_column_width * user_colspan}%;\">"
       day_view.events_for_user(user).select{|event| event.all_day?}.sort_by(&:name).each do |event|
-        if current_user == user
+        if User.current == user
           partial << '<div class="allDayEvent dayViewCurrentUserAllDayEvent">'
           partial << link_to(event.name, calendar_show_url(:id => event.id))
           partial << '</div>'
@@ -201,7 +201,7 @@ module CalendarHelper
               (event.duration / MINOR_SLOT_DURATION.to_f).ceil
             end
 
-            if current_user == user
+            if User.current == user
               partial << "<td rowspan=\"#{event_rowspan}\" class=\"dayViewEvent dayViewCurrentUserEvent\" style=\"width: #{main_column_width}%;\">"
             else
               partial << "<td rowspan=\"#{event_rowspan}\" class=\"dayViewEvent\" style=\"background-color: ##{user.person.color}; width: #{main_column_width}%;\">"

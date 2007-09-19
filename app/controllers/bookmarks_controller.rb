@@ -17,14 +17,14 @@ class BookmarksController < AuthenticatedController
   # crud
 
   def index
-    redirect_to bookmarks_list_route_url(:bookmark_folder_id => current_user.bookmark_folder.id)
+    redirect_to bookmarks_list_route_url(:bookmark_folder_id => User.current.bookmark_folder.id)
   end
 
   def list
-    @view_kind            = 'list'
-    @bookmark_folder      = BookmarkFolder.find(params[:bookmark_folder_id], :scope => :read)
-    self.selected_user    = @bookmark_folder.owner
-    @group_name           = _('Bookmarks')
+    @view_kind       = 'list'
+    @bookmark_folder = BookmarkFolder.find(params[:bookmark_folder_id], :scope => :read)
+    User.selected    = @bookmark_folder.owner
+    @group_name      = _('Bookmarks')
 
     bookmark_count = Bookmark.restricted_count(:conditions => ['bookmark_folder_id = ?', @bookmark_folder.id])
     @paginator = Paginator.new(self, bookmark_count, JoyentConfig.page_limit, params[:page])
@@ -46,10 +46,10 @@ class BookmarksController < AuthenticatedController
   def list_everyone
     @view_kind     = 'list'
     @group_name    = _("Others' Bookmarks")
-    bookmark_count = Bookmark.restricted_count(:conditions => ["bookmarks.user_id != ?", current_user.id])
+    bookmark_count = Bookmark.restricted_count(:conditions => ["bookmarks.user_id != ?", User.current.id])
     @paginator     = Paginator.new(self, bookmark_count, JoyentConfig.page_limit, params[:page])
-    @bookmarks     = current_organization.bookmarks.find(:all, 
-                                                         :conditions => ["bookmarks.user_id != ?", current_user.id],
+    @bookmarks     = Organization.current.bookmarks.find(:all, 
+                                                         :conditions => ["bookmarks.user_id != ?", User.current.id],
                                                          :order      => "LOWER(bookmarks.#{@sort_field}) #{@sort_order}",
                                                          :limit      => @paginator.items_per_page,
                                                          :offset     => @paginator.current.offset,
@@ -65,12 +65,12 @@ class BookmarksController < AuthenticatedController
   end
 
   def show
-    @view_kind         = 'show'
-    @bookmark          = Bookmark.find(params[:id], :scope => :read)
-    self.selected_user = @bookmark.owner
-    @bookmark_folder   = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
+    @view_kind       = 'show'
+    @bookmark        = Bookmark.find(params[:id], :scope => :read)
+    User.selected    = @bookmark.owner
+    @bookmark_folder = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
 
-    @toolbar[:edit] = true if current_user.can_edit?(@bookmark)
+    @toolbar[:edit] = true if User.current.can_edit?(@bookmark)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -89,29 +89,29 @@ class BookmarksController < AuthenticatedController
     # edit if this is already bookmarked
     unless params[:uri].blank?
       uri_sha1 = Digest::SHA1.hexdigest(params[:uri])
-      if bookmark = current_user.bookmark_folder.bookmarks.find(:first, :conditions => ['uri_sha1 = ?', uri_sha1], :scope => :edit)
+      if bookmark = User.current.bookmark_folder.bookmarks.find(:first, :conditions => ['uri_sha1 = ?', uri_sha1], :scope => :edit)
         redirect_to bookmarks_edit_route_url(:id => bookmark.id) and return
       end
     end
 
     if request.post?
-      @bookmark = current_user.bookmark_folder.bookmarks.create(:user_id => current_user.id,
-                                                                :organization_id => current_organization.id,
+      @bookmark = User.current.bookmark_folder.bookmarks.create(:user_id => User.current.id,
+                                                                :organization_id => Organization.current.id,
                                                                 :title => params[:title],
                                                                 :notes => params[:notes],
                                                                 :uri => params[:uri])
 
       params[:new_item_tags].split(',,').each do |tag_name|
-        current_user.tag_item(@bookmark, tag_name)
+        User.current.tag_item(@bookmark, tag_name)
       end unless params[:new_item_tags].blank?
-      @bookmark.restrict_to!(current_user.bookmark_folder.users_with_permissions)
+      @bookmark.restrict_to!(User.current.bookmark_folder.users_with_permissions)
       # params[:new_item_permissions].split(',').each do |user_dom_id|
       #   next unless user = find_by_dom_id(user_dom_id)
       #   @bookmark.add_permission(user)
       # end unless params[:new_item_permissions].blank?
       params[:new_item_notifications].split(',').each do |user_dom_id|
         next unless user = find_by_dom_id(user_dom_id)
-        user.notify_of(@bookmark, current_user)
+        user.notify_of(@bookmark, User.current)
       end unless params[:new_item_notifications].blank?
 
       if params[:via] == 'bookmarklet'
@@ -131,9 +131,9 @@ class BookmarksController < AuthenticatedController
   def edit
     @view_kind = 'edit'
     @bookmark = Bookmark.find(params[:id], :scope => :edit)
-    self.selected_user = @bookmark.owner
-    @bookmark_folder   = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
-    @group_name        = _('Bookmarks')
+    User.selected    = @bookmark.owner
+    @bookmark_folder = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
+    @group_name      = _('Bookmarks')
     
     if request.post?
       @bookmark.title    = params[:title]
@@ -183,7 +183,7 @@ class BookmarksController < AuthenticatedController
   def copy
     bookmarks = Bookmark.find(params[:ids].split(','), :scope => :copy)
     bookmarks.each do |bookmark|
-      bookmark.copy_to(current_user.bookmark_folder)
+      bookmark.copy_to(User.current.bookmark_folder)
     end
   ensure
     redirect_back_or_home
@@ -193,7 +193,7 @@ class BookmarksController < AuthenticatedController
 
   def notifications
     @view_kind = 'notifications'
-    notice_count = current_user.notifications_count('Bookmark', params.has_key?(:all))
+    notice_count = User.current.notifications_count('Bookmark', params.has_key?(:all))
     @paginator = Paginator.new self, notice_count, JoyentConfig.page_limit, params[:page]
 
     @toolbar[:copy]   = false
@@ -203,12 +203,12 @@ class BookmarksController < AuthenticatedController
     if params.has_key?(:all)
       @group_name = _('All Notifications')
       @show_all = true
-      @notifications = current_user.notifications.find(:all, :conditions => ["notifications.item_type = 'Bookmark' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
+      @notifications = User.current.notifications.find(:all, :conditions => ["notifications.item_type = 'Bookmark' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
       @toolbar[:new_notifications] = true
     else
       @group_name = _('Notifications')
       @show_all = false
-      @notifications = current_user.current_notifications.find(:all, :conditions => ["notifications.item_type = 'Bookmark' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
+      @notifications = User.current.current_notifications.find(:all, :conditions => ["notifications.item_type = 'Bookmark' "], :limit => @paginator.items_per_page, :offset => @paginator.current.offset)
       @toolbar[:all_notifications] = true
     end
     
@@ -220,10 +220,10 @@ class BookmarksController < AuthenticatedController
   end
 
   def smart_list
-    @view_kind         = 'list'
-    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    self.selected_user = @smart_group.owner
-    @group_name        = @smart_group.name
+    @view_kind    = 'list'
+    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    User.selected = @smart_group.owner
+    @group_name   = @smart_group.name
 
     @paginator = Paginator.new(self, @smart_group.items_count, JoyentConfig.page_limit, params[:page])
     @bookmarks = @smart_group.items("bookmarks.#{@sort_field} #{@sort_order}", @paginator.items_per_page, @paginator.current.offset)

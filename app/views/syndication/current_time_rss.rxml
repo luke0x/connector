@@ -12,7 +12,7 @@ $Id$
 xml.rss :version=>"2.0" do 
   xml.channel do
     xml.title @group_name
-    xml.link  current_time_report_url(:id => current_user)
+    xml.link  current_time_report_url(:id => User.current)
     xml.description @group_name
     
     @timezones.each do |detail|
