@@ -21,10 +21,10 @@ class BookmarksController < AuthenticatedController
   end
 
   def list
-    @view_kind       = 'list'
-    @bookmark_folder = BookmarkFolder.find(params[:bookmark_folder_id], :scope => :read)
-    selected_user    = @bookmark_folder.owner
-    @group_name      = _('Bookmarks')
+    @view_kind            = 'list'
+    @bookmark_folder      = BookmarkFolder.find(params[:bookmark_folder_id], :scope => :read)
+    self.selected_user    = @bookmark_folder.owner
+    @group_name           = _('Bookmarks')
 
     bookmark_count = Bookmark.restricted_count(:conditions => ['bookmark_folder_id = ?', @bookmark_folder.id])
     @paginator = Paginator.new(self, bookmark_count, JoyentConfig.page_limit, params[:page])
@@ -65,10 +65,10 @@ class BookmarksController < AuthenticatedController
   end
 
   def show
-    @view_kind       = 'show'
-    @bookmark        = Bookmark.find(params[:id], :scope => :read)
-    selected_user    = @bookmark.owner
-    @bookmark_folder = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
+    @view_kind         = 'show'
+    @bookmark          = Bookmark.find(params[:id], :scope => :read)
+    self.selected_user = @bookmark.owner
+    @bookmark_folder   = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
 
     @toolbar[:edit] = true if current_user.can_edit?(@bookmark)
 
@@ -131,9 +131,9 @@ class BookmarksController < AuthenticatedController
   def edit
     @view_kind = 'edit'
     @bookmark = Bookmark.find(params[:id], :scope => :edit)
-    selected_user    = @bookmark.owner
-    @bookmark_folder = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
-    @group_name      = _('Bookmarks')
+    self.selected_user = @bookmark.owner
+    @bookmark_folder   = BookmarkFolder.find(@bookmark.bookmark_folder_id, :scope => :read)
+    @group_name        = _('Bookmarks')
     
     if request.post?
       @bookmark.title    = params[:title]
@@ -220,10 +220,10 @@ class BookmarksController < AuthenticatedController
   end
 
   def smart_list
-    @view_kind    = 'list'
-    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
-    @group_name   = @smart_group.name
+    @view_kind         = 'list'
+    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    self.selected_user = @smart_group.owner
+    @group_name        = @smart_group.name
 
     @paginator = Paginator.new(self, @smart_group.items_count, JoyentConfig.page_limit, params[:page])
     @bookmarks = @smart_group.items("bookmarks.#{@sort_field} #{@sort_order}", @paginator.items_per_page, @paginator.current.offset)

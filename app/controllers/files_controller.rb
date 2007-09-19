@@ -30,7 +30,7 @@ class FilesController < AuthenticatedController
   def list
     @view_kind    = 'list'
     @folder       = Folder.find(params[:folder_id], :scope => :read)
-    selected_user = @folder.owner
+    self.selected_user = @folder.owner
     @group_name   = @folder.name
     file_count    = JoyentFile.restricted_count(:conditions => ['folder_id = ?', @folder.id])
     @paginator    = Paginator.new self, file_count, JoyentConfig.page_limit, params[:page]
@@ -88,7 +88,7 @@ class FilesController < AuthenticatedController
     @view_kind = 'show'
     if params[:folder_id]
       @folder       = Folder.find(params[:folder_id], :scope => :read)
-      selected_user = @folder.owner
+      self.selected_user = @folder.owner
       @file         = @folder.joyent_files.find(params[:id], :scope => :read)
       @group_name   = @folder.name
 
@@ -99,7 +99,7 @@ class FilesController < AuthenticatedController
       @toolbar[:delete] = current_user.can_delete?(@file)
     else
       @file         = JoyentFile.find(params[:id], :scope => :read)
-      selected_user = @file.owner
+      self.selected_user = @file.owner
       @folder       = @file.folder
       @group_name   = @folder.name
     end
@@ -127,7 +127,7 @@ class FilesController < AuthenticatedController
   def edit
     @view_kind    = 'edit'
     @folder       = Folder.find(params[:folder_id], :scope => :read)
-    selected_user = @folder.owner
+    self.selected_user = @folder.owner
     @file         = @folder.joyent_files.find(params[:id], :scope => :edit)
     @group_name   = @folder.name
 
@@ -213,7 +213,7 @@ class FilesController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
+    self.selected_user = @smart_group.owner
     @group_name   = @smart_group.name
 
     @paginator = Paginator.new self, @smart_group.items_count, JoyentConfig.page_limit, params[:page]
@@ -433,7 +433,7 @@ class FilesController < AuthenticatedController
     def strongspace_children_groups
       @view_kind = 'strongspace'
       parent_group  = StrongspaceFolder.find(current_user, params[:path], current_user)
-      selected_user = parent_group.owner
+      self.selected_user = parent_group.owner
       children      = parent_group.children
 
       render :partial => "sidebars/groups/strongspace_children_groups", :locals => { :children => children }
@@ -494,7 +494,7 @@ class FilesController < AuthenticatedController
 
       owner = current_organization.users.find(params[:owner_id])
       @file = StrongspaceFile.find(owner, params[:path], current_user)
-      selected_user = @file.owner
+      self.selected_user = @file.owner
       @folder = StrongspaceFolder.find(owner, params[:path][0..-2], current_user)
       @group_name = @folder.name
 
@@ -551,20 +551,20 @@ class FilesController < AuthenticatedController
       if params[:owner_id]
         owner         = current_organization.users.find(params[:owner_id])
         @folder       = StrongspaceFolder.find(owner, params[:path] || '', current_user)
-        selected_user = @folder.owner
+        self.selected_user = @folder.owner
         @files        = @folder.files
         file_count    = @folder.children.size
         @group_name   = @folder.name
       elsif current_user.guest?
         @folder       = StrongspaceFolder.blank
-        selected_user = current_user
+        self.selected_user = current_user
         @files        = []
         @file_count   = 0
         @group_name   = _('Strongspace')
       else
         # TODO: should this block execute ?
         @folder       = StrongspaceFolder.new(current_user, '')
-        selected_user = current_user
+        self.selected_user = current_user
         @files        = []
         file_count    = 0
         @group_name   = _('Strongspace')
@@ -670,7 +670,7 @@ class FilesController < AuthenticatedController
         return
       end
 
-      selected_user = @service.owner    
+      self.selected_user = @service.owner    
       @folder       = @service.find_folder(params[:group_id])
       unless @folder
         redirect_to files_home_url
@@ -766,7 +766,7 @@ class FilesController < AuthenticatedController
     def service_children_groups
       @service      = Service.find(params[:service_name], current_user)
       parent_group  = @service.find_folder(params[:group_id])
-      selected_user = parent_group.owner
+      self.selected_user = parent_group.owner
       children      = parent_group.children
 
       render :partial => "sidebars/groups/service_children_groups", :locals => { :children => children }

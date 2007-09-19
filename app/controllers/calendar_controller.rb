@@ -40,11 +40,11 @@ class CalendarController < AuthenticatedController
     @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + 7)
     @paginator  = Paginator.new self, 1, JoyentConfig.page_limit, 1
 
-    @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
-    selected_user     = @calendar.owner
-    @group_name       = @calendar.name
-    @events           = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
-    @day_views        = group_into_day_views(@events, @start_date, @end_date)
+    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
+    self.selected_user = @calendar.owner
+    @group_name        = @calendar.name
+    @events            = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
+    @day_views         = group_into_day_views(@events, @start_date, @end_date)
 
     @toolbar[:new_on] = current_user.can_create_on?(@calendar)
     @toolbar[:new]    = !@toolbar[:new_on]
@@ -75,13 +75,13 @@ class CalendarController < AuthenticatedController
     month_date = Date.parse(params['date']) rescue current_user.today
     @month_view = MonthView.new(month_date)
 
-    @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
-    selected_user     = @calendar.owner
-    @group_name       = @calendar.name
-    @events           = @calendar.events_between(@month_view.start_time, @month_view.end_time)
-    @toolbar[:month]  = false
-    @toolbar[:new_on] = current_user.can_create_on?(@calendar)
-    @toolbar[:new]    = !@toolbar[:new_on]
+    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
+    self.selected_user = @calendar.owner
+    @group_name        = @calendar.name
+    @events            = @calendar.events_between(@month_view.start_time, @month_view.end_time)
+    @toolbar[:month]   = false
+    @toolbar[:new_on]  = current_user.can_create_on?(@calendar)
+    @toolbar[:new]     = !@toolbar[:new_on]
 
     @month_view.add_events(@events)
     @start_date = month_date.to_time.beginning_of_month.to_date
@@ -109,10 +109,10 @@ class CalendarController < AuthenticatedController
     @start_date = Date.parse(params[:chart_date])
     @end_date   = @start_date + 1
 
-    @calendar     = Calendar.find(params[:calendar_id], :scope => :read)
-    selected_user = @calendar.owner
-    @group_name   = @calendar.name
-    @events       = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
+    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
+    self.selected_user = @calendar.owner
+    @group_name        = @calendar.name
+    @events            = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
 
     @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
     setup_users_overlay
@@ -129,12 +129,12 @@ class CalendarController < AuthenticatedController
 
   def show
     @view_kind = 'show'
-    @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
-    selected_user     = @calendar.owner
-    @group_name       = @calendar.name
-    @event            = @calendar.event_find(params[:id]) # TODO: get rid of this lameness
-    @start_date       = @event.start_time_in_user_tz.to_date if @event
-    @end_date         = @event.end_time_in_user_tz.to_date if @event
+    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
+    self.selected_user = @calendar.owner
+    @group_name        = @calendar.name
+    @event             = @calendar.event_find(params[:id]) # TODO: get rid of this lameness
+    @start_date        = @event.start_time_in_user_tz.to_date if @event
+    @end_date          = @event.end_time_in_user_tz.to_date if @event
 
     @toolbar[:new_on] = current_user.can_create_on?(@calendar)
     @toolbar[:new]    = !@toolbar[:new_on]
@@ -166,13 +166,13 @@ class CalendarController < AuthenticatedController
   end
 
   def edit
-    @view_kind    = 'edit'
-    @calendar     = Calendar.find(params[:calendar_id], :scope => :read)
-    selected_user = @calendar.owner
-    @group_name   = @calendar.name
-    @event        = Event.find(params[:id], :scope => :edit)
-    @start_date   = @event.start_time_in_user_tz.to_date if @event
-    @end_date     = @event.end_time_in_user_tz.to_date if @event
+    @view_kind         = 'edit'
+    @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
+    self.selected_user = @calendar.owner
+    @group_name        = @calendar.name
+    @event             = Event.find(params[:id], :scope => :edit)
+    @start_date        = @event.start_time_in_user_tz.to_date if @event
+    @end_date          = @event.end_time_in_user_tz.to_date if @event
     
     @toolbar[:new_on] = current_user.can_create_on?(@calendar)
     @toolbar[:new]    = !@toolbar[:new_on]
@@ -427,12 +427,12 @@ class CalendarController < AuthenticatedController
     @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + 7)  
     @paginator  = Paginator.new self, 1, JoyentConfig.page_limit, 1
 
-    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
-    @group_name   = @smart_group.name
-    @events       = @smart_group.items
-    @events       = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
-    @day_views    = group_into_day_views(@events, @start_date, @end_date)
+    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    self.selected_user = @smart_group.owner
+    @group_name        = @smart_group.name
+    @events            = @smart_group.items
+    @events            = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
+    @day_views         = group_into_day_views(@events, @start_date, @end_date)
 
     @toolbar[:list]   = false
     @toolbar[:move]   = current_user.can_move_from?(@smart_group)
@@ -463,11 +463,11 @@ class CalendarController < AuthenticatedController
     month_date = Date.parse(params['date']) rescue current_user.today
     @month_view = MonthView.new(month_date)
 
-    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
-    @group_name  = @smart_group.name
-    @events      = @smart_group.items
-    @events      = @events.collect{|e| e.occurrences_between(@month_view.start_time, @month_view.end_time)}.flatten.sort
+    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    self.selected_user = @smart_group.owner
+    @group_name        = @smart_group.name
+    @events            = @smart_group.items
+    @events            = @events.collect{|e| e.occurrences_between(@month_view.start_time, @month_view.end_time)}.flatten.sort
     
     @month_view.add_events(@events)           
     @start_date = month_date.to_time.beginning_of_month.to_date
@@ -488,11 +488,11 @@ class CalendarController < AuthenticatedController
     @start_date = Date.parse(params[:chart_date])      
     @end_date   = @start_date + 1
 
-    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
-    @group_name  = @smart_group.name
-    @events      = @smart_group.items
-    @events      = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
+    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    self.selected_user = @smart_group.owner
+    @group_name        = @smart_group.name
+    @events            = @smart_group.items
+    @events            = @events.collect{|e| e.occurrences_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten.sort
 
     @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
     setup_users_overlay
@@ -513,11 +513,11 @@ class CalendarController < AuthenticatedController
     @view_kind    = 'show'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
     if @smart_group
-      selected_user     = @smart_group.owner
-      @group_name       = @smart_group.name
-      @event            = Event.find(params[:id], :scope => :read)
-      @start_date       = @event.start_time_in_user_tz.to_date if @event
-      @end_date         = @event.end_time_in_user_tz.to_date if @event
+      self.selected_user = @smart_group.owner
+      @group_name        = @smart_group.name
+      @event             = Event.find(params[:id], :scope => :read)
+      @start_date        = @event.start_time_in_user_tz.to_date if @event
+      @end_date          = @event.end_time_in_user_tz.to_date if @event
 
       @toolbar[:edit]   = current_user.can_edit?(@event) 
       @toolbar[:move]   = current_user.can_move?(@event)
@@ -542,13 +542,13 @@ class CalendarController < AuthenticatedController
   end
 
   def smart_edit
-    @view_kind    = 'edit'
-    @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
-    @group_name   = @smart_group.name
-    @event        = Event.find(params[:id], :scope => :edit)
-    @start_date   = @event.start_time_in_user_tz.to_date if @event
-    @end_date     = @event.end_time_in_user_tz.to_date if @event
+    @view_kind         = 'edit'
+    @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
+    self.selected_user = @smart_group.owner
+    @group_name        = @smart_group.name
+    @event             = Event.find(params[:id], :scope => :edit)
+    @start_date        = @event.start_time_in_user_tz.to_date if @event
+    @end_date          = @event.end_time_in_user_tz.to_date if @event
 
     @toolbar[:move]   = current_user.can_move?(@event)
     @toolbar[:copy]   = current_user.can_copy?(@event)
@@ -743,7 +743,7 @@ class CalendarController < AuthenticatedController
   
     def events_report(name, day_span)
       @view_kind = 'report'
-      selected_user = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+      self.selected_user = User.find(params[:id], :scope => :read) if params.has_key?(:id)
       @group_name = name      
       @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
       @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + day_span)

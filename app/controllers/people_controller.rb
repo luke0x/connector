@@ -415,7 +415,7 @@ class PeopleController < AuthenticatedController
 
     def contacts_list
       @contact_list     = ContactList.find(params[:group], :scope => :read)
-      selected_user     = @contact_list.owner
+      self.selected_user = @contact_list.owner
       @group_name       = _('Contacts')
     
       people_count      = Person.restricted_count(:conditions => ['contact_list_id = ?', @contact_list.id])
@@ -465,7 +465,7 @@ class PeopleController < AuthenticatedController
 
     def smart_list
       @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:group]), :scope => :read)
-      selected_user = @smart_group.owner
+      self.selected_user = @smart_group.owner
       @group_name   = @smart_group.name
     
       @paginator = Paginator.new self, @smart_group.items_count, JoyentConfig.page_limit, params[:page]
@@ -489,7 +489,7 @@ class PeopleController < AuthenticatedController
     # show
   
     def contacts_show
-      selected_user     = @person.owner
+      self.selected_user = @person.owner
       @contact_list     = selected_user.contact_list
       @group_name       = _('Contacts')
 
@@ -529,7 +529,7 @@ class PeopleController < AuthenticatedController
 
     def smart_show
       @smart_group  = SmartGroup.find(SmartGroup.param_to_id(@smart_group_id), :scope => :read)
-      selected_user = @smart_group.owner
+      self.selected_user = @smart_group.owner
       @group_name   = @smart_group.name
 
       @toolbar[:edit]   = current_user.can_edit?(@person)
@@ -551,7 +551,7 @@ class PeopleController < AuthenticatedController
 
     def contacts_edit
       @contact_list = current_user.contact_list
-      selected_user = @contact_list.owner
+      self.selected_user = @contact_list.owner
       @group_name   = _('Contacts')
       @person       = Person.find(params[:id], :scope => :read)
 
@@ -597,7 +597,7 @@ class PeopleController < AuthenticatedController
   
     def contacts_vcards
       @contact_list = current_user.contact_list
-      selected_user = @contact_list.owner
+      self.selected_user = @contact_list.owner
       @people       = @contact_list.people.find(:all, :scope => :read)
       vcards        = VcardConverter.create_vcards_from_people(@people)
       send_data vcards, :filename => "Contacts.vcf"
@@ -625,7 +625,7 @@ class PeopleController < AuthenticatedController
 
     def smart_vcards
       @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:group]), :scope => :read)
-      selected_user = @smart_group.owner
+      self.selected_user = @smart_group.owner
       @group_name   = @smart_group.name
       @people       = @smart_group.items
       vcards        = VcardConverter.create_vcards_from_people(@people)

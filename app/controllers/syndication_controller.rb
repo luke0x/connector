@@ -55,7 +55,7 @@ class SyndicationController < ApplicationController
   def mail_mailbox_rss
     @mailbox       = Mailbox.find(params[:id], :scope => :read)
     @mailbox.sync
-    selected_user  = @mailbox.owner
+    self.selected_user = @mailbox.owner
     @group_name    = _(@mailbox.name)
     if @mailbox.owner != current_user
       @group_name = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@mailbox.owner.full_name}",:i18n_group_name => "#{@group_name}"}
@@ -70,7 +70,7 @@ class SyndicationController < ApplicationController
     if @smart_group.owner != current_user
       @group_name = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@smart_group.owner.full_name}",:i18n_group_name => "#{@group_name}"}
     end
-    selected_user  = @smart_group.owner
+    self.selected_user = @smart_group.owner
     @group_name    = @smart_group.name
     @messages      = @smart_group.items(nil, 25, 0)
     @connector_link  = mail_smart_list_url(:smart_group_id=>params[:smart_group_id], :full_path=>false)
@@ -193,7 +193,7 @@ class SyndicationController < ApplicationController
 
   def people_contacts_rss
     @contact_list = ContactList.find(params[:group], :scope => :read)
-    selected_user = @contact_list.owner
+    self.selected_user = @contact_list.owner
     @group_name = _('Contacts')
     if @contact_list.owner != current_user
       @group_name   = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@contact_list.owner.full_name}",:i18n_group_name => "#{@group_name}"}
@@ -261,7 +261,7 @@ class SyndicationController < ApplicationController
   
   def files_strongspace_rss
     @folder       = StrongspaceFolder.find(current_user, params[:path] || '', current_user)
-    selected_user = @folder.owner
+    self.selected_user = @folder.owner
     @group_name   = @folder.name
     @files        = @folder.files
 
@@ -272,7 +272,7 @@ class SyndicationController < ApplicationController
 
   def files_service_rss
     @service = Service.find(params[:service_name], current_user)
-    selected_user = @service.owner    
+    self.selected_user = @service.owner    
     @folder       = params[:group_id] ? @service.find_folder(params[:group_id]) : nil
     @folder     ||= @service.root_folder
     @group_name   = @folder.name
@@ -404,7 +404,7 @@ class SyndicationController < ApplicationController
   end 
   
   def unread_messages_rss
-    selected_user  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+    self.selected_user = User.find(params[:id], :scope => :read) if params.has_key?(:id)
     @mailbox       = selected_user.inbox
     @mailbox.sync
     
@@ -423,7 +423,7 @@ class SyndicationController < ApplicationController
   end 
   
   def todays_events_rss           
-    selected_user  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+    self.selected_user = User.find(params[:id], :scope => :read) if params.has_key?(:id)
     @start_date = selected_user.today
     @end_date   = @start_date + 1
     
@@ -434,7 +434,7 @@ class SyndicationController < ApplicationController
   end                  
   
   def weeks_events_rss                                               
-    selected_user  = User.find(params[:id], :scope => :read) if params.has_key?(:id)
+    self.selected_user = User.find(params[:id], :scope => :read) if params.has_key?(:id)
     @start_date = selected_user.today
     @end_date   = @start_date + 7
     
@@ -463,8 +463,8 @@ class SyndicationController < ApplicationController
       unless (auth = (request.env['X-HTTP_AUTHORIZATION'] || request.env['HTTP_AUTHORIZATION'])).nil?
         auth = auth.split
         user, password = Base64.decode64(auth[1]).split(':')[0..1]
-        if user = Domain.current.authenticate_user(user,password)
-          current_user=user
+        if user = current_domain.authenticate_user(user,password)
+          self.current_user =user
           return true
         end
       end

@@ -37,7 +37,7 @@ class MailController < AuthenticatedController
 
     @mailbox.sync
     
-    selected_user = @mailbox.owner
+    self.selected_user = @mailbox.owner
     message_count = Message.restricted_count(:conditions => ['mailbox_id = ? AND messages.active = ?', @mailbox.id, true])
     @paginator    = Paginator.new self, message_count, JoyentConfig.page_limit, params[:page]
     @messages     = @mailbox.messages.find(:all, 
@@ -67,7 +67,7 @@ class MailController < AuthenticatedController
     @mailbox       = Mailbox.find(params[:id], :include => [:owner], :scope => :read)
     @mailbox.sync
     
-    selected_user  = @mailbox.owner
+    self.selected_user = @mailbox.owner
     @mailbox_name  = @mailbox.id
     @group_name    = (@mailbox.name == 'INBOX') ? 'Inbox' : @mailbox.name
     @paginator     = Paginator.new self, @mailbox.messages.count(:conditions => ["messages.active = ?", true]), JoyentConfig.page_limit, params[:page]
@@ -96,7 +96,7 @@ class MailController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
+    self.selected_user = @smart_group.owner
     @group_name   = @smart_group.name
 
     @messages  = @smart_group.items("messages.#{@sort_field} #{@sort_order}", nil, nil)
@@ -153,7 +153,7 @@ class MailController < AuthenticatedController
     mailbox       = params[:mailbox] == 'inbox' ? 'INBOX' : "INBOX.#{params[:mailbox].capitalize}"
     @mailbox      = current_user.mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', mailbox], :include => [:owner], :scope => :read)
     @mailbox.sync
-    selected_user = @mailbox.owner
+    self.selected_user = @mailbox.owner
     @message      = @mailbox.messages.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
     
     @message.seen!
@@ -186,7 +186,7 @@ class MailController < AuthenticatedController
     @view_kind = 'show'
     @mailbox      = Mailbox.find(params[:mailbox], :include => [:owner], :scope => :read)
 
-    selected_user = @mailbox.owner
+    self.selected_user = @mailbox.owner
     @mailbox_name = @mailbox.id
     @group_name   = (@mailbox.name == 'INBOX') ? 'Inbox' : @mailbox.name
     @message      = @mailbox.messages.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
@@ -236,7 +236,7 @@ class MailController < AuthenticatedController
   def smart_show
     @view_kind    = 'show'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
+    self.selected_user = @smart_group.owner
     @group_name   = @smart_group.name
     @message      = Message.find(params[:id], :conditions => ["messages.active = ?", true], :scope => :read)
     @message.seen!
@@ -524,7 +524,7 @@ class MailController < AuthenticatedController
   end
   
   def others_groups
-    selected_user = User.find(params[:user_id], :scope => :read)
+    self.selected_user = User.find(params[:user_id], :scope => :read)
     Mailbox.list(selected_user)
     render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}"
   end

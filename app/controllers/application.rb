@@ -48,10 +48,10 @@ class ApplicationController < ActionController::Base
     end
 
     def pre_clean
-      current_user = nil # also resets selected_user
-      current_organization = nil
-      Domain.current = nil
-      List.current = nil
+      self.current_user   = nil
+      self.selected_user  = nil
+      self.current_domain = nil
+      List.current   = nil
       true
     end
 
@@ -74,12 +74,10 @@ class ApplicationController < ActionController::Base
     end
 
     def load_organization
-      organization = current_domain.organization
-      if organization.blank? or ! organization.active?
+      if current_organization.blank? || !current_organization.active?
         redirect_to '/deactivated.html'
         false
       else
-        current_organization = organization
         true
       end
     end
@@ -125,21 +123,16 @@ class ApplicationController < ActionController::Base
     end
   
     def current_organization
-      @current_organization ||= current_domain.organization
+      current_domain.organization if current_domain
     end
     helper_method :current_organization
     
-    def current_organization=(new_org)
-      @current_organization = new_org
-    end
-    
     def selected_user
-      @selected_user ||= @current_user
+      @selected_user ||= current_user
     end
     helper_method :selected_user
     
     def selected_user=(new_user)
       @selected_user = new_user
     end
-
 end

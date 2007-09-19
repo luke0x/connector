@@ -79,7 +79,7 @@ class ConnectController < AuthenticatedController
   def smart_list
     @view_kind    = 'list'
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
-    selected_user = @smart_group.owner
+    self.selected_user = @smart_group.owner
     @group_name   = @smart_group.name
     
     @paginator = Paginator.new self, @smart_group.items_count, JoyentConfig.page_limit, params[:page]
