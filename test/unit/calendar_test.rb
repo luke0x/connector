@@ -44,7 +44,9 @@ class CalendarTest < Test::Unit::TestCase
     assert calendars(:concerts).event_find(events(:concert).id)
   end                    
                
-  # Regression test for #3060
+  # Regression test for #3060                                
+  # FIXME: This should break now because the test is assuming User.current is controlling access, where this
+  #        is no longer the case.
   def test_events_between_with_no_access
     User.current = users(:ian)
     assert Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, Time.now + 7.days).size > 0

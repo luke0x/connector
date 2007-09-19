@@ -747,7 +747,7 @@ class CalendarController < AuthenticatedController
       @group_name = name      
       @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
       @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + day_span)
-      @events     = selected_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+      @events     = selected_user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten
       @day_views  = (@start_date...@end_date).collect do |curr_date| 
         view = DayView.new(curr_date)
         view.take_events(@events)
@@ -782,7 +782,7 @@ class CalendarController < AuthenticatedController
         # get the events for each user for this date range
         session[:calendar][:overlay_users].each do |user_id|
           user = User.find(user_id, :scope => :read)
-          overlay_events[user.id] = user.calendars.collect{|c| c.events_between(start_time, end_time)}.flatten
+          overlay_events[user.id] = user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(start_time, end_time) : []}.flatten
         end
       end
     

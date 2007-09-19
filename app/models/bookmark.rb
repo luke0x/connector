@@ -82,9 +82,7 @@ class Bookmark < ActiveRecord::Base
   end
   
   def destroy_icon!
-    unless User.current.blank? # for when deleteing an org via the api, quick fix for now
-      return if self.use_count > 1
-    end
+    return if     self.use_count > 1
     return unless MockFS.file.exist?(self.icon_path)
 
     begin

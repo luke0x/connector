@@ -428,7 +428,7 @@ class SyndicationController < ApplicationController
     @end_date   = @start_date + 1
     
     @group_name = _("Today's Events")
-    @events     = selected_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    @events     = selected_user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten
     @connector_link  = calendar_todays_events_url(:id => selected_user, :full_path=>false)
     render :action=>'calendar_rss'
   end                  
@@ -439,7 +439,7 @@ class SyndicationController < ApplicationController
     @end_date   = @start_date + 7
     
     @group_name = _("This Week's Events")
-    @events     = selected_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    @events     = selected_user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten
     @connector_link  = calendar_weeks_events_url(:id => selected_user, :full_path=>false)
     render :action=>'calendar_rss'
   end            
