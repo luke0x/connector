@@ -21,36 +21,4 @@ class CommentTest < Test::Unit::TestCase
             'commentable_type' => 'JoyentFile'
             
   crud_required 'user_id', 'body'
-  
-  def test_find_for_update_by_commentor
-    Organization.current = organizations(:joyent)
-    User.current         = users(:ian)
-    
-    assert Comment.find_for_update(comments(:ian_comment_ian_jpg).id)
-  end
-  
-  def test_find_for_update_by_item_owner
-    Organization.current = organizations(:joyent)
-    User.current         = users(:ian)
-    
-    assert Comment.find_for_update(comments(:peter_comment_ian_jpg).id)
-  end
-  
-  def test_find_for_update_by_foreigner
-    Organization.current = organizations(:joyent)
-    User.current         = users(:peter)
-    
-    assert_raise(ActiveRecord::RecordNotFound) {
-      Comment.find_for_update(comments(:ian_comment_ian_jpg).id)
-    }
-  end
-  
-  def test_find_for_update_outside_of_org
-    Organization.current = organizations(:textdrive)
-    User.current         = users(:jason)
-    
-    assert_raise(ActiveRecord::RecordNotFound) {
-      Comment.find_for_update(comments(:ian_comment_ian_jpg).id)
-    }
-  end
 end

@@ -25,13 +25,4 @@ class Comment < ActiveRecord::Base
     
     comment
   end
-      
-  def self.find_for_update(id)
-    c = Comment.find(id)
-    if c.user == User.current || c.commentable.owner == User.current
-      c
-    else
-      raise ActiveRecord::RecordNotFound
-    end
-  end
 end
