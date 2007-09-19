@@ -663,6 +663,24 @@ class User < ActiveRecord::Base
   def jajah_password=(new_password)
     write_attribute(:jajah_password, encrypt(new_password))
   end
+                  
+  def to_utc(time)
+    return unless time
+    
+    begin
+      tz.local_to_utc(time)
+    rescue TZInfo::AmbiguousTime 
+      tz.local_to_utc(time, true) 
+    rescue TZInfo::PeriodNotFound
+      tz.local_to_utc(time + 1.hour)
+    end
+  end
+  
+  def to_local(time)
+    return unless time
+    
+    tz.utc_to_local(time)
+  end
   
   private
 
