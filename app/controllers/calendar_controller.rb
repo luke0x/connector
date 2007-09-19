@@ -73,7 +73,7 @@ class CalendarController < AuthenticatedController
   def month
     @view_kind = 'month'
     month_date = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date)
+    @month_view = MonthView.new(month_date, 0, current_user)
 
     @calendar          = Calendar.find(params[:calendar_id], :scope => :read)
     self.selected_user = @calendar.owner
@@ -272,7 +272,7 @@ class CalendarController < AuthenticatedController
     @view_kind = 'month'
     @toolbar[:month]  = false
     month_date  = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date)
+    @month_view = MonthView.new(month_date, 0, current_user)
 
     @group_name = _('All Events')
     @events     = current_user.calendars.collect{|c| c.events_between(@month_view.start_time, @month_view.end_time)}.flatten
@@ -461,7 +461,7 @@ class CalendarController < AuthenticatedController
     @view_kind = 'month'
     @toolbar[:month]  = false 
     month_date = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date)
+    @month_view = MonthView.new(month_date, current_user)
 
     @smart_group       = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
     self.selected_user = @smart_group.owner
@@ -749,7 +749,7 @@ class CalendarController < AuthenticatedController
       @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + day_span)
       @events     = selected_user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten
       @day_views  = (@start_date...@end_date).collect do |curr_date| 
-        view = DayView.new(curr_date)
+        view = DayView.new(curr_date, current_user)
         view.take_events(@events)
         view
       end  
@@ -804,7 +804,7 @@ class CalendarController < AuthenticatedController
 
     def group_into_day_views(events, start_date, end_date)
       (start_date..end_date).collect do |curr_date| 
-        view = DayView.new(curr_date)
+        view = DayView.new(curr_date, current_user)
         view.take_events(events)
         view
       end

@@ -10,13 +10,14 @@ $Id$
 =end #(end)
 
 class BaseView
-  attr_reader :start_time, :end_time
+  attr_reader :start_time, :end_time, :current_user
 
-  def initialize()
+  def initialize(start_time, end_time, current_user)
     @events        = []
     @others_events = {} # key: user_id, value: array of events
-    @start_time    = nil
-    @end_time      = nil
+    @start_time    = start_time
+    @end_time      = end_time
+    @current_user  = current_user
   end
 
   def events
