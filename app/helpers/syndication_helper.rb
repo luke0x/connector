@@ -30,7 +30,7 @@ module SyndicationHelper
   end
   
   def feed_date(item)
-    if item.is_a?(Message)
+    if item.is_a?(Message) && item.date
       item.date.rfc2822
     elsif item.respond_to?(:updated_at) && item.updated_at
       item.updated_at.rfc2822

@@ -42,7 +42,7 @@ class OrganizationTest < Test::Unit::TestCase
   end
   
   def test_total_disk
-    assert_equal 22155, organizations(:joyent).total_disk_usage
+    assert_equal 26251, organizations(:joyent).total_disk_usage
   end  
   
   def test_can_add_user

@@ -113,3 +113,20 @@ ian_message_base:
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   active: true
+
+no_date:
+  id: 7
+  user_id: 1
+  organization_id: 1
+  mailbox_id: 1
+  subject: a subject
+  sender: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: foo@bar.com\n  name: Foo Bar"
+  recipients: " ---\n- !ruby/object:JoyentMaildir::MailParser::MailAddress\n  address: bilbo@hobbit.com\n  name: Bilbo Baggins"
+  flagged: true
+  seen: false
+  size_in_bytes: 4096
+  internaldate: <%= 3.hours.ago.to_s(:db) %>
+  created_at: <%= (Time.now - 4.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 3.days).to_s(:db) %>
+  filename: 1159907087.M423564P19340V01980007I0007604F_2.unknown,S=2358
+  active: true
