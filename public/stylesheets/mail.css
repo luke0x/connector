@@ -100,6 +100,19 @@ $Id$ */
 		background-position: -900px -90px;
 	}
 
+	.actionFlag a.disabled, .actionFlag a:hover.disabled {
+		background-position: -1200px 0px;
+	}
+	.actionFlag a {
+		background-position: -1200px -30px;
+	}
+	.actionFlag a:hover {
+		background-position: -1200px -60px;
+	}
+	.actionFlag a:active, .actionJunk a.active {
+		background-position: -1200px -90px;
+	}
+
 /* sidebar -------------------------------------------------- */
 
 	#mail .smartGroup {		
