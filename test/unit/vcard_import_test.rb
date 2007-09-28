@@ -113,7 +113,7 @@ class VcardImportTest < Test::Unit::TestCase
     assert_equal 4,                        person.special_dates.first.special_date.month
     assert_equal 1977,                     person.special_dates.first.special_date.year
     assert_equal 2,                        person.im_addresses.size
-    assert_equal 'hits',           person.im_addresses.last.im_address
+    assert_equal 'hits',                   person.im_addresses.last.im_address
     assert_equal 'MSN',                    person.im_addresses.last.im_type
     assert_equal 'These are notes',         person.notes
     assert       person.has_icon?
@@ -150,9 +150,11 @@ class VcardImportTest < Test::Unit::TestCase
     assert_equal 'http://www.koz.com',     person.websites.first.site_url
     assert_equal 'Koz',                    person.websites.first.site_title
     assert_equal 0,                        person.special_dates.size
-    assert_equal 2,                        person.im_addresses.size
-    assert_equal 'jim',                  person.im_addresses.first.im_address
-    assert_equal 'AIM',                    person.im_addresses.first.im_type
+    assert_equal 4,                        person.im_addresses.size
+    assert_equal 'jim',                    person.im_addresses.first.im_address
+    assert_equal 'AIM',                    person.im_addresses.first.im_type  
+    assert_equal 'ian.kev@gmail.com',      person.im_addresses.last.im_address
+    assert_equal 'Google Talk',            person.im_addresses.last.im_type  
     assert       person.has_icon?
     
     # This is the same icon that is used for the ian user
@@ -168,6 +170,10 @@ class VcardImportTest < Test::Unit::TestCase
     assert_equal 2,                        people.size
     assert_equal 'Jack Trade',             person.full_name
     assert_equal 'jack@trade.com',         person.email_addresses.first.email_address
+  end
+        
+  def test_vcard_roundtrip       
+    assert_equal vcard_fixture(:ian), Person.from_vcards(vcard_fixture(:ian)).first.to_vcard
   end
 
 #  def test_bogus_vcard

@@ -93,7 +93,7 @@ class VcardConverter
           end
           
           ImAddress::TYPES.each do |im_type|
-            vcard.enum_by_name("X-#{im_type.capitalize}").each do |vcard_im|
+            vcard.enum_by_name("X-#{im_type.capitalize.gsub(' ', '-')}").each do |vcard_im|
               im_address = ImAddress.new
               
               im_address.im_address = Vpim::decode_text(vcard_im.value)
@@ -207,7 +207,7 @@ class VcardConverter
               if im.preferred 
                 params['type'] = 'pref' 
               end
-              maker.add_field(Vpim::DirectoryInfo::Field.create("X-#{im.im_type.upcase}", im.im_address, params))
+              maker.add_field(Vpim::DirectoryInfo::Field.create("X-#{im.im_type.upcase.gsub(' ', '-')}", im.im_address, params))
             end
           end
     

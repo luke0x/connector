@@ -22,6 +22,12 @@ joe:
 yeah:
   id: 3
   person_id: 1
-  im_type: ICQ
+  im_type: IRC
   im_address: 18089432
   preferred: false
+google:                          
+  id: 4
+  person_id: 1
+  im_type: Google Talk
+  im_address: ian.kev@gmail.com
+  preferred: false  

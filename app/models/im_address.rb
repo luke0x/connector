@@ -19,5 +19,5 @@ class ImAddress < ActiveRecord::Base
   after_save {|record| record.person.save if record.person}
   after_destroy {|record| record.person.save if record.person}
 
-  TYPES = ['AIM', 'IRC', 'Google Talk', 'Jabber', 'MSN', 'Other', 'Skype', 'Yahoo']
+  TYPES = ['AIM', 'IRC', 'Google Talk', 'Jabber', 'MSN', 'Skype', 'Yahoo',  'Other']
 end
