@@ -52,6 +52,10 @@ $Id$ */
 		background-image: url(/images/lang/en/actionsMail.png);
 		}
 	.actionFlag a {	
-		width: 50px !important;
+		width: 59px !important;
+		background-image: url(/images/lang/en/actionsMail.png);
+		}
+	.actionUnflag a {	
+		width: 59px !important;
 		background-image: url(/images/lang/en/actionsMail.png);
 		}
