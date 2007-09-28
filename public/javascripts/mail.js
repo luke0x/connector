@@ -16,15 +16,16 @@ var Mail = {
 
 	validateSubmit: function(form) {
 		if ($F('command') == 'discard') return confirm('Would you like to discard the current draft message?');
-		if ($F('command') == 'save') return true; // a draft should not require a recipient - ticket 28
 	  
 	  arrErrors = [];
 
-	  // require recipients
-	  if (! addresses.validateAdressesPresent()) arrErrors.push('You must enter one or more email addresses.');
-		addresses.dumpAddresses();
+	  // require recipients to send mail
+	  if ($F('command') == 'send') {
+  	  if (! addresses.validateAdressesPresent()) arrErrors.push('You must enter one or more email addresses.');
+	  }
 
-		// prep sidebar data
+		// prep address + sidebar data
+		addresses.dumpAddresses();
 		$('new_item_tags').value          = JoyentPage.createTags.collect(function(tag){ return tag.escapeCharacter(','); }).join(',,');
 		$('new_item_permissions').value   = JoyentPage.createPermissions.join(',');
 		$('new_item_notifications').value = JoyentPage.createNotifications.join(',');
