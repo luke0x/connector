@@ -79,7 +79,7 @@ class MessageTest < Test::Unit::TestCase
     body_mock = flexmock('messagebody')
     
     message_mock = flexmock('message')
-    message_mock.should_receive(:message_body).with(1, false).once.returns('')
+    message_mock.should_receive(:message_body).with(1, true).once.returns('')
     
     flexstub(JoyentMaildir::Base).should_receive(:connection).once.returns(message_mock)
     

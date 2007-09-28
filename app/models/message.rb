@@ -280,7 +280,7 @@ class Message < ActiveRecord::Base
       msg.subject = "Re: #{Rfc2047.decode(self.subject || '')}"
     end
     
-    msg.body = quote_body(self.body(false))
+    msg.body = quote_body(self.body(true))
     msg.attachments = []
     msg
   end
