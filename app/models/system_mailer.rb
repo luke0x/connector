@@ -55,7 +55,7 @@ class SystemMailer < ActionMailer::Base
   end
   
   def report_issue(message)
-    recipients 'scott@joyent.com'
+    recipients JoyentConfig.exception_recipients
     subject "Message Rendering Report for Message #{message.id}"
     from "messagerender@joyent.com"
     body({'message' => message})
