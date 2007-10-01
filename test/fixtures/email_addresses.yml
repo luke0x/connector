@@ -14,7 +14,8 @@ ian_at_joyent:
   preferred: false
   email_type: Work
   email_address: ian@joyent.com
-  
+  use_notifier: true
+    
 ian_at_txd:
   id: 2
   person_id: 1

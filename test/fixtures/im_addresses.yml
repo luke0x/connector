@@ -12,7 +12,7 @@ jim:
   person_id: 1
   im_type: AIM
   im_address: jim
-  preferred: true
+  preferred: true   
 joe:
   id: 2
   person_id: 1
@@ -30,4 +30,6 @@ google:
   person_id: 1
   im_type: Google Talk
   im_address: ian.kev@gmail.com
-  preferred: false  
+  preferred: false     
+  use_notifier: true
+  

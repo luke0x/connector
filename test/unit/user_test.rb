@@ -518,4 +518,49 @@ class UserTest < Test::Unit::TestCase
     user.set_option('Language', 'jp')
     assert_equal 'en', user.language
   end
+  
+  def test_notify_via
+    assert users(:ian).notify_via?(:sms)
+    assert users(:ian).notify_via?(:email)
+    assert users(:ian).notify_via?(:jabber)
+    assert !users(:ian).notify_via?(:blah)
+    
+    phone_numbers(:ians_confirmed_for_sms).update_attribute(:use_notifier, false)
+    im_addresses(:google).update_attribute(:use_notifier, false)              
+    email_addresses(:ian_at_joyent).update_attribute(:use_notifier, false)
+    
+    users(:ian).person.reload             
+    
+    assert !users(:ian).notify_via?(:sms)
+    assert !users(:ian).notify_via?(:email)
+    assert !users(:ian).notify_via?(:jabber)
+    assert !users(:ian).notify_via?(:blah)
+  end
+  
+  def test_notifier_sms
+    assert phone_numbers(:ians_confirmed_for_sms), users(:ian).notifier_sms
+    
+    phone_numbers(:ians_confirmed_for_sms).update_attribute(:use_notifier, false)
+    users(:ian).person.reload
+    
+    assert_nil users(:ian).notifier_sms
+  end
+  
+  def test_notifier_im
+    assert im_addresses(:google), users(:ian).notifier_im
+    
+    im_addresses(:google).update_attribute(:use_notifier, false)
+    users(:ian).person.reload
+    
+    assert_nil users(:ian).notifier_im
+  end
+  
+  def test_notifier_email
+    assert email_addresses(:ian_at_joyent), users(:ian).notifier_email
+    
+    email_addresses(:ian_at_joyent).update_attribute(:use_notifier, false)
+    users(:ian).person.reload
+    
+    assert_nil users(:ian).notifier_email
+  end
 end
