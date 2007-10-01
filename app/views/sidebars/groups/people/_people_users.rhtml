@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<%= add_to_workspace(:users, User.selected) %>
+<%= add_to_workspace(:users, selected_user) %>
 <hr />
 <%= link_to "VCARD", people_vcards_url(:group => 'users'), { :class => 'orangeBadge vcard', :style => 'margin-bottom:3px;', :title=> _('Download contacts as a vCard file')  } %>
 <%= link_to "RSS", people_rss_url(:group => 'users'), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

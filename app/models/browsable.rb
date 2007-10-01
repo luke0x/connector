@@ -21,7 +21,7 @@ class Browsable
     @items = []
     case @params[:type]
     when 'org'
-      User.current.identity_other_users.each do |item|
+      current_user.identity_other_users.each do |item|
         add_details( item.dom_id, 
                      "#{item.organization.name} - #{item.username}",
                      item.id,
@@ -111,13 +111,11 @@ class Browsable
     path = @params[:subscribable_id] ||= ''
     
     if group_type == 'StrongspaceFolder'
-      parent_group  = StrongspaceFolder.find(current_user, @params[:subscribable_id], current_user)
-      User.selected = parent_group.owner
+      parent_group = StrongspaceFolder.find(current_user, @params[:subscribable_id], current_user)
 
       parent_group.children
     else
-      parent_group  = group_type(@params[:subscribable_type]).find(@params[:subscribable_id], :scope => :read)
-      User.selected = parent_group.owner
+      parent_group = group_type(@params[:subscribable_type]).find(@params[:subscribable_id], :scope => :read)
 
       if parent_group.is_a?(Mailbox) && parent_group.full_name == 'INBOX'
         []

@@ -74,7 +74,6 @@ $Id$
 #   
 #   def test_text_query_no_options
 #     User.current=users(:ian)
-#     Organization.current=organizations(:joyent)
 #     
 #     @results = flexmock("results")
 #     @results.should_receive(:doc_num).and_return { 0 }
@@ -97,7 +96,6 @@ $Id$
 #   
 #   def test_text_query_no_options2
 #     User.current=users(:ian)
-#     Organization.current=organizations(:joyent)
 #     
 #     @results = flexmock("results")
 #     @results.should_receive(:doc_num).and_return { 0 }
@@ -122,7 +120,6 @@ $Id$
 #   
 #   def test_smart_group_no_tags
 #     User.current=users(:ian)
-#     Organization.current=organizations(:joyent)
 #     
 #     @results = flexmock("results")
 #     @results.should_receive(:doc_num).and_return { 0 }
@@ -148,7 +145,6 @@ $Id$
 # 
 #   def test_smart_group_with_tags
 #     User.current=users(:ian)
-#     Organization.current=organizations(:joyent)
 #     
 #     @result = flexmock("result")
 #     @result.should_receive(:attr).with("@uri").and_return { "Person:1" }
@@ -179,7 +175,6 @@ $Id$
 #   
 #   def test_regression_for_3087
 #     User.current=users(:ian)
-#     Organization.current=organizations(:joyent)
 #     
 #     @result = flexmock("result")
 #     @result.should_receive(:attr).with("@uri").and_return { "Person:1" }

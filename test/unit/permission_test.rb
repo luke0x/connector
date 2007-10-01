@@ -39,7 +39,6 @@ class PermissionTest < Test::Unit::TestCase
   #  jason   |   X     |     X
   
   def test_permissions_from_fixtures_for_ian
-    Organization.current = organizations(:joyent)
     User.current         = users(:ian)
     
     assert JoyentFile.restricted_find(@ian_jpg)
@@ -48,7 +47,6 @@ class PermissionTest < Test::Unit::TestCase
   end
     
   def test_permissions_from_fixtures_for_peter
-    Organization.current = organizations(:joyent)
     User.current         = users(:peter)
 
     assert JoyentFile.restricted_find(@ian_jpg)
@@ -59,7 +57,6 @@ class PermissionTest < Test::Unit::TestCase
   end
 
   def test_permissions_from_fixtures_for_jason
-    Organization.current = organizations(:textdrive)
     User.current       = users(:jason)
 
     assert_raise(ActiveRecord::RecordNotFound) {
@@ -72,7 +69,6 @@ class PermissionTest < Test::Unit::TestCase
   end
 
   def test_owner_can_always_access
-    Organization.current = organizations(:joyent)
     User.current         = users(:ian)
 
     item = Person.restricted_find(people(:stephen).id)
@@ -86,8 +82,6 @@ class PermissionTest < Test::Unit::TestCase
   end
   
   def test_restricted_count
-    Organization.current = organizations(:joyent)
-
     User.current         = users(:ian)
     assert_equal 4, JoyentFile.restricted_count
 

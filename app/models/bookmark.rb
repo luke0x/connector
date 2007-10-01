@@ -44,19 +44,19 @@ class Bookmark < ActiveRecord::Base
   end
 
   def use_count
-    Organization.current.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).length
+    owner.organization.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).length
   end
 
   def user_count
-    Organization.current.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).map(&:owner).uniq.length
+    owner.organization.bookmarks.find(:all, :conditions => ["uri_sha1 = ?", uri_sha1], :scope => :read).map(&:owner).uniq.length
   end
   
   def first_user
-    Organization.current.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).owner
+    owner.organization.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).owner
   end
 
   def first_bookmarked_at
-    Organization.current.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).created_at
+    owner.organization.bookmarks.find(:first, :conditions => ["uri_sha1 = ?", uri_sha1], :order => 'created_at ASC', :scope => :read).created_at
   end
 
   def bookmarked_by?(user)

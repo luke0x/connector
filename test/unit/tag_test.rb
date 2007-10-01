@@ -34,7 +34,6 @@ class TagTest < Test::Unit::TestCase
   
   def test_restricted_items
     User.current = users(:peter)
-    Organization.current = User.current.organization
 
     assert_equal 5, tags(:orange).items.size
     assert_equal 3, tags(:orange).restricted_items.size 

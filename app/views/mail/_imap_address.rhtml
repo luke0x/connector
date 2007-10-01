@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% person = address.respond_to?(:person) ? address.person : Organization.current.find_contact_with_email(address_string(address, true)) -%>
+<% person = address.respond_to?(:person) ? address.person : current_organization.find_contact_with_email(address_string(address, true)) -%>
 <% if person -%>
   <% if person.user -%>
     <%= link_to "&nbsp;", person_show_url(:id => person), {:title => _("Open person in users."), :class => 'go toContacts'} %>

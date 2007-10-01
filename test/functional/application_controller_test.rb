@@ -36,7 +36,7 @@ class ApplicationControllerTest < Test::Unit::TestCase
   #   @request.host = 'joyent.joyent.com'
   #   get :login
   #   
-  #   assert_equal domains(:joyent).id, Domain.current.id
+  #   assert_equal domains(:joyent).id, current_domain.id
   # end
   
   def test_valid_domain_name_can_access

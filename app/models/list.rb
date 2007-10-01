@@ -31,14 +31,14 @@ class List < ActiveRecord::Base
   def self.class_humanize; 'List'; end
   def class_humanize; 'List'; end
   
-  def self.new_from_opml(opml, list_folder_id=nil)
+  def self.new_from_opml(opml, current_user, list_folder_id=nil)
     expanded = expanded_outlines(opml)
     opml = parse_opml(opml)
     cols = map_columns(opml[:outlines]).uniq!
-    group = list_folder_id || User.current.list_folders.find(:first).id
+    group = list_folder_id || current_user.list_folders.find(:first).id
     
     transaction do
-      list = List.create!(:name => opml[:title], :list_folder_id => group, :owner => User.current, :organization => Organization.current)
+      list = List.create!(:name => opml[:title], :list_folder_id => group, :owner => current_user, :organization => current_user.organization)
       list.list_rows.clear
       list.list_columns.clear
       
@@ -269,19 +269,17 @@ class List < ActiveRecord::Base
 
   def move_to!(list_folder)
     return unless list_folder.is_a?(ListFolder)
-    return unless User.current.can_move?(self)
 
     self.update_attribute(:list_folder_id, list_folder.id)
   end
-
+                                     
   def copy_to!(list_folder)
     return unless list_folder.is_a?(ListFolder)
-    return unless User.current.can_copy?(self)
 
     new_list = self.clone
     transaction do
       new_list.list_folder_id = list_folder.id
-      new_list.user_id = User.current
+      new_list.user_id        = list_folder.owner
       new_list.save!
     end # transaction
   end

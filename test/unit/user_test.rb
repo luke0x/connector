@@ -131,11 +131,6 @@ class UserTest < Test::Unit::TestCase
     assert user.bookmark_folder.is_a?(BookmarkFolder)
   end
   
-  def test_selected_works
-    User.selected= users(:ian)
-    assert_equal users(:ian), User.selected
-  end
-  
   def test_can_edit
     assert users(:ian).can_edit?(joyent_files(:ian_jpg))
     assert users(:ian).can_edit?(joyent_files(:ians_dog_jpg))
@@ -149,7 +144,6 @@ class UserTest < Test::Unit::TestCase
 
   def test_find_other_users
     User.current         = users(:ian)
-    Organization.current = organizations(:joyent)
     
     users = users(:ian).other_users
     assert !users.map(&:id).include?(users(:ian).id)
@@ -197,7 +191,6 @@ class UserTest < Test::Unit::TestCase
   end
   
   def test_contact_list_created
-    Organization.current = organizations(:joyent)
     u = assert_create
     u.reload # omg h8
     assert_not_nil u.contact_list

@@ -160,7 +160,6 @@ class JoyentFileTest < Test::Unit::TestCase
   def test_restricted_find_with_different_owner
     f = joyent_files(:peter_jpg)
     User.current=          users(:ian)
-    Organization.current=  organizations(:joyent)
     
     assert_equal f, JoyentFile.restricted_find(f.id)
     assert_equal 'foopeter.jpg', f.name

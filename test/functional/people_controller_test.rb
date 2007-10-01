@@ -490,8 +490,8 @@ class PeopleControllerTest < Test::Unit::TestCase
     login_person(:ian)
     get :list, :group => 'users'
     assert_response :success
-    assert @response.body =~ /#{Organization.current.users.length}\/100 Users Created/
-    assert @response.body =~ /<strong class="bar" style="width: #{Organization.current.users.length}%;"><\/strong>/
+    assert @response.body =~ /#{User.current.organization.users.length}\/100 Users Created/
+    assert @response.body =~ /<strong class="bar" style="width: #{User.current.organization.users.length}%;"><\/strong>/
   end
   
   def test_smart_group_attributes

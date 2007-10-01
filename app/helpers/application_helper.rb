@@ -29,7 +29,7 @@ module ApplicationHelper
     when Message
       mail_message_show_url(:id => item.id, :mailbox=>item.mailbox)
     when Event, StubEvent
-      if calendar = item.calendars.select{|cal| User.current.id == cal.user_id}.first
+      if calendar = item.calendars.select{|cal| current_user.id == cal.user_id}.first
         calendar_show_route_url(:id => item.id, :calendar_id => calendar.id)
       else
         calendar_show_route_url(:id => item.id, :calendar_id => item.calendars.first)
@@ -143,7 +143,7 @@ module ApplicationHelper
     new_locals[:content]                 = new_locals[:standard_group_selected] ? (render :partial => partial_path, :locals => partial_locals) : ''
     new_locals[:selected]                = partial_locals[:selected_group] &&
                                            (partial_locals[:standard_group] == partial_locals[:selected_group]) &&
-                                           ((! new_locals[:others]) or (new_locals[:others] and ! User.current.subscribed_to?(new_locals[:standard_group])))
+                                           ((! new_locals[:others]) or (new_locals[:others] and ! current_user.subscribed_to?(new_locals[:standard_group])))
     new_locals[:name]                    = partial_locals[:name] || new_locals[:standard_group].name
     if @application_name == 'mail' and new_locals[:name] == 'INBOX'
       new_locals[:name] = 'Inbox'
@@ -244,18 +244,18 @@ module ApplicationHelper
   def standard_groups_select_field(selected_group)
     partial = ''
     partial << '<select name="new_parent_id" id="new_parent_id" size="1" style="margin: 3px 0; width: 120px;">'
-      partial << "<option #{selected_group.parent.blank? ? 'selected="selected"' : ''} #{@application_name == 'lists' ? 'value="' + User.current.lists_list_folder.id.to_s + '"' : ''}>"
+      partial << "<option #{selected_group.parent.blank? ? 'selected="selected"' : ''} #{@application_name == 'lists' ? 'value="' + current_user.lists_list_folder.id.to_s + '"' : ''}>"
         partial << _('Top Level')
       partial << '</option>'
 
       # okay, this is ~HAX
       roots = case @application_name
-      when 'mail'      then User.current.mail_root_mailboxes
-      when 'calendar'  then User.current.calendar_root_calendars
+      when 'mail'      then current_user.mail_root_mailboxes
+      when 'calendar'  then current_user.calendar_root_calendars
       when 'people'    then []
-      when 'files'     then User.current.files_root_folders
+      when 'files'     then current_user.files_root_folders
       when 'bookmarks' then []
-      when 'lists'     then User.current.lists_root_folders
+      when 'lists'     then current_user.lists_root_folders
       else
         []
       end
@@ -279,7 +279,7 @@ module ApplicationHelper
       partial << '</option>'
 
       # okay, this is ~HAX
-      roots = [User.current.strongspace_folder]
+      roots = [current_user.strongspace_folder]
 
       roots.each do |root|
         partial << options_for_strongspace_group(root, selected_group) unless root == selected_group
@@ -383,16 +383,16 @@ module ApplicationHelper
   end
              
   def localize_time(time)
-    if User.current && time
-      User.current.person.tz.utc_to_local(time)
+    if current_user && time
+      current_user.person.tz.utc_to_local(time)
     else
       time
     end
   end
   
   def normalize_time(time)
-    if User.current && time
-      User.current.person.tz.local_to_utc(time)
+    if current_user && time
+      current_user.person.tz.local_to_utc(time)
     else
       time
     end
@@ -500,9 +500,9 @@ module ApplicationHelper
     tags.each do |tag|
       out << tag_to_jsar(tag)
     end
-    out << user_to_jsar(User.current)
-    User.current.other_users.each do |user|
-      out << user_to_jsar(user)
+    out << user_to_jsar(current_user, true, current_user == selected_user)
+    current_user.other_users.each do |user|
+      out << user_to_jsar(user, user == current_user, user == selected_user)
     end
 
     out.join("\n")
@@ -510,7 +510,7 @@ module ApplicationHelper
   
   def add_to_workspace(report_description_name, reportable)
     report_description = ReportDescription.find_by_name(report_description_name.to_s)
-    report             = report_description.reports.find_by_user_id_and_reportable_id(User.current.id, reportable.id)
+    report             = report_description.reports.find_by_user_id_and_reportable_id(current_user.id, reportable.id)
     check_box_action(_("Visible in your Workspace"),
                      !report.blank?,
                      reports_create_url(:report_description_id => report_description, :reportable_id => reportable),
@@ -523,10 +523,10 @@ module ApplicationHelper
   end
 
   def javascript_current_user_tags
-    return '' if User.current.tags.blank?
+    return '' if current_user.tags.blank?
     out = []
     
-    User.current.tags.each do |tag|
+    current_user.tags.each do |tag|
       out << tag_to_jsar(tag)
     end
 
@@ -593,8 +593,8 @@ module ApplicationHelper
   
   # i18n: ensure get proper language code from the available ones list
   # def lang_code(textdomain, path = nil)
-  #   unless User.current.blank?
-  #     user_language = User.current.get_option('Language')
+  #   unless current_user.blank?
+  #     user_language = current_user.get_option('Language')
   #     return user_language unless user_language.blank? or user_language == 'Automatic'
   #   end
   # 
@@ -650,15 +650,15 @@ module ApplicationHelper
     when 'subscribe'
       next_type = params[:app] ? 'group' : 'app'
       params[:type] = 'org'
-      browsable = Browsable.new(params, User.current)
+      browsable = Browsable.new(params, current_user)
     when 'move', 'copy'  
       next_type = 'view'
       if params[:view]
         params[:type] = 'view'
-        browsable = Browsable.new(params, User.current)
+        browsable = Browsable.new(params, current_user)
       else
         params[:type] = 'group'
-        browsable = Browsable.new(params, User.current)
+        browsable = Browsable.new(params, current_user)
       end
     end  
     render :partial => 'browser/columns', :locals => { :params => params, :items => browsable.items, :next_type => next_type }
@@ -689,13 +689,13 @@ module ApplicationHelper
   def remote_subscription(options={})
     if options[:subscribable_type].nil? #in-case there are no subscribable groups
       render :partial => 'disabled_button', :locals => {:text => 'None Found'}
-    elsif User.current.subscribed_to?(nil, options[:subscribable_type], options[:subscribable_id])
+    elsif current_user.subscribed_to?(nil, options[:subscribable_type], options[:subscribable_id])
       render :partial => 'disabled_button', :locals => {:text => 'Subscribed'}
     else
       options[:url] = subscription_create_url(:subscribable_id => options[:subscribable_id], 
                          :subscribable_type => options[:subscribable_type],
                          :organization_id => User.find(options[:user_id]).organization.id,
-                         :user_id => User.current.id, :escape => false)
+                         :user_id => current_user.id, :escape => false)
       # MOVE THIS TO NEW METHOD ABOVE               
       link_to_remote '<div class="buttonStandardLeft" id="subscribe"><div class="buttonStandardRight"><div class="buttonStandardBG">'+_('Subscribe')+' ' + '</div></div></div>',
                   { :url => options[:url],
@@ -750,7 +750,7 @@ module ApplicationHelper
   
   def joyent_javascript_include_tags
     js = []
-    js << javascript_include_tag("lang/#{User.current.language}")
+    js << javascript_include_tag("lang/#{current_user.language}")
     if RAILS_ENV == 'production'
     	js << javascript_include_tag('all')
     else
@@ -774,10 +774,10 @@ module ApplicationHelper
         css << stylesheet_link_tag(c)
       end
     end
-  	css << stylesheet_link_tag(Organization.current.affiliate.name)
+  	css << stylesheet_link_tag(current_organization.affiliate.name)
   	css << stylesheet_link_tag(@application_name)
-  	css << stylesheet_link_tag("lang/#{User.current.language}/#{User.current.language}-#{@application_name}")
-  	css << stylesheet_link_tag("lang/#{User.current.language}/#{User.current.language}")
+  	css << stylesheet_link_tag("lang/#{current_user.language}/#{current_user.language}-#{@application_name}")
+  	css << stylesheet_link_tag("lang/#{current_user.language}/#{current_user.language}")
   	if ['reports', 'connect'].include?(controller.controller_name)
   	  ['mail', 'calendar', 'people', 'files', 'bookmarks', 'lists'].each do |app_name|
     	  css << stylesheet_link_tag(app_name) unless (@application_name == app_name)

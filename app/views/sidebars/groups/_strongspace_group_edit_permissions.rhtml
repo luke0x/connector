@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% if group and group.user_id == User.current.id -%>
+<% if group and group.user_id == current_user.id -%>
   <%= link_to_function _('Guest Access'), "StandardGroup.toggleEditAccess();", { :id => 'standardGroupEditAccessLink', :class => 'groupOption access' } %>
   <div id="standardGroupEditAccess" style="display: none;" class="groupOptionMenu">
     <% form_tag({:controller => 'files', :action => 'set_guest_access', :path => group.relative_path}, {:method => 'post', :onsubmit => 'return StandardGroup.editSubmit(this);'}) do -%>
@@ -19,7 +19,7 @@
       <br />
       <div id="access_mode_restricted_info" style="margin: 4px 2px; <%= group.guests_restricted? ? 'display: none;' : '' %>">
         <select name="user_ids[]" size="6" multiple="multiple" style="width:100%;">
-          <% User.current.guests.sort.each do |user| -%>
+          <% current_user.guests.sort.each do |user| -%>
             <option value="<%= user.id %>" <%= "selected" if group.permission_for(user) %>><%= user.full_name %></option>
           <% end -%>          
         </select>

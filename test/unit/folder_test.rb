@@ -82,7 +82,6 @@ class FolderTest < Test::Unit::TestCase
 
   def test_securable_public
     f = folders(:ian_pictures)
-    Organization.current = f.organization
     User.current = f.owner
     assert f.permissions.empty?
     assert f.public?
@@ -96,7 +95,6 @@ class FolderTest < Test::Unit::TestCase
   
   def test_securable_restricted
     f = folders(:ian_pictures)
-    Organization.current = f.organization
     User.current = f.owner
     assert f.permissions.empty?
     assert ! f.restricted?
@@ -110,9 +108,8 @@ class FolderTest < Test::Unit::TestCase
   
   def test_ensure_public_is_empty
     f = folders(:ian_pictures)
-    Organization.current = f.organization
     User.current = f.owner
-    assert_equal 4, Organization.current.users_and_admins.length
+    assert_equal 4, User.current.organization.users_and_admins.length
     assert f.public?
     
     f.add_permission(f.owner)

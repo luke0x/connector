@@ -188,7 +188,7 @@ class Person < ActiveRecord::Base
         return if person_params['password'].blank?
         return unless person_params['password'] == person_params['password_confirmation']
 
-        self.user = Organization.current.users.create(:identity  => Identity.create,
+        self.user = User.current.organization.users.create(:identity  => Identity.create,
                                                       :username  => person_params['username'],
                                                       :password  => person_params['password'],
                                                       :recovery_email => person_params['recovery_email'],
@@ -199,7 +199,7 @@ class Person < ActiveRecord::Base
       elsif person_params['type'] == 'guest'
         return if person_params['username'].blank?
 
-        self.user = Organization.current.users.create(:identity  => Identity.create,
+        self.user = User.current.organization.users.create(:identity  => Identity.create,
                                                       :username  => person_params['username'],
                                                       :password  => Digest::SHA1.hexdigest("#{JoyentConfig.user_new_password_salt}#{Time.now}")[0..20],
                                                       :recovery_email => person_params['recovery_email'],
@@ -277,7 +277,7 @@ class Person < ActiveRecord::Base
     person_params['username']       = person_params['guest_username']       if person_params['username'].blank?
 
     # update person
-    self.organization = Organization.current
+    self.organization = User.current.organization
     self.owner = User.current
     self.update_attributes(person_params.limit_keys_to(valid_params))
     self.reload
@@ -361,6 +361,24 @@ class Person < ActiveRecord::Base
   # find the first phone number marked as preferred to use as the primary number
   def primary_phone
     phone_numbers.find(:first, :conditions => {:preferred => true}) || phone_numbers.first
+  end                
+  
+  def to_utc(time)
+    return unless time
+    
+    begin
+      tz.local_to_utc(time)
+    rescue TZInfo::AmbiguousTime 
+      tz.local_to_utc(time, true) 
+    rescue TZInfo::PeriodNotFound
+      tz.local_to_utc(time + 1.hour)
+    end
+  end
+  
+  def to_local(time)
+    return unless time
+    
+    tz.utc_to_local(time)
   end
   
   private

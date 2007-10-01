@@ -65,7 +65,7 @@ def extract_fields(element, fields, params={})
 end       
 
 def parse_uid_mappings
-  filename = "#{Organization.current.system_domain.email_domain}-mail_maps.txt"
+  filename = "#{User.current.organization.system_domain.email_domain}-mail_maps.txt"
 
   @user_mailbox_maps   = {}
   current_mailbox_map  = nil
@@ -115,7 +115,7 @@ def add_notifications(item, element)
       notifiee = @users[params[:notifiee].downcase]
       params.delete(:notifiee)
                                                  
-      params[:organization] = Organization.current                                    
+      params[:organization] = User.current.organization                                    
       params[:item]         = item
       params[:notifier]     = @users[params[:notifier].downcase] 
       params[:message]      = ''
@@ -198,7 +198,7 @@ def create_calendar(element, parent=nil)
         fields = [:name, :location, :notes, :start_time, :duration, :all_day, :recur_end_time, :recur_rule, :created_at, :updated_at]
         params = extract_fields(event_element, fields)
     
-        params[:organization] = Organization.current
+        params[:organization] = User.current.organization
         params[:end_time]     = params[:all_day] == 'true' ? params[:start_time].to_time + 1.minute : params[:start_time].to_time + params[:duration].to_i
         params.delete(:duration) 
         
@@ -311,7 +311,7 @@ def create_person(element, unsaved_user=nil)
     fields = [:name_prefix, :first_name, :middle_name, :last_name, :name_suffix, :nickname, 
               :company_name, :title, :time_zone, :notes, :created_at, :updated_at]  
     params = extract_fields(element, fields)               
-    params[:organization] = Organization.current                                      
+    params[:organization] = User.current.organization                                      
      
     if unsaved_user == nil
       # This is a regular contact             
@@ -451,7 +451,7 @@ files_paths_to_import.each do |file_path|
       log('organization') do
         name                 = doc.elements['organization/name'].text 
         active               = false
-        Organization.current = Organization.create(:name => name, :active => active) 
+        organization = Organization.create(:name => name, :active => active) 
       end
       
       # Create the quota
@@ -459,7 +459,7 @@ files_paths_to_import.each do |file_path|
         users_quota    = doc.elements['organization/quota/users'].text.to_i
         disk_quota     = doc.elements['organization/quota/disk'].text.to_i
         custom_domains = true # NONXML
-        Organization.current.create_quota(:users => users_quota, :gigabytes => disk_quota, :custom_domains => true)  
+        organization.create_quota(:users => users_quota, :gigabytes => disk_quota, :custom_domains => true)  
       end
                   
       # Create the domains 
@@ -467,12 +467,12 @@ files_paths_to_import.each do |file_path|
         fields = [:email_domain, :web_domain, :system_domain, :primary]
         doc.elements.each('organization/domain') do |element|          
           params = extract_fields(element, fields)              
-          Organization.current.domains.create(params)
+          organization.domains.create(params)
         end            
       end  
       
       # Make sure we sync to ldap
-      Organization.current.sync_to_ldap 
+      organization.sync_to_ldap 
                    
       # Create the users   
       # Not going to track the first user in the new app
@@ -480,7 +480,7 @@ files_paths_to_import.each do |file_path|
         doc.elements.each('organization/user') do |element|
           fields = [:username, :password, :admin] 
           params = extract_fields(element, fields)
-          params[:organization] = Organization.current
+          params[:organization] = User.current.organization
           params[:username].downcase!   
           unsaved_user          = User.new(params)
         
@@ -497,8 +497,7 @@ files_paths_to_import.each do |file_path|
         log('organization') do
           email_domain         = doc.elements['organization/domain/email_domain'].text 
           domain               = Domain.find_by_email_domain(email_domain)
-          Organization.current = domain.organization   
-          @users = Organization.current.users.inject({}){|hash, user| hash[user.username] = user; hash}
+          @users               = domain.organization.users.inject({}){|hash, user| hash[user.username] = user; hash}
         end
             
         # We need to set up the uid mappings for mail so we can work with them

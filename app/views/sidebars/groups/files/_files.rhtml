@@ -7,10 +7,10 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% parent_id = @folder && User.current.can_create_child_on?(@folder) ? @folder.id : nil -%>
+<% parent_id = @folder && current_user.can_create_child_on?(@folder) ? @folder.id : nil -%>
 
-<% if User.current.guest? -%>
-	<% User.current.guest_folders.each do |folder| %>
+<% if current_user.guest? -%>
+	<% current_user.guest_folders.each do |folder| %>
   <%= render_strongspace_group 'sidebars/groups/files/files_strongspace', {:standard_group => folder, :url => standard_list_url(folder), :selected_group => @folder, :path => folder.full_path} %>
 	<% end %>
 	
@@ -20,15 +20,15 @@
   		<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');"><%= _('Folder') -%></a>
   	</div>
   </div>
-  <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => User.current.files_root_folders, :parent_id => parent_id } %>
+  <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => current_user.files_root_folders, :parent_id => parent_id } %>
 <% else -%>
-  <% # cache(:action => "sidebar", :user_id => User.current.id, :group_id => controller.current_group_id) do %>
+  <% # cache(:action => "sidebar", :user_id => current_user.id, :group_id => controller.current_group_id) do %>
     <div class="defaultGroups groups"><ul class="groupsList">
-      <%= render_default_group 'sidebars/groups/files/files_documents',     { :icon_class => 'all', :name => _('Documents'), :url => files_list_route_url(:folder_id => User.current.files_documents_folder.id), :selected => (@folder == User.current.files_documents_folder), :group => User.current.files_documents_folder } %>
+      <%= render_default_group 'sidebars/groups/files/files_documents',     { :icon_class => 'all', :name => _('Documents'), :url => files_list_route_url(:folder_id => current_user.files_documents_folder.id), :selected => (@folder == current_user.files_documents_folder), :group => current_user.files_documents_folder } %>
       <%= render_default_group 'sidebars/groups/files/files_notifications', { :icon_class => 'notifications', :name => _('Notifications'), :url => files_notifications_url, :selected => (@view_kind == 'notifications' and @folder.blank? and @smart_group.blank?) } %>
-  	  <%= render_strongspace_group 'sidebars/groups/files/files_strongspace', {:standard_group => User.current.strongspace_folder, :url => standard_list_url(User.current.strongspace_folder), :selected_group => @folder, :path => ''} %>
+  	  <%= render_strongspace_group 'sidebars/groups/files/files_strongspace', {:standard_group => current_user.strongspace_folder, :url => standard_list_url(current_user.strongspace_folder), :selected_group => @folder, :path => ''} %>
 
-      <% User.current.services.each do |service| -%>
+      <% current_user.services.each do |service| -%>
         <%= render_service_group 'sidebars/groups/files/files_service',   { :standard_group => service.root_folder, :css_class => service.name, :name => _(service.root_folder.name), :url => files_service_url(:service_name => service.name), :selected_group => @folder, :service_name => service.name, :group_id => service.root_folder.id} %>
       <% end -%>
 
@@ -36,11 +36,11 @@
         <%= render_smart_group 'sidebars/groups/files/files_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
       <% end -%>
 
-      <% User.current.files_root_folders.each do |folder| -%>
+      <% current_user.files_root_folders.each do |folder| -%>
         <%= render_standard_group 'sidebars/groups/files/files_standard', { :standard_group => folder, :url => files_list_route_url(:folder_id => folder.id), :selected_group => @folder } %>
       <% end -%>
 
-    	<% User.current.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
+    	<% current_user.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
     		<%= render_standard_group 'sidebars/groups/files/files_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @folder, :subscription => true, :css_class => 'group subscription' } %>
     	<% end %>
     </ul></div>
@@ -50,12 +50,12 @@
     	<div id="addGroupMenu" style="display:none;">
     		<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');"><%= _('Folder') -%></a>
     		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart Folder') -%></a>
-			<% if User.current.has_other_identities? -%>
+			<% if current_user.has_other_identities? -%>
 				<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'Files', :context => 'subscribe')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
 			<% end -%>
     	</div>
     </div>
     <%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>
-    <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => User.current.files_root_folders, :parent_id => parent_id } %>
+    <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => current_user.files_root_folders, :parent_id => parent_id } %>
   <% # end -%>
 <% end -%>

@@ -23,11 +23,11 @@ def log(message)
 end   
 
 def error(message)
-  File.open("#{Organization.current.system_domain.email_domain}-errors.txt", 'a'){|f| f.puts "imapcopier: "+message}
+  File.open("#{User.current.organization.system_domain.email_domain}-errors.txt", 'a'){|f| f.puts "imapcopier: "+message}
 end
 
 def parse_uid_mappings
-  filename = "#{Organization.current.system_domain.email_domain}-mail_maps.txt"
+  filename = "#{User.current.organization.system_domain.email_domain}-mail_maps.txt"
 
   @user_mailbox_maps   = {}
   current_mailbox_map  = nil
@@ -132,7 +132,6 @@ organizations.each do |org|
   imap_src = imap_dest = nil
   begin            
     log "\nCopying IMAP mail for organization #{org.name}"
-    Organization.current = org
   
     parse_uid_mappings   
 

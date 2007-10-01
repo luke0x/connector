@@ -38,9 +38,7 @@ class Organization < ActiveRecord::Base
   has_many :lists
 
   before_destroy {|org| !org.active}   
-  
-  cattr_accessor :current 
-
+ 
   cattr_accessor :ssh_public_key
   @@ssh_public_key = JoyentConfig.organization_ssh_public_key
   
@@ -120,7 +118,6 @@ class Organization < ActiveRecord::Base
   def self.setup(name, system_domain, username, password, affiliate_name, first_name, last_name, recovery_email, users, megabytes, custom_domains)
     affiliate = Affiliate.find_by_name(affiliate_name) || Affiliate.find(1)
     o = Organization.create(:name=>name, :affiliate_id => affiliate.id)  
-    Organization.current = o
     q = o.create_quota(:users=>users, :megabytes=>megabytes, :custom_domains=>custom_domains)
     d = o.domains.create(:system_domain=>true, :primary=>true, :email_domain=>system_domain, :web_domain=>system_domain)  
     o.sync_to_ldap    

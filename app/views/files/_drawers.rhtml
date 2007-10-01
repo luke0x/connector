@@ -10,16 +10,16 @@
 <div id="Drawers">
   <% if @toolbar[:copy] -%>
 		<% if @view_kind == 'strongspace' -%>
-    	<div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => [User.current.strongspace_folder], :selected => @folder} %></div>
+    	<div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => [current_user.strongspace_folder], :selected => @folder} %></div>
 		<% else -%>
-			<div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => User.current.folders.select{|f| f.parent.blank?}, :selected => @folder} %></div>
+			<div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => current_user.folders.select{|f| f.parent.blank?}, :selected => @folder} %></div>
     <% end -%>
   <% end -%>
   <% if @toolbar[:move] -%>
 		<% if @view_kind == 'strongspace' -%>
-    	<div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => [User.current.strongspace_folder], :selected => @folder} %></div>
+    	<div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => [current_user.strongspace_folder], :selected => @folder} %></div>
 		<% else -%>
-    	<div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => User.current.folders.select{|f| f.parent.blank?}, :selected => @folder} %></div>
+    	<div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => current_user.folders.select{|f| f.parent.blank?}, :selected => @folder} %></div>
 		<% end -%>
   <% end -%>
 </div>

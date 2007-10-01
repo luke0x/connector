@@ -67,7 +67,6 @@ class BookmarkTest < Test::Unit::TestCase
 
   def test_first_user
     User.current = users(:ian)
-    Organization.current = User.current.organization
 
     b = bookmarks(:ian_bookmark_1)
     assert_equal users(:ian), b.first_user
@@ -78,7 +77,6 @@ class BookmarkTest < Test::Unit::TestCase
 
   def test_first_bookmarked_at
     User.current = users(:ian)
-    Organization.current = User.current.organization
 
     b = bookmarks(:ian_bookmark_1)
     assert_equal b.created_at, b.first_bookmarked_at
@@ -107,14 +105,12 @@ class BookmarkTest < Test::Unit::TestCase
     assert_not_equal b_o1, b_o2
 
     User.current = b_o1.owner
-    Organization.current = User.current.organization
     b_o1_use_count = b_o1.use_count
     b_o1_user_count = b_o1.user_count
     b_o1_first_user = b_o1.first_user
     b_o1_first_bookmarked_at = b_o1.first_bookmarked_at
 
     User.current = b_o2.owner
-    Organization.current = User.current.organization
     b_o2_use_count = b_o2.use_count
     b_o2_user_count = b_o2.user_count
     b_o2_first_user = b_o2.first_user

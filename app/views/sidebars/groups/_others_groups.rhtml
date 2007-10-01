@@ -9,13 +9,13 @@
 
 <div id="others_groups">
   <ul class="groupsList">
-    <% User.current.other_users.sort.each do |user| -%>
+    <% current_user.other_users.sort.each do |user| -%>
       <% update_id = "groups_user_#{user.id}" -%>
       <li>
         <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
           <table><tr>
             <td class="dinger">
-              <%= link_to_function('+', "GroupsBrowser.toggleUser('#{user.id}');", { :class => (user == User.selected && ! @is_subscription ? 'expanded' : 'collapsed'), :id => "dinger_user_#{user.id}" }) -%>
+              <%= link_to_function('+', "GroupsBrowser.toggleUser('#{user.id}');", { :class => (user == selected_user && ! @is_subscription ? 'expanded' : 'collapsed'), :id => "dinger_user_#{user.id}" }) -%>
             </td>
             <td>
               <%= link_to_function(user.full_name, "GroupsBrowser.toggleUser('#{user.id}');", { :class => 'folder user', :style => "background-color: transparent;" }) -%>
@@ -26,8 +26,8 @@
           </tr></table>
         </div></div></div></div>
         <div id="<%= update_id %>">
-          <% if user == User.selected && ! @is_subscription -%>
-            <%= render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}", :locals => {:user => User.selected} %>
+          <% if user == selected_user && ! @is_subscription -%>
+            <%= render :partial => "sidebars/groups/#{@application_name}/others_#{@application_name}", :locals => {:user => selected_user} %>
           <% end -%>
         </div>
       </li>

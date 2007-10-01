@@ -136,7 +136,6 @@ class PersonTest < Test::Unit::TestCase
 
   def test_admin_can_create_user
     User.current = users(:ian)
-    Organization.current = organizations(:joyent)
     person_params = {'type' => 'user', 'username' => 'anewuser', 'password' => 'pass', 'password_confirmation' => 'pass', 'recovery_email' => 'a@b.com'}
 
     assert User.current.admin?
@@ -149,7 +148,6 @@ class PersonTest < Test::Unit::TestCase
   def test_non_admin_cant_create_user
     person_params = {:password => 'pass', :password_confirmation => 'pass', :username => 'anewuser'}
     User.current = users(:peter)
-    Organization.current = organizations(:joyent)
     assert ! User.current.admin?
     person = people(:stephen)
     assert ! person.user?
@@ -168,7 +166,6 @@ class PersonTest < Test::Unit::TestCase
 
   def test_admin_can_grant_admin
     User.current = users(:ian)
-    Organization.current = organizations(:joyent)
     person_params = {'type' => 'user', 'username' => 'anewuser', 'password' => 'omg', 'password_confirmation' => 'omg', 'recovery_email' => 'a@b.com', 'admin' => 'on'}
     
     assert User.current.admin?
@@ -182,7 +179,6 @@ class PersonTest < Test::Unit::TestCase
   def test_non_admin_cant_grant_admin
     person_params = {:admin => 'on'}
     User.current = users(:peter)
-    Organization.current = organizations(:joyent)
     assert ! User.current.admin?
     person = people(:peter)
     assert person.user?
@@ -199,7 +195,6 @@ class PersonTest < Test::Unit::TestCase
 
   def test_admin_can_create_guest
     User.current = users(:ian)
-    Organization.current = organizations(:joyent)
     person_params = {'type' => 'guest', 'username' => 'anewuser', 'password' => 'omg', 'password_confirmation' => 'omg', 'recovery_email' => 'a@b.com'}
     person = Person.new
     person.user_id = User.current.id
@@ -212,7 +207,6 @@ class PersonTest < Test::Unit::TestCase
   
   def test_extra_stuff_not_made_for_guests
     User.current = users(:ian)
-    Organization.current = organizations(:joyent)
     person_params = {'type' => 'guest', 'username' => 'anewuser', 'password' => 'omg', 'password_confirmation' => 'omg', 'recovery_email' => 'a@b.com'}
     person = Person.new
     person.user_id = User.current.id

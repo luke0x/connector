@@ -10,13 +10,13 @@
 <% group_name = @group_name || '' -%>
 
 <ul>
-  <%= render_default_group 'sidebars/groups/lists/lists_lists', { :icon_class => 'all', :name => _('Lists'), :url => lists_url(:group => User.selected.lists_list_folder.id), :selected => (@list_folder == User.selected.lists_list_folder), :group => User.selected.lists_list_folder } %>
+  <%= render_default_group 'sidebars/groups/lists/lists_lists', { :icon_class => 'all', :name => _('Lists'), :url => lists_url(:group => selected_user.lists_list_folder.id), :selected => (@list_folder == selected_user.lists_list_folder), :group => selected_user.lists_list_folder } %>
 
-  <% User.selected.application_smart_groups(@application_name).each do |smart_group| -%>
+  <% selected_user.application_smart_groups(@application_name).each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/lists/lists_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
 
-  <% User.selected.lists_root_folders.each do |list_folder| -%>
+  <% selected_user.lists_root_folders.each do |list_folder| -%>
     <%= render_standard_group 'sidebars/groups/lists/lists_standard', { :standard_group => list_folder, :url => list_folder_url(list_folder), :selected_group => @list_folder, :others => true } %>
   <% end -%>
 </ul>

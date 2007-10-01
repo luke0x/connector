@@ -48,13 +48,13 @@
 						
 						<% login_fxn = "new Ajax.Request('#{people_jajah_info_url}', {asynchronous:true, evalScripts:true, onLoading:function(request){$('jajah_status').innerText = 'Connecting...'}, onFailure:function(request){$('jajah_status').innerText = 'An unknown error has occurred.'}, parameters: {jajah_username:$('jajah_username').value, jajah_password:$('jajah_password').value}});" %>
 						<%= javascript_tag "Event.observe(window, 'load', function(event){#{login_fxn}})" %>
-						<input id="jajah_username" type="text" name="jajah_username" onblur="<%= login_fxn %>" maxlength="100" tabindex="1" value="<%= User.current.jajah_username %>" />
+						<input id="jajah_username" type="text" name="jajah_username" onblur="<%= login_fxn %>" maxlength="100" tabindex="1" value="<%= current_user.jajah_username %>" />
 					</dd>
 					<dt align="right">
 						<%= _('Your Password') -%>:
 					</dt>
 					<dd>
-						<input id="jajah_password" type="password"  name="jajah_password" onblur="<%= login_fxn %>" maxlength="100" tabindex="1" value="<%= User.current.jajah_password %>" autocomplete="off" />
+						<input id="jajah_password" type="password"  name="jajah_password" onblur="<%= login_fxn %>" maxlength="100" tabindex="1" value="<%= current_user.jajah_password %>" autocomplete="off" />
 					</dd>
 				</dl>
 			</td>

@@ -25,7 +25,6 @@ class CalendarTest < Test::Unit::TestCase
 
   def test_crud
     User.current = users(:ian)
-    Organization.current = User.current.organization
     run_crud_tests
   end
 
@@ -52,8 +51,14 @@ class CalendarTest < Test::Unit::TestCase
     User.current = users(:peter)
     Calendar.find(calendars(:peter).id).restrict_to!([users(:peter)])
 
-    User.current = users(:ian)
-    assert Calendar.find(calendars(:peter).id).events_between(Time.now - 7.days, Time.now + 7.days).size == 0
+    User.current = users(:ian).reload
+    # Have to remove peters link to ian for this test
+    peter  = users(:peter)
+    peter.identity = Identity.new(:name => 'loner')
+    peter.save
+
+    assert     !users(:ian).can_view?(calendars(:peter))        
+    assert_raise(ActiveRecord::RecordNotFound){ Calendar.find(calendars(:peter).id, :scope => :read) }
   end
            
   def test_events_between_no_start_time

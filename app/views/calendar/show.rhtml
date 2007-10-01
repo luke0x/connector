@@ -17,8 +17,8 @@
   <div></div>
 </div>
 
-<% invitation = @event.invitation_for(User.current) -%>
-<% if invitation && !(@event.owner == User.current) -%>
+<% invitation = @event.invitation_for(current_user) -%>
+<% if invitation && !(@event.owner == current_user) -%>
   <div class="info4"><div class="info3"><div class="info2"><div class="info">
       <% if ! invitation.pending -%>
   			<%= _("You have <strong>%{i18n_accepted_declined}</strong> this invitation from <strong>%{i18n_inviter}</strong>.")%{:i18n_accepted_declined => (invitation.accepted ? _('accepted') : _('declined')),:i18n_inviter => link_to(@event.owner.full_name, person_show_url(:id => @event.owner.person.id))} -%>
@@ -51,7 +51,7 @@
 							</td>
 							<td>
 								<select onclick="$('existing_calendar_radio').checked = true;" name='calendar_id'>
-									<%= options_from_collection_for_select(User.current.calendars, "id", "name")%>
+									<%= options_from_collection_for_select(current_user.calendars, "id", "name")%>
 								</select>
 							</td>
 						</tr>

@@ -30,7 +30,7 @@
     	<dl>
     	  <dt><%= _('Folder') -%>:</dt>
         <dd>
-          <%= link_to(_("%{i18n_file_owner_name}'s") % {:i18n_file_owner_name => @file.owner.person.name}, person_show_url(:id => User.current.person.id), {:class => 'go toContacts'}) %>
+          <%= link_to(_("%{i18n_file_owner_name}'s") % {:i18n_file_owner_name => @file.owner.person.name}, person_show_url(:id => current_user.person.id), {:class => 'go toContacts'}) %>
           <%= link_to(_("Files: %{i18n_file_folder_pathname}") % {:i18n_file_folder_pathname=> @file.folder.pathname}, files_list_route_url(:folder_id => @file.folder_id), {:class => 'goto'}) %>
         </dd>
     	  <dt><%= _('Notes') %>:</dt>

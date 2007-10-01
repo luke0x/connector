@@ -273,7 +273,6 @@ class EventTest < Test::Unit::TestCase
   
   def test_primary_calendar
     User.current = users(:ian)
-    Organization.current = User.current.organization
     e = events(:concert)
     assert_equal e.primary_calendar.owner, users(:ian)
   end

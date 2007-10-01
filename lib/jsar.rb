@@ -46,7 +46,7 @@ module JSAR
       });".gsub(/\s+/, ' ')
     end
 
-    def user_to_jsar(user)
+    def user_to_jsar(user, current, selected)
       return '' unless user
 
       "User.create({
@@ -56,8 +56,8 @@ module JSAR
         username:    '#{user.username}',
         fullName:    '#{escape_javascript(URI.encode(user.full_name))}',
         sortName:    '#{escape_javascript(URI.encode("#{user.person.last_name} #{user.person.first_name} #{user.person.middle_name}"))}',
-        current:     #{user.id == User.current.id},
-        selected:    #{user.id == User.selected.id}
+        current:     #{current},
+        selected:    #{selected}
       });".gsub(/\s+/, ' ')
     end
 

@@ -7,14 +7,14 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% if Organization.current.quota.megabytes < 1024 -%>
+<% if current_organization.quota.megabytes < 1024 -%>
   <% units = 'MB' -%>
-  <% disk_used = Organization.current.total_disk_usage.to_f / 1.megabyte -%>
-  <% disk_quota = Organization.current.quota.megabytes -%>
+  <% disk_used = current_organization.total_disk_usage.to_f / 1.megabyte -%>
+  <% disk_quota = current_organization.quota.megabytes -%>
 <% else -%>
   <% units = 'GB' -%>
-  <% disk_used = Organization.current.total_disk_usage.to_f / 1.gigabyte -%>
-  <% disk_quota = Organization.current.quota.gigabytes -%>
+  <% disk_used = current_organization.total_disk_usage.to_f / 1.gigabyte -%>
+  <% disk_quota = current_organization.quota.gigabytes -%>
 <% end -%>
 <% disk_used_percentage = ((disk_used.to_f / disk_quota) * 100).round -%>
 

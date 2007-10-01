@@ -179,7 +179,6 @@ class MailboxTest < Test::Unit::TestCase
   
   def test_empty_trash
     User.current = users(:ian)
-    Organization.current = User.current.organization
     
     trash_mock = flexmock('joyentmbox')
     trash_mock.should_receive(:mailbox_empty_trash).with(users(:ian).id).once

@@ -88,13 +88,12 @@ class SmartGroup < ActiveRecord::Base
   def self.create_from_search(needle)
     raise "Invalid needle" if needle.blank?
     raise "No user" if User.current.blank?
-    raise "No organization" if Organization.current.blank?
     
     sgd = SmartGroupDescription.find_by_name('All Items')
 
     smart_group = SmartGroup.new do |sg|
       sg.owner                   = User.current
-      sg.organization            = Organization.current
+      sg.organization            = User.current.organization
       sg.name                    = _("Search for %{i18n_search_param}")%{:i18n_search_param => "'#{needle}'"}
       sg.smart_group_description = sgd
       sg.accept_any              = false
@@ -111,7 +110,7 @@ class SmartGroup < ActiveRecord::Base
   def self.create_from_params(params)
     smart_group = SmartGroup.new do |sg|
       sg.owner                      = User.current
-      sg.organization               = Organization.current
+      sg.organization               = User.current.organization
       sg.name                       = params[:smart_group_name] if params[:smart_group_name]
       sg.smart_group_description_id = params[:smart_group_description_id]
       sg.accept_any                 = false

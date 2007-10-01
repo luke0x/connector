@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div class="defaultGroups groups"><ul class="groupsList">
-  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_all', { :icon_class => 'all', :name => _('Bookmarks'), :url => bookmarks_list_route_url(:bookmark_folder_id => User.current.bookmark_folder.id), :selected => (@bookmark_folder == User.current.bookmark_folder), :group => @bookmark_folder } %>
+  <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_all', { :icon_class => 'all', :name => _('Bookmarks'), :url => bookmarks_list_route_url(:bookmark_folder_id => current_user.bookmark_folder.id), :selected => (@bookmark_folder == current_user.bookmark_folder), :group => @bookmark_folder } %>
   <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_everyone', { :icon_class => 'everyones', :name => _("Others' Bookmarks"), :url => bookmarks_everyone_url, :selected => (@view_kind == 'list' and @bookmark_folder.blank? and @smart_group.blank? and @group_name == "Others' Bookmarks") } %>
   <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_notifications', { :icon_class => 'notifications', :name => _('Notifications'), :url => bookmarks_notifications_url, :selected => (@view_kind == 'notifications' and @bookmark_folder.blank? and @smart_group.blank?) } %>
 
@@ -16,7 +16,7 @@
     <%= render_smart_group 'sidebars/groups/bookmarks/bookmarks_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
 
-	<% User.current.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
+	<% current_user.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
 		<%= render_standard_group 'sidebars/groups/bookmarks/bookmarks_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @bookmark_folder, :subscription => true, :css_class => 'group subscription' } %>
 	<% end -%>
 </ul></div>
@@ -25,7 +25,7 @@
 	<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="<%= _('Add New Folder or Smart Folder') -%>"><%= _('New') -%>&hellip;</a>
 	<div id="addGroupMenu" style="display:none;">
 		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart Folder') -%></a>
-		<% if User.current.has_other_identities? -%>
+		<% if current_user.has_other_identities? -%>
 			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'Bookmarks', :context => 'subscribe')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
 		<% end -%>
 	</div>

@@ -43,7 +43,6 @@ class LdapObserversTest < Test::Unit::TestCase
   end
   
   def test_promoting_user_writes_person
-    Organization.current = organizations(:textdrive)
     p = people(:notuser)
     u = p.create_user({:username=>"notuser", :password=>"asdfasdfasdf", :organization => p.organization, :identity => Identity.create})
 

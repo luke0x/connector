@@ -25,6 +25,11 @@ class ApplicationController < ActionController::Base
   before_filter :load_application
   after_filter  :log_request
   
+  helper_method :current_domain
+  helper_method :current_organization  
+  helper_method :current_user
+  helper_method :selected_user
+  
   def connector_languages
     if JoyentConfig.staging_servers.include?(request.env['SERVER_NAME'])
       JoyentConfig.production_languages + JoyentConfig.development_languages
@@ -34,8 +39,36 @@ class ApplicationController < ActionController::Base
   end
   helper_method :connector_languages
 
-  private
-
+  private  
+    def current_domain
+      @current_domain ||= Domain.find_by_web_domain(request.host)
+    end             
+    
+    def current_domain=(value)
+      @current_domain = value
+    end
+              
+    def current_organization
+      @current_domain && @current_domain.organization
+    end           
+    
+    def current_user
+      User.current
+#      @current_user ||= current_organization.users.find(LoginToken.current.user_id) rescue nil
+    end     
+    
+    def current_user=(value)
+      @current_user = value
+    end     
+    
+    def selected_user
+      @selected_user ||= current_user
+    end
+    
+    def selected_user=(value)
+      @selected_user = value
+    end
+    
     def capture_start_time
       @log_start_time = Time.now
       true
@@ -48,10 +81,11 @@ class ApplicationController < ActionController::Base
     end
 
     def pre_clean
-      User.current = nil # also resets User.selected
-      Organization.current = nil
-      Domain.current = nil
       List.current = nil
+        
+      self.current_domain = nil
+      self.current_user   = nil
+      self.selected_user  = nil
       true
     end
 
@@ -63,7 +97,7 @@ class ApplicationController < ActionController::Base
     end
 
     def load_domain
-      unless Domain.current = Domain.find_by_web_domain(request.host)
+      unless current_domain
         if ! request.host.blank? and request.host.split('.').size == 2
           redirect_to affiliate_login_url(:affiliate => params[:affiliate] || Affiliate.find(1).name)
         else
@@ -74,12 +108,10 @@ class ApplicationController < ActionController::Base
     end
 
     def load_organization
-      organization = Domain.current.organization
-      if organization.blank? or ! organization.active?
+      if current_organization.blank? || !current_organization.active?
         redirect_to '/deactivated.html'
         false
       else
-        Organization.current = organization
         true
       end
     end
@@ -90,11 +122,11 @@ class ApplicationController < ActionController::Base
 
     def log_request
       UserRequest.create(:user_id      => LoginToken.current ? LoginToken.current.user_id : '',
-                         :organization => Organization.current ? Organization.current.name : '',
+                         :organization => current_organization ? current_organization.name : '',
                          :action       => "#{self.class.to_s}##{action_name}",
                          :duration     => (Time.now - @log_start_time) * 1000,
                          :session_id   => (session.is_a?(Hash) ? '' : session.session_id),
-                         :username     => (User.current ? User.current.username : ''))
+                         :username     => (current_user ? current_user.username : ''))
     end
 
     def redirect_back_or_home

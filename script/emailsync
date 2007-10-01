@@ -35,7 +35,6 @@ only_mailboxes  = ARGV.size == 3
 
 organizations.each do |org|            
   log "\nSyncing IMAP mail for organization #{org.name}."
-  Organization.current = org
 
   # Get the list of users
   users = (ARGV[1] == '*') ? org.users : [org.users.find_by_username(ARGV[1])].compact

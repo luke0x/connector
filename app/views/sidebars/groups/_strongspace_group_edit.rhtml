@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
-  <% if group.owner == User.current -%>
+  <% if group.owner == current_user -%>
 <% unless group.name == 'Strongspace' %>
     <%= render :partial => 'sidebars/groups/strongspace_group_edit_rename',        :locals => { :group => group } %>
     <%= render :partial => 'sidebars/groups/strongspace_group_edit_move',          :locals => { :group => group } %>

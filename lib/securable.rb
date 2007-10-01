@@ -42,7 +42,7 @@ module Securable
   
   def remove_permission(user)
     if self.permissions.length == 0
-      (Organization.current.users.reject{|u| u.guest?} - [user]).each do |user|
+      (user.organization.users.reject{|u| u.guest?} - [user]).each do |user|
         self.permissions.create(:user_id => user.id)
       end
       self.reload
@@ -112,7 +112,7 @@ module Securable
   end
   
   def restrictable_to_users
-    Organization.current.users.reject{|u| u.guest?} - restricted_to_users
+    User.current.organization.users.reject{|u| u.guest?} - restricted_to_users
   end  
   
   def public?

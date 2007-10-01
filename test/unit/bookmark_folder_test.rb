@@ -22,13 +22,11 @@ class BookmarkFolderTest < Test::Unit::TestCase
 
   def test_crud
     User.current = users(:ian)
-    Organization.current = User.current.organization
     run_crud_tests
   end
 
   def test_cascade_permissions
     User.current = users(:ian)
-    Organization.current = User.current.organization
 
     assert bookmark_folders(:ian_bookmark_folder).permissions.empty?
     assert bookmark_folders(:ian_bookmark_folder).bookmarks.first.permissions.empty?

@@ -24,7 +24,6 @@ class SmartGroupTest < Test::Unit::TestCase
   
   def setup
     User.current = users(:ian)
-    Organization.current = User.current.organization
   end
   
   def test_items

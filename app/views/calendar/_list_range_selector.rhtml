@@ -12,7 +12,7 @@
   	<tr>
   		<td valign="top">
         <% form_tag(calendar_list_url, {'method' => 'get'}) do -%>
-          <% today = User.current.today %>
+          <% today = current_user.today %>
           <select name="start_date" style="font-size: 10px;" onchange="this.parentNode.submit();">
             <% cur_date = today - 28 -%>
             <option value='<%= cur_date.to_s %>' <%= 'selected' if cur_date == @start_date %>><%= _('4 Weeks Ago') -%></option>

@@ -104,7 +104,7 @@ class ProductionSearchSystem
       cond.add_attr( "#{k} STRINC #{v.to_s.downcase}" )
     end
     
-    cond.add_attr("orgid NUMEQ #{Organization.current.id}")
+    cond.add_attr("orgid NUMEQ #{User.current.organization.id}")
     
     if !query.tags.blank?
       cond.add_attr(tags_attr(query))

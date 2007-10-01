@@ -65,7 +65,9 @@ class User < ActiveRecord::Base
   
   has_many   :guest_paths, :class_name => 'GuestPath', :foreign_key => 'guest_id'
   
-  delegate   :tz, :to => :person
+  delegate   :tz,       :to => :person
+  delegate   :to_utc,   :to => :person
+  delegate   :to_local, :to => :person
 
   before_create :encrypt_password
   
@@ -78,20 +80,10 @@ class User < ActiveRecord::Base
 
   def self.current=(user)
     @@current  = user
-    @@selected = user
   end
   
   def self.current
     @@current
-  end
-
-  def self.selected=(user)
-    raise "Selected user must be valid" if user.blank? or ! user.is_a?(User)
-    @@selected = user
-  end
-  
-  def self.selected
-    @@selected
   end
 
   def authenticate(pass, sha1=false)
@@ -221,7 +213,7 @@ class User < ActiveRecord::Base
   def create_report(report_description_id, reportable_id)
     report_desc = ReportDescription.find(report_description_id)
     reportable  = report_desc.reportable_type.find(reportable_id, :scope => :read)
-    report      = reports.create(:report_description => report_desc, :reportable => reportable, :organization => Organization.current)
+    report      = reports.create(:report_description => report_desc, :reportable => reportable, :organization => organization)
   end
 
   # mail related
@@ -493,8 +485,8 @@ class User < ActiveRecord::Base
   end
 
   def can_view?(item)
-    return false unless item
-    item.permissions.empty? || item.permissions.map(&:user_id).include?(id)
+    return false unless item                                                                
+    item.permissions.empty? || !(item.permissions.map(&:user_id) & identity.users.collect(&:id)).blank?
   end
 
   def can_edit?(item)

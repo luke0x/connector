@@ -366,7 +366,9 @@ class Event < ActiveRecord::Base
                             self.recurrence_description_id != event_params[:recurrence_description_id] ||
                             self.recur_end_time_in_user_tz != event_params[:recur_end_time] ||
                             self.location                  != event_params[:location]
-
+                                                                            
+    self.organization              = event_params[:current_organization]
+    self.owner                     = event_params[:current_user]
     self.name                      = event_params[:name]
     self.all_day                   = event_params[:all_day]
     self.start_time_in_user_tz     = event_params[:start_time]
@@ -376,8 +378,6 @@ class Event < ActiveRecord::Base
     self.location                  = event_params[:location]
     self.notes                     = event_params[:notes]
     self.alarm_trigger_in_minutes  = event_params[:alarm_trigger_in_minutes]
-    self.organization              = Organization.current
-    self.owner                     = User.current
     self.by_day                    = event_params[:by_day]
     self.save
     
@@ -480,21 +480,11 @@ class Event < ActiveRecord::Base
   private
 
     def to_utc(time)
-      if User.current && time
-        begin
-          User.current.person.tz.local_to_utc(time)
-        rescue TZInfo::AmbiguousTime 
-          User.current.person.tz.local_to_utc(time, true) 
-        rescue TZInfo::PeriodNotFound
-          User.current.person.tz.local_to_utc(time + 1.hour)
-        end
-      end
+      User.current.to_utc(time)
     end
   
-    def to_local(time)
-      if User.current && time
-        User.current.person.tz.utc_to_local(time)
-      end
+    def to_local(time) 
+      User.current.to_local(time)
     end
 
     def set_sort_caches

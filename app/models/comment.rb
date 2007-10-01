@@ -15,21 +15,14 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :commentable, :polymorphic => true
-  
-  def destroy
-    if User.current.nil? or (User.current == user) or (User.current == commentable.owner) or User.current.admin?
-      super
-    else
-      raise "Can't delete this comment"
-    end
-  end
-  
-  def self.find_for_update(id)
-    c = Comment.find(id)
-    if c.user == User.current || c.commentable.owner == User.current
-      c
-    else
+
+  def self.find_for_deletion(id, by_user)
+    comment = Comment.find(id)                
+    
+    unless comment.user == by_user || comment.commentable.owner == by_user || (by_user.admin? && by_user.organization == comment.commentable.organization)
       raise ActiveRecord::RecordNotFound
     end
+    
+    comment
   end
 end

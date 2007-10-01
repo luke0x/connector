@@ -21,8 +21,6 @@ class Domain < ActiveRecord::Base
   
   before_save :transform_domains
 
-  cattr_accessor :current
-
   def authenticate_user(username, password, sha1=false)
     return false if username.blank?
     return false if password.blank?

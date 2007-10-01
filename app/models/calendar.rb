@@ -28,8 +28,6 @@ class Calendar < ActiveRecord::Base
   def events_between(start_time, end_time)
     raise ArgumentError, "Start time is nil" if start_time.blank?
     raise ArgumentError, "End time is nil"   if end_time.blank?    
-    
-    return [] unless User.current.can_view?(self)
 
     events = self.events.find(:all, :include => [{:owner => :person}, :permissions, :notifications, :taggings], :scope => :read)
     events.collect{|e| e.occurrences_between(start_time, end_time)}.flatten.sort

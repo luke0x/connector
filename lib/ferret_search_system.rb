@@ -82,7 +82,7 @@ class FerretSearchSystem
       q.add_query TermQuery.new(Term.new("body", query.search_text))
     end
     
-    q.add_query TermQuery.new(Term.new("orgid", Organization.current.id.to_s))
+    q.add_query TermQuery.new(Term.new("orgid", User.current.organization.id.to_s))
     
     q.add_query TermQuery.new(Term.new("restricted_to", ":#{User.current.id}:"))
     

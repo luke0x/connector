@@ -9,7 +9,7 @@
 
 <%= render :partial => 'sidebars/groups/standard_group_edit_permissions', :locals => { :group => group } %>
 <%= render :partial => 'sidebars/groups/standard_group_edit_subscriptions', :locals => { :group => group } %>
-<% if group and group.user_id == User.current.id -%><hr /><% end -%>
+<% if group and group.user_id == current_user.id -%><hr /><% end -%>
 <%= add_to_workspace(:mailbox, group) %>
 <hr />
 <%= link_to "RSS", mail_mailbox_rss_url(:id => group.id), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

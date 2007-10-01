@@ -87,9 +87,10 @@ class ConnectControllerTest < Test::Unit::TestCase
   def test_search_stays_on_org
     get :search, {:search_string=>"joyent"}
     assert_equal 1, assigns(:items).select{|i| i.is_a?(Bookmark)}.length
-    assert_equal 2, Bookmark.count
+    assert_equal 2, Bookmark.count     
+    org_id = assigns(:items).first.organization_id
     assigns(:items).each do |item|
-      assert_equal Organization.current.id, item.organization_id
+      assert_equal org_id, item.organization_id
     end
   end
   

@@ -7,12 +7,12 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% if User.current.has_other_identities? -%>
+<% if current_user.has_other_identities? -%>
   <%= link_to_function _('Subscription'), "StandardGroup.toggleEditSubscriptions();", {:id => 'standardGroupEditSubscriptionsLink', :class => 'groupOption subscription'} %>
   <div id="standardGroupEditSubscriptions" style="display: none;" class="groupOptionMenu">
 		<%= _('View this %{i18n_controller_class_groupname} in another account') % {:i18n_controller_class_groupname => _("#{controller.class.group_name.titlecase.downcase}")} -%>:
   	<ul style="margin-top:.4em;">
-    	<% User.current.identity_other_users.each do |user| -%>
+    	<% current_user.identity_other_users.each do |user| -%>
     		<% subscription_id = group.subscriptions.find_by_user_id(user.id) || nil %>
     		<li style="line-height: 1.6em;">
     				<%= check_box_action(_("#{ user.organization.name } (#{ user.username })"),

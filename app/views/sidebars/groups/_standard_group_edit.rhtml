@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
-  <% if group.owner == User.current -%>
+  <% if group.owner == current_user -%>
     <%= render :partial => 'sidebars/groups/standard_group_edit_rename',        :locals => { :group => group } %>
     <%= render :partial => 'sidebars/groups/standard_group_edit_move',          :locals => { :group => group } %>
     <%= render :partial => 'sidebars/groups/standard_group_edit_permissions',   :locals => { :group => group } %>
@@ -16,14 +16,14 @@
     <%= render :partial => 'sidebars/groups/standard_group_edit_delete',        :locals => { :group => group } %>
     <hr />
   <% end -%>
-  <% if group and User.current.subscribed_group(group) and subscription -%>
+  <% if group and current_user.subscribed_group(group) and subscription -%>
   	<div>
-  	 	<p><strong>Organization:</strong> <%= User.current.subscribed_group(group).subscribable.owner.organization.name %></p>
-  		<p><strong>User:</strong> <%= User.current.subscribed_group(group).subscribable.owner.username %></p>
+  	 	<p><strong>Organization:</strong> <%= current_user.subscribed_group(group).subscribable.owner.organization.name %></p>
+  		<p><strong>User:</strong> <%= current_user.subscribed_group(group).subscribable.owner.username %></p>
   	</div>
   	<hr />
   	<%= joyent_button_to _('Unsubscribe'),
-          	             subscription_delete_url(:subscription_id => User.current.subscribed_group(group)),
+          	             subscription_delete_url(:subscription_id => current_user.subscribed_group(group)),
       	                 {:confirm => _("Do you want to unsubscribe to %{i18n_group_name}?")%{:i18n_group_name => "#{group.name rescue name}"}, :class => '', :style => 'width:11em; display:block;', :method => :post} %>
     <hr />
   <% end -%>

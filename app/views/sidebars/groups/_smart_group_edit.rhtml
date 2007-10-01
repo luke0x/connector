@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
-  <% if smart_group.owner == User.current -%>
+  <% if smart_group.owner == current_user -%>
     <%= render :partial => 'sidebars/groups/smart_group_edit_rename',   :locals => { :smart_group => smart_group } %>
     <%= render :partial => 'sidebars/groups/smart_group_edit_criteria', :locals => { :smart_group => smart_group } %>
     <%= render :partial => 'sidebars/groups/smart_group_edit_delete',   :locals => { :smart_group => smart_group } %>

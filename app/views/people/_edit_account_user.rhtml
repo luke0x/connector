@@ -43,7 +43,7 @@
 		<tr>
 			<td colspan="2" style="padding-top: 1em;" class="inforgroup_form">
 				<% if person.admin? -%>
-					<input id="person_admin" type="checkbox" name="person[admin]" checked="checked" <%= 'disabled="disabled"' if person == User.current.person %> />
+					<input id="person_admin" type="checkbox" name="person[admin]" checked="checked" <%= 'disabled="disabled"' if person == current_user.person %> />
 					<%= _('Allow this user to create and delete other users?') %>
 				<% else -%>
 					<input id="person_admin" type="checkbox" name="person[admin]" />
@@ -75,7 +75,7 @@
 </div>
 <div class="infoGroup">
 	<table>
-		<% if User.current.person == person -%>
+		<% if current_user.person == person -%>
 			<tr>
 				<td class="infoGroupLabel" valign="top">
 					<%= _('Notifications') -%>
@@ -83,9 +83,9 @@
 				<td colspan="2" class="inforgroup_form notification_types">
 					<p><%= _('Send notifications and event alarms via SMS, email and instant message') %></p>
 					<div class="notification_type">
-						<input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if User.current.notify_via?(:sms) %> onchange="return NotificationsConfigurator.update('sms');" />
+						<input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if current_user.notify_via?(:sms) %> onchange="return NotificationsConfigurator.update('sms');" />
 						<span class="notify_type notify_sms"><%= _('SMS') %></span>
-						<div id="person_notification_sms_area" style="<%= 'display: none;' unless User.current.notify_via?(:sms) %>">
+						<div id="person_notification_sms_area" style="<%= 'display: none;' unless current_user.notify_via?(:sms) %>">
 							<%= _('Loading') %>&hellip;
 						</div>
   					<%= javascript_tag("People.currentNotifierSMS = '#{person.user.notifier_sms.phone_number rescue ''}';") %>
@@ -93,18 +93,18 @@
     				<%= javascript_tag("Event.observe(window, 'load', function(event){ NotificationsConfigurator.update('sms'); });") %>
 					</div>
 					<div class="notification_type">
-						<input id="person_notification_email" type="checkbox" name="person[notification_email]" <%= 'checked="checked"' if User.current.notify_via?(:email) %> onchange="return NotificationsConfigurator.update('email');" />
+						<input id="person_notification_email" type="checkbox" name="person[notification_email]" <%= 'checked="checked"' if current_user.notify_via?(:email) %> onchange="return NotificationsConfigurator.update('email');" />
 						<span class="notify_type notify_email"><%= _('Email') %></span>
-						<div id="person_notification_email_area" style="<%= 'display: none;' unless User.current.notify_via?(:email) %>">
+						<div id="person_notification_email_area" style="<%= 'display: none;' unless current_user.notify_via?(:email) %>">
 							<%= _('Loading') %>&hellip;
 						</div>
 						<%= javascript_tag("People.currentNotifierEmail = '#{person.user.notifier_email.email_address rescue ''}';") %>
 						<%= javascript_tag("Event.observe(window, 'load', function(event){ NotificationsConfigurator.update('email'); });") %>
 					</div>
 					<div class="notification_type">
-						<input id="person_notification_im" type="checkbox" name="person[notification_im]" <%= 'checked="checked"' if User.current.notify_via?(:jabber) %> onchange="return NotificationsConfigurator.update('im');" />
+						<input id="person_notification_im" type="checkbox" name="person[notification_im]" <%= 'checked="checked"' if current_user.notify_via?(:jabber) %> onchange="return NotificationsConfigurator.update('im');" />
 						<span class="notify_type notify_im"><%= _('Instant Message') %> (Jabber)</span>
-						<div id="person_notification_im_area" style="<%= 'display: none;' unless User.current.notify_via?(:jabber) %>">
+						<div id="person_notification_im_area" style="<%= 'display: none;' unless current_user.notify_via?(:jabber) %>">
 							<%= _('Loading') %>&hellip;
 						</div>
 						<%= javascript_tag("People.currentNotifierIM = '#{person.user.notifier_im.im_address rescue ''}';") %>

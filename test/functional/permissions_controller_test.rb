@@ -34,7 +34,12 @@ class PermissionsControllerTest < Test::Unit::TestCase
     assert_equal 1, events(:concert).permissions.length
   end
   
-  def test_remove_user
+  def test_remove_user                                      
+    # First we need to disassociate the ian and peter users
+    peter  = users(:peter)
+    peter.identity = Identity.new(:name => 'loner')
+    peter.save
+    
     @request.env["HTTP_REFERER"] = '/files'
     assert users(:peter).can_view?(joyent_files(:ian_jpg))
     get :remove_user, {:dom_ids => joyent_files(:ian_jpg).dom_id, :user_id => users(:peter).id}

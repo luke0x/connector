@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% if group and group.user_id == User.current.id -%>
+<% if group and group.user_id == current_user.id -%>
   <%= link_to_function _('Access'), "StandardGroup.toggleEditAccess();", { :id => 'standardGroupEditAccessLink', :class => 'groupOption access' } %>
   <div id="standardGroupEditAccess" style="display: none;" class="groupOptionMenu">
     <% form_tag({:controller => 'permissions', :action => 'set_group_permissions', :group_type => group.class.to_s, :id => group.id}, {:method => 'post', :onsubmit => 'return StandardGroup.editSubmit(this);'}) do -%>
@@ -20,7 +20,7 @@
       <div id="access_mode_restricted_info" style="margin: 4px 2px; <%= group.public? ? 'display: none;' : '' %>">
         <%= _('Also allow') -%>:
         <select name="user_ids[]" size="6" multiple="multiple" style="width:100%;">
-          <% User.current.other_users.sort.each do |user| -%>
+          <% current_user.other_users.sort.each do |user| -%>
             <option value="<%= user.id %>" <%= "selected" if group.permission_for(user) %>><%= user.full_name %></option>
           <% end -%>          
         </select>

@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% form_tag(guest_edit_url(:id => User.current.id), {:id => 'guestEditDialogForm', :style => "text-align: right; padding-top: 10px;"}) do -%>
+<% form_tag(guest_edit_url(:id => current_user.id), {:id => 'guestEditDialogForm', :style => "text-align: right; padding-top: 10px;"}) do -%>
   <h2><%= _('Guest Preferences') %></h2>
   <div class="content guestPreferences">
     <fieldset>

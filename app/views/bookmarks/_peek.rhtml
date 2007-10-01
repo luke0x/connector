@@ -8,7 +8,7 @@
 <% # $Id$ -%>
 
 <div style="float:right;padding:1em 2em 0 0;">
-	<% unless @bookmark.bookmarked_by?(User.current) -%>
+	<% unless @bookmark.bookmarked_by?(current_user) -%>
 		<%= joyent_button_to _('Save Bookmark'), bookmarks_create_url(:title => @bookmark.title, :uri => @bookmark.uri), {:button_class => 'saveBookmark addIconLeft', :style => 'width: 13em;'} %>
 	<% end -%>
 </div>

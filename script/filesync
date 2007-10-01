@@ -74,7 +74,6 @@ end
 
 organizations.each do |org|            
   log "\nSyncing files for organization #{org.name}"
-  Organization.current = org
   
   # Ensure that the default organization directories exist (root, icons, users)
   FileUtils.mkdir_p org.icons_path, :noop=>Folder.dry_run 

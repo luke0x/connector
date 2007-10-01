@@ -36,7 +36,6 @@ class OrganizationTest < Test::Unit::TestCase
   def test_search
     o = organizations(:joyent)
     User.current = users(:ian)
-    Organization.current= o
     
     assert_equal [], o.search("pants")
   end

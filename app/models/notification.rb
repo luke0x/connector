@@ -41,12 +41,6 @@ class Notification < ActiveRecord::Base
     end
   end
 
-  def self.restricted_find(*args)
-    self.with_scope({:find => {:conditions => ['(notifier_id = ? OR notifiee_id = ?)', User.current.id, User.current.id]}}) do
-      self.find(*args)
-    end
-  end
-
   private
 
     def add_invitation

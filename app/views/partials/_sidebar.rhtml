@@ -7,7 +7,7 @@
 <% # -%>
 <% # $Id$ -%>
 
-<% selected = User.current.get_option('Sidebar Selected Name') || 'groups' -%>
+<% selected = current_user.get_option('Sidebar Selected Name') || 'groups' -%>
 
 <div id="sidebars">
 	<ul id="sidebarTabs">
@@ -16,17 +16,17 @@
       <%= javascript_tag "new Draggable('gripperSidebarTab', { constraint: 'horizontal', revert: SidebarResizer.revertHandle, onDrag:SidebarResizer.refresh, onEnd:SidebarResizer.savePosition });" %>
 	  </li>
 		<li id="groupsSidebarTab" class="sidebarTab <%= 'selected' if selected == 'groups' %>"><a href="#" onclick="return Sidebar.Tabs.select('groups');"><%= _('Groups') %></a></li>
-    <% unless User.current.guest? -%>
+    <% unless current_user.guest? -%>
   		<li id="tagsSidebarTab" class="sidebarTab <%= 'selected' if selected == 'tags' %>"><a href="#" onclick="return Sidebar.Tabs.select('tags');"><%= _('Tags') %></a></li>
   		<li id="accessSidebarTab" class="sidebarTab <%= 'selected' if selected == 'access' %>"><a href="#" onclick="return Sidebar.Tabs.select('access');"><%= _('Access') %></a></li>
   		<li id="notifySidebarTab" class="sidebarTab <%= 'selected' if selected == 'notify' %>"><a href="#" onclick="return Sidebar.Tabs.select('notify');"><%= _('Notify') %></a></li>
 		<% end -%>
 	</ul>
-  <% unless User.current.guest? -%>
+  <% unless current_user.guest? -%>
   	<%= render :partial => 'sidebars/search' %>
 	<% end -%>
 	<%= render :partial => 'sidebars/groups', :locals => { :class_name => selected == 'groups' ? 'selected' : '' } %>
-  <% unless User.current.guest? -%>
+  <% unless current_user.guest? -%>
   	<%= render :partial => 'sidebars/tags',   :locals => { :class_name => selected == 'tags' ? 'selected' : '' } %>
   	<%= render :partial => 'sidebars/access', :locals => { :class_name => selected == 'access' ? 'selected' : '' } %>
   	<%= render :partial => 'sidebars/notify', :locals => { :class_name => selected == 'notify' ? 'selected' : '' } %>
