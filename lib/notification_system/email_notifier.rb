@@ -27,7 +27,8 @@ EOS
                    :to      => event.owner.notifier_email.email_address,
                    :from    => JoyentConfig.email_notifier_from_address
     end
-    
+               
+    private
     def self.send_message(opts)
       host          = ENV['SMTP_HOST'] || JoyentConfig.smtp_host
       user          = ENV['SMTP_USER'] || nil

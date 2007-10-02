@@ -90,7 +90,6 @@ module NotificationSystem
         html.add(body)
 
         message.add_element(html)
-        puts message.to_s
       end
       
       client.send(message)
@@ -101,7 +100,7 @@ module NotificationSystem
     end 
     
     def self.jabber_recipients(user)
-      user.person.im_addresses.select{|im| im.use_notifier? && im.im_type == 'Jabber'}
+      user.person.im_addresses.select{|im| im.use_notifier? && (im.im_type == 'Jabber' || im.im_type == 'Google Talk')}
     end
   end
 end
