@@ -269,12 +269,14 @@ class List < ActiveRecord::Base
 
   def move_to!(list_folder)
     return unless list_folder.is_a?(ListFolder)
+    return unless User.current.can_move?(self)
 
     self.update_attribute(:list_folder_id, list_folder.id)
   end
                                      
   def copy_to!(list_folder)
     return unless list_folder.is_a?(ListFolder)
+    return unless User.current.can_copy?(self)
 
     new_list = self.clone
     transaction do
