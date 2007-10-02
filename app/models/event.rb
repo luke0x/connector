@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
   include JoyentItem
 
   before_save   :set_sort_caches
-  after_create  :set_next_fire
+  before_save   :set_next_fire
   
   serialize :by_day, Array
 
@@ -380,8 +380,6 @@ class Event < ActiveRecord::Base
     self.alarm_trigger_in_minutes  = event_params[:alarm_trigger_in_minutes]
     self.by_day                    = event_params[:by_day]
     self.save
-    
-    set_next_fire
 
     if self.valid? && remember_to_renotify
       self.renotify!
@@ -493,9 +491,11 @@ class Event < ActiveRecord::Base
     
     def set_next_fire
       if alarm?
-        update_attributes :next_fire => (start_time - alarm_trigger_in_minutes.minutes), :fired => false
+        self.next_fire = start_time - alarm_trigger_in_minutes.minutes
+        self.fired     = false
       else
-        update_attributes :fired => true
-      end
+        self.fired     = true
+      end 
+      true
     end
 end

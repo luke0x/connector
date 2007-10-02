@@ -7,7 +7,9 @@
 # 
 # Report issues and contribute at http://dev.joyent.com/
 # 
-# $Id$
+# $Id$               
+
+# NOTE: This needs to be run on a pretty constant interval ~ 5 mins
 ENV['RAILS_ENV'] ||= 'production'
 
 require File.dirname(__FILE__) + '/../config/boot'
@@ -17,8 +19,11 @@ require 'config/environment'
 Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, false]).each do |event|
   
   # If the user has any way to send alarms, send it
-  Notification.notification_systems.each do |key, value|
-    value.alarm(event) if event.owner.notify_via?(key)
+  event.users.each do |user|
+    Notification.notification_systems.each do |key, value|   
+      User.current = user
+      value.alarm(event, user) if user.notify_via?(key)
+    end                      
   end
   
   if recurrence_description_id.nil?

@@ -30,13 +30,13 @@ module NotificationSystem
       end
     end
     
-    def self.alarm(event)
+    def self.alarm(event, user)
       options              = {}
       options[:subject]    = "Connector Alarm"
-      options[:plain_body] = "Event Alarm: #{event.name} at #{event.start_time.strftime('%D %T')} (#{event.location})"
-      options[:html_body]  = "Event Alarm: <a href=\"#{MessageHelper.url_for(notification.item)}\">#{event.name}</a> at #{event.start_time.strftime('%D %T')} (#{event.location})"
+      options[:plain_body] = "Event Alarm: #{event.name} at #{event.start_time_in_user_tz.strftime('%D %T')} (#{event.location})"
+      options[:html_body]  = "Event Alarm: <a href=\"#{MessageHelper.url_for(event)}\">#{event.name}</a> at #{event.start_time_in_user_tz.strftime('%D %T')} (#{event.location})"
       
-      event_recipients(event).each do |jabber_address|
+      jabber_recipients(user).each do |jabber_address|
         options[:to] = jabber_address.im_address
         send_message(options)
       end
@@ -94,10 +94,6 @@ module NotificationSystem
       
       client.send(message)
     end
-  
-    def self.event_recipients(event)
-      event.invitations.collect{ |invite| jabber_recipients(invite.user) }.flatten
-    end 
     
     def self.jabber_recipients(user)
       user.person.im_addresses.select{|im| im.use_notifier? && (im.im_type == 'Jabber' || im.im_type == 'Google Talk')}
