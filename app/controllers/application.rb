@@ -58,7 +58,8 @@ class ApplicationController < ActionController::Base
     end     
     
     def current_user=(value)
-      @current_user = value
+      User.current = value
+      #@current_user = value
     end     
     
     def selected_user
