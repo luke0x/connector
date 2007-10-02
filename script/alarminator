@@ -21,13 +21,17 @@ Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, fa
   # If the user has any way to send alarms, send it
   event.users.each do |user|
     Notification.notification_systems.each do |key, value|   
-      User.current = user
-      value.alarm(event, user) if user.notify_via?(key)
+      begin
+        User.current = user
+        value.alarm(event, user) if user.notify_via?(key)
+      rescue
+        # do nothing
+      end
     end                      
   end
   
-  if recurrence_description_id.nil?
-    event.update_attributes :fired => true
+  if event.recurrence_description_id.nil?
+    event.update_attribute(:fired, true) 
   else
     # If the event is recurring, update the next_fire
     # but only if the next recurring is valid
@@ -35,7 +39,7 @@ Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, fa
     if event.repeat_forever? || next_fire < event.recur_end_time
       event.update_attributes :next_fire => next_fire, :fired => false
     else
-      event.update_attributes :fired => true
+      event.update_attribute(:fired, true)
     end
   end
 end
