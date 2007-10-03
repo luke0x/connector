@@ -108,7 +108,7 @@
 							<%= _('Loading') %>&hellip;
 						</div>
 						<%= javascript_tag("People.currentNotifierIM = '#{person.user.notifier_im.im_address rescue ''}';") %>
-						<%= javascript_tag("Event.observe(window, 'load', function(event){ NotificationsConfigurator.update('sms'); });") %>
+						<%= javascript_tag("Event.observe(window, 'load', function(event){ NotificationsConfigurator.update('im'); });") %>
 					</div>
 				</td>
 			</tr>
