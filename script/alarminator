@@ -14,6 +14,9 @@ ENV['RAILS_ENV'] ||= 'production'
 
 require File.dirname(__FILE__) + '/../config/boot'
 require 'config/environment'
+                    
+log_file ="#{RAILS_ROOT}/log/alarminator.log"
+logger   = Logger.new(log_file)
 
 # Get the following
 Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, false]).each do |event|
@@ -24,8 +27,10 @@ Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, fa
       begin
         User.current = user
         value.alarm(event, user) if user.notify_via?(key)
-      rescue
-        # do nothing
+      rescue => e
+        logger.error("#{Time.now.xmlschema} - #{e.message}")
+        logger.error(e.backtrace.join("\n"))
+        logger.error("\n")
       end
     end                      
   end
