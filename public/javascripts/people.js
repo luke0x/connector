@@ -384,9 +384,10 @@ var NotificationsConfigurator = {
         Effect.BlindDown(container, { duration: Joyent.effectsDuration });
       }
     } else {
-      container.update('');
       if (container.visible()) {
-        Effect.BlindUp(container, { duration: Joyent.effectsDuration });
+        Effect.BlindUp(container, { duration: Joyent.effectsDuration, afterFinish: function() {
+          container.update('');
+        } });
       }
     }
     return false;
@@ -479,6 +480,11 @@ var NotificationsConfigurator = {
     			draw += 'value="' + rowValue + '">' + rowValue + '</option>';
     		});
         draw += '</select>';
+
+        draw += '<p>';
+        draw += JoyentL10n["To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts."];
+        draw += '</p>';
+        
         return draw;
         break;
       default:

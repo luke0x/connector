@@ -103,7 +103,7 @@
 					</div>
 					<div class="notification_type">
 						<input id="person_notification_im" type="checkbox" name="person[notification_im]" <%= 'checked="checked"' if current_user.notify_via?(:jabber) %> onchange="return NotificationsConfigurator.update('im');" />
-						<span class="notify_type notify_im"><%= _('Instant Message') %> (Jabber)</span>
+						<span class="notify_type notify_im"><%= _('Instant Message (Jabber)') %></span>
 						<div id="person_notification_im_area" style="<%= 'display: none;' unless current_user.notify_via?(:jabber) %>">
 							<%= _('Loading') %>&hellip;
 						</div>
