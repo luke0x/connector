@@ -5,6 +5,7 @@ JoyentL10n = {
 "no items selected, ":'geen voorwerpen geselecteerd,',
 "Not all selected items are deleteable.":'Niet alle geselecteerde voorwerpen kunnen verwijderd worden.',
 "This item is not deleteable.":'Dit voorwerp kan niet worden verwijderd.',
+"To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":'To receive Jabber notifications add \'notifier@joyent.com\' to your IM client contacts.',
 "You must select a group to copy items to.":'Je moet een groep selecteren om er voorwerpen naartoe te kunnen kopiëren.',
 "You must select a group to move items to.":'Je moet een groep selecteren om er voorwerpen naartoe te verplaatsen.',
 "You must select something in order to include it as an attachment.":'Je moet iets selecteren om het als bijlage toe te kunnen voegen.',

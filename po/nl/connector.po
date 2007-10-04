@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-09-05 16:04-0400\n"
+"POT-Creation-Date: 2007-10-03 21:54-0400\n"
 "PO-Revision-Date: 2007-07-25 09:35+0000\n"
 "Last-Translator: Kees Brandenburg <kb@co-web.org>\n"
 "Language-Team: nl <kb@co-web.org>\n"
@@ -36,7 +36,7 @@ msgid "Others' Bookmarks"
 msgstr "Bladwijzers van anderen"
 
 #: app/controllers/bookmarks_controller.rb:204
-#: app/controllers/calendar_controller.rb:372
+#: app/controllers/calendar_controller.rb:376
 #: app/controllers/connect_controller.rb:35
 #: app/controllers/files_controller.rb:185
 #: app/controllers/lists_controller.rb:216
@@ -45,7 +45,7 @@ msgid "All Notifications"
 msgstr "Alle meldingen"
 
 #: app/controllers/bookmarks_controller.rb:209
-#: app/controllers/calendar_controller.rb:382
+#: app/controllers/calendar_controller.rb:386
 #: app/controllers/connect_controller.rb:44
 #: app/controllers/files_controller.rb:195
 #: app/controllers/lists_controller.rb:221
@@ -84,11 +84,11 @@ msgstr "Afspraken vandaag"
 msgid "This Week's Events"
 msgstr "Afspraken deze week"
 
-#: app/controllers/calendar_controller.rb:251
-#: app/controllers/calendar_controller.rb:277
-#: app/controllers/calendar_controller.rb:296
-#: app/controllers/calendar_controller.rb:314
-#: app/controllers/calendar_controller.rb:340
+#: app/controllers/calendar_controller.rb:253
+#: app/controllers/calendar_controller.rb:279
+#: app/controllers/calendar_controller.rb:298
+#: app/controllers/calendar_controller.rb:316
+#: app/controllers/calendar_controller.rb:342
 #: app/controllers/syndication_controller.rb:162
 #: app/controllers/syndication_controller.rb:172
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:12 lib/ghetto_urls.rb:82
@@ -97,11 +97,11 @@ msgstr "Afspraken deze week"
 msgid "All Events"
 msgstr "Alle afspraken"
 
-#: app/controllers/calendar_controller.rb:628
+#: app/controllers/calendar_controller.rb:636
 msgid "An invalid calendar was chosen."
 msgstr "Deze gekozen agenda kan niet gebruikt worden."
 
-#: app/controllers/calendar_controller.rb:639
+#: app/controllers/calendar_controller.rb:647
 msgid ""
 "There was a problem importing the iCalendar %{i18n_calendar_file}.  Please "
 "be sure that it is a valid file."
@@ -247,7 +247,7 @@ msgstr "De alias is aangemaakt."
 msgid "The shortcut could not be created. Please try again."
 msgstr "De alias kon niet worden aangemaakt. Probeer het opnieuw."
 
-#: app/helpers/application_helper.rb:73 app/helpers/application_helper.rb:405
+#: app/helpers/application_helper.rb:73 app/helpers/application_helper.rb:407
 msgid "%{i18n_time_in_words} ago"
 msgstr "%{i18n_time_in_words} geleden"
 
@@ -271,11 +271,11 @@ msgstr "Top niveau"
 msgid "at"
 msgstr "bij"
 
-#: app/helpers/application_helper.rb:448
+#: app/helpers/application_helper.rb:450
 msgid "Map"
 msgstr "Kaart"
 
-#: app/helpers/application_helper.rb:448
+#: app/helpers/application_helper.rb:450
 msgid "Look up address in Google Maps"
 msgstr "Adres opzoeken met Google Maps"
 
@@ -345,30 +345,30 @@ msgid "Subdomain"
 msgstr "Subdomein"
 
 #: app/views/authenticate/affiliate_login.rhtml:36
-#: app/views/authenticate/login.rhtml:39
+#: app/views/authenticate/login.rhtml:40
 #: app/views/authenticate/reset_password.rhtml:43
 #: app/views/user/connect.rhtml:38
 msgid "Username"
 msgstr "Gebruikersnaam"
 
 #: app/views/authenticate/affiliate_login.rhtml:44
-#: app/views/authenticate/login.rhtml:47
+#: app/views/authenticate/login.rhtml:48
 #: app/views/authenticate/verify_reset_password.rhtml:38
 #: app/views/user/connect.rhtml:42
 msgid "Password"
 msgstr "Wachtwoord"
 
 #: app/views/authenticate/affiliate_login.rhtml:58
-#: app/views/authenticate/login.rhtml:61
+#: app/views/authenticate/login.rhtml:62
 msgid "Remember my password for 2 weeks"
 msgstr "Mijn wachtwoord 2 weken onthouden"
 
 #: app/views/authenticate/affiliate_login.rhtml:63
-#: app/views/authenticate/login.rhtml:66
+#: app/views/authenticate/login.rhtml:67
 msgid " Sign In "
 msgstr " Inloggen"
 
-#: app/views/authenticate/login.rhtml:69
+#: app/views/authenticate/login.rhtml:70
 msgid "Reset your password"
 msgstr "Je wachtwoord resetten"
 
@@ -1495,7 +1495,7 @@ msgid "%{i18n_message_owner_name}'s"
 msgstr "%{i18n_message_owner_name}'s"
 
 #: app/views/mail/show.rhtml:43 app/views/sidebars/groups/mail/_mail.rhtml:13
-#: app/views/sidebars/groups/mail/_others_mail.rhtml:11 lib/js_strings.rb:34
+#: app/views/sidebars/groups/mail/_others_mail.rhtml:11 lib/js_strings.rb:35
 msgid "Inbox"
 msgstr "Postvak in"
 
@@ -1770,7 +1770,7 @@ msgstr "MSN"
 
 #: app/views/people/_edit_account_user.rhtml:106
 #, fuzzy
-msgid "Instant Message"
+msgid "Instant Message (Jabber)"
 msgstr "Instant Messaging"
 
 #: app/views/people/_edit_contact_information.rhtml:11
@@ -2038,7 +2038,7 @@ msgstr "provincie of staat"
 msgid "Zip"
 msgstr "Postcode"
 
-#: app/views/people/google_map.rhtml:18 lib/js_strings.rb:47
+#: app/views/people/google_map.rhtml:18 lib/js_strings.rb:48
 msgid "Search"
 msgstr "Zoeken"
 
@@ -2241,7 +2241,7 @@ msgstr "%{i18n_controller_class_groupname} van andere gebruikers"
 msgid "Notify unavailable"
 msgstr "Melding sturen niet mogelijk"
 
-#: app/views/sidebars/_notify.rhtml:19 lib/js_strings.rb:42
+#: app/views/sidebars/_notify.rhtml:19 lib/js_strings.rb:43
 msgid "Notified"
 msgstr "Melding verstuurd"
 
@@ -2447,7 +2447,7 @@ msgstr "Slimme map"
 #: app/views/sidebars/groups/people/_people_smart.rhtml:13
 #: app/views/sidebars/groups/people/_people_standard.rhtml:13
 #: app/views/sidebars/groups/people/_people_users.rhtml:13
-#: lib/js_strings.rb:50
+#: lib/js_strings.rb:51
 msgid "Subscribe to this RSS feed"
 msgstr "Abonneren op deze RSS feed"
 
@@ -2976,251 +2976,257 @@ msgid "This item is not deleteable."
 msgstr "Dit voorwerp kan niet worden verwijderd."
 
 #: lib/js_strings.rb:7
+msgid ""
+"To receive Jabber notifications add 'notifier@joyent.com' to your IM client "
+"contacts."
+msgstr ""
+
+#: lib/js_strings.rb:8
 msgid "You must select a group to copy items to."
 msgstr ""
 "Je moet een groep selecteren om er voorwerpen naartoe te kunnen kopiëren."
 
-#: lib/js_strings.rb:8
+#: lib/js_strings.rb:9
 msgid "You must select a group to move items to."
 msgstr "Je moet een groep selecteren om er voorwerpen naartoe te verplaatsen."
 
-#: lib/js_strings.rb:9
+#: lib/js_strings.rb:10
 msgid "You must select something in order to include it as an attachment."
 msgstr "Je moet iets selecteren om het als bijlage toe te kunnen voegen."
 
-#: lib/js_strings.rb:10
+#: lib/js_strings.rb:11
 msgid "You must select something to copy it to another group."
 msgstr "Je moet iets selecteren om het naar een andere groep te kopiëren."
 
-#: lib/js_strings.rb:11
+#: lib/js_strings.rb:12
 msgid "You must select something to copy."
 msgstr "Je moet iets selecteren om het te kunnen kopiëren."
 
-#: lib/js_strings.rb:12
+#: lib/js_strings.rb:13
 msgid "You must select something to delete."
 msgstr "Je moet iets selecteren om te kunnen verwijderen."
 
-#: lib/js_strings.rb:13
+#: lib/js_strings.rb:14
 msgid "You must select something to move it to another group."
 msgstr "Je moet iets selecteren op het naar een andere groep te verplaatsen."
 
-#: lib/js_strings.rb:14
+#: lib/js_strings.rb:15
 msgid "You must select something to tag."
 msgstr "Je moet iets selecteren om een tag aan toe te voegen."
 
-#: lib/js_strings.rb:15
+#: lib/js_strings.rb:16
 msgid " contains<br />"
 msgstr " bevat<br />"
 
-#: lib/js_strings.rb:16
+#: lib/js_strings.rb:17
 msgid " tag is<br />"
 msgstr " tag is<br />"
 
-#: lib/js_strings.rb:17
+#: lib/js_strings.rb:18
 msgid " Type new tag here"
 msgstr "Nieuwe tag hier invoeren"
 
-#: lib/js_strings.rb:18
+#: lib/js_strings.rb:19
 msgid "<div class=\"loadingMessageSmall\">Loading&hellip;</div>"
 msgstr "<div class=\"loadingMessageSmall\">Laden&hellip;</div>"
 
-#: lib/js_strings.rb:19
+#: lib/js_strings.rb:20
 msgid "Addresses can not be blank."
 msgstr "Adressen kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:20
+#: lib/js_strings.rb:21
 msgid "assign tag as your own"
 msgstr "tag als eigen tag aanmerken"
 
-#: lib/js_strings.rb:21
+#: lib/js_strings.rb:22
 msgid "assign tag"
 msgstr "tag toewijzen"
 
-#: lib/js_strings.rb:22
+#: lib/js_strings.rb:23
 msgid "can change"
 msgstr "mag wijzigen"
 
-#: lib/js_strings.rb:23
+#: lib/js_strings.rb:24
 msgid "Currently marked as primary"
 msgstr "Op dit moment als eerste aangemerkt"
 
-#: lib/js_strings.rb:24
+#: lib/js_strings.rb:25
 msgid "Deleting..."
 msgstr "Verwijderen..."
 
-#: lib/js_strings.rb:25
+#: lib/js_strings.rb:26
 msgid "Do you want to copy the selected bookmarks to your bookmarks?"
 msgstr "Wil je de geselecteerd bladwijzers naar je eigen bladwijzers kopiëren?"
 
-#: lib/js_strings.rb:26
+#: lib/js_strings.rb:27
 msgid "Do you want to copy the selected people to your contacts?"
 msgstr "Wil je de geselecteerde mensen naar je contacten kopiëren?"
 
-#: lib/js_strings.rb:27
+#: lib/js_strings.rb:28
 msgid "Do you want to delete the selected items?"
 msgstr "Wil je de geselecteerde voorwerpen verwijderen?"
 
-#: lib/js_strings.rb:28
+#: lib/js_strings.rb:29
 msgid "Do you want to delete this item?"
 msgstr "Wil je dit voorwerp verwijderen?"
 
-#: lib/js_strings.rb:29
+#: lib/js_strings.rb:30
 msgid "Email addresses can not be blank."
 msgstr "E-mail adressen kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:30
+#: lib/js_strings.rb:31
 msgid "Everyone Else"
 msgstr "Alle anderen"
 
-#: lib/js_strings.rb:31
+#: lib/js_strings.rb:32
 msgid "has access to some selected items, "
 msgstr "heeft toegang tot sommige van de geselecteerde voorwerpen,"
 
-#: lib/js_strings.rb:32
+#: lib/js_strings.rb:33
 msgid "has access, "
 msgstr "heeft toegang,"
 
-#: lib/js_strings.rb:33
+#: lib/js_strings.rb:34
 msgid "IM addresses can not be blank."
 msgstr "IM adressen kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:35
+#: lib/js_strings.rb:36
 msgid "is notified of some selected items, "
 msgstr "heeft een melding ontvangen over sommige geselecteerde voorwerpen"
 
-#: lib/js_strings.rb:36
+#: lib/js_strings.rb:37
 msgid "is notified, "
 msgstr "heeft een melding ontvangen,"
 
-#: lib/js_strings.rb:37
+#: lib/js_strings.rb:38
 msgid "Mailbox names can not contain periods (.)"
 msgstr "Postvak namen mogen geen punt (.) bevatten"
 
-#: lib/js_strings.rb:38
+#: lib/js_strings.rb:39
 msgid "Mark as primary"
 msgstr "Als eerste aanmerken"
 
-#: lib/js_strings.rb:39
+#: lib/js_strings.rb:40
 #, fuzzy
 msgid "New "
 msgstr "Nieuw"
 
-#: lib/js_strings.rb:40
+#: lib/js_strings.rb:41
 msgid "New Smart"
 msgstr "Nieuwe Slimme"
 
-#: lib/js_strings.rb:41
+#: lib/js_strings.rb:42
 msgid "No tag or condition fields may be blank."
 msgstr "Tag of voorwaarde velden mogen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:43
+#: lib/js_strings.rb:44
 msgid "Password recovery email address can not be blank."
 msgstr ""
 "Het e-mailadres voor het herstellen van je vergeten wachtwoord mag niet leeg "
 "zijn."
 
-#: lib/js_strings.rb:44
+#: lib/js_strings.rb:45
 msgid "Phone numbers can not be blank."
 msgstr "Telefoonnummers kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:45
+#: lib/js_strings.rb:46
 #, fuzzy
 msgid "Search "
 msgstr "Zoeken"
 
-#: lib/js_strings.rb:46
+#: lib/js_strings.rb:47
 msgid "Search All"
 msgstr "Alles doorzoeken"
 
-#: lib/js_strings.rb:48
+#: lib/js_strings.rb:49
 msgid "Special date dates can not be blank."
 msgstr "Datums van speciale dagen kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:49
+#: lib/js_strings.rb:50
 msgid "Special date descriptions can not be blank."
 msgstr "Beschrijvingen van speciale dagen kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:51
+#: lib/js_strings.rb:52
 msgid "tag info"
 msgstr "tag info"
 
-#: lib/js_strings.rb:52
+#: lib/js_strings.rb:53
 msgid "The file name can not be blank."
 msgstr "De bestandsnaam kan niet leeg gelaten worden."
 
-#: lib/js_strings.rb:53
+#: lib/js_strings.rb:54
 msgid "The group name can not be blank."
 msgstr "De groepsnaam kan niet leeg gelaten worden."
 
-#: lib/js_strings.rb:54
+#: lib/js_strings.rb:55
 msgid "The password and confirmation must match."
 msgstr "Het wachtwoord en de bevestiging moeten overeenkomen."
 
-#: lib/js_strings.rb:55
+#: lib/js_strings.rb:56
 msgid "The password can not be blank."
 msgstr "Het wachtwoord kan niet leeg gelaten worden."
 
-#: lib/js_strings.rb:56
+#: lib/js_strings.rb:57
 msgid "The smart group name can not be blank."
 msgstr "De naam van de slimme groep mag niet leeg gelaten worden. "
 
-#: lib/js_strings.rb:57
+#: lib/js_strings.rb:58
 msgid "The username can not be blank."
 msgstr "De gebruikersnaam kan niet leeg gelaten worden."
 
-#: lib/js_strings.rb:58
+#: lib/js_strings.rb:59
 msgid "unassign tag"
 msgstr "tag verwijderen"
 
-#: lib/js_strings.rb:59
+#: lib/js_strings.rb:60
 msgid "Viewability"
 msgstr "Zichtbaarheid"
 
-#: lib/js_strings.rb:60
+#: lib/js_strings.rb:61
 msgid "Viewable"
 msgstr "Zichtbaar"
 
-#: lib/js_strings.rb:61
+#: lib/js_strings.rb:62
 msgid "Website names can not be blank."
 msgstr "Website namen kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:62
+#: lib/js_strings.rb:63
 msgid "Website URLs can not be blank."
 msgstr "Website URL's kunnen niet leeg gelaten worden."
 
-#: lib/js_strings.rb:63
+#: lib/js_strings.rb:64
 msgid "You must give a name to the event."
 msgstr "Je moet de afspraak een naam geven."
 
-#: lib/js_strings.rb:64
+#: lib/js_strings.rb:65
 msgid "You must select a file to import."
 msgstr "Je moet een bestand opgeven om te importeren."
 
-#: lib/js_strings.rb:65
+#: lib/js_strings.rb:66
 msgid "You must select a file to upload."
 msgstr "Je moet een bestand opgeven om te kunnen uploaden."
 
-#: lib/js_strings.rb:66
+#: lib/js_strings.rb:67
 msgid "You must specify a complete start date."
 msgstr "Je moet een volledige startdatum opgeven"
 
-#: lib/js_strings.rb:67
+#: lib/js_strings.rb:68
 msgid "You must specify a start time."
 msgstr "Je moet een begintijd opgeven."
 
-#: lib/js_strings.rb:68
+#: lib/js_strings.rb:69
 msgid "You must specify an event duration."
 msgstr "Je moet een tijdsduur opgeven."
 
-#: lib/js_strings.rb:69
+#: lib/js_strings.rb:70
 msgid "You must specify at least one tag or condition."
 msgstr "Je moet minstens één tag of voorwaarde opgeven."
 
-#: lib/js_strings.rb:70
+#: lib/js_strings.rb:71
 msgid "You must specify either a name or company name."
 msgstr "Je moet of een naam of een bedrijfsnaam opgeven."
 
-#: app/models/smart_group.rb:98
+#: app/models/smart_group.rb:97
 msgid "Search for %{i18n_search_param}"
 msgstr "Zoeken naar %{i18n_search_param}"
 

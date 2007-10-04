@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-09-18 16:01+0200\n"
+"POT-Creation-Date: 2007-10-03 21:54-0400\n"
 "PO-Revision-Date: 2006-05-24 20:40+020Å0\n"
 "Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -36,7 +36,7 @@ msgid "Others' Bookmarks"
 msgstr ""
 
 #: app/controllers/bookmarks_controller.rb:204
-#: app/controllers/calendar_controller.rb:372
+#: app/controllers/calendar_controller.rb:376
 #: app/controllers/connect_controller.rb:35
 #: app/controllers/files_controller.rb:185
 #: app/controllers/lists_controller.rb:216
@@ -45,7 +45,7 @@ msgid "All Notifications"
 msgstr ""
 
 #: app/controllers/bookmarks_controller.rb:209
-#: app/controllers/calendar_controller.rb:382
+#: app/controllers/calendar_controller.rb:386
 #: app/controllers/connect_controller.rb:44
 #: app/controllers/files_controller.rb:195
 #: app/controllers/lists_controller.rb:221
@@ -84,11 +84,11 @@ msgstr ""
 msgid "This Week's Events"
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:251
-#: app/controllers/calendar_controller.rb:277
-#: app/controllers/calendar_controller.rb:296
-#: app/controllers/calendar_controller.rb:314
-#: app/controllers/calendar_controller.rb:340
+#: app/controllers/calendar_controller.rb:253
+#: app/controllers/calendar_controller.rb:279
+#: app/controllers/calendar_controller.rb:298
+#: app/controllers/calendar_controller.rb:316
+#: app/controllers/calendar_controller.rb:342
 #: app/controllers/syndication_controller.rb:162
 #: app/controllers/syndication_controller.rb:172
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:12 lib/ghetto_urls.rb:82
@@ -97,11 +97,11 @@ msgstr ""
 msgid "All Events"
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:628
+#: app/controllers/calendar_controller.rb:636
 msgid "An invalid calendar was chosen."
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:639
+#: app/controllers/calendar_controller.rb:647
 msgid ""
 "There was a problem importing the iCalendar %{i18n_calendar_file}.  Please "
 "be sure that it is a valid file."
@@ -240,7 +240,7 @@ msgstr ""
 msgid "The shortcut could not be created. Please try again."
 msgstr ""
 
-#: app/helpers/application_helper.rb:73 app/helpers/application_helper.rb:405
+#: app/helpers/application_helper.rb:73 app/helpers/application_helper.rb:407
 msgid "%{i18n_time_in_words} ago"
 msgstr ""
 
@@ -264,23 +264,23 @@ msgstr ""
 msgid "at"
 msgstr ""
 
-#: app/helpers/application_helper.rb:448
+#: app/helpers/application_helper.rb:450
 msgid "Map"
 msgstr ""
 
-#: app/helpers/application_helper.rb:448
+#: app/helpers/application_helper.rb:450
 msgid "Look up address in Google Maps"
 msgstr ""
 
-#: app/helpers/application_helper.rb:512
+#: app/helpers/application_helper.rb:514
 msgid "Visible in your Workspace"
 msgstr ""
 
-#: app/helpers/application_helper.rb:698
+#: app/helpers/application_helper.rb:700
 msgid "Subscribe"
 msgstr ""
 
-#: app/helpers/application_helper.rb:707 app/helpers/application_helper.rb:708
+#: app/helpers/application_helper.rb:709 app/helpers/application_helper.rb:710
 #: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
 #: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
 #: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
@@ -1456,7 +1456,7 @@ msgid "%{i18n_message_owner_name}'s"
 msgstr ""
 
 #: app/views/mail/show.rhtml:43 app/views/sidebars/groups/mail/_mail.rhtml:13
-#: app/views/sidebars/groups/mail/_others_mail.rhtml:11 lib/js_strings.rb:34
+#: app/views/sidebars/groups/mail/_others_mail.rhtml:11 lib/js_strings.rb:35
 msgid "Inbox"
 msgstr ""
 
@@ -1719,7 +1719,7 @@ msgid "SMS"
 msgstr ""
 
 #: app/views/people/_edit_account_user.rhtml:106
-msgid "Instant Message"
+msgid "Instant Message (Jabber)"
 msgstr ""
 
 #: app/views/people/_edit_contact_information.rhtml:11
@@ -1980,7 +1980,7 @@ msgstr ""
 msgid "Zip"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:18 lib/js_strings.rb:47
+#: app/views/people/google_map.rhtml:18 lib/js_strings.rb:48
 msgid "Search"
 msgstr ""
 
@@ -2177,7 +2177,7 @@ msgstr ""
 msgid "Notify unavailable"
 msgstr ""
 
-#: app/views/sidebars/_notify.rhtml:19 lib/js_strings.rb:42
+#: app/views/sidebars/_notify.rhtml:19 lib/js_strings.rb:43
 msgid "Notified"
 msgstr ""
 
@@ -2379,7 +2379,7 @@ msgstr ""
 #: app/views/sidebars/groups/people/_people_smart.rhtml:13
 #: app/views/sidebars/groups/people/_people_standard.rhtml:13
 #: app/views/sidebars/groups/people/_people_users.rhtml:13
-#: lib/js_strings.rb:50
+#: lib/js_strings.rb:51
 msgid "Subscribe to this RSS feed"
 msgstr ""
 
@@ -2891,245 +2891,251 @@ msgid "This item is not deleteable."
 msgstr ""
 
 #: lib/js_strings.rb:7
-msgid "You must select a group to copy items to."
+msgid ""
+"To receive Jabber notifications add 'notifier@joyent.com' to your IM client "
+"contacts."
 msgstr ""
 
 #: lib/js_strings.rb:8
-msgid "You must select a group to move items to."
+msgid "You must select a group to copy items to."
 msgstr ""
 
 #: lib/js_strings.rb:9
-msgid "You must select something in order to include it as an attachment."
+msgid "You must select a group to move items to."
 msgstr ""
 
 #: lib/js_strings.rb:10
-msgid "You must select something to copy it to another group."
+msgid "You must select something in order to include it as an attachment."
 msgstr ""
 
 #: lib/js_strings.rb:11
-msgid "You must select something to copy."
+msgid "You must select something to copy it to another group."
 msgstr ""
 
 #: lib/js_strings.rb:12
-msgid "You must select something to delete."
+msgid "You must select something to copy."
 msgstr ""
 
 #: lib/js_strings.rb:13
-msgid "You must select something to move it to another group."
+msgid "You must select something to delete."
 msgstr ""
 
 #: lib/js_strings.rb:14
-msgid "You must select something to tag."
+msgid "You must select something to move it to another group."
 msgstr ""
 
 #: lib/js_strings.rb:15
-msgid " contains<br />"
+msgid "You must select something to tag."
 msgstr ""
 
 #: lib/js_strings.rb:16
-msgid " tag is<br />"
+msgid " contains<br />"
 msgstr ""
 
 #: lib/js_strings.rb:17
-msgid " Type new tag here"
+msgid " tag is<br />"
 msgstr ""
 
 #: lib/js_strings.rb:18
-msgid "<div class=\"loadingMessageSmall\">Loading&hellip;</div>"
+msgid " Type new tag here"
 msgstr ""
 
 #: lib/js_strings.rb:19
-msgid "Addresses can not be blank."
+msgid "<div class=\"loadingMessageSmall\">Loading&hellip;</div>"
 msgstr ""
 
 #: lib/js_strings.rb:20
-msgid "assign tag as your own"
+msgid "Addresses can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:21
-msgid "assign tag"
+msgid "assign tag as your own"
 msgstr ""
 
 #: lib/js_strings.rb:22
-msgid "can change"
+msgid "assign tag"
 msgstr ""
 
 #: lib/js_strings.rb:23
-msgid "Currently marked as primary"
+msgid "can change"
 msgstr ""
 
 #: lib/js_strings.rb:24
-msgid "Deleting..."
+msgid "Currently marked as primary"
 msgstr ""
 
 #: lib/js_strings.rb:25
-msgid "Do you want to copy the selected bookmarks to your bookmarks?"
+msgid "Deleting..."
 msgstr ""
 
 #: lib/js_strings.rb:26
-msgid "Do you want to copy the selected people to your contacts?"
+msgid "Do you want to copy the selected bookmarks to your bookmarks?"
 msgstr ""
 
 #: lib/js_strings.rb:27
-msgid "Do you want to delete the selected items?"
+msgid "Do you want to copy the selected people to your contacts?"
 msgstr ""
 
 #: lib/js_strings.rb:28
-msgid "Do you want to delete this item?"
+msgid "Do you want to delete the selected items?"
 msgstr ""
 
 #: lib/js_strings.rb:29
-msgid "Email addresses can not be blank."
+msgid "Do you want to delete this item?"
 msgstr ""
 
 #: lib/js_strings.rb:30
-msgid "Everyone Else"
+msgid "Email addresses can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:31
-msgid "has access to some selected items, "
+msgid "Everyone Else"
 msgstr ""
 
 #: lib/js_strings.rb:32
-msgid "has access, "
+msgid "has access to some selected items, "
 msgstr ""
 
 #: lib/js_strings.rb:33
+msgid "has access, "
+msgstr ""
+
+#: lib/js_strings.rb:34
 msgid "IM addresses can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:35
+#: lib/js_strings.rb:36
 msgid "is notified of some selected items, "
 msgstr ""
 
-#: lib/js_strings.rb:36
+#: lib/js_strings.rb:37
 msgid "is notified, "
 msgstr ""
 
-#: lib/js_strings.rb:37
+#: lib/js_strings.rb:38
 msgid "Mailbox names can not contain periods (.)"
 msgstr ""
 
-#: lib/js_strings.rb:38
+#: lib/js_strings.rb:39
 msgid "Mark as primary"
 msgstr ""
 
-#: lib/js_strings.rb:39
+#: lib/js_strings.rb:40
 msgid "New "
 msgstr ""
 
-#: lib/js_strings.rb:40
+#: lib/js_strings.rb:41
 msgid "New Smart"
 msgstr ""
 
-#: lib/js_strings.rb:41
+#: lib/js_strings.rb:42
 msgid "No tag or condition fields may be blank."
 msgstr ""
 
-#: lib/js_strings.rb:43
+#: lib/js_strings.rb:44
 msgid "Password recovery email address can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:44
+#: lib/js_strings.rb:45
 msgid "Phone numbers can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:45
+#: lib/js_strings.rb:46
 msgid "Search "
 msgstr ""
 
-#: lib/js_strings.rb:46
+#: lib/js_strings.rb:47
 msgid "Search All"
 msgstr ""
 
-#: lib/js_strings.rb:48
+#: lib/js_strings.rb:49
 msgid "Special date dates can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:49
+#: lib/js_strings.rb:50
 msgid "Special date descriptions can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:51
+#: lib/js_strings.rb:52
 msgid "tag info"
 msgstr ""
 
-#: lib/js_strings.rb:52
+#: lib/js_strings.rb:53
 msgid "The file name can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:53
+#: lib/js_strings.rb:54
 msgid "The group name can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:54
+#: lib/js_strings.rb:55
 msgid "The password and confirmation must match."
 msgstr ""
 
-#: lib/js_strings.rb:55
+#: lib/js_strings.rb:56
 msgid "The password can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:56
+#: lib/js_strings.rb:57
 msgid "The smart group name can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:57
+#: lib/js_strings.rb:58
 msgid "The username can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:58
+#: lib/js_strings.rb:59
 msgid "unassign tag"
 msgstr ""
 
-#: lib/js_strings.rb:59
+#: lib/js_strings.rb:60
 msgid "Viewability"
 msgstr ""
 
-#: lib/js_strings.rb:60
+#: lib/js_strings.rb:61
 msgid "Viewable"
 msgstr ""
 
-#: lib/js_strings.rb:61
+#: lib/js_strings.rb:62
 msgid "Website names can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:62
+#: lib/js_strings.rb:63
 msgid "Website URLs can not be blank."
 msgstr ""
 
-#: lib/js_strings.rb:63
+#: lib/js_strings.rb:64
 msgid "You must give a name to the event."
 msgstr ""
 
-#: lib/js_strings.rb:64
+#: lib/js_strings.rb:65
 msgid "You must select a file to import."
 msgstr ""
 
-#: lib/js_strings.rb:65
+#: lib/js_strings.rb:66
 msgid "You must select a file to upload."
 msgstr ""
 
-#: lib/js_strings.rb:66
+#: lib/js_strings.rb:67
 msgid "You must specify a complete start date."
 msgstr ""
 
-#: lib/js_strings.rb:67
+#: lib/js_strings.rb:68
 msgid "You must specify a start time."
 msgstr ""
 
-#: lib/js_strings.rb:68
+#: lib/js_strings.rb:69
 msgid "You must specify an event duration."
 msgstr ""
 
-#: lib/js_strings.rb:69
+#: lib/js_strings.rb:70
 msgid "You must specify at least one tag or condition."
 msgstr ""
 
-#: lib/js_strings.rb:70
+#: lib/js_strings.rb:71
 msgid "You must specify either a name or company name."
 msgstr ""
 
-#: app/models/smart_group.rb:98
+#: app/models/smart_group.rb:97
 msgid "Search for %{i18n_search_param}"
 msgstr ""

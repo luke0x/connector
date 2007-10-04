@@ -5,6 +5,7 @@ JoyentL10n = {
 "no items selected, ":"no items selected, ",
 "Not all selected items are deleteable.":"Not all selected items are deleteable.",
 "This item is not deleteable.":"This item is not deleteable.",
+"To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":"To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.",
 "You must select a group to copy items to.":"You must select a group to copy items to.",
 "You must select a group to move items to.":"You must select a group to move items to.",
 "You must select something in order to include it as an attachment.":"You must select something in order to include it as an attachment.",
