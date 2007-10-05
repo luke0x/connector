@@ -1,0 +1,14 @@
+# This is an example crontab file that is used for our jobs that need to be cron'd.
+# It is Solaris compatible.  In order to use this crontab, do the following:
+#   1) Replace the values ABSOLUTE_PATH_TO_RUBY and RAILS_ROOT with real values
+#   2) Save the file
+#   3) Ensure that you are logged in as the user who will run the cron jobs
+#   4) From the command line type 'crontab -l' in order to see if you have existing
+#      cron jobs configured
+#   5a) If you don't have any existing cron jobs setup then issue 'crontab config/crontab'
+#       from the RAILS_ROOT directory
+#   5b) If you already have existing cron jobs setup then issue 'crontab -e' and add
+#       these jobs to the end of your crontab (Be sure that EDITOR is set in order to
+#       edit the crontab file)
+
+0,5,10,15,20,25,30,35,40,45,50,55 * * * * ABSOLUTE_PATH_TO_RUBY RAILS_ROOT/script/alarminator

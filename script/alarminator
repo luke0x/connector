@@ -13,11 +13,11 @@
 ENV['RAILS_ENV'] ||= 'production'
 
 require File.dirname(__FILE__) + '/../config/boot'
-require 'config/environment'
+require File.dirname(__FILE__) + '/../config/environment'
                     
 log_file ="#{RAILS_ROOT}/log/alarminator.log"
 logger   = Logger.new(log_file)
-
+                        
 # Get the following
 Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, false]).each do |event|
   
