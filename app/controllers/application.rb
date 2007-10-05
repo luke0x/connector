@@ -82,6 +82,7 @@ class ApplicationController < ActionController::Base
     end
 
     def pre_clean
+      User.current = nil
       List.current = nil
         
       self.current_domain = nil
