@@ -34,17 +34,13 @@ Event.find(:all, :conditions => ['next_fire < ? AND fired = ?', Time.now.utc, fa
       end
     end                      
   end
+
+  this_time = event.next_occurrence_time(event.next_fire)
+  next_time = event.next_occurrence_time(this_time)
   
-  if event.recurrence_description_id.nil?
-    event.update_attribute(:fired, true) 
+  if next_time
+    event.update_attribute(:next_fire, next_time - event.alarm_trigger_in_minutes.minutes)
   else
-    # If the event is recurring, update the next_fire
-    # but only if the next recurring is valid
-    next_fire = (Time.now.utc + event.recurrence_in_seconds - event.alarm_trigger_in_minutes.minutes)
-    if event.repeat_forever? || next_fire < event.recur_end_time
-      event.update_attributes :next_fire => next_fire, :fired => false
-    else
-      event.update_attribute(:fired, true)
-    end
+    event.update_attribute(:fired, true)
   end
 end

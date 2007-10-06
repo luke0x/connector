@@ -405,4 +405,70 @@ class EventTest < Test::Unit::TestCase
   def test_range_between_throws
     assert_raises(RuntimeError) { events(:monthly).range_between(2.weeks.from_now, 2.weeks.ago) }
   end
+  
+  def test_next_occurrence_time_non_repeating_non_all_day
+    User.current = users(:ian)  
+    event        = users(:ian).events.create(:organization_id => 1,
+                                             :name            => "Event",
+                                             :start_time      => Time.now + 20.hours,
+                                             :end_time        => Time.now + 22.hours)
+
+    assert_equal event.start_time, event.next_occurrence_time
+    assert_equal event.start_time, event.next_occurrence_time(Time.now - 1.day)
+    assert_nil   event.next_occurrence_time(event.start_time)
+    assert_nil   event.next_occurrence_time(Time.now + 1.day) 
+    assert_nil   event.next_occurrence_time(nil) 
+  end                                                                          
+  
+  def test_next_occurrence_time_non_repeating_all_day
+    
+  end
+  
+  def test_next_occurrence_time_repeating_with_end
+    User.current = users(:ian)
+    event        = users(:ian).events.create(:organization_id           => 1,
+                                             :name                      => "Event",
+                                             :start_time                => Time.now + 1.hours,
+                                             :end_time                  => Time.now + 2.hours,
+                                             :recurrence_description_id => 1,
+                                             :recur_end_time            => Time.now + 7.days)
+                                             
+    assert_equal event.start_time,         event.next_occurrence_time(Time.now - 1.day)
+    assert_equal event.start_time,         event.next_occurrence_time
+    assert_equal event.start_time + 1.day, event.next_occurrence_time(event.start_time)
+    assert_equal event.start_time + 1.day, event.next_occurrence_time(Time.now + 1.day)
+    assert_equal event.start_time + 6.day, event.next_occurrence_time(Time.now + 6.day)
+    assert_nil   event.next_occurrence_time(Time.now + 7.days)
+  end
+  
+  def test_next_occurrence_time_repeating_without_end
+    User.current = users(:ian)   
+    event        = users(:ian).events.create(:organization_id           => 1,
+                                             :name                      => "Event",
+                                             :start_time                => Time.now + 1.hours,
+                                             :end_time                  => Time.now + 2.hours,
+                                             :recurrence_description_id => 2)                                            
+    
+    assert_equal event.start_time,               event.next_occurrence_time
+    assert_equal event.start_time + 7.days,      event.next_occurrence_time(Time.now + 2.hours)
+    assert_equal event.start_time + (10*7).days, event.next_occurrence_time(Time.now + (10*7).days)
+  end 
+  
+  def test_next_occurrence_time_non_constant_repeating
+    User.current = users(:ian)
+    event        = users(:ian).events.create(:organization_id           => 1,
+                                             :name                      => "Event",
+                                             :start_time                => Time.now + 1.hours,
+                                             :end_time                  => Time.now + 2.hours,
+                                             :recurrence_description_id => 3)                                            
+
+    assert_equal event.start_time, event.next_occurrence_time
+    assert_equal event.start_time.advance(:months => 1), event.next_occurrence_time(Time.now + 30.days)
+    assert_equal event.start_time.advance(:months => 2), event.next_occurrence_time(Time.now + 60.days)
+    assert_equal event.start_time.advance(:months => 3), event.next_occurrence_time(Time.now + 90.days)
+  end
+  
+  def test_next_occurrence_time_repeating_all_day
+    
+  end
 end

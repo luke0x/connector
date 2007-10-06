@@ -259,7 +259,27 @@ class Event < ActiveRecord::Base
     dates = range_between(from_time, local_end_time)
     dates.collect{|t| StubEvent.new(self, t)}
   end
-  
+                                
+  # FIXME: This will not work correctly for an event that is something like Tuesday and Thursday
+  #        but the start_time is on a Monday...actually not sure if the 'start_time' is an instance
+  #        or not in this case        
+  # FIXME: This also doesn't do anything special for all day events...I am not sure what the desirable
+  #        behavior is going to be with these...perhaps I need to take into account the actual users
+  #        timezone.
+  def next_occurrence_time(utc_time=Time.now)
+    return nil        unless utc_time
+    return nil        if     !repeats?      && start_time     <= utc_time
+    return nil        if     recur_end_time && recur_end_time <= utc_time
+    return start_time unless repeats?
+
+    next_time = start_time
+    next_time = advance(next_time) until utc_time < next_time
+    
+    return next_time if repeat_forever?
+    
+    next_time < recur_end_time ? next_time : nil
+  end
+      
   def self.falls_on?(event, local_date)
     local_start_time = local_date.to_time(:utc).midnight
     local_end_time   = local_start_time + 1.day
@@ -413,7 +433,7 @@ class Event < ActiveRecord::Base
   
   def self.recurrence_map
     { 'daily' => 1, 'weekly' => 2, 'monthly' => 3, 'yearly' => 4, 'fortnightly' => 5 }
-  end
+  end     
   
   def by_day_map
     { :su => 0, :mo => 1, :tu => 2, :we => 3, :th => 4, :fr => 5, :sa => 6 }

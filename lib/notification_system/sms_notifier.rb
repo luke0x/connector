@@ -24,7 +24,8 @@ module NotificationSystem
       
       send_messages(tmail, sms_recipients(notification.notifiee))
     end
-    
+       
+    # FIXME: Looks like the time in these does not respect the recurrence
     def self.alarm(event, user)
       tmail         = TMail::Mail.new
       tmail.from    = JoyentConfig.sms_notifier_from_address

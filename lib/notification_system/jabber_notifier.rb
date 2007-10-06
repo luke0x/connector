@@ -29,7 +29,8 @@ module NotificationSystem
         send_message(options)
       end
     end
-    
+                                                                    
+    # FIXME: Looks like the time in these does not respect the recurrence
     def self.alarm(event, user)
       options              = {}
       options[:subject]    = "Connector Alarm"
