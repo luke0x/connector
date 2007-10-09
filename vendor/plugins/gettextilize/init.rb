@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
-#
-#  Copyright (c) 2006-2007 Joyent Inc. 
-#  Licensed under the same terms as Joyent Connector.
 
 begin
   # Try to load gettext gem first

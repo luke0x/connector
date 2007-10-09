@@ -1,4 +1,16 @@
 #!/usr/bin/env ruby
+=begin #(fold)
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+=end #(end)
 #
 #  From http://www.yotabanana.com/hiki/ruby-gettext-howto-rails.html
 #  Copyright (c) 2003-2007 Masao Mutoh <mutoh@highway.ne.jp>
