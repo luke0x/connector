@@ -1,0 +1,195 @@
+#!/usr/bin/env ruby
+# ++
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+# --
+
+# TODO: Add a test suite
+# TODO: Make this into a gem and a plugin with a rake task
+# TODO: Allow for other file types, including images
+# TODO: Accept an ignore extensions list
+# TODO: Accept an include files list
+# TODO: Accept an include extensions list
+# TODO: Refactor
+ 
+require 'optparse'
+
+OPTIONS          = {}
+OPTIONS[:ignore] = []
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: licensor [options] <license_file> <files_to_license>..."
+  opts.on("-r", "--[no-]remove",                     "Remove existing licenses.")                   { |flag|  OPTIONS[:remove]          = flag  }
+  opts.on("-p", "--[no-]prepend",                    "Prepend new license to files.")               { |flag|  OPTIONS[:prepend]         = flag  }
+  opts.on("-s", "--start_indicator STRING", String,  "Indicator for the beginning of the license.") { |ind|   OPTIONS[:start_indicator] = ind   }
+  opts.on("-e", "--end_indicator STRING",   String,  "Indicator for the end of the license.")       { |ind|   OPTIONS[:end_indicator]   = ind   }
+  opts.on("-l", "--leading_space NUMBER",   Integer, "Leading space above the license.")            { |num|   OPTIONS[:leading_space]   = num   }
+  opts.on("-t", "--trailing_space NUMBER",  Integer, "Trailing space below the license.")           { |num|   OPTIONS[:trailing_space]  = num   }
+  opts.on("-x", "--ignore FILE_LIST",       Array,   "Ignore the following files.")                 { |files| OPTIONS[:ignore]          = files }
+end.parse!
+
+if ARGV.size < 2
+  puts "usage: licensor [-rpseltx] <license_text_file> <path_to_receive_license> [<more_paths_to_receive_license>]"
+  exit 0
+end
+
+LICENSE_FILE     = ARGV[0]
+FILES_TO_LICENSE = ARGV[1..-1]
+
+unless File.exists?(LICENSE_FILE)
+  puts "#{LICENSE_FILE} does not exist."
+  exit 0
+end
+
+class Licensor
+  COMMENT_LANGUAGE_STYLE = { 'rb'     => :ruby,
+                             'rxml'   => :ruby,
+                             'rjs'    => :ruby,
+                             'rake'   => :ruby,
+                             'css'    => :css,
+                             'js'     => :css,
+                             'html'   => :html,
+                             'rhtml'  => :rhtml,
+                             ''       => :bash,
+                             'yml'    => :bash,
+                             'txt'    => :text,
+                             'sql'    => :sql,
+                             'ldif'   => :bash,
+                             'schema' => :bash,
+                             'conf'   => :bash,
+                             'dist'   => :bash,
+                             'readme' => :text,
+                             'po'     => :bash,
+                             'pot'    => :bash,
+                             'c'      => :c}
+
+  COMMENT_DESCRIPTION = { :ruby  => [:block, '=begin #(fold)', '=end #(end)'],
+                          :css   => [:block, '/*',             '*/'],
+                          :html  => [:block, '<!--',           '-->'],
+                          :rhtml => [:block, '<%#',            '-%>'],
+                          :bash  => [:line,  '# '],
+                          :sql   => [:line,  '-- '],
+                          :c     => [:line,  '// '],
+                          :text  => [:line] }
+                          
+  attr_accessor :start_indicator, :end_indicator, :leading_space, :trailing_space
+  
+  def initialize(license_path)
+    @license_lines   = IO.readlines(license_path)
+    @ignore_list     = ['.', '..', '.svn']
+    @start_indicator = '++'
+    @end_indicator   = '--'
+    @leading_space   = 0
+    @trailing_space  = 0
+    @newline         = $/
+  end
+  
+  def process_path(path, remove_lic=true, prepend_lic=true)
+    return unless path
+    return unless File.exists?(path)
+    return if     @ignore_list.include?(File.basename(path))
+
+    if File.directory?(path)
+      Dir.foreach(path){ |child| process_path(File.join(path,child), remove_lic, prepend_lic) }
+    else
+      file_lines   = IO.readlines(path)
+      shebang      = file_lines.delete_at(0) if file_lines[0] =~ /^#!/
+    
+      file_ext     = File.extname(path).downcase.gsub(/^\./, '').downcase
+      comment_lang = COMMENT_LANGUAGE_STYLE[file_ext]
+    
+      return puts("Don't know how to work with '#{path}'") unless comment_lang
+
+      file_lines = remove_license(file_lines, comment_lang)  if remove_lic
+      file_lines = prepend_license(file_lines, comment_lang) if prepend_lic
+
+      File.open(path, 'w') do |file|
+        file.write(shebang) if shebang
+        file.write(file_lines)
+      end
+    end
+  end
+  
+  def add_ignore_file(filename)
+    @ignore_list << filename
+  end
+
+  #######
+  private
+  #######
+  def remove_license(file_lines, comment_language)
+    return file_lines unless comment_language
+  
+    original_file_lines = file_lines.dup
+  
+    @leading_space.times{ return original_file_lines unless file_lines.delete_at(0).strip == '' }
+  
+    description = COMMENT_DESCRIPTION[comment_language]
+    close_index = send("end_index_in_#{description[0]}_license", file_lines, description[1], description[2])
+  
+    if close_index
+      file_lines = file_lines[(close_index + 1)..-1]
+      @trailing_space.times{ return original_file_lines unless file_lines.delete_at(0).strip == '' }
+      file_lines
+    else
+      original_file_lines
+    end
+  end
+
+  def prepend_license(file_lines, comment_language)
+    return file_lines unless comment_language
+
+    description   = COMMENT_DESCRIPTION[comment_language]
+    license_lines = send("#{description[0]}_license", description[1], description[2])
+  
+    @leading_space.times { license_lines.insert(0, @newline) }
+    @trailing_space.times{ license_lines.push(@newline)      }
+
+    license_lines + file_lines
+  end
+  
+  def license
+    ["#{@start_indicator}#{@newline}"] + @license_lines + ["#{@end_indicator}#{@newline}"]
+  end
+  
+  def end_index_in_block_license(file_lines, open_comment, close_comment)
+    return nil unless file_lines.size > 4
+    return nil unless file_lines[0].strip == open_comment
+    return nil unless file_lines[1].strip == @start_indicator
+    return nil unless close_index = (2..file_lines.size).find{ |index| file_lines[index].strip == close_comment }
+    return nil unless file_lines[close_index - 1].strip == @end_indicator
+  
+    close_index
+  end
+
+  def end_index_in_line_license(file_lines, open_comment, close_comment)
+    return nil unless file_lines.size > 2
+    return nil unless file_lines[0].strip == "#{open_comment}#{@start_indicator}#{close_comment}"
+  
+    (1..file_lines.size).find{ |index| file_lines[index].strip == "#{open_comment}#{@end_indicator}#{close_comment}" }
+  end
+
+  def block_license(open_comment, close_comment)
+    ["#{open_comment}#{@newline}"] + license + ["#{close_comment}#{@newline}"]
+  end
+
+  def line_license(open_comment=nil, close_comment=nil)
+    license.collect{ |line| line.gsub(/^(.*)$/, open_comment.to_s + '\1' + close_comment.to_s) }
+  end
+end
+
+licensor = Licensor.new(LICENSE_FILE)
+licensor.leading_space   = OPTIONS[:leading_space]   if OPTIONS[:leading_space]
+licensor.trailing_space  = OPTIONS[:trailing_space]  if OPTIONS[:trailing_space]
+licensor.start_indicator = OPTIONS[:start_indicator] if OPTIONS[:start_indicator]
+licensor.end_indicator   = OPTIONS[:end_indicator]   if OPTIONS[:end_indicator]
+
+OPTIONS[:ignore].each{|file| licensor.add_ignore_file(file)}
+
+FILES_TO_LICENSE.each{ |path| licensor.process_path(path, OPTIONS[:remove], OPTIONS[:prepend]) }
