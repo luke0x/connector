@@ -24,7 +24,7 @@ EOS
     # FIXME: Looks like the time in these does not respect the recurrence
     def self.alarm(event, user)
       send_message :subject => "Connector Alarm: #{event.name}",
-                   :body    => "#{event.start_time_in_user_tz.strftime('%D %T')}\n#{event.name}\n#{event.location}",
+                   :body    => "#{event.alarm_time_in_user_tz.strftime('%D %I:%M %p')}\n#{event.name}\n#{event.location}",
                    :to      => user.notifier_email.email_address,
                    :from    => JoyentConfig.email_notifier_from_address
     end

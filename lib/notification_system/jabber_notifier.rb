@@ -34,8 +34,8 @@ module NotificationSystem
     def self.alarm(event, user)
       options              = {}
       options[:subject]    = "Connector Alarm"
-      options[:plain_body] = "Event Alarm: #{event.name} at #{event.start_time_in_user_tz.strftime('%D %T')} (#{event.location})"
-      options[:html_body]  = "Event Alarm: <a href=\"#{MessageHelper.url_for(event)}\">#{event.name}</a> at #{event.start_time_in_user_tz.strftime('%D %T')} (#{event.location})"
+      options[:plain_body] = "Event Alarm: #{event.name} at #{event.alarm_time_in_user_tz.strftime('%D %I:%M %p')} (#{event.location})"
+      options[:html_body]  = "Event Alarm: <a href=\"#{MessageHelper.url_for(event)}\">#{event.name}</a> at #{event.alarm_time_in_user_tz.strftime('%D %I:%M %p')} (#{event.location})"
       
       jabber_recipients(user).each do |jabber_address|
         options[:to] = jabber_address.im_address

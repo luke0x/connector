@@ -88,7 +88,7 @@ class User < ActiveRecord::Base
 
   def authenticate(pass, sha1=false)
     auth = sha1 ? Digest::SHA1.hexdigest(plaintext_password) == pass : password == encrypt(pass)
-    self.update_attributes(:recovery_token => '') if auth
+    self.update_attributes(:recovery_token => '') if auth && !self.recovery_token.blank?
     auth
   end
   

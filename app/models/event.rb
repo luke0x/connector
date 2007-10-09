@@ -279,7 +279,14 @@ class Event < ActiveRecord::Base
     
     next_time < recur_end_time ? next_time : nil
   end
-      
+    
+  # This method is used to give the time for the event that the last alarm fired
+  def alarm_time_in_user_tz
+    time = next_fire ? next_fire + alarm_trigger_in_minutes.minutes : start_time
+    
+    to_local(time)
+  end
+  
   def self.falls_on?(event, local_date)
     local_start_time = local_date.to_time(:utc).midnight
     local_end_time   = local_start_time + 1.day
@@ -513,8 +520,10 @@ class Event < ActiveRecord::Base
     end
     
     def set_next_fire
-      if alarm?
-        self.next_fire = start_time - alarm_trigger_in_minutes.minutes
+      time = next_occurrence_time
+      
+      if alarm? && !all_day? && time && Time.now < time
+        self.next_fire = time - alarm_trigger_in_minutes.minutes
         self.fired     = false
       else
         self.fired     = true

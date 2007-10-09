@@ -30,7 +30,7 @@ module NotificationSystem
       tmail         = TMail::Mail.new
       tmail.from    = JoyentConfig.sms_notifier_from_address
       tmail.subject = "Connector Alarm"
-      body          = "Event Alarm: #{event.name} at #{event.start_time_in_user_tz.strftime('%D %T')} (#{event.location})"
+      body          = "Event Alarm: #{event.name} at #{event.alarm_time_in_user_tz.strftime('%D %I:%M %p')} (#{event.location})"
       tmail.body    = truncate(body, 140)
       
       send_messages(tmail, sms_recipients(user))
