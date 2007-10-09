@@ -19,18 +19,18 @@ $Id$
   <%= link_to _('Save Bookmark'), bookmarks_create_url(:title => bookmark.title, :uri => bookmark.uri) %>
 <% end -%>
 
-<a href="<%= bookmarks_show_url(:id => bookmark) %>"><img src="<%= bookmark.icon_url %>" width="200" height="150" style="padding:1em;float:right;" /></a>
-<dl>
-	<dt><%= _('Info') -%>:</dt>
-	<dd><%= _("Bookmarked by %{i18n_bookmark_user_count} users")%{:i18n_bookmark_user_count => bookmark.user_count} -%>, <%= _('first by %{i18n_bookmark_first_user}')%{:i18n_bookmark_first_user => bookmark.first_user.full_name} -%> <%= _("%{i18n_time_ago_in_words} ago")%{:i18n_time_ago_in_words =>"#{time_ago_in_words(bookmark.first_bookmarked_at)}"} %></dd>
-	<dt><%= _('Date Created') -%>:</dt>
-	<dd><%= format_date_time(localize_time(bookmark.created_at)) %></dd>
-	<dt><%= _('Date Modified') -%>:</dt>
-	<dd><%= format_date_time(localize_time(bookmark.updated_at)) %></dd>
-	<% unless bookmark.notes.blank? -%>
-		<dt><%= _('Notes') %></dt>
-		<dd><%= bookmark.notes %></dd>
-	<% end -%>
-</dl>
+<p>
+<strong><%= _('Info') -%>:</strong> <%= _("Bookmarked by %{i18n_bookmark_user_count} users")%{:i18n_bookmark_user_count => bookmark.user_count} -%>, <%= _('first by %{i18n_bookmark_first_user}')%{:i18n_bookmark_first_user => bookmark.first_user.full_name} -%> <%= _("%{i18n_time_ago_in_words} ago")%{:i18n_time_ago_in_words =>"#{time_ago_in_words(bookmark.first_bookmarked_at)}"} %>
+</p>
+<p>
+	<strong><%= _('Date Created') -%>:</strong> <%= format_date_time(localize_time(bookmark.created_at)) %>
+</p>
+<p>
+	<strong><%= _('Date Modified') -%>:</strong> <%= format_date_time(localize_time(bookmark.updated_at)) %>
+</p>
+<% unless bookmark.notes.blank? -%>
+	<p>
+	<strong><%= _('Notes') %>:</strong> <%= bookmark.notes %>
+	</p>
+<% end -%>
 
-<%= render :partial => 'comments', :locals => {:comments => bookmark.comments} %>

@@ -20,10 +20,6 @@ $Id$
 	<h2><%= @bookmark.name %></h2>
 	<div><%= @bookmark.uri %></div>
 </div>
-
-<table><!-- safari 2.0.4 fix -->
-	<tr>
-		<td valign="top">
 			<dl>
 				<dt><%= _('Info') -%>:</dt>
 				<dd><%= _("Bookmarked by %{i18n_bookmark_user_count} users")%{:i18n_bookmark_user_count => @bookmark.user_count} -%>, <%= _('first by %{i18n_bookmark_first_user}')%{:i18n_bookmark_first_user => @bookmark.first_user.full_name} -%> <%= _("%{i18n_time_ago_in_words} ago")%{:i18n_time_ago_in_words =>"#{time_ago_in_words(@bookmark.first_bookmarked_at)}"} %></dd>
@@ -36,12 +32,6 @@ $Id$
 					<dd><%= @bookmark.notes %></dd>
 				<% end -%>
 			</dl>
-		</td>
-		<td valign="top">
-			<img src="<%= @bookmark.icon_url %>" width="200" height="150" style="padding:1em;float:right"/>
-		</td>
-	</tr>
-</table>
       
 <br clear="right"/>
 <div style="text-align:center;">

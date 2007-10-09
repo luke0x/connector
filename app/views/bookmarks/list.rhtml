@@ -18,7 +18,8 @@ $Id$
 	<table id="tableList" class="tableList">
 		<colgroup>
 			<col style="width:30px;" />
-			<col style="width:116px;" />
+			<!--<col style="width:116px;" />-->
+			<col />
 			<col />
 			<col style="width:116px;" />
 			<% if @smart_group or @group_name == "Others' Bookmarks" -%>
@@ -30,8 +31,9 @@ $Id$
 	  <thead>
 			<tr>
 				<th class="checkBox" align="center"><%= list_selection_tool %></th>
-				<th class="thumbnail"><%= _('Site Image') %></th>
+				<!--<th class="thumbnail"><%= _('Site Image') %></th>-->
 				<%= toggle_sort_th(_('Title'), 'title') %>
+				<%= toggle_sort_th(_('Address'), 'url') %>
 				<%= toggle_sort_th(_('Date Added'), 'created_at') %>
   			<% if @smart_group or @group_name == "Others' Bookmarks" -%>
 				  <th class="owner"><%= _('Owner') %></th>
@@ -46,13 +48,14 @@ $Id$
 					<td class="checkbox">
 						<input class="listCheckbox" id="<%= bookmark.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= bookmark.dom_id %>" type="checkbox" />
 					</td>
-					<td class="siteImage" style="height: 84px; padding: 2px;">
+					<!--<td class="siteImage" style="height: 84px; padding: 2px;">
 					  <%= link_to "<img src=\"#{bookmark.icon_url}\" style=\"width: 110px;\" />", bookmarks_show_url(:id => bookmark.id) %>
-				  </td>
+				  </td>-->
 					<td class="title" style="height: 100%;">
 					  <%= link_to h(bookmark.title), bookmarks_show_url(:id => bookmark.id), {:class => "" } %>
-					  <br />
-					  <%= link_to '<span style="color: grey;">' + h(bookmark.uri) + '</span>', bookmarks_show_url(:id => bookmark.id), {:class => "" } %>
+				  </td>
+					<td class="url" style="height: 100%;">
+					  <em><%= link_to '<span style="color: grey;">' + h(bookmark.uri) + '</span>', bookmarks_show_url(:id => bookmark.id), {:class => "" } %></em>
 				  </td>
 					<td class="dateAdded">
 						<%= link_to format_local_words_or_date(bookmark.created_at), bookmarks_show_url(:id => bookmark.id) %>
