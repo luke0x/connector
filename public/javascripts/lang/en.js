@@ -1,3 +1,15 @@
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 JoyentL10n = {
 "can't change":"can't change",
 "doesn't have access, ":"doesn't have access, ",
