@@ -282,7 +282,7 @@ class Event < ActiveRecord::Base
     
   # This method is used to give the time for the event that the last alarm fired
   def alarm_time_in_user_tz
-    time = next_fire ? next_fire + alarm_trigger_in_minutes.minutes : start_time
+    time = next_fire ? next_occurrence_time(next_fire) : start_time
     
     to_local(time)
   end
