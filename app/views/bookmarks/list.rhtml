@@ -42,7 +42,7 @@
     </thead>
     <tbody>
 			<% @bookmarks.each_with_index do |bookmark, index| -%>
-				<tr id="<%= bookmark.dom_id %>_tr" itemDomId="<%= bookmark.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>" style="height: 80px ! important;">
+				<tr id="<%= bookmark.dom_id %>_tr" itemDomId="<%= bookmark.dom_id %>" class="itemRow <%= index.odd? ? 'oddRow' : 'evenRow' %>">
 					<td class="checkbox">
 						<input class="listCheckbox" id="<%= bookmark.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= bookmark.dom_id %>" type="checkbox" />
 					</td>
