@@ -137,6 +137,7 @@ class MailMessage < ActionMailer::Base
     user     = ENV['SMTP_USER'] || nil
     pass     = ENV['SMTP_PASS'] || nil
     auth     = ENV['SMTP_AUTH'] || nil
+    port     = ENV['SMTP_PORT'] || 25
     
     if @deliver_raw_message
       # Create a new tmail object using the raw image, then override the stuff
@@ -152,7 +153,7 @@ class MailMessage < ActionMailer::Base
 
     # XXX temp, need an smtp logger so we can see what gets called.  wrap it.
     unless ENV['RAILS_ENV'] == 'test'
-      Net::SMTP.start(host, 25, host, user, pass, auth) do |smtp|
+      Net::SMTP.start(host, port, host, user, pass, auth) do |smtp|
         smtp.send_message @mail.encoded, @mail.from, @mail.destinations
       end
     end
