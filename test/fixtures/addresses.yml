@@ -1,54 +1,10 @@
+# ++
 # Copyright 2004-2007 Joyent Inc.
 # 
-# Redistribution and/or modification of this code is governed
-# by either the GPLv2 or Joyent Commercial Software licenses.
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
 # 
 # Report issues and contribute at http://dev.joyent.com/
 # 
 # $Id$
-
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-michigan:
-  id: 1
-  person_id: 1
-  preferred: false
-  address_type: Home
-  street: 123 Edgewood
-  city: Monroe
-  state: MI
-  postal_code: 90210
-  country_name: United States
-  
-joyent:
-  id: 2
-  person_id: 1
-  preferred: true
-  address_type: Work
-  street: 14 Kientz Lane
-  city: San Anselmo
-  state: CA
-  postal_code: 90210
-  country_name: United States
-
-john:
-  id: 3
-  person_id: 1
-  preferred: false
-  address_type: Home
-  street: 613 Marsh St
-  city: Burlington
-  state: 
-  postal_code: 90210
-  country_name: Australia
-
-notuser_address:
-  id: 4
-  person_id: 5
-  preferred: true
-  address_type: Home
-  street: 666 Some Street
-  city: Someville
-  state: Someabama
-  postal_code: 666
-  country_name: Some Land
-  
+# --
