@@ -1,15 +1,13 @@
-<%#
-++
-Copyright 2004-2007 Joyent Inc.
-
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
-
-Report issues and contribute at http://dev.joyent.com/
-
-$Id$
---
--%>
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
 
 <% person = address.respond_to?(:person) ? address.person : current_organization.find_contact_with_email(address_string(address, true)) -%>
 <% if person -%>

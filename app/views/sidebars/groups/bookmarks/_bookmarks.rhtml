@@ -1,15 +1,13 @@
-<%#
-++
-Copyright 2004-2007 Joyent Inc.
-
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
-
-Report issues and contribute at http://dev.joyent.com/
-
-$Id$
---
--%>
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
 
 <div class="defaultGroups groups"><ul class="groupsList">
   <%= render_default_group 'sidebars/groups/bookmarks/bookmarks_all', { :icon_class => 'all', :name => _('Bookmarks'), :url => bookmarks_list_route_url(:bookmark_folder_id => current_user.bookmark_folder.id), :selected => (@bookmark_folder == current_user.bookmark_folder), :group => @bookmark_folder } %>
