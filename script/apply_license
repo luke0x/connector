@@ -1,0 +1,47 @@
+#!/bin/sh
+# ++
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+# --
+
+# ++
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+# --
+
+ruby script/licensor -rp doc/license.txt app
+ruby script/licensor -rp doc/license.txt config
+ruby script/licensor -r  doc/license.txt config/boot.rb
+ruby script/licensor -rp doc/license.txt db
+ruby script/licensor -r  doc/license.txt db/schema.rb
+ruby script/licensor -rp doc/license.txt doc
+ruby script/licensor -r  doc/license.txt doc/license.txt
+ruby script/licensor -rp doc/license.txt lib
+ruby script/licensor -rp doc/license.txt po     
+ruby script/licensor -rp doc/license.txt public/javascripts/
+ruby script/licensor -r  doc/license.txt public/javascripts/all.js public/javascripts/builder.js public/javascripts/dragdrop.js public/javascripts/controls.js public/javascripts/effects.js public/javascripts/prototype.js public/javascripts/scriptaculous.js public/javascripts/slider.js public/javascripts/sound.js
+ruby script/licensor -rp doc/license.txt public/css
+ruby script/licensor -rp doc/license.txt script
+ruby script/licensor -r  doc/license.txt script/about script/breakpointer script/console script/destroy script/generate script/performance/ script/plugin script/process script/runner script/server 
+ruby script/licensor -rp doc/license.txt systems
+ruby script/licensor -rp doc/license.txt test/fixtures
+ruby script/licensor -r  doc/license.txt test/fixtures/files/ test/fixtures/ical/ test/fixtures/mail_root/ test/fixtures/opml/ test/fixtures/raw_messages/ test/fixtures/search/ test/fixtures/storage_root/ test/fixtures/system_mailer/ test/fixtures/vcards/
+ruby script/licensor -rp doc/license.txt test/functional test/integration test/unit
+ruby script/licensor -rp doc/license.txt test/integration_dsl.rb test/joyent_assertions.rb test/test_helper.rb 
+ruby script/licensor -rp doc/license.txt vendor/mime_filter/
+ruby script/licensor -rp doc/license.txt vendor/plugins/gettextilize/lib vendor/plugins/gettextilize/po/ vendor/plugins/gettextilize/README vendor/plugins/gettextilize/test/
+ruby script/licensor -rp doc/license.txt vendor/plugins/joyent_ruby/
+ruby script/licensor -rp doc/license.txt vendor/plugins/scoped_find/
+                                 
