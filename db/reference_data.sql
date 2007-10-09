@@ -1,11 +1,13 @@
+-- ++
 -- Copyright 2004-2007 Joyent Inc.
 -- 
--- Redistribution and/or modification of this code is governed
--- by either the GPLv2 or Joyent Commercial Software licenses.
+-- Redistribution and/or modification of this code is 
+-- governed by the GPLv2.
 -- 
 -- Report issues and contribute at http://dev.joyent.com/
 -- 
 -- $Id$
+-- --
 
 SELECT pg_catalog.setval(pg_catalog.pg_get_serial_sequence('recurrence_descriptions', 'id'), 6, false);
 SELECT pg_catalog.setval(pg_catalog.pg_get_serial_sequence('smart_group_attribute_descriptions', 'id'), 20, false);
