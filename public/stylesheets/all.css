@@ -517,14 +517,18 @@ $Id$
 		background-image: url(/images/icons/docs/16/vcf.png);
 		}
 
-/* Copyright 2004-2007 Joyent Inc.
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
+$Id$
+--
+*/
 
 	#graph_container {
 		font-size: 10px;
@@ -693,14 +697,18 @@ $Id$ */
 	#Drawers p {
 		margin: 0; 
 		padding: 0 0 1em 0; 
-	}/* Copyright 2004-2007 Joyent Inc.
+	}/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
+$Id$
+--
+*/
 
 
 	
@@ -1066,15 +1074,18 @@ $Id$ */
 		  margin-left: 1em;
 		}
 
-/* Copyright 2004-2007 Joyent Inc.
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
-
+$Id$
+--
+*/
 
 /* Pretty Forms ------------------------------------*/
 
@@ -1466,15 +1477,18 @@ $Id$ */
 		color:#6D6D6D;
 		width:11em;
 	}
-		/* Copyright 2004-2007 Joyent Inc.
+		/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
-
+$Id$
+--
+*/
 
 
 /* general (ui 2.0) -------------------------------------------------------------- */
@@ -2196,14 +2210,18 @@ a.folder  {
 	.icsIcon:hover {
 		background-position: -200px -50px;
 		}
-		/* Copyright 2004-2007 Joyent Inc.
+		/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
+$Id$
+--
+*/
 
 /* file browser ---------------------------------------------- */
 	
@@ -2372,15 +2390,18 @@ div.browserList ul {
 	#browserColumns ul li.browserLists a {
 		background-image: url(/images/icons/groupFolder.png);
 	}
-/* Copyright 2004-2007 Joyent Inc.
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
-
+$Id$
+--
+*/
 
 					
 		#Drawers dl {
@@ -2411,14 +2432,18 @@ $Id$ */
  	-webkit-border-bottom-right-radius: .8em;
  	padding: 5px 0 1px 0;
  	margin-bottom: 1em;
- }/* Copyright 2004-2007 Joyent Inc.
+ }/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
+$Id$
+--
+*/
 
 	.addIconLeft {
 		padding: 2px 0 2px 18px;
@@ -2615,14 +2640,18 @@ $Id$ */
 	.list {
 		background-image: url(/images/icons/docs/32/list.png);
 	}
-/* Copyright 2004-2007 Joyent Inc.
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
+$Id$
+--
+*/
 
 
 /* Autocomplete ----------------------------------------------------------------- */
@@ -3735,14 +3764,18 @@ table.tableList tr td {
 		}
 
 */
-/* Copyright 2004-2007 Joyent Inc.
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is governed
-by either the GPLv2 or Joyent Commercial Software licenses.
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$ */
+$Id$
+--
+*/
 
 /* Title : Lightbox Kevin Hale http://particletree.com/features/lightbox-gone-wild/ 
    Created : January 13, 2006 Modified : February 1, 2006 */

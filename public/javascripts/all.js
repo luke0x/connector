@@ -6343,15 +6343,18 @@ Form.Element.DelayedObserver.prototype = {
     this.callback(this.element, $F(this.element));
   }
 };
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 // load this after prototype.js
 
 Object.extend(Array.prototype, {
@@ -6523,14 +6526,18 @@ Ajax.Responders.register({
     if (Ajax.activeRequestCount == 0) $('plusMenuLink').removeClassName('pulsing');
   }
 });
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 
 ActiveRecord = Class.create();
@@ -6884,14 +6891,18 @@ Object.extend(Notification, {
 		Notification.destroy(notification.domId);
 	}
 });
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 // heavily modified by http://joyent.com
 // created by Chris Campbell http://particletree.com 2/1/2006
@@ -7014,14 +7025,18 @@ function addLightboxMarkup() {
 	bod.appendChild(overlay);
 	bod.appendChild(lb);
 }
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
+
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 
 var Joyent = {
@@ -7237,15 +7252,18 @@ ResizingTextArea.prototype = {
     if (newRows < t.rows) t.rows = Math.max(this.defaultRows, newRows);
 	}
 }
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 var MenuItems = {
 	show: function() {
@@ -7756,15 +7774,18 @@ var TagAddField = {
 		return JoyentL10n[' Type new tag here'];
 	}
 }
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 var Sidebar = {
 	refresh: function() {
@@ -8408,15 +8429,18 @@ var Sidebar = {
 		}
 	}
 }
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 Browser = Class.create();
 Object.extend(Browser.prototype, {
 
@@ -8540,15 +8564,18 @@ Object.extend(Browser.prototype, {
 	
 });
 
-var browser = new Browser();// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+var browser = new Browser();/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 var Toolbar = {
 
@@ -8735,15 +8762,18 @@ var Toolbar = {
 	  return true;
 	}
 }
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 var DefaultGroup = {
 	editToggle: function() {
@@ -8917,15 +8947,18 @@ var AddGroupWidget = {
 		return false;
 	}
 }
-// Copyright 2004-2007 Joyent Inc.
-// 
-// Redistribution and/or modification of this code is governed
-// by either the GPLv2 or Joyent Commercial Software licenses.
-// 
-// Report issues and contribute at http://dev.joyent.com/
-// 
-// $Id$
+/*
+++
+Copyright 2004-2007 Joyent Inc.
 
+Redistribution and/or modification of this code is 
+governed by the GPLv2.
+
+Report issues and contribute at http://dev.joyent.com/
+
+$Id$
+--
+*/
 
 // smart groups new
 
