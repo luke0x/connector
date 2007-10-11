@@ -89,8 +89,8 @@ class MailController < AuthenticatedController
     @toolbar[:delete]      = true
     @toolbar[:spam]        = ! (@mailbox && @mailbox.full_name == 'INBOX.Spam')
     @toolbar[:not_spam]    = @mailbox && @mailbox.full_name == 'INBOX.Spam'
-    @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && User.current.owns?(@mailbox)
-    @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && User.current.owns?(@mailbox)
+    @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && current_user.owns?(@mailbox)
+    @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && current_user.owns?(@mailbox)
     
     respond_to do |wants|
       wants.html { render :action => 'list' }
@@ -212,8 +212,8 @@ class MailController < AuthenticatedController
     @toolbar[:move]      = current_user.can_move?(@message)
     @toolbar[:copy]      = current_user.can_copy?(@message)
     @toolbar[:delete]    = current_user.can_delete?(@message)
-    @toolbar[:spam]      = @message.mailbox.full_name != 'INBOX.Spam' and User.current.can_move?(@message)
-    @toolbar[:not_spam]  = @message.mailbox.full_name == 'INBOX.Spam' and User.current.can_move?(@message)
+    @toolbar[:spam]      = @message.mailbox.full_name != 'INBOX.Spam' and current_user.can_move?(@message)
+    @toolbar[:not_spam]  = @message.mailbox.full_name == 'INBOX.Spam' and current_user.can_move?(@message)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -335,7 +335,7 @@ class MailController < AuthenticatedController
   
   def mark_spam
     ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
-    items = User.current.messages.find_allby_id(ids)
+    items = current_user.messages.find_allby_id(ids)
     items.each do |item|
       next if item.mailbox.full_name == 'INBOX.Spam'
       item.seen!
@@ -359,7 +359,7 @@ class MailController < AuthenticatedController
   
   def mark_not_spam
     ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
-    items = User.current.messages.find_all_by_id(ids)
+    items = current_user.messages.find_all_by_id(ids)
     items.each do |item|
       next unless item.mailbox.full_name == 'INBOX.Spam'
       item.move_to item.owner.inbox
@@ -734,8 +734,8 @@ class MailController < AuthenticatedController
   
     def load_mail_aliases
       @mail_aliases = current_organization.mail_aliases
-      unless User.current.admin?
-        @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(User.current)}
+      unless current_user.admin?
+        @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(current_user)}
       end
       @mail_alias = @mail_aliases.first
     end

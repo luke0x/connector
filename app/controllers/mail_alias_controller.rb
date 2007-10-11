@@ -16,7 +16,7 @@ class MailAliasController < AuthenticatedController
 
   def index
     @mail_aliases = Organization.current.mail_aliases
-    unless User.current.admin?
+    unless current_user.admin?
       @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(User.current)}
     end
     @mail_alias = @mail_aliases.first
