@@ -184,26 +184,24 @@ class ProductionLdapSystem
   def user_to_ldap(u)
     hd = "#{u.organization.system_domain.email_domain}/#{u.username}/"
     hash = {
-      'objectclass'  => ['joyentUser', 'posixAccount', 'shadowAccount', 'ldapPublicKey'],
-      'uid'          => [u.system_email],
-      'dbid'         => [u.id.to_s],
-      'mail'         => [u.system_email],
-      'cn'           => [u.full_name],
-      'gid'          => [u.id.to_s],
-      'maildir'      => ["#{hd}Maildir/"],
-      'homeDirectory'=> [hd],
-      'userPassword' => [u.plaintext_password],
-      'unixHomeDir'  => [u.strongspace_root_path],
-      'uidNumber'    => [u.uid.to_s],
-      'gidNumber'    => [u.organization.gid.to_s],
-      'loginShell'   => ['/usr/local/bin/scponly'],
-      'sshPublicKey' => [u.send(:read_authorized_keys).first.to_s]
+      'objectclass'           => ['joyentUser', 'posixAccount', 'shadowAccount', 'ldapPublicKey'],
+      'uid'                   => [u.system_email],
+      'dbid'                  => [u.id.to_s],
+      'mail'                  => [u.system_email],
+      'cn'                    => [u.full_name],
+      'gid'                   => [u.id.to_s],
+      'maildir'               => ["#{hd}Maildir/"],
+      'homeDirectory'         => [hd],
+      'userPassword'          => [u.plaintext_password],
+      'unixHomeDir'           => [u.strongspace_root_path],
+      'uidNumber'             => [u.uid.to_s],
+      'gidNumber'             => [u.organization.gid.to_s],
+      'loginShell'            => ['/usr/local/bin/scponly'],
+      'sshPublicKey'          => [u.send(:read_authorized_keys).first.to_s],
+      'mail'                  => [u.system_email], # primary connector email only one
+      'mailAlternateAddress'  => u.mail_alternate_addresses, # aliases, multiple including primary email
+      'forward'               => [u.forward_address] # forward mail to address
     } 
-    
-    # New attributes for forwarding
-    # 'mail'                 # primary email only one
-    # 'mailAlternateAddress' # alias, multiple including main
-    # 'forward' # one record
                      
     if !u.organization.active?
       hash.delete('mail')

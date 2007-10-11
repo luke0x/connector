@@ -265,6 +265,11 @@ class User < ActiveRecord::Base
       person.email_addresses.find_by_email_address("#{username}@#{domain.email_domain}")
     end.compact
   end
+  
+  # for ldap aliases, must include primary email
+  def mail_alternate_addresses
+    self.mail_aliases.empty? ? [system_email] : self.mail_aliases << system_email
+  end
 
   def system_email
     dom = self.organization.system_domain
