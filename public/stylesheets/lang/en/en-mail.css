@@ -63,3 +63,7 @@ $Id$
 		width: 59px !important;
 		background-image: url(/images/lang/en/actionsMail.png);
 		}
+	.actionSpam a {
+    	width: 84px !important;
+    	background-image: url(/images/lang/en/actionsMail.png);
+	}

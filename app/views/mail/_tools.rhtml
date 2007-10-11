@@ -13,9 +13,9 @@
 <fieldset>
   <p>
 		<% if User.current.forward_address.blank? -%>
-      <%= _("Your email is currently not being forwarded to another email address.") %>
+	     		<%= _("Your email is currently not being forwarded to another email address.") %>
 		<% else -%>
-      <%= _("Your email is currently being forwarded to %{forward_address}.") % {:forward_address => User.current.forward_address} %>
+	     		<%= _("Your email is currently being forwarded to %{forward_address}.") % {:forward_address => User.current.forward_address} %>
 		<% end -%>
 	</p>
 	<p style="margin-top: 3px;">

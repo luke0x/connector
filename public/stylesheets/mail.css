@@ -78,29 +78,29 @@ $Id$
 		background-position: -600px -90px;
 	}
 
-	.actionNotJunk a.disabled, .actionNotJunk a:hover.disabled {
+	.actionNotSpam a.disabled, .actionNotSpam a:hover.disabled {
 		background-position: -750px 0px;
 	}
-	.actionNotJunk a {
+	.actionNotSpam a {
 		background-position: -750px -30px;
 	}
-	.actionNotJunk a:hover {
+	.actionNotSpam a:hover {
 		background-position: -750px -60px;
 	}
-	.actionNotJunk a:active, .actionNotJunk a.active {
+	.actionNotSpam a:active, .actionNotSpam a.active {
 		background-position: -750px -90px;
 	}
 
-	.actionJunk a.disabled, .actionJunk a:hover.disabled {
+	.actionSpam a.disabled, .actionSpam a:hover.disabled {
 		background-position: -900px 0px;
 	}
-	.actionJunk a {
+	.actionSpam a {
 		background-position: -900px -30px;
 	}
-	.actionJunk a:hover {
+	.actionSpam a:hover {
 		background-position: -900px -60px;
 	}
-	.actionJunk a:active, .actionJunk a.active {
+	.actionSpam a:active, .actionSpam a.active {
 		background-position: -900px -90px;
 	}
 

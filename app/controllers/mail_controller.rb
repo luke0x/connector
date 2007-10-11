@@ -56,6 +56,10 @@ class MailController < AuthenticatedController
     @toolbar[:copy]    = true
     @toolbar[:move]    = true
     @toolbar[:delete]  = true
+    @toolbar[:spam]        = ! (@mailbox && @mailbox.full_name == 'INBOX.Spam')
+    @toolbar[:not_spam]    = @mailbox && @mailbox.full_name == 'INBOX.Spam'
+    @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && current_user.owns?(@mailbox)
+    @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && current_user.owns?(@mailbox)
 
     respond_to do |wants|
       wants.html { render :action => 'list' }
