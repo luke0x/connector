@@ -102,3 +102,70 @@ var Mail = {
 	}
 
 }
+
+var MailAlias = {
+	toggle: function() {
+		$('mailAliasEditDialog').visible() ? MailAlias.close() : MailAlias.open();
+		return false;
+	},
+
+	open: function() {
+		$('mailAliasDivBL').removeClassName('roundbl');
+		$('mailAliasDivBR').removeClassName('roundbr');
+		Effect.BlindDown('mailAliasEditDialog', { duration: Joyent.effectsDuration });
+
+		$('mailAliasDinger').removeClassName("collapsed").addClassName("expanded");
+		return false;
+	},
+
+	close: function() {
+	  Effect.BlindUp('mailAliasEditDialog', { duration: Joyent.effectsDuration, afterFinish: function(){
+			$('mailAliasDivBL').addClassName('roundbl');
+			$('mailAliasDivBR').addClassName('roundbr');
+		} });
+
+		$('mailAliasDinger').removeClassName("expanded").addClassName("collapsed");
+		return false;
+	},
+
+	newShow: function() {
+		$('newMailAliasDialogLink').hide();
+	  Effect.BlindDown('newMailAliasDialog', { duration: Joyent.effectsDuration, afterFinish: function(){
+			$('newMailAliasName').activate();
+		}});
+	},
+	
+	newCancel: function() {
+	  Effect.BlindUp('newMailAliasDialog', { duration: Joyent.effectsDuration, afterFinish: function(){
+			$('newMailAliasDialogLink').show();
+		} });
+		$('newMailAliasName').value = '';
+	},
+	
+	newSubmit: function(form) {
+		name = $F('newMailAliasName');
+		nameRegex = /^[a-z0-9_]+$/;
+		usernames = User.findAll().collect(function(user){ return user.username; });
+		mailAliasNames = $$('ul#mailAliasList a.mailAliasName').collect(function(element){ return element.innerHTML; });
+
+		arrErrors = [];
+
+		if (name == '')
+			arrErrors.push('The alias name can not be blank.');
+	  if (name.length > 0 && ! name.match(nameRegex))
+			arrErrors.push('The alias name can only contain the characters a-z, 0-9, and _.');
+	  if (usernames.include(name))
+			arrErrors.push("A user with the name '" + name + "' already exists.");
+	  if (mailAliasNames.include(name))
+			arrErrors.push("An alias with the name '" + name + "' already exists.");
+
+	  if (validateErrorsArray(arrErrors)) {
+	    preventFormResubmission(form);
+	    return true;
+	  } else {
+			$('newMailAliasName').activate();
+	    return false;
+	  }
+	}
+}
+

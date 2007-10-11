@@ -82,7 +82,11 @@ ActionController::Routing::Routes.draw do |map|
     m.mail_notifications       'mail/notifications',             :action => 'notifications'
     m.mail_message_move        'mail/move',                      :action => 'move'
     m.mail_message_copy        'mail/copy',                      :action => 'copy'
+    m.mail_mark_spam           'mail/mark_spam',                 :action => 'mark_spam'
+    m.mail_mark_not_spam       'mail/mark_not_spam',             :action => 'mark_not_spam'
+    m.mail_aliases             'mail/aliases',                   :action => 'aliases'
     m.mail_send_compose        'mail/send',                      :action => 'send_compose'
+    m.mail_empty_spam          'mail/empty_spam',                :action => 'empty_spam'
     m.mail_empty_trash         'mail/empty_trash',               :action => 'empty_trash'
     m.mail_address_lookup      'mail/addresses_for_lookup',      :action => 'addresses_for_lookup'
     m.mail_inbox_unread_count  'mail/inbox_unread_count',        :action => 'inbox_unread_count'
@@ -146,6 +150,18 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :list_columns
   map.resources :list_cells
   map.resources :list_folders
+  
+  map.with_options :controller => 'mail_alias' do |m|
+    m.mail_alias_index  'mail_alias',        :action => 'index'
+    m.mail_alias_create 'mail_alias/create', :action => 'create'
+    m.mail_alias_delete 'mail_alias/delete', :action => 'delete'
+  end
+
+  map.with_options :controller => 'mail_alias_membership' do |m|
+    m.mail_alias_membership_index  'mail_alias_membership',        :action => 'index'
+    m.mail_alias_membership_create 'mail_alias_membership/create', :action => 'create'
+    m.mail_alias_membership_delete 'mail_alias_membership/delete', :action => 'delete'
+  end
 
   map.with_options :controller => 'calendar' do |m|
     m.calendar_create_on_calendar   'calendar/create/:calendar_id',         :action => 'create',         :requirements => {:calendar_id => /\d+/}

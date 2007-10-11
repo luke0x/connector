@@ -115,6 +115,8 @@ var People = {
 			} else if ($('personTypeUserRadio').checked) {
 				if ($('person_username') && $('person_username').value.strip() == '')
 					arrErrors.push(JoyentL10n['The username can not be blank.']);
+				if (mailAliasNames.include(username))
+				    arrErrors.push(JoyentL10n['An alias with the specified username already exists.']);
 				if ($('person_password').value.strip() == '')
 					arrErrors.push(JoyentL10n['The password can not be blank.']);
 				if ($('person_password').value != $('person_password_confirmation').value)
@@ -194,6 +196,40 @@ var People = {
 	    return false;
 	  }
 	},
+	
+	getEditEmailAddresses: function() {
+	    addresses = [];
+	    $$('#person_email_addresses input[type=text]').each(function(element){
+	        if (element.value.strip() != '') addresses.push(element.value);
+        });
+        return addresses;
+    },
+    
+    drawEditForwardSelect: function() {
+        forwardAddress = (e = $('person_forward_address')) ? e.value : '';
+        emailAddresses = People.getEditEmailAddresses().reject(function(address){
+            return address.strip() == '';
+        }).reject(function(address){
+            return People.currentUserSpecialEmailAddresses.include(address.strip());
+        });
+        
+        container = $('personEmailForwardSelectContainer');
+        container.update('');
+        contents = '';
+        
+        contents += '<select id="person_forward_address" name="person[forward_address]">';
+        contents += '<optgroup label="Don\'t Forward Email:"><option value="">Do not forward email</option></optgroup>';
+        contents += '<optgroup label="Forward Email:">';
+        emailAddresses.each(function(address){
+            contents += '<option ';
+            if (forwardAddress == address) contents += 'selected="" ';
+            contents += 'value="' + address + '">' + address + '</option>';
+        });        
+        contents += '</optgroup>';
+        contents += '</select>';
+        
+        container.update(contents);
+    },
 
 	addPhoneNumber: function() {
 		index = People.getNewIndex('arrPersonPhoneNumberIndexes');

@@ -19,6 +19,10 @@ module JoyentMaildir
     # Mailbox.list
     def mailbox_list(user_id)
     end
+    
+    # Mailbox.empty_spam
+    def mailbox_empty_spam(user_id)
+    end
   
     # Mailbox.empty_trash
     def mailbox_empty_trash(user_id)

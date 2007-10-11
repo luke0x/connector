@@ -158,6 +158,10 @@ module JoyentMaildir
       
       proxy.update_attributes(new_flags) unless new_flags.empty?
     end
+    
+    def get_db_uids
+      ::Message.connection.execute("SELECT uid FROM messages WHERE mailbox_id=#{@mailbox.id} AND active = 't'").map {|x| x.first.to_i}
+    end
 
     def joyent_id_scan(filenames)
       processed = []

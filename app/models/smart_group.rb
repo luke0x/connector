@@ -215,6 +215,7 @@ class SmartGroup < ActiveRecord::Base
     if item_class == Message
       conditions << "messages.active = TRUE"
       conditions << "mailboxes.full_name != 'INBOX.Trash'"
+      conditions << "mailboxes.full_name != 'INBOX.Spam"
       include_parameters << :mailbox
     end
 
@@ -243,7 +244,7 @@ class SmartGroup < ActiveRecord::Base
           actual_include_parameters = include_parameters.clone
           if item_class == Message
             actual_conditions << " AND " unless actual_conditions.blank?
-            actual_conditions << "messages.active = TRUE AND mailboxes.full_name != 'INBOX.Trash'"
+            actual_conditions << "messages.active = TRUE AND mailboxes.full_name != 'INBOX.Trash' AND mailboxes.full_name != 'INBOX.Spam'"
             actual_include_parameters << :mailbox
           end
           if actual_conditions.blank?
@@ -259,7 +260,7 @@ class SmartGroup < ActiveRecord::Base
           actual_include_parameters = include_parameters.clone
           if item_class == Message
             actual_conditions << " AND " unless actual_conditions.blank?
-            actual_conditions << "messages.active = TRUE AND mailboxes.full_name != 'INBOX.Trash'"
+            actual_conditions << "messages.active = TRUE AND mailboxes.full_name != 'INBOX.Trash' AND mailboxes.full_name != 'INBOX.Spam'"
             actual_include_parameters << :mailbox
           end
           if actual_conditions.blank?

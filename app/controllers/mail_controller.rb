@@ -17,9 +17,10 @@ class MailController < AuthenticatedController
                                              :create_mailbox, :rename_group,
                                              :delete_group, :send_draft, :send_compose,
                                              :send_reply_to, :send_forward, :attachment,
-                                             :empty_trash, :addresses_for_lookup, 
+                                             :empty_spam, :empty_trash, :addresses_for_lookup,
                                              :others_groups, :flag, :unflag, :inbox_unread_count]
   before_filter :load_sort_order, :only => [:special_list, :list, :smart_list, :special_show, :show, :smart_show]
+  before_filter :load_mail_aliases, :only => [:special_list, :list, :smart_list, :special_show, :show, :smart_show, :compose, :reply_to, :forward, :edit_draft, :notifications, :unread_messages]
 #  after_filter(:only => [:create_mailbox, :rename_group, :delete_group, :reparent_group]){ |c| c.expire_fragment %r{mail/sidebar} }
 
   def index
@@ -81,10 +82,14 @@ class MailController < AuthenticatedController
                                             :include    => [:owner, :permissions, :notifications, :taggings],
                                             :scope      => :read)
 
-    @toolbar[:compose] = true
-    @toolbar[:copy]    = true
-    @toolbar[:move]    = true
-    @toolbar[:delete]  = true
+    @toolbar[:compose]     = true
+    @toolbar[:copy]        = true
+    @toolbar[:move]        = true
+    @toolbar[:delete]      = true
+    @toolbar[:spam]        = ! (@mailbox && @mailbox.full_name == 'INBOX.Spam')
+    @toolbar[:not_spam]    = @mailbox && @mailbox.full_name == 'INBOX.Spam'
+    @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && User.current.owns?(@mailbox)
+    @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && User.current.owns?(@mailbox)
     
     respond_to do |wants|
       wants.html { render :action => 'list' }
@@ -206,6 +211,8 @@ class MailController < AuthenticatedController
     @toolbar[:move]      = current_user.can_move?(@message)
     @toolbar[:copy]      = current_user.can_copy?(@message)
     @toolbar[:delete]    = current_user.can_delete?(@message)
+    @toolbar[:spam]      = @message.mailbox.full_name != 'INBOX.Spam' and User.current.can_move?(@message)
+    @toolbar[:not_spam]  = @message.mailbox.full_name == 'INBOX.Spam' and User.current.can_move?(@message)
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -323,6 +330,53 @@ class MailController < AuthenticatedController
   rescue ActiveRecord::RecordNotFound
   ensure
     redirect_back_or_home
+  end
+  
+  def mark_spam
+    ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
+    items = User.current.messages.find_allby_id(ids)
+    items.each do |item|
+      next if item.mailbox.full_name == 'INBOX.Spam'
+      item.seen!
+      item.move_to item.owner.spam
+      # TODO: maybe something more
+    end
+    
+    respond_to do |wants|
+      wants.html { redirect_back_or_home }
+      wants.js   {
+        render :update do |page|
+          items.each do |item|
+            page << "Item.removeFromList('#{item.dom_id}');"
+          end
+          page << 'JoyentPage.refresh();'
+          page << 'Mail.updateInboxUnreadCount();'
+        end
+      }
+    end
+  end
+  
+  def mark_not_spam
+    ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
+    items = User.current.messages.find_all_by_id(ids)
+    items.each do |item|
+      next unless item.mailbox.full_name == 'INBOX.Spam'
+      item.move_to item.owner.inbox
+      # TODO: maybe something more
+    end
+    
+    respond_to do |wants|
+      wants.html { redirect_back_or_home }
+      wants.js   {
+        render :update do |page|
+          items.each do |item|
+            page << "Item.removeFromList('#{item.dom_id}');"
+          end
+          page << 'JoyentPage.refresh();'
+          page << 'Mail.updateInboxUnreadCount();'
+        end
+      }
+    end
   end
   
   def compose
@@ -500,6 +554,11 @@ class MailController < AuthenticatedController
   rescue ActiveRecord::RecordNotFound
     render :nothing => true
   end
+  
+  def empty_spam
+    Mailbox.empty_spam(User.current)
+    redirect_to mail_special_list_url(:id => 'spam')
+  end
 
   def inline
     message = Message.find(params[:message], :conditions => ["messages.active = ?", true], :scope => :read)
@@ -662,6 +721,7 @@ class MailController < AuthenticatedController
     when 'Forwarded' then '<img src="/images/icons/forward.png" title="'+_('Forwarded')+'" />'
     when 'Flagged'   then '<img src="/images/icons/flag16.png" title="'+_('Flagged')+'" />'
     when 'Junk'      then '<img src="/images/icons/trash.png" title="'+_('Junk')+'" />'
+    when 'Spam'      then '<img src="/images/icons2/spam.png" title="'+_('Spam')+'" />'
     when 'Unread'    then '<img src="/images/icons/unread.png" title="'+_('Unread')+'" />'
     else
       '' # should never be needed
@@ -670,6 +730,14 @@ class MailController < AuthenticatedController
   helper_method :status_icon
   
   private
+  
+    def load_mail_aliases
+      @mail_aliases = current_organization.mail_aliases
+      unless User.current.admin?
+        @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(User.current)}
+      end
+      @mail_alias = @mail_aliases.first
+    end
 
     def send_mail(opts={})
       # FIXME command is coming through blank from send_compose

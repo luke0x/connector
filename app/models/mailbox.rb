@@ -29,6 +29,11 @@ class Mailbox < ActiveRecord::Base
 		                                          user.id, user_inbox.id, JoyentMaildir::MailboxSync.specials])
   end
   
+  def self.empty_spam(user)
+    JoyentMaildir::Base.connection.mailbox_empty_spam(user.id)
+    user.spam.messages.each(&:destroy)
+  end
+  
   def self.empty_trash(user)
 		JoyentMaildir::Base.connection.mailbox_empty_trash(user.id)
 		user.trash.messages.each(&:destroy)

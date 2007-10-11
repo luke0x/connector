@@ -198,7 +198,12 @@ class ProductionLdapSystem
       'gidNumber'    => [u.organization.gid.to_s],
       'loginShell'   => ['/usr/local/bin/scponly'],
       'sshPublicKey' => [u.send(:read_authorized_keys).first.to_s]
-    }
+    } 
+    
+    # New attributes for forwarding
+    # 'mail'                 # primary email only one
+    # 'mailAlternateAddress' # alias, multiple including main
+    # 'forward' # one record
                      
     if !u.organization.active?
       hash.delete('mail')

@@ -14,6 +14,8 @@
 <% else -%>
 	<h2><%= _('New Person') %></h2>
 <% end -%>
+<% jsMailAliasNames = current_organization.mail_aliases.map{|ma| "'#{ma.name}'"}.join(', ') # for People.validateSubmit -%>
+<%= javascript_tag("var mailAliasNames = [#{jsMailAliasNames}]") %>
 <div class="infoGroup">
 	<table>
 		<tr>
@@ -55,6 +57,23 @@
 			</td>
 		</tr>
 	</table>
+	<% if @person.user? and @person.user == current_user -%>
+	<hr />
+	<table>
+		<tr>
+			<td class="infoGroupLabel" valign="top">
+				<%= _('Forward Email') -%>
+			</td>
+			<td id="personEmailForwardSelectContainer">
+				<input type="hidden" id="person_forward_address" value="<%= current_user.forward_address %>" />
+				<%= current_user.forward_address.blank? ? 'Do not forward email' : "Forwarded to #{current_user.forward_address}" %>
+				<% @page_javascript << "People.currentUserSpecialEmailAddresses = [#{current_user.special_email_addresses.collect{|e| '"' + e.email_address + '"'}.join(', ')}];" -%>
+				<% @page_javascript << "Event.observe(window, 'load', function(event){People.drawEditForwardSelect();});" -%>
+			</td>
+		</tr>
+		<tr> </tr>
+	</table>
+	<% end -%>
 </div>
 <div class="infoGroup">
 	<table>

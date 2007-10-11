@@ -33,6 +33,10 @@
 	  <%= next_url.blank? ? '' : link_to(_('Next'), next_url, { :class=> 'buttonNext addIconLeft' }) %>
 	</div>
   <h2><%= h decode(@message.subject) %></h2>
+  <h2>
+  	<%= '<img src="/images/icons2/spam.png" alt="" style="vertical-align: middle;" />' if @message.spam? %>
+	<%= h decode(@message.subject) %>
+  </h2>
 	<div id="report_issue" class="" style="float:right;">
 		<%= link_to_remote _('Does this message not look quite right?'), 
 		                   :update => 'report_issue', 

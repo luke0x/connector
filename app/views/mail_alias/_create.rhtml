@@ -1,0 +1,31 @@
+<%= form_remote_tag :update => 'mailAliasDrawer',
+                    :url => {:controller => 'mail_alias', :action => 'create'},
+                    :condition => 'MailAlias.newSubmit(this)',
+                    :loading => "$('mailAliasDrawer').update(Joyent.loadingMessageLarge);" %>
+  <div id="newMailAliasDialog" style="display: none; margin: 2px 0 0 0;">
+    <div>
+			<div class="roundtl highlighted"><div class="roundtr">
+    		<table>
+    			<tr>
+    				<td class="dinger">
+    				</td>
+    				<td>
+    				  <a href="#" class="highlighted alias aliasGroup" onclick="return false;"><%= _("New Alias") %></a>
+    				</td>
+    				<td class="showInfo">
+    				</td>
+    			</tr>
+    		</table>
+      </div></div>
+      <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+        <%= _('Name') -%>:
+  			<%= text_field_tag "name", '', { :id => 'newMailAliasName', :style => 'width: 100%; display: block;' } %>
+  			@<%= Organization.current.system_domain.email_domain %>
+        <p style="text-align: right; margin-top: 10px;">
+          <input type="button" value="<%= _('Cancel') -%>" onclick="MailAlias.newCancel();" />
+          <input type="submit" name="Submit" value="<%= _('Save') -%>" />
+        </p>
+      </div></div>
+    </div>
+  </div>
+<%= end_form_tag %>

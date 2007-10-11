@@ -18,7 +18,7 @@ module JoyentMaildir
     include JoyentMaildir::Lockable
     
     def self.specials
-      ['INBOX.Trash', 'INBOX.Drafts', 'INBOX.Sent']
+      ['INBOX.Sent', 'INBOX.Drafts', 'INBOX.Spam', 'INBOX.Trash']
     end
     
     def self.sync_for(user)

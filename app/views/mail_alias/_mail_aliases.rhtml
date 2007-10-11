@@ -1,0 +1,23 @@
+<div class="content" style="width: 100%;">
+  <table style="width: 100%;">
+    <tr>
+      <td style="width: 220px; vertical-align: top;" id="mailAliasAliasList">
+        <ul id="mailAliasList" class="groupsList" style="line-height: 22px;">
+          <% @mail_aliases.each do |mail_alias| -%>
+            <%= render :partial => 'mail_alias/mail_alias_li', :locals => {:mail_alias => mail_alias} %>
+          <% end -%>
+        </ul>
+        <% if @mail_aliases.blank? -%>
+          <em>No mail aliases</em>
+        <% end -%>
+        <% if User.current.admin? -%>
+          <%= link_to_function _('New Alias'), "MailAlias.newShow();", {:id => "newMailAliasDialogLink", :class => 'plus', :style => 'color: black; display: block;'} %>
+        <% end -%>
+        <%= render :partial => 'mail_alias/create' %>
+      </td>
+      <td style="vertical-align: top;" id="mailAliasUsersList">
+        <%= render :partial => 'mail_alias_membership/mail_alias_membership_ul', :locals => {:mail_alias => @mail_alias} if @mail_alias %>
+      </td>
+    </tr>
+  </table>
+</div>

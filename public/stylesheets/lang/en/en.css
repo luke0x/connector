@@ -110,3 +110,12 @@ $Id$
 		width: 50px !important;
 		background-image: url(/images/lang/en/actionsGeneral.png);
 		}
+	.actionSpam a {
+	    width: 64px !important;
+	    }
+	.actionNotSpam a {
+	    width: 85px !important;
+	    }
+	.actionDeleteAllSpam a {
+	    width: 114px !important;
+	    }

@@ -230,6 +230,12 @@ class Person < ActiveRecord::Base
         u.admin = (person_params['admin'] and person_params['admin'] == 'on') ? true : false
         u.save
       end
+      
+      if self.user == User.current
+        u = self.user
+        u.forward_address = person[:forward_address]
+        u.save
+      end
 
       self.owner = self.user # ensure the user is their own owner
 

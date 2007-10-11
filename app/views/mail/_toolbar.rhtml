@@ -10,23 +10,23 @@
 <% # -- -%>
 
 <ul id="Toolbar">
-  <% if @toolbar[:compose] -%>
-    <li class="actionCompose"><%= link_to _('Compose'), mail_compose_url %></li>
+	<% if @toolbar[:compose] -%>
+    	<li class="actionCompose"><%= link_to _('Compose'), mail_compose_url %></li>
 	<% end -%>
-  <% if @toolbar[:new_notifications] -%>
-    <li class="actionShowNew"><%= link_to _('Show New'), mail_notifications_url %></li>
-  <% end -%>
-  <% if @toolbar[:all_notifications] -%>
-    <li class="actionShowAll"><%= link_to _('Show All'), mail_notifications_url(:all => '') %></li>
-  <% end -%>
-  <% if @toolbar[:reply] -%>
-    <li class="actionReply"><%= link_to _('Reply'), mail_reply_url(:id => @message) %></li>
+  	<% if @toolbar[:new_notifications] -%>
+    	<li class="actionShowNew"><%= link_to _('Show New'), mail_notifications_url %></li>
+  	<% end -%>
+  	<% if @toolbar[:all_notifications] -%>
+    	<li class="actionShowAll"><%= link_to _('Show All'), mail_notifications_url(:all => '') %></li>
+    <% end -%>
+  	<% if @toolbar[:reply] -%>
+    	<li class="actionReply"><%= link_to _('Reply'), mail_reply_url(:id => @message) %></li>
 	<% end -%>
-  <% if @toolbar[:reply_all] -%>
-    <li class="actionReplyAll"><%= link_to _('Reply All'), mail_reply_url(:id=>@message, :all => true) %></li>
+	<% if @toolbar[:reply_all] -%>
+    	<li class="actionReplyAll"><%= link_to _('Reply All'), mail_reply_url(:id=>@message, :all => true) %></li>
 	<% end -%>
-  <% if @toolbar[:forward] -%>
-    <li class="actionForward"><%= link_to _('Forward'), mail_forward_url(:id => @message) %></li>
+  	<% if @toolbar[:forward] -%>
+    	<li class="actionForward"><%= link_to _('Forward'), mail_forward_url(:id => @message) %></li>
 	<% end -%>
 	<% if @toolbar[:copy] -%>
 		<li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy')", {:id => 'actionCopyLink'} %></li>
@@ -34,9 +34,21 @@
 	<% if @toolbar[:move] -%>
 		<li class="actionMove"><%= link_to_function _('Move'), "return Drawers.toggleBrowser('Move')", {:id => 'actionMoveLink'} %></li>
 	<% end -%>
-  <% if @toolbar[:delete] -%>
+	<% if @toolbar[:spam] -%>
+		<li class="actionSpam"><%= link_to_function _('Spam'), "return Toolbar.markAsSpam(this, '#{mail_mark_spam_url}');", { :title => _('Mark as spam.'), :id => 'actionSpamLink' } %></li>
+	<% end -%>
+    <% if @toolbar[:not_spam] -%>
+	    <li class="actionNotSpam"><%= link_to_function _('Not Spam'), "return Toolbar.markAsNotSpam(this, '#{mail_mark_not_spam_url}');", { :title => _('Mark as not spam.'), :id => 'actionNotSpamLink' } %></li>
+	<% end -%>
+	<% if @toolbar[:empty_spam] -%>
+		<li class="actionDeleteAllSpam"><%= link_to _('Permanently Delete All Spam'), mail_empty_spam_url, {:confirm => _('Do you want to permanently delete all spam?')} %></li>
+	<% end -%>
+  	<% if @toolbar[:empty_trash] -%>
+	 	<li class="actionEmptyTrash"><%= link_to _('Empty Trash'), mail_empty_trash_url, {:confirm => _('Do you want to empty your trash?')} %></li>
+  	<% end -%>
+  	<% if @toolbar[:delete] -%>
 		<li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
-  <% end -%>
+  	<% end -%>
 	<% if @mailbox && @mailbox.full_name == 'INBOX.Trash' -%>
 	  <li class="actionEmptyTrash"><%= link_to _('Empty Trash'), mail_empty_trash_url, {:confirm => _('Do you want to empty your trash?')} %></li>
 	<% end -%>

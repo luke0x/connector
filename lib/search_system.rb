@@ -22,7 +22,7 @@ class SearchSystem
       include_parameters = [:owner, :tags]
 
       if klass == Message
-        conditions_parameters = ["(#{conditions.join(' OR ')}) AND messages.active = TRUE AND mailboxes.full_name != 'INBOX.Trash'"] + ["%#{needle}%"] * conditions.length
+        conditions_parameters = ["(#{conditions.join(' OR ')}) AND messages.active = TRUE AND mailboxes.full_name != 'INBOX.Trash' AND mailboxes.full_name != 'INBOX.Spam'"] + ["%#{needle}%"] * conditions.length
         include_parameters << :mailbox
       else
         conditions_parameters = [conditions.join(' OR ')] + ["%#{needle}%"] * conditions.length

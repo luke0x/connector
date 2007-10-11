@@ -25,6 +25,11 @@ module JoyentMaildir
     def mailbox_list(user_id)
       JoyentMaildir::MailboxSync.sync_for(User.find(user_id))
     end
+    
+    # Mailbox.empty_spam
+    def mailbox_empty_spam(user_id)
+      JoyentMaildir::Mailbox.empty_spam(User.find(user_id))
+    end
   
     # Mailbox.empty_trash
     def mailbox_empty_trash(user_id)

@@ -52,6 +52,12 @@
 			<dd>
 				<%= link_to(h(email_address.email_address), {:controller => 'mail', :action => 'compose', :to => "#{@person.full_name} <#{email_address.email_address}>"}, {:title =>_("Compose a new email to")+" #{email_address.email_address}"}) %>
 				<em><%= h(_(email_address.email_type)) %></em>
+				<em>
+					<%= h(_(email_address.email_type)) %>
+					<% if email_address.email_address == User.current.forward_address -%>
+						- Connector email forwarded here
+					<% end -%>
+				</em>
 				<% if email_address.use_notifier? %>
           <%= _('Send Notifications Here') %>
         <% end -%>

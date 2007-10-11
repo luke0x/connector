@@ -61,6 +61,9 @@
         <%= link_to(h(email_address.email_address), {:controller => 'mail', :action => 'compose', :to => "#{@person.full_name} <#{email_address.email_address}>"}, {:title => _("Compose a new email to %{i18n_email_address}")%{:i18n_email_address => "#{email_address.email_address}"}}) %>
         <em>
           <%= h(_(email_address.email_type)) %>
+		  <% if email_address.email_address == User.current.forward_address -%>
+			 - Connector email forwarded here
+		  <% end -%>
         </em>
       </dd>
     <% end -%>

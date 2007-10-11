@@ -13,6 +13,7 @@
   <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.inbox, :css_class => 'defaultGroupInbox',  :selected_group => @mailbox, :skip_children => true, :name => _('Inbox')} if selected_user.inbox %>
   <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.sent, :css_class => 'defaultGroupSent',   :selected_group => @mailbox, :skip_children => true, :name => _('Sent')} if selected_user.sent %>
   <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.drafts, :css_class => 'defaultGroupDrafts', :selected_group => @mailbox, :skip_children => true, :name => _('Drafts')} if selected_user.drafts %>
+  <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => spam, :css_class => 'defaultGroupSpam', :selected_group => @mailbox, :skip_children => true} if selected_user.spam %>
   <%= render_standard_group 'sidebars/groups/mail/mail_standard', {:standard_group => selected_user.trash, :css_class => 'defaultGroupTrash',  :selected_group => @mailbox, :skip_children => true, :name => _('Trash')} if selected_user.trash %>
 
   <%  selected_user.application_smart_groups(@application_name).each do |smart_group| -%>

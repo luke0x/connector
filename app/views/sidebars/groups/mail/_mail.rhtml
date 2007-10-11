@@ -23,6 +23,9 @@
   <% if current_user.drafts -%>
     <%= render_default_group 'sidebars/groups/mail/mail_drafts', { :icon_class => 'defaultGroupDrafts', :name => _('Drafts'), :url => mail_special_list_url(:id => 'drafts'), :selected => (@mailbox == current_user.drafts), :group => current_user.drafts } %>
   <% end -%>
+  <% if User.current.spam -%>
+	<%= render_default_group 'sidebars/groups/mail/mail_spam',  { :icon_class => 'defaultGroupSpam', :name => _('Spam'), :url => mail_special_list_url(:id => 'spam'), :selected => (@mailbox == User.current.spam), :group => User.current.spam } %>
+  <% end -%>
   <% if current_user.trash -%>
     <%= render_default_group 'sidebars/groups/mail/mail_trash',  { :icon_class => 'defaultGroupTrash', :name => _('Trash'), :url => mail_special_list_url(:id => 'trash'), :selected => (@mailbox == current_user.trash), :group => current_user.trash } %>
   <% end -%>

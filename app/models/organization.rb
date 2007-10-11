@@ -24,6 +24,7 @@ class Organization < ActiveRecord::Base
   has_many :domains,       :dependent => :destroy
   has_many :smart_groups
   has_many :reports
+  has_many :mail_aliases, :dependent => :destroy, :order => 'LOWER(name)'
 
   has_many :mailboxes
   has_many :calendars

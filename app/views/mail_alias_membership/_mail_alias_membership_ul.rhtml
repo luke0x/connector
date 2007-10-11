@@ -1,0 +1,13 @@
+<ul class="groupsList" style="line-height: 22px; border: none;">
+  <% Organization.current.users.each do |user| -%>
+    <li id="mailAliasUser<%= user.dom_id %>" style="display:inline; background:none; border:none; white-space: nowrap;">
+      <%= check_box_action(
+            url_for({:controller => 'mail_alias_membership', :action => 'create', :mail_alias_id => @mail_alias.id, :user_id => user.id}),
+            url_for({:controller => 'mail_alias_membership', :action => 'delete', :mail_alias_id => @mail_alias.id, :user_id => user.id}),
+            { :checked => user.mail_aliases.include?(@mail_alias),
+              :enabled => User.current.admin? ? true : User.current == user,
+              :complete => User.current.admin? ? '' : "$('mailAliasDrawer').update(request.responseText)" } ) %>
+      <%= user.full_name %>
+    </li>
+  <% end -%>
+</ul>

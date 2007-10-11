@@ -64,6 +64,16 @@ module JoyentMaildir
       {:uidvalidity => ts, :uidnext => 1}
     end
     
+    def self.empty_spam(user)
+      domain = user.organization.system_domain.email_domain
+      path = MaildirPath.build(domain, user.username, 'INBOX.Spam')
+
+      Dir["#{path}/*"].each do |f|
+       next if (f == '.' || f == '..')
+       FileUtils.rm(f, :force => true)
+      end
+    end
+    
     def self.empty_trash(user)
       domain = user.organization.system_domain.email_domain
       path = MaildirPath.build(domain, user.username, 'INBOX.Trash')

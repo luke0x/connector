@@ -1,5 +1,5 @@
 /*
-++
+
 Copyright 2004-2007 Joyent Inc.
 
 Redistribution and/or modification of this code is 
@@ -206,6 +206,14 @@ $Id$
 	.removeEmail:active {
 		background-position: 100% -196px;
 	}
+	#mail a.genericGroup, #mail a.defaultGroupAll, a.defaultGroupSpam, a.defaultGroupTrash, a.defaultGroupDrafts, a.defaultGroupInbox, a.defaultGroupSent {
+		margin:0; 
+		display:block;
+	}
+	#mail a.defaultGroupSpam {
+		background-image: url(/images/icons/group-spam.png);
+    }
+	
 			
 /* Item View ------------------------------------------- */
 	
@@ -283,10 +291,10 @@ $Id$
 		padding: 0;
 		margin: 0;
 		}
-	#mail #contentPane dt+dd {
+	#mail #contentPane dtdd {
 		margin-top:2px;
 		}
-	#mail #contentPane dd+dt {	
+	#mail #contentPane dddt {	
 		margin-top:2px;
 		}
 	#mail #contentPane dt {
@@ -383,3 +391,44 @@ $Id$
 	.jan {
 		background-position: 0 -100px;
 		}
+    ul#mailAliasList a {
+    	color: black;
+    }
+    ul#mailAliasList div.highlighted a {
+    	color: white;
+    }
+    #mailAliasUsersList {
+    	background-position: 0 0;
+    	padding: 1em 0 1em 1em;
+    }
+    #mailAliasAliasList {
+    	background-position: 0 0;
+    	padding: 1em 1em 1em 0;
+    	border-color: #D5D5D5;
+    	border-width: 0 1px 0 0;
+    	border-style: solid;
+    	outline-right: 1px solid #FFF;
+    }
+    #mailAliasAliasList a.plus {
+    	display: block;
+    	background-image: url(/images/icons2/addRemove.png);
+    	background-repeat: no-repeat;
+    	background-position: 0 -200px;
+    	margin: 4px 0 0 19px;
+    	padding: 2px 0 2px 20px;
+    }
+    a.alias  {
+    	background-repeat: no-repeat;
+    	background-position: 0 2px;
+    	padding: 0px 2px 0px 20px;
+    	display: block;
+    	}
+    .aliasGroup {		
+    	background-image: url(/images/icons2/groupAlias.png);
+    }
+    .forward {
+    	background-image: url(/images/icons2/forward.png);
+    	background-repeat: no-repeat;
+    	background-position: 0 0;
+    	padding: 2px 0 2px 18px;
+    }

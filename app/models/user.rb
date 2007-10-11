@@ -231,9 +231,19 @@ class User < ActiveRecord::Base
   def drafts
     mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', 'INBOX.Drafts'], :include => [:owner], :scope => :read)
   end
+  
+  def spam
+    mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', 'INBOX.Spam'], :include => [:owner], :scope => :read)
+  end
 
   def trash
     mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', 'INBOX.Trash'], :include => [:owner], :scope => :read)
+  end
+  
+  def special_email_addresses
+    organization.domains.collect do |domain|
+      person.email_addresses.find_by_email_address("#{username}@#{domain.email_domain}")
+    end.compact
   end
 
   def system_email
@@ -657,6 +667,12 @@ class User < ActiveRecord::Base
   def jajah_password=(new_password)
     write_attribute(:jajah_password, encrypt(new_password))
   end
+  
+  protected
+    
+    def validate
+      errors.add(:name, "The username can not be the same as a mail alias.") if Organization.current.mail_aliases.find_by_name(self.username)
+    end
   
   private
 
