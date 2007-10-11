@@ -1,4 +1,14 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# ++
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+# --
+
 www_for_ian:
   id: 1
   mail_alias_id: 1

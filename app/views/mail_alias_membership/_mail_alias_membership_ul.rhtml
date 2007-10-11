@@ -1,3 +1,14 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
 <ul class="groupsList" style="line-height: 22px; border: none;">
   <% Organization.current.users.each do |user| -%>
     <li id="mailAliasUser<%= user.dom_id %>" style="display:inline; background:none; border:none; white-space: nowrap;">
