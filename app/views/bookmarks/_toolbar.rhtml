@@ -31,7 +31,7 @@
   <% if @toolbar[:sync] -%>
   	<li class="actionSyncBookmarks"><%= link_to_function _('Sync Bookmarks with del.icio.us'), "return Drawers.toggle('BookmarksSync');", {:id => 'actionBookmarksSyncLink'} %></li>
   <% end -%>
-  <% if @toolbar[:bookmarklet] -%>
-    <li class="actionTools"><%= link_to_function _('Get the Joyent Bookmarks Bookmarklet'), "return Drawers.toggle('BookmarksBookmarklet');", {:id => 'actionBookmarksBookmarkletLink'} %></li>
+  <% if @toolbar[:tools] -%>
+    <li class="actionTools"><%= link_to_function _('Get the Joyent Bookmarks Bookmarklet'), "return Drawers.toggle('BookmarksTools');", {:id => 'actionBookmarksToolsLink'} %></li>
   <% end -%>
 </ul>

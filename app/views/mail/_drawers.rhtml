@@ -17,6 +17,6 @@
     <div class="drawerContent" id="drawerMove" style="display: none;"><%= render :partial => 'toolbars/move', :locals => {:groups => current_user.mailboxes.select{|m| m.parent.blank?}, :selected => @mailbox} %></div>
   <% end -%>
   <% if @toolbar[:tools] -%>
-    <li id="drawerMailTools" style="display: none;"><%= render :partial => 'tools' %></li>
+    <div class="drawerContent" id="drawerMailTools" style="display: none;"><%= render :partial => 'tools' %></div>
   <% end -%>
 </div>

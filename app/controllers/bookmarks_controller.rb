@@ -200,7 +200,7 @@ class BookmarksController < AuthenticatedController
 
     @toolbar[:copy]   = false
     @toolbar[:delete] = false
-    @toolbar[:bookmarklet] = false
+    @toolbar[:tools]  = false
 
     if params.has_key?(:all)
       @group_name = _('All Notifications')
@@ -277,7 +277,7 @@ class BookmarksController < AuthenticatedController
       @toolbar[:move]        = false
       @toolbar[:delete]      = true
       @toolbar[:sync]        = false
-      @toolbar[:bookmarklet] = true
+      @toolbar[:tools]       = true
       true
     end
 
