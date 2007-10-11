@@ -34,6 +34,13 @@ class SmartGroup < ActiveRecord::Base
     "s#{self.id}"
   end
 
+  def add_condition(key, value)
+    smart_group_attribute_description = smart_group_description.smart_group_attribute_descriptions.find_by_name(key)
+    raise "Invalid smart group attribute description name '#{key}'" unless smart_group_attribute_description
+    
+    smart_group_attributes.create(:smart_group_attribute_description_id => smart_group_attribute_description.id, :value => value)
+  end
+
   # PDI: we need to take into consideration the sort with the pagination.
   def items(order = nil, limit = nil, offset = nil)
     case application_name
@@ -80,7 +87,15 @@ class SmartGroup < ActiveRecord::Base
   def controller
     Object.const_get "#{application_name.capitalize}Controller"
   end
+
+  def make_special!
+    update_attribute(:special, true)
+  end
   
+  def make_not_special!
+    update_attribute(:special, false)
+  end
+
   # turns s17 into 17
   def self.param_to_id(smart_group_id)
     smart_group_id.sub(/^s/, '')

@@ -45,6 +45,9 @@ class User < ActiveRecord::Base
   has_many   :current_notifications, :class_name => 'Notification', :foreign_key => 'notifiee_id', :dependent => :destroy, :order => 'notifications.created_at DESC', :conditions => ["acknowledged = ?", false]
   has_many   :sent_notifications, :class_name => 'Notification', :foreign_key => 'notifier_id', :dependent => :destroy, :order => 'notifications.created_at DESC'
 
+  has_many   :mail_alias_memberships, :dependent => :destroy
+  has_many   :mail_aliases, :through => :mail_alias_memberships
+
   # core item type ownership
   has_many   :mailboxes,       :dependent => :destroy, :order => 'LOWER(mailboxes.full_name)'
   has_many   :calendars,       :dependent => :destroy, :order => 'LOWER(calendars.name)'
@@ -187,7 +190,24 @@ class User < ActiveRecord::Base
 
   def application_smart_groups(application_name)
     return [] unless smart_group_description = SmartGroupDescription.find_by_application_name(application_name)
-    self.smart_groups.find(:all, :conditions => [ "smart_group_description_id = ?", smart_group_description.id ])
+    self.smart_groups.find(:all, :conditions => [ "smart_group_description_id = ? AND special = ?", smart_group_description.id, false ])
+  end
+
+  def application_default_smart_groups(application_name)
+    return [] unless smart_group_description = SmartGroupDescription.find_by_application_name(application_name)
+    self.smart_groups.find(:all, :conditions => [ "smart_group_description_id = ? AND special = ?", smart_group_description.id, true ])
+  end
+
+  def new_smart_group(app_name, name)
+    raise "App name must be valid" unless smart_group_description = SmartGroupDescription.find_by_application_name(app_name)
+    raise "Smart group name can not be blank" if name.blank?
+    
+    smart_group = SmartGroup.new
+    smart_group.user_id = User.current.id
+    smart_group.name = name
+    smart_group.smart_group_description_id = smart_group_description.id
+    smart_group.save!
+    smart_group
   end
 
   def <=>(right_user)
@@ -258,7 +278,27 @@ class User < ActiveRecord::Base
       person.email_addresses.collect(&:email_address).push system_email
     else
       person.email_addresses.collect(&:email_address).unshift system_email
+    end.uniq.sort
+  end
+  
+  def preferred_email_address
+    person.email_addresses.first.preferred? ? person.email_addresses.first : system_email
+  end
+
+  def generate_domain_email_addresses
+    organization.domains.each do |domain|
+      # RAILS_DEFAULT_LOGGER.info "gen: " + domain.inspect
+      email_address = "#{username}@#{domain.email_domain}"
+      next if person.email_addresses.find_by_email_address(email_address)
+      # RAILS_DEFAULT_LOGGER.info "gen: " + email_address.inspect
+      person.email_addresses.create({:email_address => email_address, :email_type => "Work", :preferred => domain.primary?})
     end
+  end
+
+  def special_email_addresses
+    organization.domains.collect do |domain|
+      person.email_addresses.find_by_email_address("#{username}@#{domain.email_domain}")
+    end.compact
   end
 
   # files

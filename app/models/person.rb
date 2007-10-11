@@ -250,6 +250,7 @@ class Person < ActiveRecord::Base
     
     # update other user settings
     if self.user and ! self.user.new_record?
+      self.user.generate_domain_email_addresses
       self.user.set_option('Language', person_params['language']) if person_params.has_key?('language')
 
       self.phone_numbers.select(&:use_notifier?).each{|x|   x.update_attributes(:use_notifier => false, :confirmed => false, :provider => '')}

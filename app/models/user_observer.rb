@@ -29,13 +29,6 @@ class UserObserver < ActiveRecord::Observer
       user.create_bookmark_folder(:organization_id => user.organization_id)
       user.list_folders.create(:name => 'Lists', :organization_id => user.organization_id)
 
-      user.organization.domains.each do |dom|
-        a = "#{user.username}@#{dom.email_domain}"
-        unless user.person.email_addresses.find_by_email_address(a)
-          user.person.email_addresses.create({:email_address=>a, :email_type=>"Work", :preferred=>dom.primary?})
-        end
-      end
-
       Person.ldap_system.write_user(user) # do this before the email gets sent 
       if UserObserver.new_user_email
         SystemMailer.deliver_welcome_email(user)

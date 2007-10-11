@@ -12,17 +12,11 @@
 <% @page_javascript << javascript_jsar_init(@messages, 'list') -%>
 
 <div style="position: relative;" class="report">
-	<% if @mailbox and @mailbox.full_name == 'INBOX' and selected_user.forward_address != '' -%>
-	    <div class="info4Wide">
-	    	<div class="info3">
-					<div class="info2">
-						<div class="info">
-							<%= _('This inbox is currently being <strong>forwarded</strong> to %{forward_address}. New mail messaged will not appear here.')%{:forward_address => current_user.forward_address} -%>
-						</div>
-					</div>
-				</div>
-			</div>
-	  <% end -%>
+	<% if @mailbox and @mailbox.full_name == 'INBOX' and ! selected_user.forward_address.blank? -%>
+    <div class="info4Wide"><div class="info3"><div class="info2"><div class="info">
+  		<%= _('This inbox is currently being <strong>forwarded</strong> to %{forward_address}. New mail messages will not appear here.')%{:forward_address => current_user.forward_address} -%>
+		</div></div></div></div>
+  <% end -%>
   <%= render_list_header(@group_name, @paginator, 'messages') %>
 	<table id="tableList" class="tableList">
 		<colgroup>

@@ -145,6 +145,7 @@ class Organization < ActiveRecord::Base
     u.admin          = true   
     u.person         = p
     u.save
+    u.generate_domain_email_addresses
     p.owner          = u
     p.save
     p.email_addresses.create(:email_type => 'Work', :email_address => recovery_email, :preferred => true) if recovery_email

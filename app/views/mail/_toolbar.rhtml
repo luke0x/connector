@@ -52,4 +52,7 @@
 	<% if @mailbox && @mailbox.full_name == 'INBOX.Trash' -%>
 	  <li class="actionEmptyTrash"><%= link_to _('Empty Trash'), mail_empty_trash_url, {:confirm => _('Do you want to empty your trash?')} %></li>
 	<% end -%>
+	<% if @toolbar[:tools] -%>
+    <li class="actionTools"><%= link_to_function _('Tools'), "return Drawers.toggle('MailTools');", {:id => 'actionMailToolsLink'} %></li>
+  <% end -%>
 </ul>
