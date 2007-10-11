@@ -31,7 +31,7 @@
       <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
         <%= _('Name') -%>:
   			<%= text_field_tag "name", '', { :id => 'newMailAliasName', :style => 'width: 100%; display: block;' } %>
-  			@<%= Organization.current.system_domain.email_domain %>
+  			@<%= current_organization.system_domain.email_domain %>
         <p style="text-align: right; margin-top: 10px;">
           <input type="button" value="<%= _('Cancel') -%>" onclick="MailAlias.newCancel();" />
           <input type="submit" name="Submit" value="<%= _('Save') -%>" />

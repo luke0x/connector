@@ -19,7 +19,7 @@
 			<td class="dinger">
 			</td>
 			<td>
-        <%= link_to_remote "#{mail_alias.name}@#{Organization.current.system_domain.email_domain}", {
+        <%= link_to_remote "#{mail_alias.name}@#{current_organization.system_domain.email_domain}", {
               :update => "mailAliasDrawer",
               :url => {:controller => 'mail_alias_membership', :action => 'index', :mail_alias_id => mail_alias},
               :loading => "$('mailAliasUsersList').update(Joyent.loadingMessageSmall); 
@@ -33,13 +33,13 @@
             } %>
 			</td>
 			<td class="showInfo">
-			  <% if mail_alias == @mail_alias and User.current.admin? -%>
+			  <% if mail_alias == @mail_alias and current_user.admin? -%>
   			  <%= link_to_function(_('Show'), "MailAlias.toggle();", { :id => 'mailAliasDinger',:class => 'groupInfo collapsed', :title => _('View group info') }) %>
 			  <% end -%>
 			</td>
 		</tr></table>
   </div></div></div></div>
-  <% if mail_alias == @mail_alias and User.current.admin? -%>
+  <% if mail_alias == @mail_alias and current_user.admin? -%>
     <div id="mailAliasEditDialog" class="roundbl groupInfo" style="display:none;"><div class="roundbr groupInfoMargin">
       <%= link_to_remote '<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="">' + _('Delete Mail Alias') + '</span></div></div></div>', :update => 'mailAliasDrawer',
             :url => {:controller => 'mail_alias', :action => 'delete', :id => mail_alias.id},

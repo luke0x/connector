@@ -15,7 +15,7 @@ class MailAliasController < AuthenticatedController
   layout nil
 
   def index
-    @mail_aliases = Organization.current.mail_aliases
+    @mail_aliases = current_organization.mail_aliases
     unless current_user.admin?
       @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(User.current)}
     end
@@ -27,11 +27,11 @@ class MailAliasController < AuthenticatedController
   def create
     return unless User.current.admin?
     return if params[:name].blank?
-    return if Organization.current.mail_aliases.find_by_name(params[:name])
+    return if current_organization.mail_aliases.find_by_name(params[:name])
 
-    @mail_alias = Organization.current.mail_aliases.create(:name => params[:name])
-    Organization.current.mail_aliases.reload
-    @mail_aliases = Organization.current.mail_aliases
+    @mail_alias = current_organization.mail_aliases.create(:name => params[:name])
+    current_organization.mail_aliases.reload
+    @mail_aliases = current_organization.mail_aliases
 
     render :partial => 'mail_aliases'
   end
@@ -39,10 +39,10 @@ class MailAliasController < AuthenticatedController
   def delete
     return unless User.current.admin?
     
-    mail_alias = Organization.current.mail_aliases.find_by_id(params[:id])
+    mail_alias = current_organization.mail_aliases.find_by_id(params[:id])
     mail_alias.destroy
     
-    @mail_aliases = Organization.current.mail_aliases
+    @mail_aliases = current_organization.mail_aliases
     @mail_alias = @mail_aliases.first
 
     render :partial => 'mail_aliases'

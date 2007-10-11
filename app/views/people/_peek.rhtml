@@ -54,7 +54,7 @@
 				<em><%= h(_(email_address.email_type)) %></em>
 				<em>
 					<%= h(_(email_address.email_type)) %>
-					<% if email_address.email_address == User.current.forward_address -%>
+					<% if email_address.email_address == current_user.forward_address -%>
 						- Connector email forwarded here
 					<% end -%>
 				</em>

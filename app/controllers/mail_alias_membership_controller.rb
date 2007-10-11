@@ -16,7 +16,7 @@ class MailAliasMembershipController < AuthenticatedController
 
   def index
     @mail_alias = MailAlias.find_by_id(params[:mail_alias_id])
-    @mail_aliases = Organization.current.mail_aliases
+    @mail_aliases = current_organization.mail_aliases
     unless current_user.admin?
       @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(current_user)}
     end
@@ -26,13 +26,13 @@ class MailAliasMembershipController < AuthenticatedController
   
   def create
     return unless current_user.admin?
-    @mail_alias = Organization.current.mail_aliases.find_by_id(params[:mail_alias_id])
-    @user = Organization.current.users.find_by_id(params[:user_id])
+    @mail_alias = current_organization.mail_aliases.find_by_id(params[:mail_alias_id])
+    @user = current_organization.users.find_by_id(params[:user_id])
     return unless @mail_alias
     return unless @user
     
     @mail_alias.add_user(@user)
-    @mail_aliases = Organization.current.mail_aliases
+    @mail_aliases = current_organization.mail_aliases
 
     respond_to do |wants|
       wants.html { render :nothing => true }
@@ -41,8 +41,8 @@ class MailAliasMembershipController < AuthenticatedController
   end
   
   def delete
-    @mail_alias = Organization.current.mail_aliases.find_by_id(params[:mail_alias_id])
-    @user = Organization.current.users.find_by_id(params[:user_id])
+    @mail_alias = current_organization.mail_aliases.find_by_id(params[:mail_alias_id])
+    @user = current_organization.users.find_by_id(params[:user_id])
     return unless @mail_alias
     return unless @user
     return unless current_user.admin? or current_user.mail_aliases.include?(@mail_alias)
@@ -50,8 +50,8 @@ class MailAliasMembershipController < AuthenticatedController
     @mail_alias_membership = @mail_alias.membership_for_user(@user)
     @mail_alias_membership.destroy
 
-    Organization.current.reload
-    @mail_aliases = Organization.current.mail_aliases
+    current_organization.reload
+    @mail_aliases = current_organization.mail_aliases
     unless current_user.admin?
       @mail_aliases = @mail_aliases.select{|ma| ma.membership_for_user(current_user)}
     end

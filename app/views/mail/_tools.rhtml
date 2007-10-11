@@ -12,14 +12,14 @@
 <h5><%= _('Forwarding') %></h5>
 <fieldset>
   <p>
-		<% if User.current.forward_address.blank? -%>
+		<% if current_user.forward_address.blank? -%>
 	     		<%= _("Your email is currently not being forwarded to another email address.") %>
 		<% else -%>
-	     		<%= _("Your email is currently being forwarded to %{forward_address}.") % {:forward_address => User.current.forward_address} %>
+	     		<%= _("Your email is currently being forwarded to %{forward_address}.") % {:forward_address => current_user.forward_address} %>
 		<% end -%>
 	</p>
 	<p style="margin-top: 3px;">
-    <%= link_to('<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="forward">' + _("Edit Forwarding") + '</span></div></div></div>', person_edit_url(:id => User.current.person.id),
+    <%= link_to('<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="forward">' + _("Edit Forwarding") + '</span></div></div></div>', person_edit_url(:id => current_user.person.id),
       {:class => 'buttonStandard', :style => 'width: 13em;'}) %>
   </p>
 </fieldset>

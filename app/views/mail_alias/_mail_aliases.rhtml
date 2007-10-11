@@ -21,7 +21,7 @@
         <% if @mail_aliases.blank? -%>
           <em>No mail aliases</em>
         <% end -%>
-        <% if User.current.admin? -%>
+        <% if current_user.admin? -%>
           <%= link_to_function _('New Alias'), "MailAlias.newShow();", {:id => "newMailAliasDialogLink", :class => 'plus', :style => 'color: black; display: block;'} %>
         <% end -%>
         <%= render :partial => 'mail_alias/create' %>
