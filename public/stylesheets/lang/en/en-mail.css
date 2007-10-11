@@ -66,4 +66,12 @@ $Id$
 	.actionSpam a {
     	width: 84px !important;
     	background-image: url(/images/lang/en/actionsMail.png);
+	}    
+	.actionNotSpam a {
+    	width: 84px !important;
+    	background-image: url(/images/lang/en/actionsMail.png);
+	}   
+	.actionDeleteAllSpam a {
+    	width: 84px !important;
+    	background-image: url(/images/lang/en/actionsMail.png);
 	}

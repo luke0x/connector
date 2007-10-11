@@ -104,6 +104,19 @@ $Id$
 		background-position: -900px -90px;
 	}
 
+	.actionDeleteAllSpam a.disabled, .actionSpam a:hover.disabled {
+		background-position: -1050px 0px;
+	}
+	.actionDeleteAllSpam a {
+		background-position: -1050px -30px;
+	}
+	.actionDeleteAllSpam a:hover {
+		background-position: -1050px -60px;
+	}
+	.actionDeleteAllSpam a:active, .actionSpam a.active {
+		background-position: -1050px -90px;
+	}
+
 	.actionFlag a.disabled, .actionFlag a:hover.disabled {
 		background-position: -1200px 0px;
 	}
