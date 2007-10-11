@@ -194,12 +194,6 @@ var UserOptions = {
 	}
 }
 
-// Will perform an action based on 'checked' state of the element.
-function performCheckboxToggleAction(element, checked_url, unchecked_url) {
-  var url = element.checked ? checked_url : unchecked_url;
-  new Ajax.Request(url, {asynchronous:true, evalScripts:true});
-}
-
 // http://jroller.com/page/rmcmahon?entry=resizingtextarea_with_prototype
 var ResizingTextArea = Class.create();
 ResizingTextArea.prototype = {

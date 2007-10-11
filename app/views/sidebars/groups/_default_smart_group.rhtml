@@ -1,0 +1,50 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<% # use with render_default_smart_group -%>
+
+<li>
+  <% if smart_group_selected and smart_group == smart_group_selected -%>
+   <div id="smartGroupEditSelection" class="roundtl highlighted"><div class="roundtr"><div id="smartGroupSelectedEditDivBL" class="roundbl"><div id="smartGroupSelectedEditDivBR" class="roundbr">
+     <table><tr>
+       <td class="dinger">
+       </td>
+       <td>
+          <%= link_to smart_group.name, smart_list_url(smart_group.url_id), { :class => "defaultSmartGroup folder highlighted" } %>
+       </td>
+       <td class="showInfo">
+          <%= link_to_function(_('Show'), "SmartGroup.defaultToggle();", {:id => 'smartGroupSelectedEditDinger', :class => 'groupInfo collapsed', :title => _('View group info')}) %>
+       </td>
+     </tr></table>
+    </div></div></div></div>
+    <div id="smartGroupEdit" style="display: none;"><div>
+      <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+        <p style="padding-bottom: 3px;">
+          Email received via the <em style="font-style: italic;"><%= smart_group.name.sub(/ Alias$/, "@#{Organization.current.system_domain.email_domain}") %></em> alias.
+        </p>
+        <hr />
+        <%= content %>
+      </div></div>
+    </div></div>
+  <% else -%>
+    <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+      <table><tr>
+        <td class="dinger">
+        </td>
+        <td>
+          <%= link_to smart_group.name, smart_list_url(smart_group.url_id), { :class => "defaultSmartGroup folder" } %>
+        </td>
+        <td class="showInfo">
+        </td>
+      </tr></table>  
+    </div></div></div></div>
+  <% end -%>
+</li>

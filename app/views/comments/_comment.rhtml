@@ -34,7 +34,7 @@
         <%= link_to comment.user.person.full_name, person_show_url(:id => comment.user.person.id) %>
       </div>
       <div class="commentBody">
-        <%= auto_link(simple_format(h(comment.body))) %>
+        <%= auto_link(simple_format(h(comment.body)), :all, :target => '_blank') %>
         <div class="commentEditControls">
           <% if comment.user == current_user -%>
             <%= link_to_function _('Edit'), "$('viewComment#{comment.id}').hide(); $('editComment#{comment.id}').show(); $('editComment#{comment.id}Text').activate()" %>

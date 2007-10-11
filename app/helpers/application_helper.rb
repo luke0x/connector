@@ -207,6 +207,19 @@ module ApplicationHelper
     render :partial => 'sidebars/groups/smart_group', :locals => new_locals
   end
 
+  def render_default_smart_group(partial_path, partial_locals = {})
+    raise "Default smart group partial can not be blank" if partial_path.blank?
+
+    new_locals = {}
+    new_locals[:partial_path]         = partial_path
+    new_locals[:icon_class]           = partial_locals[:icon_class] || ''
+    new_locals[:smart_group]          = partial_locals[:smart_group]
+    new_locals[:smart_group_selected] = partial_locals[:selected_group]
+    new_locals[:content]              = new_locals[:smart_group_selected] ? (render :partial => partial_path, :locals => partial_locals) : ''
+
+    render :partial => 'sidebars/groups/default_smart_group', :locals => new_locals
+  end
+
   # the drop-down for the smart group's boolean mode
   def smart_group_boolean_mode_select(mode = 'all')
 #    modes = { "All" => "all", "Any" => "any" }
@@ -513,15 +526,30 @@ module ApplicationHelper
   def add_to_workspace(report_description_name, reportable)
     report_description = ReportDescription.find_by_name(report_description_name.to_s)
     report             = report_description.reports.find_by_user_id_and_reportable_id(current_user.id, reportable.id)
-    check_box_action(_("Visible in your Workspace"),
-                     !report.blank?,
-                     reports_create_url(:report_description_id => report_description, :reportable_id => reportable),
-                     reports_destroy_by_desc_url(:report_description_id => report_description, :reportable_id => reportable)
-                    )
+    checkbox = check_box_action(
+      reports_create_url(:report_description_id => report_description, :reportable_id => reportable),
+      reports_destroy_by_desc_url(:report_description_id => report_description, :reportable_id => reportable),
+      { :checked => ! report.blank? }
+    )
+    checkbox + ' ' + _("Visible in your Workspace")
   end
   
-  def check_box_action(text, is_checked, checked_url, unchecked_url)
-    "<input type=\"checkbox\" onchange=\"performCheckboxToggleAction(this, '#{checked_url}' , '#{unchecked_url}');\" #{'checked="checked"' if is_checked} /> #{text}"
+  def check_box_action(check_url, uncheck_url, options = {})
+    options[:checked]  = false unless options.has_key?(:checked)
+    options[:enabled]  = true  unless options.has_key?(:enabled)
+    options[:complete] = ''    unless options.has_key?(:complete) # can add other callbacks as needed
+
+    dom_id = Digest::SHA1.hexdigest(check_url.to_s + uncheck_url.to_s)
+    icon = "<img id=\"#{dom_id}Loading\" src=\"/images/animation/loading16grey.gif\" style=\"display: none;\" />"
+    js = "new Ajax.Request((this.checked ? '#{check_url}' : '#{uncheck_url}'), {
+            asynchronous:true, evalScripts:true,
+            onLoading: function(){ $('#{dom_id}').hide(); $('#{dom_id}Loading').show(); },
+            onSuccess: function(request){ $('#{dom_id}Loading').hide(); $('#{dom_id}').show(); },
+            onFailure: function(request){ alert('failure'); },
+            onComplete: function(request) { #{options[:complete]}; }
+          });"
+
+    "#{icon} <input id=\"#{dom_id}\" type=\"checkbox\" onchange=\"#{js}\" #{'checked="checked"' if options[:checked]} #{'disabled="disabled"' unless options[:enabled]} />"
   end
 
   def javascript_current_user_tags
