@@ -8575,10 +8575,12 @@ var Toolbar = {
 
 	// call after item selection changes to enable/disable delete + move
 	refresh: function() {
-		setLink('actionCopyLink',   Item.selectedCopyable());
-		setLink('actionMoveLink',   Item.selectedMoveable());
-		setLink('actionEmailLink',  Item.selectedCopyable());
-		setLink('actionDeleteLink', Item.selectedDeleteable());
+    setLink('actionCopyLink',    Item.selectedCopyable());
+    setLink('actionMoveLink',    Item.selectedMoveable());
+    setLink('actionEmailLink',   Item.selectedCopyable());
+    setLink('actionDeleteLink',  Item.selectedDeleteable());
+    setLink('actionSpamLink',    Item.selectedMoveable());
+    setLink('actionNotSpamLink', Item.selectedMoveable());
 
 		if (Joyent.applicationName == 'lists') {
 			setLink('actionNewRowLink',    Item.selectedEditable());
@@ -8587,8 +8589,6 @@ var Toolbar = {
 			setLink('actionIndentLink',    List.selectedIndentable());
 			setLink('actionOutdentLink',   List.selectedOutdentable());
 			setLink('actionDeleteRowLink', Item.selectedEditable() && List.selectedRow);
-			setLink('actionSpamLink',    Item.selectedMoveable());
-			setLink('actionNotSpamLink', Item.selectedMoveable());
 		}
 		
 		if ($('drawerJajah') != null) {
@@ -8779,7 +8779,7 @@ var Toolbar = {
 		}
 
 		return false;
-    },
+  },
     	
 	markAsNotSpam: function(linkElement, url) {
 		if (! Item.selectedMoveable()) {
@@ -9292,6 +9292,29 @@ var SmartGroup = {
 	othersCancel: function() {
 	  $('editOtherGroupDialog').hide();
 	  $('selectedOtherGroup').show();
-	}
+	},
+	
+	defaultToggle: function() {
+		$('smartGroupEdit').visible() ? SmartGroup.defaultCancel() : SmartGroup.defaultShow();
+	},
+
+	defaultShow: function() {
+		$('smartGroupSelectedEditDivBL').removeClassName('roundbl');
+		$('smartGroupSelectedEditDivBR').removeClassName('roundbr');
+		Effect.BlindDown('smartGroupEdit', { duration: Joyent.effectsDuration });
+		$('smartGroupSelectedEditDinger').removeClassName("collapsed").addClassName("expanded");
+
+		return false;
+	},
+	
+	defaultCancel: function() {
+	  Effect.BlindUp('smartGroupEdit', { duration: Joyent.effectsDuration, afterFinish: function(){
+			$('smartGroupSelectedEditDivBL').addClassName('roundbl');
+			$('smartGroupSelectedEditDivBR').addClassName('roundbr');
+		} });
+		$('smartGroupSelectedEditDinger').removeClassName("expanded").addClassName("collapsed");
+
+		return false;
+  }
 
 }

@@ -301,6 +301,29 @@ var SmartGroup = {
 	othersCancel: function() {
 	  $('editOtherGroupDialog').hide();
 	  $('selectedOtherGroup').show();
-	}
+	},
+	
+	defaultToggle: function() {
+		$('smartGroupEdit').visible() ? SmartGroup.defaultCancel() : SmartGroup.defaultShow();
+	},
+
+	defaultShow: function() {
+		$('smartGroupSelectedEditDivBL').removeClassName('roundbl');
+		$('smartGroupSelectedEditDivBR').removeClassName('roundbr');
+		Effect.BlindDown('smartGroupEdit', { duration: Joyent.effectsDuration });
+		$('smartGroupSelectedEditDinger').removeClassName("collapsed").addClassName("expanded");
+
+		return false;
+	},
+	
+	defaultCancel: function() {
+	  Effect.BlindUp('smartGroupEdit', { duration: Joyent.effectsDuration, afterFinish: function(){
+			$('smartGroupSelectedEditDivBL').addClassName('roundbl');
+			$('smartGroupSelectedEditDivBR').addClassName('roundbr');
+		} });
+		$('smartGroupSelectedEditDinger').removeClassName("expanded").addClassName("collapsed");
+
+		return false;
+  }
 
 }
