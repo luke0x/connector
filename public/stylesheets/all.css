@@ -3232,6 +3232,45 @@ table.tableList tr td {
 	.actionEdit a:active, .actionEdit a.active {
 		background-position: -1500px -90px;
 	}
+	
+	.actionSpam a.disabled, .actionSpam a:hover.disabled {
+		background-position: -4050px 0px;
+	}
+	.actionSpam a {
+		background-position: -4050px -30px;
+	}
+	.actionSpam a:hover {
+		background-position: -4050px -60px;
+	}
+	.actionSpam a:active, .actionSpam a.active {
+		background-position: -4050px -90px;
+	}
+
+	.actionNotSpam a.disabled, .actionNotSpam a:hover.disabled {
+		background-position: -4200px 0px;
+	}
+	.actionNotSpam a {
+		background-position: -4200px -30px;
+	}
+	.actionNotSpam a:hover {
+		background-position: -4200px -60px;
+	}
+	.actionNotSpam a:active, .actionNotSpam a.active {
+		background-position: -4200px -90px;
+	}
+
+	.actionDeleteAllSpam a.disabled, .actionDeleteAllSpam a:hover.disabled {
+		background-position: -4350px 0px;
+	}
+	.actionDeleteAllSpam a {
+		background-position: -4350px -30px;
+	}
+	.actionDeleteAllSpam a:hover {
+		background-position: -4350px -60px;
+	}
+	.actionDeleteAllSpam a:active, .actionDeleteAllSpam a.active {
+		background-position: -4350px -90px;
+	}
 		
 
 

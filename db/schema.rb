@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 167) do
+ActiveRecord::Schema.define(:version => 168) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -470,6 +470,7 @@ ActiveRecord::Schema.define(:version => 167) do
     t.column "accept_any",                 :boolean
     t.column "tags",                       :text
     t.column "organization_id",            :integer
+    t.column "special",                    :boolean, :default => false
   end
 
   add_index "smart_groups", ["organization_id"], :name => "index_smart_groups_on_organization_id"

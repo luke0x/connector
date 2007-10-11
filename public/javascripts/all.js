@@ -7221,12 +7221,6 @@ var UserOptions = {
 	}
 }
 
-// Will perform an action based on 'checked' state of the element.
-function performCheckboxToggleAction(element, checked_url, unchecked_url) {
-  var url = element.checked ? checked_url : unchecked_url;
-  new Ajax.Request(url, {asynchronous:true, evalScripts:true});
-}
-
 // http://jroller.com/page/rmcmahon?entry=resizingtextarea_with_prototype
 var ResizingTextArea = Class.create();
 ResizingTextArea.prototype = {
@@ -8593,6 +8587,8 @@ var Toolbar = {
 			setLink('actionIndentLink',    List.selectedIndentable());
 			setLink('actionOutdentLink',   List.selectedOutdentable());
 			setLink('actionDeleteRowLink', Item.selectedEditable() && List.selectedRow);
+			setLink('actionSpamLink',    Item.selectedMoveable());
+			setLink('actionNotSpamLink', Item.selectedMoveable());
 		}
 		
 		if ($('drawerJajah') != null) {
@@ -8760,7 +8756,53 @@ var Toolbar = {
 	
 	  preventFormResubmission(form);
 	  return true;
-	}
+	},
+	
+	markAsSpam: function(linkElement, url) {
+    	if (! Item.selectedMoveable()) {
+    	    alert(JoyentL10n["The selected item(s) can not be marked as spam."]);
+    		return false;
+    	}
+
+		if (Joyent.viewKind == 'list') {
+			itemIds = Item.findSelected().collect(function(item){
+				return item.arId;
+			}).join(',');
+			if (itemIds != '') new Ajax.Request(url + '?ids=' + itemIds, {asynchronous:true, evalScripts:true});
+		} else {
+			var f = document.createElement('form');
+			linkElement.parentNode.appendChild(f);
+			f.method = 'POST';
+		  itemId = Item.findSelected().first().arId;
+			f.action = url + '?ids=' + itemId;
+			f.submit();
+		}
+
+		return false;
+    },
+    	
+	markAsNotSpam: function(linkElement, url) {
+		if (! Item.selectedMoveable()) {
+			alert(JoyentL10n["The selected item(s) can not be marked as not spam."]);
+			return false;
+		}
+
+		if (Joyent.viewKind == 'list') {
+			itemIds = Item.findSelected().collect(function(item){
+				return item.arId;
+			}).join(',');
+			if (itemIds != '') new Ajax.Request(url + '?ids=' + itemIds, {asynchronous:true, evalScripts:true});
+		} else {
+			var f = document.createElement('form');
+			linkElement.parentNode.appendChild(f);
+			f.method = 'POST';
+		  itemId = Item.findSelected().first().arId;
+			f.action = url + '?ids=' + itemId;
+			f.submit();
+		}
+
+		return false;
+ 	}
 }
 /*
 ++
