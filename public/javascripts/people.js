@@ -17,6 +17,7 @@ var People = {
 	currentNotifierSMSProvider: '',
 	currentNotifierEmail: '',
 	currentNotifierIM: '',
+  currentSpecialEmailAddresses: '',
 
 	providers: [
     ['att', 'AT&T'],
@@ -35,62 +36,62 @@ var People = {
 	  var arrErrors = [];
 
 		// contact info tab
-		if ($('person_first_name').value.strip()   == '' &&
-				$('person_middle_name').value.strip()  == '' &&
-				$('person_last_name').value.strip()    == '' &&
-				$('person_company_name').value.strip() == '') {
+		if ($F('person_first_name').strip()   == '' &&
+				$F('person_middle_name').strip()  == '' &&
+				$F('person_last_name').strip()    == '' &&
+				$F('person_company_name').strip() == '') {
 	    arrErrors.push(JoyentL10n['You must specify either a name or company name.']);
 	  }
 	  arrPersonPhoneNumberIndexes.each(function(index){
-			if ($('person_phone_numbers_' + index.toString() + '_phone_number').value.strip() == '') {
+			if ($F('person_phone_numbers_' + index.toString() + '_phone_number').strip() == '') {
 				arrErrors.push(JoyentL10n['Phone numbers can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonEmailAddressIndexes.each(function(index){
-			if ($('person_email_addresses_' + index.toString() + '_email_address').value.strip() == '') {
+			if ($F('person_email_addresses_' + index.toString() + '_email_address').strip() == '') {
 				arrErrors.push(JoyentL10n['Email addresses can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonAddressIndexes.each(function(index){
-			if ($('person_addresses_' + index.toString() + '_street'      ).value.strip() == '' &&
-					$('person_addresses_' + index.toString() + '_city'        ).value.strip() == '' &&
-					$('person_addresses_' + index.toString() + '_state'       ).value.strip() == '' &&
-					$('person_addresses_' + index.toString() + '_postal_code' ).value.strip() == '' &&
-					$('person_addresses_' + index.toString() + '_country_name').value.strip() == '') {
+			if ($F('person_addresses_' + index.toString() + '_street'      ).strip() == '' &&
+					$F('person_addresses_' + index.toString() + '_city'        ).strip() == '' &&
+					$F('person_addresses_' + index.toString() + '_state'       ).strip() == '' &&
+					$F('person_addresses_' + index.toString() + '_postal_code' ).strip() == '' &&
+					$F('person_addresses_' + index.toString() + '_country_name').strip() == '') {
 				arrErrors.push(JoyentL10n['Addresses can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonImAddressIndexes.each(function(index){
-			if ($('person_im_addresses_' + index.toString() + '_im_address').value.strip() == '') {
+			if ($F('person_im_addresses_' + index.toString() + '_im_address').strip() == '') {
 				arrErrors.push(JoyentL10n['IM addresses can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonWebsiteIndexes.each(function(index){
-			if ($('person_websites_' + index.toString() + '_site_title').value.strip() == '') {
+			if ($F('person_websites_' + index.toString() + '_site_title').strip() == '') {
 				arrErrors.push(JoyentL10n['Website names can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonWebsiteIndexes.each(function(index){
-			if ($('person_websites_' + index.toString() + '_site_url').value.strip() == '') {
+			if ($F('person_websites_' + index.toString() + '_site_url').strip() == '') {
 				arrErrors.push(JoyentL10n['Website URLs can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonSpecialDateIndexes.each(function(index){
-			if ($('person_special_dates_' + index.toString() + '_description').value.strip() == '') {
+			if ($F('person_special_dates_' + index.toString() + '_description').strip() == '') {
 				arrErrors.push(JoyentL10n['Special date descriptions can not be blank.']);
 				throw $break;
 			}
 		});
 	  arrPersonSpecialDateIndexes.each(function(index){
-			if ($('person_special_dates_' + index.toString() + '_year' ).value.strip() == '' ||
-				  $('person_special_dates_' + index.toString() + '_month').value.strip() == '' ||
-					$('person_special_dates_' + index.toString() + '_day'  ).value.strip() == '') {
+			if ($F('person_special_dates_' + index.toString() + '_year' ).strip() == '' ||
+				  $F('person_special_dates_' + index.toString() + '_month').strip() == '' ||
+					$F('person_special_dates_' + index.toString() + '_day'  ).strip() == '') {
 				arrErrors.push(JoyentL10n['Special date dates can not be blank.']);
 				throw $break;
 			}
@@ -100,50 +101,50 @@ var People = {
 		
 		// decide how to handle the account tab forms
 		// new person or editing contact
-		if ($('person_account_type') && $('person_account_type').value == 'contact') {
+		if ($('person_account_type') && $F('person_account_type') == 'contact') {
 
 			// creating/saving a contact
 			if ($('personTypeContactRadio').checked) {
 				// nada
 			// creating a guest
 			} else if ($('personTypeGuestRadio').checked) {
-				if ($('person_guest_username') && $('person_guest_username').value.strip() == '')
+				if ($('person_guest_username') && $F('person_guest_username').strip() == '')
 					arrErrors.push(JoyentL10n['The username can not be blank.']);
-				if ($('person_guest_recovery_email') && $('person_guest_recovery_email').value.strip() == '')
+				if ($('person_guest_recovery_email') && $F('person_guest_recovery_email').strip() == '')
 					arrErrors.push(JoyentL10n['Password recovery email address can not be blank.']);
 			// creating a user
 			} else if ($('personTypeUserRadio').checked) {
-				if ($('person_username') && $('person_username').value.strip() == '')
+				if ($('person_username') && $F('person_username').strip() == '')
 					arrErrors.push(JoyentL10n['The username can not be blank.']);
 				if (mailAliasNames.include(username))
 				    arrErrors.push(JoyentL10n['An alias with the specified username already exists.']);
-				if ($('person_password').value.strip() == '')
+				if ($F('person_password').strip() == '')
 					arrErrors.push(JoyentL10n['The password can not be blank.']);
-				if ($('person_password').value != $('person_password_confirmation').value)
+				if ($F('person_password') != $F('person_password_confirmation'))
 					arrErrors.push(JoyentL10n['The password and confirmation must match.']);
 				// only required for admins
-				if ($('person_admin') && $('person_admin').checked && $('person_recovery_email') && $('person_recovery_email').value.strip() == '')
+				if ($('person_admin') && $('person_admin').checked && $('person_recovery_email') && $F('person_recovery_email').strip() == '')
 					arrErrors.push(JoyentL10n['Password recovery email address can not be blank.']);
 			}
 		// editing guest
-		} else if ($('person_account_type') && $('person_account_type').value == 'guest') {
+		} else if ($('person_account_type') && $F('person_account_type') == 'guest') {
 			// recovery email must be set
-			if ($('person_guest_recovery_email') && $('person_guest_recovery_email').value.strip() == '')
+			if ($('person_guest_recovery_email') && $F('person_guest_recovery_email').strip() == '')
 				arrErrors.push(JoyentL10n['Password recovery email address can not be blank.']);
 		// editing user or admin
-		} else if ($('person_account_type') && ($('person_account_type').value == 'user' || $('person_account_type').value == 'admin')) {
+		} else if ($('person_account_type') && ($F('person_account_type') == 'user' || $F('person_account_type') == 'admin')) {
 			// if any user-filled part of the form is filled out..
-			if (($('person_password') && $('person_password').value != '') ||
-	 			  ($('person_password_confirmation') && $('person_password_confirmation').value != '') ||
+			if (($('person_password') && $F('person_password') != '') ||
+	 			  ($('person_password_confirmation') && $F('person_password_confirmation') != '') ||
 				  ($('person_admin') && $('person_admin').enabled && $('person_admin').checked)) {
 				// ..then make sure every required part is valid
-				if ($('person_password').value.strip() == '')
+				if ($F('person_password').strip() == '')
 					arrErrors.push(JoyentL10n['The password can not be blank.']);
-				if ($('person_password').value.strip() != $('person_password_confirmation').value.strip())
+				if ($F('person_password').strip() != $F('person_password_confirmation').strip())
 					arrErrors.push(JoyentL10n['The password and confirmation must match.']);
 			}
 			// only required for admins
-			if ($('person_admin') && $('person_admin').checked && $('person_recovery_email') && $('person_recovery_email').value.strip() == '')
+			if ($('person_admin') && $('person_admin').checked && $('person_recovery_email') && $F('person_recovery_email').strip() == '')
 				arrErrors.push(JoyentL10n['Password recovery email address can not be blank.']);
 		}
 
@@ -182,10 +183,10 @@ var People = {
 	submitResetGuestPassword: function(url) {
 	  var arrErrors = [];
 
-		if ($('person_guest_send_email').value.strip() == '')
+		if ($F('person_guest_send_email').strip() == '')
 			arrErrors.push('The email address can not be blank.');
 
-		if (! $('person_guest_send_email').value.match(/.+@.+\..+/))
+		if (! $F('person_guest_send_email').match(/.+@.+\..+/))
 			arrErrors.push('The email address must be valid.');
 
 	  if (validateErrorsArray(arrErrors)) {
@@ -196,40 +197,6 @@ var People = {
 	    return false;
 	  }
 	},
-	
-	getEditEmailAddresses: function() {
-	    addresses = [];
-	    $$('#person_email_addresses input[type=text]').each(function(element){
-	        if (element.value.strip() != '') addresses.push(element.value);
-        });
-        return addresses;
-    },
-    
-    drawEditForwardSelect: function() {
-        forwardAddress = (e = $('person_forward_address')) ? e.value : '';
-        emailAddresses = People.getEditEmailAddresses().reject(function(address){
-            return address.strip() == '';
-        }).reject(function(address){
-            return People.currentUserSpecialEmailAddresses.include(address.strip());
-        });
-        
-        container = $('personEmailForwardSelectContainer');
-        container.update('');
-        contents = '';
-        
-        contents += '<select id="person_forward_address" name="person[forward_address]">';
-        contents += '<optgroup label="Don\'t Forward Email:"><option value="">Do not forward email</option></optgroup>';
-        contents += '<optgroup label="Forward Email:">';
-        emailAddresses.each(function(address){
-            contents += '<option ';
-            if (forwardAddress == address) contents += 'selected="" ';
-            contents += 'value="' + address + '">' + address + '</option>';
-        });        
-        contents += '</optgroup>';
-        contents += '</select>';
-        
-        container.update(contents);
-    },
 
 	addPhoneNumber: function() {
 		index = People.getNewIndex('arrPersonPhoneNumberIndexes');
@@ -347,7 +314,8 @@ var People = {
 		$('person_admin').checked = false;
 	},
 		
-/*	setRandomPassword: function(section) {
+/*
+	  setRandomPassword: function(section) {
 		password = People.generateRandomPassword();
 		$(section + '_person_password').value = password;
 		$(section + '_person_password_confirmation').value = password;
@@ -366,7 +334,8 @@ var People = {
 
 	  return password;
 	},
-*/	
+*/
+
 	getEditEmailAddresses: function() {
 		addresses = [];
 		$$('tbody#person_email_addresses input[type=text]').each(function(element){
@@ -401,7 +370,37 @@ var People = {
 		});
     contents += '</select>';
 		container.update(contents);
-	}
+	},
+
+	drawEditForwardSelect: function() {
+    forwardAddress = (e = $('person_forward_address')) ? e.value : '';
+    emailAddresses = People.getEditEmailAddresses().reject(function(address){
+      return address.strip() == '';
+    }).reject(function(address){
+      return People.currentSpecialEmailAddresses.include(address.strip());
+    });
+
+    container = $('personEmailForwardSelectContainer');
+    container.update('');
+    contents = '';
+
+    contents += '<select id="person_forward_address" name="person[forward_address]">';
+    contents += '<optgroup label="Don\'t Forward Email:"><option value="">';
+    contents += 'Do not forward email';
+    contents += '</option></optgroup>';
+    contents += '<optgroup label="Forward Email:">';
+    emailAddresses.each(function(address){
+      contents += '<option ';
+      if (forwardAddress == address)
+        contents += 'selected="" ';
+      contents += 'value="' + address + '">' + address + '</option>';
+    });        
+    contents += '</optgroup>';
+    contents += '</select>';
+
+    container.update(contents);
+  }
+
 }
 
 var JajahDrawer = {

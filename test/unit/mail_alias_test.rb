@@ -23,11 +23,10 @@ class MailAliasTest < Test::Unit::TestCase
 
   def setup
     User.current = users(:ian)
-    Organization.current = User.current.organization
   end
 
   def test_create_with_username
-    m = MailAlias.create(:name => Organization.current.users.first.username, :organization_id => Organization.current.id)
+    m = MailAlias.create(:name => User.current.organization.users.first.username, :organization_id => User.current.organization.id)
     assert_equal 1, m.errors.length
   end
 

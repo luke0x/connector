@@ -47,6 +47,6 @@ class MailAlias < ActiveRecord::Base
   protected
   
     def validate
-      errors.add(:name, "The name can not be the same as a username.") if Organization.current.users.find_by_username(self.name)
+      errors.add(:name, "The name can not be the same as a username.") if User.current.organization.users.find_by_username(self.name)
     end
 end

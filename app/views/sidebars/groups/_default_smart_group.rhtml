@@ -28,7 +28,7 @@
     <div id="smartGroupEdit" style="display: none;"><div>
       <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
         <p style="padding-bottom: 3px;">
-          Email received via the <em style="font-style: italic;"><%= smart_group.name.sub(/ Alias$/, "@#{Organization.current.system_domain.email_domain}") %></em> alias.
+          Email received via the <em style="font-style: italic;"><%= smart_group.name.sub(/ Alias$/, "@#{current_organization.system_domain.email_domain}") %></em> alias.
         </p>
         <hr />
         <%= content %>
