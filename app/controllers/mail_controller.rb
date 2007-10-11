@@ -60,6 +60,7 @@ class MailController < AuthenticatedController
     @toolbar[:not_spam]    = @mailbox && @mailbox.full_name == 'INBOX.Spam'
     @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && current_user.owns?(@mailbox)
     @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && current_user.owns?(@mailbox)
+    @toolbar[:tools]       = true
 
     respond_to do |wants|
       wants.html { render :action => 'list' }
@@ -95,6 +96,7 @@ class MailController < AuthenticatedController
     @toolbar[:not_spam]    = @mailbox && @mailbox.full_name == 'INBOX.Spam'
     @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && current_user.owns?(@mailbox)
     @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && current_user.owns?(@mailbox)
+    @toolbar[:tools]       = true
     
     respond_to do |wants|
       wants.html { render :action => 'list' }
@@ -182,6 +184,9 @@ class MailController < AuthenticatedController
     @toolbar[:move]      = current_user.can_move?(@message)
     @toolbar[:copy]      = current_user.can_copy?(@message)
     @toolbar[:delete]    = current_user.can_delete?(@message)
+    @toolbar[:spam]      = @message.mailbox.full_name != 'INBOX.Spam' and current_user.can_move?(@message)
+    @toolbar[:not_spam]  = @message.mailbox.full_name == 'INBOX.Spam' and current_user.can_move?(@message)
+    @toolbar[:tools]     = true
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
@@ -218,6 +223,7 @@ class MailController < AuthenticatedController
     @toolbar[:delete]    = current_user.can_delete?(@message)
     @toolbar[:spam]      = @message.mailbox.full_name != 'INBOX.Spam' and current_user.can_move?(@message)
     @toolbar[:not_spam]  = @message.mailbox.full_name == 'INBOX.Spam' and current_user.can_move?(@message)
+    @toolbar[:tools]     = true
 
     respond_to do |wants|
       wants.html { render :action => 'show' }
