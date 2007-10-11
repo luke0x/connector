@@ -329,6 +329,7 @@ class Message < ActiveRecord::Base
     s << 'Flagged'   if flagged?
     s << 'Draft'     if draft?
     s << 'Forwarded' if forwarded?
+    s << 'Spam'      if spam?
     s
   end
 
@@ -343,6 +344,8 @@ class Message < ActiveRecord::Base
       'Forwarded'
     elsif self.flagged?
       'Flagged'
+    elsif self.spam?
+      'Spam'
     else
       'Read'
     end
@@ -351,7 +354,11 @@ class Message < ActiveRecord::Base
   def class_humanize
     'Email Message'
   end
-  
+
+  def spam?
+    mailbox.full_name == 'INBOX.Spam'
+  end
+
   private
   
     def plain_parts
