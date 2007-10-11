@@ -14,6 +14,7 @@ $Id$
 class MailController < AuthenticatedController
   before_filter :sync_mailboxes, :except => [:index, :show_body, :external_show,
                                              :delete, :move, :copy, :unavailable,
+                                             :mark_spam, :mark_not_spam,
                                              :create_mailbox, :rename_group,
                                              :delete_group, :send_draft, :send_compose,
                                              :send_reply_to, :send_forward, :attachment,
@@ -556,7 +557,7 @@ class MailController < AuthenticatedController
   end
   
   def empty_spam
-    Mailbox.empty_spam(User.current)
+    Mailbox.empty_spam(current_user)
     redirect_to mail_special_list_url(:id => 'spam')
   end
 
