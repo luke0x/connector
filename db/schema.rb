@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 164) do
+ActiveRecord::Schema.define(:version => 167) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -260,6 +260,20 @@ ActiveRecord::Schema.define(:version => 164) do
 
   add_index "login_tokens", ["user_id"], :name => "index_login_tokens_on_user_id"
   add_index "login_tokens", ["value"], :name => "login_tokens_value_index"
+
+  create_table "mail_alias_memberships", :force => true do |t|
+    t.column "user_id",       :integer
+    t.column "mail_alias_id", :integer
+    t.column "created_at",    :datetime
+    t.column "updated_at",    :datetime
+  end
+
+  create_table "mail_aliases", :force => true do |t|
+    t.column "name",            :string
+    t.column "organization_id", :integer
+    t.column "created_at",      :datetime
+    t.column "updated_at",      :datetime
+  end
 
   create_table "mailboxes", :force => true do |t|
     t.column "uid_validity",    :integer
@@ -538,6 +552,7 @@ ActiveRecord::Schema.define(:version => 164) do
     t.column "guest_rw",        :boolean, :default => false, :null => false
     t.column "jajah_username",  :string
     t.column "jajah_password",  :string
+    t.column "forward_address", :string,  :default => ""
   end
 
   add_index "users", ["identity_id"], :name => "index_users_on_identity_id"
