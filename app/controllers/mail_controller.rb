@@ -345,7 +345,7 @@ class MailController < AuthenticatedController
   
   def mark_spam
     ids = params[:id] ? Array(params[:id]) : params[:ids].split(',')
-    items = current_user.messages.find_allby_id(ids)
+    items = current_user.messages.find_all_by_id(ids)
     items.each do |item|
       next if item.mailbox.full_name == 'INBOX.Spam'
       item.seen!
