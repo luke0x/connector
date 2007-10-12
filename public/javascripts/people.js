@@ -25,7 +25,8 @@ var People = {
     ['sprint', 'Sprint PCS'],
     ['tmobile', 'T-Mobile'],
     ['verizon', 'Verizon'],
-	  ['virgin_mobile', 'Virgin Mobile']
+	  ['virgin_mobile', 'Virgin Mobile'],
+	  ['telus', 'Telus Mobility']
 	],
 	
 	setupEdit: function() {

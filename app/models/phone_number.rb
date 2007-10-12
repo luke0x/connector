@@ -45,6 +45,10 @@ class PhoneNumber < ActiveRecord::Base
     :nextel => { 
       :url => 'messaging.nextel.com', 
       :text => 'Nextel'
+    },
+    :telus => {
+      :url => 'msg.telus.com',
+      :text => 'Telus Mobility'
     }
   }
 
