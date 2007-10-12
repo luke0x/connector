@@ -99,7 +99,9 @@ var People = {
 		});
 
 		// account tab
-		
+    var nameRegex = /^[a-z0-9_]+$/;
+    var usernames = User.findAll().collect(function(user){ return user.username; });
+
 		// decide how to handle the account tab forms
 		// new person or editing contact
 		if ($('person_account_type') && $F('person_account_type') == 'contact') {
@@ -117,6 +119,8 @@ var People = {
 			} else if ($('personTypeUserRadio').checked) {
 				if ($('person_username') && $F('person_username').strip() == '')
 					arrErrors.push(JoyentL10n['The username can not be blank.']);
+        if (usernames.include(username))
+          arrErrors.push(JoyentL10n['A user with the specified username already exists.']);
 				if (mailAliasNames.include(username))
 				    arrErrors.push(JoyentL10n['An alias with the specified username already exists.']);
 				if ($F('person_password').strip() == '')
@@ -126,6 +130,12 @@ var People = {
 				// only required for admins
 				if ($('person_admin') && $('person_admin').checked && $('person_recovery_email') && $F('person_recovery_email').strip() == '')
 					arrErrors.push(JoyentL10n['Password recovery email address can not be blank.']);
+        if ($F('person_username').length > 0 && ! $F('person_username').match(nameRegex))
+          arrErrors.push(JoyentL10n['The username only can contain the characters a-z, 0-9, and _.']);
+        if ($F('person_username').length > 50)
+          arrErrors.push(JoyentL10n['The username can be no more than 50 characters.']);
+        if ($F('person_password').length < 4)
+          arrErrors.push(JoyentL10n['The password can be no less than 4 characters.']);
 			}
 		// editing guest
 		} else if ($('person_account_type') && $F('person_account_type') == 'guest') {
@@ -143,6 +153,8 @@ var People = {
 					arrErrors.push(JoyentL10n['The password can not be blank.']);
 				if ($F('person_password').strip() != $F('person_password_confirmation').strip())
 					arrErrors.push(JoyentL10n['The password and confirmation must match.']);
+        if ($F('person_password').length < 4)
+          arrErrors.push(JoyentL10n['The password can be no less than 4 characters.']);
 			}
 			// only required for admins
 			if ($('person_admin') && $('person_admin').checked && $('person_recovery_email') && $F('person_recovery_email').strip() == '')
