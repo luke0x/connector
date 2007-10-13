@@ -268,7 +268,7 @@ class User < ActiveRecord::Base
   
   # for ldap aliases, must include primary email
   def mail_alternate_addresses
-    self.mail_aliases.empty? ? [system_email] : self.mail_aliases << system_email
+    self.mail_aliases.empty? ? [system_email] : self.mail_aliases.collect(&:email_addresses).push(system_email).flatten
   end
 
   def system_email
