@@ -233,7 +233,7 @@ class Person < ActiveRecord::Base
       
       if self.user == User.current
         u = self.user
-        u.forward_address = person[:forward_address]
+        u.forward_address = person_params['forward_address']
         u.save
       end
 

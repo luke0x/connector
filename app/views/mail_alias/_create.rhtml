@@ -9,10 +9,10 @@
 <% # $Id$ -%>
 <% # -- -%>
 
-<%= form_remote_tag :update => 'mailAliasDrawer',
+<% form_remote_tag :update => 'mailAliasDrawer',
                     :url => {:controller => 'mail_alias', :action => 'create'},
                     :condition => 'MailAlias.newSubmit(this)',
-                    :loading => "$('mailAliasDrawer').update(Joyent.loadingMessageLarge);" %>
+                    :loading => "$('mailAliasDrawer').update(Joyent.loadingMessageLarge);" do -%>
   <div id="newMailAliasDialog" style="display: none; margin: 2px 0 0 0;">
     <div>
 			<div class="roundtl highlighted"><div class="roundtr">
@@ -39,4 +39,4 @@
       </div></div>
     </div>
   </div>
-<%= end_form_tag %>
+<% end -%>

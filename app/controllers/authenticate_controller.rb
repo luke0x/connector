@@ -91,7 +91,7 @@ class AuthenticateController < PublicController
     end
 
     if request.post? and user.update_password(params[:password], params[:password_confirmation])
-      user.save!
+      user.save(false)
       return set_user_credentials(user)
     elsif request.post?
       flash[:error] = "An error occurred, please try again."

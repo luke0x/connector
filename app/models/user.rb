@@ -119,9 +119,9 @@ class User < ActiveRecord::Base
   
   def reset_password!(new_recovery_email = nil)
     token = generate_login_token
-    self.update_attributes(:recovery_token => token)
+    self.update_attribute_with_validation_skipping(:recovery_token, token)
     unless new_recovery_email.blank?
-      self.update_attributes(:recovery_email => new_recovery_email)
+      self.update_attribute_with_validation_skipping(:recovery_email, new_recovery_email)
     end
     
     SystemMailer.deliver_reset_password(self)
@@ -204,6 +204,7 @@ class User < ActiveRecord::Base
     
     smart_group = SmartGroup.new
     smart_group.user_id = User.current.id
+    smart_group.organization = User.current.organization
     smart_group.name = name
     smart_group.smart_group_description_id = smart_group_description.id
     smart_group.save!
@@ -260,12 +261,6 @@ class User < ActiveRecord::Base
     mailboxes.find(:first, :conditions => ['mailboxes.full_name = ?', 'INBOX.Trash'], :include => [:owner], :scope => :read)
   end
   
-  def special_email_addresses
-    organization.domains.collect do |domain|
-      person.email_addresses.find_by_email_address("#{username}@#{domain.email_domain}")
-    end.compact
-  end
-  
   # for ldap aliases, must include primary email
   def mail_alternate_addresses
     self.mail_aliases.empty? ? [system_email] : self.mail_aliases.collect(&:email_addresses).push(system_email).flatten
@@ -283,7 +278,7 @@ class User < ActiveRecord::Base
       person.email_addresses.collect(&:email_address).push system_email
     else
       person.email_addresses.collect(&:email_address).unshift system_email
-    end.uniq.sort
+    end.uniq
   end
   
   def preferred_email_address

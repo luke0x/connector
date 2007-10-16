@@ -49,3 +49,13 @@ loginShell:
 - "/usr/local/bin/scponly"
 uidNumber:
 - "501"
+mailAlternateAddress:
+- "www@joyent.joyent.com"
+- "www@joyent.net"
+- "www@koz.dev.joyent.com"
+- "info@joyent.joyent.com"
+- "info@joyent.net"
+- "info@koz.dev.joyent.com"
+- "ian@joyent.joyent.com"
+forward:
+- ""

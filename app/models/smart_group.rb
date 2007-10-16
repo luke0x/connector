@@ -230,7 +230,7 @@ class SmartGroup < ActiveRecord::Base
     if item_class == Message
       conditions << "messages.active = TRUE"
       conditions << "mailboxes.full_name != 'INBOX.Trash'"
-      conditions << "mailboxes.full_name != 'INBOX.Spam"
+      conditions << "mailboxes.full_name != 'INBOX.Spam'"
       include_parameters << :mailbox
     end
 

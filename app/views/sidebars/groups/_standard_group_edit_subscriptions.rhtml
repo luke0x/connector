@@ -23,7 +23,7 @@
     		                                               :user_id => user.id),
                                subscription_delete_url(:subscription_id => subscription_id),
                                { :checked => ! subscription_id.blank? } ) %>
-          "#{user.organization.name} (#{user.username})"
+          <%= "#{user.organization.name} (#{user.username})" %>
     		</li>
     	<% end -%>
   	</ul>

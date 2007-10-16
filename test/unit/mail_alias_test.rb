@@ -40,7 +40,7 @@ class MailAliasTest < Test::Unit::TestCase
   def test_adding_new_alias
     m = MailAlias.create(:organization_id => 1, :name => 'help')
     
-    users(:ian).mail_alias_memberships.create(:mail_alias_id => m)
+    users(:ian).mail_alias_memberships.create(:mail_alias => m)
     assert_equal 3, User.find(users(:ian).id).mail_aliases.size
   end
   

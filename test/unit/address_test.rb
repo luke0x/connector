@@ -29,6 +29,10 @@ class AddressTest < Test::Unit::TestCase
             'country_name' => 'United States'
 
   crud_required 'address_type' #, 'person_id'
+  
+  def setup
+    User.current = people(:ian)
+  end
 
   def test_geocode_address
     address = assert_create

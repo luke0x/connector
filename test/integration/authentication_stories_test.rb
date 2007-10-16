@@ -92,7 +92,7 @@ class AuthenticationStories < ActionController::IntegrationTest
   
   def test_user_resets_password
     new_session(:joyent) do |sess|
-      sess.goes_to_login
+      sess.logs_in_as(:ian)
       sess.post reset_password_url, :username => users(:ian).username
       sess.assert_equal nil, sess.flash[:error]
       

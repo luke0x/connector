@@ -284,6 +284,11 @@ class MailControllerTest < Test::Unit::TestCase
       mailbox
     }
     
+    flexstub(Message).should_receive(:find).with(1, {:include=>nil, :conditions=>nil}).and_return {message}
+    flexstub(Mailbox).should_receive(:find).with(1, {:include=>nil, :conditions=>nil}).and_return {
+      mailbox
+    }
+    
     flexstub(Mailbox).should_receive(:find).with(mailbox.id.to_s, :include => [:owner], :scope => :read).once.and_return {
       flexstub(mailbox).should_receive(:sync)
       flexstub(mailbox).should_receive(:messages).and_return {

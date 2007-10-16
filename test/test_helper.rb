@@ -100,7 +100,7 @@ class Test::Unit::TestCase
      :report_descriptions, :smart_groups, :smart_group_attributes, :affiliates,
      :smart_group_attribute_descriptions, :smart_group_descriptions, :special_dates, :lists,
      :list_cells, :list_columns, :list_rows, :list_folders, :taggings, :tags, :users, :user_options, 
-     :user_requests, :websites, :subscriptions]
+     :user_requests, :websites, :subscriptions, :mail_aliases, :mail_alias_memberships]
   end                         
 
   def login_person(user)
