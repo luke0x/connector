@@ -1,0 +1,59 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id: login.rhtml 465 2007-10-09 23:48:01Z bryan@joyent.com $ -%>
+<% # -- -%>
+
+<fb:header decoration="add_border">My Connector</fb:header>
+<ul style="float:left;list-style:none;padding:0;margin:5px 0 0 20px">  
+<li style="float:left;"><%= link_to "Connect", facebook_app_landing(current_user, :connect),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/connect.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+<li style="float:left;"><%= link_to "Mail", facebook_app_landing(current_user, :mail),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/message.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+<li style="float:left;"><%= link_to "People", facebook_app_landing(current_user, :people),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/person.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+<li style="float:left;"><%= link_to "Calendar", facebook_app_landing(current_user, :calendar),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/event.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+<li style="float:left;"><%= link_to "Files", facebook_app_landing(current_user, :files),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/joyent_file.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+<li style="float:left;"><%= link_to "Bookmarks", facebook_app_landing(current_user, :bookmarks),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/bookmarks.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+<li style="float:left;"><%= link_to "Lists", facebook_app_landing(current_user, :lists),  :style => "background: url(http://joyent.bingodisk.com/public/fb-test/list.png);background-repeat:no-repeat;height:32px;padding:10px 12px 0 34px;display:block;" %></li>
+</ul>
+<br clear="left" />
+
+
+<fb:tabs>
+  <fb:tab-item href='http://apps.facebook.com/joyent_connector' title='Notifications' selected='true'/>
+</fb:tabs>
+                                   
+ 
+<table style="width:100%;border-collapse: collapse;">
+  <tr style="background-color: #FFF;">
+    <th colspan="2" style="padding: 3px 5px 3px 10px;	border-color: #DDD #DDD #D6D6D6 #DDD;	border-width: 0 1px 1px 0;	border-style: solid;">
+      Item
+    </th>
+    <th style="padding: 3px 5px 3px 5px;border-color: #DDD #DDD #D6D6D6 #DDD;border-width: 0 1px 1px 0;border-style: solid;">
+      Notified By
+    </th>
+    <th style="padding: 3px 5px 3px 5px;border-color: #DDD #DDD #D6D6D6 #DDD;border-width: 0 0 1px 0;border-style: solid;">
+      Time
+    </th>
+  </tr>
+  <% @notifications.each_with_index do |notification,index| -%> 
+    <tr style="background-color:<%= index.odd? ? '#FFE59B' : '#FFEEBC' %>;height: 1.5em;">
+      <td style=";width:24px; border-bottom: 1px solid #CCB36A; line-height: 1.2em; padding: 2px 0 2px 0;">
+        <img src="http://joyent.bingodisk.com/public/fb-test/<%= notification.item.class.name.underscore %>.png" width="16" height="16" style="margin-left:10px">
+      </td>
+     <%# facebook_image_url(current_user, "#{notification.item.class.name.underscore}.png") %>
+      <td style="border-bottom: 1px solid #CCB36A; line-height: 1.2em; padding: 2px 0 2px 5px;">
+        <%= link_to "#{notification.item.class_humanize} \"#{notification.item.name}\"", facebook_url_for(notification.item) %>
+      </td>
+      <td style="border-bottom: 1px solid #CCB36A; line-height: 1.2em; padding: 2px 0 2px 5px;">
+        <%= link_to notification.notifier.full_name, facebook_url_for(notification.notifier.person) %>         
+      </td>
+      <td style="border-bottom: 1px solid #CCB36A; line-height: 1.2em; padding: 2px 0 2px 5px;">
+        <%= notification.created_at.strftime("%m/%d/%Y - %I:%M %p") %>
+      </td>
+    </tr>
+  <% end -%>
+  </table> 

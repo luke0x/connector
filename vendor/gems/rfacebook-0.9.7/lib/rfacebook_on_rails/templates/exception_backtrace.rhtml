@@ -1,0 +1,97 @@
+<style type="text/css">
+
+.RFacebook .backtrace
+	{
+		border-collapse: collapse;
+		background-color: #3B5998;
+		color: white;
+	}
+
+.RFacebook .backtrace
+	{
+		padding: 30px;
+		background: #3B5998;
+	}
+
+.RFacebook .backtrace h1
+	{
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+    	
+		color: #6D84B4;
+		font-size: 1.6em;
+	}
+
+/*
+.RFacebook table.backtrace td
+	{
+		padding: 10px 2px 10px 2px;
+		border-width: 1px 0px 1px 0px;
+		
+		border-style: solid;
+		border-color: #ccc;
+	}
+*/
+
+.RFacebook .backtrace div.summary
+	{
+		font-size: 1.2em;
+		padding: 2px;
+		color: #6D84B4;
+	}
+
+.RFacebook .backtrace div.summary strong
+	{
+		color: white;
+	}
+
+
+.RFacebook .backtrace div.summary em
+	{
+		color: white;
+	}
+
+.RFacebook .backtrace div.rawsummary
+	{
+		font-size: 0.7em;
+		color: #6D84B4;
+		padding-left: 5px;
+	}
+
+.RFacebook ul
+	{
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+	}
+
+.RFacebook ul li
+	{
+		list-style-type: none;
+		padding: 5px;
+	}
+
+
+
+</style>
+    
+<div class="RFacebook">
+	<div class="backtrace">
+		
+		<h1>exception backtrace</h1>
+		<ul>
+			<% rfacebookBacktraceLines.each do |line| %>		
+				<li>
+					<div class="summary">
+						<strong><%= line[:filename] %></strong>:<em><%= line[:line] %></em>
+						in <strong><%= line[:method] %></strong>
+					</div>
+					<div class="rawsummary">
+						<%= line[:rawsummary] %>
+					</div>
+				</li>
+			<% end %>
+		</ul>
+
+	</div>
+</div>

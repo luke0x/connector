@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :connector_languages
 
-  private  
+  protected  
     def current_domain
       @current_domain ||= Domain.find_by_web_domain(request.host)
     end             

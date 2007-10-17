@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 168) do
+ActiveRecord::Schema.define(:version => 169) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -538,22 +538,24 @@ ActiveRecord::Schema.define(:version => 168) do
   add_index "user_requests", ["user_id"], :name => "user_requests_user_id_index"
 
   create_table "users", :force => true do |t|
-    t.column "person_id",       :integer
-    t.column "username",        :string
-    t.column "password",        :string
-    t.column "password_sha1",   :string
-    t.column "admin",           :boolean, :default => false, :null => false
-    t.column "organization_id", :integer
-    t.column "documents_id",    :integer
-    t.column "full_name",       :string
-    t.column "identity_id",     :integer
-    t.column "guest",           :boolean, :default => false, :null => false
-    t.column "recovery_email",  :string,  :default => ""
-    t.column "recovery_token",  :string,  :default => ""
-    t.column "guest_rw",        :boolean, :default => false, :null => false
-    t.column "jajah_username",  :string
-    t.column "jajah_password",  :string
-    t.column "forward_address", :string,  :default => ""
+    t.column "person_id",            :integer
+    t.column "username",             :string
+    t.column "password",             :string
+    t.column "password_sha1",        :string
+    t.column "admin",                :boolean, :default => false, :null => false
+    t.column "organization_id",      :integer
+    t.column "documents_id",         :integer
+    t.column "full_name",            :string
+    t.column "identity_id",          :integer
+    t.column "guest",                :boolean, :default => false, :null => false
+    t.column "recovery_email",       :string,  :default => ""
+    t.column "recovery_token",       :string,  :default => ""
+    t.column "guest_rw",             :boolean, :default => false, :null => false
+    t.column "jajah_username",       :string
+    t.column "jajah_password",       :string
+    t.column "facebook_session_key", :string
+    t.column "facebook_uid",         :integer
+    t.column "forward_address",      :string,  :default => ""
   end
 
   add_index "users", ["identity_id"], :name => "index_users_on_identity_id"

@@ -1,0 +1,1 @@
+# no uninstallation yet

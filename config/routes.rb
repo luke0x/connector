@@ -33,7 +33,7 @@ ActionController::Routing::Routes.draw do |map|
     m.lightning_home 'home/fileswpl'
     m.wpl_home       'home/wpl'
   end
-
+  
   map.with_options :controller => 'admin' do |m|
     m.heartbeat 'heartbeat', :action => 'heartbeat'
   end
@@ -45,7 +45,11 @@ ActionController::Routing::Routes.draw do |map|
     m.capi_reset_password  'capi/reset_password',  :action => 'reset_password'
     m.capi_update_password 'capi/update_password', :action => 'update_password'
   end
-  
+     
+  map.with_options :controller => 'facebook' do |m|
+    m.facebook_login        'facebook/login',      :action => 'login'
+    m.facebook_index        'facebook/index',      :action => 'index'
+  end
 
   map.with_options :controller => 'user' do |m|
     m.user_switch          'user/switch/:id',           :action => 'switch'

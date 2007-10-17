@@ -76,8 +76,9 @@ class User < ActiveRecord::Base
 
   before_create :encrypt_password
   
-  cattr_accessor :jajah_system
-  @@jajah_system = TestJajahSystem.new
+  cattr_accessor :jajah_system, :facebook_system
+  @@jajah_system    = TestJajahSystem.new          
+  @@facebook_system = ProductionFacebookSystem.new
   
   @@aes_salt = JoyentConfig.user_aes_salt
   @@current = nil
@@ -363,6 +364,8 @@ class User < ActiveRecord::Base
       person.im_addresses.any?(&:use_notifier?)
     when :sms
       person.phone_numbers.any?(&:use_notifier?)
+    when :facebook
+      facebook?
     else
       false
     end
@@ -378,6 +381,14 @@ class User < ActiveRecord::Base
 
   def notifier_im
     person.im_addresses.detect(&:use_notifier?)
+  end                              
+  
+  def facebook?              
+    facebook_uid && facebook_session_key
+  end
+  
+  def update_facebook_profile!
+    facebook_system.set_profile(self) if facebook?
   end
 
   # tags

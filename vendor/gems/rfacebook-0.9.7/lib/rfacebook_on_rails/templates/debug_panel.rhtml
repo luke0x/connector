@@ -1,0 +1,220 @@
+<style type="text/css">
+
+.RFacebook .environment
+	{
+		padding: 30px;
+        
+		background: #F7F7F7;
+		border-bottom: 1px solid #B7B7B7;
+	}
+
+.RFacebook .environment a
+	{
+		color: #3F5A95;
+	}
+
+.RFacebook .environment table
+	{
+		margin: 0px auto 5px auto;
+		width: 100%;
+		
+		border-collapse: collapse;
+	}
+
+.RFacebook .environment td
+	{
+		padding: 5px;
+		padding-left: 10px;
+		border-width: 1px 0px 1px 0px;
+    
+		border-color: #ccc;
+		border-style: solid;
+		font-size: 0.9em;
+	}
+
+.RFacebook .environment td.value
+	{
+		width: 100%;
+    
+		color: #777;
+	}
+
+.RFacebook .environment td.header
+	{
+		padding-top: 10px;
+		padding-left: 0px;
+		border-top-width: 0px;
+		
+		font-weight: bold;
+		font-size: 1.3em;
+	}
+
+.RFacebook .environment h1
+	{
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+    
+		color: #3F5A95;
+		font-size: 1.6em;
+	}
+
+.RFacebook .environment p
+	{
+		padding: 5px;
+		margin: 0px 0px 20px 0px;
+    
+		color: #777;
+	}
+  
+.RFacebook .error
+	{
+		color: red;
+		margin: 0px;
+		padding: 2px;
+		color: #FF9A8D;
+		background-color: #900;
+	}
+
+.RFacebook .valid
+	{
+		margin: 0px;
+		padding: 2px;
+		color: #B2FE8C;
+		background-color: #06B012;
+	}
+
+.RFacebook table.details
+	{
+		border-collapse: collapse;
+		width: auto;
+	}
+
+.RFacebook table.details td
+	{
+		border: none;
+		padding: 0px;
+		color: #777;
+	}
+
+.RFacebook table.details td.value
+	{
+		width: 100%;
+		padding-left: 10px;
+		color: black;
+	}
+
+.RFacebook .backtrace
+	{
+		border-collapse: collapse;
+		background-color: #3B5998;
+		color: white;
+	}
+
+.RFacebook .backtrace
+	{
+		padding: 30px;
+		background: #3B5998;
+	}
+
+.RFacebook .backtrace h1
+	{
+		margin: 0px 0px 5px 0px;
+		padding: 0px;
+    
+		color: white;
+		font-size: 1.6em;
+	}
+
+/*
+.RFacebook table.backtrace td
+	{
+		padding: 10px 2px 10px 2px;
+		border-width: 1px 0px 1px 0px;
+		
+		border-style: solid;
+		border-color: #ccc;
+	}
+*/
+
+.RFacebook .backtrace div.summary
+	{
+		font-size: 1.2em;
+		padding: 2px;
+		color: white;
+	}
+	
+.RFacebook .backtrace div.rawsummary
+	{
+		font-size: 0.7em;
+		color: #6D84B4;
+		padding-left: 5px;
+	}
+
+.RFacebook ul
+	{
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+	}
+
+.RFacebook ul li
+	{
+		list-style-type: none;
+		padding: 5px;
+	}
+
+</style>
+
+<div class="RFacebook">
+	
+	<div class="environment">
+  
+		<h1>RFacebook <span style="font-weight: normal; color: #777">environment information</span></h1>
+		<p>
+			This shows you at a glance the information that RFacebook has populated
+			for you.
+			<br/>
+			More information at <a href="http://rfacebook.rubyforge.org">rfacebook.rubyforge.org</a>.
+			Please report RFacebook bugs <a href="http://rubyforge.org/tracker/?func=add&group_id=3607&atid=13796">here</a>.
+			
+		</p>
+  
+		<table>
+  
+			<!-- ####################### ActionController ####################### -->
+			<tr>
+				<td colspan="3" class="header"><%= self.class %></td>
+			</tr>
+			
+			<% facebook_status_manager.each_status_check do |statusCheck| %>
+				<tr>
+					<td class="title"><%= statusCheck.title %></td>
+					<td class="rstatus">
+						<% if statusCheck.valid? %>
+							<span class="valid">OK</span>
+						<% else %>
+							<span class="error">PROBLEM</span>
+						<% end %>
+					</td>
+					<td class="value">
+						<% if statusCheck.message.is_a? String %>
+							<%= statusCheck.message %>
+						<% elsif statusCheck.message.is_a? Hash %>
+							<table class="details">
+								<% statusCheck.message.each do |k,v| %>
+									<tr>
+										<td><%= k %></td>
+										<td class="value"><%= v %></td>
+									</tr>
+								<% end %>
+							</table>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+		
+		
+		</table>
+  
+	</div>
+</div>        

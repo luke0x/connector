@@ -10,14 +10,7 @@ Report issues and contribute at http://dev.joyent.com/
 $Id$
 --
 =end #(end)
-# Copyright 2004-2007 Joyent Inc.
-# 
-# Redistribution and/or modification of this code is governed
-# by either the GPLv2 or Joyent Commercial Software licenses.
-# 
-# Report issues and contribute at http://dev.joyent.com/
-# 
-# $Id$
+
 module NotificationSystem
   class SmsNotifier
       extend ActionView::Helpers::TextHelper
@@ -37,7 +30,6 @@ module NotificationSystem
       send_messages(tmail, sms_recipients(notification.notifiee))
     end
        
-    # FIXME: Looks like the time in these does not respect the recurrence
     def self.alarm(event, user)
       tmail         = TMail::Mail.new
       tmail.from    = JoyentConfig.sms_notifier_from_address

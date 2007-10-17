@@ -23,14 +23,16 @@ class Notification < ActiveRecord::Base
   belongs_to :notifiee, :class_name => 'User', :foreign_key => 'notifiee_id'
   belongs_to :item, :polymorphic => true
 
-  after_create   :notify!
+  after_create   :notify! 
+  after_create   :update_facebook_profile
   after_save     :add_invitation
   before_destroy :remove_invitation
 
   cattr_accessor :notification_systems
-  @@notification_systems = {:email  => NotificationSystem::EmailNotifier,
-                            :jabber => NotificationSystem::JabberNotifier,
-                            :sms    => NotificationSystem::SmsNotifier }
+  @@notification_systems = {:email    => NotificationSystem::EmailNotifier,
+                            :jabber   => NotificationSystem::JabberNotifier,
+                            :sms      => NotificationSystem::SmsNotifier,
+                            :facebook => NotificationSystem::FacebookNotifier }
 
   def acknowledge!
     self.acknowledged = true
@@ -41,9 +43,13 @@ class Notification < ActiveRecord::Base
     @@notification_systems.each do |key, value|
       value.notify(self) if notifiee.notify_via?(key)
     end
-  end
+  end  
 
   private
+  
+    def update_facebook_profile
+      notifiee.update_facebook_profile!        
+    end
 
     def add_invitation
       item.invite(notifiee) if item.is_a?(Event)
