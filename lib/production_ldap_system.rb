@@ -198,7 +198,6 @@ class ProductionLdapSystem
       'gidNumber'             => [u.organization.gid.to_s],
       'loginShell'            => ['/usr/local/bin/scponly'],
       'sshPublicKey'          => [u.send(:read_authorized_keys).first.to_s],
-      'mail'                  => [u.system_email], # primary connector email only one
       'mailAlternateAddress'  => u.mail_alternate_addresses, # aliases, multiple including primary email
       'forward'               => [u.forward_address] # forward mail to address
     } 
