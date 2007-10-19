@@ -120,6 +120,23 @@ class MessageTest < Test::Unit::TestCase
     assert_nil Message.find_by_id(id)
   end
   
+  # Regression test to case 387
+  # BCC field not showing on edit draft
+  # This ensures bcc field is parsed from raw message
+  def test_message_returns_bcc
+    mock_maildir = JoyentMaildir::MockMaildirWorker.new
+    
+    flexstub(JoyentMaildir::Base).should_receive(:connection).twice.returns {
+      flexmock('message') do |m| 
+        m.should_receive(:message_maildir_message).with(messages(:first).id).returns(mock_maildir.message_maildir_message(messages(:first).id))
+        m.should_receive(:message_body).with(1, false).returns('')
+      end
+    }
+    
+    msg = messages(:first).build_draft_stub
+    assert_equal "you@joyent.com", msg.bcc.first.address
+  end
+  
 #   def test_rfc2047_headers
 #     m = messages(:first)
 #     addr = OpenStruct.new

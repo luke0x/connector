@@ -1,1 +1,12 @@
-Insert raw mail message here
+Date: Fri, 28 Sep 2007 23:57:27 +0000
+From: Ian Kevin Curtis <ian@textdrive.com>
+To: me@joyent.com
+Bcc: you@joyent.com
+Message-Id: <46fd94e76904b_6de32b541a21fd@your-computer.local.tmail>
+References: <46fd94e76904b_6de32b541a21fd@your-computer.local.tmail>
+Subject: Test
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+X-Joyent-Id: 910536be-6e1e-11dc-5884-573dd12ba267
+
+Test, this message is used for testing raw message fields.
