@@ -112,13 +112,13 @@ choose_alternative(GMimeObject *part)
 	l = GMIME_MULTIPART(part)->subparts;
 	// Look for a preferred part in this order:
 	// * multipart/relative
-	// * text/html
+	// * text/html unless text_only
 	// * text/plain
 	if (fpart = g_list_find_custom(l, g_mime_content_type_new("multipart", "related"), (GCompareFunc)find_part_of_type)) {
 		choose_alternative(fpart->data);
 		return;
 	}
-	if (fpart = g_list_find_custom(l, g_mime_content_type_new("text", "html"), (GCompareFunc)find_part_of_type)) {
+	if ((fpart = g_list_find_custom(l, g_mime_content_type_new("text", "html"), (GCompareFunc)find_part_of_type)) && text_only == 0) {
 		write_part(fpart->data);
 		return;
 	}	

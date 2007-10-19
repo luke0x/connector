@@ -136,7 +136,14 @@ module JoyentMaildir
       unless $?.success?
         raise JoyentMaildir::MessageParseException.new(data, file)
       end
-      data
+                                
+      # In the case that there is not a plain text version, we will just strip
+      # the tags out of the html version and call it good
+      if text_only && data.strip.blank?
+        body(false).gsub(/<\/?[^>]*>/, "")
+      else
+        data
+      end
     end
     
     def flags
