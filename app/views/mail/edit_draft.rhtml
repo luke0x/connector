@@ -8,19 +8,20 @@
 <% #  -%>
 <% # $Id$ -%>
 <% # -- -%>
+<div class="dialog">
+	<%= javascript_include_tag 'addresses', 'attachments', 'file_browser' %>
+	<%= stylesheet_link_tag 'file_browser' %>
+	<%= javascript_tag "addresses = new AddressManager(#{@message.to.to_json}, #{@message.cc.to_json}, #{@message.bcc.to_json});" %>
+	<%= javascript_tag "uploads = new UploadManager();" %>
 
-<%= javascript_include_tag 'addresses', 'attachments', 'file_browser' %>
-<%= stylesheet_link_tag 'file_browser' %>
-<%= javascript_tag "addresses = new AddressManager(#{@message.to.to_json}, #{@message.cc.to_json}, #{@message.bcc.to_json});" %>
-<%= javascript_tag "uploads = new UploadManager();" %>
-
-<h2><%= _('Edit Draft Message') %></h2>
-<div id="itemView">
-  <% form_tag(mail_send_draft_url(:id => @original_message), {:onsubmit => "return Mail.validateSubmit(this);", :multipart => true, :class => "item_editor" }) do -%>
-	  <% if @original_message.plain_only? -%>
-		  <%= render :partial => 'compose_form' %>
-    <% else -%>
-  		<%= render :partial => 'compose_form_html' %>
-  	<% end -%>
-  <% end -%>
+	<h2><%= _('Edit Draft Message') %></h2>
+	<div id="itemView">
+	  <% form_tag(mail_send_draft_url(:id => @original_message), {:onsubmit => "return Mail.validateSubmit(this);", :multipart => true, :class => "item_editor" }) do -%>
+		  <% if @original_message.plain_only? -%>
+			  <%= render :partial => 'compose_form' %>
+	    <% else -%>
+	  		<%= render :partial => 'compose_form_html' %>
+	  	<% end -%>
+	  <% end -%>
+	</div>
 </div>

@@ -392,6 +392,7 @@ EOS
     from = []
     to = []
     cc = []
+    bcc = []
     date = nil
     subject = ""
     encoding = ct = charset = multipart = body = filename = bd = nil
@@ -409,6 +410,8 @@ EOS
         to.concat get_mail_address(hb)
       when "cc"
         cc.concat get_mail_address(hb)
+      when "bcc"
+        bcc.concat get_mail_address(hb)
       when "date"
         date = get_date(hb)
       when "subject"
@@ -433,6 +436,7 @@ EOS
     ret[:from] = from
     ret[:to] = to
     ret[:cc] = cc
+    ret[:bcc] = bcc
     ret[:date] = date
     ret[:subject] = subject #mime_header_decode subject
     if ct then
