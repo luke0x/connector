@@ -10,7 +10,6 @@ Report issues and contribute at http://dev.joyent.com/
 $Id$
 --
 =end #(end)
-
 class ListRow < ActiveRecord::Base
   include JoyentTree
 
@@ -21,14 +20,15 @@ class ListRow < ActiveRecord::Base
   validates_presence_of :position
   validates_presence_of :depth_cache
 
+  # NOTE: I wonder if this could also acts_as_list because the rows
+  #       are a list that are scoped by 'parent_id'
   acts_as_joyent_tree :order => 'position', :scope => :list_id
 
-#  before_save :set_cache
-  after_save {|record| record.list.save}
-  after_save :create_cells
+  after_save     :create_cells
+  after_save     { |record| record.list.update_timestamp }
+  after_destroy  { |record| record.list.update_timestamp }
   before_destroy :destroy_children
-  after_destroy {|record| record.list.save}
-
+                              
   def summary
     list.list_columns_by_position.collect{|list_column|
       ListCell.find_by_row_and_column(self, list_column).value
@@ -41,11 +41,11 @@ class ListRow < ActiveRecord::Base
     ListRow.transaction do
       list.list_rows.find(:all, :lock => true)
 
-      self.update_attributes(:parent_id => previous_sibling.id,
-                             :position => (previous_sibling.children.blank? ? 1 : ListRow.maximum(:position, :conditions => ['list_id = ? AND parent_id = ?', previous_sibling.list_id, previous_sibling.id]) + 1),
+      self.update_attributes(:parent_id   => previous_sibling.id,
+                             :position    => (previous_sibling.children.blank? ? 1 : ListRow.maximum(:position, :conditions => ['list_id = ? AND parent_id = ?', previous_sibling.list_id, previous_sibling.id]) + 1),
                              :depth_cache => self.depth_cache + 1)
 
-      children.each do |lr|
+      descendents.each do |lr|
         lr.increment!(:depth_cache)
       end
 
@@ -77,17 +77,10 @@ class ListRow < ActiveRecord::Base
                              :position => parent.position + 1,
                              :depth_cache => self.depth_cache - 1)
 
-      # move the row's descendents out one
-      children.each do |lr|
-        lr.move_out!
+      descendents.each do |lr| 
+        lr.decrement!(:depth_cache)
       end
     end
-  end
-  
-  # move the depth out 1
-  def move_out!
-    self.decrement!(:depth_cache)
-    children.map(&:move_out!)
   end
   
   def up!

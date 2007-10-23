@@ -24,7 +24,7 @@ list1_root1_child1:
   list_id: 1
   parent_id: 1
   position: 1
-  children_count: 0
+  children_count: 1
   depth_cache: 1
   created_at: <%= 1.days.ago.to_s :db %>
   updated_at: <%= 1.days.ago.to_s :db %>
@@ -33,7 +33,7 @@ list1_root1_child2:
   list_id: 1
   parent_id: 1
   position: 2
-  children_count: 0
+  children_count: 1
   depth_cache: 1
   created_at: <%= 1.days.ago.to_s :db %>
   updated_at: <%= 1.days.ago.to_s :db %>
@@ -83,5 +83,25 @@ expanded:
   position: 2
   visible_children: true
   depth_cache: 0
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+
+list1_child1_child1:
+  id: 103
+  list_id: 1
+  parent_id: 2
+  position: 1
+  children_count: 0
+  depth_cache: 2
+  created_at: <%= 1.days.ago.to_s :db %>
+  updated_at: <%= 1.days.ago.to_s :db %>
+  
+list1_child2_child1:
+  id: 104
+  list_id: 1
+  parent_id: 3
+  position: 1
+  children_count: 0
+  depth_cache: 2
   created_at: <%= 1.days.ago.to_s :db %>
   updated_at: <%= 1.days.ago.to_s :db %>
