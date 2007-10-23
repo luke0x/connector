@@ -83,7 +83,7 @@
 					<%= _('Notifications') -%>
 				</td>
 				<td colspan="2" class="inforgroup_form notification_types">
-					<p><%= _('Send notifications and event alarms via SMS, email and instant message') %></p>
+					<p><%= _('Receive notifications and event alarms via SMS, email and instant message') %></p>
 					<div class="notification_type">
 						<input id="person_notification_sms" type="checkbox" name="person[notification_sms]" <%= 'checked="checked"' if current_user.notify_via?(:sms) %> onchange="return NotificationsConfigurator.update('sms');" />
 						<span class="notify_type notify_sms"><%= _('SMS') %></span>
