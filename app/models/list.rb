@@ -357,7 +357,7 @@ class List < ActiveRecord::Base
   end
            
   def update_timestamp
-    self.save if (Time.now - updated_at) > 60
+    self.save if updated_at < 60.seconds.ago
   end                              
  
   private
