@@ -73,31 +73,32 @@ class ListCell < ActiveRecord::Base
     end
   end
   
-  def convert_to!(new_kind)
-    return if self.kind == new_kind
-    return unless ListColumn::ColumKinds.include?(new_kind)
+  def convert(from_kind, to_kind)
+    return if     from_kind == to_kind
+    return unless ListColumn::ColumnKinds.include?(from_kind)
+    return unless ListColumn::ColumnKinds.include?(to_kind)
     
-    new_value = case self.kind
+    new_value = case from_kind
     when 'Checkbox'
-      case new_kind
+      case to_kind
       when 'Date'   then ''
       when 'Number' then value == 'true' ? '1' : '0'
       when 'Text'   then value == 'true' ? 'true' : 'false'
       end
     when 'Date'
-      case new_kind
+      case to_kind
       when 'Checkbox' then 'false'
       when 'Number'   then ''
       when 'Text'     then value
       end
     when 'Number'
-      case new_kind
+      case to_kind
       when 'Checkbox' then value == '1' ? 'true' : 'false'
       when 'Date'     then ''
       when 'Text'     then value
       end
     when 'Text'
-      case new_kind
+      case to_kind
       when 'Checkbox'
         ['true', 't', 'yes', 'y', '1', '2'].include?(value.downcase) ? 'true' : 'false'
       when 'Date'
@@ -107,7 +108,7 @@ class ListCell < ActiveRecord::Base
       end
     end
     
-    update_attribute(:value, new_value)
+    self.value = new_value
   end
   
   def ancestors

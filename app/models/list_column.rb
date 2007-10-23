@@ -21,9 +21,10 @@ class ListColumn < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :kind
 
-  after_save {|record| record.list.save}
-  after_save :create_cells
-  after_destroy {|record| record.list.save}
+  after_save    :create_cells
+  after_save    {|record| record.list_cells.each(&:save) }
+  after_save    {|record| record.list.update_timestamp   }
+  after_destroy {|record| record.list.update_timestamp   }
 
   ColumnKinds = %w(Checkbox Date Number Text)
   
@@ -43,13 +44,12 @@ class ListColumn < ActiveRecord::Base
       end
     end
   end
-  
-  def convert_to!(new_kind)
-    return if self.kind == new_kind
-    return unless ColumKinds.include?(new_kind)
+                  
+  def kind=(new_kind)
+    return self.kind if     self.kind == new_kind
+    return self.kind unless ColumnKinds.include?(new_kind)
 
-    list_cells.each{|lc| lc.convert_to!(new_kind)}
-    update_attribute(:kind, new_kind)
+    list_cells.each{|lc| lc.convert(self.kind, new_kind)}
+    write_attribute(:kind, new_kind)
   end
-  
 end

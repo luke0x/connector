@@ -24,7 +24,7 @@ class List < ActiveRecord::Base
   validates_presence_of :name
 
   after_create :create_column_and_row
-
+  
   cattr_accessor :current
   
   # localization
@@ -355,7 +355,11 @@ class List < ActiveRecord::Base
       list_rows(true).collect{|row| row.list_cells(true)}.flatten
     end
   end
-  
+           
+  def update_timestamp
+    self.save if (Time.now - updated_at) > 60
+  end                              
+ 
   private
   
     def create_column_and_row
