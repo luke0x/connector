@@ -18,14 +18,26 @@ require 'browser_controller'
 class BrowserController; def rescue_action(e) raise e end; end
 
 class BrowserControllerTest < Test::Unit::TestCase
+  fixtures all_fixtures
+
   def setup
     @controller = BrowserController.new
     @request    = ActionController::TestRequest.new
     @response   = ActionController::TestResponse.new
+    login_person(:ian)
   end
 
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_list
+    get :list, {:context => 'subscribe'}
+    
+    assert_response :success
   end
+  
+  def test_column
+    get :column, {:subscribable_type => 'Folder', :app => 'Files', :user_id => 1, :current_column => 'group_column', :subscribable_id => 2}
+    
+    assert_response :success
+    assert assigns(:items)
+  end
+  
 end
