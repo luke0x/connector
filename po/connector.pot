@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-10-03 21:54-0400\n"
+"POT-Creation-Date: 2007-10-23 19:36-0400\n"
 "PO-Revision-Date: 2006-05-24 20:40+020Å0\n"
 "Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -22,1425 +22,1495 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/controllers/authenticate_controller.rb:45
+#: app/controllers/authenticate_controller.rb:47
 msgid "Invalid username or password."
 msgstr ""
 
-#: app/controllers/bookmarks_controller.rb:27
-#: app/controllers/bookmarks_controller.rb:136
-#: app/controllers/syndication_controller.rb:289
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:11
-#: app/views/sidebars/groups/bookmarks/_others_bookmarks.rhtml:13
-#: lib/i18n_do_not_include.rb:24
+#: app/controllers/bookmarks_controller.rb:29
+#: app/controllers/bookmarks_controller.rb:138
+#: app/controllers/syndication_controller.rb:291
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:13
+#: app/views/sidebars/groups/bookmarks/_others_bookmarks.rhtml:15
+#: lib/i18n_do_not_include.rb:26
 msgid "Bookmarks"
 msgstr ""
 
-#: app/controllers/bookmarks_controller.rb:48
-#: app/controllers/syndication_controller.rb:298
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:12
+#: app/controllers/bookmarks_controller.rb:50
+#: app/controllers/syndication_controller.rb:300
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:14
 msgid "Others' Bookmarks"
 msgstr ""
 
-#: app/controllers/bookmarks_controller.rb:204
-#: app/controllers/calendar_controller.rb:376
-#: app/controllers/connect_controller.rb:35
-#: app/controllers/files_controller.rb:185
-#: app/controllers/lists_controller.rb:216
-#: app/controllers/people_controller.rb:281
+#: app/controllers/bookmarks_controller.rb:206
+#: app/controllers/calendar_controller.rb:378
+#: app/controllers/connect_controller.rb:37
+#: app/controllers/files_controller.rb:187
+#: app/controllers/lists_controller.rb:218
+#: app/controllers/people_controller.rb:283
 msgid "All Notifications"
 msgstr ""
 
-#: app/controllers/bookmarks_controller.rb:209
-#: app/controllers/calendar_controller.rb:386
-#: app/controllers/connect_controller.rb:44
-#: app/controllers/files_controller.rb:195
-#: app/controllers/lists_controller.rb:221
-#: app/controllers/people_controller.rb:291
-#: app/controllers/syndication_controller.rb:27
-#: app/controllers/syndication_controller.rb:81
-#: app/controllers/syndication_controller.rb:147
-#: app/controllers/syndication_controller.rb:153
-#: app/controllers/syndication_controller.rb:214
-#: app/controllers/syndication_controller.rb:234
-#: app/controllers/syndication_controller.rb:306
-#: app/helpers/people_helper.rb:51
-#: app/views/people/_edit_account_user.rhtml:81
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:13
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:13
-#: app/views/sidebars/groups/connect/_connect.rhtml:17
-#: app/views/sidebars/groups/files/_files.rhtml:28
-#: app/views/sidebars/groups/lists/_lists.rhtml:15
-#: app/views/sidebars/groups/mail/_mail.rhtml:17
-#: app/views/sidebars/groups/people/_people.rhtml:14
-#: lib/i18n_do_not_include.rb:107
+#: app/controllers/bookmarks_controller.rb:211
+#: app/controllers/calendar_controller.rb:388
+#: app/controllers/connect_controller.rb:46
+#: app/controllers/files_controller.rb:197
+#: app/controllers/lists_controller.rb:223
+#: app/controllers/people_controller.rb:293
+#: app/controllers/syndication_controller.rb:29
+#: app/controllers/syndication_controller.rb:83
+#: app/controllers/syndication_controller.rb:149
+#: app/controllers/syndication_controller.rb:155
+#: app/controllers/syndication_controller.rb:216
+#: app/controllers/syndication_controller.rb:236
+#: app/controllers/syndication_controller.rb:308
+#: app/helpers/people_helper.rb:53
+#: app/views/people/_edit_account_user.rhtml:83
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:15
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:15
+#: app/views/sidebars/groups/connect/_connect.rhtml:19
+#: app/views/sidebars/groups/files/_files.rhtml:30
+#: app/views/sidebars/groups/lists/_lists.rhtml:17
+#: app/views/sidebars/groups/mail/_mail.rhtml:19
+#: app/views/sidebars/groups/people/_people.rhtml:16
+#: lib/i18n_do_not_include.rb:109
 msgid "Notifications"
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:101
-#: app/controllers/syndication_controller.rb:430
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:20
+#: app/controllers/calendar_controller.rb:103
+#: app/controllers/syndication_controller.rb:432
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:22
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:24
 msgid "Today's Events"
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:105
-#: app/controllers/syndication_controller.rb:441
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:16
+#: app/controllers/calendar_controller.rb:107
+#: app/controllers/syndication_controller.rb:443
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:18
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:20
 msgid "This Week's Events"
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:253
-#: app/controllers/calendar_controller.rb:279
-#: app/controllers/calendar_controller.rb:298
-#: app/controllers/calendar_controller.rb:316
-#: app/controllers/calendar_controller.rb:342
-#: app/controllers/syndication_controller.rb:162
-#: app/controllers/syndication_controller.rb:172
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:12 lib/ghetto_urls.rb:82
-#: lib/ghetto_urls.rb:94 lib/ghetto_urls.rb:106 lib/ghetto_urls.rb:121
-#: lib/ghetto_urls.rb:136
+#: app/controllers/calendar_controller.rb:255
+#: app/controllers/calendar_controller.rb:281
+#: app/controllers/calendar_controller.rb:300
+#: app/controllers/calendar_controller.rb:318
+#: app/controllers/calendar_controller.rb:344
+#: app/controllers/syndication_controller.rb:164
+#: app/controllers/syndication_controller.rb:174
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:14 lib/ghetto_urls.rb:84
+#: lib/ghetto_urls.rb:96 lib/ghetto_urls.rb:108 lib/ghetto_urls.rb:123
+#: lib/ghetto_urls.rb:138
 msgid "All Events"
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:636
+#: app/controllers/calendar_controller.rb:638
 msgid "An invalid calendar was chosen."
 msgstr ""
 
-#: app/controllers/calendar_controller.rb:647
+#: app/controllers/calendar_controller.rb:649
 msgid ""
 "There was a problem importing the iCalendar %{i18n_calendar_file}.  Please "
 "be sure that it is a valid file."
 msgstr ""
 
-#: app/controllers/connect_controller.rb:64
+#: app/controllers/connect_controller.rb:66
 msgid "Search: %{i18n_search_param}"
 msgstr ""
 
-#: app/controllers/files_controller.rb:563
-#: app/controllers/files_controller.rb:570
+#: app/controllers/facebook_controller.rb:44
+msgid "Invalid subdomain, username or password."
+msgstr ""
+
+#: app/controllers/files_controller.rb:565
+#: app/controllers/files_controller.rb:572
 msgid "Strongspace"
 msgstr ""
 
-#: app/controllers/list_columns_controller.rb:18
+#: app/controllers/list_columns_controller.rb:20
 msgid "New Column"
 msgstr ""
 
-#: app/controllers/list_columns_controller.rb:69
+#: app/controllers/list_columns_controller.rb:71
 msgid "There was an error deleting the column."
 msgstr ""
 
-#: app/controllers/lists_controller.rb:305
+#: app/controllers/lists_controller.rb:307
 msgid ""
 "There was a problem importing the OPML file '%{i18n_opml_file}'. Please be "
 "sure that it is a valid file."
 msgstr ""
 
-#: app/controllers/lists_controller.rb:316
+#: app/controllers/lists_controller.rb:318
 msgid "List folder successfully created."
 msgstr ""
 
-#: app/controllers/lists_controller.rb:318
+#: app/controllers/lists_controller.rb:320
 msgid "An error occurred creating the list folder."
 msgstr ""
 
-#: app/controllers/lists_controller.rb:328
+#: app/controllers/lists_controller.rb:330
 msgid "List folder successfully renamed."
 msgstr ""
 
-#: app/controllers/lists_controller.rb:330
+#: app/controllers/lists_controller.rb:332
 msgid "An error occurred renaming the list folder."
 msgstr ""
 
-#: app/controllers/mail_controller.rb:657
+#: app/controllers/mail_controller.rb:729
 msgid "Draft"
 msgstr ""
 
-#: app/controllers/mail_controller.rb:659
+#: app/controllers/mail_controller.rb:731
 msgid "Replied"
 msgstr ""
 
-#: app/controllers/mail_controller.rb:660
+#: app/controllers/mail_controller.rb:732
 msgid "Forwarded"
 msgstr ""
 
-#: app/controllers/mail_controller.rb:661
+#: app/controllers/mail_controller.rb:733
 msgid "Flagged"
 msgstr ""
 
-#: app/controllers/mail_controller.rb:662
+#: app/controllers/mail_controller.rb:734
 msgid "Junk"
 msgstr ""
 
-#: app/controllers/mail_controller.rb:663
+#: app/controllers/mail_controller.rb:735 app/views/mail/_toolbar.rhtml:38
+#: app/views/sidebars/groups/mail/_mail.rhtml:27
+msgid "Spam"
+msgstr ""
+
+#: app/controllers/mail_controller.rb:736
 msgid "Unread"
 msgstr ""
 
-#: app/controllers/people_controller.rb:198
+#: app/controllers/people_controller.rb:200
 msgid ""
 "There was a problem importing %{i18n_vcard_file}. Please be sure it is a "
 "valid vCard file."
 msgstr ""
 
-#: app/controllers/people_controller.rb:419
-#: app/controllers/people_controller.rb:494
-#: app/controllers/people_controller.rb:555
-#: app/controllers/syndication_controller.rb:197
-#: app/views/sidebars/groups/people/_others_people.rhtml:14
-#: app/views/sidebars/groups/people/_people.rhtml:12
+#: app/controllers/people_controller.rb:421
+#: app/controllers/people_controller.rb:496
+#: app/controllers/people_controller.rb:557
+#: app/controllers/syndication_controller.rb:199
+#: app/views/sidebars/groups/people/_others_people.rhtml:16
+#: app/views/sidebars/groups/people/_people.rhtml:14
 msgid "Contacts"
 msgstr ""
 
-#: app/controllers/people_controller.rb:444
-#: app/controllers/people_controller.rb:512
-#: app/controllers/people_controller.rb:575
-#: app/controllers/people_controller.rb:609
-#: app/controllers/syndication_controller.rb:207
-#: app/helpers/people_helper.rb:49
-#: app/views/people/confirm_user_delete.rhtml:41
-#: app/views/sidebars/groups/people/_people.rhtml:13
+#: app/controllers/people_controller.rb:446
+#: app/controllers/people_controller.rb:514
+#: app/controllers/people_controller.rb:577
+#: app/controllers/people_controller.rb:611
+#: app/controllers/syndication_controller.rb:209
+#: app/helpers/people_helper.rb:51
+#: app/views/people/confirm_user_delete.rhtml:43
+#: app/views/sidebars/groups/people/_people.rhtml:15
 msgid "Users"
 msgstr ""
 
-#: app/controllers/syndication_controller.rb:46
-#: app/controllers/syndication_controller.rb:61
-#: app/controllers/syndication_controller.rb:71
-#: app/controllers/syndication_controller.rb:104
-#: app/controllers/syndication_controller.rb:137
-#: app/controllers/syndication_controller.rb:199
-#: app/controllers/syndication_controller.rb:224
-#: app/controllers/syndication_controller.rb:244
-#: app/controllers/syndication_controller.rb:255
-#: app/controllers/syndication_controller.rb:316
+#: app/controllers/syndication_controller.rb:48
+#: app/controllers/syndication_controller.rb:63
+#: app/controllers/syndication_controller.rb:73
+#: app/controllers/syndication_controller.rb:106
+#: app/controllers/syndication_controller.rb:139
+#: app/controllers/syndication_controller.rb:201
+#: app/controllers/syndication_controller.rb:226
+#: app/controllers/syndication_controller.rb:246
+#: app/controllers/syndication_controller.rb:257
+#: app/controllers/syndication_controller.rb:318
 msgid "%{i18n_owner_full_name}'s %{i18n_group_name}"
 msgstr ""
 
-#: app/controllers/syndication_controller.rb:357
-#: app/views/sidebars/groups/people/_people.rhtml:16
+#: app/controllers/syndication_controller.rb:359
+#: app/views/sidebars/groups/people/_people.rhtml:18
 msgid "Current Time"
 msgstr ""
 
-#: app/controllers/syndication_controller.rb:369
-#: app/views/sidebars/groups/connect/_connect.rhtml:20
+#: app/controllers/syndication_controller.rb:371
+#: app/views/sidebars/groups/connect/_connect.rhtml:22
 msgid "Recent Comments"
 msgstr ""
 
-#: app/controllers/syndication_controller.rb:411
-#: app/views/sidebars/groups/mail/_mail.rhtml:28
+#: app/controllers/syndication_controller.rb:413
+#: app/views/sidebars/groups/mail/_mail.rhtml:33
 msgid "Unread Messages"
 msgstr ""
 
-#: app/controllers/syndication_controller.rb:473
+#: app/controllers/syndication_controller.rb:475
 msgid "You must log in to access your RSS/ICS"
 msgstr ""
 
-#: app/controllers/tag_controller.rb:15
+#: app/controllers/tag_controller.rb:17
 msgid "You no longer have access to this item."
 msgstr ""
 
-#: app/controllers/user_controller.rb:16
+#: app/controllers/user_controller.rb:18
 msgid "The shortcut was created."
 msgstr ""
 
-#: app/controllers/user_controller.rb:18
+#: app/controllers/user_controller.rb:20
 msgid "The shortcut could not be created. Please try again."
 msgstr ""
 
-#: app/helpers/application_helper.rb:73 app/helpers/application_helper.rb:407
+#: app/helpers/application_helper.rb:75 app/helpers/application_helper.rb:422
 msgid "%{i18n_time_in_words} ago"
 msgstr ""
 
-#: app/helpers/application_helper.rb:82
+#: app/helpers/application_helper.rb:84
 msgid "Toggle"
 msgstr ""
 
-#: app/helpers/application_helper.rb:82
+#: app/helpers/application_helper.rb:84
 msgid "Click to toggle your selection."
 msgstr ""
 
-#: app/helpers/application_helper.rb:219
+#: app/helpers/application_helper.rb:234
 msgid "Match All: "
 msgstr ""
 
-#: app/helpers/application_helper.rb:248 app/helpers/application_helper.rb:278
+#: app/helpers/application_helper.rb:263 app/helpers/application_helper.rb:293
 msgid "Top Level"
 msgstr ""
 
-#: app/helpers/application_helper.rb:382
+#: app/helpers/application_helper.rb:397
 msgid "at"
 msgstr ""
 
-#: app/helpers/application_helper.rb:450
+#: app/helpers/application_helper.rb:465
 msgid "Map"
 msgstr ""
 
-#: app/helpers/application_helper.rb:450
+#: app/helpers/application_helper.rb:465
 msgid "Look up address in Google Maps"
 msgstr ""
 
-#: app/helpers/application_helper.rb:514
+#: app/helpers/application_helper.rb:534
 msgid "Visible in your Workspace"
 msgstr ""
 
-#: app/helpers/application_helper.rb:700
+#: app/helpers/application_helper.rb:730
 msgid "Subscribe"
 msgstr ""
 
-#: app/helpers/application_helper.rb:709 app/helpers/application_helper.rb:710
-#: app/views/bookmarks/_sync.rhtml:16 app/views/bookmarks/edit.rhtml:58
-#: app/views/bookmarks/edit.rhtml:60 app/views/bookmarks/edit.rhtml:62
-#: app/views/calendar/_import.rhtml:42 app/views/calendar/_peek.rhtml:59
-#: app/views/calendar/edit.rhtml:253 app/views/calendar/edit.rhtml:255
-#: app/views/calendar/edit.rhtml:257 app/views/comments/_comment.rhtml:18
-#: app/views/files/create.rhtml:55 app/views/files/strongspace_create.rhtml:35
-#: app/views/guest/edit.rhtml:55 app/views/lists/_import.rhtml:17
-#: app/views/lists/new.rhtml:42 app/views/mail/_compose_form.rhtml:165
-#: app/views/people/_call.rhtml:65
-#: app/views/people/confirm_user_delete.rhtml:40
-#: app/views/people/edit.rhtml:39 app/views/people/edit.rhtml:42
-#: app/views/sidebars/groups/_smart_group_new.rhtml:42
-#: app/views/sidebars/groups/_standard_group_new_container.rhtml:37
-#: app/views/subscriptions/browser.rhtml:33
+#: app/helpers/application_helper.rb:739 app/helpers/application_helper.rb:740
+#: app/views/bookmarks/_sync.rhtml:18 app/views/bookmarks/edit.rhtml:60
+#: app/views/bookmarks/edit.rhtml:62 app/views/bookmarks/edit.rhtml:64
+#: app/views/calendar/_import.rhtml:44 app/views/calendar/_peek.rhtml:61
+#: app/views/calendar/edit.rhtml:255 app/views/calendar/edit.rhtml:257
+#: app/views/calendar/edit.rhtml:259 app/views/comments/_comment.rhtml:20
+#: app/views/files/create.rhtml:57 app/views/files/strongspace_create.rhtml:37
+#: app/views/guest/edit.rhtml:57 app/views/lists/_import.rhtml:19
+#: app/views/lists/new.rhtml:44 app/views/mail/_compose_form.rhtml:167
+#: app/views/mail_alias/_create.rhtml:36 app/views/people/_call.rhtml:67
+#: app/views/people/confirm_user_delete.rhtml:42
+#: app/views/people/edit.rhtml:41 app/views/people/edit.rhtml:44
+#: app/views/sidebars/groups/_smart_group_new.rhtml:44
+#: app/views/sidebars/groups/_standard_group_new_container.rhtml:39
+#: app/views/subscriptions/browser.rhtml:35
 msgid "Cancel"
 msgstr ""
 
-#: app/helpers/calendar_helper.rb:102 app/views/calendar/_peek.rhtml:72
-#: app/views/calendar/edit.rhtml:82 app/views/calendar/list.rhtml:24
-#: app/views/calendar/show.rhtml:80 app/views/reports/_events.rhtml:18
-#: app/views/reports/_timezones.rhtml:22 app/views/syndication/_event.rhtml:16
+#: app/helpers/calendar_helper.rb:104 app/views/calendar/_peek.rhtml:74
+#: app/views/calendar/edit.rhtml:84 app/views/calendar/list.rhtml:26
+#: app/views/calendar/show.rhtml:82 app/views/reports/_events.rhtml:20
+#: app/views/reports/_timezones.rhtml:24 app/views/syndication/_event.rhtml:18
 msgid "Time"
 msgstr ""
 
-#: app/helpers/calendar_helper.rb:103
+#: app/helpers/calendar_helper.rb:105
 msgid "Events"
 msgstr ""
 
-#: app/helpers/calendar_helper.rb:109 app/views/calendar/_peek.rhtml:74
-#: app/views/calendar/list.rhtml:68 app/views/calendar/show.rhtml:82
-#: app/views/reports/_events.rhtml:59 app/views/syndication/_event.rhtml:18
+#: app/helpers/calendar_helper.rb:111 app/views/calendar/_peek.rhtml:76
+#: app/views/calendar/list.rhtml:70 app/views/calendar/show.rhtml:84
+#: app/views/reports/_events.rhtml:61 app/views/syndication/_event.rhtml:20
 msgid "All Day"
 msgstr ""
 
-#: app/helpers/files_helper.rb:21 app/helpers/files_helper.rb:47
-#: app/helpers/files_helper.rb:73
+#: app/helpers/files_helper.rb:23 app/helpers/files_helper.rb:49
+#: app/helpers/files_helper.rb:75
 msgid "Show Preview"
 msgstr ""
 
-#: app/helpers/files_helper.rb:24 app/helpers/files_helper.rb:50
-#: app/helpers/files_helper.rb:76
+#: app/helpers/files_helper.rb:26 app/helpers/files_helper.rb:52
+#: app/helpers/files_helper.rb:78
 msgid "Hide Preview"
 msgstr ""
 
-#: app/helpers/mail_helper.rb:51
+#: app/helpers/mail_helper.rb:53
 msgid "Unavailable"
 msgstr ""
 
-#: app/views/admin/login.rhtml:12
+#: app/views/admin/login.rhtml:14
 msgid "admin login"
 msgstr ""
 
-#: app/views/authenticate/affiliate_login.rhtml:28
+#: app/views/authenticate/affiliate_login.rhtml:30
 msgid "Subdomain"
 msgstr ""
 
-#: app/views/authenticate/affiliate_login.rhtml:36
-#: app/views/authenticate/login.rhtml:40
-#: app/views/authenticate/reset_password.rhtml:43
-#: app/views/user/connect.rhtml:38
+#: app/views/authenticate/affiliate_login.rhtml:38
+#: app/views/authenticate/login.rhtml:43
+#: app/views/authenticate/reset_password.rhtml:45
+#: app/views/facebook/login.rhtml:51 app/views/user/connect.rhtml:40
 msgid "Username"
 msgstr ""
 
-#: app/views/authenticate/affiliate_login.rhtml:44
-#: app/views/authenticate/login.rhtml:48
-#: app/views/authenticate/verify_reset_password.rhtml:38
-#: app/views/user/connect.rhtml:42
+#: app/views/authenticate/affiliate_login.rhtml:46
+#: app/views/authenticate/login.rhtml:51
+#: app/views/authenticate/verify_reset_password.rhtml:40
+#: app/views/facebook/login.rhtml:59 app/views/user/connect.rhtml:44
 msgid "Password"
 msgstr ""
 
-#: app/views/authenticate/affiliate_login.rhtml:58
-#: app/views/authenticate/login.rhtml:62
+#: app/views/authenticate/affiliate_login.rhtml:60
+#: app/views/authenticate/login.rhtml:65
 msgid "Remember my password for 2 weeks"
 msgstr ""
 
-#: app/views/authenticate/affiliate_login.rhtml:63
-#: app/views/authenticate/login.rhtml:67
+#: app/views/authenticate/affiliate_login.rhtml:65
+#: app/views/authenticate/login.rhtml:70
 msgid " Sign In "
 msgstr ""
 
-#: app/views/authenticate/login.rhtml:70
+#: app/views/authenticate/login.rhtml:73 app/views/facebook/login.rhtml:77
 msgid "Reset your password"
 msgstr ""
 
-#: app/views/authenticate/reset_password.rhtml:13
-#: app/views/authenticate/reset_password.rhtml:29
+#: app/views/authenticate/reset_password.rhtml:15
+#: app/views/authenticate/reset_password.rhtml:31
 msgid "Password Recovery"
 msgstr ""
 
-#: app/views/authenticate/reset_password.rhtml:32
+#: app/views/authenticate/reset_password.rhtml:34
 msgid "Login"
 msgstr ""
 
-#: app/views/authenticate/reset_password.rhtml:51
-#: app/views/authenticate/verify_reset_password.rhtml:13
-#: app/views/authenticate/verify_reset_password.rhtml:29
+#: app/views/authenticate/reset_password.rhtml:53
+#: app/views/authenticate/verify_reset_password.rhtml:15
+#: app/views/authenticate/verify_reset_password.rhtml:31
 msgid "Reset Password"
 msgstr ""
 
-#: app/views/authenticate/verify_reset_password.rhtml:46
+#: app/views/authenticate/verify_reset_password.rhtml:48
 msgid "Password Confirmation"
 msgstr ""
 
-#: app/views/authenticate/verify_reset_password.rhtml:55
+#: app/views/authenticate/verify_reset_password.rhtml:57
 msgid "Reset Password + Sign In"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:10
+#: app/views/bookmarks/_bookmarklet.rhtml:12
 msgid "Browser Bookmarklet"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:15
+#: app/views/bookmarks/_bookmarklet.rhtml:17
 msgid "What is a bookmarklet?"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:16
+#: app/views/bookmarks/_bookmarklet.rhtml:18
 msgid "A link you add to your browser's bookmarks toolbar."
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:18
+#: app/views/bookmarks/_bookmarklet.rhtml:20
 msgid "And what does it do?"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:19
+#: app/views/bookmarks/_bookmarklet.rhtml:21
 msgid ""
 "This bookmarklet helps you quickly bookmark a page while you're browsing the "
 "web."
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:22
+#: app/views/bookmarks/_bookmarklet.rhtml:24
 msgid "Okay, I want it"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:24
+#: app/views/bookmarks/_bookmarklet.rhtml:26
 msgid "Drag this link up to your bookmarks toolbar"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:25
+#: app/views/bookmarks/_bookmarklet.rhtml:27
 msgid "+Bookmark"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:28
+#: app/views/bookmarks/_bookmarklet.rhtml:30
 msgid "You're done"
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:29
+#: app/views/bookmarks/_bookmarklet.rhtml:31
 msgid "Just click it when you want to bookmark a page you're looking at."
 msgstr ""
 
-#: app/views/bookmarks/_bookmarklet.rhtml:35
-#: app/views/calendar/_overlay_users.rhtml:35 app/views/lists/_edit.rhtml:39
-#: app/views/lists/_tools.rhtml:70 app/views/subscriptions/browser.rhtml:43
-#: app/views/user/connect.rhtml:72
+#: app/views/bookmarks/_bookmarklet.rhtml:37
+#: app/views/calendar/_overlay_users.rhtml:37 app/views/lists/_edit.rhtml:41
+#: app/views/lists/_tools.rhtml:72 app/views/mail/_tools.rhtml:36
+#: app/views/subscriptions/browser.rhtml:45 app/views/user/connect.rhtml:74
 msgid "Done"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:12 app/views/bookmarks/show.rhtml:45
-#: app/views/syndication/_bookmark.rhtml:15
+#: app/views/bookmarks/_peek.rhtml:14 app/views/bookmarks/show.rhtml:37
+#: app/views/syndication/_bookmark.rhtml:17
 msgid "Save Bookmark"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:16 app/views/bookmarks/show.rhtml:24
-#: app/views/syndication/_bookmark.rhtml:20
+#: app/views/bookmarks/_peek.rhtml:18 app/views/bookmarks/show.rhtml:22
+#: app/views/syndication/_bookmark.rhtml:21
 msgid "Info"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:17 app/views/bookmarks/show.rhtml:25
+#: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "Bookmarked by %{i18n_bookmark_user_count} users"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:17 app/views/bookmarks/show.rhtml:25
+#: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "first by %{i18n_bookmark_first_user}"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:17 app/views/bookmarks/show.rhtml:25
-#: app/views/files/service.rhtml:46 app/views/reports/_notifications.rhtml:41
+#: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
+#: app/views/facebook/index.rhtml:36 app/views/files/service.rhtml:48
+#: app/views/reports/_notifications.rhtml:43
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "%{i18n_time_ago_in_words} ago"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:18 app/views/bookmarks/show.rhtml:26
-#: app/views/files/_peek.rhtml:16 app/views/files/_service_peek.rhtml:16
-#: app/views/files/_strongspace_peek.rhtml:16
-#: app/views/files/service_show.rhtml:28 app/views/files/show.rhtml:34
-#: app/views/files/strongspace_show.rhtml:28
-#: app/views/syndication/_bookmark.rhtml:22
-#: app/views/syndication/_file.rhtml:18
-#: app/views/syndication/_file_service.rhtml:18
-msgid "Date Created"
-msgstr ""
-
-#: app/views/bookmarks/_peek.rhtml:20 app/views/bookmarks/show.rhtml:28
+#: app/views/bookmarks/_peek.rhtml:20 app/views/bookmarks/show.rhtml:24
 #: app/views/files/_peek.rhtml:18 app/views/files/_service_peek.rhtml:18
-#: app/views/files/_strongspace_peek.rhtml:18 app/views/files/list.rhtml:28
-#: app/views/files/service.rhtml:28 app/views/files/service_show.rhtml:30
-#: app/views/files/show.rhtml:36 app/views/files/strongspace.rhtml:28
-#: app/views/files/strongspace_show.rhtml:30 app/views/lists/index.rhtml:25
-#: app/views/reports/_files.rhtml:22 app/views/reports/_lists.rhtml:19
+#: app/views/files/_strongspace_peek.rhtml:18
+#: app/views/files/service_show.rhtml:30 app/views/files/show.rhtml:36
+#: app/views/files/strongspace_show.rhtml:30
 #: app/views/syndication/_bookmark.rhtml:24
 #: app/views/syndication/_file.rhtml:20
 #: app/views/syndication/_file_service.rhtml:20
+msgid "Date Created"
+msgstr ""
+
+#: app/views/bookmarks/_peek.rhtml:22 app/views/bookmarks/show.rhtml:26
+#: app/views/files/_peek.rhtml:20 app/views/files/_service_peek.rhtml:20
+#: app/views/files/_strongspace_peek.rhtml:20 app/views/files/list.rhtml:30
+#: app/views/files/service.rhtml:30 app/views/files/service_show.rhtml:32
+#: app/views/files/show.rhtml:38 app/views/files/strongspace.rhtml:30
+#: app/views/files/strongspace_show.rhtml:32 app/views/lists/index.rhtml:27
+#: app/views/reports/_files.rhtml:24 app/views/reports/_lists.rhtml:21
+#: app/views/syndication/_bookmark.rhtml:27
+#: app/views/syndication/_file.rhtml:22
+#: app/views/syndication/_file_service.rhtml:22
 msgid "Date Modified"
 msgstr ""
 
-#: app/views/bookmarks/_peek.rhtml:23 app/views/bookmarks/edit.rhtml:37
-#: app/views/bookmarks/show.rhtml:31 app/views/calendar/_peek.rhtml:128
-#: app/views/calendar/edit.rhtml:231 app/views/calendar/show.rhtml:138
-#: app/views/files/_peek.rhtml:21 app/views/files/edit.rhtml:36
-#: app/views/files/show.rhtml:39
-#: app/views/people/_edit_contact_information.rhtml:181
-#: app/views/people/_peek.rhtml:101 app/views/people/show.rhtml:105
-#: app/views/people/show.rhtml:131 app/views/syndication/_bookmark.rhtml:27
-#: app/views/syndication/_event.rhtml:60 app/views/syndication/_file.rhtml:25
-#: app/views/syndication/_person.rhtml:90
+#: app/views/bookmarks/_peek.rhtml:25 app/views/bookmarks/edit.rhtml:39
+#: app/views/bookmarks/show.rhtml:29 app/views/calendar/_peek.rhtml:130
+#: app/views/calendar/edit.rhtml:233 app/views/calendar/show.rhtml:140
+#: app/views/files/_peek.rhtml:23 app/views/files/edit.rhtml:38
+#: app/views/files/show.rhtml:41
+#: app/views/people/_edit_contact_information.rhtml:202
+#: app/views/people/_peek.rhtml:109 app/views/people/show.rhtml:110
+#: app/views/people/show.rhtml:136 app/views/syndication/_bookmark.rhtml:31
+#: app/views/syndication/_event.rhtml:62 app/views/syndication/_file.rhtml:27
+#: app/views/syndication/_person.rhtml:92
 msgid "Notes"
 msgstr ""
 
-#: app/views/bookmarks/_sync.rhtml:10 app/views/bookmarks/_toolbar.rhtml:30
+#: app/views/bookmarks/_sync.rhtml:12 app/views/bookmarks/_toolbar.rhtml:32
 msgid "Sync Bookmarks with del.icio.us"
 msgstr ""
 
-#: app/views/bookmarks/_sync.rhtml:17 app/views/bookmarks/edit.rhtml:53
-#: app/views/calendar/_peek.rhtml:60 app/views/calendar/edit.rhtml:248
-#: app/views/guest/edit.rhtml:56 app/views/lists/_edit.rhtml:16
-#: app/views/people/edit.rhtml:38
-#: app/views/sidebars/groups/_smart_group_new.rhtml:43
-#: app/views/sidebars/groups/_standard_group_new_container.rhtml:38
+#: app/views/bookmarks/_sync.rhtml:19 app/views/bookmarks/edit.rhtml:55
+#: app/views/calendar/_peek.rhtml:62 app/views/calendar/edit.rhtml:250
+#: app/views/guest/edit.rhtml:58 app/views/lists/_edit.rhtml:18
+#: app/views/mail_alias/_create.rhtml:37 app/views/people/edit.rhtml:40
+#: app/views/sidebars/groups/_smart_group_new.rhtml:45
+#: app/views/sidebars/groups/_standard_group_new_container.rhtml:40
 msgid "Save"
 msgstr ""
 
-#: app/views/bookmarks/_toolbar.rhtml:12 app/views/calendar/_toolbar.rhtml:12
-#: app/views/calendar/_toolbar.rhtml:14 app/views/files/_toolbar.rhtml:16
-#: app/views/files/_toolbar.rhtml:18 app/views/lists/_toolbar.rhtml:12
-#: app/views/lists/_toolbar.rhtml:58 app/views/people/_toolbar.rhtml:15
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:25
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:38
-#: app/views/sidebars/groups/connect/_connect.rhtml:32
-#: app/views/sidebars/groups/files/_files.rhtml:18
-#: app/views/sidebars/groups/files/_files.rhtml:49
-#: app/views/sidebars/groups/mail/_mail.rhtml:45
-#: app/views/sidebars/groups/people/_people.rhtml:31
+#: app/views/bookmarks/_toolbar.rhtml:14 app/views/calendar/_toolbar.rhtml:14
+#: app/views/calendar/_toolbar.rhtml:16 app/views/files/_toolbar.rhtml:18
+#: app/views/files/_toolbar.rhtml:20 app/views/lists/_toolbar.rhtml:14
+#: app/views/lists/_toolbar.rhtml:60 app/views/people/_toolbar.rhtml:17
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:27
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:40
+#: app/views/sidebars/groups/connect/_connect.rhtml:34
+#: app/views/sidebars/groups/files/_files.rhtml:20
+#: app/views/sidebars/groups/files/_files.rhtml:51
+#: app/views/sidebars/groups/mail/_mail.rhtml:50
+#: app/views/sidebars/groups/people/_people.rhtml:33
 msgid "New"
 msgstr ""
 
-#: app/views/bookmarks/_toolbar.rhtml:15 app/views/calendar/_toolbar.rhtml:17
-#: app/views/connect/_toolbar.rhtml:12 app/views/files/_toolbar.rhtml:22
-#: app/views/lists/_toolbar.rhtml:15 app/views/mail/_toolbar.rhtml:15
-#: app/views/people/_toolbar.rhtml:18
+#: app/views/bookmarks/_toolbar.rhtml:17 app/views/calendar/_toolbar.rhtml:19
+#: app/views/connect/_toolbar.rhtml:14 app/views/files/_toolbar.rhtml:24
+#: app/views/lists/_toolbar.rhtml:17 app/views/mail/_toolbar.rhtml:17
+#: app/views/people/_toolbar.rhtml:20
 msgid "Show New"
 msgstr ""
 
-#: app/views/bookmarks/_toolbar.rhtml:18 app/views/calendar/_toolbar.rhtml:20
-#: app/views/connect/_toolbar.rhtml:15 app/views/files/_toolbar.rhtml:25
-#: app/views/lists/_toolbar.rhtml:18 app/views/mail/_toolbar.rhtml:18
-#: app/views/people/_toolbar.rhtml:21
+#: app/views/bookmarks/_toolbar.rhtml:20 app/views/calendar/_toolbar.rhtml:22
+#: app/views/connect/_toolbar.rhtml:17 app/views/files/_toolbar.rhtml:27
+#: app/views/lists/_toolbar.rhtml:20 app/views/mail/_toolbar.rhtml:20
+#: app/views/people/_toolbar.rhtml:23
 msgid "Show All"
 msgstr ""
 
-#: app/views/bookmarks/_toolbar.rhtml:21 app/views/calendar/_toolbar.rhtml:23
-#: app/views/comments/_comment.rhtml:38 app/views/files/_toolbar.rhtml:29
-#: app/views/files/_toolbar.rhtml:31 app/views/lists/_toolbar.rhtml:52
-#: app/views/partials/_menu_items.rhtml:50 app/views/people/_toolbar.rhtml:24
+#: app/views/bookmarks/_toolbar.rhtml:23 app/views/calendar/_toolbar.rhtml:25
+#: app/views/comments/_comment.rhtml:40 app/views/files/_toolbar.rhtml:31
+#: app/views/files/_toolbar.rhtml:33 app/views/lists/_toolbar.rhtml:54
+#: app/views/partials/_menu_items.rhtml:52 app/views/people/_toolbar.rhtml:26
 msgid "Edit"
 msgstr ""
 
-#: app/views/bookmarks/_toolbar.rhtml:33
+#: app/views/bookmarks/_toolbar.rhtml:35
 msgid "Get the Joyent Bookmarks Bookmarklet"
 msgstr ""
 
-#: app/views/bookmarks/edit.rhtml:16
+#: app/views/bookmarks/edit.rhtml:18
 msgid "Edit Bookmark"
 msgstr ""
 
-#: app/views/bookmarks/edit.rhtml:18
+#: app/views/bookmarks/edit.rhtml:20
 msgid "New Bookmark"
 msgstr ""
 
-#: app/views/bookmarks/edit.rhtml:25 app/views/people/_peek.rhtml:60
-#: app/views/people/show.rhtml:67 app/views/syndication/_person.rhtml:42
+#: app/views/bookmarks/edit.rhtml:27 app/views/bookmarks/list.rhtml:34
+#: app/views/people/_peek.rhtml:68 app/views/people/show.rhtml:72
+#: app/views/syndication/_person.rhtml:44
 msgid "Address"
 msgstr ""
 
-#: app/views/bookmarks/edit.rhtml:31 app/views/bookmarks/list.rhtml:30
-#: app/views/connect/list.rhtml:25 app/views/reports/_bookmarks.rhtml:21
-#: app/views/reports/_items.rhtml:19
+#: app/views/bookmarks/edit.rhtml:33 app/views/bookmarks/list.rhtml:33
+#: app/views/connect/list.rhtml:27 app/views/reports/_bookmarks.rhtml:23
+#: app/views/reports/_items.rhtml:21
 msgid "Title"
 msgstr ""
 
-#: app/views/bookmarks/edit.rhtml:55 app/views/calendar/edit.rhtml:250
-#: app/views/files/create.rhtml:54 app/views/files/strongspace_create.rhtml:34
-#: app/views/lists/new.rhtml:41 app/views/people/edit.rhtml:41
+#: app/views/bookmarks/edit.rhtml:57 app/views/calendar/edit.rhtml:252
+#: app/views/files/create.rhtml:56 app/views/files/strongspace_create.rhtml:36
+#: app/views/lists/new.rhtml:43 app/views/people/edit.rhtml:43
 msgid "Create"
 msgstr ""
 
-#: app/views/bookmarks/list.rhtml:29 app/views/reports/_bookmarks.rhtml:20
+#: app/views/bookmarks/list.rhtml:32 app/views/reports/_bookmarks.rhtml:22
 msgid "Site Image"
 msgstr ""
 
-#: app/views/bookmarks/list.rhtml:31 app/views/reports/_bookmarks.rhtml:22
+#: app/views/bookmarks/list.rhtml:35 app/views/reports/_bookmarks.rhtml:24
 msgid "Date Added"
 msgstr ""
 
-#: app/views/bookmarks/list.rhtml:33 app/views/reports/_bookmarks.rhtml:24
+#: app/views/bookmarks/list.rhtml:37 app/views/reports/_bookmarks.rhtml:26
 msgid "Owner"
 msgstr ""
 
-#: app/views/bookmarks/list.rhtml:35 app/views/reports/_bookmarks.rhtml:26
+#: app/views/bookmarks/list.rhtml:39 app/views/reports/_bookmarks.rhtml:28
 msgid "Link"
 msgstr ""
 
-#: app/views/bookmarks/list.rhtml:62 app/views/bookmarks/show.rhtml:14
-#: app/views/reports/_bookmarks.rhtml:51
+#: app/views/bookmarks/list.rhtml:67 app/views/bookmarks/show.rhtml:16
+#: app/views/reports/_bookmarks.rhtml:53
 msgid "Go"
 msgstr ""
 
-#: app/views/bookmarks/list.rhtml:65 app/views/calendar/list.rhtml:75
-#: app/views/connect/list.rhtml:47 app/views/files/list.rhtml:52
-#: app/views/files/service.rhtml:52 app/views/files/strongspace.rhtml:52
-#: app/views/lists/index.rhtml:42 app/views/mail/list.rhtml:69
-#: app/views/people/list.rhtml:63 app/views/reports/_bookmarks.rhtml:54
-#: app/views/reports/_comments.rhtml:45 app/views/reports/_events.rhtml:66
-#: app/views/reports/_files.rhtml:44 app/views/reports/_items.rhtml:39
-#: app/views/reports/_lists.rhtml:33 app/views/reports/_messages.rhtml:50
-#: app/views/reports/_notifications.rhtml:51
-#: app/views/reports/_people.rhtml:50 app/views/reports/_timezones.rhtml:43
+#: app/views/bookmarks/list.rhtml:70 app/views/calendar/list.rhtml:77
+#: app/views/connect/list.rhtml:49 app/views/files/list.rhtml:54
+#: app/views/files/service.rhtml:54 app/views/files/strongspace.rhtml:54
+#: app/views/lists/index.rhtml:44 app/views/mail/list.rhtml:79
+#: app/views/people/list.rhtml:65 app/views/reports/_bookmarks.rhtml:56
+#: app/views/reports/_comments.rhtml:47 app/views/reports/_events.rhtml:68
+#: app/views/reports/_files.rhtml:46 app/views/reports/_items.rhtml:41
+#: app/views/reports/_lists.rhtml:35 app/views/reports/_messages.rhtml:52
+#: app/views/reports/_notifications.rhtml:53
+#: app/views/reports/_people.rhtml:52 app/views/reports/_timezones.rhtml:45
 msgid "Details"
 msgstr ""
 
-#: app/views/calendar/_import.rhtml:10
+#: app/views/calendar/_import.rhtml:12
 msgid "Import events from an iCalendar file (.ics)"
 msgstr ""
 
-#: app/views/calendar/_import.rhtml:18
+#: app/views/calendar/_import.rhtml:20
 msgid "Add the events to"
 msgstr ""
 
-#: app/views/calendar/_import.rhtml:23
+#: app/views/calendar/_import.rhtml:25
 msgid "An existing calendar"
 msgstr ""
 
-#: app/views/calendar/_import.rhtml:33
+#: app/views/calendar/_import.rhtml:35
 msgid "A new calendar"
 msgstr ""
 
-#: app/views/calendar/_import.rhtml:37 app/views/calendar/_peek.rhtml:50
-#: app/views/calendar/_peek.rhtml:54 app/views/calendar/_toolbar.rhtml:47
-#: app/views/calendar/show.rhtml:60 app/views/calendar/show.rhtml:64
+#: app/views/calendar/_import.rhtml:39 app/views/calendar/_peek.rhtml:52
+#: app/views/calendar/_peek.rhtml:56 app/views/calendar/_toolbar.rhtml:49
+#: app/views/calendar/show.rhtml:62 app/views/calendar/show.rhtml:66
 msgid "New Calendar"
 msgstr ""
 
-#: app/views/calendar/_import.rhtml:43 app/views/lists/_import.rhtml:18
-#: app/views/people/_import.rhtml:20
+#: app/views/calendar/_import.rhtml:45 app/views/lists/_import.rhtml:20
+#: app/views/people/_import.rhtml:22
 msgid "Import"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:18
+#: app/views/calendar/_list_range_selector.rhtml:20
 msgid "4 Weeks Ago"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:20
+#: app/views/calendar/_list_range_selector.rhtml:22
 msgid "1 Week Ago"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:22
+#: app/views/calendar/_list_range_selector.rhtml:24
 msgid "Yesterday"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:24
-#: app/views/calendar/_list_range_selector.rhtml:29
-#: app/views/calendar/_toolbar.rhtml:41 app/views/calendar/edit.rhtml:71
-#: app/views/reports/_events.rhtml:32
+#: app/views/calendar/_list_range_selector.rhtml:26
+#: app/views/calendar/_list_range_selector.rhtml:31
+#: app/views/calendar/_toolbar.rhtml:43 app/views/calendar/edit.rhtml:73
+#: app/views/reports/_events.rhtml:34
 msgid "Today"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:26
+#: app/views/calendar/_list_range_selector.rhtml:28
 msgid "to"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:31
+#: app/views/calendar/_list_range_selector.rhtml:33
 msgid "Tomorrow"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:33
+#: app/views/calendar/_list_range_selector.rhtml:35
 msgid "1 Week From Now"
 msgstr ""
 
-#: app/views/calendar/_list_range_selector.rhtml:35
+#: app/views/calendar/_list_range_selector.rhtml:37
 msgid "4 Weeks From Now"
 msgstr ""
 
-#: app/views/calendar/_overlay_color_key.rhtml:12
+#: app/views/calendar/_overlay_color_key.rhtml:14
 msgid "Key"
 msgstr ""
 
-#: app/views/calendar/_overlay_users.rhtml:10
+#: app/views/calendar/_overlay_users.rhtml:12
 msgid "Overlaid Calendars"
 msgstr ""
 
-#: app/views/calendar/_overlay_users.rhtml:13
+#: app/views/calendar/_overlay_users.rhtml:15
 msgid "No calendars overlayed"
 msgstr ""
 
-#: app/views/calendar/_overlay_users.rhtml:22
+#: app/views/calendar/_overlay_users.rhtml:24
 msgid "Click to Overlay"
 msgstr ""
 
-#: app/views/calendar/_overlay_users.rhtml:25
+#: app/views/calendar/_overlay_users.rhtml:27
 msgid "All calendars overlayed"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:14 app/views/calendar/show.rhtml:24
+#: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
 msgid ""
 "You have <strong>%{i18n_accepted_declined}</strong> this invitation from "
 "<strong>%{i18n_inviter}</strong>."
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:14 app/views/calendar/show.rhtml:24
+#: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
 msgid "accepted"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:14 app/views/calendar/show.rhtml:24
+#: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
 msgid "declined"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
+#: app/views/calendar/_peek.rhtml:18 app/views/calendar/show.rhtml:28
 msgid "<strong>%{i18n_event_inviter}</strong> has invited you to this event."
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:22 app/views/calendar/show.rhtml:32
+#: app/views/calendar/_peek.rhtml:24 app/views/calendar/show.rhtml:34
 msgid "Decline"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:28 app/views/calendar/show.rhtml:38
+#: app/views/calendar/_peek.rhtml:30 app/views/calendar/show.rhtml:40
 msgid "Accept"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:34 app/views/calendar/show.rhtml:44
+#: app/views/calendar/_peek.rhtml:36 app/views/calendar/show.rhtml:46
 msgid ""
 "To accept, select the calendar into which you would like this event saved"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:39 app/views/calendar/show.rhtml:49
+#: app/views/calendar/_peek.rhtml:41 app/views/calendar/show.rhtml:51
 msgid "Your Calendars"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:69 app/views/calendar/edit.rhtml:53
-#: app/views/calendar/show.rhtml:78 app/views/mail/list.rhtml:35
-#: app/views/mail/show.rhtml:59 app/views/reports/_messages.rhtml:21
-#: app/views/syndication/_event.rhtml:13
-#: app/views/syndication/_message.rhtml:24
+#: app/views/calendar/_peek.rhtml:71 app/views/calendar/edit.rhtml:55
+#: app/views/calendar/show.rhtml:80 app/views/mail/list.rhtml:45
+#: app/views/mail/show.rhtml:65 app/views/reports/_messages.rhtml:23
+#: app/views/syndication/_event.rhtml:15
+#: app/views/syndication/_message.rhtml:26
 msgid "Date"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:85 app/views/calendar/edit.rhtml:137
-#: app/views/calendar/show.rhtml:92 app/views/syndication/_event.rhtml:29
+#: app/views/calendar/_peek.rhtml:87 app/views/calendar/edit.rhtml:139
+#: app/views/calendar/show.rhtml:94 app/views/syndication/_event.rhtml:31
 msgid "Repeat"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:89 app/views/calendar/show.rhtml:100
+#: app/views/calendar/_peek.rhtml:91 app/views/calendar/show.rhtml:102
 msgid "until"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:92 app/views/calendar/edit.rhtml:150
-#: app/views/calendar/show.rhtml:103 app/views/syndication/_event.rhtml:35
+#: app/views/calendar/_peek.rhtml:94 app/views/calendar/edit.rhtml:152
+#: app/views/calendar/show.rhtml:105 app/views/syndication/_event.rhtml:37
 msgid "Forever"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:98 app/views/calendar/edit.rhtml:204
-#: app/views/calendar/show.rhtml:108 app/views/files/service_show.rhtml:23
-#: app/views/files/show.rhtml:29 app/views/files/strongspace_show.rhtml:23
-#: app/views/syndication/_event.rhtml:40
+#: app/views/calendar/_peek.rhtml:100 app/views/calendar/edit.rhtml:206
+#: app/views/calendar/show.rhtml:110 app/views/files/service_show.rhtml:25
+#: app/views/files/show.rhtml:31 app/views/files/strongspace_show.rhtml:25
+#: app/views/syndication/_event.rhtml:42
 msgid "Location"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:103 app/views/calendar/show.rhtml:116
-#: app/views/syndication/_event.rhtml:45
+#: app/views/calendar/_peek.rhtml:105 app/views/calendar/show.rhtml:118
+#: app/views/syndication/_event.rhtml:47
 msgid "Accepted By"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:108 app/views/calendar/show.rhtml:120
-#: app/views/syndication/_event.rhtml:50
+#: app/views/calendar/_peek.rhtml:110 app/views/calendar/show.rhtml:122
+#: app/views/syndication/_event.rhtml:52
 msgid "Declined By"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:113 app/views/calendar/show.rhtml:124
-#: app/views/syndication/_event.rhtml:55
+#: app/views/calendar/_peek.rhtml:115 app/views/calendar/show.rhtml:126
+#: app/views/syndication/_event.rhtml:57
 msgid "Pending Invitees"
 msgstr ""
 
-#: app/views/calendar/_peek.rhtml:118 app/views/calendar/edit.rhtml:215
-#: app/views/calendar/show.rhtml:129
+#: app/views/calendar/_peek.rhtml:120 app/views/calendar/edit.rhtml:217
+#: app/views/calendar/show.rhtml:131
 msgid "Alarm"
 msgstr ""
 
-#: app/views/calendar/_toolbar.rhtml:26 app/views/files/_toolbar.rhtml:36
-#: app/views/files/_toolbar.rhtml:38 app/views/lists/_toolbar.rhtml:21
-#: app/views/mail/_toolbar.rhtml:30
-#: app/views/toolbars/_copy_to_bookmarks.rhtml:14
-#: app/views/toolbars/_copy_to_contacts.rhtml:14
+#: app/views/calendar/_toolbar.rhtml:28 app/views/files/_toolbar.rhtml:38
+#: app/views/files/_toolbar.rhtml:40 app/views/lists/_toolbar.rhtml:23
+#: app/views/mail/_toolbar.rhtml:32
+#: app/views/toolbars/_copy_to_bookmarks.rhtml:16
+#: app/views/toolbars/_copy_to_contacts.rhtml:16
 msgid "Copy"
 msgstr ""
 
-#: app/views/calendar/_toolbar.rhtml:29 app/views/files/_toolbar.rhtml:43
-#: app/views/files/_toolbar.rhtml:45 app/views/lists/_toolbar.rhtml:24
-#: app/views/mail/_toolbar.rhtml:33
-#: app/views/sidebars/groups/_service_group_edit_move.rhtml:10
-#: app/views/sidebars/groups/_service_group_edit_move.rhtml:17
-#: app/views/sidebars/groups/_standard_group_edit_move.rhtml:10
-#: app/views/sidebars/groups/_standard_group_edit_move.rhtml:18
+#: app/views/calendar/_toolbar.rhtml:31 app/views/files/_toolbar.rhtml:45
+#: app/views/files/_toolbar.rhtml:47 app/views/lists/_toolbar.rhtml:26
+#: app/views/mail/_toolbar.rhtml:35
+#: app/views/sidebars/groups/_service_group_edit_move.rhtml:12
+#: app/views/sidebars/groups/_service_group_edit_move.rhtml:19
+#: app/views/sidebars/groups/_standard_group_edit_move.rhtml:12
+#: app/views/sidebars/groups/_standard_group_edit_move.rhtml:20
 msgid "Move"
 msgstr ""
 
-#: app/views/calendar/_toolbar.rhtml:35
+#: app/views/calendar/_toolbar.rhtml:37
 msgid "List View"
 msgstr ""
 
-#: app/views/calendar/_toolbar.rhtml:38
+#: app/views/calendar/_toolbar.rhtml:40
 msgid "Month View"
 msgstr ""
 
-#: app/views/calendar/_toolbar.rhtml:44
+#: app/views/calendar/_toolbar.rhtml:46
 msgid "Overlay Users"
 msgstr ""
 
-#: app/views/calendar/_toolbar.rhtml:47
+#: app/views/calendar/_toolbar.rhtml:49
 msgid "Import iCalendar"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:15
+#: app/views/calendar/edit.rhtml:17
 msgid "Edit Event"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:18 app/views/calendar/list.rhtml:86
+#: app/views/calendar/edit.rhtml:20 app/views/calendar/list.rhtml:88
 msgid "New Event"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:28 app/views/calendar/list.rhtml:25
-#: app/views/reports/_events.rhtml:19
+#: app/views/calendar/edit.rhtml:30 app/views/calendar/list.rhtml:27
+#: app/views/reports/_events.rhtml:21
 msgid "Event"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:39
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:40
-#: lib/i18n_do_not_include.rb:39
+#: app/views/calendar/edit.rhtml:41
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:42
+#: lib/i18n_do_not_include.rb:41
 msgid "Calendar"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:60 app/views/calendar/edit.rhtml:164
+#: app/views/calendar/edit.rhtml:62 app/views/calendar/edit.rhtml:166
 msgid "month"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:64 app/views/calendar/edit.rhtml:169
-#: app/views/people/_person_special_date.rhtml:24
+#: app/views/calendar/edit.rhtml:66 app/views/calendar/edit.rhtml:171
+#: app/views/people/_person_special_date.rhtml:26
 msgid "day"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:68 app/views/calendar/edit.rhtml:173
-#: app/views/people/_person_special_date.rhtml:28
+#: app/views/calendar/edit.rhtml:70 app/views/calendar/edit.rhtml:175
+#: app/views/people/_person_special_date.rhtml:30
 msgid "year"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:92
+#: app/views/calendar/edit.rhtml:94
 msgid "This is an <strong>all-day</strong> event"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:100
+#: app/views/calendar/edit.rhtml:102
 msgid "Start Time"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:120 app/views/syndication/_event.rhtml:24
+#: app/views/calendar/edit.rhtml:122 app/views/syndication/_event.rhtml:26
 msgid "Duration"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:124
+#: app/views/calendar/edit.rhtml:126
 msgid "Hours"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:126
+#: app/views/calendar/edit.rhtml:128
 msgid "Minutes"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:140 app/views/calendar/edit.rhtml:218
-#: app/views/people/show.rhtml:112 app/views/people/show.rhtml:116
-#: app/views/people/show.rhtml:120 app/views/people/show.rhtml:124
-#: app/views/people/show.rhtml:128 app/views/people/show.rhtml:132
-#: app/views/sidebars/groups/_smart_group_edit.rhtml:25
-#: app/views/sidebars/groups/_smart_group_edit.rhtml:35
-#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:15
+#: app/views/calendar/edit.rhtml:142 app/views/calendar/edit.rhtml:220
+#: app/views/people/show.rhtml:117 app/views/people/show.rhtml:121
+#: app/views/people/show.rhtml:125 app/views/people/show.rhtml:129
+#: app/views/people/show.rhtml:133 app/views/people/show.rhtml:137
+#: app/views/sidebars/groups/_smart_group_edit.rhtml:27
+#: app/views/sidebars/groups/_smart_group_edit.rhtml:37
+#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:17
 msgid "None"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:140
+#: app/views/calendar/edit.rhtml:142
 msgid "Daily"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:140
+#: app/views/calendar/edit.rhtml:142
 msgid "Weekly"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:140
+#: app/views/calendar/edit.rhtml:142
 msgid "Monthly"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:140
+#: app/views/calendar/edit.rhtml:142
 msgid "Yearly"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:159
+#: app/views/calendar/edit.rhtml:161
 msgid "End Date"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:218
+#: app/views/calendar/edit.rhtml:220
 msgid "15 minutes before"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:218
+#: app/views/calendar/edit.rhtml:220
 msgid "1 hour before"
 msgstr ""
 
-#: app/views/calendar/edit.rhtml:218
+#: app/views/calendar/edit.rhtml:220
 msgid "1 day before"
 msgstr ""
 
-#: app/views/calendar/list.rhtml:42 app/views/calendar/list.rhtml:45
-#: app/views/reports/_events.rhtml:36 app/views/reports/_events.rhtml:39
+#: app/views/calendar/list.rhtml:44 app/views/calendar/list.rhtml:47
+#: app/views/reports/_events.rhtml:38 app/views/reports/_events.rhtml:41
 msgid "Time Chart"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:26
+#: app/views/calendar/month.rhtml:28
 msgid "Sunday"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:27
+#: app/views/calendar/month.rhtml:29
 msgid "Monday"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:28
+#: app/views/calendar/month.rhtml:30
 msgid "Tuesday"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:29
+#: app/views/calendar/month.rhtml:31
 msgid "Wednesday"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:30
+#: app/views/calendar/month.rhtml:32
 msgid "Thursday"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:31
+#: app/views/calendar/month.rhtml:33
 msgid "Friday"
 msgstr ""
 
-#: app/views/calendar/month.rhtml:32
+#: app/views/calendar/month.rhtml:34
 msgid "Saturday"
 msgstr ""
 
-#: app/views/calendar/show.rhtml:69
+#: app/views/calendar/show.rhtml:71
 msgid "   Cancel   "
 msgstr ""
 
-#: app/views/calendar/show.rhtml:69
+#: app/views/calendar/show.rhtml:71
 msgid "   Save   "
 msgstr ""
 
-#: app/views/calendar/show.rhtml:96
+#: app/views/calendar/show.rhtml:98
 msgid "every"
 msgstr ""
 
-#: app/views/comments/_comment.rhtml:17
+#: app/views/comments/_comment.rhtml:19
 msgid "Update"
 msgstr ""
 
-#: app/views/comments/_comment.rhtml:31
+#: app/views/comments/_comment.rhtml:33
 msgid "%{i18n_the_time_in_words} ago by"
 msgstr ""
 
-#: app/views/comments/_comment.rhtml:42 app/views/lists/_toolbar.rhtml:49
-#: app/views/people/_person_photo.rhtml:19
-#: app/views/people/confirm_user_delete.rhtml:41
-#: app/views/sidebars/groups/_standard_group_edit_delete.rhtml:11
-#: app/views/sidebars/groups/_strongspace_group_edit_delete.rhtml:11
-#: app/views/toolbars/_delete.rhtml:11 app/views/toolbars/_delete.rhtml:13
-#: app/views/toolbars/_delete.rhtml:15
+#: app/views/comments/_comment.rhtml:44 app/views/lists/_toolbar.rhtml:51
+#: app/views/people/_person_photo.rhtml:21
+#: app/views/people/confirm_user_delete.rhtml:43
+#: app/views/sidebars/groups/_standard_group_edit_delete.rhtml:13
+#: app/views/sidebars/groups/_strongspace_group_edit_delete.rhtml:13
+#: app/views/toolbars/_delete.rhtml:13 app/views/toolbars/_delete.rhtml:15
+#: app/views/toolbars/_delete.rhtml:17
 msgid "Delete"
 msgstr ""
 
-#: app/views/comments/_comment.rhtml:42
+#: app/views/comments/_comment.rhtml:44
 msgid "Delete this comment?"
 msgstr ""
 
-#: app/views/comments/_list.rhtml:11 app/views/syndication/_comments.rhtml:12
+#: app/views/comments/_list.rhtml:13 app/views/syndication/_comments.rhtml:14
 msgid "Comments"
 msgstr ""
 
-#: app/views/comments/_list.rhtml:19
+#: app/views/comments/_list.rhtml:21
 msgid "Said"
 msgstr ""
 
-#: app/views/comments/_list.rhtml:21
+#: app/views/comments/_list.rhtml:23
 msgid "  Post  "
 msgstr ""
 
-#: app/views/connect/_toolbar.rhtml:18
+#: app/views/connect/_toolbar.rhtml:20
 msgid "Save Search"
 msgstr ""
 
-#: app/views/connect/_toolbar.rhtml:18
+#: app/views/connect/_toolbar.rhtml:20
 msgid "Save this search for %{i18n_params_string} as a smart group"
 msgstr ""
 
-#: app/views/connect/events_list.rhtml:21
-#: app/views/partials/_calendar_list_header.rhtml:20
-#: app/views/partials/_month_header.rhtml:18
+#: app/views/connect/events_list.rhtml:23
+#: app/views/partials/_calendar_list_header.rhtml:22
+#: app/views/partials/_month_header.rhtml:20
 msgid "events"
 msgstr ""
 
-#: app/views/connect/list.rhtml:26 app/views/reports/_items.rhtml:20
+#: app/views/connect/list.rhtml:28 app/views/reports/_items.rhtml:22
 msgid "Application"
 msgstr ""
 
-#: app/views/connect/list.rhtml:27 app/views/reports/_items.rhtml:21
+#: app/views/connect/list.rhtml:29 app/views/reports/_items.rhtml:23
 msgid "Modified"
 msgstr ""
 
-#: app/views/files/_peek.rhtml:11 app/views/files/_service_peek.rhtml:11
-#: app/views/files/_strongspace_peek.rhtml:11
-#: app/views/files/service_show.rhtml:14 app/views/files/show.rhtml:20
-#: app/views/files/strongspace_show.rhtml:14
+#: app/views/facebook/login.rhtml:43
+msgid "Connector URL"
+msgstr ""
+
+#: app/views/facebook/login.rhtml:74
+msgid " Authenticate "
+msgstr ""
+
+#: app/views/files/_peek.rhtml:13 app/views/files/_service_peek.rhtml:13
+#: app/views/files/_strongspace_peek.rhtml:13
+#: app/views/files/service_show.rhtml:16 app/views/files/show.rhtml:22
+#: app/views/files/strongspace_show.rhtml:16
 msgid "Download"
 msgstr ""
 
-#: app/views/files/_toolbar.rhtml:50
+#: app/views/files/_toolbar.rhtml:52
 msgid "Email selected items as an attachment"
 msgstr ""
 
-#: app/views/files/_toolbar.rhtml:53 app/views/files/_toolbar.rhtml:57
-#: app/views/people/_edit_account_user.rhtml:97
-#: app/views/people/_peek.rhtml:48 app/views/people/show.rhtml:56
-#: app/views/people/show.rhtml:115 app/views/syndication/_person.rhtml:32
+#: app/views/files/_toolbar.rhtml:55 app/views/files/_toolbar.rhtml:59
+#: app/views/people/_edit_account_user.rhtml:99
+#: app/views/people/_peek.rhtml:50 app/views/people/show.rhtml:58
+#: app/views/people/show.rhtml:120 app/views/syndication/_person.rhtml:34
 msgid "Email"
 msgstr ""
 
-#: app/views/files/browser.rhtml:12 lib/i18n_do_not_include.rb:21
+#: app/views/files/browser.rhtml:14 lib/i18n_do_not_include.rb:23
 msgid "Folders"
 msgstr ""
 
-#: app/views/files/browser.rhtml:13
+#: app/views/files/browser.rhtml:15
 msgid "Files"
 msgstr ""
 
-#: app/views/files/browser.rhtml:21
+#: app/views/files/browser.rhtml:23
 msgid "Up one level"
 msgstr ""
 
-#: app/views/files/browser.rhtml:48
+#: app/views/files/browser.rhtml:50
 msgid "Current Folder"
 msgstr ""
 
-#: app/views/files/create.rhtml:13 app/views/files/strongspace_create.rhtml:13
+#: app/views/files/create.rhtml:15 app/views/files/strongspace_create.rhtml:15
 msgid "New File"
 msgstr ""
 
-#: app/views/files/create.rhtml:22 app/views/files/strongspace_create.rhtml:22
+#: app/views/files/create.rhtml:24 app/views/files/strongspace_create.rhtml:24
 msgid "Upload up to 5 files at once"
 msgstr ""
 
-#: app/views/files/create.rhtml:27 app/views/files/strongspace_create.rhtml:27
+#: app/views/files/create.rhtml:29 app/views/files/strongspace_create.rhtml:29
 msgid "File"
 msgstr ""
 
-#: app/views/files/create.rhtml:38 app/views/files/edit.rhtml:31
-#: app/views/lists/new.rhtml:26
-#: app/views/sidebars/groups/files/_files.rhtml:20
-#: app/views/sidebars/groups/files/_files.rhtml:51
-#: lib/i18n_do_not_include.rb:40
+#: app/views/files/create.rhtml:40 app/views/files/edit.rhtml:33
+#: app/views/lists/new.rhtml:28
+#: app/views/sidebars/groups/files/_files.rhtml:22
+#: app/views/sidebars/groups/files/_files.rhtml:53
+#: lib/i18n_do_not_include.rb:42
 msgid "Folder"
 msgstr ""
 
-#: app/views/files/edit.rhtml:13
+#: app/views/files/edit.rhtml:15
 msgid "Edit File"
 msgstr ""
 
-#: app/views/files/edit.rhtml:20 app/views/files/list.rhtml:26
-#: app/views/files/service.rhtml:26 app/views/files/strongspace.rhtml:26
-#: app/views/lists/_edit.rhtml:10 app/views/lists/index.rhtml:24
-#: app/views/lists/new.rhtml:20 app/views/reports/_files.rhtml:20
-#: app/views/reports/_lists.rhtml:18 app/views/reports/_timezones.rhtml:20
-#: app/views/sidebars/groups/_smart_group_edit_rename.rhtml:10
-#: app/views/sidebars/groups/_smart_group_new.rhtml:26
-#: app/views/sidebars/groups/_standard_group_new_container.rhtml:29
+#: app/views/files/edit.rhtml:22 app/views/files/list.rhtml:28
+#: app/views/files/service.rhtml:28 app/views/files/strongspace.rhtml:28
+#: app/views/lists/_edit.rhtml:12 app/views/lists/index.rhtml:26
+#: app/views/lists/new.rhtml:22 app/views/mail_alias/_create.rhtml:32
+#: app/views/reports/_files.rhtml:22 app/views/reports/_lists.rhtml:20
+#: app/views/reports/_timezones.rhtml:22
+#: app/views/sidebars/groups/_smart_group_edit_rename.rhtml:12
+#: app/views/sidebars/groups/_smart_group_new.rhtml:28
+#: app/views/sidebars/groups/_standard_group_new_container.rhtml:31
 msgid "Name"
 msgstr ""
 
-#: app/views/files/edit.rhtml:33 app/views/files/service_show.rhtml:25
-#: app/views/files/show.rhtml:31 app/views/files/strongspace_show.rhtml:25
+#: app/views/files/edit.rhtml:35 app/views/files/service_show.rhtml:27
+#: app/views/files/show.rhtml:33 app/views/files/strongspace_show.rhtml:27
 msgid "%{i18n_file_owner_name}'s"
 msgstr ""
 
-#: app/views/files/edit.rhtml:34 app/views/files/service_show.rhtml:26
-#: app/views/files/show.rhtml:32 app/views/files/strongspace_show.rhtml:26
+#: app/views/files/edit.rhtml:36 app/views/files/service_show.rhtml:28
+#: app/views/files/show.rhtml:34 app/views/files/strongspace_show.rhtml:28
 msgid "Files: %{i18n_file_folder_pathname}"
-msgstr ""
-
-#: app/views/files/list.rhtml:27 app/views/files/service.rhtml:27
-#: app/views/files/strongspace.rhtml:27 app/views/reports/_files.rhtml:21
-msgid "Size"
 msgstr ""
 
 #: app/views/files/list.rhtml:29 app/views/files/service.rhtml:29
 #: app/views/files/strongspace.rhtml:29 app/views/reports/_files.rhtml:23
+msgid "Size"
+msgstr ""
+
+#: app/views/files/list.rhtml:31 app/views/files/service.rhtml:31
+#: app/views/files/strongspace.rhtml:31 app/views/reports/_files.rhtml:25
 msgid "File Type"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:11
+#: app/views/guest/edit.rhtml:13
 msgid "Guest Preferences"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:19 app/views/people/_edit_account_guest.rhtml:18
-#: app/views/people/_edit_account_user.rhtml:22
+#: app/views/guest/edit.rhtml:21 app/views/people/_edit_account_guest.rhtml:20
+#: app/views/people/_edit_account_user.rhtml:24
 msgid "username"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:25 app/views/people/_edit_account_guest.rhtml:24
-#: app/views/people/_edit_account_user.rhtml:28
+#: app/views/guest/edit.rhtml:27 app/views/people/_edit_account_guest.rhtml:26
+#: app/views/people/_edit_account_user.rhtml:30
 msgid "password"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:29 app/views/people/_edit_account_user.rhtml:32
+#: app/views/guest/edit.rhtml:31 app/views/people/_edit_account_user.rhtml:34
 msgid "confirm password"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:35 app/views/people/_edit_account_guest.rhtml:30
-#: app/views/people/_edit_account_user.rhtml:40
+#: app/views/guest/edit.rhtml:37 app/views/people/_edit_account_guest.rhtml:32
+#: app/views/people/_edit_account_user.rhtml:42
 msgid "password recovery email address"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:42 app/views/people/_edit_account_guest.rhtml:42
-#: app/views/people/_edit_account_user.rhtml:71
+#: app/views/guest/edit.rhtml:44 app/views/people/_edit_account_guest.rhtml:44
+#: app/views/people/_edit_account_user.rhtml:73
 msgid "time zone"
 msgstr ""
 
-#: app/views/guest/edit.rhtml:49 app/views/people/_edit_account_guest.rhtml:49
-#: app/views/people/_edit_account_user.rhtml:65
+#: app/views/guest/edit.rhtml:51 app/views/people/_edit_account_guest.rhtml:51
+#: app/views/people/_edit_account_user.rhtml:67
 msgid "language"
 msgstr ""
 
-#: app/views/lists/_edit.rhtml:22
+#: app/views/lists/_edit.rhtml:24
 msgid "Columns"
 msgstr ""
 
-#: app/views/lists/_edit.rhtml:30
+#: app/views/lists/_edit.rhtml:32
 msgid "Add Column"
 msgstr ""
 
-#: app/views/lists/_edit.rhtml:35
+#: app/views/lists/_edit.rhtml:37
 msgid "Drag column headers below to change their order."
 msgstr ""
 
-#: app/views/lists/_import.rhtml:10
+#: app/views/lists/_import.rhtml:12
 msgid "Import an OPML file (.opml)"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:30 app/views/lists/_toolbar.rhtml:33
+#: app/views/lists/_toolbar.rhtml:32 app/views/lists/_toolbar.rhtml:35
 msgid "Import OPML"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:37
+#: app/views/lists/_toolbar.rhtml:39
 msgid "New Row"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:40
+#: app/views/lists/_toolbar.rhtml:42
 msgid "Undo"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:43
+#: app/views/lists/_toolbar.rhtml:45
 msgid "Move Up"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:44
+#: app/views/lists/_toolbar.rhtml:46
 msgid "Move Down"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:45
+#: app/views/lists/_toolbar.rhtml:47
 msgid "Outdent"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:46
+#: app/views/lists/_toolbar.rhtml:48
 msgid "Indent"
 msgstr ""
 
-#: app/views/lists/_toolbar.rhtml:55
+#: app/views/lists/_toolbar.rhtml:57 app/views/mail/_toolbar.rhtml:56
 msgid "Tools"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:20
+#: app/views/lists/_tools.rhtml:22
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:23
+#: app/views/lists/_tools.rhtml:25
 msgid "Special Values"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:31
+#: app/views/lists/_tools.rhtml:33
 msgid "Navigation"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:38
+#: app/views/lists/_tools.rhtml:40
 msgid "Editing"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:50
+#: app/views/lists/_tools.rhtml:52
 msgid "Checkboxes"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:52
+#: app/views/lists/_tools.rhtml:54
 msgid ""
 "When changing a column from Text to Checkbox the values 'true', 't', 'yes', "
 "'y', '1', and '2' will be checked."
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:54
+#: app/views/lists/_tools.rhtml:56
 msgid "Dates"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:56
+#: app/views/lists/_tools.rhtml:58
 msgid "Various ways of entering dates are supported, such as:"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:60
+#: app/views/lists/_tools.rhtml:62
 msgid "Numbers"
 msgstr ""
 
-#: app/views/lists/_tools.rhtml:62
+#: app/views/lists/_tools.rhtml:64
 msgid "A number cell with the value '+' will sum the values of its children."
 msgstr ""
 
-#: app/views/lists/new.rhtml:15
+#: app/views/lists/new.rhtml:17
 msgid "New List"
 msgstr ""
 
-#: app/views/lists/show.rhtml:21
+#: app/views/lists/show.rhtml:23
 msgid "Download As OPML"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:31
-#: app/views/mail/_compose_form_html.rhtml:29 app/views/mail/list.rhtml:32
-#: app/views/mail/show.rhtml:57 app/views/reports/_messages.rhtml:22
-#: app/views/syndication/_message.rhtml:12
+#: app/views/mail/_compose_form.rhtml:33
+#: app/views/mail/_compose_form_html.rhtml:31 app/views/mail/list.rhtml:42
+#: app/views/mail/show.rhtml:63 app/views/reports/_messages.rhtml:24
+#: app/views/syndication/_message.rhtml:14
 msgid "From"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:41
-#: app/views/mail/_compose_form_html.rhtml:39 app/views/mail/list.rhtml:30
-#: app/views/mail/show.rhtml:62 app/views/reports/_messages.rhtml:22
-#: app/views/syndication/_message.rhtml:18
+#: app/views/mail/_compose_form.rhtml:43
+#: app/views/mail/_compose_form_html.rhtml:41 app/views/mail/list.rhtml:40
+#: app/views/mail/show.rhtml:68 app/views/reports/_messages.rhtml:24
+#: app/views/syndication/_message.rhtml:20
 msgid "To"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:52 app/views/mail/_compose_form.rhtml:71
-#: app/views/mail/_compose_form.rhtml:91
-#: app/views/mail/_compose_form_html.rhtml:50
-#: app/views/mail/_compose_form_html.rhtml:69
-#: app/views/mail/_compose_form_html.rhtml:89
+#: app/views/mail/_compose_form.rhtml:54 app/views/mail/_compose_form.rhtml:73
+#: app/views/mail/_compose_form.rhtml:93
+#: app/views/mail/_compose_form_html.rhtml:52
+#: app/views/mail/_compose_form_html.rhtml:71
+#: app/views/mail/_compose_form_html.rhtml:91
 msgid "Add"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:60
-#: app/views/mail/_compose_form_html.rhtml:58 app/views/mail/show.rhtml:66
+#: app/views/mail/_compose_form.rhtml:62
+#: app/views/mail/_compose_form_html.rhtml:60 app/views/mail/show.rhtml:72
 msgid "Cc"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:72
-#: app/views/mail/_compose_form_html.rhtml:70
+#: app/views/mail/_compose_form.rhtml:74
+#: app/views/mail/_compose_form_html.rhtml:72
 msgid "Hide Cc"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:80
-#: app/views/mail/_compose_form_html.rhtml:78
+#: app/views/mail/_compose_form.rhtml:82
+#: app/views/mail/_compose_form_html.rhtml:80
 msgid "Bcc"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:92
-#: app/views/mail/_compose_form_html.rhtml:90
+#: app/views/mail/_compose_form.rhtml:94
+#: app/views/mail/_compose_form_html.rhtml:92
 msgid "Hide Bcc"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:102
-#: app/views/mail/_compose_form_html.rhtml:101
+#: app/views/mail/_compose_form.rhtml:104
+#: app/views/mail/_compose_form_html.rhtml:103
 msgid "Show Cc"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:104
-#: app/views/mail/_compose_form_html.rhtml:107
+#: app/views/mail/_compose_form.rhtml:106
+#: app/views/mail/_compose_form_html.rhtml:109
 msgid "Show Bcc"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:110
-#: app/views/mail/_compose_form_html.rhtml:114 app/views/mail/list.rhtml:34
-#: app/views/reports/_messages.rhtml:23
-#: app/views/syndication/_message.rhtml:26
+#: app/views/mail/_compose_form.rhtml:112
+#: app/views/mail/_compose_form_html.rhtml:116 app/views/mail/list.rhtml:44
+#: app/views/reports/_messages.rhtml:25
+#: app/views/syndication/_message.rhtml:28
 msgid "Subject"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:115
-#: app/views/mail/_compose_form_html.rhtml:119 app/views/mail/list.rhtml:28
-#: app/views/mail/show.rhtml:70 app/views/reports/_messages.rhtml:20
-#: app/views/syndication/_message.rhtml:29
+#: app/views/mail/_compose_form.rhtml:117
+#: app/views/mail/_compose_form_html.rhtml:121 app/views/mail/list.rhtml:38
+#: app/views/mail/show.rhtml:76 app/views/reports/_messages.rhtml:22
+#: app/views/syndication/_message.rhtml:31
 msgid "Attachments"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:140
+#: app/views/mail/_compose_form.rhtml:142
 msgid "Add Attachments"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:146
-#: app/views/mail/_compose_form.rhtml:170
-#: app/views/subscriptions/browser.rhtml:14
-#: app/views/subscriptions/browser.rhtml:38
+#: app/views/mail/_compose_form.rhtml:148
+#: app/views/mail/_compose_form.rhtml:172
+#: app/views/subscriptions/browser.rhtml:16
+#: app/views/subscriptions/browser.rhtml:40
 msgid "From Connector"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:151
-#: app/views/subscriptions/browser.rhtml:19
+#: app/views/mail/_compose_form.rhtml:153
+#: app/views/subscriptions/browser.rhtml:21
 msgid "From Your Computer"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:156
-#: app/views/subscriptions/browser.rhtml:24
+#: app/views/mail/_compose_form.rhtml:158
+#: app/views/subscriptions/browser.rhtml:26
 msgid "Select a file to upload"
 msgstr ""
 
-#: app/views/mail/_compose_form.rhtml:164
-#: app/views/subscriptions/browser.rhtml:32
+#: app/views/mail/_compose_form.rhtml:166
+#: app/views/subscriptions/browser.rhtml:34
 msgid "Attach"
-msgstr ""
-
-#: app/views/mail/_compose_form.rhtml:186
-#: app/views/mail/_compose_form_html.rhtml:154
-msgid "Send"
-msgstr ""
-
-#: app/views/mail/_compose_form.rhtml:187
-#: app/views/mail/_compose_form_html.rhtml:155
-msgid "Save in Drafts"
 msgstr ""
 
 #: app/views/mail/_compose_form.rhtml:188
 #: app/views/mail/_compose_form_html.rhtml:156
+msgid "Send"
+msgstr ""
+
+#: app/views/mail/_compose_form.rhtml:189
+#: app/views/mail/_compose_form_html.rhtml:157
+msgid "Save in Drafts"
+msgstr ""
+
+#: app/views/mail/_compose_form.rhtml:190
+#: app/views/mail/_compose_form_html.rhtml:158
 msgid "Discard"
 msgstr ""
 
-#: app/views/mail/_compose_form_html.rhtml:136
+#: app/views/mail/_compose_form_html.rhtml:138
 msgid ""
 "You cannot edit this draft email because it was composed in an email "
 "application using HTML formatting. To edit the email you can either"
 msgstr ""
 
-#: app/views/mail/_compose_form_html.rhtml:137
+#: app/views/mail/_compose_form_html.rhtml:139
 msgid "1) open the email in the original email application or"
 msgstr ""
 
-#: app/views/mail/_compose_form_html.rhtml:138
+#: app/views/mail/_compose_form_html.rhtml:140
 msgid ""
 "2) you can copy the text from the email below and paste it into a new email "
 "in Joyent's web mail application."
 msgstr ""
 
-#: app/views/mail/_compose_form_html.rhtml:139
+#: app/views/mail/_compose_form_html.rhtml:141
 msgid "Otherwise you can send the message from here."
 msgstr ""
 
-#: app/views/mail/_imap_address.rhtml:13
+#: app/views/mail/_imap_address.rhtml:15
 msgid "Open person in users."
 msgstr ""
 
-#: app/views/mail/_imap_address.rhtml:15
+#: app/views/mail/_imap_address.rhtml:17
 msgid "Open person in contacts."
 msgstr ""
 
-#: app/views/mail/_imap_address.rhtml:19
+#: app/views/mail/_imap_address.rhtml:21
 msgid "Create new contact."
 msgstr ""
 
-#: app/views/mail/_peek.rhtml:13 app/views/mail/_toolbar.rhtml:21
+#: app/views/mail/_peek.rhtml:15 app/views/mail/_toolbar.rhtml:23
 msgid "Reply"
 msgstr ""
 
-#: app/views/mail/_peek.rhtml:14 app/views/mail/_toolbar.rhtml:24
+#: app/views/mail/_peek.rhtml:16 app/views/mail/_toolbar.rhtml:26
 msgid "Reply All"
 msgstr ""
 
-#: app/views/mail/_peek.rhtml:15 app/views/mail/_toolbar.rhtml:27
+#: app/views/mail/_peek.rhtml:17 app/views/mail/_toolbar.rhtml:29
 msgid "Forward"
 msgstr ""
 
-#: app/views/mail/_toolbar.rhtml:12
+#: app/views/mail/_toolbar.rhtml:14
 msgid "Compose"
 msgstr ""
 
-#: app/views/mail/_toolbar.rhtml:39
+#: app/views/mail/_toolbar.rhtml:38
+msgid "Mark as spam."
+msgstr ""
+
+#: app/views/mail/_toolbar.rhtml:41
+msgid "Not Spam"
+msgstr ""
+
+#: app/views/mail/_toolbar.rhtml:41
+msgid "Mark as not spam."
+msgstr ""
+
+#: app/views/mail/_toolbar.rhtml:44
+msgid "Permanently Delete All Spam"
+msgstr ""
+
+#: app/views/mail/_toolbar.rhtml:44
+msgid "Do you want to permanently delete all spam?"
+msgstr ""
+
+#: app/views/mail/_toolbar.rhtml:47 app/views/mail/_toolbar.rhtml:53
 msgid "Empty Trash"
 msgstr ""
 
-#: app/views/mail/_toolbar.rhtml:39
+#: app/views/mail/_toolbar.rhtml:47 app/views/mail/_toolbar.rhtml:53
 msgid "Do you want to empty your trash?"
 msgstr ""
 
-#: app/views/mail/compose.rhtml:17
+#: app/views/mail/_tools.rhtml:12
+msgid "Forwarding"
+msgstr ""
+
+#: app/views/mail/_tools.rhtml:16
+msgid "Your email is currently not being forwarded to another email address."
+msgstr ""
+
+#: app/views/mail/_tools.rhtml:18
+msgid "Your email is currently being forwarded to %{forward_address}."
+msgstr ""
+
+#: app/views/mail/_tools.rhtml:22
+msgid "Edit Forwarding"
+msgstr ""
+
+#: app/views/mail/_tools.rhtml:26
+msgid "Aliases"
+msgstr ""
+
+#: app/views/mail/_tools.rhtml:29
+msgid "Aliases let multiple users receive email sent to the same address."
+msgstr ""
+
+#: app/views/mail/compose.rhtml:19
 msgid "New Message"
 msgstr ""
 
-#: app/views/mail/edit_draft.rhtml:15
+#: app/views/mail/edit_draft.rhtml:17
 msgid "Edit Draft Message"
 msgstr ""
 
-#: app/views/mail/forward.rhtml:16
+#: app/views/mail/forward.rhtml:18
 msgid "Forward Message"
 msgstr ""
 
-#: app/views/mail/list.rhtml:27
+#: app/views/mail/list.rhtml:20
+msgid ""
+"This inbox is currently being <strong>forwarded</strong> to %"
+"{forward_address}. New mail messages will not appear here."
+msgstr ""
+
+#: app/views/mail/list.rhtml:37
 msgid "Status"
 msgstr ""
 
-#: app/views/mail/list.rhtml:27
+#: app/views/mail/list.rhtml:37
 msgid "Read status"
 msgstr ""
 
-#: app/views/mail/list.rhtml:28
+#: app/views/mail/list.rhtml:38
 msgid "Message has attachments?"
 msgstr ""
 
-#: app/views/mail/reply_to.rhtml:18
+#: app/views/mail/reply_to.rhtml:20
 msgid "Reply To All Recipeints"
 msgstr ""
 
-#: app/views/mail/reply_to.rhtml:20
+#: app/views/mail/reply_to.rhtml:22
 msgid "Reply To Sender"
 msgstr ""
 
-#: app/views/mail/show.rhtml:30
-msgid "Newer"
+#: app/views/mail/show.rhtml:32
+msgid "Previous"
 msgstr ""
 
-#: app/views/mail/show.rhtml:31
-msgid "Older"
+#: app/views/mail/show.rhtml:33
+msgid "Next"
 msgstr ""
 
-#: app/views/mail/show.rhtml:35
+#: app/views/mail/show.rhtml:41
 msgid "Does this message not look quite right?"
 msgstr ""
 
-#: app/views/mail/show.rhtml:38
+#: app/views/mail/show.rhtml:44
 msgid ""
 "We've noticed that some messages with rich-text or attached images don't "
 "always look quite right. In an effort to improve our ability to display "
@@ -1453,1422 +1523,1441 @@ msgid ""
 "Send this message to Joyent engineers for further analysis?"
 msgstr ""
 
-#: app/views/mail/show.rhtml:42
+#: app/views/mail/show.rhtml:48
 msgid "Your"
 msgstr ""
 
-#: app/views/mail/show.rhtml:42
+#: app/views/mail/show.rhtml:48
 msgid "%{i18n_message_owner_name}'s"
 msgstr ""
 
-#: app/views/mail/show.rhtml:43 app/views/sidebars/groups/mail/_mail.rhtml:13
-#: app/views/sidebars/groups/mail/_others_mail.rhtml:11 lib/js_strings.rb:35
+#: app/views/mail/show.rhtml:49 app/views/sidebars/groups/mail/_mail.rhtml:15
+#: app/views/sidebars/groups/mail/_others_mail.rhtml:13 lib/js_strings.rb:39
 msgid "Inbox"
 msgstr ""
 
-#: app/views/mail/show.rhtml:48 app/views/partials/_list_header.rhtml:21
-#: app/views/partials/_show_header.rhtml:19
+#: app/views/mail/show.rhtml:54 app/views/partials/_list_header.rhtml:23
+#: app/views/partials/_show_header.rhtml:21
 msgid "of"
 msgstr ""
 
-#: app/views/mail/show.rhtml:51 lib/i18n_do_not_include.rb:74
+#: app/views/mail/show.rhtml:57 lib/i18n_do_not_include.rb:76
 msgid "messages"
 msgstr ""
 
-#: app/views/mail/unavailable.rhtml:10
+#: app/views/mail/unavailable.rhtml:12
 msgid "The mail server is currently unavailble"
 msgstr ""
 
-#: app/views/partials/_calendar_list_header.rhtml:23
+#: app/views/mail_alias/_create.rhtml:24
+#: app/views/mail_alias/_mail_aliases.rhtml:25
+msgid "New Alias"
+msgstr ""
+
+#: app/views/mail_alias/_mail_alias_li.rhtml:37
+#: app/views/sidebars/groups/_default_group.rhtml:23
+#: app/views/sidebars/groups/_default_smart_group.rhtml:24
+#: app/views/sidebars/groups/_smart_group.rhtml:24
+msgid "Show"
+msgstr ""
+
+#: app/views/mail_alias/_mail_alias_li.rhtml:37
+#: app/views/sidebars/groups/_default_group.rhtml:23
+#: app/views/sidebars/groups/_default_smart_group.rhtml:24
+#: app/views/sidebars/groups/_smart_group.rhtml:24
+msgid "View group info"
+msgstr ""
+
+#: app/views/mail_alias/_mail_alias_li.rhtml:44
+msgid "Delete Mail Alias"
+msgstr ""
+
+#: app/views/partials/_calendar_list_header.rhtml:25
 msgid "Forward In Time"
 msgstr ""
 
-#: app/views/partials/_calendar_list_header.rhtml:31
+#: app/views/partials/_calendar_list_header.rhtml:33
 msgid "Back In Time"
 msgstr ""
 
-#: app/views/partials/_developer_tools.rhtml:15
+#: app/views/partials/_developer_tools.rhtml:17
 msgid "Developer Tools"
 msgstr ""
 
-#: app/views/partials/_developer_tools.rhtml:19
+#: app/views/partials/_developer_tools.rhtml:21
 msgid "Organization"
 msgstr ""
 
-#: app/views/partials/_developer_tools.rhtml:29
-#: app/views/people/_edit_account.rhtml:56
-#: app/views/people/confirm_user_delete.rhtml:41
+#: app/views/partials/_developer_tools.rhtml:31
+#: app/views/people/_edit_account.rhtml:58
+#: app/views/people/confirm_user_delete.rhtml:43
 msgid "User"
 msgstr ""
 
-#: app/views/partials/_developer_tools.rhtml:39
+#: app/views/partials/_developer_tools.rhtml:41
 msgid "Language"
 msgstr ""
 
-#: app/views/partials/_joyent_messages.rhtml:23
+#: app/views/partials/_joyent_messages.rhtml:25
 msgid "Please add a password recovery email address to your account settings"
 msgstr ""
 
-#: app/views/partials/_joyent_messages.rhtml:24
-#: app/views/partials/_menu_items.rhtml:60
+#: app/views/partials/_joyent_messages.rhtml:26
 #: app/views/partials/_menu_items.rhtml:62
+#: app/views/partials/_menu_items.rhtml:64
 msgid "Your Preferences"
 msgstr ""
 
-#: app/views/partials/_joyent_messages.rhtml:24
-#: app/views/partials/_menu_items.rhtml:60
+#: app/views/partials/_joyent_messages.rhtml:26
 #: app/views/partials/_menu_items.rhtml:62
+#: app/views/partials/_menu_items.rhtml:64
 msgid "Edit your personal information"
 msgstr ""
 
-#: app/views/partials/_list_header.rhtml:31
+#: app/views/partials/_list_header.rhtml:33
 msgid "Page"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:33
+#: app/views/partials/_menu_items.rhtml:35
 msgid "Account Switching"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:55
+#: app/views/partials/_menu_items.rhtml:57
 msgid "Utilities"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:70
 #: app/views/partials/_menu_items.rhtml:72
+#: app/views/partials/_menu_items.rhtml:74
 msgid "Customer Center"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:70
 #: app/views/partials/_menu_items.rhtml:72
+#: app/views/partials/_menu_items.rhtml:74
 msgid "Go to the Joyent Customer Center"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:79
+#: app/views/partials/_menu_items.rhtml:81
 msgid "Open the Joyent Forum in a new window"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:80
+#: app/views/partials/_menu_items.rhtml:82
 msgid "Help"
 msgstr ""
 
-#: app/views/partials/_menu_items.rhtml:86
+#: app/views/partials/_menu_items.rhtml:88
 msgid "Sign Out"
 msgstr ""
 
-#: app/views/partials/_month_header.rhtml:21
+#: app/views/partials/_month_header.rhtml:23
 msgid "Next Month"
 msgstr ""
 
-#: app/views/partials/_month_header.rhtml:35
+#: app/views/partials/_month_header.rhtml:37
 msgid "Previous Month"
 msgstr ""
 
-#: app/views/partials/_sidebar.rhtml:15
+#: app/views/partials/_sidebar.rhtml:17
 msgid "Resize Sidebar"
 msgstr ""
 
-#: app/views/partials/_sidebar.rhtml:18 lib/i18n_do_not_include.rb:23
-#: lib/i18n_do_not_include.rb:102
+#: app/views/partials/_sidebar.rhtml:20 lib/i18n_do_not_include.rb:25
+#: lib/i18n_do_not_include.rb:104
 msgid "Groups"
 msgstr ""
 
-#: app/views/partials/_sidebar.rhtml:20
-#: app/views/sidebars/groups/_smart_group_edit.rhtml:19
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:13
-#: app/views/sidebars/groups/_smart_group_new.rhtml:31
-#: lib/i18n_do_not_include.rb:103
+#: app/views/partials/_sidebar.rhtml:22
+#: app/views/sidebars/groups/_smart_group_edit.rhtml:21
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:15
+#: app/views/sidebars/groups/_smart_group_new.rhtml:33
+#: lib/i18n_do_not_include.rb:105
 msgid "Tags"
 msgstr ""
 
-#: app/views/partials/_sidebar.rhtml:21 app/views/sidebars/_access.rhtml:19
-#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:11
-#: lib/i18n_do_not_include.rb:104
+#: app/views/partials/_sidebar.rhtml:23 app/views/sidebars/_access.rhtml:21
+#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:13
+#: lib/i18n_do_not_include.rb:106
 msgid "Access"
 msgstr ""
 
-#: app/views/partials/_sidebar.rhtml:22 app/views/sidebars/_notify.rhtml:19
-#: lib/i18n_do_not_include.rb:106
+#: app/views/partials/_sidebar.rhtml:24 app/views/sidebars/_notify.rhtml:21
+#: lib/i18n_do_not_include.rb:108
 msgid "Notify"
 msgstr ""
 
-#: app/views/partials/_sidebar_buttons.rhtml:10
-#: app/views/sidebars/_tags.rhtml:27
+#: app/views/partials/_sidebar_buttons.rhtml:12
+#: app/views/sidebars/_tags.rhtml:29
 msgid "Add Tags"
 msgstr ""
 
-#: app/views/partials/_sidebar_buttons.rhtml:11
+#: app/views/partials/_sidebar_buttons.rhtml:13
 msgid "Set Access"
 msgstr ""
 
-#: app/views/partials/_sidebar_buttons.rhtml:12
+#: app/views/partials/_sidebar_buttons.rhtml:14
 msgid "Notify Someone"
 msgstr ""
 
-#: app/views/people/_call.rhtml:11
+#: app/views/people/_call.rhtml:13
 msgid "Balance"
 msgstr ""
 
-#: app/views/people/_call.rhtml:15
-#: app/views/people/_edit_contact_information.rhtml:61
+#: app/views/people/_call.rhtml:17
+#: app/views/people/_edit_contact_information.rhtml:82
 msgid "Phone Numbers"
 msgstr ""
 
-#: app/views/people/_call.rhtml:18
+#: app/views/people/_call.rhtml:20
 msgid "Your Jajah Login"
 msgstr ""
 
-#: app/views/people/_call.rhtml:31
+#: app/views/people/_call.rhtml:33
 msgid "Your Jajah Number"
 msgstr ""
 
-#: app/views/people/_call.rhtml:45
+#: app/views/people/_call.rhtml:47
 msgid "Your Email Address"
 msgstr ""
 
-#: app/views/people/_call.rhtml:54
+#: app/views/people/_call.rhtml:56
 msgid "Your Password"
 msgstr ""
 
-#: app/views/people/_call.rhtml:66
+#: app/views/people/_call.rhtml:68
 msgid "Start Call"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:15
+#: app/views/people/_edit_account.rhtml:17
 msgid "Edit Preferences"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:23
+#: app/views/people/_edit_account.rhtml:25
 msgid "Edit Account"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:29
+#: app/views/people/_edit_account.rhtml:31
 msgid "Account Type"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:38
+#: app/views/people/_edit_account.rhtml:40
 msgid "None &ndash; Contact Only"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:39
+#: app/views/people/_edit_account.rhtml:41
 msgid "Will have no access to your Connector."
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:47
+#: app/views/people/_edit_account.rhtml:49
 msgid "Guest"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:48
+#: app/views/people/_edit_account.rhtml:50
 msgid "Can only see or manage specified folders in your \"Strongspace\"."
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:57
+#: app/views/people/_edit_account.rhtml:59
 msgid "Will have unrestricted access to the connector."
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:65
+#: app/views/people/_edit_account.rhtml:67
 msgid "Guest Info"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:70
+#: app/views/people/_edit_account.rhtml:72
 msgid "User Info"
 msgstr ""
 
-#: app/views/people/_edit_account.rhtml:75
+#: app/views/people/_edit_account.rhtml:77
 msgid ""
 "Your have reached your user limit. To create a new user either delete a "
 "current one or <a target=\"_blank\" class=\"goto\" href=\"http://customer."
 "joyent.com/login\">upgrade your plan</a>"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:36
+#: app/views/people/_edit_account_guest.rhtml:38
 msgid "Allow this guest to also create and delete files?"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:55
+#: app/views/people/_edit_account_guest.rhtml:57
 msgid "Reset Guest Password"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:58
+#: app/views/people/_edit_account_guest.rhtml:60
 msgid "email address"
 msgstr ""
 
-#: app/views/people/_edit_account_guest.rhtml:59
+#: app/views/people/_edit_account_guest.rhtml:61
 msgid "Reset"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:14
+#: app/views/people/_edit_account_user.rhtml:16
 msgid "Account"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:37
-#: app/views/people/_edit_account_user.rhtml:89
-#: app/views/people/_edit_account_user.rhtml:99
-#: app/views/people/_edit_account_user.rhtml:108
+#: app/views/people/_edit_account_user.rhtml:39
+#: app/views/people/_edit_account_user.rhtml:91
+#: app/views/people/_edit_account_user.rhtml:101
+#: app/views/people/_edit_account_user.rhtml:110
 msgid "Loading"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:47
-#: app/views/people/_edit_account_user.rhtml:50
+#: app/views/people/_edit_account_user.rhtml:49
+#: app/views/people/_edit_account_user.rhtml:52
 msgid "Allow this user to create and delete other users?"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:60
+#: app/views/people/_edit_account_user.rhtml:62
 msgid "International"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:84
-msgid "Send notifications and event alarms via SMS, email and instant message"
+#: app/views/people/_edit_account_user.rhtml:86
+msgid ""
+"Receive notifications and event alarms via SMS, email and instant message"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:87
+#: app/views/people/_edit_account_user.rhtml:89
 msgid "SMS"
 msgstr ""
 
-#: app/views/people/_edit_account_user.rhtml:106
+#: app/views/people/_edit_account_user.rhtml:108
 msgid "Instant Message (Jabber)"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:11
+#: app/views/people/_edit_contact_information.rhtml:13
 msgid "Edit Person"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:13
+#: app/views/people/_edit_contact_information.rhtml:15
 msgid "New Person"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:19
+#: app/views/people/_edit_contact_information.rhtml:23
 msgid "General Info"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:26
+#: app/views/people/_edit_contact_information.rhtml:30
 msgid "first name"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:30
+#: app/views/people/_edit_contact_information.rhtml:34
 msgid "middle"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:34
+#: app/views/people/_edit_contact_information.rhtml:38
 msgid "last"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:40
+#: app/views/people/_edit_contact_information.rhtml:44
 msgid "company name"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:46
+#: app/views/people/_edit_contact_information.rhtml:50
 msgid "job title"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:72
+#: app/views/people/_edit_contact_information.rhtml:65
+msgid "Forward Email"
+msgstr ""
+
+#: app/views/people/_edit_contact_information.rhtml:93
 msgid "Add Phone Number"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:81
+#: app/views/people/_edit_contact_information.rhtml:102
 msgid "Email Addresses"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:92
+#: app/views/people/_edit_contact_information.rhtml:113
 msgid "Add Email Address"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:101
+#: app/views/people/_edit_contact_information.rhtml:122
 msgid "Addresses"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:112
+#: app/views/people/_edit_contact_information.rhtml:133
 msgid "Add Address"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:121
+#: app/views/people/_edit_contact_information.rhtml:142
 msgid "IM Address"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:132
+#: app/views/people/_edit_contact_information.rhtml:153
 msgid "Add IM Address"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:141
-#: app/views/people/_peek.rhtml:82 app/views/people/show.rhtml:86
-#: app/views/people/show.rhtml:123 app/views/syndication/_person.rhtml:71
+#: app/views/people/_edit_contact_information.rhtml:162
+#: app/views/people/_peek.rhtml:90 app/views/people/show.rhtml:91
+#: app/views/people/show.rhtml:128 app/views/syndication/_person.rhtml:73
 msgid "Websites"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:152
+#: app/views/people/_edit_contact_information.rhtml:173
 msgid "Add Website"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:161
-#: app/views/people/_peek.rhtml:92 app/views/people/show.rhtml:96
-#: app/views/people/show.rhtml:127 app/views/syndication/_person.rhtml:80
+#: app/views/people/_edit_contact_information.rhtml:182
+#: app/views/people/_peek.rhtml:100 app/views/people/show.rhtml:101
+#: app/views/people/show.rhtml:132 app/views/syndication/_person.rhtml:82
 msgid "Special Dates"
 msgstr ""
 
-#: app/views/people/_edit_contact_information.rhtml:172
+#: app/views/people/_edit_contact_information.rhtml:193
 msgid "Add Special Date"
 msgstr ""
 
-#: app/views/people/_import.rhtml:10
+#: app/views/people/_import.rhtml:12
 msgid "Import contacts from a vCard file (.vcf)"
 msgstr ""
 
-#: app/views/people/_peek.rhtml:25 app/views/people/show.rhtml:37
+#: app/views/people/_peek.rhtml:27 app/views/people/show.rhtml:39
 msgid "Download vCard for this person"
 msgstr ""
 
-#: app/views/people/_peek.rhtml:31 app/views/people/show.rhtml:45
-#: app/views/people/show.rhtml:111 app/views/syndication/_person.rhtml:17
+#: app/views/people/_peek.rhtml:33 app/views/people/show.rhtml:47
+#: app/views/people/show.rhtml:116 app/views/syndication/_person.rhtml:19
 msgid "Phone"
 msgstr ""
 
-#: app/views/people/_peek.rhtml:36 app/views/syndication/_person.rhtml:22
+#: app/views/people/_peek.rhtml:38 app/views/syndication/_person.rhtml:24
 msgid "Call this person via Skype"
 msgstr ""
 
-#: app/views/people/_peek.rhtml:42 app/views/people/_peek.rhtml:54
-#: app/views/people/_peek.rhtml:76
+#: app/views/people/_peek.rhtml:44 app/views/people/_peek.rhtml:62
+#: app/views/people/_peek.rhtml:84
 msgid "Send Notifications Here"
 msgstr ""
 
-#: app/views/people/_peek.rhtml:51
+#: app/views/people/_peek.rhtml:53
 msgid "Compose a new email to"
 msgstr ""
 
-#: app/views/people/_peek.rhtml:70 app/views/people/show.rhtml:77
-#: app/views/people/show.rhtml:119 app/views/syndication/_person.rhtml:61
+#: app/views/people/_peek.rhtml:78 app/views/people/show.rhtml:82
+#: app/views/people/show.rhtml:124 app/views/syndication/_person.rhtml:63
 msgid "Instant Messaging"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:21
-#: app/views/people/_person_email_address.rhtml:15
-#: app/views/people/_person_phone_number.rhtml:15
+#: app/views/people/_person_address.rhtml:23
+#: app/views/people/_person_email_address.rhtml:17
+#: app/views/people/_person_phone_number.rhtml:17
 msgid "Home"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:21
-#: app/views/people/_person_email_address.rhtml:15
-#: app/views/people/_person_im_address.rhtml:15
-#: app/views/people/_person_phone_number.rhtml:15
+#: app/views/people/_person_address.rhtml:23
+#: app/views/people/_person_email_address.rhtml:17
+#: app/views/people/_person_im_address.rhtml:17
+#: app/views/people/_person_phone_number.rhtml:17
 msgid "Other"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:21
-#: app/views/people/_person_email_address.rhtml:15
-#: app/views/people/_person_phone_number.rhtml:15
+#: app/views/people/_person_address.rhtml:23
+#: app/views/people/_person_email_address.rhtml:17
+#: app/views/people/_person_phone_number.rhtml:17
 msgid "Work"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:24
+#: app/views/people/_person_address.rhtml:26
 msgid "type"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:28
+#: app/views/people/_person_address.rhtml:30
 msgid "street address"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:39
+#: app/views/people/_person_address.rhtml:41
 msgid "city"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:43
+#: app/views/people/_person_address.rhtml:45
 msgid "state"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:51
+#: app/views/people/_person_address.rhtml:53
 msgid "postal code"
 msgstr ""
 
-#: app/views/people/_person_address.rhtml:55
+#: app/views/people/_person_address.rhtml:57
 msgid "country"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "AIM"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "IRC"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "Google Talk"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "Jabber"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "MSN"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "Skype"
 msgstr ""
 
-#: app/views/people/_person_im_address.rhtml:15
+#: app/views/people/_person_im_address.rhtml:17
 msgid "Yahoo"
 msgstr ""
 
-#: app/views/people/_person_phone_number.rhtml:15
+#: app/views/people/_person_phone_number.rhtml:17
 msgid "Fax"
 msgstr ""
 
-#: app/views/people/_person_phone_number.rhtml:15
+#: app/views/people/_person_phone_number.rhtml:17
 msgid "Mobile"
 msgstr ""
 
-#: app/views/people/_person_phone_number.rhtml:15
+#: app/views/people/_person_phone_number.rhtml:17
 msgid "Pager"
 msgstr ""
 
-#: app/views/people/_person_photo.rhtml:11
+#: app/views/people/_person_photo.rhtml:13
 msgid ""
 "You can add an image (GIF, JPG, or PNG), which will be resized to 48x48 "
 "pixels"
 msgstr ""
 
-#: app/views/people/_person_photo.rhtml:19
+#: app/views/people/_person_photo.rhtml:21
 msgid "Immediately remove the photo from this person?"
 msgstr ""
 
-#: app/views/people/_person_special_date.rhtml:16
+#: app/views/people/_person_special_date.rhtml:18
 msgid "description"
 msgstr ""
 
-#: app/views/people/_person_special_date.rhtml:20
+#: app/views/people/_person_special_date.rhtml:22
 msgid "mo"
 msgstr ""
 
-#: app/views/people/_person_website.rhtml:16
+#: app/views/people/_person_website.rhtml:18
 msgid "site name"
 msgstr ""
 
-#: app/views/people/_person_website.rhtml:20
+#: app/views/people/_person_website.rhtml:22
 msgid "url"
 msgstr ""
 
-#: app/views/people/_toolbar.rhtml:33
+#: app/views/people/_toolbar.rhtml:35
 msgid "Import vCards"
 msgstr ""
 
-#: app/views/people/_toolbar.rhtml:36
+#: app/views/people/_toolbar.rhtml:38
 msgid "Call"
 msgstr ""
 
-#: app/views/people/confirm_user_delete.rhtml:13
+#: app/views/people/confirm_user_delete.rhtml:15
 msgid "Delete user(s), and their content"
 msgstr ""
 
-#: app/views/people/confirm_user_delete.rhtml:15
+#: app/views/people/confirm_user_delete.rhtml:17
 msgid "You are about to permanently delete"
 msgstr ""
 
-#: app/views/people/confirm_user_delete.rhtml:35
+#: app/views/people/confirm_user_delete.rhtml:37
 msgid ""
 "Deleting a user will also <strong>irreversibly delete</strong> all of their "
 "mail, events, contacts, and files"
 msgstr ""
 
-#: app/views/people/confirm_user_delete.rhtml:41
+#: app/views/people/confirm_user_delete.rhtml:43
 msgid " Permanently"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:12
+#: app/views/people/google_map.rhtml:14
 msgid "City"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:14
+#: app/views/people/google_map.rhtml:16
 msgid "State"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:16
+#: app/views/people/google_map.rhtml:18
 msgid "Zip"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:18 lib/js_strings.rb:48
+#: app/views/people/google_map.rhtml:20 lib/js_strings.rb:52
 msgid "Search"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:19
+#: app/views/people/google_map.rhtml:21
 msgid "Clear search"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:63
+#: app/views/people/google_map.rhtml:65
 msgid "address(es) found"
 msgstr ""
 
-#: app/views/people/google_map.rhtml:66
+#: app/views/people/google_map.rhtml:68
 msgid "Logout"
 msgstr ""
 
-#: app/views/people/list.rhtml:28
+#: app/views/people/list.rhtml:30
 msgid "Person Type"
 msgstr ""
 
-#: app/views/people/list.rhtml:29 app/views/reports/_people.rhtml:22
+#: app/views/people/list.rhtml:31 app/views/reports/_people.rhtml:24
 msgid "First Name"
 msgstr ""
 
-#: app/views/people/list.rhtml:30 app/views/reports/_people.rhtml:23
+#: app/views/people/list.rhtml:32 app/views/reports/_people.rhtml:25
 msgid "Last Name"
 msgstr ""
 
-#: app/views/people/list.rhtml:31 app/views/reports/_people.rhtml:24
+#: app/views/people/list.rhtml:33 app/views/reports/_people.rhtml:26
 msgid "Email Address"
 msgstr ""
 
-#: app/views/people/list.rhtml:32 app/views/reports/_people.rhtml:25
+#: app/views/people/list.rhtml:34 app/views/reports/_people.rhtml:27
 msgid "Phone Number"
 msgstr ""
 
-#: app/views/people/list.rhtml:33 lib/i18n_do_not_include.rb:34
+#: app/views/people/list.rhtml:35 lib/i18n_do_not_include.rb:36
 msgid "Company Name"
 msgstr ""
 
-#: app/views/people/show.rhtml:37
+#: app/views/people/show.rhtml:39
 msgid "Download vCard"
 msgstr ""
 
-#: app/views/people/show.rhtml:59 app/views/syndication/_person.rhtml:35
+#: app/views/people/show.rhtml:61 app/views/syndication/_person.rhtml:37
 msgid "Compose a new email to %{i18n_email_address}"
 msgstr ""
 
-#: app/views/reports/_comments.rhtml:20
-#: app/views/reports/_notifications.rhtml:22
+#: app/views/reports/_comments.rhtml:22
+#: app/views/reports/_notifications.rhtml:24
 msgid "Item"
 msgstr ""
 
-#: app/views/reports/_comments.rhtml:21 lib/i18n_do_not_include.rb:30
+#: app/views/reports/_comments.rhtml:23 lib/i18n_do_not_include.rb:32
 msgid "Item Type"
 msgstr ""
 
-#: app/views/reports/_comments.rhtml:22
+#: app/views/reports/_comments.rhtml:24
 msgid "Comment"
 msgstr ""
 
-#: app/views/reports/_comments.rhtml:23
+#: app/views/reports/_comments.rhtml:25
 msgid "Added"
 msgstr ""
 
-#: app/views/reports/_notifications.rhtml:11
+#: app/views/reports/_notifications.rhtml:13
 msgid "There are currently no %{i18n_unacknowledged}notifications."
 msgstr ""
 
-#: app/views/reports/_notifications.rhtml:11
+#: app/views/reports/_notifications.rhtml:13
 msgid "unacknowledged "
 msgstr ""
 
-#: app/views/reports/_notifications.rhtml:23
+#: app/views/reports/_notifications.rhtml:25
 msgid "Notification"
 msgstr ""
 
-#: app/views/reports/_notifications.rhtml:40
+#: app/views/reports/_notifications.rhtml:42
 msgid "Notified by %{i18n_notifier_name}"
 msgstr ""
 
-#: app/views/reports/_notifications.rhtml:45
+#: app/views/reports/_notifications.rhtml:47
 msgid "Dismissed"
 msgstr ""
 
-#: app/views/reports/_notifications.rhtml:47
+#: app/views/reports/_notifications.rhtml:49
 msgid "Dismiss"
 msgstr ""
 
-#: app/views/reports/_people.rhtml:21
+#: app/views/reports/_people.rhtml:23
 msgid "Type"
 msgstr ""
 
-#: app/views/reports/_people.rhtml:44
+#: app/views/reports/_people.rhtml:46
 msgid "Compose a new email to %{i18n_person_full_name}"
 msgstr ""
 
-#: app/views/reports/_report.rhtml:19
+#: app/views/reports/_report.rhtml:21
 msgid "Go to report group."
 msgstr ""
 
-#: app/views/reports/_report.rhtml:19
+#: app/views/reports/_report.rhtml:21
 msgid "Go to this group."
 msgstr ""
 
-#: app/views/reports/_report.rhtml:20
+#: app/views/reports/_report.rhtml:22
 msgid "Reload this report."
 msgstr ""
 
-#: app/views/reports/_report.rhtml:20
+#: app/views/reports/_report.rhtml:22
 msgid "Refresh"
 msgstr ""
 
-#: app/views/reports/_report.rhtml:21
+#: app/views/reports/_report.rhtml:23
 msgid "Remove"
 msgstr ""
 
-#: app/views/reports/_report.rhtml:26
+#: app/views/reports/_report.rhtml:28
 msgid "Remove this report from the workspace."
 msgstr ""
 
-#: app/views/reports/_report.rhtml:28
+#: app/views/reports/_report.rhtml:30
 msgid "Hide this report."
 msgstr ""
 
-#: app/views/reports/_report.rhtml:28
+#: app/views/reports/_report.rhtml:30
 msgid "Hide Report"
 msgstr ""
 
-#: app/views/reports/_report.rhtml:29
+#: app/views/reports/_report.rhtml:31
 msgid "Show this report."
 msgstr ""
 
-#: app/views/reports/_report.rhtml:29
+#: app/views/reports/_report.rhtml:31
 msgid "Show Report"
 msgstr ""
 
-#: app/views/reports/_report.rhtml:30
+#: app/views/reports/_report.rhtml:32
 msgid "Drag to change order"
 msgstr ""
 
-#: app/views/reports/_timezones.rhtml:21
+#: app/views/reports/_timezones.rhtml:23
 msgid "Day"
 msgstr ""
 
-#: app/views/reports/_timezones.rhtml:23
+#: app/views/reports/_timezones.rhtml:25
 msgid "Time Zone"
 msgstr ""
 
-#: app/views/reports/_toolbar.rhtml:11
+#: app/views/reports/_toolbar.rhtml:13
 msgid "Refresh all of the reports in the workspace."
 msgstr ""
 
-#: app/views/reports/_toolbar.rhtml:11
+#: app/views/reports/_toolbar.rhtml:13
 msgid "Refresh All"
 msgstr ""
 
-#: app/views/reports/_toolbar.rhtml:12
+#: app/views/reports/_toolbar.rhtml:14
 msgid "Collapse all of the reports in the workspace."
 msgstr ""
 
-#: app/views/reports/_toolbar.rhtml:12
+#: app/views/reports/_toolbar.rhtml:14
 msgid "Collapse All"
 msgstr ""
 
-#: app/views/reports/_toolbar.rhtml:13
+#: app/views/reports/_toolbar.rhtml:15
 msgid "Expand all of the reports in the workspace."
 msgstr ""
 
-#: app/views/reports/_toolbar.rhtml:13
+#: app/views/reports/_toolbar.rhtml:15
 msgid "Expand All"
 msgstr ""
 
-#: app/views/reports/index.rhtml:24
+#: app/views/reports/index.rhtml:26
 msgid "There are no reports in your workspace."
 msgstr ""
 
-#: app/views/sidebars/_access.rhtml:11
+#: app/views/sidebars/_access.rhtml:13
 msgid "Access unavailable"
 msgstr ""
 
-#: app/views/sidebars/_access.rhtml:19
+#: app/views/sidebars/_access.rhtml:21
 msgid "View"
 msgstr ""
 
-#: app/views/sidebars/_groups.rhtml:11
+#: app/views/sidebars/_groups.rhtml:13
 msgid "Your %{i18n_controller_class_groupname}"
 msgstr ""
 
-#: app/views/sidebars/_groups.rhtml:16
+#: app/views/sidebars/_groups.rhtml:18
 msgid "Others' %{i18n_controller_class_groupname}"
 msgstr ""
 
-#: app/views/sidebars/_notify.rhtml:11
+#: app/views/sidebars/_notify.rhtml:13
 msgid "Notify unavailable"
 msgstr ""
 
-#: app/views/sidebars/_notify.rhtml:19 lib/js_strings.rb:43
+#: app/views/sidebars/_notify.rhtml:21 lib/js_strings.rb:47
 msgid "Notified"
 msgstr ""
 
-#: app/views/sidebars/_rules.rhtml:11
+#: app/views/sidebars/_rules.rhtml:13
 msgid "Rules"
 msgstr ""
 
-#: app/views/sidebars/_tags.rhtml:11
+#: app/views/sidebars/_tags.rhtml:13
 msgid "Tags unavailable"
 msgstr ""
 
-#: app/views/sidebars/_tags.rhtml:13
+#: app/views/sidebars/_tags.rhtml:15
 msgid "Your Assigned Tags"
 msgstr ""
 
-#: app/views/sidebars/_tags.rhtml:15
+#: app/views/sidebars/_tags.rhtml:17
 msgid "No tags"
 msgstr ""
 
-#: app/views/sidebars/_tags.rhtml:20
+#: app/views/sidebars/_tags.rhtml:22
 msgid "Others' Assigned Tags"
 msgstr ""
 
-#: app/views/sidebars/groups/_default_group.rhtml:21
-#: app/views/sidebars/groups/_smart_group.rhtml:22
-msgid "Show"
-msgstr ""
-
-#: app/views/sidebars/groups/_default_group.rhtml:21
-#: app/views/sidebars/groups/_smart_group.rhtml:22
-msgid "View group info"
-msgstr ""
-
-#: app/views/sidebars/groups/_service_group_edit_move.rhtml:14
-#: app/views/sidebars/groups/_standard_group_edit_move.rhtml:14
+#: app/views/sidebars/groups/_service_group_edit_move.rhtml:16
+#: app/views/sidebars/groups/_standard_group_edit_move.rhtml:16
 msgid "Move to %{i18n_controller_class_groupname}"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit.rhtml:16
+#: app/views/sidebars/groups/_smart_group_edit.rhtml:18
 msgid "Match All"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit.rhtml:22
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:19
+#: app/views/sidebars/groups/_smart_group_edit.rhtml:24
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:21
 msgid "tag is"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit.rhtml:29
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:28
-#: app/views/sidebars/groups/_smart_group_new.rhtml:36
+#: app/views/sidebars/groups/_smart_group_edit.rhtml:31
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:30
+#: app/views/sidebars/groups/_smart_group_new.rhtml:38
 msgid "Conditions"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:25
-#: app/views/sidebars/groups/_smart_group_new.rhtml:33
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:27
+#: app/views/sidebars/groups/_smart_group_new.rhtml:35
 msgid "Add Tag"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:53
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:55
 msgid "contains"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:61
-#: app/views/sidebars/groups/_smart_group_new.rhtml:38
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:63
+#: app/views/sidebars/groups/_smart_group_new.rhtml:40
 msgid "Add Condition"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:64
+#: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:66
 msgid "Save Conditions"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:11
+#: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:13
 msgid "Delete Smart"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:13
+#: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:15
 msgid "Do you want to delete this smart group? No items will be deleted"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_edit_rename.rhtml:14
-#: app/views/sidebars/groups/_standard_group_edit_rename.rhtml:10
-#: app/views/sidebars/groups/_standard_group_edit_rename.rhtml:15
-#: app/views/sidebars/groups/_strongspace_group_edit_rename.rhtml:10
-#: app/views/sidebars/groups/_strongspace_group_edit_rename.rhtml:16
+#: app/views/sidebars/groups/_smart_group_edit_rename.rhtml:16
+#: app/views/sidebars/groups/_standard_group_edit_rename.rhtml:12
+#: app/views/sidebars/groups/_standard_group_edit_rename.rhtml:17
+#: app/views/sidebars/groups/_strongspace_group_edit_rename.rhtml:12
+#: app/views/sidebars/groups/_strongspace_group_edit_rename.rhtml:18
 msgid "Rename"
 msgstr ""
 
-#: app/views/sidebars/groups/_smart_group_new.rhtml:18
-#: app/views/sidebars/groups/_smart_group_new.rhtml:27
+#: app/views/sidebars/groups/_smart_group_new.rhtml:20
+#: app/views/sidebars/groups/_smart_group_new.rhtml:29
 msgid "New Smart %{i18n_controller_class_groupname}"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit.rhtml:25
+#: app/views/sidebars/groups/_standard_group_edit.rhtml:27
 msgid "Unsubscribe"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit.rhtml:27
+#: app/views/sidebars/groups/_standard_group_edit.rhtml:29
 msgid "Do you want to unsubscribe to %{i18n_group_name}?"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_delete.rhtml:13
-#: app/views/sidebars/groups/_strongspace_group_edit_delete.rhtml:13
+#: app/views/sidebars/groups/_standard_group_edit_delete.rhtml:15
+#: app/views/sidebars/groups/_strongspace_group_edit_delete.rhtml:15
 msgid ""
 "Do you want to delete this group and all its subgroups? The items will be "
 "deleted."
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:15
+#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:17
 msgid "Public"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:18
+#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:20
 msgid "Restricted to you"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:21
+#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:23
 msgid "Also allow"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:29
-#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:28
+#: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:31
+#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:30
 msgid "Save Permissions"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_subscriptions.rhtml:11
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:29
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:43
-#: app/views/sidebars/groups/files/_files.rhtml:54
-#: app/views/sidebars/groups/lists/_lists.rhtml:36
-#: app/views/sidebars/groups/mail/_mail.rhtml:50
-#: app/views/sidebars/groups/people/_people.rhtml:35
+#: app/views/sidebars/groups/_standard_group_edit_subscriptions.rhtml:13
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:31
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:45
+#: app/views/sidebars/groups/files/_files.rhtml:56
+#: app/views/sidebars/groups/lists/_lists.rhtml:38
+#: app/views/sidebars/groups/mail/_mail.rhtml:55
+#: app/views/sidebars/groups/people/_people.rhtml:37
 msgid "Subscription"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_edit_subscriptions.rhtml:13
+#: app/views/sidebars/groups/_standard_group_edit_subscriptions.rhtml:15
 msgid "View this %{i18n_controller_class_groupname} in another account"
 msgstr ""
 
-#: app/views/sidebars/groups/_standard_group_new_container.rhtml:20
-#: app/views/sidebars/groups/_standard_group_new_container.rhtml:30
+#: app/views/sidebars/groups/_standard_group_new_container.rhtml:22
+#: app/views/sidebars/groups/_standard_group_new_container.rhtml:32
 msgid "New %{i18n_controller_class_groupname}"
 msgstr ""
 
-#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:11
+#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:13
 msgid "Guest Access"
 msgstr ""
 
-#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:18
+#: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:20
 msgid "Share with Selected Guests"
 msgstr ""
 
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:25
-#: app/views/sidebars/groups/files/_files.rhtml:49
-#: app/views/sidebars/groups/lists/_lists.rhtml:31
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:27
+#: app/views/sidebars/groups/files/_files.rhtml:51
+#: app/views/sidebars/groups/lists/_lists.rhtml:33
 msgid "Add New Folder or Smart Folder"
 msgstr ""
 
-#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:27
-#: app/views/sidebars/groups/files/_files.rhtml:52
+#: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:29
+#: app/views/sidebars/groups/files/_files.rhtml:54
 msgid "Smart Folder"
 msgstr ""
 
-#: app/views/sidebars/groups/bookmarks/_bookmarks_all.rhtml:15
-#: app/views/sidebars/groups/bookmarks/_bookmarks_everyone.rhtml:12
-#: app/views/sidebars/groups/bookmarks/_bookmarks_notifications.rhtml:12
-#: app/views/sidebars/groups/bookmarks/_bookmarks_smart.rhtml:12
-#: app/views/sidebars/groups/bookmarks/_bookmarks_standard.rhtml:12
-#: app/views/sidebars/groups/calendar/_calendar_all.rhtml:13
-#: app/views/sidebars/groups/calendar/_calendar_invitations.rhtml:11
-#: app/views/sidebars/groups/calendar/_calendar_notifications.rhtml:13
-#: app/views/sidebars/groups/calendar/_calendar_smart.rhtml:13
-#: app/views/sidebars/groups/calendar/_calendar_standard.rhtml:13
-#: app/views/sidebars/groups/calendar/_calendar_todays_events.rhtml:12
-#: app/views/sidebars/groups/calendar/_calendar_weeks_events.rhtml:12
-#: app/views/sidebars/groups/connect/_connect_notifications.rhtml:12
-#: app/views/sidebars/groups/connect/_connect_report.rhtml:12
-#: app/views/sidebars/groups/connect/_connect_smart.rhtml:12
-#: app/views/sidebars/groups/files/_files_documents.rhtml:15
-#: app/views/sidebars/groups/files/_files_notifications.rhtml:12
-#: app/views/sidebars/groups/files/_files_service.rhtml:10
-#: app/views/sidebars/groups/files/_files_smart.rhtml:12
-#: app/views/sidebars/groups/files/_files_standard.rhtml:12
-#: app/views/sidebars/groups/files/_files_strongspace.rhtml:10
-#: app/views/sidebars/groups/lists/_lists_lists.rhtml:15
-#: app/views/sidebars/groups/lists/_lists_notifications.rhtml:12
-#: app/views/sidebars/groups/lists/_lists_smart.rhtml:12
-#: app/views/sidebars/groups/lists/_lists_standard.rhtml:12
-#: app/views/sidebars/groups/mail/_mail_drafts.rhtml:15
-#: app/views/sidebars/groups/mail/_mail_inbox.rhtml:15
-#: app/views/sidebars/groups/mail/_mail_notifications.rhtml:12
-#: app/views/sidebars/groups/mail/_mail_sent.rhtml:15
-#: app/views/sidebars/groups/mail/_mail_smart.rhtml:12
-#: app/views/sidebars/groups/mail/_mail_standard.rhtml:12
-#: app/views/sidebars/groups/mail/_mail_trash.rhtml:15
-#: app/views/sidebars/groups/mail/_mail_unread_messages.rhtml:12
-#: app/views/sidebars/groups/people/_people_contacts.rhtml:16
-#: app/views/sidebars/groups/people/_people_current_time.rhtml:12
-#: app/views/sidebars/groups/people/_people_notifications.rhtml:13
-#: app/views/sidebars/groups/people/_people_smart.rhtml:13
-#: app/views/sidebars/groups/people/_people_standard.rhtml:13
-#: app/views/sidebars/groups/people/_people_users.rhtml:13
-#: lib/js_strings.rb:51
+#: app/views/sidebars/groups/bookmarks/_bookmarks_all.rhtml:17
+#: app/views/sidebars/groups/bookmarks/_bookmarks_everyone.rhtml:14
+#: app/views/sidebars/groups/bookmarks/_bookmarks_notifications.rhtml:14
+#: app/views/sidebars/groups/bookmarks/_bookmarks_smart.rhtml:14
+#: app/views/sidebars/groups/bookmarks/_bookmarks_standard.rhtml:14
+#: app/views/sidebars/groups/calendar/_calendar_all.rhtml:15
+#: app/views/sidebars/groups/calendar/_calendar_invitations.rhtml:13
+#: app/views/sidebars/groups/calendar/_calendar_notifications.rhtml:15
+#: app/views/sidebars/groups/calendar/_calendar_smart.rhtml:15
+#: app/views/sidebars/groups/calendar/_calendar_standard.rhtml:15
+#: app/views/sidebars/groups/calendar/_calendar_todays_events.rhtml:14
+#: app/views/sidebars/groups/calendar/_calendar_weeks_events.rhtml:14
+#: app/views/sidebars/groups/connect/_connect_notifications.rhtml:14
+#: app/views/sidebars/groups/connect/_connect_report.rhtml:14
+#: app/views/sidebars/groups/connect/_connect_smart.rhtml:14
+#: app/views/sidebars/groups/files/_files_documents.rhtml:17
+#: app/views/sidebars/groups/files/_files_notifications.rhtml:14
+#: app/views/sidebars/groups/files/_files_service.rhtml:12
+#: app/views/sidebars/groups/files/_files_smart.rhtml:14
+#: app/views/sidebars/groups/files/_files_standard.rhtml:14
+#: app/views/sidebars/groups/files/_files_strongspace.rhtml:12
+#: app/views/sidebars/groups/lists/_lists_lists.rhtml:17
+#: app/views/sidebars/groups/lists/_lists_notifications.rhtml:14
+#: app/views/sidebars/groups/lists/_lists_smart.rhtml:14
+#: app/views/sidebars/groups/lists/_lists_standard.rhtml:14
+#: app/views/sidebars/groups/mail/_mail_drafts.rhtml:17
+#: app/views/sidebars/groups/mail/_mail_inbox.rhtml:17
+#: app/views/sidebars/groups/mail/_mail_notifications.rhtml:14
+#: app/views/sidebars/groups/mail/_mail_sent.rhtml:17
+#: app/views/sidebars/groups/mail/_mail_smart.rhtml:14
+#: app/views/sidebars/groups/mail/_mail_spam.rhtml:16
+#: app/views/sidebars/groups/mail/_mail_standard.rhtml:14
+#: app/views/sidebars/groups/mail/_mail_trash.rhtml:17
+#: app/views/sidebars/groups/mail/_mail_unread_messages.rhtml:14
+#: app/views/sidebars/groups/people/_people_contacts.rhtml:18
+#: app/views/sidebars/groups/people/_people_current_time.rhtml:14
+#: app/views/sidebars/groups/people/_people_notifications.rhtml:15
+#: app/views/sidebars/groups/people/_people_smart.rhtml:15
+#: app/views/sidebars/groups/people/_people_standard.rhtml:15
+#: app/views/sidebars/groups/people/_people_users.rhtml:15
+#: lib/js_strings.rb:55
 msgid "Subscribe to this RSS feed"
 msgstr ""
 
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:38
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:40
 msgid "Add New Calendar or Smart Calendar"
 msgstr ""
 
-#: app/views/sidebars/groups/calendar/_calendar.rhtml:41
+#: app/views/sidebars/groups/calendar/_calendar.rhtml:43
 msgid "Smart Calendar"
 msgstr ""
 
-#: app/views/sidebars/groups/calendar/_calendar_all.rhtml:12
-#: app/views/sidebars/groups/calendar/_calendar_invitations.rhtml:10
-#: app/views/sidebars/groups/calendar/_calendar_notifications.rhtml:12
-#: app/views/sidebars/groups/calendar/_calendar_smart.rhtml:12
-#: app/views/sidebars/groups/calendar/_calendar_standard.rhtml:12
+#: app/views/sidebars/groups/calendar/_calendar_all.rhtml:14
+#: app/views/sidebars/groups/calendar/_calendar_invitations.rhtml:12
+#: app/views/sidebars/groups/calendar/_calendar_notifications.rhtml:14
+#: app/views/sidebars/groups/calendar/_calendar_smart.rhtml:14
+#: app/views/sidebars/groups/calendar/_calendar_standard.rhtml:14
 msgid "Subscribe to this ICS calendar"
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect.rhtml:13
+#: app/views/sidebars/groups/connect/_connect.rhtml:15
 msgid "Lightning Portal"
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect.rhtml:16
+#: app/views/sidebars/groups/connect/_connect.rhtml:18
 msgid "Workspace"
-msgstr ""
-
-#: app/views/sidebars/groups/connect/_connect.rhtml:32
-#: app/views/sidebars/groups/people/_people.rhtml:31
-msgid "Add New Smart Group"
 msgstr ""
 
 #: app/views/sidebars/groups/connect/_connect.rhtml:34
 #: app/views/sidebars/groups/people/_people.rhtml:33
+msgid "Add New Smart Group"
+msgstr ""
+
+#: app/views/sidebars/groups/connect/_connect.rhtml:36
+#: app/views/sidebars/groups/people/_people.rhtml:35
 msgid "Smart Group"
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect_lightning_portal.rhtml:10
-#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:10
+#: app/views/sidebars/groups/connect/_connect_lightning_portal.rhtml:12
+#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:12
 msgid "What is it?"
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect_lightning_portal.rhtml:11
+#: app/views/sidebars/groups/connect/_connect_lightning_portal.rhtml:13
 msgid "A portal to all things Lightning."
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:11
+#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:13
 msgid "A place where you can gather views from every Connector application."
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:13
+#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:15
 msgid "How do I add a group?"
 msgstr ""
 
-#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:14
+#: app/views/sidebars/groups/connect/_connect_workspace.rhtml:16
 msgid "Check the 'Visible in your Workspace' checkbox in its info panel."
 msgstr ""
 
-#: app/views/sidebars/groups/files/_files.rhtml:18
+#: app/views/sidebars/groups/files/_files.rhtml:20
 msgid "Add New Folder"
 msgstr ""
 
-#: app/views/sidebars/groups/files/_files.rhtml:27
-#: app/views/sidebars/groups/files/_others_files.rhtml:14
+#: app/views/sidebars/groups/files/_files.rhtml:29
+#: app/views/sidebars/groups/files/_others_files.rhtml:16
 msgid "Documents"
 msgstr ""
 
-#: app/views/sidebars/groups/lists/_lists.rhtml:14
-#: app/views/sidebars/groups/lists/_others_lists.rhtml:13
-#: lib/i18n_do_not_include.rb:26 app/models/list_folder_observer.rb:16
+#: app/views/sidebars/groups/lists/_lists.rhtml:16
+#: app/views/sidebars/groups/lists/_others_lists.rhtml:15
+#: lib/i18n_do_not_include.rb:28 app/models/list_folder_observer.rb:18
 msgid "Lists"
 msgstr ""
 
-#: app/views/sidebars/groups/lists/_lists.rhtml:31
+#: app/views/sidebars/groups/lists/_lists.rhtml:33
 msgid "New&hellip;"
 msgstr ""
 
-#: app/views/sidebars/groups/lists/_lists.rhtml:33
+#: app/views/sidebars/groups/lists/_lists.rhtml:35
 msgid "List Folder"
 msgstr ""
 
-#: app/views/sidebars/groups/lists/_lists.rhtml:34
+#: app/views/sidebars/groups/lists/_lists.rhtml:36
 msgid "Smart List Folder"
 msgstr ""
 
-#: app/views/sidebars/groups/mail/_mail.rhtml:19
-#: app/views/sidebars/groups/mail/_others_mail.rhtml:12
+#: app/views/sidebars/groups/mail/_mail.rhtml:21
+#: app/views/sidebars/groups/mail/_others_mail.rhtml:14
 msgid "Sent"
 msgstr ""
 
-#: app/views/sidebars/groups/mail/_mail.rhtml:22
-#: app/views/sidebars/groups/mail/_others_mail.rhtml:13
+#: app/views/sidebars/groups/mail/_mail.rhtml:24
+#: app/views/sidebars/groups/mail/_others_mail.rhtml:15
 msgid "Drafts"
 msgstr ""
 
-#: app/views/sidebars/groups/mail/_mail.rhtml:25
-#: app/views/sidebars/groups/mail/_others_mail.rhtml:14
+#: app/views/sidebars/groups/mail/_mail.rhtml:30
+#: app/views/sidebars/groups/mail/_others_mail.rhtml:17
 msgid "Trash"
 msgstr ""
 
-#: app/views/sidebars/groups/mail/_mail.rhtml:45
+#: app/views/sidebars/groups/mail/_mail.rhtml:50
 msgid "Add New Mailbox or Smart Mailbox"
 msgstr ""
 
-#: app/views/sidebars/groups/mail/_mail.rhtml:47 lib/i18n_do_not_include.rb:41
+#: app/views/sidebars/groups/mail/_mail.rhtml:52 lib/i18n_do_not_include.rb:43
 msgid "Mailbox"
 msgstr ""
 
-#: app/views/sidebars/groups/mail/_mail.rhtml:48
+#: app/views/sidebars/groups/mail/_mail.rhtml:53
 msgid "Smart Mailbox"
 msgstr ""
 
-#: app/views/sidebars/groups/people/_people_contacts.rhtml:15
-#: app/views/sidebars/groups/people/_people_notifications.rhtml:12
-#: app/views/sidebars/groups/people/_people_standard.rhtml:12
-#: app/views/sidebars/groups/people/_people_users.rhtml:12
+#: app/views/sidebars/groups/people/_people_contacts.rhtml:17
+#: app/views/sidebars/groups/people/_people_notifications.rhtml:14
+#: app/views/sidebars/groups/people/_people_standard.rhtml:14
+#: app/views/sidebars/groups/people/_people_users.rhtml:14
 msgid "Download contacts as a vCard file"
 msgstr ""
 
-#: app/views/sidebars/groups/people/_people_smart.rhtml:12
+#: app/views/sidebars/groups/people/_people_smart.rhtml:14
 msgid "Download as VCARD"
 msgstr ""
 
-#: app/views/syndication/_comments.rhtml:15
+#: app/views/syndication/_comments.rhtml:17
 msgid "On"
 msgstr ""
 
-#: app/views/syndication/_comments.rhtml:15
+#: app/views/syndication/_comments.rhtml:17
 msgid "%{i18n_comment_user_full_name} said"
 msgstr ""
 
-#: app/views/syndication/_event.rhtml:31
+#: app/views/syndication/_event.rhtml:33
 msgid "Repeat Until"
-msgstr ""
-
-#: app/views/syndication/_file.rhtml:14
-#: app/views/syndication/_file_service.rhtml:14
-msgid "Location on disk"
 msgstr ""
 
 #: app/views/syndication/_file.rhtml:16
 #: app/views/syndication/_file_service.rhtml:16
+msgid "Location on disk"
+msgstr ""
+
+#: app/views/syndication/_file.rhtml:18
+#: app/views/syndication/_file_service.rhtml:18
 msgid "Where"
 msgstr ""
 
-#: app/views/syndication/_file.rhtml:17
-#: app/views/syndication/_file_service.rhtml:17
+#: app/views/syndication/_file.rhtml:19
+#: app/views/syndication/_file_service.rhtml:19
 msgid "%{i18n_file_owner_person_name}'s Files"
 msgstr ""
 
-#: app/views/syndication/_file.rhtml:22
-#: app/views/syndication/_file_service.rhtml:22
+#: app/views/syndication/_file.rhtml:24
+#: app/views/syndication/_file_service.rhtml:24
 msgid "File Size"
 msgstr ""
 
-#: app/views/toolbars/_copy_to_bookmarks.rhtml:14
+#: app/views/toolbars/_copy_to_bookmarks.rhtml:16
 msgid "Copy all selected items to your Bookmarks"
 msgstr ""
 
-#: app/views/toolbars/_copy_to_contacts.rhtml:14
+#: app/views/toolbars/_copy_to_contacts.rhtml:16
 msgid "Copy all selected items to your Contacts"
 msgstr ""
 
-#: app/views/toolbars/_delete.rhtml:11
+#: app/views/toolbars/_delete.rhtml:13
 msgid "Delete all selected items."
 msgstr ""
 
-#: app/views/toolbars/_delete.rhtml:13 app/views/toolbars/_delete.rhtml:15
+#: app/views/toolbars/_delete.rhtml:15 app/views/toolbars/_delete.rhtml:17
 msgid "Delete this item."
 msgstr ""
 
-#: app/views/toolbars/_quota_users_meter.rhtml:16
+#: app/views/toolbars/_quota_users_meter.rhtml:18
 msgid "Users Created"
 msgstr ""
 
-#: app/views/user/connect.rhtml:10
+#: app/views/user/connect.rhtml:12
 msgid "User Shortcuts"
 msgstr ""
 
-#: app/views/user/connect.rhtml:23
+#: app/views/user/connect.rhtml:25
 msgid ""
 "Users of multiple Connector accounts can create shortcuts to switch quickly "
 "between each account."
 msgstr ""
 
-#: app/views/user/connect.rhtml:26
+#: app/views/user/connect.rhtml:28
 msgid "New Shortcut"
 msgstr ""
 
-#: app/views/user/connect.rhtml:45
+#: app/views/user/connect.rhtml:47
 msgid " Add "
 msgstr ""
 
-#: app/views/user/connect.rhtml:52
+#: app/views/user/connect.rhtml:54
 msgid "Current Shortcuts"
 msgstr ""
 
-#: app/views/user/connect.rhtml:58
+#: app/views/user/connect.rhtml:60
 msgid "Disconnect User"
 msgstr ""
 
-#: app/views/syndication/bookmarks_rss.rxml:14
+#: app/views/syndication/bookmarks_rss.rxml:16
 msgid "Bookmarks: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/calendar_rss.rxml:14
+#: app/views/syndication/calendar_rss.rxml:16
 msgid "Calendar: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/connect_rss.rxml:14
+#: app/views/syndication/connect_rss.rxml:16
 msgid "Connect: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/files_rss.rxml:14
-#: app/views/syndication/files_service_rss.rxml:14
+#: app/views/syndication/files_rss.rxml:16
+#: app/views/syndication/files_service_rss.rxml:16
 msgid "Files: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/lists_rss.rxml:14
+#: app/views/syndication/lists_rss.rxml:16
 msgid "Lists: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/mail_rss.rxml:14
+#: app/views/syndication/mail_rss.rxml:16
 msgid "Mail: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/people_rss.rxml:14
+#: app/views/syndication/people_rss.rxml:16
 msgid "People: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/tag_rss.rxml:14
+#: app/views/syndication/tag_rss.rxml:16
 msgid "Tag: %{i18n_group_name}"
 msgstr ""
 
-#: app/views/syndication/tag_rss.rxml:16
+#: app/views/syndication/tag_rss.rxml:18
 msgid "Items tagged with: %{i18n_tag_name}"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:20
+#: lib/i18n_do_not_include.rb:22
 msgid "Mailboxes"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:22
+#: lib/i18n_do_not_include.rb:24
 msgid "Calendars"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:25
+#: lib/i18n_do_not_include.rb:27
 msgid "Bookmark Folders"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:27
+#: lib/i18n_do_not_include.rb:29
 msgid "List Folders"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:29
+#: lib/i18n_do_not_include.rb:31
 msgid "Any Condition"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:31
+#: lib/i18n_do_not_include.rb:33
 msgid "Owner Username"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:32
+#: lib/i18n_do_not_include.rb:34
 msgid "Event Name"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:33
+#: lib/i18n_do_not_include.rb:35
 msgid "Repeat Type"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:35
+#: lib/i18n_do_not_include.rb:37
 msgid "Full Name"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:36
+#: lib/i18n_do_not_include.rb:38
 msgid "Filename"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:38
+#: lib/i18n_do_not_include.rb:40
 msgid "Group"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:42
+#: lib/i18n_do_not_include.rb:44
 msgid "People"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:43
+#: lib/i18n_do_not_include.rb:45
 msgid "Mail"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:44
+#: lib/i18n_do_not_include.rb:46
 msgid "Bookmark Folder"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:45
+#: lib/i18n_do_not_include.rb:47
 msgid "List"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:47
+#: lib/i18n_do_not_include.rb:49
 msgid "hour"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:48
+#: lib/i18n_do_not_include.rb:50
 msgid "hours"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:49
+#: lib/i18n_do_not_include.rb:51
 msgid "minute"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:50
+#: lib/i18n_do_not_include.rb:52
 msgid "minutes"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:52
+#: lib/i18n_do_not_include.rb:54
 msgid "Audio"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:53
+#: lib/i18n_do_not_include.rb:55
 msgid "Cascading Style Sheet"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:54
+#: lib/i18n_do_not_include.rb:56
 msgid "Document"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:55
+#: lib/i18n_do_not_include.rb:57
 msgid "Flash Video"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:56
+#: lib/i18n_do_not_include.rb:58
 msgid "HTML Document"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:57
+#: lib/i18n_do_not_include.rb:59
 msgid "Image"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:58
+#: lib/i18n_do_not_include.rb:60
 msgid "JavaScript"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:59
+#: lib/i18n_do_not_include.rb:61
 msgid "PDF Document"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:60
+#: lib/i18n_do_not_include.rb:62
 msgid "Photoshop Image"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:61
+#: lib/i18n_do_not_include.rb:63
 msgid "Presentation"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:62
+#: lib/i18n_do_not_include.rb:64
 msgid "Protected Audio"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:63
+#: lib/i18n_do_not_include.rb:65
 msgid "Source Code"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:64
+#: lib/i18n_do_not_include.rb:66
 msgid "Spreadsheet"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:65
+#: lib/i18n_do_not_include.rb:67
 msgid "TeX"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:66 app/models/list.rb:358
+#: lib/i18n_do_not_include.rb:68 app/models/list.rb:366
 msgid "Text"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:67
+#: lib/i18n_do_not_include.rb:69
 msgid "Unknown Type"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:68
+#: lib/i18n_do_not_include.rb:70
 msgid "Video"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:69
+#: lib/i18n_do_not_include.rb:71
 msgid "vCalendar"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:70
+#: lib/i18n_do_not_include.rb:72
 msgid "vCard"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:72
+#: lib/i18n_do_not_include.rb:74
 msgid "notifications"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:73
+#: lib/i18n_do_not_include.rb:75
 msgid "people"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:75
+#: lib/i18n_do_not_include.rb:77
 msgid "files"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:76
+#: lib/i18n_do_not_include.rb:78
 msgid "bookmarks"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:77
+#: lib/i18n_do_not_include.rb:79
 msgid "comments"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:78
+#: lib/i18n_do_not_include.rb:80
 msgid "lists"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:80
+#: lib/i18n_do_not_include.rb:82
 msgid "listfolder"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:81
+#: lib/i18n_do_not_include.rb:83
 msgid "bookmark folder"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:82
+#: lib/i18n_do_not_include.rb:84
 msgid "calendar"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:83
+#: lib/i18n_do_not_include.rb:85
 msgid "mailbox"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:84
+#: lib/i18n_do_not_include.rb:86
 msgid "folder"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:85
+#: lib/i18n_do_not_include.rb:87
 msgid "group"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:87
+#: lib/i18n_do_not_include.rb:89
 msgid "Connect Notifications"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:89
+#: lib/i18n_do_not_include.rb:91
 msgid "Move Left"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:90
+#: lib/i18n_do_not_include.rb:92
 msgid "Move Right"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:91
+#: lib/i18n_do_not_include.rb:93
 msgid "Select Previous"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:92
+#: lib/i18n_do_not_include.rb:94
 msgid "Select Next"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:93
+#: lib/i18n_do_not_include.rb:95
 msgid "Collapse"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:94
+#: lib/i18n_do_not_include.rb:96
 msgid "Expand"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:95
+#: lib/i18n_do_not_include.rb:97
 msgid "ListFolder"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:96
+#: lib/i18n_do_not_include.rb:98
 msgid "Spacebar"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:97
+#: lib/i18n_do_not_include.rb:99
 msgid "Toggle First Checkbox"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:105
+#: lib/i18n_do_not_include.rb:107
 msgid "Permissions"
 msgstr ""
 
-#: lib/icalendar_converter.rb:29
+#: lib/icalendar_converter.rb:31
 msgid "Untitled Event"
 msgstr ""
 
@@ -2893,255 +2982,283 @@ msgid "Not all selected items are deleteable."
 msgstr ""
 
 #: lib/js_strings.rb:6
-msgid "This item is not deleteable."
+msgid "The selected item(s) can not be marked as not spam."
 msgstr ""
 
 #: lib/js_strings.rb:7
+msgid "The selected item(s) can not be marked as spam."
+msgstr ""
+
+#: lib/js_strings.rb:8
+msgid "This item is not deleteable."
+msgstr ""
+
+#: lib/js_strings.rb:9
 msgid ""
 "To receive Jabber notifications add 'notifier@joyent.com' to your IM client "
 "contacts."
 msgstr ""
 
-#: lib/js_strings.rb:8
+#: lib/js_strings.rb:10
 msgid "You must select a group to copy items to."
 msgstr ""
 
-#: lib/js_strings.rb:9
+#: lib/js_strings.rb:11
 msgid "You must select a group to move items to."
 msgstr ""
 
-#: lib/js_strings.rb:10
+#: lib/js_strings.rb:12
 msgid "You must select something in order to include it as an attachment."
 msgstr ""
 
-#: lib/js_strings.rb:11
+#: lib/js_strings.rb:13
 msgid "You must select something to copy it to another group."
 msgstr ""
 
-#: lib/js_strings.rb:12
+#: lib/js_strings.rb:14
 msgid "You must select something to copy."
 msgstr ""
 
-#: lib/js_strings.rb:13
+#: lib/js_strings.rb:15
 msgid "You must select something to delete."
 msgstr ""
 
-#: lib/js_strings.rb:14
+#: lib/js_strings.rb:16
 msgid "You must select something to move it to another group."
 msgstr ""
 
-#: lib/js_strings.rb:15
+#: lib/js_strings.rb:17
 msgid "You must select something to tag."
 msgstr ""
 
-#: lib/js_strings.rb:16
+#: lib/js_strings.rb:18
 msgid " contains<br />"
 msgstr ""
 
-#: lib/js_strings.rb:17
+#: lib/js_strings.rb:19
 msgid " tag is<br />"
 msgstr ""
 
-#: lib/js_strings.rb:18
+#: lib/js_strings.rb:20
 msgid " Type new tag here"
 msgstr ""
 
-#: lib/js_strings.rb:19
+#: lib/js_strings.rb:21
 msgid "<div class=\"loadingMessageSmall\">Loading&hellip;</div>"
 msgstr ""
 
-#: lib/js_strings.rb:20
-msgid "Addresses can not be blank."
-msgstr ""
-
-#: lib/js_strings.rb:21
-msgid "assign tag as your own"
-msgstr ""
-
 #: lib/js_strings.rb:22
-msgid "assign tag"
+msgid "A user with the specified username already exists."
 msgstr ""
 
 #: lib/js_strings.rb:23
-msgid "can change"
+msgid "Addresses can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:24
-msgid "Currently marked as primary"
+msgid "An alias with the specified username already exists."
 msgstr ""
 
 #: lib/js_strings.rb:25
-msgid "Deleting..."
+msgid "assign tag as your own"
 msgstr ""
 
 #: lib/js_strings.rb:26
-msgid "Do you want to copy the selected bookmarks to your bookmarks?"
+msgid "assign tag"
 msgstr ""
 
 #: lib/js_strings.rb:27
-msgid "Do you want to copy the selected people to your contacts?"
+msgid "can change"
 msgstr ""
 
 #: lib/js_strings.rb:28
-msgid "Do you want to delete the selected items?"
+msgid "Currently marked as primary"
 msgstr ""
 
 #: lib/js_strings.rb:29
-msgid "Do you want to delete this item?"
+msgid "Deleting..."
 msgstr ""
 
 #: lib/js_strings.rb:30
-msgid "Email addresses can not be blank."
+msgid "Do you want to copy the selected bookmarks to your bookmarks?"
 msgstr ""
 
 #: lib/js_strings.rb:31
-msgid "Everyone Else"
+msgid "Do you want to copy the selected people to your contacts?"
 msgstr ""
 
 #: lib/js_strings.rb:32
-msgid "has access to some selected items, "
+msgid "Do you want to delete the selected items?"
 msgstr ""
 
 #: lib/js_strings.rb:33
-msgid "has access, "
+msgid "Do you want to delete this item?"
 msgstr ""
 
 #: lib/js_strings.rb:34
-msgid "IM addresses can not be blank."
+msgid "Email addresses can not be blank."
+msgstr ""
+
+#: lib/js_strings.rb:35
+msgid "Everyone Else"
 msgstr ""
 
 #: lib/js_strings.rb:36
-msgid "is notified of some selected items, "
+msgid "has access to some selected items, "
 msgstr ""
 
 #: lib/js_strings.rb:37
-msgid "is notified, "
+msgid "has access, "
 msgstr ""
 
 #: lib/js_strings.rb:38
-msgid "Mailbox names can not contain periods (.)"
-msgstr ""
-
-#: lib/js_strings.rb:39
-msgid "Mark as primary"
+msgid "IM addresses can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:40
-msgid "New "
+msgid "is notified of some selected items, "
 msgstr ""
 
 #: lib/js_strings.rb:41
-msgid "New Smart"
+msgid "is notified, "
 msgstr ""
 
 #: lib/js_strings.rb:42
-msgid "No tag or condition fields may be blank."
+msgid "Mailbox names can not contain periods (.)"
+msgstr ""
+
+#: lib/js_strings.rb:43
+msgid "Mark as primary"
 msgstr ""
 
 #: lib/js_strings.rb:44
-msgid "Password recovery email address can not be blank."
+msgid "New "
 msgstr ""
 
 #: lib/js_strings.rb:45
-msgid "Phone numbers can not be blank."
+msgid "New Smart"
 msgstr ""
 
 #: lib/js_strings.rb:46
-msgid "Search "
+msgid "No tag or condition fields may be blank."
 msgstr ""
 
-#: lib/js_strings.rb:47
-msgid "Search All"
+#: lib/js_strings.rb:48
+msgid "Password recovery email address can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:49
-msgid "Special date dates can not be blank."
+msgid "Phone numbers can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:50
-msgid "Special date descriptions can not be blank."
+msgid "Search "
 msgstr ""
 
-#: lib/js_strings.rb:52
-msgid "tag info"
+#: lib/js_strings.rb:51
+msgid "Search All"
 msgstr ""
 
 #: lib/js_strings.rb:53
-msgid "The file name can not be blank."
+msgid "Special date dates can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:54
-msgid "The group name can not be blank."
-msgstr ""
-
-#: lib/js_strings.rb:55
-msgid "The password and confirmation must match."
+msgid "Special date descriptions can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:56
-msgid "The password can not be blank."
+msgid "tag info"
 msgstr ""
 
 #: lib/js_strings.rb:57
-msgid "The smart group name can not be blank."
+msgid "The file name can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:58
-msgid "The username can not be blank."
+msgid "The group name can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:59
-msgid "unassign tag"
+msgid "The password and confirmation must match."
 msgstr ""
 
 #: lib/js_strings.rb:60
-msgid "Viewability"
+msgid "The password can be no less than 4 characters."
 msgstr ""
 
 #: lib/js_strings.rb:61
-msgid "Viewable"
+msgid "The password can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:62
-msgid "Website names can not be blank."
+msgid "The smart group name can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:63
-msgid "Website URLs can not be blank."
+msgid "The username can be no more than 50 characters."
 msgstr ""
 
 #: lib/js_strings.rb:64
-msgid "You must give a name to the event."
+msgid "The username can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:65
-msgid "You must select a file to import."
+msgid "The username only can contain the characters a-z, 0-9, and _."
 msgstr ""
 
 #: lib/js_strings.rb:66
-msgid "You must select a file to upload."
+msgid "unassign tag"
 msgstr ""
 
 #: lib/js_strings.rb:67
-msgid "You must specify a complete start date."
+msgid "Viewability"
 msgstr ""
 
 #: lib/js_strings.rb:68
-msgid "You must specify a start time."
+msgid "Viewable"
 msgstr ""
 
 #: lib/js_strings.rb:69
-msgid "You must specify an event duration."
+msgid "Website names can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:70
-msgid "You must specify at least one tag or condition."
+msgid "Website URLs can not be blank."
 msgstr ""
 
 #: lib/js_strings.rb:71
+msgid "You must give a name to the event."
+msgstr ""
+
+#: lib/js_strings.rb:72
+msgid "You must select a file to import."
+msgstr ""
+
+#: lib/js_strings.rb:73
+msgid "You must select a file to upload."
+msgstr ""
+
+#: lib/js_strings.rb:74
+msgid "You must specify a complete start date."
+msgstr ""
+
+#: lib/js_strings.rb:75
+msgid "You must specify a start time."
+msgstr ""
+
+#: lib/js_strings.rb:76
+msgid "You must specify an event duration."
+msgstr ""
+
+#: lib/js_strings.rb:77
+msgid "You must specify at least one tag or condition."
+msgstr ""
+
+#: lib/js_strings.rb:78
 msgid "You must specify either a name or company name."
 msgstr ""
 
-#: app/models/smart_group.rb:97
+#: app/models/smart_group.rb:114
 msgid "Search for %{i18n_search_param}"
 msgstr ""
