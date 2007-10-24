@@ -23,10 +23,11 @@ var People = {
     ['att', 'AT&T'],
     ['nextel', 'Nextel'],
     ['sprint', 'Sprint PCS'],
+	  ['telus', 'Telus Mobility'],
     ['tmobile', 'T-Mobile'],
+    ['tmobile_uk', 'T-Mobile UK'],
     ['verizon', 'Verizon'],
-	  ['virgin_mobile', 'Virgin Mobile'],
-	  ['telus', 'Telus Mobility']
+	  ['virgin_mobile', 'Virgin Mobile']
 	],
 	
 	setupEdit: function() {

@@ -22,33 +22,37 @@ class PhoneNumber < ActiveRecord::Base
   after_destroy {|record| record.person.save if record.person}
   
   @@providers = { 
-    :virgin_mobile => {
-      :url => 'vmobl.com', 
-      :text => 'Virgin Mobile'
-    },
-    :tmobile => {
-      :url => 'tmomail.net', 
-      :text => 'T-Mobile'
-    },
     :att => {
       :url => 'txt.att.net', 
       :text => 'AT&T'
-    },
-    :sprint => {
-      :url => 'messaging.sprintpcs.com', 
-      :text => 'Sprint PCS'
-    },
-    :verizon => {
-      :url => 'vtext.com', 
-      :text => 'Verizon'
     },
     :nextel => { 
       :url => 'messaging.nextel.com', 
       :text => 'Nextel'
     },
+    :sprint => {
+      :url => 'messaging.sprintpcs.com', 
+      :text => 'Sprint PCS'
+    },
     :telus => {
       :url => 'msg.telus.com',
       :text => 'Telus Mobility'
+    },
+    :tmobile => {
+      :url => 'tmomail.net', 
+      :text => 'T-Mobile'
+    },
+    :tmobile_uk => {
+      :url => 't-mobile.uk.net', 
+      :text => 'T-Mobile UK'
+    },
+    :verizon => {
+      :url => 'vtext.com', 
+      :text => 'Verizon'
+    },
+    :virgin_mobile => {
+      :url => 'vmobl.com', 
+      :text => 'Virgin Mobile'
     }
   }
 
