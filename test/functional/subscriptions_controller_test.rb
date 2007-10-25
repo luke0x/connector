@@ -18,14 +18,26 @@ require 'subscriptions_controller'
 class SubscriptionsController; def rescue_action(e) raise e end; end
 
 class SubscriptionsControllerTest < Test::Unit::TestCase
+  fixtures all_fixtures
   def setup
     @controller = SubscriptionsController.new
     @request    = ActionController::TestRequest.new
     @response   = ActionController::TestResponse.new
+    login_person(:ian)
   end
 
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_subscribe
+    get :subscribe, {:subscribable_id => 14, :organization_id => 1, :user_id => 1, :subscribable_type => 'Folder'}
+    
+    assert Subscription.find_by_subscribable_id 14
+    assert_response :success
   end
+  
+  def test_unsubscribe
+    post :unsubscribe, {:subscription_id => 11}
+    
+    assert_raises(ActiveRecord::RecordNotFound) {Subscription.find(11)} 
+    assert_redirected_to '/home'
+  end
+  
 end
