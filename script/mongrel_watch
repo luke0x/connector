@@ -1,0 +1,49 @@
+#!/opt/csw/bin/ruby       
+# setup with the crontab
+# 3,8,13,18,23,28,33,38,43,48,53,58 * * * * RAILS_ROOT/script/mongrel_watch
+
+ENV['PATH']            = "/bin:/opt/csw/bin:/opt/csw/sbin"
+RAILS_ROOT             = File.dirname(__FILE__) + '/../'
+MONGREL_MB_LIMIT       = (ARGV[0] || 256).to_i
+EMAIL_LIST             = %w(user@email.com)
+EXPECTED_MONGREL_COUNT = 10
+         
+procs = `ps -efo pid,rss,args | grep mongrel_rails | grep -v grep`
+
+# lines like this
+# 19604 133284 /opt/csw/bin/ruby /opt/csw/bin/mongrel_rails start -d -e production -p 8003 -a 
+mongrels = procs.split("\n").collect do |proc|
+  parts = proc.split(' ')
+  {:pid => parts[0], :memory => parts[1].to_i, :port => parts[9]}
+end
+                          
+bad_mongrels     = []
+
+mongrels.each{|mongrel| bad_mongrels << mongrel if mongrel[:memory] > MONGREL_MB_LIMIT * 1024 }
+                                                   
+unless bad_mongrels.empty?
+  message =<<EOF
+To: #{EMAIL_LIST.join(' ')}
+From: mongrel_watch
+Subject: Restarting Mongrels on #{`hostname`}
+
+EOF
+
+  bad_mongrels.each do |mongrel|
+    part =<<EOF
+pid:  #{mongrel[:pid]}
+port: #{mongrel[:port]}
+used: #{mongrel[:memory]/1024} MB
+
+EOF
+    message += part
+  end
+  
+  `kill #{bad_mongrels.collect{|m| m[:pid]}.join(' ')}`
+  `echo "#{message}" | sendmail #{EMAIL_LIST.join(' ')}`
+end                                                           
+
+# If we don't have as many mongrels running as we think we should, try starting again                           
+if !bad_mongrels.empty? || mongrels.size < EXPECTED_MONGREL_COUNT
+  `cd #{RAILS_ROOT} && mongrel_rails cluster::start`  
+end
