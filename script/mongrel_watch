@@ -23,7 +23,7 @@ mongrels.each{|mongrel| bad_mongrels << mongrel if mongrel[:memory] > MONGREL_MB
                                                    
 unless bad_mongrels.empty?
   message =<<EOF
-To: #{EMAIL_LIST.join(' ')}
+To: #{EMAIL_LIST.join(', ')}
 From: mongrel_watch
 Subject: Restarting Mongrels on #{`hostname`}
 
