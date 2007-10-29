@@ -13,6 +13,13 @@ $Id$
 
 require File.dirname(__FILE__) + '/../test_helper'
 
+# This method did not exist and needs to for the test
+class MockFS::FileAdapter
+  def self.utime(*args)
+  end
+end
+
+
 context "A maildir message" do
   fixtures all_fixtures
 

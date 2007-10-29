@@ -254,12 +254,13 @@ module JoyentMaildir
       header << "X-Joyent-Id: #{uuid}\n"
       
       RunAs.run_as(JoyentConfig.maildir_owner, JoyentConfig.maildir_group) do
-        f = MockFS.file.open(temp_path, 'w')
+        orig_time = MockFS.file.mtime(message_path)
+        f         = MockFS.file.open(temp_path, 'w')
         f.write header.join
         f.write("\n")
         f.write(body)
         f.close
-
+        MockFS.file.utime(orig_time, orig_time, temp_path)
         MockFS.file_utils.mv(temp_path, message_path)
       end
       

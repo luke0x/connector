@@ -94,7 +94,10 @@ module JoyentMaildir
       dest_path = File.join(MaildirPath.build(@domain, mailbox.owner.username, mailbox.full_name), 'cur', new_base)
       
       RunAs.run_as(JoyentConfig.maildir_owner, JoyentConfig.maildir_group) do
-        MockFS.file_utils.cp(File.join(@path, 'cur', @file), dest_path)
+        src_path = File.join(@path, 'cur', @file)
+        src_time = MockFS.file.mtime(src_path)
+        MockFS.file_utils.cp(src_path, dest_path)
+        MockFS.file.utime(src_time, src_time, dest_path)
       end
       new_base
     end
