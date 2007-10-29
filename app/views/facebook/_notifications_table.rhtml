@@ -1,0 +1,31 @@
+<table style="width:100%;border-collapse: collapse;border-left:1px #CCC solid;border-right:1px #CCC solid;">
+	<tr style="background-color: #E7E7E7;background-image: url(<%= facebook_image_url("bg/thBG.png") %>);background-position:left center;background-repeat: repeat-x;">
+		<th colspan="2" style="padding: 3px 5px 3px 10px;	border-color: #CCC;	border-width: 0 1px 1px 0;	border-style: solid;">
+			Item
+		</th>
+		<th colspan="2" style="padding: 3px 5px 3px 5px;border-color: #CCC;border-width: 0 1px 1px 0;border-style: solid;">
+			Notification
+		</th>
+	</tr>
+	<% @notifications.each_with_index do |notification,index| -%>
+		<tr style="background-color:<%= index.odd? ? '#ffeebc' : '#ffe59b' %>;height: 4em;">
+			<td style="width:24px; border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 0;">
+				<img src="<%= facebook_image_url("facebook/#{notification.item.class.name.underscore}.png") %>" width="32" height="32" style="margin-left:10px">
+			</td>
+			<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
+				<%= link_to notification.item.name, facebook_url_for(notification.item) %>
+			</td>
+			<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
+				by <%= link_to notification.notifier.full_name, facebook_url_for(notification.notifier.person) %> 
+				<%= _('%{i18n_time_ago_in_words} ago')%{:i18n_time_ago_in_words => time_ago_in_words(notification.created_at)} -%>        
+			</td>
+			<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 10px 2px 2px;text-align:right;">
+        <form id="notify_form_<%= index %>">
+			    <input type="hidden" name="id" value="<%= notification.id %>"/>  
+			  </form>
+				<a clickrewriteurl="<%= facebook_url("facebook/dismiss") %>" clickrewriteid="notifications_table" clickrewriteform="notify_form_<%= index %>" clicktoshow="loading_<%=index%>" clicktohide="button_<%=index%>" style="cursor: pointer"><img id="button_<%=index%>" src="<%= facebook_image_url("facebook/dismiss.png") %>"></a>
+        <img src="<%= facebook_image_url("facebook/dismiss-animation.png") %>" style="display:none;" id="loading_<%= index %>">
+			</td>
+		</tr>
+	<% end -%>
+</table>

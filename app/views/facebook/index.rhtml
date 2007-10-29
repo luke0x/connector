@@ -9,36 +9,11 @@
 <% # $Id: login.rhtml 465 2007-10-09 23:48:01Z bryan@joyent.com $ -%>
 <% # -- -%>
 
-<fb:header><span style=""><%= link_to "Visit Your Connector >", facebook_app_landing(current_user, :connect),  :style => "float:right;font-size:11px;padding-top:3px;" %></span>Connector</fb:header>
+<fb:header><span style=""><%= link_to "Visit Your Connector >", facebook_app_landing(:connect),  :style => "float:right;font-size:11px;padding-top:3px;" %></span>Connector</fb:header>
                                    
 <div style="padding:10px;background:#F7F7F7;border-top:1px #CCC solid;">	
-	<h4 style="background:#6D84B4;color:#FFF;padding:5px 5px 5px 10px;border-width: 1px 1px 0 1px;border-style:solid;border-color: #3b5998 #5973a9">Notifications</h4>
-	<table style="width:100%;border-collapse: collapse;border-left:1px #CCC solid;border-right:1px #CCC solid;">
-		<tr style="background-color: #E7E7E7;background-image: url(http://63.193.186.12/images/bg/thBG.png);background-position:left center;background-repeat: repeat-x;">
-			<th colspan="2" style="padding: 3px 5px 3px 10px;	border-color: #CCC;	border-width: 0 1px 1px 0;	border-style: solid;">
-				Item
-			</th>
-			<th colspan="2" style="padding: 3px 5px 3px 5px;border-color: #CCC;border-width: 0 1px 1px 0;border-style: solid;">
-				Notification
-			</th>
-		</tr>
-		<% @notifications.each_with_index do |notification,index| -%> 
-			<tr style="background-color:<%= index.odd? ? '#ffeebc' : '#ffe59b' %>;height: 4em;">
-				<td style="width:24px; border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 0;">
-					<img src="http://joyent.bingodisk.com/public/fb-test/<%= notification.item.class.name.underscore %>.png" width="32" height="32" style="margin-left:10px">
-				</td>
-			 <%# facebook_image_url(current_user, "#{notification.item.class.name.underscore}.png") %>
-				<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
-					<%= link_to "#{notification.item.class_humanize} \"#{notification.item.name}\"", facebook_url_for(notification.item) %>
-				</td>
-				<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
-					by <%= link_to notification.notifier.full_name, facebook_url_for(notification.notifier.person) %> 
-					<%= _('%{i18n_time_ago_in_words} ago')%{:i18n_time_ago_in_words => time_ago_in_words(notification.created_at)} -%>        
-				</td>
-				<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
-					<img src="http://63.193.186.12/images/facebook/dismiss.png">    
-				</td>
-			</tr>
-		<% end -%>
-	</table> 
+	<h4 style="background-image: url(<%= facebook_image_url("facebook/notification.png") %>);background-position:10px center;background-repeat:no-repeat;background-color:#6D84B4;color:#FFF;padding:5px 5px 5px 30px;border-width: 1px 1px 0 1px;border-style:solid;border-color: #3b5998 #5973a9;">Notifications</h4>
+	<div id="notifications_table">
+	  <%= render :partial => "notifications_table" %>
+	</div> 
 </div> 

@@ -37,6 +37,8 @@ class Notification < ActiveRecord::Base
   def acknowledge!
     self.acknowledged = true
     self.save!
+    
+    update_facebook_profile
   end
   
   def notify!

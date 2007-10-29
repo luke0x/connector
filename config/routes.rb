@@ -49,6 +49,7 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :controller => 'facebook' do |m|
     m.facebook_login        'facebook/login',      :action => 'login'
     m.facebook_index        'facebook/index',      :action => 'index'
+    m.facebook_dismiss      'facebook/dismiss',    :action => 'dismiss'
   end
 
   map.with_options :controller => 'user' do |m|

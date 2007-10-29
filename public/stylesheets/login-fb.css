@@ -13,60 +13,120 @@ $Id$
 
 body {
 	background-color: #FFF;
-	font-size:11px;
-	line-height:1.5em;
-	font-family: "Lucida Grande", Verdana, sans-serif;
-	color: #B0CFE5;
-	padding:0px;
-	margin:0px;
-}
-#contentPane {
-	position: absolute;
-	height: 277px;
-	width: 412px;
-	margin: -150px 0px 0px -200px;
-	top: 50%;
-	left: 50%;
-	text-align: left;
+	font-size: 11px;
+	line-height: 1.5em;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	color: #585F5E;
 	padding: 0px;
-	background-color: transparent;
-	overflow: auto;
-	background-image: url(/images/bg/joyentLoginBG.gif);
+	margin: 0px;
+	background-image: url(/images/facebook/fb-bg.png);
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-position: center top;
 }
-p {
-	margin: 0px; 
-	padding: 0px; 
+#book {
+	margin: 0px auto;
+	padding: 0px;
+	text-align: left;
+	width: 789px;
+	padding-top: 35px;
 }
+#sidebar {
+	float: left;
+	width: 108px;
+	display: block;
+	background-color: #F4F5F5;
+	border-width: 0 0 1px 0;
+	border-color: #D1D4D3;
+	border-style: solid;
+	margin-left: 12px;
+	margin-top: 20px;
+	padding: 10px;
+}
+#sidebar a {
+}
+#widebar {
+	float: left;
+	width: 647px;
+	display: block;
+	background-color: #FFF;
+	border-top: 1px #002F72 solid;
+	border-right: 1px #A0A6A5 solid;
+	border-bottom: 1px #184184 solid;
+	border-left: 1px #A0A6A5 solid;
+}
+
+#content-header {
+	background-color: #F4F5F5;
+	border-width: 0 0 1px 0;
+	border-color: #BBBFBE;
+	border-style: solid;
+	padding: 20px 20px 10px 20px;
+}
+#content {
+	padding: 20px;
+}
+
+hr {
+	border: 0;
+	background-color: #BBBFBE;
+	height: 1px;
+}
+.features {
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+}
+.bullet_point {
+	color:#DADADA;
+}
+td.border-up {
+	border-style: solid;
+	font-size: 16px;
+	line-height: 24px;
+	color: #333;
+	padding-left: 0;
+}
+
+
+
+.tag {
+	font-size: 15px;
+	color: #7C7F7E;
+}
+
 .error p {
 	padding: 0 0 1em 0; 
 }
 h1 {
 	font-size: 12px;
 	margin: 13px 20px 0 0;
-	text-align: right;
-	color: #FFF;
 }
-h2, h3 {
-	color: #FFF;
+h2.first {
+	margin-top: 0;
+}
+h2 {
 	padding: 0;
-	margin: 0;
+	margin: 2em 0 0 0;
+	font-size: 16px;
+	font-weight: normal;
 }
 
 a { 
-	color: #648DAA;
-	font-size: 11px;
 	background-color:transparent;
-	text-decoration: none; 
+	color:#3B5998;
+	text-decoration: none;
+}
+a:hover { 
+	text-decoration: underline;
+}
+a:visited { 
+	color:#3B5998;
 }
 .error a { 
 	text-decoration: underline; 
 }
 
 #loginTable {
-	margin: 0 auto 5px auto;
-	width: 382px;
 }
 .info {
 	border-color: #001C2C;
@@ -78,16 +138,7 @@ a {
 }
 .label {
 	text-align: right;
-	font-size: 1.2em;
-	color: #FFF;
-	white-space: nowrap;
-}
-.resetPassword {
-	border-color: #001C2C;
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	margin: 0 20px 0 20px;
-	padding: 8px 10px 0 10px;
+	width:12em;
 }
 .resetPassword a {
 	text-decoration: underline;
@@ -128,8 +179,7 @@ a {
 		font-style:italic;
 	}
 	#loginButton {	
-		text-align: center;
-		margin:14px 0 10px 0;
+		margin:0 0 10px 13em;
 	}
 	#ExtraBits {
 		font-size:.85em;

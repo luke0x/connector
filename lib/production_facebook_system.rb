@@ -18,13 +18,8 @@ class ProductionFacebookSystem
   def set_profile(user)
     facebook_execute(user) do |fbsession| 
       # TODO: Determine where the best place is for this markup
-      fbml = "<fb:subtitle>You have #{user.notifications.size} notifications</fb:subtitle>"
-      fbml += "<ul>\n"
-      notifications.each do |notification|
-        fbml += "<li>#{notification.notifier.full_name} notified you of the #{notification.item.class_humanize} \"#{notification.item.name}\"</li>"  
-      end
-      fbml += "</ul>\n"  
-      
+      fbml = "<div style=\"background-image: url(http://63.193.186.12/images/facebook/notification.png);background-position:left;background-repeat:no-repeat;padding:3px 2px 3px 22px;\">You have <a href=\"http://apps.facebook.com#{FACEBOOK['canvas_path']}\">#{user.current_notifications.size} notifications</a>."
+            
       fbsession.profile_setFBML(:markup => fbml)
     end
   end              
@@ -59,7 +54,7 @@ class ProductionFacebookSystem
     
     begin
       facebook_session = RFacebook::FacebookWebSession.new(FACEBOOK['key'], FACEBOOK['secret'])
-      facebook_session.activate_with_previous_session(user.facebook_session_key, user.facebook_uid)
+      facebook_session.activate_with_previous_session(user.facebook_session_key, user.facebook_uid, 0)
       facebook_session
     rescue => e
       @@logger.error("#{Time.now.xmlschema}: #{e.message}")

@@ -17,21 +17,30 @@ class FacebookController < ApplicationController
   skip_before_filter :load_domain
   skip_before_filter :load_organization
   
-  before_filter      :require_facebook_login,         :only => [:index, :login]
-  before_filter      :ensure_connected_facebook_user, :only => [:index]
+  before_filter      :require_facebook_login,         :only => [:index, :login, :dismiss]
+  before_filter      :ensure_connected_facebook_user, :only => [:index, :dismiss] 
   
-  def index                       
+  def index
+    return redirect_to(facebook_canvas_url) unless in_facebook_canvas?
+    
     @notifications = current_user.current_notifications.find(:all,
                                                              :include => {:notifier => [:person]},
                                                              :order   => "notifications.created_at DESC")
   end
   
-  def login
-    session[:facebook_uid]         ||= fbsession.session_user_id
-    session[:facebook_session_key] ||= fbsession.session_key
+  def dismiss
+    if params[:id] && notification = current_user.notifications.find(params[:id])
+      notification.acknowledge!
+    end                                                      
     
-    @facebook_user = fbsession.users_getInfo(:uids => [fbsession.session_user_id], :fields => ['first_name', 'last_name'])
-        
+    @notifications = current_user.current_notifications.find(:all,
+                                                             :include => {:notifier => [:person]},
+                                                             :order   => "notifications.created_at DESC")
+                                                                 
+    render :partial => "notifications_table"
+  end  
+  
+  def login        
     if request.post?
       self.current_domain = Domain.find_by_web_domain(params[:subdomain].strip)
 
@@ -43,7 +52,12 @@ class FacebookController < ApplicationController
       else
         flash[:login_error] = _('Invalid subdomain, username or password.')        
       end
-    end
+    else
+      session[:facebook_uid]         = fbsession.session_user_id
+      session[:facebook_session_key] = fbsession.session_key
+    end    
+    
+    @facebook_user = fbsession.users_getInfo(:uids => [fbsession.session_user_id], :fields => ['first_name', 'last_name'])
   end  
 
   def remove
@@ -61,8 +75,7 @@ class FacebookController < ApplicationController
   def ensure_connected_facebook_user    
     setup_facebook_user(fbsession.session_user_id)
 
-    return redirect_to(facebook_login_url)  unless current_user
-    return redirect_to(facebook_canvas_url) if     current_user && !in_facebook_canvas?
+    redirect_to(facebook_login_url)  unless current_user
   end     
   
   def setup_facebook_user(facebook_uid)

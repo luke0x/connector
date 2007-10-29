@@ -22,62 +22,106 @@
 	<%= stylesheet_link_tag Affiliate.find(1).name %>
 </head>
 <body id="Login" onload="$('name').focus();">
-  <div id="contentPane">
-    <div align="center">
-      <% form_tag(facebook_login_url, { :onsubmit => "preventFormResubmission(this);" }) do -%>
-        <h1>Welcome <%= @facebook_user.first_name %> <%= @facebook_user.last_name %></h1>
-        <table border="0" cellspacing="0" cellpadding="4" id="loginTable" style="margin-top:<%= flash[:message] ? '20px;' : '45px;'  %>">
-	
-		<% if flash[:message] -%>
-			<tr>
-          		<td colspan="2">
-          		 	<div class="info" style="padding:4px;">
-						<div style='color: orange; font-style: italic;'><%= flash_message(:message) %></div>
-					</div>
-				</td>
-			</tr>
-		<% end -%>
+	<div id="book">
+		<div id="sidebar">
+			<a href="http://www.facebook.com">< back to Facebook</a>
+		</div>
+		<div id="widebar">
+			<div id="content-header">
+				<h1>Welcome <i><%= @facebook_user.first_name %> <%= @facebook_user.last_name %></i></h1>
+			</div>
+			<div id="content">
+			
+			
 
-    <tr>
-      <td class="label">
-        <%= _('Connector URL') -%>:
-      </td>
-      <td>
-        <input id="name" name="subdomain" size="25" maxlength="40" value="<%= h(session['subdomain']) %>" style="width:220px;" />
-      </td>
-    </tr>		
-          <tr>
-            <td class="label">
-              <%= _('Username') -%>:
-            </td>
-            <td>
-              <input id="name" name="username" size="25" maxlength="40" value="<%= h(session['username']) %>" style="width:220px;" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label">
-              <%= _('Password') -%>:
-            </td>
-            <td>
-              <input type="password" name="password" size="25" maxlength="40" style="width:220px;" autocomplete="off" />
-              <% if flash[:login_error] -%>
-                <div style='color: orange; font-style: italic;'><%= flash_message(:login_error) %></div>
-              <% end -%>
-            </td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-          </tr>
-        </table>
-        <div id="loginButton">
-          <input type="submit" name="command" value="<%= _(' Authenticate ') -%>" />
-        </div>
-        <div class="resetPassword">
-					<%= link_to _('Reset your password'), {:action => 'reset_password'} %>
-				</div>
-      <% end -%>
-    </div>
-  </div>
+			
+				<h2 class="first">New Users: <strong>Create a Connector</strong></h2>
+				<hr />
+					<table>
+						<tr>
+							<td class="tag">
+								<img src="/images/facebook/jill-and-gang.png" border="0" />
+							</td>
+							<td class="border-up">
+								The <strong>Connector</strong> collaboration suite is the <strong>perfect companion</strong> for college research groups, small businesses, or teams. <strong><a href="http://www.joyent.com/connector/collaboration-suite">find out more</a></strong>
+							</td>
+						</tr>
+					</table>
+					<p class="features">
+						private collaboration space <span class="bullet_point">•</span> built-in mail server (IMAP) <span class="bullet_point">•</span> store documents online <span class="bullet_point">•</span> tag anything <span class="bullet_point">•</span> calendaring <span class="bullet_point">•</span> create outlines <span class="bullet_point">•</span> share bookmarks
+					</p>
+					<table style="float:right;">
+						<tr>
+							<td class="tag">
+								Anyone can have a Connector for <strong>FREE</strong> -
+							</td>
+							<td>
+								<a href="http://www.joyent.com/connector/pricing/"><img src="/images/facebook/signup.png" border="0" /></a>
+							</td>
+						</tr>
+					</table>
+					<br clear="right" />
+			
+				<h2>Existing Users: <strong>login</strong></h2>
+				<hr />
+				<% form_tag(facebook_login_url, { :onsubmit => "preventFormResubmission(this);" }) do -%>
+					
+					<table border="0" cellspacing="0" cellpadding="4" id="loginTable" style="">
+					
+						<% if flash[:message] -%>
+						<tr>
+							<td colspan="3">
+								<div class="info" style="padding:4px;">
+									<div style='color: orange; font-style: italic;'><%= flash_message(:message) %></div>
+								</div>
+							</td>
+						</tr>
+						<% end -%>
+						<tr>
+							<td class="label">
+								<%= _('Connector URL') -%>:
+							</td>
+							<td colspan="2">
+								<input id="name" name="subdomain" size="25" maxlength="40" value="<%= h(session['subdomain']) %>" style="width:220px;" />
+							</td>
+						</tr>		
+						<tr>
+							<td class="label">
+								<%= _('Username') -%>:
+							</td>
+							<td colspan="2">
+								<input id="name" name="username" size="25" maxlength="40" value="<%= h(session['username']) %>" style="width:220px;" />
+							</td>
+						</tr>
+						<tr>
+							<td class="label">
+								<%= _('Password') -%>:
+							</td>
+							<td>
+								<input type="password" name="password" size="25" maxlength="40" style="width:220px;" autocomplete="off" />
+								<% if flash[:login_error] -%>
+								<div style='color: orange; font-style: italic;'><%= flash_message(:login_error) %></div>
+								<% end -%>
+							</td>
+							<td>
+								<%= link_to _('Reset?'), {:action => 'reset_password'} %>
+							</td>
+						</tr>
+					</table>
+					<div id="loginButton">
+						<input type="submit" name="command" value="<%= _(' Authenticate ') -%>" />
+					</div>
+				<% end -%>
+				
+				
+				
+			
+			
+			</div>
+		</div>
+	</div>
+	
+
+    
 </body>
 </html>
