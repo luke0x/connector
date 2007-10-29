@@ -54,6 +54,12 @@ class Message < ActiveRecord::Base
     JoyentMaildir::Base.connection.message_body self.id, text_only
   end
   
+  def update_time!(time=nil)
+    time ||= internaldate                                         
+    
+    JoyentMaildir::Base.connection.message_update_time self.id, time
+  end
+  
   def from
     sender || []
   end

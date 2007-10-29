@@ -137,6 +137,11 @@ module JoyentMaildir
     # Message#raw
     def message_raw(message_id)
       JoyentMaildir::Message.new(::Message.find(message_id)).raw    
-    end
+    end   
+    
+    # Message#update_time
+    def message_update_time(message_id, time)
+      JoyentMaildir::Message.new(::Message.find(message_id)).update_time(time)
+    end   
   end
 end

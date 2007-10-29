@@ -152,6 +152,13 @@ module JoyentMaildir
     def flags
       @file =~ /.+:2,(D?F?P?R?S?T?)/
       $1.split('')
+    end         
+    
+    def update_time(time)
+      RunAs.run_as(JoyentConfig.maildir_owner, JoyentConfig.maildir_group) do
+        message_path = File.join(@path, 'cur', @file)
+        MockFS.file.utime(time, time, message_path)
+      end      
     end
 
     private
