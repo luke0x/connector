@@ -22,7 +22,6 @@ class ListCell < ActiveRecord::Base
   validates_presence_of :list_row_id
   validates_presence_of :list_column_id
   
-  before_save :adjust_value
   after_save {|record| record.list.save}
   
   def summed_value
@@ -41,6 +40,18 @@ class ListCell < ActiveRecord::Base
     return 0 unless kind == 'Number'
     return 0 if value == '+'
     value.to_num
+  end        
+  
+  def value=(new_value)
+    new_value = case self.kind
+    when 'Checkbox' then new_value == 'true' ? 'true' : 'false'
+    when 'Date'     then Chronic.parse(new_value)
+    when 'Number'   then text_to_number(new_value)
+    when 'Text'     then new_value
+    end                      
+    
+    write_attribute(:value, new_value)
+    new_value
   end
 
   def view_value
@@ -106,9 +117,9 @@ class ListCell < ActiveRecord::Base
       when 'Number'
         text_to_number(value)
       end
-    end
+    end   
     
-    self.value = new_value
+    write_attribute(:value, new_value)
   end
   
   def ancestors
@@ -127,7 +138,9 @@ class ListCell < ActiveRecord::Base
     end
   end
   
-  def kind
+  def kind            
+    return nil unless list_column
+    
     if List.current
       List.current.list_columns.detect{|lc| lc.id == self.list_column_id}.kind
     else
@@ -136,15 +149,6 @@ class ListCell < ActiveRecord::Base
   end
   
   protected
-  
-    def adjust_value
-      self.value = case self.kind
-      when 'Checkbox' then value == 'true' ? 'true' : 'false'
-      when 'Date'     then Chronic.parse(value)
-      when 'Number'   then text_to_number(value)
-      when 'Text'     then value
-      end
-    end
     
     def text_to_date(val)
       format_date_time(Time.parse(val), false) rescue ''

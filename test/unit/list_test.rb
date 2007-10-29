@@ -27,30 +27,51 @@ class ListTest < Test::Unit::TestCase
   def setup
     User.current = users(:ian)  
     
-    @nested_opml = <<EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <opml version="1.0">
-      <head>
-        <title>simple nested list</title>
-        <expansionState>0,2,4</expansionState>
-      </head>
-      <body>
-        <outline text="first stuff">
-          <outline text="sub stuff"/>
-          <outline text="another sub of stuff">
-            <outline text="sub of sub stuff"/>
+    @nested_opml = <<-EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <opml version="1.0">
+        <head>
+          <title>simple nested list</title>
+          <expansionState>0,2,4</expansionState>
+        </head>
+        <body>
+          <outline text="first stuff">
+            <outline text="sub stuff"/>
+            <outline text="another sub of stuff">
+              <outline text="sub of sub stuff"/>
+            </outline>
           </outline>
-        </outline>
-        <outline text="second stuff">
-          <outline text="sub to second stuff"/>
-        </outline>
-        <outline text="third stuff"/>
-      </body>
-    </opml>    
-EOS
+          <outline text="second stuff">
+            <outline text="sub to second stuff"/>
+          </outline>
+          <outline text="third stuff"/>
+        </body>
+      </opml>    
+    EOS
   end
   
   # class methods
+  
+#   def test_opml_round_trip
+#     # Quick and dirty test of the import/export process
+#     # Won't work b/c opml is not descriptive enough
+#     list     = lists(:list1)
+#     new_list = List.new_from_opml(list.to_opml, users(:ian))
+#                          
+# puts list.to_opml                     
+# puts new_list.to_opml
+#     
+#     assert_equal_lists(list, new_list)
+#   end           
+#   
+#   def test_clone          
+#     list     = lists(:list1)
+#     list.list_rows.each(&:create_cells)
+#     
+#     new_list = list.clone
+#     
+#     assert_equal_lists(list, new_list)
+#   end
 
   def test_self_class_humanize
     assert_equal 'List', List.class_humanize
@@ -214,4 +235,35 @@ EOS
   #   assert opml.include?(%{<outline text=""/>})
   # end
   
+  def assert_equal_lists(expected, actual)
+    assert_equal expected.name, actual.name
+    assert_equal expected.list_rows.size, actual.list_rows.size
+    assert_equal expected.list_columns.size, actual.list_columns.size
+
+    expected.list_columns.size.times do |index|
+      [:position, :name, :kind].each do |attribute|
+        assert_equal expected.list_columns[index].send(attribute), actual.list_columns[index].send(attribute)
+      end
+    end
+        
+    expected.list_rows.size.times do |index|
+      assert_equal_rows(expected.list_rows[index], actual.list_rows[index])
+    end                                                                    
+  end 
+  
+  def assert_equal_rows(expected, actual)
+    assert_equal expected.children.size, actual.children.size
+    
+    [:position, :depth_cache, :children_count, :visible_children].each do |attribute|
+      assert_equal expected.send(attribute), actual.send(attribute), "#{attribute} values do not equal each other"
+    end    
+    
+    expected.list_cells.size.times do |index|
+      assert_equal expected.list_cells[index].value.to_s, actual.list_cells[index].value.to_s
+    end
+    
+    expected.children.size.times do |index|
+      assert_equal_rows(expected.children[index], actual.children[index])   
+    end
+  end
 end

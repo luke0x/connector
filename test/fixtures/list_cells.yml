@@ -18,7 +18,7 @@ list1_row1_col2:
   id: 2
   list_column_id: 2
   list_row_id: 1
-  value: "<%= 1.day.ago.to_s :db %>"
+  value: "<%= Chronic.parse(1.day.ago.to_s) %>"
 list1_row1_col3:
   id: 3
   list_column_id: 3

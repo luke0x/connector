@@ -48,7 +48,7 @@ class ListColumn < ActiveRecord::Base
   def kind=(new_kind)
     return self.kind if     self.kind == new_kind
     return self.kind unless ColumnKinds.include?(new_kind)
-
+    
     list_cells.each{|lc| lc.convert(self.kind, new_kind)}
     write_attribute(:kind, new_kind)
   end

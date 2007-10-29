@@ -57,6 +57,7 @@ class List < ActiveRecord::Base
         row.update_attribute(:visible_children, true) if expanded.include?(i.to_s)
       end
       list.save!
+      list
     end
   end
   
@@ -136,7 +137,7 @@ class List < ActiveRecord::Base
             hsh[v.list_column.name.gsub(/\W+/, "").to_sym] = opml_cell_value(v) unless v == text
             hsh
           end
-          b.outline({:text => text.value}.merge(rest_values)) do |oo|
+          b.outline({:text => (text ? text.value : '')}.merge(rest_values)) do |oo|
             list_row.children.each do |child|
               build_children(child, oo)
             end
@@ -161,7 +162,7 @@ class List < ActiveRecord::Base
       hsh[v.list_column.name.gsub(/\W+/, "").to_sym] = opml_cell_value(v) unless v == child_text
       hsh
     end
-    oo.outline({:text => child_text.value}.merge(child_rest_values)) do |co|
+    oo.outline({:text => (child_text ? child_text.value : '')}.merge(child_rest_values)) do |co|
       child.children.each do |c|
         build_children(c, oo)
       end
