@@ -15,7 +15,6 @@
 		<%= _('View this %{i18n_controller_class_groupname} in another account') % {:i18n_controller_class_groupname => _("#{controller.class.group_name.titlecase.downcase}")} -%>:
   	<ul style="margin-top:.4em;">
     	<% current_user.identity_other_users.each do |user| -%>
-			<% unless user == group.owner -%>
     		<% subscription_id = group.subscriptions.find_by_user_id(user.id) || nil %>
     		<li style="line-height: 1.6em;">
     			<%= check_box_action(subscription_create_url(:subscribable_id => group.id, 
@@ -26,7 +25,6 @@
                                { :checked => ! subscription_id.blank? } ) %>
           <%= "#{user.organization.name} (#{user.username})" %>
     		</li>
-			<% end -%>
     	<% end -%>
   	</ul>
   </div>
