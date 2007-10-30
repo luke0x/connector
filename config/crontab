@@ -22,3 +22,4 @@
 #       edit the crontab file)
 
 0,5,10,15,20,25,30,35,40,45,50,55 * * * * ABSOLUTE_PATH_TO_RUBY RAILS_ROOT/script/alarminator
+3,8,13,18,23,28,33,38,43,48,53,58 * * * * RAILS_ROOT/script/mongrel_watch
