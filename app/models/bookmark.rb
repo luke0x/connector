@@ -23,7 +23,7 @@ class Bookmark < ActiveRecord::Base
   before_save    :tweak_uri
   before_save    :generate_sha1 # do after :tweak_uri
   before_save    :destroy_icon!
-  after_save     :create_icon!
+#  after_save     :create_icon!
   before_destroy :destroy_icon!
 
   cattr_accessor :thumbnail_server
@@ -77,7 +77,8 @@ class Bookmark < ActiveRecord::Base
     # don't re-create if it's less than 5 minutes old
     return if MockFS.file.exist?(self.icon_path) and (File.mtime(self.icon_path) > 5.minutes.ago)
     
-    @@thumbnail_server.generate_thumbnail(JoyentConfig.mongrel_cluster_host, self.organization.id.to_s, self.uri)
+    # Comment this out until we can get this to work reliably
+    # @@thumbnail_server.generate_thumbnail(JoyentConfig.mongrel_cluster_host, self.organization.id.to_s, self.uri)
   rescue
     # everything for now til this is all in
     RAILS_DEFAULT_LOGGER.info("Bookmark thumbnail generation: error with id=#{self.id} uri=#{self.uri}")
