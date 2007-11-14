@@ -1,0 +1,23 @@
+<VirtualHost <%= public_ip %>:80>
+  ServerName <%= server_name %>
+  ServerAlias <%= server_alias %>
+  DocumentRoot <%= public_path %>
+ 
+  <Directory "<%= public_path %>/">
+  Options FollowSymLinks
+  AllowOverride None
+  Order allow,deny
+  Allow from all
+  </Directory>
+ 
+  <Proxy balancer://<%= application %>-mongrels><% start_port.upto(end_port) do |port| %>
+    BalancerMember http://127.0.0.1:<%= port %><% end %>
+  </Proxy>
+ 
+  ProxyPass /images !
+  ProxyPass /javascripts !
+  ProxyPass /stylesheets !
+  ProxyPass / balancer://<%= application %>-mongrels/
+  ProxyPassReverse / balancer://<%= application %>-mongrels/
+  ProxyPreserveHost On
+</VirtualHost>

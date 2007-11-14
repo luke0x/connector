@@ -11,139 +11,66 @@ $Id$
 --
 =end #(end)
 
-require 'mongrel_cluster/recipes'   
-
-# SOME THINGS I HAD TO DO TO GET THINGS STARTED ON A NEW ZONE:
-# * checked out from svn then removed it (as to get my password on there)
-# * change /etc/passwd so that /bin/bash is the default shell
-# * added "PermitUserEnvironment yes" to /etc/ssh/sshd_config
-# * svcadm restart ssh
-# * created /.ssh/environment
-#  -- PATH=/opt/csw/bin:/usr/bin:/usr/sbin
-#
-# cap setup
-# 
-# * Make any changes to the files in shared
-# * create db                             
-# 
-# cap deploy
-#                                      
-# COMMANDS I HAVE CHECKED OUT                                              
-# cap <command>
-# commands: setup, start, stop, restart, deploy, rollback, deploy_with_migrations
-
-# =============================================================================
-# REQUIRED VARIABLES
-# =============================================================================
+require 'erb'
+require 'config/accelerator/accelerator_tasks'
+require 'config/recipes/joyent'
+ 
 set :application, "connector"
-set :repository, "http://svn.joyent.com/joyent/connector-merge"
+set :repository,  "http://svn.joyent.com/opensource/connector/source/trunk"
+ 
+# If you aren't deploying to /u/apps/#{application} on the target
+# servers (which is the default), you can specify the actual location
+# via the :deploy_to variable:
+set :deploy_to, "/opt/joyent/#{application}" # I like this location
+ 
+# If you aren't using Subversion to manage your source code, specify
+# your SCM below:
+set :scm, :subversion
+set :sudo, "/opt/csw/bin/sudo"
 
-role :web, "webhostname"
-role :app, "apphostname"
-role :db,  "dbhostname", :primary => true
+# Do not run the sudo command through sh
+# default_run_options[:shell] = false
 
-#set :rails_env, :development
+# We are going to get role based servers and other details from the stage files
+# give a look to the config/deploy/ directory for specific stages
+set :stages, %w(staging production testing)
+set :default_stage, "testing"
+require 'capistrano/ext/multistage'
 
-
-# =============================================================================
-# OPTIONAL VARIABLES
-# =============================================================================
-set :deploy_to, "/opt/joyent/#{application}"
-set :mongrel_conf, "#{current_path}/config/mongrel_cluster.yml"
-
-set :user, "root"
-set :svn, "/opt/csw/bin/svn"
-set :sudo, "/opt/csw/bin/sudo"       
-
-                            
-# =============================================================================
-# TASKS
-# ============================================================================= 
-task :after_setup do                                                                  
-  put (File.read('lib/joyent_config.rb'),              "#{shared_path}/joyent_config.rb", :mode => 0644)
-  put (File.read('config/database.yml'),               "#{shared_path}/database.yml",     :mode => 0644)
-  put (File.read('config/environments/production.rb'), "#{shared_path}/production.rb",    :mode => 0644)  
+ 
+# Example dependancies
+depend :remote, :command, :gem, :roles => :app
+depend :remote, :command, :ggrep, :roles => :app # This is due to the way we're getting the IP Address into accelerator_tasks.rb
+depend :remote, :gem, :rcov, '>=0.8.0', :roles => :app
+depend :remote, :gem, :mongrel, '>=1.0.1',:roles => :app
+depend :remote, :gem, :hpricot, '>=0.6.0', :roles => :app
+depend :remote, :gem, :rake, '>=0.7.3', :roles => :app
+depend :remote, :gem, :tzinfo, '>=0.3.3', :roles => :app
+depend :remote, :gem, :ezcrypto, '>=0.7.0', :roles => :app
+depend :remote, :gem, :gettext, '=1.9.0', :roles => :app
+depend :remote, :gem, :mongrel_cluster, '>=1.0.4', :roles => :app
+ 
+deploy.task :restart do
+  accelerator.smf_restart
+  accelerator.restart_apache
+end
+ 
+deploy.task :start do
+  accelerator.smf_start
+  accelerator.restart_apache
+end
+ 
+deploy.task :stop do
+  accelerator.smf_stop
+  accelerator.restart_apache
 end
 
-task :after_update_code do 
-  run "rm #{release_path}/lib/joyent_config.rb"
-  run "cp #{shared_path}/joyent_config.rb #{release_path}/lib/joyent_config.rb"  
-  
-  # Copy in the database.yml file
-  run "rm #{release_path}/config/database.yml"
-  run "cp #{shared_path}/database.yml #{release_path}/config/database.yml"    
-  
-  # Copy in a stubbed out production
-  run "rm #{release_path}/config/environments/production.rb"
-  run "cp #{shared_path}/production.rb #{release_path}/config/environments/production.rb"
-end
-
-task :before_symlink do
-  run "if [[ -d #{current_path} ]]; then rm #{current_path}; fi"
-end     
-
-task :start_mongrel_cluster , :roles => :app do
-  set_mongrel_conf
-  run "cd #{current_path}; mongrel_rails cluster::start -C #{mongrel_conf}"
-end                                     
-
-task :stop_mongrel_cluster , :roles => :app do
-  set_mongrel_conf
-  run "cd #{current_path}; mongrel_rails cluster::stop -C #{mongrel_conf}"
-end    
-
-task :restart, :roles => :app do
-  stop
+# Override the default deploy:cold to include the schema load
+deploy.task :cold do
+  update
+  run "cd #{current_path}; rake RAILS_ENV=production db:schema:load"
+  migrate
   start
 end
-
-task :stop, :roles => :app do
-  stop_mongrel_cluster
-  stop_imap_worker
-  stop_joyent_job  
-end
-
-task :start, :roles => :app do 
-  start_mongrel_cluster
-  start_imap_worker
-  start_joyent_job
-end
-
-task :start_imap_worker, :roles => :app do
-  run <<-CMD
-    export RAILS_ENV=#{rails_env}; 
-    nohup #{current_path}/script/imap_worker start; 
-    sleep 5
-  CMD
-end
-   
-task :stop_imap_worker, :roles => :app do
-  run <<-CMD
-    export RAILS_ENV=#{rails_env}; 
-    #{current_path}/script/imap_worker stop; 
-    sleep 1
-  CMD
-end        
-
-task :start_joyent_job, :roles => :app do
-  run <<-CMD
-    export RAILS_ENV=#{rails_env}; 
-    nohup ruby #{current_path}/script/joyent_job start; 
-    sleep 5;
-    export RAILS_ENV=#{rails_env}; 
-    nohup ruby #{current_path}/script/joyent_job start_worker 5; 
-    sleep 5
-  CMD
-end
-
-task :stop_joyent_job, :roles => :app do
-  run "ruby #{current_path}/script/joyent_job stop"    
-end
-                           
-task :before_rollback_code, :except => { :no_release => true } do
-  if releases.length < 2
-    raise "could not rollback the code because there is no prior release"
-  else
-    run "rm #{current_path}"
-  end
-end
+ 
+after :deploy, 'deploy:cleanup'
