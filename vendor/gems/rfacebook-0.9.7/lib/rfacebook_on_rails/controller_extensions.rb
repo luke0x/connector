@@ -476,6 +476,8 @@ module RFacebook
           request.protocol + request.host_with_port + options
         when :back
           request.env["HTTP_REFERER"] || raise(RedirectBackError)
+        else
+          url_for(options, *parameters)
         end
         # END JOYENT MODIFICATION
         
