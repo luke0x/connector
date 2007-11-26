@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
 "POT-Creation-Date: 2007-10-23 19:36-0400\n"
-"PO-Revision-Date: 2007-09-11 07:11+0200\n"
+"PO-Revision-Date: 2007-11-23 10:11+0100\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
 "MIME-Version: 1.0\n"
@@ -121,9 +121,8 @@ msgid "Search: %{i18n_search_param}"
 msgstr "Suche: %{i18n_search_param}"
 
 #: app/controllers/facebook_controller.rb:44
-#, fuzzy
 msgid "Invalid subdomain, username or password."
-msgstr "Benutzername oder Passwort ungültig."
+msgstr "Benutzername, Subdomain oder Passwort ungültig."
 
 #: app/controllers/files_controller.rb:565
 #: app/controllers/files_controller.rb:572
@@ -185,7 +184,7 @@ msgstr "Unerwünschte Werbung"
 #: app/controllers/mail_controller.rb:735 app/views/mail/_toolbar.rhtml:38
 #: app/views/sidebars/groups/mail/_mail.rhtml:27
 msgid "Spam"
-msgstr ""
+msgstr "Werbung"
 
 #: app/controllers/mail_controller.rb:736
 msgid "Unread"
@@ -1046,13 +1045,12 @@ msgid "Modified"
 msgstr "Modifiziert"
 
 #: app/views/facebook/login.rhtml:43
-#, fuzzy
 msgid "Connector URL"
-msgstr "Aus dem Connector"
+msgstr "Connector URL"
 
 #: app/views/facebook/login.rhtml:74
 msgid " Authenticate "
-msgstr ""
+msgstr " Authentifizieren "
 
 #: app/views/files/_peek.rhtml:13 app/views/files/_service_peek.rhtml:13
 #: app/views/files/_strongspace_peek.rhtml:13
@@ -1441,27 +1439,24 @@ msgid "Compose"
 msgstr "Verfassen"
 
 #: app/views/mail/_toolbar.rhtml:38
-#, fuzzy
 msgid "Mark as spam."
-msgstr "Als Primär markieren"
+msgstr "Als Werbung markieren"
 
 #: app/views/mail/_toolbar.rhtml:41
 msgid "Not Spam"
-msgstr ""
+msgstr "Keine Werbung"
 
 #: app/views/mail/_toolbar.rhtml:41
-#, fuzzy
 msgid "Mark as not spam."
-msgstr "Als Primär markieren"
+msgstr "Als keine Werbung markieren"
 
 #: app/views/mail/_toolbar.rhtml:44
 msgid "Permanently Delete All Spam"
-msgstr ""
+msgstr "Alle Werbung dauerhaft löschen"
 
 #: app/views/mail/_toolbar.rhtml:44
-#, fuzzy
 msgid "Do you want to permanently delete all spam?"
-msgstr "Sie sind dabei unwiderruflich zu löschen"
+msgstr "Wollen Sie alle Werbung unwiderruflich löschen?"
 
 #: app/views/mail/_toolbar.rhtml:47 app/views/mail/_toolbar.rhtml:53
 msgid "Empty Trash"
@@ -1472,31 +1467,30 @@ msgid "Do you want to empty your trash?"
 msgstr "Möchten Sie Ihren Papierkorb entleeren?"
 
 #: app/views/mail/_tools.rhtml:12
-#, fuzzy
 msgid "Forwarding"
-msgstr "Weiterleiten"
+msgstr "Weiterleitung"
 
 #: app/views/mail/_tools.rhtml:16
 msgid "Your email is currently not being forwarded to another email address."
-msgstr ""
+msgstr "Ihre Email wird zur Zeit nicht an eine andere Adresse weitergeleitet."
 
 #: app/views/mail/_tools.rhtml:18
 msgid "Your email is currently being forwarded to %{forward_address}."
-msgstr ""
+msgstr "Ihre Email wird an die Adresse %{forward_address} weitergeleitet."
 
 #: app/views/mail/_tools.rhtml:22
-#, fuzzy
 msgid "Edit Forwarding"
-msgstr "Bearbeitung"
+msgstr "Weiterleitung bearbeiten"
 
 #: app/views/mail/_tools.rhtml:26
-#, fuzzy
 msgid "Aliases"
-msgstr "Liste(n)"
+msgstr "Aliase"
 
 #: app/views/mail/_tools.rhtml:29
 msgid "Aliases let multiple users receive email sent to the same address."
 msgstr ""
+"Aliase ermöglichen es mehreren Nutzern, Mail die an nur eine Adresse "
+"geschickt wurde, zu erhalten."
 
 #: app/views/mail/compose.rhtml:19
 msgid "New Message"
@@ -1515,6 +1509,8 @@ msgid ""
 "This inbox is currently being <strong>forwarded</strong> to %"
 "{forward_address}. New mail messages will not appear here."
 msgstr ""
+"Dieses Postfach wird zur Zeit an %{forward_address} <strong>weitergeleitet</strong>."
+"Neue Nachrichten werden hier nicht erscheinen."
 
 #: app/views/mail/list.rhtml:37
 msgid "Status"
@@ -1537,14 +1533,12 @@ msgid "Reply To Sender"
 msgstr "Absender antworten"
 
 #: app/views/mail/show.rhtml:32
-#, fuzzy
 msgid "Previous"
-msgstr "Vorheriger Monat"
+msgstr "Vorherige"
 
 #: app/views/mail/show.rhtml:33
-#, fuzzy
 msgid "Next"
-msgstr "Text"
+msgstr "Nächste"
 
 #: app/views/mail/show.rhtml:41
 msgid "Does this message not look quite right?"
@@ -1591,9 +1585,8 @@ msgstr "Der Mailserver ist zur Zeit nicht erreichbar"
 
 #: app/views/mail_alias/_create.rhtml:24
 #: app/views/mail_alias/_mail_aliases.rhtml:25
-#, fuzzy
 msgid "New Alias"
-msgstr "Neue Liste"
+msgstr "Neues Alias"
 
 #: app/views/mail_alias/_mail_alias_li.rhtml:37
 #: app/views/sidebars/groups/_default_group.rhtml:23
@@ -1610,9 +1603,8 @@ msgid "View group info"
 msgstr "Gruppeninfo ansehen"
 
 #: app/views/mail_alias/_mail_alias_li.rhtml:44
-#, fuzzy
 msgid "Delete Mail Alias"
-msgstr "Alle ausgewählten Elemente löschen."
+msgstr "Email-Alias löschen."
 
 #: app/views/partials/_calendar_list_header.rhtml:25
 msgid "Forward In Time"
@@ -1859,7 +1851,6 @@ msgid "International"
 msgstr "International"
 
 #: app/views/people/_edit_account_user.rhtml:86
-#, fuzzy
 msgid ""
 "Receive notifications and event alarms via SMS, email and instant message"
 msgstr "Benachrichtigungen und Termine per SMS, Email und IM senden"
@@ -1869,9 +1860,8 @@ msgid "SMS"
 msgstr "SMS"
 
 #: app/views/people/_edit_account_user.rhtml:108
-#, fuzzy
 msgid "Instant Message (Jabber)"
-msgstr "Instant Message"
+msgstr "Instant Message (Jabber)"
 
 #: app/views/people/_edit_contact_information.rhtml:13
 msgid "Edit Person"
@@ -1906,7 +1896,6 @@ msgid "job title"
 msgstr "Position"
 
 #: app/views/people/_edit_contact_information.rhtml:65
-#, fuzzy
 msgid "Forward Email"
 msgstr "Weiterleiten"
 
@@ -3050,11 +3039,11 @@ msgstr "Nicht alle ausgewählten Elemente sind löschbar."
 
 #: lib/js_strings.rb:6
 msgid "The selected item(s) can not be marked as not spam."
-msgstr ""
+msgstr "Die ausgewählten Elemente konnten nicht als keine Werbung gekennzeichnet werden."
 
 #: lib/js_strings.rb:7
 msgid "The selected item(s) can not be marked as spam."
-msgstr ""
+msgstr "Die ausgewählten Elemente konnten nicht als Werbung gekennzeichnet werden."
 
 #: lib/js_strings.rb:8
 msgid "This item is not deleteable."
@@ -3065,6 +3054,8 @@ msgid ""
 "To receive Jabber notifications add 'notifier@joyent.com' to your IM client "
 "contacts."
 msgstr ""
+"Um Jabber Benachrictigungen zu erhalten fügen Sie in Ihrem IM Client "
+"'notifier@joyent.com' als Kontakt hinzu."
 
 #: lib/js_strings.rb:10
 msgid "You must select a group to copy items to."
@@ -3118,7 +3109,7 @@ msgstr "<div class=\"loadingMessageSmall\">Laden&hellip;</div>"
 
 #: lib/js_strings.rb:22
 msgid "A user with the specified username already exists."
-msgstr ""
+msgstr "Ein Nutzer mit diesem Namen existiert bereits."
 
 #: lib/js_strings.rb:23
 msgid "Addresses can not be blank."
@@ -3126,7 +3117,7 @@ msgstr "Adressen dürfen nicht leer sein."
 
 #: lib/js_strings.rb:24
 msgid "An alias with the specified username already exists."
-msgstr ""
+msgstr "Ein Alias mit diesem Namen existiert bereits."
 
 #: lib/js_strings.rb:25
 msgid "assign tag as your own"
@@ -3254,9 +3245,8 @@ msgid "The password and confirmation must match."
 msgstr "Passwort und Bestätigung müssen übereinstimmen."
 
 #: lib/js_strings.rb:60
-#, fuzzy
 msgid "The password can be no less than 4 characters."
-msgstr "Das Passwort darf nicht leer sein."
+msgstr "Das Passwort darf nicht kürzer als 4 Zeichen sein."
 
 #: lib/js_strings.rb:61
 msgid "The password can not be blank."
@@ -3267,9 +3257,8 @@ msgid "The smart group name can not be blank."
 msgstr "Der Name der Intelligenten Gruppe darf nicht leer sein."
 
 #: lib/js_strings.rb:63
-#, fuzzy
 msgid "The username can be no more than 50 characters."
-msgstr "Der Benutzername darf nicht leer sein."
+msgstr "Der Benutzername darf nicht länger als 50 Zeichen sein."
 
 #: lib/js_strings.rb:64
 msgid "The username can not be blank."
@@ -3277,7 +3266,7 @@ msgstr "Der Benutzername darf nicht leer sein."
 
 #: lib/js_strings.rb:65
 msgid "The username only can contain the characters a-z, 0-9, and _."
-msgstr ""
+msgstr "Benutzernamen dürfen nur die Zeichen a-z, 0-9 und _ und . enthalten."
 
 #: lib/js_strings.rb:66
 msgid "unassign tag"
