@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# ++
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+# --
+
+require "rubygems"
+require "daemons"
+
+APP_DIR = File.expand_path(File.dirname(File.dirname(__FILE__)))
+
+Daemons.run(File.join(APP_DIR, 'script/joyent_forward.rb'), {
+  :dir_mode => :normal,
+  :dir => File.join(APP_DIR, 'tmp/pids'),
+  :multiple => false,
+  :backtrace => true,
+  :log_output => true,
+  # This may be used to restore the crashed instances, but not sure about SMF compatibility
+  # :monitor => true
+})
