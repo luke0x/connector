@@ -1,15 +1,11 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
+/* Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
+Redistribution and/or modification of this code is governed
+by either the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$
---
-*/
+$Id$ */
 
 /* App Bar ----------------------------------------------------- */
 
@@ -28,19 +24,19 @@ $Id$
 		background-image: url(/images/lang/nl/actionsMail.png);
 		}
 	.actionEmptyTrash a {
-		width: 97px !important;
+		width: 117px !important;
 		background-image: url(/images/lang/nl/actionsMail.png);
 		}
 	.actionReply a {	
-		width: 59px !important;
+		width: 95px !important;
 		background-image: url(/images/lang/nl/actionsMail.png);
 		}
 	.actionReplyAll a {	
-		width: 76px !important;
+		width: 125px !important;
 		background-image: url(/images/lang/nl/actionsMail.png);
 		}
 	.actionForward a {	
-		width: 74px !important;
+		width: 92px !important;
 		background-image: url(/images/lang/nl/actionsMail.png);
 		}
 	.actionNotJunk a {	

@@ -1,15 +1,11 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
+/* Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
+Redistribution and/or modification of this code is governed
+by either the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$
---
-*/
+$Id$ */
 
 /* App Bar ----------------------------------------------------- */
 
@@ -20,11 +16,11 @@ $Id$
 /* Toolbar (actions) ------------------------------------------- */
 
 	.actionMonthView a {
-		width: 96px !important;
+		width: 123px !important;
 		background-image: url(/images/lang/nl/actionsCalendar.png);
 		}
 	.actionListView a {
-		width: 78px !important;
+		width: 105px !important;
 		background-image: url(/images/lang/nl/actionsCalendar.png);
 		}
 	.actionDayView a {
@@ -36,10 +32,10 @@ $Id$
 		background-image: url(/images/lang/nl/actionsCalendar.png);
 		}
 	.actionOverlayUser a {
-		width: 106px !important;
+		width: 145px !important;
 		background-image: url(/images/lang/nl/actionsCalendar.png);
 		}
 	.actionToday a {
-		width: 66px !important;
+		width: 79px !important;
 		background-image: url(/images/lang/nl/actionsCalendar.png);
 		}

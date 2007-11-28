@@ -1,15 +1,11 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
+/* Copyright 2004-2007 Joyent Inc.
 
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
+Redistribution and/or modification of this code is governed
+by either the GPLv2.
 
 Report issues and contribute at http://dev.joyent.com/
 
-$Id$
---
-*/
+$Id$ */
 
 /* Dock -------------------------------------------------------------- */
 	
@@ -87,7 +83,7 @@ $Id$
 		background-image: url(/images/lang/nl/actionsGeneral.png);
 		}
 	.actionShowAll a {
-		width: 77px !important;
+		width: 117px !important;
 		background-image: url(/images/lang/nl/actionsGeneral.png);
 		}
 	.actionShowNew a {
@@ -107,6 +103,6 @@ $Id$
 		background-image: url(/images/lang/nl/actionsGeneral.png);
 		}
 	.actionEdit a {	
-		width: 50px !important;
+		width: 75px !important;
 		background-image: url(/images/lang/nl/actionsGeneral.png);
 		}
