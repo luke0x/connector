@@ -22,9 +22,12 @@ var People = {
 	providers: [
     ['att', 'AT&T'],
     ['nextel', 'Nextel'],
+    ['o2_de', 'O2 Germany'],
+    ['orange_fr', 'Orange France'],
     ['sprint', 'Sprint PCS'],
 	  ['telus', 'Telus Mobility'],
     ['tmobile', 'T-Mobile'],
+    ['tmobile_de', 'T-Mobile Germany'],
     ['tmobile_uk', 'T-Mobile UK'],
     ['verizon', 'Verizon'],
 	  ['virgin_mobile', 'Virgin Mobile']

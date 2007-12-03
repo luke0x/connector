@@ -30,6 +30,14 @@ class PhoneNumber < ActiveRecord::Base
       :url => 'messaging.nextel.com', 
       :text => 'Nextel'
     },
+    :o2_de => { 
+      :url => 'o2online.de', 
+      :text => 'O2 Germany'
+    },
+    :orange_fr => { 
+      :url => 'orange.fr', 
+      :text => 'Orange France'
+    },
     :sprint => {
       :url => 'messaging.sprintpcs.com', 
       :text => 'Sprint PCS'
@@ -41,6 +49,10 @@ class PhoneNumber < ActiveRecord::Base
     :tmobile => {
       :url => 'tmomail.net', 
       :text => 'T-Mobile'
+    },
+    :tmobile_de => {
+      :url => 't-d1-sms.de', 
+      :text => 'T-Mobile Germany'
     },
     :tmobile_uk => {
       :url => 't-mobile.uk.net', 
