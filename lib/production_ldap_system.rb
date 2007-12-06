@@ -150,7 +150,7 @@ class ProductionLdapSystem
     
     hash['objectclass'] << 'joyentContact'
     hash['dbid']        << p.id.to_s
-    hash['domain']      << p.organization.system_domain.web_domain
+    hash['domain']      << p.organization.system_domain.email_domain
     hash['namePrefix']  << p.name_prefix
     hash['givenName']   << p.first_name
     hash['middleName']  << p.middle_name
@@ -238,7 +238,7 @@ class ProductionLdapSystem
   end
   
   def base_dn(org)
-    "o=#{org.system_domain.web_domain},#{root_dn}"
+    "o=#{org.system_domain.email_domain},#{root_dn}"
   end
     
   def group_base_dn(org)
@@ -262,7 +262,7 @@ class ProductionLdapSystem
   end
   
   def base_hash(o)
-    d = o.system_domain.web_domain
+    d = o.system_domain.email_domain
     { 
       "objectClass"=>["top", "dcObject", "organization", "joyentOrganization"], 
       "o"=>[d], 
