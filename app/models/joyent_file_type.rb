@@ -88,6 +88,8 @@ class JoyentFileType
     ['xsl', :text, 'code', 'Source Code', 'text/plain'],
 
     # misc
+    ['iso',  nil,      'txt', 'Disk Image',   'application/octet-stream'],
+    ['dmg',  nil,      'txt', 'Disk Image',   'application/octet-stream'],
     ['txt',  :text,    'txt', 'Text',         'text/plain'],
     ['text', :text,    'txt', 'Text',         'text/plain'],
     ['',     :unknown, 'txt', 'Unknown Type', 'application/octet-stream']
