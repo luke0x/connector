@@ -189,6 +189,8 @@ class ProductionLdapSystem
       'dbid'                  => [u.id.to_s],
       'mail'                  => [u.system_email],
       'cn'                    => [u.full_name],
+      'sn'                    => [u.person.last_name],
+      'givenName'             => [u.person.first_name],
       'gid'                   => [u.id.to_s],
       'maildir'               => ["#{hd}Maildir/"],
       'homeDirectory'         => [hd],
