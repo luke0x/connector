@@ -4,7 +4,7 @@
 
 ENV['PATH']            = "/bin:/opt/csw/bin:/opt/csw/sbin"
 RAILS_ROOT             = File.dirname(__FILE__) + '/../'
-MONGREL_MB_LIMIT       = (ARGV[0] || 256).to_i
+MONGREL_MB_LIMIT       = (ARGV[0] || 384).to_i
 EMAIL_LIST             = %w(user@email.com)
 EXPECTED_MONGREL_COUNT = 10
          
