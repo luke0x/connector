@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
 "POT-Creation-Date: 2008-03-03 22:39-0500\n"
-"PO-Revision-Date: 2006-05-24 20:40+0200\n"
-"Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
-"Language-Team: Spanish <pedro@joyent.com>\n"
+"PO-Revision-Date: 2008-03-01 16:40+02000\n"
+"Last-Translator: Arnaud Mamias <arnaudmamias@gmail.com>\n"
+"Language-Team: Joyent i18n <pedro@joyent.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: app/controllers/authenticate_controller.rb:47
 msgid "Invalid username or password."
-msgstr "Nombre de usuario o contraseña inválidos"
+msgstr "Nom d'utilisateur ou mot de passe invalide."
 
 #: app/controllers/bookmarks_controller.rb:29
 #: app/controllers/bookmarks_controller.rb:138
@@ -33,13 +33,13 @@ msgstr "Nombre de usuario o contraseña inválidos"
 #: app/views/sidebars/groups/bookmarks/_others_bookmarks.rhtml:15
 #: lib/i18n_do_not_include.rb:26
 msgid "Bookmarks"
-msgstr "Favoritos"
+msgstr "Signets"
 
 #: app/controllers/bookmarks_controller.rb:50
 #: app/controllers/syndication_controller.rb:300
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:14
 msgid "Others' Bookmarks"
-msgstr "Favoritos de Otros"
+msgstr "Signets des autres"
 
 #: app/controllers/bookmarks_controller.rb:206
 #: app/controllers/calendar_controller.rb:378
@@ -48,7 +48,7 @@ msgstr "Favoritos de Otros"
 #: app/controllers/lists_controller.rb:218
 #: app/controllers/people_controller.rb:283
 msgid "All Notifications"
-msgstr "Todas las notificaciones"
+msgstr "Toutes les notifications"
 
 #: app/controllers/bookmarks_controller.rb:211
 #: app/controllers/calendar_controller.rb:388
@@ -74,21 +74,21 @@ msgstr "Todas las notificaciones"
 #: app/views/sidebars/groups/people/_people.rhtml:16
 #: lib/i18n_do_not_include.rb:109
 msgid "Notifications"
-msgstr "Notificaciones"
+msgstr "Notifications"
 
 #: app/controllers/calendar_controller.rb:103
 #: app/controllers/syndication_controller.rb:432
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:22
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:24
 msgid "Today's Events"
-msgstr "Eventos de Hoy"
+msgstr "Evénements d'aujourd'hui"
 
 #: app/controllers/calendar_controller.rb:107
 #: app/controllers/syndication_controller.rb:443
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:18
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:20
 msgid "This Week's Events"
-msgstr "Eventos de Esta Semana"
+msgstr "Evénements de cette semaine"
 
 #: app/controllers/calendar_controller.rb:255
 #: app/controllers/calendar_controller.rb:281
@@ -101,29 +101,27 @@ msgstr "Eventos de Esta Semana"
 #: lib/ghetto_urls.rb:96 lib/ghetto_urls.rb:108 lib/ghetto_urls.rb:123
 #: lib/ghetto_urls.rb:138
 msgid "All Events"
-msgstr "Todos los Eventos"
+msgstr "Tous les événements"
 
 #: app/controllers/calendar_controller.rb:638
 msgid "An invalid calendar was chosen."
-msgstr "Se ha elegido un calendario inválido"
+msgstr "Le calendrier choisi est invalide."
 
 #: app/controllers/calendar_controller.rb:649
 msgid ""
 "There was a problem importing the iCalendar %{i18n_calendar_file}.  Please "
 "be sure that it is a valid file."
 msgstr ""
-"Ha habido un problema importando el archivo iCalendar %"
-"{i18n_calendar_file}.  Por favor, asegurate de que se trata de un archivo "
-"válido."
+"L'importation du calendrier %{i18n_calendar_file} pose problème. "
+"Veuillez vous assurer qu'il s'agit d'un fichier iCalendar valide."
 
 #: app/controllers/connect_controller.rb:66
 msgid "Search: %{i18n_search_param}"
-msgstr "Buscar: %{i18n_search_param}"
+msgstr "Rechercher :%{i18n_search_param}"
 
 #: app/controllers/facebook_controller.rb:53
-#, fuzzy
 msgid "Invalid subdomain, username or password."
-msgstr "Nombre de usuario o contraseña inválidos"
+msgstr "Sous-domaine, nom d'utilisateur ou mot de passe invalide."
 
 #: app/controllers/files_controller.rb:565
 #: app/controllers/files_controller.rb:572
@@ -132,72 +130,72 @@ msgstr "Strongspace"
 
 #: app/controllers/list_columns_controller.rb:20
 msgid "New Column"
-msgstr "Nueva Columna"
+msgstr "Nouvelle colonne"
 
 #: app/controllers/list_columns_controller.rb:71
 msgid "There was an error deleting the column."
-msgstr "Ha habido un error borrando la columna."
+msgstr "Une erreur s'est produite à la suppression de la colonne."
 
 #: app/controllers/lists_controller.rb:307
 msgid ""
 "There was a problem importing the OPML file '%{i18n_opml_file}'. Please be "
 "sure that it is a valid file."
 msgstr ""
-"Ha habido un problema importando el archivo OPML '%{i18n_opml_file}'. Por "
-"favor, asegurate de que se trata de un archivo válido."
+"L'importation du fichier OPML '%{i18n_opml_file}' pose problème. Veuillez "
+"vous assurer que le fichier est valide."
 
 #: app/controllers/lists_controller.rb:318
 msgid "List folder successfully created."
-msgstr "Directorio de listas creado satisfactoriamente."
+msgstr "Dossier de listes créé avec succès."
 
 #: app/controllers/lists_controller.rb:320
 msgid "An error occurred creating the list folder."
-msgstr "Se ha producido un error creando el directorio de listas."
+msgstr "Une erreur s'est produite à la création du dossier de listes."
 
 #: app/controllers/lists_controller.rb:330
 msgid "List folder successfully renamed."
-msgstr "Directorio de listas renombrado satisfactoriamente"
+msgstr "Dossier de listes renommé avec succès."
 
 #: app/controllers/lists_controller.rb:332
 msgid "An error occurred renaming the list folder."
-msgstr "Se ha producido un error renombrando el directorio de listas."
+msgstr "Une erreur s'est produite en renommant le dossier de listes."
 
 #: app/controllers/mail_controller.rb:729
 msgid "Draft"
-msgstr "Borrador"
+msgstr "Brouillon"
 
 #: app/controllers/mail_controller.rb:731
 msgid "Replied"
-msgstr "Respondido"
+msgstr "Répondu"
 
 #: app/controllers/mail_controller.rb:732
 msgid "Forwarded"
-msgstr "Reenviado"
+msgstr "Transféré"
 
 #: app/controllers/mail_controller.rb:733
 msgid "Flagged"
-msgstr "Marcado"
+msgstr "Marqué"
 
 #: app/controllers/mail_controller.rb:734
 msgid "Junk"
-msgstr "Basura"
+msgstr "Indésirable"
 
 #: app/controllers/mail_controller.rb:735 app/views/mail/_toolbar.rhtml:38
 #: app/views/sidebars/groups/mail/_mail.rhtml:27
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: app/controllers/mail_controller.rb:736
 msgid "Unread"
-msgstr "No leído"
+msgstr "Non lu"
 
 #: app/controllers/people_controller.rb:200
 msgid ""
 "There was a problem importing %{i18n_vcard_file}. Please be sure it is a "
 "valid vCard file."
 msgstr ""
-"Ha habido un problema importando el archivo %{i18n_vcard_file}. Por favor, "
-"asegurate de que se trata de un archivo vCard válido."
+"L'importation de %{i18n_vcard_file} pose problème. Veuillez vous assurer "
+"qu'il s'agit fichier vCard valide."
 
 #: app/controllers/people_controller.rb:421
 #: app/controllers/people_controller.rb:496
@@ -206,7 +204,7 @@ msgstr ""
 #: app/views/sidebars/groups/people/_others_people.rhtml:16
 #: app/views/sidebars/groups/people/_people.rhtml:14
 msgid "Contacts"
-msgstr "Contactos"
+msgstr "Contacts"
 
 #: app/controllers/people_controller.rb:446
 #: app/controllers/people_controller.rb:514
@@ -217,7 +215,7 @@ msgstr "Contactos"
 #: app/views/people/confirm_user_delete.rhtml:43
 #: app/views/sidebars/groups/people/_people.rhtml:15
 msgid "Users"
-msgstr "Usuarios"
+msgstr "Utilisateurs"
 
 #: app/controllers/syndication_controller.rb:48
 #: app/controllers/syndication_controller.rb:63
@@ -235,73 +233,73 @@ msgstr "%{i18n_group_name} de %{i18n_owner_full_name}"
 #: app/controllers/syndication_controller.rb:359
 #: app/views/sidebars/groups/people/_people.rhtml:18
 msgid "Current Time"
-msgstr "Hora Actual"
+msgstr "Heure actuelle"
 
 #: app/controllers/syndication_controller.rb:371
 #: app/views/sidebars/groups/connect/_connect.rhtml:22
 msgid "Recent Comments"
-msgstr "Comentarios Recientes"
+msgstr "Commentaires récents"
 
 #: app/controllers/syndication_controller.rb:413
 #: app/views/sidebars/groups/mail/_mail.rhtml:33
 msgid "Unread Messages"
-msgstr "Mensajes No Leídos"
+msgstr "Messages non lus"
 
 #: app/controllers/syndication_controller.rb:475
 msgid "You must log in to access your RSS/ICS"
-msgstr "Debes autenticarte para acceder a tus RSS/ICS"
+msgstr "Vous devez vous identifier pour accéder à vos RSS/ICS"
 
 #: app/controllers/tag_controller.rb:17
 msgid "You no longer have access to this item."
-msgstr "Ya no tienes acceso a este ítem."
+msgstr "Vous n'avez plus accès à cet élément."
 
 #: app/controllers/user_controller.rb:18
 msgid "The shortcut was created."
-msgstr "El atajo ha sido creado"
+msgstr "Le raccourci a été créé."
 
 #: app/controllers/user_controller.rb:20
 msgid "The shortcut could not be created. Please try again."
-msgstr "El atajo no puede crearse. Por favor, inténtalo de nuevo"
+msgstr "Le raccourci n'a pu être créé. Veuillez réessayer."
 
 #: app/helpers/application_helper.rb:75 app/helpers/application_helper.rb:422
 msgid "%{i18n_time_in_words} ago"
-msgstr "Hace %{i18n_time_in_words}"
+msgstr "Il y a %{i18n_time_in_words}"
 
 #: app/helpers/application_helper.rb:84
 msgid "Toggle"
-msgstr "Plegar"
+msgstr "Inverser"
 
 #: app/helpers/application_helper.rb:84
 msgid "Click to toggle your selection."
-msgstr "Click para plegar tu selección"
+msgstr "Cliquer pour inverser la sélection."
 
 #: app/helpers/application_helper.rb:234
 msgid "Match All: "
-msgstr "Coincidir Todos: "
+msgstr "Suivant les critères: "
 
 #: app/helpers/application_helper.rb:263 app/helpers/application_helper.rb:293
 msgid "Top Level"
-msgstr "Nivel Superior"
+msgstr "Niveau Supérieur"
 
 #: app/helpers/application_helper.rb:397
 msgid "at"
-msgstr "a las"
+msgstr "à"
 
 #: app/helpers/application_helper.rb:465
 msgid "Map"
-msgstr "Mapa"
+msgstr "Plan"
 
 #: app/helpers/application_helper.rb:465
 msgid "Look up address in Google Maps"
-msgstr "Buscar dirección en Mapas de Google"
+msgstr "Rechercher l'adresse dans Google Maps"
 
 #: app/helpers/application_helper.rb:534
 msgid "Visible in your Workspace"
-msgstr "Visible en tu Espacio de Trabajo"
+msgstr "Visible dans votre Espace de travail"
 
 #: app/helpers/application_helper.rb:730
 msgid "Subscribe"
-msgstr "Suscribir"
+msgstr "S'abonner"
 
 #: app/helpers/application_helper.rb:739 app/helpers/application_helper.rb:740
 #: app/views/bookmarks/_sync.rhtml:18 app/views/bookmarks/edit.rhtml:60
@@ -319,79 +317,79 @@ msgstr "Suscribir"
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:39
 #: app/views/subscriptions/browser.rhtml:35
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Annuler"
 
 #: app/helpers/calendar_helper.rb:104 app/views/calendar/_peek.rhtml:74
 #: app/views/calendar/edit.rhtml:84 app/views/calendar/list.rhtml:26
 #: app/views/calendar/show.rhtml:82 app/views/reports/_events.rhtml:20
 #: app/views/reports/_timezones.rhtml:24 app/views/syndication/_event.rhtml:18
 msgid "Time"
-msgstr "Hora"
+msgstr "Heure"
 
 #: app/helpers/calendar_helper.rb:105
 msgid "Events"
-msgstr "Eventos"
+msgstr "Evénements"
 
 #: app/helpers/calendar_helper.rb:111 app/views/calendar/_peek.rhtml:76
 #: app/views/calendar/list.rhtml:70 app/views/calendar/show.rhtml:84
 #: app/views/reports/_events.rhtml:61 app/views/syndication/_event.rhtml:20
 msgid "All Day"
-msgstr "Todo el Día"
+msgstr "Toute la journée"
 
 #: app/helpers/files_helper.rb:23 app/helpers/files_helper.rb:49
 #: app/helpers/files_helper.rb:75
 msgid "Show Preview"
-msgstr "Mostrar Previsualización"
+msgstr "Afficher l'aperçu"
 
 #: app/helpers/files_helper.rb:26 app/helpers/files_helper.rb:52
 #: app/helpers/files_helper.rb:78
 msgid "Hide Preview"
-msgstr "Cerrar Previsualización"
+msgstr "Masquer l'aperçu"
 
 #: app/helpers/mail_helper.rb:53
 msgid "Unavailable"
-msgstr "No disponible"
+msgstr "Indisponible"
 
 #: app/views/admin/login.rhtml:14
 msgid "admin login"
-msgstr "login administrador"
+msgstr "Identification admin"
 
 #: app/views/authenticate/affiliate_login.rhtml:30
 msgid "Subdomain"
-msgstr "Subdominio"
+msgstr "Sous-domaine"
 
 #: app/views/authenticate/affiliate_login.rhtml:38
 #: app/views/authenticate/login.rhtml:43
 #: app/views/authenticate/reset_password.rhtml:45
 #: app/views/facebook/login.rhtml:90 app/views/user/connect.rhtml:40
 msgid "Username"
-msgstr "Nombre de usuario"
+msgstr "Nom d'utilisateur"
 
 #: app/views/authenticate/affiliate_login.rhtml:46
 #: app/views/authenticate/login.rhtml:51
 #: app/views/authenticate/verify_reset_password.rhtml:40
 #: app/views/facebook/login.rhtml:98 app/views/user/connect.rhtml:44
 msgid "Password"
-msgstr "Contraseña"
+msgstr "Mot de passe"
 
 #: app/views/authenticate/affiliate_login.rhtml:60
 #: app/views/authenticate/login.rhtml:65
 msgid "Remember my password for 2 weeks"
-msgstr "Recordar durante 2 semanas"
+msgstr "Retenir mon mot de passe pour 2 semaines"
 
 #: app/views/authenticate/affiliate_login.rhtml:65
 #: app/views/authenticate/login.rhtml:70
 msgid " Sign In "
-msgstr "Conectar "
+msgstr " Identification "
 
 #: app/views/authenticate/login.rhtml:73
 msgid "Reset your password"
-msgstr "Resetear tu contraseña"
+msgstr "Réinitialiser votre mot de passe"
 
 #: app/views/authenticate/reset_password.rhtml:15
 #: app/views/authenticate/reset_password.rhtml:31
 msgid "Password Recovery"
-msgstr "Recuperación de Contraseña"
+msgstr "Récupération de mot de passe"
 
 #: app/views/authenticate/reset_password.rhtml:34
 msgid "Login"
@@ -401,94 +399,95 @@ msgstr "Login"
 #: app/views/authenticate/verify_reset_password.rhtml:15
 #: app/views/authenticate/verify_reset_password.rhtml:31
 msgid "Reset Password"
-msgstr "Resetear Contraseña"
+msgstr "Réinitialiser le mot de passe"
 
 #: app/views/authenticate/verify_reset_password.rhtml:48
 msgid "Password Confirmation"
-msgstr "Confirmación de Contraseña"
+msgstr "Confirmation du mot de passe"
 
 #: app/views/authenticate/verify_reset_password.rhtml:57
 msgid "Reset Password + Sign In"
-msgstr "Resetear Contraseña + Acceder"
+msgstr "Réinitialiser le mot de passe + Identification"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:12
 msgid "Browser Bookmarklet"
-msgstr "Bookmarklet para el Navegador"
+msgstr "Bookmarklet pour navigateur"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:17
 msgid "What is a bookmarklet?"
-msgstr "¿Qué es un Bookmarklet?"
+msgstr "Qu'est-ce qu'un bookmarklet ?"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:18
 msgid "A link you add to your browser's bookmarks toolbar."
-msgstr "Un enlace que añades a la barra de favoritos de tu navegador."
+msgstr "Un lien à ajouter à la barre des signets de votre navigateur."
 
 #: app/views/bookmarks/_bookmarklet.rhtml:20
 msgid "And what does it do?"
-msgstr "¿Y qué es lo que hace?"
+msgstr "Et à quoi cela sert-il ?"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:21
 msgid ""
 "This bookmarklet helps you quickly bookmark a page while you're browsing the "
 "web."
 msgstr ""
-"Este bookmarklet te ayuda a guardar rápidamente una página en favoritos "
-"cuando estás navegando por la web."
+"Ce bookmarklet vous permet d'ajouter facilement une page aux signets pendant "
+"que vous naviguez sur le web."
 
 #: app/views/bookmarks/_bookmarklet.rhtml:24
 msgid "Okay, I want it"
-msgstr "Perfecto, lo quiero"
+msgstr "D'accord, j'en veux"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:26
 msgid "Drag this link up to your bookmarks toolbar"
-msgstr "Arrastra este link hasta la barra de favoritos de tu navegador"
+msgstr "Glissez ce lien vers la barre de signets de votre navigateur web"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:27
 msgid "+Bookmark"
-msgstr "+Favorito"
+msgstr "+Signet"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:30
 msgid "You're done"
-msgstr "Ya lo tienes"
+msgstr "C'est tout"
 
 #: app/views/bookmarks/_bookmarklet.rhtml:31
 msgid "Just click it when you want to bookmark a page you're looking at."
 msgstr ""
-"Simplemente haz click cuando quieras marcar una página que estés viendo."
+"Il suffit de cliquer dessus pour ajouter la page que vous consultez à vos "
+"signets."
 
 #: app/views/bookmarks/_bookmarklet.rhtml:37
 #: app/views/calendar/_overlay_users.rhtml:37 app/views/lists/_edit.rhtml:41
 #: app/views/lists/_tools.rhtml:72 app/views/mail/_tools.rhtml:36
 #: app/views/subscriptions/browser.rhtml:45 app/views/user/connect.rhtml:74
 msgid "Done"
-msgstr "Hecho"
+msgstr "Effectué"
 
 #: app/views/bookmarks/_peek.rhtml:14 app/views/bookmarks/show.rhtml:37
 #: app/views/syndication/_bookmark.rhtml:17
 msgid "Save Bookmark"
-msgstr "Guardar Favorito"
+msgstr "Enregistrer le signet"
 
 #: app/views/bookmarks/_peek.rhtml:18 app/views/bookmarks/show.rhtml:22
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "Info"
-msgstr "Info"
+msgstr "Infos"
 
 #: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "Bookmarked by %{i18n_bookmark_user_count} users"
-msgstr "Marcado por %{i18n_bookmark_user_count} usuarios"
+msgstr "Enregistré par %{i18n_bookmark_user_count} utilisateurs"
 
 #: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "first by %{i18n_bookmark_first_user}"
-msgstr "en primer lugar por %{i18n_bookmark_first_user}"
+msgstr "initialement par %{i18n_bookmark_first_user}"
 
 #: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
 #: app/views/facebook/_notifications_table.rhtml:20
 #: app/views/files/service.rhtml:48 app/views/reports/_notifications.rhtml:43
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "%{i18n_time_ago_in_words} ago"
-msgstr "Hace %{i18n_time_ago_in_words}"
+msgstr "il y a %{i18n_time_ago_in_words}"
 
 #: app/views/bookmarks/_peek.rhtml:20 app/views/bookmarks/show.rhtml:24
 #: app/views/files/_peek.rhtml:18 app/views/files/_service_peek.rhtml:18
@@ -499,7 +498,7 @@ msgstr "Hace %{i18n_time_ago_in_words}"
 #: app/views/syndication/_file.rhtml:20
 #: app/views/syndication/_file_service.rhtml:20
 msgid "Date Created"
-msgstr "Creado el Día"
+msgstr "Date de création"
 
 #: app/views/bookmarks/_peek.rhtml:22 app/views/bookmarks/show.rhtml:26
 #: app/views/files/_peek.rhtml:20 app/views/files/_service_peek.rhtml:20
@@ -512,7 +511,7 @@ msgstr "Creado el Día"
 #: app/views/syndication/_file.rhtml:22
 #: app/views/syndication/_file_service.rhtml:22
 msgid "Date Modified"
-msgstr "Fecha Modificación"
+msgstr "Date de modification"
 
 #: app/views/bookmarks/_peek.rhtml:25 app/views/bookmarks/edit.rhtml:39
 #: app/views/bookmarks/show.rhtml:29 app/views/calendar/_peek.rhtml:130
@@ -525,11 +524,11 @@ msgstr "Fecha Modificación"
 #: app/views/syndication/_event.rhtml:62 app/views/syndication/_file.rhtml:27
 #: app/views/syndication/_person.rhtml:92
 msgid "Notes"
-msgstr "Notas"
+msgstr "Notes"
 
 #: app/views/bookmarks/_sync.rhtml:12 app/views/bookmarks/_toolbar.rhtml:32
 msgid "Sync Bookmarks with del.icio.us"
-msgstr "Sincronizar Marcadores con del.icio.us"
+msgstr "Synchroniser les signets avec del.icio.us"
 
 #: app/views/bookmarks/_sync.rhtml:19 app/views/bookmarks/edit.rhtml:55
 #: app/views/calendar/_peek.rhtml:62 app/views/calendar/edit.rhtml:250
@@ -538,7 +537,7 @@ msgstr "Sincronizar Marcadores con del.icio.us"
 #: app/views/sidebars/groups/_smart_group_new.rhtml:45
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:40
 msgid "Save"
-msgstr "Guardar"
+msgstr "Enregistrer"
 
 #: app/views/bookmarks/_toolbar.rhtml:14 app/views/calendar/_toolbar.rhtml:14
 #: app/views/calendar/_toolbar.rhtml:16 app/views/files/_toolbar.rhtml:18
@@ -552,79 +551,79 @@ msgstr "Guardar"
 #: app/views/sidebars/groups/mail/_mail.rhtml:50
 #: app/views/sidebars/groups/people/_people.rhtml:33
 msgid "New"
-msgstr "Nuevo"
+msgstr "Nouveau"
 
 #: app/views/bookmarks/_toolbar.rhtml:17 app/views/calendar/_toolbar.rhtml:19
 #: app/views/connect/_toolbar.rhtml:14 app/views/files/_toolbar.rhtml:24
 #: app/views/lists/_toolbar.rhtml:17 app/views/mail/_toolbar.rhtml:17
 #: app/views/people/_toolbar.rhtml:20
 msgid "Show New"
-msgstr "Mostrar Nuevo"
+msgstr "Voir les nouveaux"
 
 #: app/views/bookmarks/_toolbar.rhtml:20 app/views/calendar/_toolbar.rhtml:22
 #: app/views/connect/_toolbar.rhtml:17 app/views/files/_toolbar.rhtml:27
 #: app/views/lists/_toolbar.rhtml:20 app/views/mail/_toolbar.rhtml:20
 #: app/views/people/_toolbar.rhtml:23
 msgid "Show All"
-msgstr "Mostrar Todos"
+msgstr "Voir tous"
 
 #: app/views/bookmarks/_toolbar.rhtml:23 app/views/calendar/_toolbar.rhtml:25
 #: app/views/comments/_comment.rhtml:40 app/views/files/_toolbar.rhtml:31
 #: app/views/files/_toolbar.rhtml:33 app/views/lists/_toolbar.rhtml:54
 #: app/views/partials/_menu_items.rhtml:52 app/views/people/_toolbar.rhtml:26
 msgid "Edit"
-msgstr "Editar"
+msgstr "Modifier"
 
 #: app/views/bookmarks/_toolbar.rhtml:35
 msgid "Get the Joyent Bookmarks Bookmarklet"
-msgstr "Obtener el Bookmarklet the Marcadores de Joyent"
+msgstr "Obtenir le bookmarklet pour les signets Joyent"
 
 #: app/views/bookmarks/edit.rhtml:18
 msgid "Edit Bookmark"
-msgstr "Editar Marcador"
+msgstr "Modifier le signet"
 
 #: app/views/bookmarks/edit.rhtml:20
 msgid "New Bookmark"
-msgstr "Nuevo Marcador"
+msgstr "Nouveau signet"
 
 #: app/views/bookmarks/edit.rhtml:27 app/views/bookmarks/list.rhtml:34
 #: app/views/people/_peek.rhtml:68 app/views/people/show.rhtml:72
 #: app/views/syndication/_person.rhtml:44
 msgid "Address"
-msgstr "Dirección"
+msgstr "Adresse"
 
 #: app/views/bookmarks/edit.rhtml:33 app/views/bookmarks/list.rhtml:33
 #: app/views/connect/list.rhtml:27 app/views/reports/_bookmarks.rhtml:23
 #: app/views/reports/_items.rhtml:21
 msgid "Title"
-msgstr "Título"
+msgstr "Titre"
 
 #: app/views/bookmarks/edit.rhtml:57 app/views/calendar/edit.rhtml:252
 #: app/views/files/create.rhtml:56 app/views/files/strongspace_create.rhtml:36
 #: app/views/lists/new.rhtml:43 app/views/people/edit.rhtml:43
 msgid "Create"
-msgstr "Crear"
+msgstr "Créer"
 
 #: app/views/bookmarks/list.rhtml:32 app/views/reports/_bookmarks.rhtml:22
 msgid "Site Image"
-msgstr "Imagen del Sitio"
+msgstr "Image du site"
 
 #: app/views/bookmarks/list.rhtml:35 app/views/reports/_bookmarks.rhtml:24
 msgid "Date Added"
-msgstr "Fecha Adición"
+msgstr "Date d'ajout"
 
 #: app/views/bookmarks/list.rhtml:37 app/views/reports/_bookmarks.rhtml:26
 msgid "Owner"
-msgstr "Propietario"
+msgstr "Propriétaire"
 
 #: app/views/bookmarks/list.rhtml:39 app/views/reports/_bookmarks.rhtml:28
 msgid "Link"
-msgstr "Enlace"
+msgstr "Lien"
 
 #: app/views/bookmarks/list.rhtml:67 app/views/bookmarks/show.rhtml:16
 #: app/views/reports/_bookmarks.rhtml:53
 msgid "Go"
-msgstr "Ir"
+msgstr "Aller"
 
 #: app/views/bookmarks/list.rhtml:70 app/views/calendar/list.rhtml:77
 #: app/views/connect/list.rhtml:49 app/views/files/list.rhtml:54
@@ -637,128 +636,128 @@ msgstr "Ir"
 #: app/views/reports/_notifications.rhtml:53
 #: app/views/reports/_people.rhtml:52 app/views/reports/_timezones.rhtml:45
 msgid "Details"
-msgstr "Detalles"
+msgstr "Détails"
 
 #: app/views/calendar/_import.rhtml:12
 msgid "Import events from an iCalendar file (.ics)"
-msgstr "Importar eventos desde un archivo iCalendar (.ics)"
+msgstr "Importer les événements d'un fichier iCalendar (.ics)"
 
 #: app/views/calendar/_import.rhtml:20
 msgid "Add the events to"
-msgstr "Añadir los eventos a"
+msgstr "Ajouter les événements à"
 
 #: app/views/calendar/_import.rhtml:25
 msgid "An existing calendar"
-msgstr "Un calendario existente"
+msgstr "Un calendrier existant"
 
 #: app/views/calendar/_import.rhtml:35
 msgid "A new calendar"
-msgstr "Un nuevo Calendario"
+msgstr "Un nouveau calendrier"
 
 #: app/views/calendar/_import.rhtml:39 app/views/calendar/_peek.rhtml:52
 #: app/views/calendar/_peek.rhtml:56 app/views/calendar/_toolbar.rhtml:49
 #: app/views/calendar/show.rhtml:62 app/views/calendar/show.rhtml:66
 msgid "New Calendar"
-msgstr "Nuevo Calendario"
+msgstr "Nouveau calendrier"
 
 #: app/views/calendar/_import.rhtml:45 app/views/lists/_import.rhtml:20
 #: app/views/people/_import.rhtml:22
 msgid "Import"
-msgstr "Importar"
+msgstr "Importer"
 
 #: app/views/calendar/_list_range_selector.rhtml:20
 msgid "4 Weeks Ago"
-msgstr "Hace 4 Semanas"
+msgstr "D'il y a 4 semaines"
 
 #: app/views/calendar/_list_range_selector.rhtml:22
 msgid "1 Week Ago"
-msgstr "Hace 1 Semana"
+msgstr "D'il y a 1 semaine"
 
 #: app/views/calendar/_list_range_selector.rhtml:24
 msgid "Yesterday"
-msgstr "Ayer"
+msgstr "D'hier"
 
 #: app/views/calendar/_list_range_selector.rhtml:26
 #: app/views/calendar/_list_range_selector.rhtml:31
 #: app/views/calendar/_toolbar.rhtml:43 app/views/calendar/edit.rhtml:73
 #: app/views/reports/_events.rhtml:34
 msgid "Today"
-msgstr "Hoy"
+msgstr "Aujourd'hui"
 
 #: app/views/calendar/_list_range_selector.rhtml:28
 msgid "to"
-msgstr "a"
+msgstr "à"
 
 #: app/views/calendar/_list_range_selector.rhtml:33
 msgid "Tomorrow"
-msgstr "Mañana"
+msgstr "Demain"
 
 #: app/views/calendar/_list_range_selector.rhtml:35
 msgid "1 Week From Now"
-msgstr "1 Semana Desde Ahora"
+msgstr "dans 1 semaine"
 
 #: app/views/calendar/_list_range_selector.rhtml:37
 msgid "4 Weeks From Now"
-msgstr "4 Semanas Desde Ahora"
+msgstr "dans 4 semaines"
 
 #: app/views/calendar/_overlay_color_key.rhtml:14
 msgid "Key"
-msgstr "Clave"
+msgstr "Légende"
 
 #: app/views/calendar/_overlay_users.rhtml:12
 msgid "Overlaid Calendars"
-msgstr "Superponer Calendarios"
+msgstr "Calendriers superposés"
 
 #: app/views/calendar/_overlay_users.rhtml:15
 msgid "No calendars overlayed"
-msgstr "Ningún calendario superpuesto"
+msgstr "Aucun calendrier superposé"
 
 #: app/views/calendar/_overlay_users.rhtml:24
 msgid "Click to Overlay"
-msgstr "Click para Superponer"
+msgstr "Cliquer pour superposer"
 
 #: app/views/calendar/_overlay_users.rhtml:27
 msgid "All calendars overlayed"
-msgstr "Todos los calendarios superpuestos"
+msgstr "Calendriers tous superposés"
 
 #: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
 msgid ""
 "You have <strong>%{i18n_accepted_declined}</strong> this invitation from "
 "<strong>%{i18n_inviter}</strong>."
 msgstr ""
-"Has <strong>%{i18n_accepted_declined}</strong> esta invitación de <strong>%"
-"{i18n_inviter}</strong>."
+"Vous avez <strong>%{i18n_accepted_declined}</strong> cette invitation de "
+"<strong>%{i18n_inviter}</strong>."
 
 #: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
 msgid "accepted"
-msgstr "aceptado"
+msgstr "accepté"
 
 #: app/views/calendar/_peek.rhtml:16 app/views/calendar/show.rhtml:26
 msgid "declined"
-msgstr "rechazado"
+msgstr "refusé"
 
 #: app/views/calendar/_peek.rhtml:18 app/views/calendar/show.rhtml:28
 msgid "<strong>%{i18n_event_inviter}</strong> has invited you to this event."
-msgstr "<strong>%{i18n_event_inviter}</strong> te ha invitado a este evento."
+msgstr "<strong>%{i18n_event_inviter}</strong> vous a invité à cet événement."
 
 #: app/views/calendar/_peek.rhtml:24 app/views/calendar/show.rhtml:34
 msgid "Decline"
-msgstr "Declinar"
+msgstr "Refuser"
 
 #: app/views/calendar/_peek.rhtml:30 app/views/calendar/show.rhtml:40
 msgid "Accept"
-msgstr "Aceptar"
+msgstr "Accepter"
 
 #: app/views/calendar/_peek.rhtml:36 app/views/calendar/show.rhtml:46
 msgid ""
 "To accept, select the calendar into which you would like this event saved"
 msgstr ""
-"Para aceptar, selecciona el calendario en el que deseas que sea guardado el "
-"evento"
+"Pour accepter, choisir le calendrier pour lequel vous voulez ajouter cet "
+"événement"
 
 #: app/views/calendar/_peek.rhtml:41 app/views/calendar/show.rhtml:51
 msgid "Your Calendars"
-msgstr "Tus Calendarios"
+msgstr "Vos calendriers"
 
 #: app/views/calendar/_peek.rhtml:71 app/views/calendar/edit.rhtml:55
 #: app/views/calendar/show.rhtml:80 app/views/mail/list.rhtml:45
@@ -766,48 +765,48 @@ msgstr "Tus Calendarios"
 #: app/views/syndication/_event.rhtml:15
 #: app/views/syndication/_message.rhtml:26
 msgid "Date"
-msgstr "Día"
+msgstr "Date"
 
 #: app/views/calendar/_peek.rhtml:87 app/views/calendar/edit.rhtml:139
 #: app/views/calendar/show.rhtml:94 app/views/syndication/_event.rhtml:31
 msgid "Repeat"
-msgstr "Repetir"
+msgstr "Répétition"
 
 #: app/views/calendar/_peek.rhtml:91 app/views/calendar/show.rhtml:102
 msgid "until"
-msgstr "hasta"
+msgstr "jusqu'à"
 
 #: app/views/calendar/_peek.rhtml:94 app/views/calendar/edit.rhtml:152
 #: app/views/calendar/show.rhtml:105 app/views/syndication/_event.rhtml:37
 msgid "Forever"
-msgstr "Para Siempre"
+msgstr "Pour toujours"
 
 #: app/views/calendar/_peek.rhtml:100 app/views/calendar/edit.rhtml:206
 #: app/views/calendar/show.rhtml:110 app/views/files/service_show.rhtml:25
 #: app/views/files/show.rhtml:31 app/views/files/strongspace_show.rhtml:25
 #: app/views/syndication/_event.rhtml:42
 msgid "Location"
-msgstr "Ubicación"
+msgstr "Lieu"
 
 #: app/views/calendar/_peek.rhtml:105 app/views/calendar/show.rhtml:118
 #: app/views/syndication/_event.rhtml:47
 msgid "Accepted By"
-msgstr "Aceptado Por"
+msgstr "Accepté par"
 
 #: app/views/calendar/_peek.rhtml:110 app/views/calendar/show.rhtml:122
 #: app/views/syndication/_event.rhtml:52
 msgid "Declined By"
-msgstr "Rechazada Por"
+msgstr "Refusé par"
 
 #: app/views/calendar/_peek.rhtml:115 app/views/calendar/show.rhtml:126
 #: app/views/syndication/_event.rhtml:57
 msgid "Pending Invitees"
-msgstr "Invitaciones Pendientes"
+msgstr "Invités en attente"
 
 #: app/views/calendar/_peek.rhtml:120 app/views/calendar/edit.rhtml:217
 #: app/views/calendar/show.rhtml:131
 msgid "Alarm"
-msgstr "Alarma"
+msgstr "Alarme"
 
 #: app/views/calendar/_toolbar.rhtml:28 app/views/files/_toolbar.rhtml:38
 #: app/views/files/_toolbar.rhtml:40 app/views/lists/_toolbar.rhtml:23
@@ -815,7 +814,7 @@ msgstr "Alarma"
 #: app/views/toolbars/_copy_to_bookmarks.rhtml:16
 #: app/views/toolbars/_copy_to_contacts.rhtml:16
 msgid "Copy"
-msgstr "Copiar"
+msgstr "Copier"
 
 #: app/views/calendar/_toolbar.rhtml:31 app/views/files/_toolbar.rhtml:45
 #: app/views/files/_toolbar.rhtml:47 app/views/lists/_toolbar.rhtml:26
@@ -825,76 +824,76 @@ msgstr "Copiar"
 #: app/views/sidebars/groups/_standard_group_edit_move.rhtml:12
 #: app/views/sidebars/groups/_standard_group_edit_move.rhtml:20
 msgid "Move"
-msgstr "Mover"
+msgstr "Déplacer"
 
 #: app/views/calendar/_toolbar.rhtml:37
 msgid "List View"
-msgstr "Ver Listado"
+msgstr "Vue par liste"
 
 #: app/views/calendar/_toolbar.rhtml:40
 msgid "Month View"
-msgstr "Vista Mes"
+msgstr "Vue mensuelle"
 
 #: app/views/calendar/_toolbar.rhtml:46
 msgid "Overlay Users"
-msgstr "Superponer Usuarios"
+msgstr "Superposer les utilisateurs"
 
 #: app/views/calendar/_toolbar.rhtml:49
 msgid "Import iCalendar"
-msgstr "Importar iCalendar(s)"
+msgstr "Importer iCalendar"
 
 #: app/views/calendar/edit.rhtml:17
 msgid "Edit Event"
-msgstr "Editar Evento"
+msgstr "Modifier l'événement"
 
 #: app/views/calendar/edit.rhtml:20 app/views/calendar/list.rhtml:88
 msgid "New Event"
-msgstr "Nuevo Evento"
+msgstr "Nouvel événement"
 
 #: app/views/calendar/edit.rhtml:30 app/views/calendar/list.rhtml:27
 #: app/views/reports/_events.rhtml:21
 msgid "Event"
-msgstr "Evento"
+msgstr "Evénement"
 
 #: app/views/calendar/edit.rhtml:41
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:42
 #: lib/i18n_do_not_include.rb:41
 msgid "Calendar"
-msgstr "Calendario"
+msgstr "Calendrier"
 
 #: app/views/calendar/edit.rhtml:62 app/views/calendar/edit.rhtml:166
 msgid "month"
-msgstr "mes"
+msgstr "mois"
 
 #: app/views/calendar/edit.rhtml:66 app/views/calendar/edit.rhtml:171
 #: app/views/people/_person_special_date.rhtml:26
 msgid "day"
-msgstr "día"
+msgstr "jour"
 
 #: app/views/calendar/edit.rhtml:70 app/views/calendar/edit.rhtml:175
 #: app/views/people/_person_special_date.rhtml:30
 msgid "year"
-msgstr "año"
+msgstr "année"
 
 #: app/views/calendar/edit.rhtml:94
 msgid "This is an <strong>all-day</strong> event"
-msgstr "Este es un evento de <strong>todo-el-día</strong>"
+msgstr "Evénement pour le <strong>jour entier</strong>"
 
 #: app/views/calendar/edit.rhtml:102
 msgid "Start Time"
-msgstr "Hora de Inicio"
+msgstr "Heure de début"
 
 #: app/views/calendar/edit.rhtml:122 app/views/syndication/_event.rhtml:26
 msgid "Duration"
-msgstr "Duración"
+msgstr "Durée"
 
 #: app/views/calendar/edit.rhtml:126
 msgid "Hours"
-msgstr "Horas"
+msgstr "Heures"
 
 #: app/views/calendar/edit.rhtml:128
 msgid "Minutes"
-msgstr "Minutos"
+msgstr "Minutes"
 
 #: app/views/calendar/edit.rhtml:142 app/views/calendar/edit.rhtml:220
 #: app/views/people/show.rhtml:117 app/views/people/show.rhtml:121
@@ -904,92 +903,92 @@ msgstr "Minutos"
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:37
 #: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:17
 msgid "None"
-msgstr "Ninguno"
+msgstr "Néant"
 
 #: app/views/calendar/edit.rhtml:142
 msgid "Daily"
-msgstr "Diariamente"
+msgstr "chaque jour"
 
 #: app/views/calendar/edit.rhtml:142
 msgid "Weekly"
-msgstr "Semanalmente"
+msgstr "chaque semaine"
 
 #: app/views/calendar/edit.rhtml:142
 msgid "Monthly"
-msgstr "Mensualmente"
+msgstr "chaque mois"
 
 #: app/views/calendar/edit.rhtml:142
 msgid "Yearly"
-msgstr "Anualmente"
+msgstr "chaque année"
 
 #: app/views/calendar/edit.rhtml:161
 msgid "End Date"
-msgstr "Día Fin"
+msgstr "Date de fin"
 
 #: app/views/calendar/edit.rhtml:220
 msgid "15 minutes before"
-msgstr "15 minutos antes"
+msgstr "15 minutes avant"
 
 #: app/views/calendar/edit.rhtml:220
 msgid "1 hour before"
-msgstr "1 hora antes"
+msgstr "1 heure avant"
 
 #: app/views/calendar/edit.rhtml:220
 msgid "1 day before"
-msgstr "1 día antes"
+msgstr "1 jour avant"
 
 #: app/views/calendar/list.rhtml:44 app/views/calendar/list.rhtml:47
 #: app/views/reports/_events.rhtml:38 app/views/reports/_events.rhtml:41
 msgid "Time Chart"
-msgstr "Cuadro de Tiempo"
+msgstr "Agenda"
 
 #: app/views/calendar/month.rhtml:28
 msgid "Sunday"
-msgstr "Domingo"
+msgstr "Dimanche"
 
 #: app/views/calendar/month.rhtml:29
 msgid "Monday"
-msgstr "Lunes"
+msgstr "Lundi"
 
 #: app/views/calendar/month.rhtml:30
 msgid "Tuesday"
-msgstr "Martes"
+msgstr "Mardi"
 
 #: app/views/calendar/month.rhtml:31
 msgid "Wednesday"
-msgstr "Miércoles"
+msgstr "Mercredi"
 
 #: app/views/calendar/month.rhtml:32
 msgid "Thursday"
-msgstr "Jueves"
+msgstr "Jeudi"
 
 #: app/views/calendar/month.rhtml:33
 msgid "Friday"
-msgstr "Viernes"
+msgstr "Vendredi"
 
 #: app/views/calendar/month.rhtml:34
 msgid "Saturday"
-msgstr "Sábado"
+msgstr "Samedi"
 
 #: app/views/calendar/show.rhtml:71
 msgid "   Cancel   "
-msgstr "   Cancelar   "
+msgstr "   Annuler   "
 
 #: app/views/calendar/show.rhtml:71
 msgid "   Save   "
-msgstr "   Guardar   "
+msgstr " Enregistrer "
 
 #: app/views/calendar/show.rhtml:98
 msgid "every"
-msgstr "todo"
+msgstr "tous"
 
 #: app/views/comments/_comment.rhtml:19
 msgid "Update"
-msgstr "Actualizar"
+msgstr "Confirmer"
 
 #: app/views/comments/_comment.rhtml:33
 msgid "%{i18n_the_time_in_words} ago by"
-msgstr "Hace %{i18n_the_time_in_words} por"
+msgstr "Il y a %{i18n_the_time_in_words} par"
 
 #: app/views/comments/_comment.rhtml:44 app/views/lists/_toolbar.rhtml:51
 #: app/views/people/_person_photo.rhtml:21
@@ -999,106 +998,106 @@ msgstr "Hace %{i18n_the_time_in_words} por"
 #: app/views/toolbars/_delete.rhtml:13 app/views/toolbars/_delete.rhtml:15
 #: app/views/toolbars/_delete.rhtml:17
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Effacer"
 
 #: app/views/comments/_comment.rhtml:44
 msgid "Delete this comment?"
-msgstr "¿Borrar este comentario?"
+msgstr "Effacer ce commentaire ?"
 
 #: app/views/comments/_list.rhtml:13 app/views/syndication/_comments.rhtml:14
 msgid "Comments"
-msgstr "Comentarios"
+msgstr "Commentaires"
 
 #: app/views/comments/_list.rhtml:21
 msgid "Said"
-msgstr "Dijo"
+msgstr "a dit"
 
 #: app/views/comments/_list.rhtml:23
 msgid "  Post  "
-msgstr "  Publicar  "
+msgstr "  Publier  "
 
 #: app/views/connect/_toolbar.rhtml:20
 msgid "Save Search"
-msgstr "Guardar Búsqueda"
+msgstr "Enregistrer la recherche"
 
 #: app/views/connect/_toolbar.rhtml:20
 msgid "Save this search for %{i18n_params_string} as a smart group"
 msgstr ""
-"Guardar esta busqueda de %{i18n_params_string} como un grupo inteligente"
+"Enregistrer cette recherche de %{i18n_params_string} comme un groupe "
+"intelligent"
 
 #: app/views/connect/events_list.rhtml:23
 #: app/views/partials/_calendar_list_header.rhtml:22
 #: app/views/partials/_month_header.rhtml:20
 msgid "events"
-msgstr "eventos"
+msgstr "événements"
 
 #: app/views/connect/list.rhtml:28 app/views/reports/_items.rhtml:22
 msgid "Application"
-msgstr "Aplicación"
+msgstr "Application"
 
 #: app/views/connect/list.rhtml:29 app/views/reports/_items.rhtml:23
 msgid "Modified"
-msgstr "Modificado"
+msgstr "Modifié"
 
 #: app/views/facebook/login.rhtml:82
-#, fuzzy
 msgid "Connector URL"
-msgstr "Desde Connector"
+msgstr "Connector URL"
 
 #: app/views/facebook/login.rhtml:107
 #, fuzzy
 msgid "Reset?"
-msgstr "Resetear"
+msgstr "Réinitialiser?"
 
 #: app/views/facebook/login.rhtml:112
 msgid " Authenticate "
-msgstr ""
+msgstr " Authentifier "
 
 #: app/views/files/_peek.rhtml:13 app/views/files/_service_peek.rhtml:13
 #: app/views/files/_strongspace_peek.rhtml:13
 #: app/views/files/service_show.rhtml:16 app/views/files/show.rhtml:22
 #: app/views/files/strongspace_show.rhtml:16
 msgid "Download"
-msgstr "Descargar"
+msgstr "Télécharger"
 
 #: app/views/files/_toolbar.rhtml:52
 msgid "Email selected items as an attachment"
-msgstr "Enviar por correo todos los items seleccionados como adjuntos"
+msgstr "Envoyer les éléments sélectionnés comme pièces jointes"
 
 #: app/views/files/_toolbar.rhtml:55 app/views/files/_toolbar.rhtml:59
 #: app/views/people/_edit_account_user.rhtml:99
 #: app/views/people/_peek.rhtml:50 app/views/people/show.rhtml:58
 #: app/views/people/show.rhtml:120 app/views/syndication/_person.rhtml:34
 msgid "Email"
-msgstr "Correo"
+msgstr "Courrier"
 
 #: app/views/files/browser.rhtml:14 lib/i18n_do_not_include.rb:23
 msgid "Folders"
-msgstr "Directorios"
+msgstr "Dossiers"
 
 #: app/views/files/browser.rhtml:15
 msgid "Files"
-msgstr "Archivos"
+msgstr "Fichiers"
 
 #: app/views/files/browser.rhtml:23
 msgid "Up one level"
-msgstr "Subir un nivel"
+msgstr "Un niveau plus haut"
 
 #: app/views/files/browser.rhtml:50
 msgid "Current Folder"
-msgstr "Directorio Actual"
+msgstr "Dossier actuel"
 
 #: app/views/files/create.rhtml:15 app/views/files/strongspace_create.rhtml:15
 msgid "New File"
-msgstr "Nuevo Archivo"
+msgstr "Nouveau fichier"
 
 #: app/views/files/create.rhtml:24 app/views/files/strongspace_create.rhtml:24
 msgid "Upload up to 5 files at once"
-msgstr "Subir hasta 5 archivos a la vez"
+msgstr "Envoyer jusqu'à 5 fichiers à la fois"
 
 #: app/views/files/create.rhtml:29 app/views/files/strongspace_create.rhtml:29
 msgid "File"
-msgstr "Archivo"
+msgstr "Fichier"
 
 #: app/views/files/create.rhtml:40 app/views/files/edit.rhtml:33
 #: app/views/lists/new.rhtml:28
@@ -1106,11 +1105,11 @@ msgstr "Archivo"
 #: app/views/sidebars/groups/files/_files.rhtml:53
 #: lib/i18n_do_not_include.rb:42
 msgid "Folder"
-msgstr "Directorio"
+msgstr "Dossier"
 
 #: app/views/files/edit.rhtml:15
 msgid "Edit File"
-msgstr "Editar Archivo"
+msgstr "Modifier le fichier"
 
 #: app/views/files/edit.rhtml:22 app/views/files/list.rhtml:28
 #: app/views/files/service.rhtml:28 app/views/files/strongspace.rhtml:28
@@ -1122,126 +1121,124 @@ msgstr "Editar Archivo"
 #: app/views/sidebars/groups/_smart_group_new.rhtml:28
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:31
 msgid "Name"
-msgstr "Nombre"
+msgstr "Nom"
 
 #: app/views/files/edit.rhtml:35 app/views/files/service_show.rhtml:27
 #: app/views/files/show.rhtml:33 app/views/files/strongspace_show.rhtml:27
 msgid "%{i18n_file_owner_name}'s"
-msgstr "De %{i18n_file_owner_name}"
+msgstr "%{i18n_file_owner_name}"
 
 #: app/views/files/edit.rhtml:36 app/views/files/service_show.rhtml:28
 #: app/views/files/show.rhtml:34 app/views/files/strongspace_show.rhtml:28
 msgid "Files: %{i18n_file_folder_pathname}"
-msgstr "Archivos: %{i18n_file_folder_pathname}"
+msgstr "Fichiers: %{i18n_file_folder_pathname}"
 
 #: app/views/files/list.rhtml:29 app/views/files/service.rhtml:29
 #: app/views/files/strongspace.rhtml:29 app/views/reports/_files.rhtml:23
 msgid "Size"
-msgstr "Tamaño"
+msgstr "Taille"
 
 #: app/views/files/list.rhtml:31 app/views/files/service.rhtml:31
 #: app/views/files/strongspace.rhtml:31 app/views/reports/_files.rhtml:25
 msgid "File Type"
-msgstr "Tipo de Archivo"
+msgstr "Type de fichier"
 
 #: app/views/guest/edit.rhtml:13
 msgid "Guest Preferences"
-msgstr "Preferencias Invitados"
+msgstr "Préférences Invité"
 
 #: app/views/guest/edit.rhtml:21 app/views/people/_edit_account_guest.rhtml:20
 #: app/views/people/_edit_account_user.rhtml:24
 msgid "username"
-msgstr "nombre de usuario"
+msgstr "nom d'utilisateur"
 
 #: app/views/guest/edit.rhtml:27 app/views/people/_edit_account_guest.rhtml:26
 #: app/views/people/_edit_account_user.rhtml:30
 msgid "password"
-msgstr "contraseña"
+msgstr "mot de passe"
 
 #: app/views/guest/edit.rhtml:31 app/views/people/_edit_account_user.rhtml:34
 msgid "confirm password"
-msgstr "confirmar contraseña"
+msgstr "confirmer le mot de passe"
 
 #: app/views/guest/edit.rhtml:37 app/views/people/_edit_account_guest.rhtml:32
 #: app/views/people/_edit_account_user.rhtml:42
 msgid "password recovery email address"
-msgstr "dirección de correo para recuperación de contraseña"
+msgstr "adresse email pour récupération de mot de passe"
 
 #: app/views/guest/edit.rhtml:44 app/views/people/_edit_account_guest.rhtml:44
 #: app/views/people/_edit_account_user.rhtml:73
 msgid "time zone"
-msgstr "zona horaria"
+msgstr "fuseau horaire"
 
 #: app/views/guest/edit.rhtml:51 app/views/people/_edit_account_guest.rhtml:51
 #: app/views/people/_edit_account_user.rhtml:67
 msgid "language"
-msgstr "idioma"
+msgstr "langue"
 
 #: app/views/lists/_edit.rhtml:24
 msgid "Columns"
-msgstr "Columnas"
+msgstr "Colonnes"
 
 #: app/views/lists/_edit.rhtml:32
 msgid "Add Column"
-msgstr "Añadir Columna"
+msgstr "Ajouter colonne"
 
 #: app/views/lists/_edit.rhtml:37
 msgid "Drag column headers below to change their order."
-msgstr ""
-"Arrastra las cabeceras de las columnas en la lista de abajo para cambiar su "
-"orden."
+msgstr "Glisser les entêtes de colonnes pour en changer l'ordre."
 
 #: app/views/lists/_import.rhtml:12
 msgid "Import an OPML file (.opml)"
-msgstr "Importar un archivo OPML (.opml)"
+msgstr "Importer un fichier OPML (.opml)"
 
 #: app/views/lists/_toolbar.rhtml:32 app/views/lists/_toolbar.rhtml:35
 msgid "Import OPML"
-msgstr "Importar OPML"
+msgstr "Importer OPML"
 
 #: app/views/lists/_toolbar.rhtml:39
 msgid "New Row"
-msgstr "Nueva Fila"
+msgstr "Nouvelle Ligne"
 
 #: app/views/lists/_toolbar.rhtml:42
 msgid "Undo"
-msgstr "Deshacer"
+msgstr "Annuler"
 
 #: app/views/lists/_toolbar.rhtml:45
 msgid "Move Up"
-msgstr "Mover Arriba"
+msgstr "Monter"
 
 #: app/views/lists/_toolbar.rhtml:46
 msgid "Move Down"
-msgstr "Mover Abajo"
+msgstr "Descendre"
 
 #: app/views/lists/_toolbar.rhtml:47
 msgid "Outdent"
-msgstr "Desindentar"
+msgstr "Désindenter"
 
 #: app/views/lists/_toolbar.rhtml:48
 msgid "Indent"
-msgstr "Indentar"
+msgstr "Indenter"
 
 #: app/views/lists/_toolbar.rhtml:57 app/views/mail/_toolbar.rhtml:56
 msgid "Tools"
-msgstr "Herramientas"
+msgstr "Outils"
 
 #: app/views/lists/_tools.rhtml:22
 msgid "Keyboard Shortcuts"
-msgstr "Atajos de Teclado"
+msgstr "Raccourcis clavier"
 
 #: app/views/lists/_tools.rhtml:25
 msgid "Special Values"
-msgstr "Valores especiales"
+msgstr "Valeurs spéciales"
 
 #: app/views/lists/_tools.rhtml:33
 msgid "Navigation"
-msgstr "Navegación"
+msgstr "Navigation"
 
 #: app/views/lists/_tools.rhtml:40
 msgid "Editing"
-msgstr "Edición"
+msgstr "Edition"
 
 #: app/views/lists/_tools.rhtml:52
 msgid "Checkboxes"
@@ -1252,32 +1249,34 @@ msgid ""
 "When changing a column from Text to Checkbox the values 'true', 't', 'yes', "
 "'y', '1', and '2' will be checked."
 msgstr ""
-"Cuando se cambia una columna de Texto a Checkbox los valores 'true', 't', "
-"'yes', 'y', '1', y '2' estarán marcados."
+"En changeant une colonne de Texte à Checkbox, les valeurs 'true', 't', "
+"'yes', 'y', '1', and '2' seront cochées."
 
 #: app/views/lists/_tools.rhtml:56
 msgid "Dates"
-msgstr "Días"
+msgstr "Dates"
 
 #: app/views/lists/_tools.rhtml:58
 msgid "Various ways of entering dates are supported, such as:"
-msgstr "Existen varios modos soportados de introducir días, tales como:"
+msgstr "Différentes façons d'entrer les dates sont supportées, telles que :"
 
 #: app/views/lists/_tools.rhtml:62
 msgid "Numbers"
-msgstr "Números"
+msgstr "Nombres"
 
 #: app/views/lists/_tools.rhtml:64
 msgid "A number cell with the value '+' will sum the values of its children."
-msgstr "Una celda de número con el valor '+' sumará los valores de sus hijas."
+msgstr ""
+"Une case nombre avec la valeur '+' additionnera les valeurs de ses "
+"descendants."
 
 #: app/views/lists/new.rhtml:17
 msgid "New List"
-msgstr "Nueva Lista"
+msgstr "Nouvelle liste"
 
 #: app/views/lists/show.rhtml:23
 msgid "Download As OPML"
-msgstr "Descargar como OPML"
+msgstr "Télécharger fichier OPML"
 
 #: app/views/mail/_compose_form.rhtml:33
 #: app/views/mail/_compose_form_html.rhtml:31 app/views/mail/list.rhtml:42
@@ -1291,7 +1290,7 @@ msgstr "De"
 #: app/views/mail/show.rhtml:68 app/views/reports/_messages.rhtml:24
 #: app/views/syndication/_message.rhtml:20
 msgid "To"
-msgstr "Para"
+msgstr "A"
 
 #: app/views/mail/_compose_form.rhtml:54 app/views/mail/_compose_form.rhtml:73
 #: app/views/mail/_compose_form.rhtml:93
@@ -1299,7 +1298,7 @@ msgstr "Para"
 #: app/views/mail/_compose_form_html.rhtml:71
 #: app/views/mail/_compose_form_html.rhtml:91
 msgid "Add"
-msgstr "Añadir"
+msgstr "Ajouter"
 
 #: app/views/mail/_compose_form.rhtml:62
 #: app/views/mail/_compose_form_html.rhtml:60 app/views/mail/show.rhtml:72
@@ -1309,244 +1308,243 @@ msgstr "Cc"
 #: app/views/mail/_compose_form.rhtml:74
 #: app/views/mail/_compose_form_html.rhtml:72
 msgid "Hide Cc"
-msgstr "Esconder Cc"
+msgstr "Masquer Cc"
 
 #: app/views/mail/_compose_form.rhtml:82
 #: app/views/mail/_compose_form_html.rhtml:80
 msgid "Bcc"
-msgstr "Bcc"
+msgstr "Cci"
 
 #: app/views/mail/_compose_form.rhtml:94
 #: app/views/mail/_compose_form_html.rhtml:92
 msgid "Hide Bcc"
-msgstr "Esconder Bcc"
+msgstr "Masquer Cci"
 
 #: app/views/mail/_compose_form.rhtml:104
 #: app/views/mail/_compose_form_html.rhtml:103
 msgid "Show Cc"
-msgstr "Mostrar Cc"
+msgstr "Afficher Cc"
 
 #: app/views/mail/_compose_form.rhtml:106
 #: app/views/mail/_compose_form_html.rhtml:109
 msgid "Show Bcc"
-msgstr "Mostrar Bcc"
+msgstr "Afficher Cci"
 
 #: app/views/mail/_compose_form.rhtml:112
 #: app/views/mail/_compose_form_html.rhtml:116 app/views/mail/list.rhtml:44
 #: app/views/reports/_messages.rhtml:25
 #: app/views/syndication/_message.rhtml:28
 msgid "Subject"
-msgstr "Asunto"
+msgstr "Sujet"
 
 #: app/views/mail/_compose_form.rhtml:117
 #: app/views/mail/_compose_form_html.rhtml:121 app/views/mail/list.rhtml:38
 #: app/views/mail/show.rhtml:76 app/views/reports/_messages.rhtml:22
 #: app/views/syndication/_message.rhtml:31
 msgid "Attachments"
-msgstr "Adjuntos"
+msgstr "Pièces jointes"
 
 #: app/views/mail/_compose_form.rhtml:142
 msgid "Add Attachments"
-msgstr "Añadir Adjuntos"
+msgstr "Ajouter pièces jointes"
 
 #: app/views/mail/_compose_form.rhtml:148
 #: app/views/mail/_compose_form.rhtml:172
 #: app/views/subscriptions/browser.rhtml:16
 #: app/views/subscriptions/browser.rhtml:40
 msgid "From Connector"
-msgstr "Desde Connector"
+msgstr "Depuis Connector"
 
 #: app/views/mail/_compose_form.rhtml:153
 #: app/views/subscriptions/browser.rhtml:21
 msgid "From Your Computer"
-msgstr "Desde tu ordenador"
+msgstr "Depuis votre ordinateur"
 
 #: app/views/mail/_compose_form.rhtml:158
 #: app/views/subscriptions/browser.rhtml:26
 msgid "Select a file to upload"
-msgstr "Seleccionar un archivo para subir"
+msgstr "Choisir un fichier à envoyer"
 
 #: app/views/mail/_compose_form.rhtml:166
 #: app/views/subscriptions/browser.rhtml:34
 msgid "Attach"
-msgstr "Adjuntar"
+msgstr "Attacher"
 
 #: app/views/mail/_compose_form.rhtml:188
 #: app/views/mail/_compose_form_html.rhtml:156
 msgid "Send"
-msgstr "Enviar"
+msgstr "Envoyer"
 
 #: app/views/mail/_compose_form.rhtml:189
 #: app/views/mail/_compose_form_html.rhtml:157
 msgid "Save in Drafts"
-msgstr "Guardar en Borradores"
+msgstr "Enregistrer comme Brouillon"
 
 #: app/views/mail/_compose_form.rhtml:190
 #: app/views/mail/_compose_form_html.rhtml:158
 msgid "Discard"
-msgstr "Descartar"
+msgstr "Supprimer"
 
 #: app/views/mail/_compose_form_html.rhtml:138
 msgid ""
 "You cannot edit this draft email because it was composed in an email "
 "application using HTML formatting. To edit the email you can either"
 msgstr ""
-"No puedes editar el borrador de este correo porque ha sido compuesto en una "
-"aplicación de email usando formato HTML. Para editarlo puedes bien"
+"Vous ne pouvez pas modifier ce brouillon d'email, parce qu'il a été produit "
+"par un client email utilisant un format HTML. Pour modifierce message, vous "
+"pouvez soit"
 
 #: app/views/mail/_compose_form_html.rhtml:139
 msgid "1) open the email in the original email application or"
-msgstr "1) abrir el correo en la aplicación de correo original o"
+msgstr "1) ouvrir le message dans le client email original, ou"
 
 #: app/views/mail/_compose_form_html.rhtml:140
 msgid ""
 "2) you can copy the text from the email below and paste it into a new email "
 "in Joyent's web mail application."
 msgstr ""
-"2) puedes copiar el texto del correo abajo y pegarlo en un nuevo correo en "
-"la aplicacón de correo web de Joyent."
+"2) vous pouvez copier le texte du message ci-dessous, et le coller dans un "
+"nouveau message, avec l'application Courrier de Joyent."
 
 #: app/views/mail/_compose_form_html.rhtml:141
 msgid "Otherwise you can send the message from here."
-msgstr "De cualquier modo, puedes enviar el email desde aquí"
+msgstr "Autrement vous pouvez envoyer le message d'ici-même."
 
 #: app/views/mail/_imap_address.rhtml:15
 msgid "Open person in users."
-msgstr "Abrir persona en usuarios"
+msgstr "Afficher la personne dans les utilisateurs."
 
 #: app/views/mail/_imap_address.rhtml:17
 msgid "Open person in contacts."
-msgstr "Abrir persona en contactos."
+msgstr "Afficher la personne dans les contacts."
 
 #: app/views/mail/_imap_address.rhtml:21
 msgid "Create new contact."
-msgstr "Crear nuevo contacto"
+msgstr "Créer un nouveau contact."
 
 #: app/views/mail/_peek.rhtml:15 app/views/mail/_toolbar.rhtml:23
 msgid "Reply"
-msgstr "Responder"
+msgstr "Répondre"
 
 #: app/views/mail/_peek.rhtml:16 app/views/mail/_toolbar.rhtml:26
 msgid "Reply All"
-msgstr "Responder a Todos"
+msgstr "Répondre à tous"
 
 #: app/views/mail/_peek.rhtml:17 app/views/mail/_toolbar.rhtml:29
 msgid "Forward"
-msgstr "Reenviar"
+msgstr "Transférer"
 
 #: app/views/mail/_toolbar.rhtml:14
 msgid "Compose"
-msgstr "Redactar"
+msgstr "Nouveau"
 
 #: app/views/mail/_toolbar.rhtml:38
-#, fuzzy
 msgid "Mark as spam."
-msgstr "Marcar como primario"
+msgstr "Marquer comme spam."
 
 #: app/views/mail/_toolbar.rhtml:41
 msgid "Not Spam"
-msgstr ""
+msgstr "Non spam"
 
 #: app/views/mail/_toolbar.rhtml:41
-#, fuzzy
 msgid "Mark as not spam."
-msgstr "Marcar como primario"
+msgstr "Marquer comme non spam."
 
 #: app/views/mail/_toolbar.rhtml:44
 msgid "Permanently Delete All Spam"
-msgstr ""
+msgstr "Supprimer définitivement tous les spams"
 
 #: app/views/mail/_toolbar.rhtml:44
-#, fuzzy
 msgid "Do you want to permanently delete all spam?"
-msgstr "Estás a punto de borrar permanentemente"
+msgstr "Voulez-vous supprimer définitivement tous les spams ?"
 
 #: app/views/mail/_toolbar.rhtml:47 app/views/mail/_toolbar.rhtml:53
 msgid "Empty Trash"
-msgstr "Vaciar Papelera"
+msgstr "Vider la corbeille"
 
 #: app/views/mail/_toolbar.rhtml:47 app/views/mail/_toolbar.rhtml:53
 msgid "Do you want to empty your trash?"
-msgstr "¿Deseas vaciar la papelera?"
+msgstr "Voulez-vous vider la corbeille ?"
 
 #: app/views/mail/_tools.rhtml:12
-#, fuzzy
 msgid "Forwarding"
-msgstr "Reenviar"
+msgstr "Transfert…"
 
 #: app/views/mail/_tools.rhtml:16
 msgid "Your email is currently not being forwarded to another email address."
 msgstr ""
+"Votre message n'est pour le moment pas transféré vers une autre adresse "
+"email."
 
 #: app/views/mail/_tools.rhtml:18
 msgid "Your email is currently being forwarded to %{forward_address}."
-msgstr ""
+msgstr "Votre message est en cours de transfert à %{forward_address}."
 
 #: app/views/mail/_tools.rhtml:22
-#, fuzzy
 msgid "Edit Forwarding"
-msgstr "Edición"
+msgstr "Modifier le transfert"
 
 #: app/views/mail/_tools.rhtml:26
-#, fuzzy
 msgid "Aliases"
-msgstr "listas"
+msgstr "Alias"
 
 #: app/views/mail/_tools.rhtml:29
 msgid "Aliases let multiple users receive email sent to the same address."
 msgstr ""
+"Un alias permet à plusieurs utilisateurs de recevoir le courrier envoyé à "
+"une même adresse."
 
 #: app/views/mail/compose.rhtml:19
 msgid "New Message"
-msgstr "Nuevo Mensaje"
+msgstr "Nouveau message"
 
 #: app/views/mail/edit_draft.rhtml:17
 msgid "Edit Draft Message"
-msgstr "Editar Borrador de Mensaje"
+msgstr "Modifer le brouille"
 
 #: app/views/mail/forward.rhtml:18
 msgid "Forward Message"
-msgstr "Reenviar Mensaje"
+msgstr "Transférer le message"
 
 #: app/views/mail/list.rhtml:20
 msgid ""
 "This inbox is currently being <strong>forwarded</strong> to %"
 "{forward_address}. New mail messages will not appear here."
 msgstr ""
+"Cette boîte de réception est en train d'être <strong>transmise</strong> à %"
+"{forward_address}. Aucun nouveau message n'apparaîtra ici."
 
 #: app/views/mail/list.rhtml:37
 msgid "Status"
-msgstr "Estado"
+msgstr "Statut"
 
 #: app/views/mail/list.rhtml:37
 msgid "Read status"
-msgstr "Estado lectura"
+msgstr "Lire le statut"
 
 #: app/views/mail/list.rhtml:38
 msgid "Message has attachments?"
-msgstr "¿El mensaje tiene adjuntos?"
+msgstr "Le message a-t-il des pièces jointes ?"
 
 #: app/views/mail/reply_to.rhtml:20
 msgid "Reply To All Recipeints"
-msgstr "Responder a Todos"
+msgstr "Répondre à tous"
 
 #: app/views/mail/reply_to.rhtml:22
 msgid "Reply To Sender"
-msgstr "Responder Al Remitente"
+msgstr "Répondre"
 
 #: app/views/mail/show.rhtml:32
-#, fuzzy
 msgid "Previous"
-msgstr "Mes Anterior"
+msgstr "Précédent"
 
 #: app/views/mail/show.rhtml:33
-#, fuzzy
 msgid "Next"
-msgstr "Texto"
+msgstr "Suivant"
 
 #: app/views/mail/show.rhtml:41
 msgid "Does this message not look quite right?"
-msgstr "¿Te parece que este mensaje no se muestra correctamente?"
+msgstr "L'affichage de ce message n'est pas correct ?"
 
 #: app/views/mail/show.rhtml:44
 msgid ""
@@ -1560,19 +1558,19 @@ msgid ""
 "\n"
 "Send this message to Joyent engineers for further analysis?"
 msgstr ""
-"Hemos encontrado que ciertos mensajes con texto enriquecido o imágenes "
-"adjuntas no siempre se muestra correctamente. En un esfuerzo por mejorar "
-"nuestra capacidad para mostrar mensajes complejos correctamente nos gustaría "
-"contar con tu permiso para investigar este mensaje detalladamente.\n"
+"Nous sommes conscients que certains messages avec du texte formaté ou "
+"desimages attachées ne s'affichent pas toujours correctement. Dans "
+"l'optiqued'améliorer notre capacité à afficher des messages complexes, nous "
+"voudrionspouvoir inspecter ce message plus précisément.\n"
 "\n"
-"Tu privacidad es muy importante para nosotros por lo que sólo emplearíamos "
-"este mensaje con el propósito de solucionar problemas.\n"
+"La protection de votre vie privée est primordiale pour nous, sachez que "
+"ce message ne servira qu'à des fins de correction de bug.\n"
 "\n"
-"¿Enviar este mensaje a los ingenieros de Joyent para análisis pormenorizado?"
+"Envoyer ce message aux ingénieurs Joyent pour une analyse plus précise?"
 
 #: app/views/mail/show.rhtml:48
 msgid "Your"
-msgstr "Tuyos"
+msgstr "Votre"
 
 #: app/views/mail/show.rhtml:48
 msgid "%{i18n_message_owner_name}'s"
@@ -1581,7 +1579,7 @@ msgstr "De %{i18n_message_owner_name}"
 #: app/views/mail/show.rhtml:49 app/views/sidebars/groups/mail/_mail.rhtml:15
 #: app/views/sidebars/groups/mail/_others_mail.rhtml:13 lib/js_strings.rb:39
 msgid "Inbox"
-msgstr "Entrada"
+msgstr "Boîte de réception"
 
 #: app/views/mail/show.rhtml:54 app/views/partials/_list_header.rhtml:23
 #: app/views/partials/_show_header.rhtml:21
@@ -1590,131 +1588,129 @@ msgstr "de"
 
 #: app/views/mail/show.rhtml:57 lib/i18n_do_not_include.rb:76
 msgid "messages"
-msgstr "mensajes"
+msgstr "messages"
 
 #: app/views/mail/unavailable.rhtml:12
 msgid "The mail server is currently unavailble"
-msgstr "El servidor de correo no se encuentra disponible en este momento"
+msgstr "Le serveur mail est indisponible pour le moment"
 
 #: app/views/mail_alias/_create.rhtml:24
 #: app/views/mail_alias/_mail_aliases.rhtml:25
-#, fuzzy
 msgid "New Alias"
-msgstr "Nueva Lista"
+msgstr "Nouvel alias"
 
 #: app/views/mail_alias/_mail_alias_li.rhtml:37
 #: app/views/sidebars/groups/_default_group.rhtml:23
 #: app/views/sidebars/groups/_default_smart_group.rhtml:24
 #: app/views/sidebars/groups/_smart_group.rhtml:24
 msgid "Show"
-msgstr "Mostrar"
+msgstr "Afficher"
 
 #: app/views/mail_alias/_mail_alias_li.rhtml:37
 #: app/views/sidebars/groups/_default_group.rhtml:23
 #: app/views/sidebars/groups/_default_smart_group.rhtml:24
 #: app/views/sidebars/groups/_smart_group.rhtml:24
 msgid "View group info"
-msgstr "Ver información grupo"
+msgstr "Voir les info du groupe"
 
 #: app/views/mail_alias/_mail_alias_li.rhtml:44
-#, fuzzy
 msgid "Delete Mail Alias"
-msgstr "Borrar todos los items seleccionados."
+msgstr "Effacer l'alias mail"
 
 #: app/views/partials/_calendar_list_header.rhtml:25
 msgid "Forward In Time"
-msgstr "Siguiente"
+msgstr "Suivant"
 
 #: app/views/partials/_calendar_list_header.rhtml:33
 msgid "Back In Time"
-msgstr "Anterior"
+msgstr "Précédent"
 
 #: app/views/partials/_developer_tools.rhtml:17
 msgid "Developer Tools"
-msgstr "Herramientas Desarrollo"
+msgstr "Outils développeurs"
 
 #: app/views/partials/_developer_tools.rhtml:21
 msgid "Organization"
-msgstr "Organización"
+msgstr "Organisation"
 
 #: app/views/partials/_developer_tools.rhtml:31
 #: app/views/people/_edit_account.rhtml:58
 #: app/views/people/confirm_user_delete.rhtml:43
 msgid "User"
-msgstr "Usuario"
+msgstr "Utilisateur"
 
 #: app/views/partials/_developer_tools.rhtml:41
 msgid "Language"
-msgstr "Idioma"
+msgstr "Langue"
 
 #: app/views/partials/_joyent_messages.rhtml:25
 msgid "Please add a password recovery email address to your account settings"
 msgstr ""
-"Por favor, añade una dirección de correo para recuperar la contraseña a tu "
-"configuración de cuenta"
+"Veuillez ajouter une adresse email pour récupération de mot de passe à vos "
+"préférences de compte"
 
 #: app/views/partials/_joyent_messages.rhtml:26
 #: app/views/partials/_menu_items.rhtml:62
 #: app/views/partials/_menu_items.rhtml:64
 msgid "Your Preferences"
-msgstr "Tus Preferencias"
+msgstr "Vos préférences"
 
 #: app/views/partials/_joyent_messages.rhtml:26
 #: app/views/partials/_menu_items.rhtml:62
 #: app/views/partials/_menu_items.rhtml:64
 msgid "Edit your personal information"
-msgstr "Editar tu información personal"
+msgstr "Modifier vos informations"
 
 #: app/views/partials/_list_header.rhtml:33
 msgid "Page"
-msgstr "Página"
+msgstr "Page"
 
 #: app/views/partials/_menu_items.rhtml:35
 msgid "Account Switching"
-msgstr "Cambiar de Cuenta"
+msgstr "Permutation de compte"
 
 #: app/views/partials/_menu_items.rhtml:57
 msgid "Utilities"
-msgstr "Utilidades"
+msgstr "Utilitaires"
 
 #: app/views/partials/_menu_items.rhtml:72
 #: app/views/partials/_menu_items.rhtml:74
 msgid "Customer Center"
-msgstr "Centro de Clientes"
+msgstr "Service clientèle"
 
 #: app/views/partials/_menu_items.rhtml:72
 #: app/views/partials/_menu_items.rhtml:74
 msgid "Go to the Joyent Customer Center"
-msgstr "Ir al Centro de Clientes de Joyent"
+msgstr "Aller au Service clientèle Joyent"
 
 #: app/views/partials/_menu_items.rhtml:81
 msgid "Open the Joyent Forum in a new window"
-msgstr "Abrir el Foro de Joyent en una ventana nueva"
+msgstr "Ouvrir les forums Joyent dans une nouvelle fenêtre"
 
 #: app/views/partials/_menu_items.rhtml:82
 msgid "Help"
-msgstr "Ayuda"
+msgstr "Aide"
 
 #: app/views/partials/_menu_items.rhtml:88
 msgid "Sign Out"
-msgstr "Desconectar"
+msgstr "Déconnexion"
 
 #: app/views/partials/_month_header.rhtml:23
 msgid "Next Month"
-msgstr "Próximo Mes"
+msgstr "Mois prochain"
 
 #: app/views/partials/_month_header.rhtml:37
 msgid "Previous Month"
-msgstr "Mes Anterior"
+msgstr "Mois précédent"
 
 #: app/views/partials/_sidebar.rhtml:17
 msgid "Resize Sidebar"
-msgstr "Redimensionar"
+msgstr "Redimensionner la barre latérale"
 
 #: app/views/partials/_sidebar.rhtml:20 lib/i18n_do_not_include.rb:25
 #: lib/i18n_do_not_include.rb:104
 msgid "Groups"
-msgstr "Grupos"
+msgstr "Groupes"
 
 #: app/views/partials/_sidebar.rhtml:22
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:21
@@ -1728,96 +1724,96 @@ msgstr "Tags"
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:13
 #: lib/i18n_do_not_include.rb:106
 msgid "Access"
-msgstr "Acceso"
+msgstr "Accès"
 
 #: app/views/partials/_sidebar.rhtml:24 app/views/sidebars/_notify.rhtml:21
 #: lib/i18n_do_not_include.rb:108
 msgid "Notify"
-msgstr "Notificar"
+msgstr "Notifier"
 
 #: app/views/partials/_sidebar_buttons.rhtml:12
 #: app/views/sidebars/_tags.rhtml:29
 msgid "Add Tags"
-msgstr "Añadir Tags"
+msgstr "Ajouter tags"
 
 #: app/views/partials/_sidebar_buttons.rhtml:13
 msgid "Set Access"
-msgstr "Fijar Acceso"
+msgstr "Définir accès"
 
 #: app/views/partials/_sidebar_buttons.rhtml:14
 msgid "Notify Someone"
-msgstr "Notificar"
+msgstr "Notifier quelqu'un"
 
 #: app/views/people/_call.rhtml:13
 msgid "Balance"
-msgstr "Balance"
+msgstr "Crédits"
 
 #: app/views/people/_call.rhtml:17
 #: app/views/people/_edit_contact_information.rhtml:82
 msgid "Phone Numbers"
-msgstr "Números de Teléfono"
+msgstr "Numéros de téléphone"
 
 #: app/views/people/_call.rhtml:20
 msgid "Your Jajah Login"
-msgstr "Tu Login Jajah"
+msgstr "Votre login Jajah"
 
 #: app/views/people/_call.rhtml:33
 msgid "Your Jajah Number"
-msgstr "Tu Número Jajah"
+msgstr "Votre numéro Jajah"
 
 #: app/views/people/_call.rhtml:47
 msgid "Your Email Address"
-msgstr "Tu Dirección de Correo"
+msgstr "Votre adresse email"
 
 #: app/views/people/_call.rhtml:56
 msgid "Your Password"
-msgstr "Tu Contraseña"
+msgstr "Votre mot de passe"
 
 #: app/views/people/_call.rhtml:68
 msgid "Start Call"
-msgstr "Comenzar LLamada"
+msgstr "Appeler"
 
 #: app/views/people/_edit_account.rhtml:17
 msgid "Edit Preferences"
-msgstr "Editar Preferencias"
+msgstr "Modifier préférences"
 
 #: app/views/people/_edit_account.rhtml:25
 msgid "Edit Account"
-msgstr "Editar Cuenta"
+msgstr "Modifier le compte"
 
 #: app/views/people/_edit_account.rhtml:31
 msgid "Account Type"
-msgstr "Tipo de Cuenta"
+msgstr "Type de compte"
 
 #: app/views/people/_edit_account.rhtml:40
 msgid "None &ndash; Contact Only"
-msgstr "Ninguno &ndash; Sólo Contacto"
+msgstr "Néant &ndash; Contact uniquement"
 
 #: app/views/people/_edit_account.rhtml:41
 msgid "Will have no access to your Connector."
-msgstr "No tendrá acceso a tu Connector"
+msgstr "N'aura pas accès à votre Connector."
 
 #: app/views/people/_edit_account.rhtml:49
 msgid "Guest"
-msgstr "Invitado"
+msgstr "Invité"
 
 #: app/views/people/_edit_account.rhtml:50
 msgid "Can only see or manage specified folders in your \"Strongspace\"."
 msgstr ""
-"Puede ver gestionar sólamente los directorios especificados en tu "
+"Peut seulement voir ou accéder aux dossiers spécifiés dans votre "
 "\"Strongspace\"."
 
 #: app/views/people/_edit_account.rhtml:59
 msgid "Will have unrestricted access to the connector."
-msgstr "Tendrá acceso ilimitado a connector"
+msgstr "Aura un accès complet au Connector."
 
 #: app/views/people/_edit_account.rhtml:67
 msgid "Guest Info"
-msgstr "Información Invitado"
+msgstr "Informations Invité"
 
 #: app/views/people/_edit_account.rhtml:72
 msgid "User Info"
-msgstr "Información Usuario"
+msgstr "Informations Utilisateur"
 
 #: app/views/people/_edit_account.rhtml:77
 msgid ""
@@ -1825,221 +1821,219 @@ msgid ""
 "current one or <a target=\"_blank\" class=\"goto\" href=\"http://customer."
 "joyent.com/login\">upgrade your plan</a>"
 msgstr ""
-"Has alcanzado su límite de usuarios. Para añadir un nuevo usuario puedes, "
-"bien borrar otro o <a target=\"_blank\" class=\"goto\" href=\"http://"
-"customer.joyent.com/login\">actualizar tu plan</a>."
+"Vous avez atteint votre nombre limite d'utilisateurs.Pour créer un nouvel "
+"utilisateur, effacez-en un actuel ou <a target=\"_blank\" class=\"goto\" "
+"href=\"http://customer.joyent.com/login\">passez à un abonnement supérieur.</"
+"a>"
 
 #: app/views/people/_edit_account_guest.rhtml:38
 msgid "Allow this guest to also create and delete files?"
-msgstr "¿Permitir a este invitado crear y borrar archivos?"
+msgstr "Autoriser cet invité à créer et effacer des fichiers ?"
 
 #: app/views/people/_edit_account_guest.rhtml:57
 msgid "Reset Guest Password"
-msgstr "Resetear Contraseña de Invitado"
+msgstr "Réinitialiser le mot de passe Invité"
 
 #: app/views/people/_edit_account_guest.rhtml:60
 msgid "email address"
-msgstr "dirección de correo"
+msgstr "adresse email"
 
 #: app/views/people/_edit_account_guest.rhtml:61
 msgid "Reset"
-msgstr "Resetear"
+msgstr "Réinitialiser"
 
 #: app/views/people/_edit_account_user.rhtml:16
 msgid "Account"
-msgstr "Cuenta"
+msgstr "Compte"
 
 #: app/views/people/_edit_account_user.rhtml:39
 #: app/views/people/_edit_account_user.rhtml:91
 #: app/views/people/_edit_account_user.rhtml:101
 #: app/views/people/_edit_account_user.rhtml:110
 msgid "Loading"
-msgstr "Cargando"
+msgstr "Chargement"
 
 #: app/views/people/_edit_account_user.rhtml:49
 #: app/views/people/_edit_account_user.rhtml:52
 msgid "Allow this user to create and delete other users?"
-msgstr "¿Permitir a este usuario crear y borrar otros usuarios?"
+msgstr "Autoriser cet utilisateur à créer et effacer d'autres utilisateurs ?"
 
 #: app/views/people/_edit_account_user.rhtml:62
 msgid "International"
-msgstr "Internacional"
+msgstr "International"
 
 #: app/views/people/_edit_account_user.rhtml:86
-#, fuzzy
 msgid ""
 "Receive notifications and event alarms via SMS, email and instant message"
 msgstr ""
-"Enviar notificaciones y alarmas de eventos vía SMS, email y mensajería "
-"instantánea"
+"Recevoir les notifications et alarmes d'événements via SMS, email et "
+"messagerie instantanée"
 
 #: app/views/people/_edit_account_user.rhtml:89
 msgid "SMS"
 msgstr "SMS"
 
 #: app/views/people/_edit_account_user.rhtml:108
-#, fuzzy
 msgid "Instant Message (Jabber)"
-msgstr "Mensajería Instantánea"
+msgstr "Messagerie instantanée (Jabber)"
 
 #: app/views/people/_edit_contact_information.rhtml:13
 msgid "Edit Person"
-msgstr "Editar Persona"
+msgstr "Modifier la personne"
 
 #: app/views/people/_edit_contact_information.rhtml:15
 msgid "New Person"
-msgstr "Nuevo Persona"
+msgstr "Nouvelle Personne"
 
 #: app/views/people/_edit_contact_information.rhtml:23
 msgid "General Info"
-msgstr "Información General"
+msgstr "Infos Générales"
 
 #: app/views/people/_edit_contact_information.rhtml:30
 msgid "first name"
-msgstr "nombre"
+msgstr "prénom"
 
 #: app/views/people/_edit_contact_information.rhtml:34
 msgid "middle"
-msgstr "segundo nombre"
+msgstr "deuxième prénom"
 
 #: app/views/people/_edit_contact_information.rhtml:38
 msgid "last"
-msgstr "apellidos"
+msgstr "nom"
 
 #: app/views/people/_edit_contact_information.rhtml:44
 msgid "company name"
-msgstr "nombre compañía"
+msgstr "nom de l'entreprise"
 
 #: app/views/people/_edit_contact_information.rhtml:50
 msgid "job title"
-msgstr "puesto de trabajo"
+msgstr "titre"
 
 #: app/views/people/_edit_contact_information.rhtml:65
-#, fuzzy
 msgid "Forward Email"
-msgstr "Reenviar"
+msgstr "Transmettre email"
 
 #: app/views/people/_edit_contact_information.rhtml:93
 msgid "Add Phone Number"
-msgstr "Añadir Número de Teléfono"
+msgstr "Ajouter numéro de téléphone"
 
 #: app/views/people/_edit_contact_information.rhtml:102
 msgid "Email Addresses"
-msgstr "Direcciones de Correo"
+msgstr "Adresses email"
 
 #: app/views/people/_edit_contact_information.rhtml:113
 msgid "Add Email Address"
-msgstr "Añadir Dirección de Correo"
+msgstr "Ajouter adresse email"
 
 #: app/views/people/_edit_contact_information.rhtml:122
 msgid "Addresses"
-msgstr "Direcciones"
+msgstr "Adresses"
 
 #: app/views/people/_edit_contact_information.rhtml:133
 msgid "Add Address"
-msgstr "Añadir Dirección"
+msgstr "Ajouter adresse"
 
 #: app/views/people/_edit_contact_information.rhtml:142
 msgid "IM Address"
-msgstr "Cuenta MI"
+msgstr "Adresse IM"
 
 #: app/views/people/_edit_contact_information.rhtml:153
 msgid "Add IM Address"
-msgstr "Añadir Cuenta MI"
+msgstr "Ajouter adresse IM"
 
 #: app/views/people/_edit_contact_information.rhtml:162
 #: app/views/people/_peek.rhtml:90 app/views/people/show.rhtml:91
 #: app/views/people/show.rhtml:128 app/views/syndication/_person.rhtml:73
 msgid "Websites"
-msgstr "Sitios Web"
+msgstr "Sites web"
 
 #: app/views/people/_edit_contact_information.rhtml:173
 msgid "Add Website"
-msgstr "Añadir Sitio Web"
+msgstr "Ajouter site web"
 
 #: app/views/people/_edit_contact_information.rhtml:182
 #: app/views/people/_peek.rhtml:100 app/views/people/show.rhtml:101
 #: app/views/people/show.rhtml:132 app/views/syndication/_person.rhtml:82
 msgid "Special Dates"
-msgstr "Días Especiales"
+msgstr "Dates spéciales"
 
 #: app/views/people/_edit_contact_information.rhtml:193
 msgid "Add Special Date"
-msgstr "Añadir Día Especial"
+msgstr "Ajouter date spéciale"
 
 #: app/views/people/_import.rhtml:12
 msgid "Import contacts from a vCard file (.vcf)"
-msgstr "Importar eventos desde un archivo vCard (.ics)"
+msgstr "Importer contacts depuis un fichier vCard (.vcf)"
 
 #: app/views/people/_peek.rhtml:27 app/views/people/show.rhtml:39
 msgid "Download vCard for this person"
-msgstr "Descargar vCard de esta persona"
+msgstr "Télécharger vCard pour cette personne"
 
 #: app/views/people/_peek.rhtml:33 app/views/people/show.rhtml:47
 #: app/views/people/show.rhtml:116 app/views/syndication/_person.rhtml:19
 msgid "Phone"
-msgstr "Teléfono"
+msgstr "Téléphone"
 
 #: app/views/people/_peek.rhtml:38 app/views/syndication/_person.rhtml:24
 msgid "Call this person via Skype"
-msgstr "Llamar a esta persona vía Skype"
+msgstr "Appeler cette personne via Skype"
 
 #: app/views/people/_peek.rhtml:44 app/views/people/_peek.rhtml:62
 #: app/views/people/_peek.rhtml:84
 msgid "Send Notifications Here"
-msgstr "Enviar Notificaciones Aquí"
+msgstr "Envoyer les notifications ici"
 
 #: app/views/people/_peek.rhtml:53
 msgid "Compose a new email to"
-msgstr "Redactar un email para"
+msgstr "Nouveau message email à"
 
 #: app/views/people/_peek.rhtml:78 app/views/people/show.rhtml:82
 #: app/views/people/show.rhtml:124 app/views/syndication/_person.rhtml:63
 msgid "Instant Messaging"
-msgstr "Mensajería Instantánea"
+msgstr "Messagerie instantanée"
 
 #: app/views/people/_person_address.rhtml:23
 #: app/views/people/_person_email_address.rhtml:17
 #: app/views/people/_person_phone_number.rhtml:17
 msgid "Home"
-msgstr "Casa"
+msgstr "Domicile"
 
 #: app/views/people/_person_address.rhtml:23
 #: app/views/people/_person_email_address.rhtml:17
 #: app/views/people/_person_im_address.rhtml:17
 #: app/views/people/_person_phone_number.rhtml:17
 msgid "Other"
-msgstr "Otro"
+msgstr "Autre"
 
 #: app/views/people/_person_address.rhtml:23
 #: app/views/people/_person_email_address.rhtml:17
 #: app/views/people/_person_phone_number.rhtml:17
 msgid "Work"
-msgstr "Trabajo"
+msgstr "Travail"
 
 #: app/views/people/_person_address.rhtml:26
 msgid "type"
-msgstr "tipo"
+msgstr "type"
 
 #: app/views/people/_person_address.rhtml:30
 msgid "street address"
-msgstr "dirección"
+msgstr "adresse"
 
 #: app/views/people/_person_address.rhtml:41
 msgid "city"
-msgstr "ciudad"
+msgstr "ville"
 
 #: app/views/people/_person_address.rhtml:45
 msgid "state"
-msgstr "estado"
+msgstr "état"
 
 #: app/views/people/_person_address.rhtml:53
 msgid "postal code"
-msgstr "código postal"
+msgstr "code postal"
 
 #: app/views/people/_person_address.rhtml:57
 msgid "country"
-msgstr "país"
+msgstr "pays"
 
 #: app/views/people/_person_im_address.rhtml:17
 msgid "AIM"
@@ -2075,35 +2069,35 @@ msgstr "Fax"
 
 #: app/views/people/_person_phone_number.rhtml:17
 msgid "Mobile"
-msgstr "Móvil"
+msgstr "Mobile"
 
 #: app/views/people/_person_phone_number.rhtml:17
 msgid "Pager"
-msgstr "Busca"
+msgstr "Pager"
 
 #: app/views/people/_person_photo.rhtml:13
 msgid ""
 "You can add an image (GIF, JPG, or PNG), which will be resized to 48x48 "
 "pixels"
 msgstr ""
-"Puedes añadir una imagen (GIF, JPG, or PNG), que será redimensionada a 48x48 "
-"pixels"
+"Vous pouvez ajouter une image (GIF, JPG ou PNG), qui sera redimensionnée à "
+"48x48 pixels"
 
 #: app/views/people/_person_photo.rhtml:21
 msgid "Immediately remove the photo from this person?"
-msgstr "¿Eliminar inmediatamente la foto de esta persona"
+msgstr "Retirer immédiatement la photo pour cette personne ?"
 
 #: app/views/people/_person_special_date.rhtml:18
 msgid "description"
-msgstr "descripción"
+msgstr "description"
 
 #: app/views/people/_person_special_date.rhtml:22
 msgid "mo"
-msgstr "mes"
+msgstr "mois"
 
 #: app/views/people/_person_website.rhtml:18
 msgid "site name"
-msgstr "nombre del sitio"
+msgstr "nom du site"
 
 #: app/views/people/_person_website.rhtml:22
 msgid "url"
@@ -2111,311 +2105,311 @@ msgstr "url"
 
 #: app/views/people/_toolbar.rhtml:35
 msgid "Import vCards"
-msgstr "Importar vCard(s)"
+msgstr "Importer vCards"
 
 #: app/views/people/_toolbar.rhtml:38
 msgid "Call"
-msgstr "Llamar"
+msgstr "Appeler"
 
 #: app/views/people/confirm_user_delete.rhtml:15
 msgid "Delete user(s), and their content"
-msgstr "¿Borrar usuario(s) y sus contenidos?"
+msgstr "Effacer utilisateur(s), et leurs données"
 
 #: app/views/people/confirm_user_delete.rhtml:17
 msgid "You are about to permanently delete"
-msgstr "Estás a punto de borrar permanentemente"
+msgstr "Vous êtes sur le point d'effacer définitivement"
 
 #: app/views/people/confirm_user_delete.rhtml:37
 msgid ""
 "Deleting a user will also <strong>irreversibly delete</strong> all of their "
 "mail, events, contacts, and files"
 msgstr ""
-"Eliminar un usuario también <strong>eliminará irreversiblemente</strong> "
-"todos sus correos, eventos, contactos y archivos"
+"Effacer un utilisateur <strong>effacera irrémédiablement</strong> tous leurs "
+"courriers, contacts, événements, et fichiers"
 
 #: app/views/people/confirm_user_delete.rhtml:43
 msgid " Permanently"
-msgstr " Permanentemente"
+msgstr "Définitivement"
 
 #: app/views/people/google_map.rhtml:14
 msgid "City"
-msgstr "Ciudad"
+msgstr "Ville"
 
 #: app/views/people/google_map.rhtml:16
 msgid "State"
-msgstr "Estado"
+msgstr "Etat"
 
 #: app/views/people/google_map.rhtml:18
 msgid "Zip"
-msgstr "Zip"
+msgstr "Code postal"
 
 #: app/views/people/google_map.rhtml:20 lib/js_strings.rb:52
 msgid "Search"
-msgstr "Buscar"
+msgstr "Chercher"
 
 #: app/views/people/google_map.rhtml:21
 msgid "Clear search"
-msgstr "Limpiar Búsqueda"
+msgstr "Effacer la recherche"
 
 #: app/views/people/google_map.rhtml:65
 msgid "address(es) found"
-msgstr "direccion(es) encontradas"
+msgstr "adresse(s) trouvées"
 
 #: app/views/people/google_map.rhtml:68
 msgid "Logout"
-msgstr "Desconectar"
+msgstr "Déconnexion"
 
 #: app/views/people/list.rhtml:30
 msgid "Person Type"
-msgstr "Tipo Persona"
+msgstr "Type de personne"
 
 #: app/views/people/list.rhtml:31 app/views/reports/_people.rhtml:24
 msgid "First Name"
-msgstr "Nombre"
+msgstr "Prénom"
 
 #: app/views/people/list.rhtml:32 app/views/reports/_people.rhtml:25
 msgid "Last Name"
-msgstr "Apellidos"
+msgstr "Nom"
 
 #: app/views/people/list.rhtml:33 app/views/reports/_people.rhtml:26
 msgid "Email Address"
-msgstr "Dirección de Correo"
+msgstr "Adresse email"
 
 #: app/views/people/list.rhtml:34 app/views/reports/_people.rhtml:27
 msgid "Phone Number"
-msgstr "Número de Teléfono"
+msgstr "Téléphone"
 
 #: app/views/people/list.rhtml:35 lib/i18n_do_not_include.rb:36
 msgid "Company Name"
-msgstr "Nombre Compañía"
+msgstr "Nom entreprise"
 
 #: app/views/people/show.rhtml:39
 msgid "Download vCard"
-msgstr "Descargar vCard"
+msgstr "Télécharger vCard"
 
 #: app/views/people/show.rhtml:61 app/views/syndication/_person.rhtml:37
 msgid "Compose a new email to %{i18n_email_address}"
-msgstr "Redactar un nuevo email para %{i18n_email_address}"
+msgstr "Ecrire un nouveau message à %{i18n_email_address}"
 
 #: app/views/reports/_comments.rhtml:22
 #: app/views/reports/_notifications.rhtml:24
 msgid "Item"
-msgstr "Items"
+msgstr "Elément"
 
 #: app/views/reports/_comments.rhtml:23 lib/i18n_do_not_include.rb:32
 msgid "Item Type"
-msgstr "Tipo de Ítem"
+msgstr "Type d'élément"
 
 #: app/views/reports/_comments.rhtml:24
 msgid "Comment"
-msgstr "Comentario"
+msgstr "Commentaire"
 
 #: app/views/reports/_comments.rhtml:25
 msgid "Added"
-msgstr "Añadido"
+msgstr "Ajouté"
 
 #: app/views/reports/_notifications.rhtml:13
 msgid "There are currently no %{i18n_unacknowledged}notifications."
-msgstr "Actualmente, no hay notificaciones %{i18n_unacknowledged}"
+msgstr "Actuellement aucune notification %{i18n_unacknowledged}."
 
 #: app/views/reports/_notifications.rhtml:13
 msgid "unacknowledged "
-msgstr "no aceptadas "
+msgstr "ignorée"
 
 #: app/views/reports/_notifications.rhtml:25
 msgid "Notification"
-msgstr "Notificación"
+msgstr "Notification"
 
 #: app/views/reports/_notifications.rhtml:42
 msgid "Notified by %{i18n_notifier_name}"
-msgstr "Notificado por %{i18n_notifier_name}"
+msgstr "Notifié par %{i18n_notifier_name}"
 
 #: app/views/reports/_notifications.rhtml:47
 msgid "Dismissed"
-msgstr "Rechazado"
+msgstr "Rejeté"
 
 #: app/views/reports/_notifications.rhtml:49
 msgid "Dismiss"
-msgstr "Rechazar"
+msgstr "Rejeter"
 
 #: app/views/reports/_people.rhtml:23
 msgid "Type"
-msgstr "Tipo"
+msgstr "Type"
 
 #: app/views/reports/_people.rhtml:46
 msgid "Compose a new email to %{i18n_person_full_name}"
-msgstr "Redactar un nuevo email para %{i18n_person_full_name}"
+msgstr "Ecrire nouveau message à %{i18n_person_full_name}"
 
 #: app/views/reports/_report.rhtml:21
 msgid "Go to report group."
-msgstr "Ir al grupo del informe."
+msgstr "Aller au groupe rapport."
 
 #: app/views/reports/_report.rhtml:21
 msgid "Go to this group."
-msgstr "Ir a este grupo"
+msgstr "Aller à ce groupe"
 
 #: app/views/reports/_report.rhtml:22
 msgid "Reload this report."
-msgstr "Recargar este informe."
+msgstr "Recharger ce rapport."
 
 #: app/views/reports/_report.rhtml:22
 msgid "Refresh"
-msgstr "Recargar"
+msgstr "Rafraîchir"
 
 #: app/views/reports/_report.rhtml:23
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "Supprimer"
 
 #: app/views/reports/_report.rhtml:28
 msgid "Remove this report from the workspace."
-msgstr "Eliminar este informe del espacio de trabajo."
+msgstr "Supprimer ce rapport de l'espace de travail."
 
 #: app/views/reports/_report.rhtml:30
 msgid "Hide this report."
-msgstr "Ocultar este informe."
+msgstr "Masquer ce rapport."
 
 #: app/views/reports/_report.rhtml:30
 msgid "Hide Report"
-msgstr "Ocultar Informe"
+msgstr "Masquer rapport"
 
 #: app/views/reports/_report.rhtml:31
 msgid "Show this report."
-msgstr "Mostrar este informe."
+msgstr "Afficher ce rapport."
 
 #: app/views/reports/_report.rhtml:31
 msgid "Show Report"
-msgstr "Mostrar Informe"
+msgstr "Afficher rapport"
 
 #: app/views/reports/_report.rhtml:32
 msgid "Drag to change order"
-msgstr "Arrastrar para cambiar orden"
+msgstr "Glisser pour changer l'ordre"
 
 #: app/views/reports/_timezones.rhtml:23
 msgid "Day"
-msgstr "Día"
+msgstr "Jour"
 
 #: app/views/reports/_timezones.rhtml:25
 msgid "Time Zone"
-msgstr "Zona Horaria"
+msgstr "Fuseau horaire"
 
 #: app/views/reports/_toolbar.rhtml:13
 msgid "Refresh all of the reports in the workspace."
-msgstr "Recargar todos los informes en el espacio de trabajo."
+msgstr "Rafraîchir tous les rapports dans l'espace de travail."
 
 #: app/views/reports/_toolbar.rhtml:13
 msgid "Refresh All"
-msgstr "Recargar Todos"
+msgstr "Rafraîchir tous"
 
 #: app/views/reports/_toolbar.rhtml:14
 msgid "Collapse all of the reports in the workspace."
-msgstr "Plegar todos los informes en el espacio de trabajo."
+msgstr "Condenser tous les rapports dans l'espace de travail."
 
 #: app/views/reports/_toolbar.rhtml:14
 msgid "Collapse All"
-msgstr "Plegar Todos"
+msgstr "Condenser tous"
 
 #: app/views/reports/_toolbar.rhtml:15
 msgid "Expand all of the reports in the workspace."
-msgstr "Expandir todos los informes en el espacio de trabajo."
+msgstr "Développer tous les rapports dans l'espace de travail."
 
 #: app/views/reports/_toolbar.rhtml:15
 msgid "Expand All"
-msgstr "Expandir Todos"
+msgstr "Développer tous"
 
 #: app/views/reports/index.rhtml:26
 msgid "There are no reports in your workspace."
-msgstr "No hay informes en tu espacio de trabajo."
+msgstr "Il n'y a pas de rapports dans votre espace de travail."
 
 #: app/views/sidebars/_access.rhtml:13
 msgid "Access unavailable"
-msgstr "Acceso no disponible"
+msgstr "Accès impossible"
 
 #: app/views/sidebars/_access.rhtml:21
 msgid "View"
-msgstr "Ver"
+msgstr "Vue"
 
 #: app/views/sidebars/_groups.rhtml:13
 msgid "Your %{i18n_controller_class_groupname}"
-msgstr "Tus %{i18n_controller_class_groupname}"
+msgstr "Votre %{i18n_controller_class_groupname}"
 
 #: app/views/sidebars/_groups.rhtml:18
 msgid "Others' %{i18n_controller_class_groupname}"
-msgstr "%{i18n_controller_class_groupname} de Otros"
+msgstr "%{i18n_controller_class_groupname} des autres"
 
 #: app/views/sidebars/_notify.rhtml:13
 msgid "Notify unavailable"
-msgstr "Notificaciones no disponibles"
+msgstr "Notifications indisponible"
 
 #: app/views/sidebars/_notify.rhtml:21 lib/js_strings.rb:47
 msgid "Notified"
-msgstr "Notificado"
+msgstr "Notifié"
 
 #: app/views/sidebars/_rules.rhtml:13
 msgid "Rules"
-msgstr "Reglas"
+msgstr "Règles"
 
 #: app/views/sidebars/_tags.rhtml:13
 msgid "Tags unavailable"
-msgstr "Tags no disponibles"
+msgstr "Tags indisponibles"
 
 #: app/views/sidebars/_tags.rhtml:15
 msgid "Your Assigned Tags"
-msgstr "Tus Tags Asignadas"
+msgstr "Tags assignés"
 
 #: app/views/sidebars/_tags.rhtml:17
 msgid "No tags"
-msgstr "Sin tags"
+msgstr "Aucun tag"
 
 #: app/views/sidebars/_tags.rhtml:22
 msgid "Others' Assigned Tags"
-msgstr "Tags Asignadas por Otros"
+msgstr "Tags assignés aux autres"
 
 #: app/views/sidebars/groups/_service_group_edit_move.rhtml:16
 #: app/views/sidebars/groups/_standard_group_edit_move.rhtml:16
 msgid "Move to %{i18n_controller_class_groupname}"
-msgstr "Mover a %{i18n_controller_class_groupname}"
+msgstr "Déplacer vers %{i18n_controller_class_groupname}"
 
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:18
 msgid "Match All"
-msgstr "Coincidir Todos"
+msgstr "Suivant les critères:"
 
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:24
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:21
 msgid "tag is"
-msgstr "tag es"
+msgstr "tag est"
 
 #: app/views/sidebars/groups/_smart_group_edit.rhtml:31
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:30
 #: app/views/sidebars/groups/_smart_group_new.rhtml:38
 msgid "Conditions"
-msgstr "Condiciones"
+msgstr "Conditions"
 
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:27
 #: app/views/sidebars/groups/_smart_group_new.rhtml:35
 msgid "Add Tag"
-msgstr "Añadir Tag"
+msgstr "Ajouter tag"
 
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:55
 msgid "contains"
-msgstr "contiene"
+msgstr "contient"
 
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:63
 #: app/views/sidebars/groups/_smart_group_new.rhtml:40
 msgid "Add Condition"
-msgstr "Añadir Condición"
+msgstr "Ajouter condition"
 
 #: app/views/sidebars/groups/_smart_group_edit_criteria.rhtml:66
 msgid "Save Conditions"
-msgstr "Guardar Condiciones"
+msgstr "Enregistrer conditions"
 
 #: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:13
 msgid "Delete Smart"
-msgstr "Borrar"
+msgstr "Effacer"
 
 #: app/views/sidebars/groups/_smart_group_edit_delete.rhtml:15
 msgid "Do you want to delete this smart group? No items will be deleted"
 msgstr ""
-"¿Realmente deseas borrar este grupo inteligente? Ningún item se borrará"
+"Voulez-vous effacer ce groupe intelligent? Aucun élément ne sera effacé"
 
 #: app/views/sidebars/groups/_smart_group_edit_rename.rhtml:16
 #: app/views/sidebars/groups/_standard_group_edit_rename.rhtml:12
@@ -2423,20 +2417,20 @@ msgstr ""
 #: app/views/sidebars/groups/_strongspace_group_edit_rename.rhtml:12
 #: app/views/sidebars/groups/_strongspace_group_edit_rename.rhtml:18
 msgid "Rename"
-msgstr "Renombrar"
+msgstr "Renommer"
 
 #: app/views/sidebars/groups/_smart_group_new.rhtml:20
 #: app/views/sidebars/groups/_smart_group_new.rhtml:29
 msgid "New Smart %{i18n_controller_class_groupname}"
-msgstr "Nuevo %{i18n_controller_class_groupname} Inteligente"
+msgstr "Nouveau %{i18n_controller_class_groupname} intelligent"
 
 #: app/views/sidebars/groups/_standard_group_edit.rhtml:27
 msgid "Unsubscribe"
-msgstr "Desuscribir"
+msgstr "Se désabonner"
 
 #: app/views/sidebars/groups/_standard_group_edit.rhtml:29
 msgid "Do you want to unsubscribe to %{i18n_group_name}?"
-msgstr "¿Deseas desuscribirte de %{i18n_group_name}?"
+msgstr "Voulez-vous vous désabonner de %{i18n_group_name} ?"
 
 #: app/views/sidebars/groups/_standard_group_edit_delete.rhtml:15
 #: app/views/sidebars/groups/_strongspace_group_edit_delete.rhtml:15
@@ -2444,24 +2438,25 @@ msgid ""
 "Do you want to delete this group and all its subgroups? The items will be "
 "deleted."
 msgstr ""
-"¿Deseas borrar este grupo y todos sus subgrupos? Los items serán borrados."
+"Voulez-vous effacer ce groupe et tous ses sous-groupes ? Les éléments seront "
+"effacés."
 
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:17
 msgid "Public"
-msgstr "Público"
+msgstr "Public"
 
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:20
 msgid "Restricted to you"
-msgstr "Restringido a ti"
+msgstr "Seulement pour vous"
 
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:23
 msgid "Also allow"
-msgstr "Permitir también"
+msgstr "Autoriser aussi"
 
 #: app/views/sidebars/groups/_standard_group_edit_permissions.rhtml:31
 #: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:30
 msgid "Save Permissions"
-msgstr "Guardar Permisos"
+msgstr "Enregistrer permissions"
 
 #: app/views/sidebars/groups/_standard_group_edit_subscriptions.rhtml:13
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:31
@@ -2471,35 +2466,35 @@ msgstr "Guardar Permisos"
 #: app/views/sidebars/groups/mail/_mail.rhtml:55
 #: app/views/sidebars/groups/people/_people.rhtml:37
 msgid "Subscription"
-msgstr "Suscripción"
+msgstr "Abonnement"
 
 #: app/views/sidebars/groups/_standard_group_edit_subscriptions.rhtml:15
 msgid "View this %{i18n_controller_class_groupname} in another account"
-msgstr "Ver este %{i18n_controller_class_groupname} en otra cuenta"
+msgstr "Voir ce %{i18n_controller_class_groupname} dans un autre compte"
 
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:22
 #: app/views/sidebars/groups/_standard_group_new_container.rhtml:32
 msgid "New %{i18n_controller_class_groupname}"
-msgstr "Nuevo %{i18n_controller_class_groupname}"
+msgstr "Nouveau %{i18n_controller_class_groupname}"
 
 #: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:13
 msgid "Guest Access"
-msgstr "Acceso Invitado"
+msgstr "Accès Invité"
 
 #: app/views/sidebars/groups/_strongspace_group_edit_permissions.rhtml:20
 msgid "Share with Selected Guests"
-msgstr "Compartir con los Invitados Seleccionados"
+msgstr "Partager avec des Invités choisis"
 
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:27
 #: app/views/sidebars/groups/files/_files.rhtml:51
 #: app/views/sidebars/groups/lists/_lists.rhtml:33
 msgid "Add New Folder or Smart Folder"
-msgstr "Añadir un Nuevo Directorio o Directorio Inteligente"
+msgstr "Ajouter nouveau dossier ou nouveau dossier intelligent"
 
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:29
 #: app/views/sidebars/groups/files/_files.rhtml:54
 msgid "Smart Folder"
-msgstr "Directorio Inteligente"
+msgstr "Dossier intelligent"
 
 #: app/views/sidebars/groups/bookmarks/_bookmarks_all.rhtml:17
 #: app/views/sidebars/groups/bookmarks/_bookmarks_everyone.rhtml:14
@@ -2543,15 +2538,15 @@ msgstr "Directorio Inteligente"
 #: app/views/sidebars/groups/people/_people_users.rhtml:15
 #: lib/js_strings.rb:55
 msgid "Subscribe to this RSS feed"
-msgstr "Suscribirse a este feed RSS"
+msgstr "S'abonner à ce fil RSS"
 
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:40
 msgid "Add New Calendar or Smart Calendar"
-msgstr "Añadir un Nuevo Calendario o Calendario Inteligente"
+msgstr "Ajouter nouveau calendrier ou calendrier intelligent"
 
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:43
 msgid "Smart Calendar"
-msgstr "Calendario Inteligente"
+msgstr "Calendrier intelligent"
 
 #: app/views/sidebars/groups/calendar/_calendar_all.rhtml:14
 #: app/views/sidebars/groups/calendar/_calendar_invitations.rhtml:12
@@ -2559,7 +2554,7 @@ msgstr "Calendario Inteligente"
 #: app/views/sidebars/groups/calendar/_calendar_smart.rhtml:14
 #: app/views/sidebars/groups/calendar/_calendar_standard.rhtml:14
 msgid "Subscribe to this ICS calendar"
-msgstr "Suscribirse a este calendario ICS"
+msgstr "S'abonner à ce calendrier ICS"
 
 #: app/views/sidebars/groups/connect/_connect.rhtml:15
 msgid "Lightning Portal"
@@ -2567,298 +2562,300 @@ msgstr "Portal Lightning"
 
 #: app/views/sidebars/groups/connect/_connect.rhtml:18
 msgid "Workspace"
-msgstr "Espacio de Trabajo"
+msgstr "Espace de travail"
 
 #: app/views/sidebars/groups/connect/_connect.rhtml:34
 #: app/views/sidebars/groups/people/_people.rhtml:33
 msgid "Add New Smart Group"
-msgstr "Añadir Nuevo Grupo Inteligente"
+msgstr "Ajouter nouveau groupe intelligent"
 
 #: app/views/sidebars/groups/connect/_connect.rhtml:36
 #: app/views/sidebars/groups/people/_people.rhtml:35
 msgid "Smart Group"
-msgstr "Grupo Inteligente"
+msgstr "Groupe intelligent"
 
 #: app/views/sidebars/groups/connect/_connect_lightning_portal.rhtml:12
 #: app/views/sidebars/groups/connect/_connect_workspace.rhtml:12
 msgid "What is it?"
-msgstr "¿Qué es?"
+msgstr "Qu'est-ce c'est?"
 
 #: app/views/sidebars/groups/connect/_connect_lightning_portal.rhtml:13
 msgid "A portal to all things Lightning."
-msgstr "Un portal de todas las cosas Lightning."
+msgstr "Un portail pour tout ce qui concerne Lightning."
 
 #: app/views/sidebars/groups/connect/_connect_workspace.rhtml:13
 msgid "A place where you can gather views from every Connector application."
-msgstr "Un lugar donde puedes reunir vistas de cada aplicación en Connector."
+msgstr ""
+"Un endroit où vous pouvez rassembler des vues de chaque application de "
+"Connector."
 
 #: app/views/sidebars/groups/connect/_connect_workspace.rhtml:15
 msgid "How do I add a group?"
-msgstr "¿Cómo añado un grupo?"
+msgstr "Comment ajouter un groupe ?"
 
 #: app/views/sidebars/groups/connect/_connect_workspace.rhtml:16
 msgid "Check the 'Visible in your Workspace' checkbox in its info panel."
 msgstr ""
-"Marca el checkbox 'Visible en tu Espacio de Trabajo' en su panel de "
-"información."
+"Cocher la case 'Visible dans votre Espace de travail' dans son panneau "
+"d'informations."
 
 #: app/views/sidebars/groups/files/_files.rhtml:20
 msgid "Add New Folder"
-msgstr "Nueva Carpeta"
+msgstr "Ajouter nouveau dossier"
 
 #: app/views/sidebars/groups/files/_files.rhtml:29
 #: app/views/sidebars/groups/files/_others_files.rhtml:16
 msgid "Documents"
-msgstr "Documentos"
+msgstr "Documents"
 
 #: app/views/sidebars/groups/lists/_lists.rhtml:16
 #: app/views/sidebars/groups/lists/_others_lists.rhtml:15
 #: lib/i18n_do_not_include.rb:28 app/models/list_folder_observer.rb:18
 msgid "Lists"
-msgstr "Listas"
+msgstr "Listes"
 
 #: app/views/sidebars/groups/lists/_lists.rhtml:33
 msgid "New&hellip;"
-msgstr "Nuevo&hellip;"
+msgstr "Nouveau&hellip;"
 
 #: app/views/sidebars/groups/lists/_lists.rhtml:35
 msgid "List Folder"
-msgstr "Directorio de Listas"
+msgstr "Dossier de listes"
 
 #: app/views/sidebars/groups/lists/_lists.rhtml:36
 msgid "Smart List Folder"
-msgstr "Directorio inteligente de Listas"
+msgstr "Dossier de listes intelligent"
 
 #: app/views/sidebars/groups/mail/_mail.rhtml:21
 #: app/views/sidebars/groups/mail/_others_mail.rhtml:14
 msgid "Sent"
-msgstr "Enviados"
+msgstr "Message envoyés"
 
 #: app/views/sidebars/groups/mail/_mail.rhtml:24
 #: app/views/sidebars/groups/mail/_others_mail.rhtml:15
 msgid "Drafts"
-msgstr "Borradores"
+msgstr "Brouillons"
 
 #: app/views/sidebars/groups/mail/_mail.rhtml:30
 #: app/views/sidebars/groups/mail/_others_mail.rhtml:17
 msgid "Trash"
-msgstr "Papelera"
+msgstr "Corbeille"
 
 #: app/views/sidebars/groups/mail/_mail.rhtml:50
 msgid "Add New Mailbox or Smart Mailbox"
-msgstr "Añadir Nuevo Buzón o Buzón Inteligente"
+msgstr "Ajouter nouvelle boîte aux lettres ou boîte aux lettres intelligente"
 
 #: app/views/sidebars/groups/mail/_mail.rhtml:52 lib/i18n_do_not_include.rb:43
 msgid "Mailbox"
-msgstr "Buzón"
+msgstr "Boîte aux lettres"
 
 #: app/views/sidebars/groups/mail/_mail.rhtml:53
 msgid "Smart Mailbox"
-msgstr "Buzón Inteligente"
+msgstr "Boîtes aux lettres intelligente"
 
 #: app/views/sidebars/groups/people/_people_contacts.rhtml:17
 #: app/views/sidebars/groups/people/_people_notifications.rhtml:14
 #: app/views/sidebars/groups/people/_people_standard.rhtml:14
 #: app/views/sidebars/groups/people/_people_users.rhtml:14
 msgid "Download contacts as a vCard file"
-msgstr "Descargar contactos desde un archivo vCard"
+msgstr "Télécharger les contacts dans un fichier vCard"
 
 #: app/views/sidebars/groups/people/_people_smart.rhtml:14
 msgid "Download as VCARD"
-msgstr "Descargar como VCARD"
+msgstr "Télécharger comme VCARD"
 
 #: app/views/syndication/_comments.rhtml:17
 msgid "On"
-msgstr "En"
+msgstr "Le"
 
 #: app/views/syndication/_comments.rhtml:17
 msgid "%{i18n_comment_user_full_name} said"
-msgstr "%{i18n_comment_user_full_name} dijo"
+msgstr "%{i18n_comment_user_full_name} a dit"
 
 #: app/views/syndication/_event.rhtml:33
 msgid "Repeat Until"
-msgstr "Repetir Hasta"
+msgstr "Répéter jusqu'à"
 
 #: app/views/syndication/_file.rhtml:16
 #: app/views/syndication/_file_service.rhtml:16
 msgid "Location on disk"
-msgstr "Ubicación en disco"
+msgstr "Emplacement sur le disque"
 
 #: app/views/syndication/_file.rhtml:18
 #: app/views/syndication/_file_service.rhtml:18
 msgid "Where"
-msgstr "Donde"
+msgstr "Où"
 
 #: app/views/syndication/_file.rhtml:19
 #: app/views/syndication/_file_service.rhtml:19
 msgid "%{i18n_file_owner_person_name}'s Files"
-msgstr "Archivos de %{i18n_file_owner_person_name}"
+msgstr "Fichiers de %{i18n_file_owner_person_name}"
 
 #: app/views/syndication/_file.rhtml:24
 #: app/views/syndication/_file_service.rhtml:24
 msgid "File Size"
-msgstr "Tamaño de Archivo"
+msgstr "Taille du fichier"
 
 #: app/views/toolbars/_copy_to_bookmarks.rhtml:16
 msgid "Copy all selected items to your Bookmarks"
-msgstr "Copiar todos los items seleccionados a tus Marcadores"
+msgstr "Copier tous les éléments sélectionnés dans vos signets"
 
 #: app/views/toolbars/_copy_to_contacts.rhtml:16
 msgid "Copy all selected items to your Contacts"
-msgstr "Copiar todos los items seleccionados a tus Contactos"
+msgstr "Copier tous les éléments sélectionnés dans vos contacts"
 
 #: app/views/toolbars/_delete.rhtml:13
 msgid "Delete all selected items."
-msgstr "Borrar todos los items seleccionados."
+msgstr "Effacer tous les éléments sélectionnés."
 
 #: app/views/toolbars/_delete.rhtml:15 app/views/toolbars/_delete.rhtml:17
 msgid "Delete this item."
-msgstr "Borrar este ítem"
+msgstr "Effacer cet élément."
 
 #: app/views/toolbars/_quota_users_meter.rhtml:18
 msgid "Users Created"
-msgstr "Usuarios Creados"
+msgstr "Utilisateurs créés"
 
 #: app/views/user/connect.rhtml:12
 msgid "User Shortcuts"
-msgstr "Atajos de Usuario"
+msgstr "Raccourcis utilisateur"
 
 #: app/views/user/connect.rhtml:25
 msgid ""
 "Users of multiple Connector accounts can create shortcuts to switch quickly "
 "between each account."
 msgstr ""
-"Los usuarios de múltiples cuentas de Connector pueden crear atajos para "
-"cambiar rápidamente entre cada cuenta."
+"Les utilisateurs de plusieurs comptes Connector peuvent créer des raccourcis "
+"pour basculer rapidement entre eux."
 
 #: app/views/user/connect.rhtml:28
 msgid "New Shortcut"
-msgstr "Nuevo Atajo"
+msgstr "Nouveau raccourci"
 
 #: app/views/user/connect.rhtml:47
 msgid " Add "
-msgstr "Añadir "
+msgstr "Ajouter"
 
 #: app/views/user/connect.rhtml:54
 msgid "Current Shortcuts"
-msgstr "Atajos Actuales"
+msgstr "Raccourcis actuels"
 
 #: app/views/user/connect.rhtml:60
 msgid "Disconnect User"
-msgstr "Desconectar Usuario"
+msgstr "Déconnecter l'utilisateur"
 
 #: app/views/syndication/bookmarks_rss.rxml:16
 msgid "Bookmarks: %{i18n_group_name}"
-msgstr "Favoritos: %{i18n_group_name}"
+msgstr "Signets : %{i18n_group_name}"
 
 #: app/views/syndication/calendar_rss.rxml:16
 msgid "Calendar: %{i18n_group_name}"
-msgstr "Calendario: %{i18n_group_name}"
+msgstr "Calendrier : %{i18n_group_name}"
 
 #: app/views/syndication/connect_rss.rxml:16
 msgid "Connect: %{i18n_group_name}"
-msgstr "Connect: %{i18n_group_name}"
+msgstr "Connect : %{i18n_group_name}"
 
 #: app/views/syndication/files_rss.rxml:16
 #: app/views/syndication/files_service_rss.rxml:16
 msgid "Files: %{i18n_group_name}"
-msgstr "Archivos: %{i18n_group_name}"
+msgstr "Fichiers : %{i18n_group_name}"
 
 #: app/views/syndication/lists_rss.rxml:16
 msgid "Lists: %{i18n_group_name}"
-msgstr "Listas: %{i18n_group_name}"
+msgstr "Listes : %{i18n_group_name}"
 
 #: app/views/syndication/mail_rss.rxml:16
 msgid "Mail: %{i18n_group_name}"
-msgstr "Correo: %{i18n_group_name}"
+msgstr "Courrier : %{i18n_group_name}"
 
 #: app/views/syndication/people_rss.rxml:16
 msgid "People: %{i18n_group_name}"
-msgstr "Personas: %{i18n_group_name}"
+msgstr "Personnes : %{i18n_group_name}"
 
 #: app/views/syndication/tag_rss.rxml:16
 msgid "Tag: %{i18n_group_name}"
-msgstr "Etiqueta: %{i18n_group_name}"
+msgstr "Tag : %{i18n_group_name}"
 
 #: app/views/syndication/tag_rss.rxml:18
 msgid "Items tagged with: %{i18n_tag_name}"
-msgstr "Items con tag: %{i18n_tag_name}"
+msgstr "Eléments taggés avec : %{i18n_group_name}"
 
 #: lib/i18n_do_not_include.rb:22
 msgid "Mailboxes"
-msgstr "Buzones"
+msgstr "Boîtes aux lettres"
 
 #: lib/i18n_do_not_include.rb:24
 msgid "Calendars"
-msgstr "Calendarios"
+msgstr "Calendriers"
 
 #: lib/i18n_do_not_include.rb:27
 msgid "Bookmark Folders"
-msgstr "Directorios de Favoritos"
+msgstr "Dossiers de signets"
 
 #: lib/i18n_do_not_include.rb:29
 msgid "List Folders"
-msgstr "Directorios de Listas"
+msgstr "Dossiers de listes"
 
 #: lib/i18n_do_not_include.rb:31
 msgid "Any Condition"
-msgstr "Cualquier Condición"
+msgstr "Toute condition"
 
 #: lib/i18n_do_not_include.rb:33
 msgid "Owner Username"
-msgstr "Nombre del Propietario"
+msgstr "Nom du propriétaire"
 
 #: lib/i18n_do_not_include.rb:34
 msgid "Event Name"
-msgstr "Nombre del Evento"
+msgstr "Nom de l'événement"
 
 #: lib/i18n_do_not_include.rb:35
 msgid "Repeat Type"
-msgstr "Periodicidad"
+msgstr "Répéter le type"
 
 #: lib/i18n_do_not_include.rb:37
 msgid "Full Name"
-msgstr "Nombre Completo"
+msgstr "Nom complet"
 
 #: lib/i18n_do_not_include.rb:38
 msgid "Filename"
-msgstr "Nombre del Archivo"
+msgstr "Nom de fichier"
 
 #: lib/i18n_do_not_include.rb:40
 msgid "Group"
-msgstr "Grupo"
+msgstr "Groupe"
 
 #: lib/i18n_do_not_include.rb:44
 msgid "People"
-msgstr "Personas"
+msgstr "Personnes"
 
 #: lib/i18n_do_not_include.rb:45
 msgid "Mail"
-msgstr "Correo"
+msgstr "Courrier"
 
 #: lib/i18n_do_not_include.rb:46
 msgid "Bookmark Folder"
-msgstr "Directorio de Favoritos"
+msgstr "Dossier de signets"
 
 #: lib/i18n_do_not_include.rb:47
 msgid "List"
-msgstr "Lista"
+msgstr "Listes"
 
 #: lib/i18n_do_not_include.rb:49
 msgid "hour"
-msgstr "hora"
+msgstr "heure"
 
 #: lib/i18n_do_not_include.rb:50
 msgid "hours"
-msgstr "horas"
+msgstr "heures"
 
 #: lib/i18n_do_not_include.rb:51
 msgid "minute"
-msgstr "minuto"
+msgstr "minute"
 
 #: lib/i18n_do_not_include.rb:52
 msgid "minutes"
-msgstr "minutos"
+msgstr "minutes"
 
 #: lib/i18n_do_not_include.rb:54
 msgid "Audio"
@@ -2866,11 +2863,11 @@ msgstr "Audio"
 
 #: lib/i18n_do_not_include.rb:55
 msgid "Cascading Style Sheet"
-msgstr "Hoja de Estilo en Cascada"
+msgstr "Feuille de style en cascade"
 
 #: lib/i18n_do_not_include.rb:56
 msgid "Document"
-msgstr "Documento"
+msgstr "Document"
 
 #: lib/i18n_do_not_include.rb:57
 msgid "Flash Video"
@@ -2878,39 +2875,39 @@ msgstr "Video Flash"
 
 #: lib/i18n_do_not_include.rb:58
 msgid "HTML Document"
-msgstr "Documento HTML"
+msgstr "Document HTML"
 
 #: lib/i18n_do_not_include.rb:59
 msgid "Image"
-msgstr "Imagen"
+msgstr "Image"
 
 #: lib/i18n_do_not_include.rb:60
 msgid "JavaScript"
-msgstr "JavaScript"
+msgstr "Javascript"
 
 #: lib/i18n_do_not_include.rb:61
 msgid "PDF Document"
-msgstr "Documento PDF"
+msgstr "Document PDF"
 
 #: lib/i18n_do_not_include.rb:62
 msgid "Photoshop Image"
-msgstr "IMagen de Photoshop"
+msgstr "Image Photoshop"
 
 #: lib/i18n_do_not_include.rb:63
 msgid "Presentation"
-msgstr "Presentación"
+msgstr "Présentation"
 
 #: lib/i18n_do_not_include.rb:64
 msgid "Protected Audio"
-msgstr "Audio Protegido"
+msgstr "Audio protégé"
 
 #: lib/i18n_do_not_include.rb:65
 msgid "Source Code"
-msgstr "Código fuente"
+msgstr "Code source"
 
 #: lib/i18n_do_not_include.rb:66
 msgid "Spreadsheet"
-msgstr "Hoja de Cálculo"
+msgstr "Feuille de calcul"
 
 #: lib/i18n_do_not_include.rb:67
 msgid "TeX"
@@ -2918,11 +2915,11 @@ msgstr "TeX"
 
 #: lib/i18n_do_not_include.rb:68 app/models/list.rb:367
 msgid "Text"
-msgstr "Texto"
+msgstr "Texte"
 
 #: lib/i18n_do_not_include.rb:69
 msgid "Unknown Type"
-msgstr "Tipo Desconocido"
+msgstr "Type inconnu"
 
 #: lib/i18n_do_not_include.rb:70
 msgid "Video"
@@ -2938,356 +2935,361 @@ msgstr "vCard"
 
 #: lib/i18n_do_not_include.rb:74
 msgid "notifications"
-msgstr "notificaciones"
+msgstr "notifications"
 
 #: lib/i18n_do_not_include.rb:75
 msgid "people"
-msgstr "personas"
+msgstr "personnes"
 
 #: lib/i18n_do_not_include.rb:77
 msgid "files"
-msgstr "archivos"
+msgstr "fichiers"
 
 #: lib/i18n_do_not_include.rb:78
 msgid "bookmarks"
-msgstr "favoritos"
+msgstr "signets"
 
 #: lib/i18n_do_not_include.rb:79
 msgid "comments"
-msgstr "comentarios"
+msgstr "commentaires"
 
 #: lib/i18n_do_not_include.rb:80
 msgid "lists"
-msgstr "listas"
+msgstr "listes"
 
 #: lib/i18n_do_not_include.rb:82
 msgid "listfolder"
-msgstr "directorio de listas"
+msgstr "dossier de listes"
 
 #: lib/i18n_do_not_include.rb:83
 msgid "bookmark folder"
-msgstr "directorio de favoritos"
+msgstr "dossier de signets"
 
 #: lib/i18n_do_not_include.rb:84
 msgid "calendar"
-msgstr "calendario"
+msgstr "calendrier"
 
 #: lib/i18n_do_not_include.rb:85
 msgid "mailbox"
-msgstr "buzón"
+msgstr "boîte aux lettres"
 
 #: lib/i18n_do_not_include.rb:86
 msgid "folder"
-msgstr "directorio"
+msgstr "dossier"
 
 #: lib/i18n_do_not_include.rb:87
 msgid "group"
-msgstr "grupo"
+msgstr "groupe"
 
 #: lib/i18n_do_not_include.rb:89
 msgid "Connect Notifications"
-msgstr "Notificaciones de Connector"
+msgstr "Notifications de Connector"
 
 #: lib/i18n_do_not_include.rb:91
 msgid "Move Left"
-msgstr "Mover a la Izquierda"
+msgstr "Déplacer à gauche"
 
 #: lib/i18n_do_not_include.rb:92
 msgid "Move Right"
-msgstr "Mover a la Derecha"
+msgstr "Déplacer à droite"
 
 #: lib/i18n_do_not_include.rb:93
 msgid "Select Previous"
-msgstr "Seleccionar Anterior"
+msgstr "Sélectionner précédent"
 
 #: lib/i18n_do_not_include.rb:94
 msgid "Select Next"
-msgstr "Seleccionar Siguiente"
+msgstr "Sélectionner suivant"
 
 #: lib/i18n_do_not_include.rb:95
 msgid "Collapse"
-msgstr "Plegar"
+msgstr "Réduire"
 
 #: lib/i18n_do_not_include.rb:96
 msgid "Expand"
-msgstr "Expandir"
+msgstr "Développer"
 
 #: lib/i18n_do_not_include.rb:97
 msgid "ListFolder"
-msgstr "Listas"
+msgstr "Listes"
 
 #: lib/i18n_do_not_include.rb:98
 msgid "Spacebar"
-msgstr "Espacio"
+msgstr "Espace"
 
 #: lib/i18n_do_not_include.rb:99
 msgid "Toggle First Checkbox"
-msgstr "Marcar primer checkbox"
+msgstr "Cocher première case"
 
 #: lib/i18n_do_not_include.rb:107
 msgid "Permissions"
-msgstr "Permisos"
+msgstr "Permissions"
 
 #: lib/icalendar_converter.rb:31
 msgid "Untitled Event"
-msgstr "Editar Evento"
+msgstr "Evénement sans titre"
 
 #: lib/js_strings.rb:1
 msgid "can't change"
-msgstr "no puede cambiar"
+msgstr "ne peut pas changer"
 
 #: lib/js_strings.rb:2
 msgid "doesn't have access, "
-msgstr "no tiene acceso, "
+msgstr "n'a pas accès, "
 
 #: lib/js_strings.rb:3
 msgid "isn't notified, "
-msgstr "no está notificado, "
+msgstr "n'est pas notifié, "
 
 #: lib/js_strings.rb:4
 msgid "no items selected, "
-msgstr "ningún item seleccionado, "
+msgstr "aucun élément sélectionné, "
 
 #: lib/js_strings.rb:5
 msgid "Not all selected items are deleteable."
-msgstr "No todos los items seleccionados se pueden borrar."
+msgstr "Certains éléments sélectionnés ne peuvent être effacés."
 
 #: lib/js_strings.rb:6
 msgid "The selected item(s) can not be marked as not spam."
 msgstr ""
+"Le(s) élément(s) sélectionné(s) ne peuvent pas être marqués comme non spam."
 
 #: lib/js_strings.rb:7
 msgid "The selected item(s) can not be marked as spam."
 msgstr ""
+"Le(s) élément(s) sélectionné(s) ne peuvent pas être marqués comme spam."
 
 #: lib/js_strings.rb:8
 msgid "This item is not deleteable."
-msgstr "Este item no puede ser borrado"
+msgstr "Cet élément ne peut pas être effacé."
 
 #: lib/js_strings.rb:9
 msgid ""
 "To receive Jabber notifications add 'notifier@joyent.com' to your IM client "
 "contacts."
 msgstr ""
+"Pour recevoir des notifications Jabber, ajouter 'notifier@joyent.com' "
+"dans les contacts de votre client IM."
 
 #: lib/js_strings.rb:10
 msgid "You must select a group to copy items to."
-msgstr "Debes seleccionar un grupo al que copiar los items."
+msgstr "Vous devez sélectionner un groupe pour y copier des éléments."
 
 #: lib/js_strings.rb:11
 msgid "You must select a group to move items to."
-msgstr "Debes seleccionar un grupo al que mover los items."
+msgstr "Vous devez sélectionner un groupe pour y déplacer des éléments."
 
 #: lib/js_strings.rb:12
 msgid "You must select something in order to include it as an attachment."
-msgstr "Debes seleccionar algo para incluirlo como adjunto"
+msgstr ""
+"Vous devez sélectionner quelquechose afin de l'inclure en pièce jointe."
 
 #: lib/js_strings.rb:13
 msgid "You must select something to copy it to another group."
-msgstr "Debes seleccionar algo para copiarlo a otro grupo"
+msgstr ""
+"Vous devez sélectionner quelquechose pour le copier dans un autre groupe."
 
 #: lib/js_strings.rb:14
 msgid "You must select something to copy."
-msgstr "Debes seleccionar algo para copiar."
+msgstr "Vous devez sélectionner quelquechose à copier."
 
 #: lib/js_strings.rb:15
 msgid "You must select something to delete."
-msgstr "Debes seleccionar algo para borrar"
+msgstr "Vous devez sélectionner quelquechose à effacer."
 
 #: lib/js_strings.rb:16
 msgid "You must select something to move it to another group."
-msgstr "Debes seleccionar algo para moverlo a otro grupo"
+msgstr ""
+"Vous devez sélectionner quelquechose pour le déplacer dans un autre groupe."
 
 #: lib/js_strings.rb:17
 msgid "You must select something to tag."
-msgstr "Debes seleccionar algo para añadir tag."
+msgstr "Vous devez sélectionner quelquechose à tagger."
 
 #: lib/js_strings.rb:18
 msgid " contains<br />"
-msgstr " contiene<br />"
+msgstr " contient<br />"
 
 #: lib/js_strings.rb:19
 msgid " tag is<br />"
-msgstr " tag es<br />"
+msgstr " le tag est<br />"
 
 #: lib/js_strings.rb:20
 msgid " Type new tag here"
-msgstr " Escribe el nuevo tag aquí"
+msgstr " Taper nouveau tag ici"
 
 #: lib/js_strings.rb:21
 msgid "<div class=\"loadingMessageSmall\">Loading&hellip;</div>"
-msgstr "<div class=\"loadingMessageSmall\">Cargando&hellip;</div>"
+msgstr "<div class=\"loadingMessageSmall\">Chargement&hellip;</div>"
 
 #: lib/js_strings.rb:22
 msgid "A user with the specified username already exists."
-msgstr ""
+msgstr "Un utilisateur avec ce même nom d'utilisateur existe déjà."
 
 #: lib/js_strings.rb:23
 msgid "Addresses can not be blank."
-msgstr "Las direcciones no pueden estar en blanco."
+msgstr "Les adresses ne peuvent pas être vides."
 
 #: lib/js_strings.rb:24
 msgid "An alias with the specified username already exists."
-msgstr ""
+msgstr "Un alias avec ce même nom d'utilisateur existe déjà."
 
 #: lib/js_strings.rb:25
 msgid "assign tag as your own"
-msgstr "asignar tag como propia"
+msgstr "assigner le tag comme étant le votre"
 
 #: lib/js_strings.rb:26
 msgid "assign tag"
-msgstr "asignar tag"
+msgstr "assigner le tag"
 
 #: lib/js_strings.rb:27
 msgid "can change"
-msgstr "puede cambiar"
+msgstr "peut changer"
 
 #: lib/js_strings.rb:28
 msgid "Currently marked as primary"
-msgstr "Actualmente marcado como primario"
+msgstr "Actuellement signalé(e) comme principal(e)"
 
 #: lib/js_strings.rb:29
 msgid "Deleting..."
-msgstr "Borrando..."
+msgstr "Effacement..."
 
 #: lib/js_strings.rb:30
 msgid "Do you want to copy the selected bookmarks to your bookmarks?"
-msgstr "¿Deseas copiar las personas seleccionadas a tus marcadores?"
+msgstr "Voulez-vous copier le signet sélectionné vers vos signets ?"
 
 #: lib/js_strings.rb:31
 msgid "Do you want to copy the selected people to your contacts?"
-msgstr "¿Deseas copiar las personas seleccionadas a tus contactos?"
+msgstr "Voulez-vous copier les personnes sélectionnées vers vos contacts ?"
 
 #: lib/js_strings.rb:32
 msgid "Do you want to delete the selected items?"
-msgstr "¿Realmente deseas borrar los items seleccionados?"
+msgstr "Voulez-vous effacer les éléments sélectionnés ?"
 
 #: lib/js_strings.rb:33
 msgid "Do you want to delete this item?"
-msgstr "¿Realmente deseas borrar este item?"
+msgstr "Voulez-vous effacer cet élément ?"
 
 #: lib/js_strings.rb:34
 msgid "Email addresses can not be blank."
-msgstr "Las direcciones de email no pueden estar en blanco."
+msgstr "L'adresse email ne peut pas être vide."
 
 #: lib/js_strings.rb:35
 msgid "Everyone Else"
-msgstr "Cualquiera"
+msgstr "Tous les autres"
 
 #: lib/js_strings.rb:36
 msgid "has access to some selected items, "
-msgstr "tiene acceso a algunos items seleccionados, "
+msgstr "a accès à quelques éléments sélectionnés, "
 
 #: lib/js_strings.rb:37
 msgid "has access, "
-msgstr "tiene acceso, "
+msgstr "a accès, "
 
 #: lib/js_strings.rb:38
 msgid "IM addresses can not be blank."
-msgstr "Las direcciones de MI no pueden estar en blanco."
+msgstr "L'adresse IM ne peut pas être vide."
 
 #: lib/js_strings.rb:40
 msgid "is notified of some selected items, "
-msgstr "está notificado acerca de algunos de los items seleccionados, "
+msgstr "est notifié de quelques éléments sélectionnés, "
 
 #: lib/js_strings.rb:41
 msgid "is notified, "
-msgstr "está notificado, "
+msgstr "est notifié, "
 
 #: lib/js_strings.rb:42
 msgid "Mailbox names can not contain periods (.)"
-msgstr "Los nombres de las cuentas de correo no pueden contener puntos (.)"
+msgstr "Les noms de boîtes aux lettres ne peuvent pas contenir de points (.)"
 
 #: lib/js_strings.rb:43
 msgid "Mark as primary"
-msgstr "Marcar como primario"
+msgstr "Signaler comme principal(e)"
 
 #: lib/js_strings.rb:44
 msgid "New "
-msgstr "Nuevo "
+msgstr "Nouveau"
 
 #: lib/js_strings.rb:45
 msgid "New Smart"
-msgstr "Nuevo"
+msgstr "Nouveau"
 
 #: lib/js_strings.rb:46
 msgid "No tag or condition fields may be blank."
-msgstr "El campo de tag o condición no pueden estar en blanco."
+msgstr "Les champs de tag ou de condition ne peuvent pas être vides."
 
 #: lib/js_strings.rb:48
 msgid "Password recovery email address can not be blank."
-msgstr ""
-"La dirección de email para recuperar la contraseña no puede estar en blanco."
+msgstr "L'adresse email de récupération de mot de passe ne peut pas être vide."
 
 #: lib/js_strings.rb:49
 msgid "Phone numbers can not be blank."
-msgstr "Los números de teléfono no pueden estar en blanco."
+msgstr "Le numéro de téléphone ne peut pas être vide."
 
 #: lib/js_strings.rb:50
 msgid "Search "
-msgstr "Buscar "
+msgstr "Rechercher"
 
 #: lib/js_strings.rb:51
 msgid "Search All"
-msgstr "Buscar Todos"
+msgstr "Rechercher tout"
 
 #: lib/js_strings.rb:53
 msgid "Special date dates can not be blank."
-msgstr "Las fechas de los días especiales no pueden estar en blanco."
+msgstr "Les dates de Date spéciale ne peuvent pas être vides."
 
 #: lib/js_strings.rb:54
 msgid "Special date descriptions can not be blank."
-msgstr "Las descripciones de los días especiales no pueden estar en blanco."
+msgstr "La description des dates spéciales ne peut pas être vide."
 
 #: lib/js_strings.rb:56
 msgid "tag info"
-msgstr "tag info"
+msgstr "Infos tag"
 
 #: lib/js_strings.rb:57
 msgid "The file name can not be blank."
-msgstr "El nombre del archivo no puede estar en blanco."
+msgstr "Le nom de fichier ne peut pas être vide."
 
 #: lib/js_strings.rb:58
 msgid "The group name can not be blank."
-msgstr "El nombre del grupo no puede estar en blanco."
+msgstr "Le nom de group ne peut pas être vide."
 
 #: lib/js_strings.rb:59
 msgid "The password and confirmation must match."
-msgstr "La contraseña y su confirmación deben coincidir."
+msgstr "Le mot de passe et sa confirmation doivent correspondre."
 
 #: lib/js_strings.rb:60
-#, fuzzy
 msgid "The password can be no less than 4 characters."
-msgstr "La contraseña no puede estar en blanco."
+msgstr "Le mot de passe ne peut pas avoir moins de 4 caractères."
 
 #: lib/js_strings.rb:61
 msgid "The password can not be blank."
-msgstr "La contraseña no puede estar en blanco."
+msgstr "Le mot de passe ne peut pas être vide."
 
 #: lib/js_strings.rb:62
 msgid "The smart group name can not be blank."
-msgstr "El nombre del grupo inteligente no puede estar en blanco"
+msgstr "Le nom de groupe intelligent ne peut pas être vide."
 
 #: lib/js_strings.rb:63
-#, fuzzy
 msgid "The username can be no more than 50 characters."
-msgstr "El nombre de usuario no puede estar en blanco."
+msgstr "Le nom d'utilisateur ne peut pas se composer de plus de 50 caractères."
 
 #: lib/js_strings.rb:64
 msgid "The username can not be blank."
-msgstr "El nombre de usuario no puede estar en blanco."
+msgstr "Le nom d'utilisateur ne pas être vide."
 
 #: lib/js_strings.rb:65
 msgid "The username only can contain the characters a-z, 0-9, and _."
 msgstr ""
+"Le nom d'utilisateur peut se composer seulement des caractères a-z, 0-9 et _."
 
 #: lib/js_strings.rb:66
 msgid "unassign tag"
-msgstr "quitar tag"
+msgstr "désassigner le tag"
 
 #: lib/js_strings.rb:67
 msgid "Viewability"
-msgstr "Visibilidad"
+msgstr "Visibilité"
 
 #: lib/js_strings.rb:68
 msgid "Viewable"
@@ -3295,50 +3297,44 @@ msgstr "Visible"
 
 #: lib/js_strings.rb:69
 msgid "Website names can not be blank."
-msgstr "Los nombres de los sitios web no pueden estar en blanco."
+msgstr "Le nom de site web ne peut pas être vide."
 
 #: lib/js_strings.rb:70
 msgid "Website URLs can not be blank."
-msgstr "Las URLs de los sitios web no pueden estar en blanco."
+msgstr "L'URL de site web ne peut pas être vide."
 
 #: lib/js_strings.rb:71
 msgid "You must give a name to the event."
-msgstr "Debes dar un nombre al evento"
+msgstr "Vous devez donner un nom à l'événement."
 
 #: lib/js_strings.rb:72
 msgid "You must select a file to import."
-msgstr "Debes seleccionar un archivo a importar."
+msgstr "Vous devez sélectionner un fichier à importer."
 
 #: lib/js_strings.rb:73
 msgid "You must select a file to upload."
-msgstr "Debes seleccionar un archivo para subir."
+msgstr "Vous devez sélectionner un fichier à envoyer."
 
 #: lib/js_strings.rb:74
 msgid "You must specify a complete start date."
-msgstr "Debes empezar una día de incio completo."
+msgstr "Vous devez préciser une date de début complète."
 
 #: lib/js_strings.rb:75
 msgid "You must specify a start time."
-msgstr "Debes especificar un tiempo de inicio."
+msgstr "Vous devez préciser une date de début."
 
 #: lib/js_strings.rb:76
 msgid "You must specify an event duration."
-msgstr "Debes especificar la duración del evento."
+msgstr "Vous devez préciser une durée d'événement."
 
 #: lib/js_strings.rb:77
 msgid "You must specify at least one tag or condition."
-msgstr "Debes especificar al menos un tag o condición"
+msgstr "Vous devez préciser au moins un tag ou une condition."
 
 #: lib/js_strings.rb:78
 msgid "You must specify either a name or company name."
-msgstr "Debes especificar un nombre o nombre de compañía."
+msgstr "Vous devez préciser ou un nom, ou un nom d'entreprise."
 
 #: app/models/smart_group.rb:114
 msgid "Search for %{i18n_search_param}"
-msgstr "Búsqueda de %{i18n_search_param}"
-
-#~ msgid "Newer"
-#~ msgstr "Más Nuevo"
-
-#~ msgid "Older"
-#~ msgstr "Más Antiguo"
+msgstr "Recherche de %{i18n_search_param}"

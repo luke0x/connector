@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-10-23 19:36-0400\n"
+"POT-Creation-Date: 2008-03-03 22:39-0500\n"
 "PO-Revision-Date: 2007-11-23 10:11+0100\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Search: %{i18n_search_param}"
 msgstr "Suche: %{i18n_search_param}"
 
-#: app/controllers/facebook_controller.rb:44
+#: app/controllers/facebook_controller.rb:53
 msgid "Invalid subdomain, username or password."
 msgstr "Benutzername, Subdomain oder Passwort ungültig."
 
@@ -363,14 +363,14 @@ msgstr "Subdomain"
 #: app/views/authenticate/affiliate_login.rhtml:38
 #: app/views/authenticate/login.rhtml:43
 #: app/views/authenticate/reset_password.rhtml:45
-#: app/views/facebook/login.rhtml:51 app/views/user/connect.rhtml:40
+#: app/views/facebook/login.rhtml:90 app/views/user/connect.rhtml:40
 msgid "Username"
 msgstr "Benutzername"
 
 #: app/views/authenticate/affiliate_login.rhtml:46
 #: app/views/authenticate/login.rhtml:51
 #: app/views/authenticate/verify_reset_password.rhtml:40
-#: app/views/facebook/login.rhtml:59 app/views/user/connect.rhtml:44
+#: app/views/facebook/login.rhtml:98 app/views/user/connect.rhtml:44
 msgid "Password"
 msgstr "Passwort"
 
@@ -384,7 +384,7 @@ msgstr "Passwort für 2 Wochen sichern"
 msgid " Sign In "
 msgstr "Anmelden"
 
-#: app/views/authenticate/login.rhtml:73 app/views/facebook/login.rhtml:77
+#: app/views/authenticate/login.rhtml:73
 msgid "Reset your password"
 msgstr "Passwort zurücksetzen"
 
@@ -488,8 +488,8 @@ msgid "first by %{i18n_bookmark_first_user}"
 msgstr "zuerst durch %{i18n_bookmark_first_user}"
 
 #: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
-#: app/views/facebook/index.rhtml:36 app/views/files/service.rhtml:48
-#: app/views/reports/_notifications.rhtml:43
+#: app/views/facebook/_notifications_table.rhtml:20
+#: app/views/files/service.rhtml:48 app/views/reports/_notifications.rhtml:43
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "%{i18n_time_ago_in_words} ago"
 msgstr "vor %{i18n_time_ago_in_words}"
@@ -1044,11 +1044,16 @@ msgstr "Applikation"
 msgid "Modified"
 msgstr "Modifiziert"
 
-#: app/views/facebook/login.rhtml:43
+#: app/views/facebook/login.rhtml:82
 msgid "Connector URL"
 msgstr "Connector URL"
 
-#: app/views/facebook/login.rhtml:74
+#: app/views/facebook/login.rhtml:107
+#, fuzzy
+msgid "Reset?"
+msgstr "Zurücksetzen"
+
+#: app/views/facebook/login.rhtml:112
 msgid " Authenticate "
 msgstr " Authentifizieren "
 
@@ -1509,8 +1514,8 @@ msgid ""
 "This inbox is currently being <strong>forwarded</strong> to %"
 "{forward_address}. New mail messages will not appear here."
 msgstr ""
-"Dieses Postfach wird zur Zeit an %{forward_address} <strong>weitergeleitet</strong>."
-"Neue Nachrichten werden hier nicht erscheinen."
+"Dieses Postfach wird zur Zeit an %{forward_address} <strong>weitergeleitet</"
+"strong>.Neue Nachrichten werden hier nicht erscheinen."
 
 #: app/views/mail/list.rhtml:37
 msgid "Status"
@@ -2901,7 +2906,7 @@ msgstr "Tabelle"
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/i18n_do_not_include.rb:68 app/models/list.rb:366
+#: lib/i18n_do_not_include.rb:68 app/models/list.rb:367
 msgid "Text"
 msgstr "Text"
 
@@ -3039,11 +3044,14 @@ msgstr "Nicht alle ausgewählten Elemente sind löschbar."
 
 #: lib/js_strings.rb:6
 msgid "The selected item(s) can not be marked as not spam."
-msgstr "Die ausgewählten Elemente konnten nicht als keine Werbung gekennzeichnet werden."
+msgstr ""
+"Die ausgewählten Elemente konnten nicht als keine Werbung gekennzeichnet "
+"werden."
 
 #: lib/js_strings.rb:7
 msgid "The selected item(s) can not be marked as spam."
-msgstr "Die ausgewählten Elemente konnten nicht als Werbung gekennzeichnet werden."
+msgstr ""
+"Die ausgewählten Elemente konnten nicht als Werbung gekennzeichnet werden."
 
 #: lib/js_strings.rb:8
 msgid "This item is not deleteable."

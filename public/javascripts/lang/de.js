@@ -1,23 +1,13 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
-
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
-
-Report issues and contribute at http://dev.joyent.com/
-
-$Id$
---
-*/
 JoyentL10n = {
 "can't change":'kann nicht verändern',
 "doesn't have access, ":'hat keinen Zugriff, ',
 "isn't notified, ":'wurde nicht benachrichtigt, ',
 "no items selected, ":'keine Elemente ausgewählt, ',
 "Not all selected items are deleteable.":'Nicht alle ausgewählten Elemente sind löschbar.',
+"The selected item(s) can not be marked as not spam.":'Die ausgewählten Elemente konnten nicht als keine Werbung gekennzeichnet werden.',
+"The selected item(s) can not be marked as spam.":'Die ausgewählten Elemente konnten nicht als Werbung gekennzeichnet werden.',
 "This item is not deleteable.":'Dieses Element ist nicht löschbar.',
-"To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":'To receive Jabber notifications add \'notifier@joyent.com\' to your IM client contacts.',
+"To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":'Um Jabber Benachrictigungen zu erhalten fügen Sie in Ihrem IM Client \'notifier@joyent.com\' als Kontakt hinzu.',
 "You must select a group to copy items to.":'Sie müssen eine Gruppe auswählen in die Sie die Elemente kopieren möchten.',
 "You must select a group to move items to.":'Sie müssen eine Gruppe auswählen in die Sie die Elemente bewegen möchten.',
 "You must select something in order to include it as an attachment.":'Sie müssen etwas auswählen um es als Anhang anzufügen.',
@@ -30,7 +20,9 @@ JoyentL10n = {
 ' tag is<br />':' der Tag ist<br />',
 ' Type new tag here':' Neuen Tag hier eingeben',
 '<div class="loadingMessageSmall">Loading&hellip;</div>':'<div class="loadingMessageSmall">Laden&hellip;</div>',
+'A user with the specified username already exists.':'Ein Nutzer mit diesem Namen existiert bereits.',
 'Addresses can not be blank.':'Adressen dürfen nicht leer sein.',
+'An alias with the specified username already exists.':'Ein Alias mit diesem Namen existiert bereits.',
 'assign tag as your own':'Tag als Ihren eigenen anbringen',
 'assign tag':'Tag anbringen',
 'can change':'kann verändern',
@@ -66,9 +58,12 @@ JoyentL10n = {
 'The file name can not be blank.':'Der Dateiname kann nicht leer sein.',
 'The group name can not be blank.':'Der Gruppenname kann nicht leer sein.',
 'The password and confirmation must match.':'Passwort und Bestätigung müssen übereinstimmen.',
+'The password can be no less than 4 characters.':'Das Passwort darf nicht kürzer als 4 Zeichen sein.',
 'The password can not be blank.':'Das Passwort darf nicht leer sein.',
 'The smart group name can not be blank.':'Der Name der Intelligenten Gruppe darf nicht leer sein.',
+'The username can be no more than 50 characters.':'Der Benutzername darf nicht länger als 50 Zeichen sein.',
 'The username can not be blank.':'Der Benutzername darf nicht leer sein.',
+'The username only can contain the characters a-z, 0-9, and _.':'Benutzernamen dürfen nur die Zeichen a-z, 0-9 und _ und . enthalten.',
 'unassign tag':'Tag entfernen',
 'Viewability':'Betrachtbarkeit',
 'Viewable':'Betrachtbar',

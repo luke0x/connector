@@ -1,21 +1,11 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
-
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
-
-Report issues and contribute at http://dev.joyent.com/
-
-$Id$
---
-*/
 JoyentL10n = {
 "can't change":'no puede cambiar',
 "doesn't have access, ":'no tiene acceso, ',
 "isn't notified, ":'no está notificado, ',
 "no items selected, ":'ningún item seleccionado, ',
 "Not all selected items are deleteable.":'No todos los items seleccionados se pueden borrar.',
+"The selected item(s) can not be marked as not spam.":'The selected item(s) can not be marked as not spam.',
+"The selected item(s) can not be marked as spam.":'The selected item(s) can not be marked as spam.',
 "This item is not deleteable.":'Este item no puede ser borrado',
 "To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":'To receive Jabber notifications add \'notifier@joyent.com\' to your IM client contacts.',
 "You must select a group to copy items to.":'Debes seleccionar un grupo al que copiar los items.',
@@ -30,7 +20,9 @@ JoyentL10n = {
 ' tag is<br />':' tag es<br />',
 ' Type new tag here':' Escribe el nuevo tag aquí',
 '<div class="loadingMessageSmall">Loading&hellip;</div>':'<div class="loadingMessageSmall">Cargando&hellip;</div>',
+'A user with the specified username already exists.':'A user with the specified username already exists.',
 'Addresses can not be blank.':'Las direcciones no pueden estar en blanco.',
+'An alias with the specified username already exists.':'An alias with the specified username already exists.',
 'assign tag as your own':'asignar tag como propia',
 'assign tag':'asignar tag',
 'can change':'puede cambiar',
@@ -66,9 +58,12 @@ JoyentL10n = {
 'The file name can not be blank.':'El nombre del archivo no puede estar en blanco.',
 'The group name can not be blank.':'El nombre del grupo no puede estar en blanco.',
 'The password and confirmation must match.':'La contraseña y su confirmación deben coincidir.',
+'The password can be no less than 4 characters.':'The password can be no less than 4 characters.',
 'The password can not be blank.':'La contraseña no puede estar en blanco.',
 'The smart group name can not be blank.':'El nombre del grupo inteligente no puede estar en blanco',
+'The username can be no more than 50 characters.':'The username can be no more than 50 characters.',
 'The username can not be blank.':'El nombre de usuario no puede estar en blanco.',
+'The username only can contain the characters a-z, 0-9, and _.':'The username only can contain the characters a-z, 0-9, and _.',
 'unassign tag':'quitar tag',
 'Viewability':'Visibilidad',
 'Viewable':'Visible',

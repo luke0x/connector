@@ -1,21 +1,11 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
-
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
-
-Report issues and contribute at http://dev.joyent.com/
-
-$Id$
---
-*/
 JoyentL10n = {
 "can't change":'kan niet wijzigen',
 "doesn't have access, ":'heeft geen toegang,',
 "isn't notified, ":'heeft geen melding ontvangen,',
 "no items selected, ":'geen voorwerpen geselecteerd,',
 "Not all selected items are deleteable.":'Niet alle geselecteerde voorwerpen kunnen verwijderd worden.',
+"The selected item(s) can not be marked as not spam.":'The selected item(s) can not be marked as not spam.',
+"The selected item(s) can not be marked as spam.":'The selected item(s) can not be marked as spam.',
 "This item is not deleteable.":'Dit voorwerp kan niet worden verwijderd.',
 "To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":'To receive Jabber notifications add \'notifier@joyent.com\' to your IM client contacts.',
 "You must select a group to copy items to.":'Je moet een groep selecteren om er voorwerpen naartoe te kunnen kopiëren.',
@@ -30,7 +20,9 @@ JoyentL10n = {
 ' tag is<br />':' tag is<br />',
 ' Type new tag here':'Nieuwe tag hier invoeren',
 '<div class="loadingMessageSmall">Loading&hellip;</div>':'<div class="loadingMessageSmall">Laden&hellip;</div>',
+'A user with the specified username already exists.':'A user with the specified username already exists.',
 'Addresses can not be blank.':'Adressen kunnen niet leeg gelaten worden.',
+'An alias with the specified username already exists.':'An alias with the specified username already exists.',
 'assign tag as your own':'tag als eigen tag aanmerken',
 'assign tag':'tag toewijzen',
 'can change':'mag wijzigen',
@@ -66,9 +58,12 @@ JoyentL10n = {
 'The file name can not be blank.':'De bestandsnaam kan niet leeg gelaten worden.',
 'The group name can not be blank.':'De groepsnaam kan niet leeg gelaten worden.',
 'The password and confirmation must match.':'Het wachtwoord en de bevestiging moeten overeenkomen.',
+'The password can be no less than 4 characters.':'The password can be no less than 4 characters.',
 'The password can not be blank.':'Het wachtwoord kan niet leeg gelaten worden.',
 'The smart group name can not be blank.':'De naam van de slimme groep mag niet leeg gelaten worden. ',
+'The username can be no more than 50 characters.':'The username can be no more than 50 characters.',
 'The username can not be blank.':'De gebruikersnaam kan niet leeg gelaten worden.',
+'The username only can contain the characters a-z, 0-9, and _.':'The username only can contain the characters a-z, 0-9, and _.',
 'unassign tag':'tag verwijderen',
 'Viewability':'Zichtbaarheid',
 'Viewable':'Zichtbaar',

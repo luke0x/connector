@@ -1,21 +1,11 @@
-/*
-++
-Copyright 2004-2007 Joyent Inc.
-
-Redistribution and/or modification of this code is 
-governed by the GPLv2.
-
-Report issues and contribute at http://dev.joyent.com/
-
-$Id$
---
-*/
 JoyentL10n = {
 "can't change":"can't change",
 "doesn't have access, ":"doesn't have access, ",
 "isn't notified, ":"isn't notified, ",
 "no items selected, ":"no items selected, ",
 "Not all selected items are deleteable.":"Not all selected items are deleteable.",
+"The selected item(s) can not be marked as not spam.":"The selected item(s) can not be marked as not spam.",
+"The selected item(s) can not be marked as spam.":"The selected item(s) can not be marked as spam.",
 "This item is not deleteable.":"This item is not deleteable.",
 "To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.":"To receive Jabber notifications add 'notifier@joyent.com' to your IM client contacts.",
 "You must select a group to copy items to.":"You must select a group to copy items to.",
@@ -30,7 +20,9 @@ JoyentL10n = {
 ' tag is<br />':' tag is<br />',
 ' Type new tag here':' Type new tag here',
 '<div class="loadingMessageSmall">Loading&hellip;</div>':'<div class="loadingMessageSmall">Loading&hellip;</div>',
+'A user with the specified username already exists.':'A user with the specified username already exists.',
 'Addresses can not be blank.':'Addresses can not be blank.',
+'An alias with the specified username already exists.':'An alias with the specified username already exists.',
 'assign tag as your own':'assign tag as your own',
 'assign tag':'assign tag',
 'can change':'can change',
@@ -66,9 +58,12 @@ JoyentL10n = {
 'The file name can not be blank.':'The file name can not be blank.',
 'The group name can not be blank.':'The group name can not be blank.',
 'The password and confirmation must match.':'The password and confirmation must match.',
+'The password can be no less than 4 characters.':'The password can be no less than 4 characters.',
 'The password can not be blank.':'The password can not be blank.',
 'The smart group name can not be blank.':'The smart group name can not be blank.',
+'The username can be no more than 50 characters.':'The username can be no more than 50 characters.',
 'The username can not be blank.':'The username can not be blank.',
+'The username only can contain the characters a-z, 0-9, and _.':'The username only can contain the characters a-z, 0-9, and _.',
 'unassign tag':'unassign tag',
 'Viewability':'Viewability',
 'Viewable':'Viewable',

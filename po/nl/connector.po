@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-10-23 19:36-0400\n"
+"POT-Creation-Date: 2008-03-03 22:39-0500\n"
 "PO-Revision-Date: 2007-07-25 09:35+0000\n"
 "Last-Translator: Kees Brandenburg <kb@co-web.org>\n"
 "Language-Team: nl <kb@co-web.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Search: %{i18n_search_param}"
 msgstr "Zoeken: %{i18n_search_param}"
 
-#: app/controllers/facebook_controller.rb:44
+#: app/controllers/facebook_controller.rb:53
 #, fuzzy
 msgid "Invalid subdomain, username or password."
 msgstr "Ongeldige gebruikersnaam of wachtwoord"
@@ -363,14 +363,14 @@ msgstr "Subdomein"
 #: app/views/authenticate/affiliate_login.rhtml:38
 #: app/views/authenticate/login.rhtml:43
 #: app/views/authenticate/reset_password.rhtml:45
-#: app/views/facebook/login.rhtml:51 app/views/user/connect.rhtml:40
+#: app/views/facebook/login.rhtml:90 app/views/user/connect.rhtml:40
 msgid "Username"
 msgstr "Gebruikersnaam"
 
 #: app/views/authenticate/affiliate_login.rhtml:46
 #: app/views/authenticate/login.rhtml:51
 #: app/views/authenticate/verify_reset_password.rhtml:40
-#: app/views/facebook/login.rhtml:59 app/views/user/connect.rhtml:44
+#: app/views/facebook/login.rhtml:98 app/views/user/connect.rhtml:44
 msgid "Password"
 msgstr "Wachtwoord"
 
@@ -384,7 +384,7 @@ msgstr "Mijn wachtwoord 2 weken onthouden"
 msgid " Sign In "
 msgstr " Inloggen"
 
-#: app/views/authenticate/login.rhtml:73 app/views/facebook/login.rhtml:77
+#: app/views/authenticate/login.rhtml:73
 msgid "Reset your password"
 msgstr "Je wachtwoord resetten"
 
@@ -485,8 +485,8 @@ msgid "first by %{i18n_bookmark_first_user}"
 msgstr "als eerste door %{i18n_bookmark_first_user}"
 
 #: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
-#: app/views/facebook/index.rhtml:36 app/views/files/service.rhtml:48
-#: app/views/reports/_notifications.rhtml:43
+#: app/views/facebook/_notifications_table.rhtml:20
+#: app/views/files/service.rhtml:48 app/views/reports/_notifications.rhtml:43
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "%{i18n_time_ago_in_words} ago"
 msgstr "%{i18n_time_ago_in_words} geleden"
@@ -1044,12 +1044,17 @@ msgstr "Applicatie"
 msgid "Modified"
 msgstr "Gewijzigd"
 
-#: app/views/facebook/login.rhtml:43
+#: app/views/facebook/login.rhtml:82
 #, fuzzy
 msgid "Connector URL"
 msgstr "Van Connector"
 
-#: app/views/facebook/login.rhtml:74
+#: app/views/facebook/login.rhtml:107
+#, fuzzy
+msgid "Reset?"
+msgstr "Resetten"
+
+#: app/views/facebook/login.rhtml:112
 msgid " Authenticate "
 msgstr ""
 
@@ -2926,7 +2931,7 @@ msgstr "Spreadsheet"
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/i18n_do_not_include.rb:68 app/models/list.rb:366
+#: lib/i18n_do_not_include.rb:68 app/models/list.rb:367
 msgid "Text"
 msgstr "Tekst"
 

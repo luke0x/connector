@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
-"POT-Creation-Date: 2007-10-23 19:36-0400\n"
+"POT-Creation-Date: 2008-03-03 22:39-0500\n"
 "PO-Revision-Date: 2006-05-24 20:40+020Å0\n"
 "Last-Translator: Pedro Palazón <pedro@joyent.com>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Search: %{i18n_search_param}"
 msgstr ""
 
-#: app/controllers/facebook_controller.rb:44
+#: app/controllers/facebook_controller.rb:53
 msgid "Invalid subdomain, username or password."
 msgstr ""
 
@@ -355,14 +355,14 @@ msgstr ""
 #: app/views/authenticate/affiliate_login.rhtml:38
 #: app/views/authenticate/login.rhtml:43
 #: app/views/authenticate/reset_password.rhtml:45
-#: app/views/facebook/login.rhtml:51 app/views/user/connect.rhtml:40
+#: app/views/facebook/login.rhtml:90 app/views/user/connect.rhtml:40
 msgid "Username"
 msgstr ""
 
 #: app/views/authenticate/affiliate_login.rhtml:46
 #: app/views/authenticate/login.rhtml:51
 #: app/views/authenticate/verify_reset_password.rhtml:40
-#: app/views/facebook/login.rhtml:59 app/views/user/connect.rhtml:44
+#: app/views/facebook/login.rhtml:98 app/views/user/connect.rhtml:44
 msgid "Password"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgstr ""
 msgid " Sign In "
 msgstr ""
 
-#: app/views/authenticate/login.rhtml:73 app/views/facebook/login.rhtml:77
+#: app/views/authenticate/login.rhtml:73
 msgid "Reset your password"
 msgstr ""
 
@@ -473,8 +473,8 @@ msgid "first by %{i18n_bookmark_first_user}"
 msgstr ""
 
 #: app/views/bookmarks/_peek.rhtml:19 app/views/bookmarks/show.rhtml:23
-#: app/views/facebook/index.rhtml:36 app/views/files/service.rhtml:48
-#: app/views/reports/_notifications.rhtml:43
+#: app/views/facebook/_notifications_table.rhtml:20
+#: app/views/files/service.rhtml:48 app/views/reports/_notifications.rhtml:43
 #: app/views/syndication/_bookmark.rhtml:21
 msgid "%{i18n_time_ago_in_words} ago"
 msgstr ""
@@ -1024,11 +1024,15 @@ msgstr ""
 msgid "Modified"
 msgstr ""
 
-#: app/views/facebook/login.rhtml:43
+#: app/views/facebook/login.rhtml:82
 msgid "Connector URL"
 msgstr ""
 
-#: app/views/facebook/login.rhtml:74
+#: app/views/facebook/login.rhtml:107
+msgid "Reset?"
+msgstr ""
+
+#: app/views/facebook/login.rhtml:112
 msgid " Authenticate "
 msgstr ""
 
@@ -2845,7 +2849,7 @@ msgstr ""
 msgid "TeX"
 msgstr ""
 
-#: lib/i18n_do_not_include.rb:68 app/models/list.rb:366
+#: lib/i18n_do_not_include.rb:68 app/models/list.rb:367
 msgid "Text"
 msgstr ""
 
