@@ -2,11 +2,11 @@
 
 == File: public/images/lang/fr/actionsCalendar.png
 
-Month View    => Affichage mensuel
-List View     => Affichage par liste
-Day View      => Affichage journalier
-Week View     => Affichage hebdomadaire
-Overlay Users => Superposer les utilisateurs
+Month View    => Affichage Mensuel
+List View     => Affichage Par Liste
+Day View      => Affichage Journalier
+Week View     => Affichage Hebdomadaire
+Overlay Users => Superposer Les Utilisateurs
 Today         => Aujourd’hui
 
 == File: public/images/lang/fr/actionsConnect.png
