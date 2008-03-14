@@ -13,7 +13,7 @@
 				<img src="<%= facebook_image_url("facebook/#{notification.item.class.name.underscore}.png") %>" width="32" height="32" style="margin-left:10px">
 			</td>
 			<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
-				<%= link_to notification.item.name, facebook_url_for(notification.item) %>
+				<%= link_to notification.item.name, facebook_url_for(notification.item) if notification.item %>
 			</td>
 			<td style="border-bottom: 1px solid #ccb36a; line-height: 1.2em; padding: 2px 0 2px 5px;">
 				by <%= link_to notification.notifier.full_name, facebook_url_for(notification.notifier.person) %> 
