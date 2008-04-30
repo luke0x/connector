@@ -405,6 +405,13 @@ ActiveRecord::Schema.define(:version => 170) do
 
   add_index "quotas", ["organization_id"], :name => "quotas_organization_id_index"
 
+  create_table "recurrence_descriptions", :force => true do |t|
+    t.column "name",                 :string
+    t.column "rule_text",            :string
+    t.column "seconds_to_increment", :integer
+    t.column "advance_arguments",    :string
+  end
+
   create_table "report_descriptions", :force => true do |t|
     t.column "name", :string
   end

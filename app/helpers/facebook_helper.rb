@@ -44,7 +44,6 @@ module FacebookHelper
   end
   
   def facebook_url(relative_path)
-    "http://63.193.186.12/#{relative_path}"    
-    # "http://#{current_organization.primary_domain.web_domain}/#{relative_path}"    
+    "http://#{current_organization.primary_domain.web_domain}/#{relative_path}"    
   end
 end
