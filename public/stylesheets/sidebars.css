@@ -488,7 +488,8 @@ a.highlighted  {
 			.groupInfo a.rename, 
 			.groupInfo a.move, 
 			.groupInfo a.access,
-			.groupInfo a.subscription {
+			.groupInfo a.subscription,
+			.groupInfo a.settings {
 				background-image: url(/images/icons/groupInfoIcons.png);
 				}
 			.groupInfo a.rename {
@@ -514,6 +515,12 @@ a.highlighted  {
 			}
 			.groupInfo a.access.expanded {
 				background-position: 0 -347px;
+			}
+			.groupInfo a.settings {
+				background-position: 0 -397px;
+			}
+			.groupInfo a.settings.expanded {
+				background-position: 0 -447px;
 			}
 
 			.groupInfo a.delete {
@@ -623,8 +630,11 @@ a.folder  {
 		font-size:9px;
 		}
 	.groupInfo input {
-		font-size:0.9em;
-		}
+		font-size: 0.9em;
+	}
+	.groupInfo input.textInput {
+		width: 94%;
+	}
 	.groupInfo p {
 		margin: 0;
 		padding: 0;

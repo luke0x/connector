@@ -1,0 +1,15 @@
+<% if @controller.controller_name == 'mail' && @mailbox && @mailbox.full_name == 'INBOX' && current_user.owns?(@mailbox) -%>
+	<div id="awayInfo" class="info4 fullwidth" style="<%= current_user.away_on? ? '' : 'display: none;' -%>">
+		<div class="info3">
+			<div class="info2">
+				<div class="info">
+					<p>
+						<a href="#" id="awayPointerLink"><%= _('Edit') %></a>
+						<%= _('An "Away Message" is being sent to all incoming emails') %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%= javascript_tag "Event.observe($('awayPointerLink'), 'click', awayEvent.listenerLoad);" %>
+<% end -%>

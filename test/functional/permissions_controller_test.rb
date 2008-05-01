@@ -89,4 +89,24 @@ class PermissionsControllerTest < Test::Unit::TestCase
     assert_response :redirect
     assert_equal 0, folders(:ian_pictures_vacation).permissions(true).length
   end
+  
+  def test_destroy_person_group_memberships_if_user_no_longer_has_permission_to_view_the_person
+    business = person_groups(:business)
+    business_owner = business.owner
+    ian = people(:ian)
+    
+    business_owner.person.permissions.create(:user_id => ian.user.id)
+    
+    assert !business.people.include?(ian)
+    business.person_group_memberships.create(:person_id => ian.id)
+    assert business.people(true).include?(ian)
+    
+    xhr(:post, :remove_user, {:dom_ids => ian.dom_id, :user_id => business_owner.id})
+    assert_response :success
+    
+    assert !business.people(true).include?(ian)
+    
+    
+  end
+  
 end

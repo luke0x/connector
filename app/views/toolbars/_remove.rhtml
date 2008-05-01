@@ -1,0 +1,16 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id: $ -%>
+<% # -- -%>
+
+<% if @view_kind == 'list' -%>
+  <%= link_to_function _('Remove'), "return Toolbar.removeList('#{item_remove_url(@person_group)}');", { :title => _('Remove all selected items.'), :id => 'actionRemoveLink' } %>
+<% else -%>
+  <% # not implemented yet: link_to_function _('Remove'), "return Toolbar.removeItem(this, '#{item_remove_url}');", { :title => _('Remove this item.'), :id => 'actionRemoveLink' } -%>
+<% end -%>

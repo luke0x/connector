@@ -51,7 +51,7 @@
   //<![CDATA[
     Joyent.applicationName = '<%= @application_name %>';
     Joyent.groupName = '<%= _(controller.class.group_name.underscore.humanize.titlecase) %>';
-    Joyent.viewKind = '<%= @view_kind %>';
+    Joyent.viewKind = '<%= controller.controller_name == "calendar_subscriptions" ? controller.controller_name : @view_kind %>';
     <%= @page_javascript.uniq.join("\n") %>
     <%= javascript_current_user_tags %>
     Event.observe(window, 'load', function(event){ JoyentPage.refresh(); });

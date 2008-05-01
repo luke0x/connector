@@ -12,6 +12,9 @@ $Id$
 =end #(end)
 
 class CalendarController < AuthenticatedController
+	# This constant could be sunday (0) or monday (1) for instance
+  # there have to adjustments in month.rhtml to able to work with START_OF_WEEK = 1	
+	START_OF_WEEK = 0
   before_filter :setup_calendar
 #  after_filter(:only => [:create_calendar, :rename_group, :delete_group, :reparent_group]){ |c| c.expire_fragment %r{calendar/sidebar} }
 
@@ -75,7 +78,7 @@ class CalendarController < AuthenticatedController
   def month
     @view_kind = 'month'
     month_date = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date, 0, current_user)
+    @month_view = MonthView.new(month_date, START_OF_WEEK, current_user)
 
     @calendar         = Calendar.find(params[:calendar_id], :scope => :read)
     self.selected_user     = @calendar.owner
@@ -254,6 +257,8 @@ class CalendarController < AuthenticatedController
 
     @group_name = _('All Events')
     @events     = current_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    # Events from calendar subscriptions
+    @events.concat(current_user.calendar_subscriptions.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten)
     @day_views  = group_into_day_views(@events, @start_date, @end_date)
     
     unless request.xhr?    
@@ -276,10 +281,12 @@ class CalendarController < AuthenticatedController
     @view_kind = 'month'
     @toolbar[:month]  = false
     month_date  = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date, 0, current_user)
+    @month_view = MonthView.new(month_date, START_OF_WEEK, current_user)
 
     @group_name = _('All Events')
     @events     = current_user.calendars.collect{|c| c.events_between(@month_view.start_time, @month_view.end_time)}.flatten
+    # Events from calendar subscriptions
+    @events.concat(current_user.calendar_subscriptions.collect{|c| c.events_between(@month_view.start_time, @month_view.end_time)}.flatten)
     @month_view.add_events(@events)
     @start_date = month_date.to_time.beginning_of_month.to_date
     @end_date   = month_date.to_time.end_of_month.to_date
@@ -299,6 +306,8 @@ class CalendarController < AuthenticatedController
 
     @group_name = _('All Events')
     @events     = current_user.calendars.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten
+    # Events from calendar subscriptions
+    @events.concat(current_user.calendar_subscriptions.collect{|c| c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))}.flatten)
 
     @overlay_events = get_overlay_events(@start_date.to_time(:utc), @end_date.to_time(:utc))
     setup_users_overlay
@@ -467,7 +476,7 @@ class CalendarController < AuthenticatedController
     @view_kind = 'month'
     @toolbar[:month]  = false 
     month_date = Date.parse(params['date']) rescue current_user.today
-    @month_view = MonthView.new(month_date, 0, current_user)
+    @month_view = MonthView.new(month_date, START_OF_WEEK, current_user)
 
     @smart_group  = SmartGroup.find(SmartGroup.param_to_id(params[:smart_group_id]), :scope => :read)
     self.selected_user = @smart_group.owner
@@ -651,26 +660,18 @@ class CalendarController < AuthenticatedController
     redirect_back_or_home
   end
 
-  def add_overlay
-    if params[:user_id]
-      session[:calendar] = {} unless session[:calendar]
-      session[:calendar][:overlay_users] = [] unless session[:calendar][:overlay_users]
-      session[:calendar][:overlay_users] = session[:calendar][:overlay_users].push(params[:user_id]).uniq.sort
+  # updates overlay users for calendar
+  # clears out all old ones and sets the new ones
+  def set_overlay
+    session[:calendar] = {} unless session[:calendar]
+    session[:calendar][:overlay_users] = []
+    if params[:user_ids]
+      session[:calendar][:overlay_users] = params[:user_ids].sort
     end
   ensure
     redirect_back_or_home
   end
-
-  def remove_overlay
-    if params[:user_id]
-      session[:calendar] = {} unless session[:calendar]
-      session[:calendar][:overlay_users] = [] unless session[:calendar][:overlay_users]
-      session[:calendar][:overlay_users] = session[:calendar][:overlay_users].delete_if{|user| user == params[:user_id]}
-    end
-  ensure
-    redirect_back_or_home
-  end
-
+  
   def create_calendar
     current_user.calendars.create(:name            => params[:group_name],
                                   :parent_id       => params[:parent_id],
@@ -758,6 +759,8 @@ class CalendarController < AuthenticatedController
       @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
       @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + day_span)
       @events     = selected_user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten
+      # Events from calendar subscriptions
+      @events.concat(selected_user.calendar_subscriptions.collect{|c| current_user.can_view?(c) ? c.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc)) : []}.flatten)
       @day_views  = (@start_date...@end_date).collect do |curr_date| 
         view = DayView.new(curr_date, current_user)
         view.take_events(@events)
@@ -793,6 +796,8 @@ class CalendarController < AuthenticatedController
         session[:calendar][:overlay_users].each do |user_id|
           user = User.find(user_id, :scope => :read)
           overlay_events[user.id] = user.calendars.collect{|c| current_user.can_view?(c) ? c.events_between(start_time, end_time) : []}.flatten
+          # Calendar Subscription Events
+          overlay_events[user.id].concat(user.calendar_subscriptions.collect{|cs| current_user.can_view?(cs) ? cs.events_between(start_time, end_time) : []}.flatten)
         end
       end
     
@@ -805,7 +810,8 @@ class CalendarController < AuthenticatedController
       else
         []
       end
-      @non_overlayed_users = (current_organization.users.find(:all, :conditions => ["guest = ?", false], :include => [:person], :scope => :read) - [current_user] - @overlayed_users).sort
+      
+      @available_users = current_organization.users.find(:all, :conditions => ["guest = ?", false], :order => 'LOWER(people.last_name) ASC', :include => [:person], :scope => :read) - [current_user]
 
       @toolbar[:overlay_users] = true
 

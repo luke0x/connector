@@ -603,4 +603,46 @@ class CalendarControllerTest < Test::Unit::TestCase
     assert_equal nil, invitation.calendar
   end
 
+
+  def test_response_redirected_when_post_to_set_overlay
+    ian = users(:ian)
+    pedro = users(:pedro)
+    
+    post :set_overlay, {:user_ids => [ian.id.to_s, pedro.id.to_s]}
+    
+    assert_response :redirect
+  end
+
+  def test_overlaid_users_stored_on_session_when_post_to_set_overlay
+    ian = users(:ian)
+    pedro = users(:pedro)
+    
+    post :set_overlay, {:user_ids => [ian.id.to_s, pedro.id.to_s]}
+    
+    assert_equal [ian.id.to_s, pedro.id.to_s], session[:calendar][:overlay_users]
+  end
+  
+  def test_clear_old_overlaid_users_and_replace_for_new_ones_when_post_to_set_overlay
+    ian = users(:ian)
+    pedro = users(:pedro)
+    peter = users(:peter)
+    bernard = users(:bernard)
+    
+    post :set_overlay, {:user_ids => [ian.id.to_s, pedro.id.to_s]}
+    assert_equal [ian.id.to_s, pedro.id.to_s], session[:calendar][:overlay_users]
+    
+    post :set_overlay, {:user_ids => [peter.id.to_s, bernard.id.to_s]}
+    assert_equal [peter.id.to_s, bernard.id.to_s], session[:calendar][:overlay_users]
+  end
+  
+  def test_remove_all_overlaid_users_from_session_when_post_to_set_overlay_without_selected_users
+    ian = users(:ian)
+    pedro = users(:pedro)
+    
+    post :set_overlay, {:user_ids => [ian.id.to_s, pedro.id.to_s]}
+    
+    post :set_overlay
+    assert_equal [], session[:calendar][:overlay_users]
+  end
+  
 end

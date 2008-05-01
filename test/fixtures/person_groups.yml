@@ -1,0 +1,43 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+friends:
+  id: 1
+  user_id: 1
+  organization_id: 1
+  name: Friends Group
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>  
+business:
+  id: 2
+  user_id: 2
+  organization_id: 1
+  name: Business Group  
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>  
+colleagues:
+  id: 3
+  user_id: 1
+  organization_id: 1
+  name: Colleagues Group
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>  
+college:
+  id: 4
+  user_id: 1
+  organization_id: 1
+  name: College Group
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>  
+work:
+  id: 5
+  user_id: 2
+  organization_id: 1
+  name: Work People Group
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>
+empty:
+  id: 6
+  user_id: 1
+  organization_id: 1
+  name: Empty People Group
+  created_at: <%= (Time.now - 7.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 5.days).to_s(:db) %>

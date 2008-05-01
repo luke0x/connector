@@ -145,6 +145,30 @@ class SyndicationController < ApplicationController
     render :action=>'calendar_rss'
   end
   
+  def subscription_calendar_ics
+    @calendar   = CalendarSubscription.find(params[:calendar_subscription_id], :scope => :read)
+    @group_name = @calendar.name
+    @events     = @calendar.events.find(:all, :scope => :read)
+    
+    send_data render_to_string(:action => 'ics', :layout => false), :filename => "#{@group_name}.ics".gsub(/[ \']/, '_')
+  end
+  
+  def subscription_calendar_rss
+    @start_date = params['start_date'] ? Date.parse(params['start_date']) : current_user.today
+    @end_date   = params['end_date']   ? Date.parse(params['end_date'])   : (@start_date + 7)
+    
+    @calendar   = CalendarSubscription.find(params[:calendar_subscription_id], :scope => :read)
+    @group_name = @calendar.name
+    if @calendar.owner != current_user
+      @group_name   = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@calendar.owner.full_name}",:i18n_group_name => "#{@group_name}"}
+    end
+    @events     = @calendar.events_between(@start_date.to_time(:utc), @end_date.to_time(:utc))
+    
+    @connector_link = calendar_subscriptions_month_route_url(:calendar_subscription_id=>@calendar, :only_path=>false)
+    
+    render :action=>'calendar_rss'
+  end
+  
   def notifications_calendar_ics
     @group_name = _('Notifications')
     @events     = current_organization.notifications.find(:all, :conditions => ["item_type = 'Event' and notifiee_id = ?", current_user.id]).collect(&:item)
@@ -227,6 +251,18 @@ class SyndicationController < ApplicationController
     end
     @people = @smart_group.items
     @connector_link = people_list_url(:group => params[:group], :full_path => false)
+    render :action=>'people_rss'
+  end
+  
+  def people_person_group_rss
+    @person_group = PersonGroup.find(params[:id], :scope => :read)
+    self.selected_user = @person_group.owner
+    @group_name = @person_group.name
+    if @person_group.owner != current_user
+      @group_name   = _("%{i18n_owner_full_name}'s %{i18n_group_name}")%{:i18n_owner_full_name => "#{@person_group.owner.full_name}",:i18n_group_name => "#{@group_name}"}
+    end
+    @people = @person_group.people.find(:all, :scope => :read)
+    @connector_link = people_list_url(:group => @person_group.url_id)
     render :action=>'people_rss'
   end
 

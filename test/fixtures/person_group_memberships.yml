@@ -1,0 +1,100 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# memberships to people group "friends"
+pedro_on_friends:
+  id: 1
+  person_id: 14
+  person_group_id: 1
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+luis_on_friends:
+  id: 2
+  person_id: 15
+  person_group_id: 1
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+andres_on_friends:
+  id: 3
+  person_id: 16
+  person_group_id: 1
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+
+# memberships to people group "business"
+pedro_on_business:
+  id: 4
+  person_id: 14
+  person_group_id: 2
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+luis_on_business:
+  id: 5
+  person_id: 15
+  person_group_id: 2
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+andres_on_business:
+  id: 6
+  person_id: 16
+  person_group_id: 2
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+
+# memberships to people group "colleagues"
+pedro_on_colleagues:
+  id: 7
+  person_id: 14
+  person_group_id: 3
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+luis_on_colleagues:
+  id: 8
+  person_id: 15
+  person_group_id: 3
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+andres_on_colleagues:
+  id: 9
+  person_id: 16
+  person_group_id: 3
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+
+# memberships to people group "college"
+pedro_on_college:
+  id: 10
+  person_id: 14
+  person_group_id: 4
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+luis_on_college:
+  id: 11
+  person_id: 15
+  person_group_id: 4
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+andres_on_college:
+  id: 12
+  person_id: 16
+  person_group_id: 4
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+
+# memberships to people group "work"
+pedro_on_work:
+  id: 13
+  person_id: 14
+  person_group_id: 5
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+luis_on_work:
+  id: 14
+  person_id: 15
+  person_group_id: 5
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+andres_on_work:
+  id: 15
+  person_id: 16
+  person_group_id: 5
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>

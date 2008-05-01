@@ -33,7 +33,9 @@ $Id$
 	#mail .message pre {
 		white-space: normal;
 	}
-	
+	#contentWrapper table#calendarMonthView {
+		width: 98%;
+	}
 	
 /* Lists ----------------------------------------------------------------- */
 	

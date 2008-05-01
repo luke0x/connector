@@ -201,7 +201,7 @@ $Id$
 	}
 	.info {	
 		background-position: left top;
-		padding: 2em;
+		padding: 1em 2em;
 	}
 	.info.noPadding {	
 		padding: 0 !important;
@@ -382,6 +382,10 @@ $Id$
 	}
 	.jumpTo {
 		background-image: url(/images/icons/jumpTo.png);
+		padding-left: 19px !important;
+	}
+	.reload_button {
+		background-image: url(/images/animation/loading16.gif);
 		padding-left: 19px !important;
 	}
 	.setAccess {

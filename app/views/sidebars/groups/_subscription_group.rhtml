@@ -1,0 +1,56 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<% # use with render_subscription_group -%>
+
+<li>
+  <% if selected -%>
+    <div id="selectedStandardGroup" class="roundtl highlighted"><div class="roundtr"><div id="standardGroupSelectedEditDivBL" class="roundbl"><div id="standardGroupSelectedEditDivBR" class="roundbr">
+  		<table>
+  			<tr>
+  				<td class="dinger">
+  				</td>
+  				<td>
+            <%= link_to("#{name}", standard_list_url(subscription_group), { :class => "folder highlighted #{css_class}" }) %>
+  				</td>
+  				<td class="showInfo">
+            <div id="standard_group_spinner_<%= subscription_group.id %>" class="loadingSmallBlue" style="display: none;"></div>
+            <%= link_to_function("Edit", "StandardGroup.editToggle(#{subscription_group.id});", {:class => 'groupInfo collapsed', :id => "standard_group_edit_dinger_#{subscription_group.id}"}) %>
+  				</td>
+  			</tr>
+  		</table>
+    </div></div></div></div>
+    <% if ! current_user.subscribed_to?(subscription_group) or (current_user.subscribed_to?(subscription_group) and subscription) -%>
+      <div id="standardGroupSelectionEdit" style="display: none;"><div>
+        <%= render :partial => 'sidebars/groups/subscription_group_edit', :locals => {:group => subscription_group, :content => content, :subscription => subscription} %>
+      </div></div>
+      <script type="text/javascript">
+      //<![CDATA[
+        var standardGroupSelectionEditContents = "<%= escape_javascript(render(:partial => 'sidebars/groups/subscription_group_edit', :locals => {:group => subscription_group, :content => content, :subscription => subscription})) %>";
+      //]]>
+      </script>
+    <% end -%>
+  <% else -%>
+    <div class="roundtl"><div class="roundtr"><div class="roundbl"><div class="roundbr">
+      <table><tr>
+        <td class="dinger">
+
+        </td>
+        <td>
+          <%= link_to "#{name}", standard_list_url(subscription_group), { :class => "folder #{css_class}" } %>
+        </td>
+        <td class="showInfo">
+          <div id="standard_group_spinner_<%= subscription_group.id %>" class="loadingSmallGrey" style="display: none;"></div>
+        </td>
+      </tr></table>  
+    </div></div></div></div>
+  <% end -%>
+</li>

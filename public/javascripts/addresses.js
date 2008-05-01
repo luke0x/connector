@@ -17,42 +17,81 @@ Object.extend(AddressManager.prototype, {
     this.to_addresses  = [];
     this.cc_addresses  = [];
     this.bcc_addresses = [];
+	this.groups_ids = [];
+	this.kind = '';
     
     if (to)  to.each((function(v, i)  { this.to_addresses.push(v);  }).bind(this));
     if (cc)  cc.each((function(v, i)  { this.cc_addresses.push(v);  }).bind(this));
     if (bcc) bcc.each((function(v, i) { this.bcc_addresses.push(v); }).bind(this));
   },
 
-	addAddress: function(kind) {
+  addAddress: function(kind) {
+  	this.kind = kind;
     address = $('message_' + kind + '_complete').value.strip();
 
     if (address != '') {
-	    $(kind + '_addresses').innerHTML += this.drawAddress(kind, address);
-	    this[kind + '_addresses'].push(address);
-		}
+		if (address.indexOf('<') == -1 && address.indexOf('>') == -1){
+			var groupName = address.substring(0, address.indexOf('(') - 1);
+			var groupId = this.getGroupId(groupName);
+			if (groupId != -1)
+				this.addGroupEmailsAjax(kind, groupId);
+		}else{
+			name = address.substring(0, address.indexOf('<') - 1);
+			email = address.substring(address.indexOf('<') + 1, address.indexOf('>'));		
+			this[kind + '_addresses'].push(email);
+		    $(kind + '_addresses').innerHTML += this.drawAddress(kind, name, email);	 			
+		}		
+	}
 
     $('message_' + kind + '_complete').value = '';
     $('message_' + kind + '_complete').activate();
 
-		return false;
-	},
+	return false;
+  },
 	
-	removeAddress: function(kind, id) {
+  removeAddress: function(kind, id) {
 		this[kind + '_addresses'][id] = null;
     $('address_' + kind + '_' + id).hide();
 
     return false;
 	},
+
+  addGroupEmailsAjax: function (kind, groupId) {
+    var url = '/mail/add_group_emails_ajax?group_id=' + groupId;
+    new Ajax.Request(url, {onComplete: this.onComplete.bind(this)});
+  },	
+  
+  setGroupsIds: function (groupsIds){
+  	groupsIds.each((function(v, i) { this.groups_ids.push(v); }).bind(this));
+  },
+  
+  getGroupId: function (groupName){
+	var index = -1;
+	this.groups_ids.each(function(item){
+			if (item.group_name == groupName)
+				index = item.group_id;
+	});  	
+	return index;
+  },
+  
+  onComplete: function (request) {
+		request.responseText.evalJSON().each((function(item){
+			this[this.kind + '_addresses'].push(item.email);
+			$(this.kind + '_addresses').innerHTML += this.drawAddress(this.kind, item.name, item.email);		
+		}).bind(this)); 
+  },
 	
-  drawAddress: function(kind, address) {
+  drawAddress: function(kind, name, email) {
 		id = this[kind + '_addresses'].length;
 
 		html = '';
 		html += '<a href="#" onclick="';
 		html += "return addresses.removeAddress('" + kind + "', '" + id + "');";
-		html += '" class="removeEmail" id="address_' + kind + '_' + id + '">';
-		html += address;
+		html += '" class="removeEmail" id="address_' + kind + '_' + id + '" ';
+		html += 'title="' + email + '">';
+		html += name;
 		html += '</a>';
+
 		return html;
   },
   

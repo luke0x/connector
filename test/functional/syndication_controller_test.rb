@@ -176,7 +176,11 @@ class SyndicationControllerTest < Test::Unit::TestCase
     get :people_rss, :group => 's9'
     rss_common_assertions
   end
-
+  
+  def test_person_group_rss_works
+    get :people_person_group_rss, {:id => 1}
+    rss_common_assertions
+  end
 
   def test_mail_mailbox_works
     flexmock(Mailbox).should_receive(:list).returns([])

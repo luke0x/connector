@@ -34,11 +34,11 @@
     </div></div></div></div>
     <% if ! current_user.subscribed_to?(standard_group) or (current_user.subscribed_to?(standard_group) and subscription) -%>
       <div id="standardGroupSelectionEdit" style="display: none;"><div>
-        <%= render :partial => 'sidebars/groups/standard_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription} %>
+        <%= render :partial => 'sidebars/groups/standard_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription, :ui_messages => ui_messages} %>
       </div></div>
       <script type="text/javascript">
       //<![CDATA[
-        var standardGroupSelectionEditContents = "<%= escape_javascript(render(:partial => 'sidebars/groups/standard_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription})) %>";
+        var standardGroupSelectionEditContents = "<%= escape_javascript(render(:partial => 'sidebars/groups/standard_group_edit', :locals => {:group => standard_group, :content => content, :subscription => subscription, :ui_messages => ui_messages})) %>";
       //]]>
       </script>
     <% end -%>

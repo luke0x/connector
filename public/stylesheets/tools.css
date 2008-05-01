@@ -168,6 +168,9 @@ $Id$
 		border-width: 1px;
 		border-style: solid;
 	}
+	#Drawers fieldset table {
+		width:100%;
+	}
 	#Drawers .drawerButtons {
 		padding: 7px 0 7px 1em;
 	}

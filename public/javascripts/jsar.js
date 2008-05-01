@@ -133,6 +133,14 @@ Object.extend(Item, {
 		if (Item.findSelected().length == 0) return false;
 		return Item.findSelected().all(function(item){ return item.canCopy; });
 	},
+	selectedAddable: function() {
+		if (Item.findSelected().length == 0) return false;
+		return Item.findSelected().all(function(item){ return item.canAdd; });
+	},
+	selectedRemovable: function() {
+		if (Item.findSelected().length == 0) return false;
+		return Item.findSelected().all(function(item){ return item.canRemove; });
+	},
 	selectedMoveable: function() {
 		if (Item.findSelected().length == 0) return false;
 		return Item.findSelected().all(function(item){ return item.canMove; });
@@ -345,6 +353,20 @@ Object.extend(User, {
 	findSorted: function() {
 		return User.attributes.sortBy(function(user){ return user.sortName; });
 	}
+});
+
+var Group = new ActiveRecord();
+Object.extend(Group, {
+	create: function(newRecord) {
+		if (this.domIdCache.indexOf(newRecord.domId) >= 0) {
+			return false;
+		} else {
+			this.domIdCache.push(newRecord.domId);
+			h = $H(newRecord);
+			h.name = decodeURIComponent(h.name);
+			return this.attributes.push(h);
+		}
+	},	
 });
 
 var Permission = new ActiveRecord();

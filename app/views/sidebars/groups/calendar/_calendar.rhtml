@@ -34,6 +34,10 @@
   	<% current_user.subscriptions_to_group_type(controller.class.group_name).each do |subscription| -%>
   		<%= render_standard_group 'sidebars/groups/calendar/calendar_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @calendar, :subscription => true, :css_class => 'group subscription' } %>
   	<% end %>
+
+		<% current_user.calendar_subscriptions.each do |calendar_subscription| -%>
+  		<%= render_subscription_group 'sidebars/groups/calendar/calendar_subscription', { :subscription_group => calendar_subscription, :url => calendar_subscriptions_list_route_url(calendar_subscription), :selected_group => @calendar_subscription, :css_class => 'group ics_subscription', :skip_children => true } %>
+  	<% end %>
   </ul></div>
 
   <div id="addGroup">
@@ -44,8 +48,10 @@
 		<% if current_user.has_other_identities? -%>
 			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'Calendar', :context => 'subscribe')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
 		<% end -%>
+		<a href="#" class="folder group ics_subscription" onclick="return AddGroupWidget.select('subscription');"><%= _('ICS Subscription') -%></a>
   	</div>
   </div>
+	<%= render :partial => 'sidebars/groups/subscription_group_new_container', :locals => { :smart_groups => @smart_groups } %>
   <%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>
   <% parent_id = @calendar && current_user.can_create_on?(@calendar) ? @calendar.id : nil -%>
   <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => current_user.calendar_root_calendars, :parent_id => parent_id } %>

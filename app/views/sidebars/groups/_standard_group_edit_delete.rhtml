@@ -12,4 +12,4 @@
 <hr />
 <%= link_to '<div class="buttonStandardLeft"><div class="buttonStandardRight"><div class="buttonStandardBG">'+_('Delete')+' ' + _(controller.class.group_name.titlecase) + '</div></div></div>',
             { :action => 'delete_group', :id => group.id },
-            { :confirm => _("Do you want to delete this group and all its subgroups? The items will be deleted."), :class => '', :style => 'width:11em; display:block;', :method => :post } %>
+            { :confirm => standard_group_delete_confirm_message(ui_messages), :class => '', :style => 'width:11em; display:block;', :method => :post } %>

@@ -56,7 +56,12 @@ module ApplicationHelper
     update_id = "#{update_id}_td_details"
     case item
     when Message          then mail_message_show_url(:id => item.id, :mailbox => item.mailbox, :update_id => update_id)
-    when Event, StubEvent then calendar_show_route_url(:id => item.id, :calendar_id => item.calendars.first, :update_id => update_id)
+    when Event, StubEvent 
+      if item.calendar_subscription.nil?
+        calendar_show_route_url(:id => item.id, :calendar_id => item.calendars.first, :update_id => update_id)
+      else
+        calendar_subscriptions_show_event_route_url(:id => item.calendar_subscription.id, :event_id => item.id, :update_id => update_id)
+      end
     when Person           then person_show_url(:id => item.id, :update_id => update_id)
     when JoyentFile       then files_show_route_url(:id => item.id, :folder_id => item.folder.id, :update_id => update_id)
     when Bookmark         then bookmarks_show_url(:id => item.id, :update_id => update_id)
@@ -150,6 +155,9 @@ module ApplicationHelper
     if @application_name == 'mail' and new_locals[:name] == 'INBOX'
       new_locals[:name] = 'Inbox'
     end
+    
+    new_locals[:ui_messages]             = partial_locals[:ui_messages]
+    
     render :partial => 'sidebars/groups/standard_group', :locals => new_locals
   end
 
@@ -219,6 +227,30 @@ module ApplicationHelper
 
     render :partial => 'sidebars/groups/default_smart_group', :locals => new_locals
   end
+  
+  def render_subscription_group(partial_path, partial_locals = {})
+    raise "Calendar Subscription group partial can not be blank" if partial_path.blank?
+
+    partial_locals[:subscription] = partial_locals.has_key?(:subscription) ? partial_locals[:subscription] : false
+    
+    new_locals = {}
+    new_locals[:partial_path]                = partial_path
+    new_locals[:level]                       = partial_locals[:level]      || 0
+    new_locals[:css_class]                   = partial_locals.has_key?(:css_class) ? partial_locals[:css_class] : 'group'
+    new_locals[:subscription_group]          = partial_locals[:subscription_group]
+    new_locals[:subscription_group_url]      = partial_locals[:url]        || ''
+    new_locals[:subscription_group_selected] = partial_locals[:selected_group]
+    new_locals[:skip_children]               = partial_locals.has_key?(:skip_children) ? partial_locals[:skip_children] : false
+    new_locals[:others]                      = partial_locals.has_key?(:others) ? partial_locals[:others] : false # TODO: still used?
+    new_locals[:subscription]                = partial_locals[:subscription]
+    new_locals[:content]                     = new_locals[:subscription_group_selected] ? (render :partial => partial_path, :locals => partial_locals) : ''
+    new_locals[:selected]                    = partial_locals[:selected_group] &&
+                                              (partial_locals[:subscription_group] == partial_locals[:selected_group]) &&
+                                              ((! new_locals[:others]) or (new_locals[:others] and ! current_user.subscribed_to?(new_locals[:standard_group])))
+    new_locals[:name]                        = partial_locals[:name] || new_locals[:subscription_group].name
+
+    render :partial => 'sidebars/groups/subscription_group', :locals => new_locals
+  end
 
   # the drop-down for the smart group's boolean mode
   def smart_group_boolean_mode_select(mode = 'all')
@@ -267,7 +299,7 @@ module ApplicationHelper
       roots = case @application_name
       when 'mail'      then current_user.mail_root_mailboxes
       when 'calendar'  then current_user.calendar_root_calendars
-      when 'people'    then []
+      when 'people'    then current_user.person_groups
       when 'files'     then current_user.files_root_folders
       when 'bookmarks' then []
       when 'lists'     then current_user.lists_root_folders
@@ -492,7 +524,7 @@ module ApplicationHelper
     end
   end
 
-  def javascript_jsar_init(items, view_kind)
+  def javascript_jsar_init(items, view_kind, selected_group = nil)
     return '' unless items
     out = []
     selected = ['create', 'show', 'edit'].include?(view_kind)
@@ -501,7 +533,7 @@ module ApplicationHelper
     tags = taggings.collect(&:tag).uniq
 
     items.each do |item|
-      out << item_to_jsar(item, selected)
+      out << item_to_jsar(item, selected, selected_group)
       item.permissions.each do |permission|
         out << permission_to_jsar(permission)
       end unless item.public?
@@ -519,7 +551,10 @@ module ApplicationHelper
     current_user.other_users.each do |user|
       out << user_to_jsar(user, user == current_user, user == selected_user)
     end
-
+    current_user.person_groups.each do |person_group|
+      out << group_to_jsar(person_group)
+    end
+    
     out.join("\n")
   end      
   
@@ -681,7 +716,7 @@ module ApplicationHelper
       next_type = params[:app] ? 'group' : 'app'
       params[:type] = 'org'
       browsable = Browsable.new(params, current_user)
-    when 'move', 'copy'  
+    when 'move', 'copy', 'add'
       next_type = 'view'
       if params[:view]
         params[:type] = 'view'
@@ -737,7 +772,7 @@ module ApplicationHelper
   def render_cancel_button(params={})
     case session[:browser_context]
     when 'subscribe' then joyent_button_to_function _('Cancel'), "JoyentPage.hideEverything();", {:style => 'width: 7em;'}
-    when 'move', 'copy' then joyent_button_to_function _('Cancel'), "Drawers.toggleBrowser('#{session[:browser_context].capitalize}');", {:style => 'width: 7em;'}
+    when 'move', 'copy', 'add' then joyent_button_to_function _('Cancel'), "Drawers.toggleBrowser('#{session[:browser_context].capitalize}');", {:style => 'width: 7em;'}
     end
   end
   
@@ -771,6 +806,16 @@ module ApplicationHelper
       else
         render_disabled_button('Copy')
       end
+    when 'add'
+      if on
+        page.replace_html 'browser_action_button', joyent_button_to_function( _(session[:browser_context].capitalize),
+                                                                  "browser.submitAction('toolbarAddForm', function() { return Toolbar.addSubmit('toolbarAddForm'); })",
+                                                      						{ :class => '', 
+                                                      						  :style => 'width:11em; display:block;',
+                                                      						  :title => 'Add selected items' } )
+      else
+        render_disabled_button('Add')
+      end
     end
   end
   
@@ -784,7 +829,7 @@ module ApplicationHelper
     if RAILS_ENV == 'production'
     	js << javascript_include_tag('all')
     else
-      ['prototype', 'builder', 'effects', 'dragdrop', 'controls', 'joyent_prototype', 'jsar', 'lightbox', 'application', 'ui_elements', 'sidebar', 'browser', 'toolbar', 'group', 'smart_group'].each do |j|
+      ['prototype', 'builder', 'effects', 'dragdrop', 'controls', 'joyent_prototype', 'jsar', 'lightbox', 'application', 'ui_elements', 'sidebar', 'browser', 'toolbar', 'group', 'smart_group', 'subscription_group'].each do |j|
         js << javascript_include_tag(j)
       end
     end
@@ -820,6 +865,12 @@ module ApplicationHelper
 	  css << stylesheet_link_tag('ie7')
   	css << '<![endif]-->'
   	css.join("\n")
+  end
+
+  
+  def standard_group_delete_confirm_message(ui_messages = nil)
+    return _("Do you want to delete this group and all its subgroups? The items will be deleted.") if ui_messages.nil? or ui_messages[:delete].blank?
+    return ui_messages[:delete]
   end
   
 end

@@ -11,9 +11,10 @@
 
 <% @page_javascript << "
   Event.observe(window, 'load', function(event){ Mail.setupCompose(); });
-  new Autocompleter.Local('message_to_complete', 'message_to_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
-  new Autocompleter.Local('message_cc_complete', 'message_cc_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
-  new Autocompleter.Local('message_bcc_complete', 'message_bcc_complete_div', completion_addresses, {fullSearch:true, partialChars:1});
+  new Ajax.Autocompleter('message_to_complete', 'message_to_complete_div', '#{mail_group_address_lookup_url}', {fullSearch:true, partialChars:1});
+  new Ajax.Autocompleter('message_cc_complete', 'message_cc_complete_div', '#{mail_group_address_lookup_url}', {fullSearch:true, partialChars:1});
+  new Ajax.Autocompleter('message_bcc_complete', 'message_bcc_complete_div', '#{mail_group_address_lookup_url}', {fullSearch:true, partialChars:1});
+  addresses.setGroupsIds(groups_ids);	
 " -%>
 <% cc_visible = ((! @message.blank? and ! @message.cc.blank?) or (current_user.get_option('Cc Visible') == 'true')) -%>
 <% bcc_visible = ((! @message.blank? and ! @message.bcc.blank?) or (current_user.get_option('Bcc Visible') == 'true')) -%>
@@ -190,4 +191,4 @@
 	<%= submit_tag _("Discard"),        :id => 'command_discard', :onclick => "$('command').value = 'discard';" %>
 </div>
 
-<script src="<%= mail_address_lookup_url %>" type="text/javascript"></script>
+<script src="<%= mail_groups_ids_url %>" type="text/javascript"></script>

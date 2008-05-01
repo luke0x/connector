@@ -1,0 +1,53 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<% form_remote_for(:user, :url => '/away/update') do |f| %>
+	<h5><%= _("Automated Reply Message") %></h5>
+
+  <fieldset style="margin-bottom:.25em;">
+  	<div class="auto_reply_switch">
+  		<label for="user_away_on">
+  			<%= check_box_tag 'user[away_on]', '1', @user.away_on? %>
+  			<%= _('Automatically reply to incoming messages with a custom away message') %>
+  		</label>
+  	</div>
+  	<table id="auto-reply">
+  		<tr>
+  			<td class="auto_reply_calendar">
+  				<h4><%= _('You will return') %>:</h4>
+  				<%# We need this id in order to properly setup the calendar %>
+  				<div id="jsCalendar"></div>
+  				<div class="hidden-date-select">
+  					<%= f.date_select :away_expires_at, :class => 'hidden-date-select' %>
+  				</div>
+  			</td>
+  			<td class="auto_reply_message">
+  				<h4><%= _('Reply Message') %>:</h4>
+  				<%= f.text_area :away_message %><br />
+  				<div class="tip"><%= _('A single message per day will be sent to each person who emails you') %></div>
+  			</td>
+  		</tr>
+  	</table>
+  </fieldset>
+		
+  <div class="drawerButtons">
+  	<%= submit_tag _("Save") %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+		// We need to setup the first valid date before to create the calendar object, since it's a class property
+		JSCalendar.firstValidDate = new Date();
+		// Adjust to the beginning of current date, or it may give us problems
+		JSCalendar.firstValidDate.setHours(0);
+		JSCalendar.firstValidDate.setMinutes(0);
+		JSCalendar.createCalendar('user_away_expires_at');
+</script>

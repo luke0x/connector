@@ -18,4 +18,8 @@
   <%  selected_user.application_smart_groups(@application_name).each do |smart_group| -%>
     <%= render_smart_group 'sidebars/groups/people/people_smart', { :smart_group => smart_group, :selected_group => @smart_group } %>
   <% end -%>
+  
+	<% selected_user.people_person_groups.each do |person_group| -%>
+	  <%= render_standard_group 'sidebars/groups/people/people_standard', { :standard_group => person_group, :url => people_list_url(:group => person_group.url_id), :selected_group => @person_group, :others => true } %>
+	<% end -%>  
 </ul>

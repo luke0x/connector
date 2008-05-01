@@ -2,7 +2,7 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 170) do
+ActiveRecord::Schema.define(:version => 177) do
 
   create_table "addresses", :force => true do |t|
     t.column "person_id",    :integer
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(:version => 170) do
   add_index "bookmarks", ["bookmark_folder_id"], :name => "bookmarks_bookmark_folder_id_index"
   add_index "bookmarks", ["organization_id"], :name => "bookmarks_organization_id_index"
   add_index "bookmarks", ["user_id"], :name => "bookmarks_user_id_index"
+
+  create_table "calendar_subscriptions", :force => true do |t|
+    t.column "name",             :string
+    t.column "user_id",          :integer
+    t.column "organization_id",  :integer
+    t.column "url",              :string
+    t.column "username",         :string
+    t.column "password",         :string
+    t.column "update_frequency", :string
+    t.column "created_at",       :datetime
+    t.column "updated_at",       :datetime
+  end
 
   create_table "calendars", :force => true do |t|
     t.column "user_id",         :integer
@@ -140,6 +152,7 @@ ActiveRecord::Schema.define(:version => 170) do
     t.column "by_day",                    :string
     t.column "next_fire",                 :datetime
     t.column "fired",                     :boolean
+    t.column "calendar_subscription_id",  :integer
   end
 
   add_index "events", ["organization_id"], :name => "events_organization_id_index"
@@ -383,6 +396,21 @@ ActiveRecord::Schema.define(:version => 170) do
   add_index "permissions", ["item_type"], :name => "permissions_item_type_index"
   add_index "permissions", ["user_id"], :name => "permissions_user_id_index"
 
+  create_table "person_group_memberships", :force => true do |t|
+    t.column "person_id",       :integer
+    t.column "person_group_id", :integer
+    t.column "created_at",      :datetime
+    t.column "updated_at",      :datetime
+  end
+
+  create_table "person_groups", :force => true do |t|
+    t.column "user_id",         :integer
+    t.column "organization_id", :integer
+    t.column "name",            :string
+    t.column "created_at",      :datetime
+    t.column "updated_at",      :datetime
+  end
+
   create_table "phone_numbers", :force => true do |t|
     t.column "person_id",           :integer
     t.column "preferred",           :boolean, :default => false
@@ -404,13 +432,6 @@ ActiveRecord::Schema.define(:version => 170) do
   end
 
   add_index "quotas", ["organization_id"], :name => "quotas_organization_id_index"
-
-  create_table "recurrence_descriptions", :force => true do |t|
-    t.column "name",                 :string
-    t.column "rule_text",            :string
-    t.column "seconds_to_increment", :integer
-    t.column "advance_arguments",    :string
-  end
 
   create_table "report_descriptions", :force => true do |t|
     t.column "name", :string
@@ -545,24 +566,28 @@ ActiveRecord::Schema.define(:version => 170) do
   add_index "user_requests", ["user_id"], :name => "user_requests_user_id_index"
 
   create_table "users", :force => true do |t|
-    t.column "person_id",            :integer
-    t.column "username",             :string
-    t.column "password",             :string
-    t.column "password_sha1",        :string
-    t.column "admin",                :boolean, :default => false, :null => false
-    t.column "organization_id",      :integer
-    t.column "documents_id",         :integer
-    t.column "full_name",            :string
-    t.column "identity_id",          :integer
-    t.column "guest",                :boolean, :default => false, :null => false
-    t.column "recovery_email",       :string,  :default => ""
-    t.column "recovery_token",       :string,  :default => ""
-    t.column "guest_rw",             :boolean, :default => false, :null => false
-    t.column "jajah_username",       :string
-    t.column "jajah_password",       :string
-    t.column "facebook_session_key", :string
-    t.column "facebook_uid",         :integer
-    t.column "forward_address",      :string,  :default => ""
+    t.column "person_id",                    :integer
+    t.column "username",                     :string
+    t.column "password",                     :string
+    t.column "password_sha1",                :string
+    t.column "admin",                        :boolean, :default => false, :null => false
+    t.column "organization_id",              :integer
+    t.column "documents_id",                 :integer
+    t.column "full_name",                    :string
+    t.column "identity_id",                  :integer
+    t.column "guest",                        :boolean, :default => false, :null => false
+    t.column "recovery_email",               :string,  :default => ""
+    t.column "recovery_token",               :string,  :default => ""
+    t.column "guest_rw",                     :boolean, :default => false, :null => false
+    t.column "jajah_username",               :string
+    t.column "jajah_password",               :string
+    t.column "forward_address",              :string,  :default => ""
+    t.column "facebook_session_key",         :string
+    t.column "facebook_uid",                 :integer
+    t.column "away_on",                      :boolean, :default => false
+    t.column "away_expires_at",              :date
+    t.column "away_message",                 :text
+    t.column "last_away_replied_message_id", :integer, :default => 0,     :null => false
   end
 
   add_index "users", ["identity_id"], :name => "index_users_on_identity_id"

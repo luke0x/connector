@@ -21,6 +21,8 @@ var Toolbar = {
     setLink('actionDeleteLink',  Item.selectedDeleteable());
     setLink('actionSpamLink',    Item.selectedMoveable());
     setLink('actionNotSpamLink', Item.selectedMoveable());
+    setLink('actionAddLink',     Item.selectedAddable());
+    setLink('actionRemoveLink',  Item.selectedRemovable());
 
 		if (Joyent.applicationName == 'lists') {
 			setLink('actionNewRowLink',    Item.selectedEditable());
@@ -72,8 +74,8 @@ var Toolbar = {
 
 		return false;
 	},
-
-	deleteItem: function(link, url) {
+  
+  deleteItem: function(link, url) {
 		if (! Item.selectedDeleteable()) {
 			alert(JoyentL10n["This item is not deleteable."]);
 			return false;
@@ -106,7 +108,29 @@ var Toolbar = {
 
 		return false;
 	},
-	
+
+	removeList: function(url) {
+	  if (Item.findSelected().length == 0) {
+	    alert(JoyentL10n["You must select something to remove."]);
+	    return false;
+	  }
+		if (! Item.selectedRemovable()) {
+			alert(JoyentL10n["Not all selected items are removable."]);
+			return false;
+		}
+    
+    if (! confirm(JoyentL10n['Do you want to remove the selected items?'])) return false;
+
+		removeIds = Item.findSelected().collect(function(item){
+			return item.arId;
+		}).join(',');
+		if (removeIds != '') {
+			new Ajax.Request(url + '?ids=' + removeIds, {asynchronous:true, evalScripts:true});
+		}
+
+		return false;
+	},
+  
 	contactsCallList: function(form) {
 	  $('toolbarCallIDs').value = Item.findSelected().collect(function(item){ return item.arId; }).join(",");
 	  return true;
@@ -177,6 +201,24 @@ var Toolbar = {
 		} else {
 			$('toolbarCopyIDs').value = Item.findSelected().collect(function(item){ return item.arId; }).join(",");
 		}
+   
+		preventFormResubmission(form);
+		return true;
+	},
+
+  addSubmit: function(form)	{
+		$('toolbarAddGroupID').value = browser.selected;
+
+		if (Item.findSelected().length == 0) {
+		  alert(JoyentL10n["You must select something to add it to another group."]);
+		  return false;
+		}
+		if ($('toolbarAddGroupID').value == "") {
+		  alert(JoyentL10n["You must select a group to add items to."]);
+		  return false;
+		}
+
+    $('toolbarAddIDs').value = Item.findSelected().collect(function(item){ return item.arId; }).join(",");
    
 		preventFormResubmission(form);
 		return true;

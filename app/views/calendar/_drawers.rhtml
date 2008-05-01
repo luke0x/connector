@@ -11,10 +11,10 @@
 
 <div id="Drawers">
   <% if @toolbar[:overlay_users] -%>
-    <div class="drawerContent" id="drawerCalendarOverlay" style="display: none;"><%= render :partial => 'overlay_users' %></div>
+    <div class="drawerContent" id="drawerCalendarOverlay" style="display: none;"><%= render :partial => 'calendar/overlay_users' %></div>
   <% end -%>
   <% if @toolbar[:import] -%>
-    <div class="drawerContent" id="drawerCalendarImport" style="display: none;"><%= render :partial => 'import' %></div>
+    <div class="drawerContent" id="drawerCalendarImport" style="display: none;"><%= render :partial => 'calendar/import' %></div>
   <% end -%>
   <% if @toolbar[:copy] -%>
     <div class="drawerContent" id="drawerCopy" style="display: none;"><%= render :partial => 'toolbars/copy', :locals => {:groups => current_user.calendars.select{|c| c.parent.blank?}, :selected => @calendar} %></div>

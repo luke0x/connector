@@ -55,4 +55,8 @@
 	<% if @toolbar[:tools] -%>
     <li class="actionTools"><%= link_to_function _('Tools'), "return Drawers.toggle('MailTools');", {:id => 'actionMailToolsLink'} %></li>
   <% end -%>
+	<% if @toolbar[:away] -%>
+    <li class="actionAway"><a href="#" id="actionAwayLink"><%= _('Away') %></a></li>
+		<%= javascript_tag "Event.observe($('actionAwayLink'), 'click', awayEvent.listenerLoad);" %>
+  <% end -%>
 </ul>

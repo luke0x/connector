@@ -31,6 +31,15 @@
 	<% if @toolbar[:delete] -%>
     <li class="actionDelete"><%= render :partial => 'toolbars/delete' %></li>
   <% end -%>
+  <% if @toolbar[:add] -%>
+    <li class="actionImport"><%= link_to_function _('Add'), "return Drawers.toggleBrowser('Add');", {:id => 'actionAddLink'} %></li>
+  <% end -%>
+  <% if @toolbar[:manage] -%>
+    <li class="actionImport"><%= link_to_function _('Manage'), "return Drawers.toggle('Manage');", {:id => 'actionManageLink'} %></li>
+  <% end -%>
+  <% if @toolbar[:remove] -%>
+    <li class="actionDelete"><%= render :partial => 'toolbars/remove' %></li>
+  <% end -%>
   <% if @toolbar[:import] -%>
   	<li class="actionImport"><%= link_to_function _('Import vCards'), "return Drawers.toggle('PeopleImport');", {:id => 'actionPeopleImportLink'} %></li>
   <% end -%>

@@ -1,0 +1,17 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<hr />
+<%= link_to '<div class="buttonStandardLeft" style="width: 13em;"><div class="buttonStandardRight"><div class="buttonStandardBG">'+'<span  id="refreshICSSubscriptionLoading" class="noIcon ">'+_('Refresh')+' ' + _('Calendar')  + '</span></div></div></div>', calendar_subscriptions_refresh_route_url(:calendar_subscription_id => group.id), :onclick => "SubscriptionGroup.refresh(this.href); return false;" %>
+
+<%= link_to '<div class="buttonStandardLeft" style="width:13em;"><div class="buttonStandardRight"><div class="buttonStandardBG"><span class="noIcon">'+_('Delete')+' ' + _('Calendar') + '</span></div></div></div>',
+            calendar_subscription_path(:id => group.id),
+            { :confirm => _("Are you sure you would like to delete this group?"), :class => '', :style => '', :method => :delete } %>

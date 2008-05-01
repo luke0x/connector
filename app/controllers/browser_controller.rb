@@ -28,7 +28,7 @@ class BrowserController < AuthenticatedController
   def list
     session[:browser_context] = params[:context] #expects context param
     case session[:browser_context]
-    when 'move', 'copy'
+    when 'move', 'copy', 'add'
       params[:type] == 'group'
       params[:user_id] == current_user
     end

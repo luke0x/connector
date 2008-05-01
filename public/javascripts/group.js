@@ -179,6 +179,8 @@ var AddGroupWidget = {
 			SmartGroup.newShow()
 		} else if (mode == 'standard') {
 			StandardGroup.newShow()
+		} else if (mode == 'subscription') {
+			SubscriptionGroup.newShow()
 		}
 		return false;
 	}

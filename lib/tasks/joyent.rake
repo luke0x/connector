@@ -52,5 +52,14 @@ namespace 'joyent' do
     sh %{ cat #{js_assets} > public/javascripts/all.js }
     puts "\nGenerated all.js from common javascripts\n\n"
   end
+  
+  desc "Refresh the JOYENT_MAILDIR/joyent.joyent.com directory contents"
+  task :refresh_mail_dir do
+    require "#{RAILS_ROOT}/override_config"
+    dests = [ENV['JOYENT_MAILDIR']]
+    fixture_source = File.join(RAILS_ROOT, "test", "fixtures", "mail_root")
+    FileUtils.rm_rf(File.join(dests, "joyent.joyent.com"))
+    `svn export #{fixture_source} #{dests} --force`
+  end
 end
 Rake::Task[:test].enhance(['joyent:refresh_files'])

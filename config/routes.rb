@@ -82,47 +82,52 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.with_options :controller => 'mail' do |m|
-    m.mail_compose             'mail/compose',                   :action => 'compose'
-    m.mail_unavailable         'mail/unavailable',               :action => 'unavailable'
-    m.mail_notifications       'mail/notifications',             :action => 'notifications'
-    m.mail_message_move        'mail/move',                      :action => 'move'
-    m.mail_message_copy        'mail/copy',                      :action => 'copy'
-    m.mail_mark_spam           'mail/mark_spam',                 :action => 'mark_spam'
-    m.mail_mark_not_spam       'mail/mark_not_spam',             :action => 'mark_not_spam'
-    m.mail_aliases             'mail/aliases',                   :action => 'aliases'
-    m.mail_send_compose        'mail/send',                      :action => 'send_compose'
-    m.mail_empty_spam          'mail/empty_spam',                :action => 'empty_spam'
-    m.mail_empty_trash         'mail/empty_trash',               :action => 'empty_trash'
-    m.mail_address_lookup      'mail/addresses_for_lookup',      :action => 'addresses_for_lookup'
-    m.mail_inbox_unread_count  'mail/inbox_unread_count',        :action => 'inbox_unread_count'
-    m.mail_set_sort_order      'mail/set_sort_order',            :action => 'set_sort_order'       
-    m.mail_quick_contact       'mail/quick_contact',             :action => 'quick_contact'
-    m.mail_rename_mailbox      'mail/rename_group/:id',          :action => 'rename_group',        :requirements => {:id => /\d+/} # hax
-    m.mail_delete_mailbox      'mail/reparent_group/:id',        :action => 'reparent_group',      :requirements => {:id => /\d+/} # hax
-    m.mail_delete_mailbox      'mail/delete_group/:id',          :action => 'delete_group',        :requirements => {:id => /\d+/} # hax
-    m.mail_children_groups     'mail/children_groups/:id',       :action => 'children_groups',     :requirements => {:id => /\d+/} # hax
-    m.mail_others_groups       'mail/others_groups',             :action => 'others_groups'
-    m.mail_send_reply_to       'mail/send/reply/:id',            :action => 'send_reply_to'
-    m.mail_send_forward        'mail/send/forward/:id',          :action => 'send_forward'
-    m.mail_send_draft          'mail/send/draft/:id',            :action => 'send_draft'
-    m.mail_show_body           'mail/show_body/:id',             :action => 'show_body'
-    m.mail_create_mailbox      'mail/create_mailbox',            :action => 'create_mailbox'
-    m.mail_attachment          'mail/attachment/:message/:id',   :action => 'attachment'
-    m.mail_inline              'mail/inline/:message/:id',       :action => 'inline'
-    m.mail_message_delete      'mail/delete',                    :action => 'delete'
-    m.mail_mailbox             'mail/mailbox/:id',               :action => 'list',                :requirements => {:id => /\d+/}
-    m.mail_special_list        'mail/mailbox/:id',               :action => 'special_list'
-    m.mail_unread_messages     'mail/unread_messages/:id',       :action => 'unread_messages'
-    m.mail_smart_list          'mail/smart/:smart_group_id',     :action => 'smart_list'
-    m.mail_reply               'mail/reply/:id',                 :action => 'reply_to'
-    m.mail_forward             'mail/forward/:id',               :action => 'forward'
-    m.mail_message_show        'mail/:mailbox/:id',              :action => 'show',                :requirements => {:mailbox => /\d+/}
-    m.mail_smart_show          'mail/:smart_group_id/:id',       :action => 'smart_show',          :requirements => {:smart_group_id => /s\d+/}
-    m.mail_edit_draft          'mail/drafts/:id',                :action => 'edit_draft'
-    m.mail_special_show        'mail/:mailbox/:id',              :action => 'special_show'
-    m.message_flag             'message/:id/flag',               :action => 'flag',                :requirements => {:id => /\d+/}
-    m.message_unflag           'message/:id/unflag',             :action => 'unflag',              :requirements => {:id => /\d+/}
-    m.message_report_issue     'message/issue/:id',              :action => 'report_issue'
+    m.mail_compose                'mail/compose',                     :action => 'compose'
+    m.mail_unavailable            'mail/unavailable',                 :action => 'unavailable'
+    m.mail_notifications          'mail/notifications',               :action => 'notifications'
+    m.mail_message_move           'mail/move',                        :action => 'move'
+    m.mail_message_copy           'mail/copy',                        :action => 'copy'
+    m.mail_mark_spam              'mail/mark_spam',                   :action => 'mark_spam'
+    m.mail_mark_not_spam          'mail/mark_not_spam',               :action => 'mark_not_spam'
+    m.mail_aliases                'mail/aliases',                     :action => 'aliases'
+    m.mail_send_compose           'mail/send',                        :action => 'send_compose'
+    m.mail_empty_spam             'mail/empty_spam',                  :action => 'empty_spam'
+    m.mail_empty_trash            'mail/empty_trash',                 :action => 'empty_trash'
+    m.mail_groups_ids             'mail/groups_ids',                  :action => 'groups_ids'
+    m.mail_group_address_lookup   'mail/groups_addresses_for_lookup', :action => 'groups_addresses_for_lookup'
+    m.mail_add_group_emails_ajax  'mail/add_group_emails_ajax',       :action => 'add_group_emails_ajax'
+    m.mail_inbox_unread_count     'mail/inbox_unread_count',          :action => 'inbox_unread_count'
+    m.mail_set_sort_order         'mail/set_sort_order',              :action => 'set_sort_order'       
+    m.mail_quick_contact          'mail/quick_contact',               :action => 'quick_contact'
+    m.mail_rename_mailbox         'mail/rename_group/:id',            :action => 'rename_group',        :requirements => {:id => /\d+/} # hax
+    m.mail_delete_mailbox         'mail/reparent_group/:id',          :action => 'reparent_group',      :requirements => {:id => /\d+/} # hax
+    m.mail_delete_mailbox         'mail/delete_group/:id',            :action => 'delete_group',        :requirements => {:id => /\d+/} # hax
+    m.mail_children_groups        'mail/children_groups/:id',         :action => 'children_groups',     :requirements => {:id => /\d+/} # hax
+    m.mail_others_groups          'mail/others_groups',               :action => 'others_groups'
+    m.mail_send_reply_to          'mail/send/reply/:id',              :action => 'send_reply_to'
+    m.mail_send_forward           'mail/send/forward/:id',            :action => 'send_forward'
+    m.mail_send_draft             'mail/send/draft/:id',              :action => 'send_draft'
+    m.mail_show_body              'mail/show_body/:id',               :action => 'show_body'
+    m.mail_create_mailbox         'mail/create_mailbox',              :action => 'create_mailbox'
+    m.mail_attachment             'mail/attachment/:message/:id',     :action => 'attachment'
+    m.mail_inline                 'mail/inline/:message/:id',         :action => 'inline'
+    m.mail_message_delete         'mail/delete',                      :action => 'delete'
+    m.mail_mailbox                'mail/mailbox/:id',                 :action => 'list',                :requirements => {:id => /\d+/}
+    m.mail_special_list           'mail/mailbox/:id',                 :action => 'special_list'
+    m.mail_unread_messages        'mail/unread_messages/:id',         :action => 'unread_messages'
+    m.mail_smart_list             'mail/smart/:smart_group_id',       :action => 'smart_list'
+    m.mail_reply                  'mail/reply/:id',                   :action => 'reply_to'
+    m.mail_forward                'mail/forward/:id',                 :action => 'forward'
+    m.mail_message_show           'mail/:mailbox/:id',                :action => 'show',                :requirements => {:mailbox => /\d+/}
+    m.mail_smart_show             'mail/:smart_group_id/:id',         :action => 'smart_show',          :requirements => {:smart_group_id => /s\d+/}
+    m.mail_edit_draft             'mail/drafts/:id',                  :action => 'edit_draft'
+    m.mail_special_show           'mail/:mailbox/:id',                :action => 'special_show'
+    m.message_flag                'message/:id/flag',                 :action => 'flag',                :requirements => {:id => /\d+/}
+    m.message_unflag              'message/:id/unflag',               :action => 'unflag',              :requirements => {:id => /\d+/}
+    m.message_report_issue        'message/issue/:id',                :action => 'report_issue'
+    # away messages
+    m.mail_edit_away              'away/edit',                        :action => 'away_message_edit'
+    m.mail_update_away            'away/update',                      :action => 'away_message_update'
   end
 
   map.with_options :controller => 'lists' do |m|
@@ -172,8 +177,7 @@ ActionController::Routing::Routes.draw do |map|
     m.calendar_create_on_calendar   'calendar/create/:calendar_id',         :action => 'create',         :requirements => {:calendar_id => /\d+/}
     m.calendar_create               'calendar/create',                      :action => 'create'
     m.calendar_import               'calendar/import',                      :action => 'import'
-    m.calendar_add_overlay          'calendar/add_overlay/:user_id',        :action => 'add_overlay',    :requirements => {:user_id => /\d+/}
-    m.calendar_remove_overlay       'calendar/remove_overlay/:user_id',     :action => 'remove_overlay', :requirements => {:user_id => /\d+/}
+    m.calendar_set_overlay          'calendar/set_overlay',                 :action => 'set_overlay'
     m.calendar_create_calendar      'calendar/create_calendar',             :action => 'create_calendar'
     m.calendar_event_delete         'calendar/events/delete',               :action => 'delete'
     m.calendar_event_move           'calendar/events/move',                 :action => 'move'
@@ -204,12 +208,24 @@ ActionController::Routing::Routes.draw do |map|
     m.calendar_smart_show           'calendar/:smart_group_id/:id',         :action => 'smart_show',   :requirements => {:smart_group_id => /s\d+/}
     m.calendar_smart_edit           'calendar/:smart_group_id/:id/edit',    :action => 'smart_edit',   :requirements => {:smart_group_id => /s\d+/}
   end
+  
+  map.with_options :controller => 'calendar_subscriptions' do |m|
+    m.calendar_subscriptions_list_route 'calendar_subscriptions/:calendar_subscription_id/list', :action => 'list', :requirements => {:calendar_subscription_id => /\d+/}
+    m.calendar_subscriptions_month_route 'calendar_subscriptions/:calendar_subscription_id/month', :action => 'month', :requirements => {:calendar_subscription_id => /\d+/}
+    m.calendar_subscriptions_refresh_route 'calendar_subscriptions/:calendar_subscription_id/refresh', :action => 'refresh', :requirements => {:calendar_subscription_id => /\d+/}
+    m.calendar_subscriptions_show_event_route 'calendar_subscriptions/:id/:event_id', :action => 'show_event', :requirements => {:event_id => /\d+/}
+  end
+  
+  map.resources :calendar_subscriptions
 
   map.with_options :controller => 'people' do |m|
     m.people_copy            'people/copy',                :action => 'copy'
     m.people_move            'people/move',                :action => 'move'
     m.people_delete          'people/delete',              :action => 'delete'
     m.people_delete_confirm  'people/delete_confirm',      :action => 'delete_confirm'
+    m.people_add             'people/add',                 :action => 'add'
+    m.people_remove          'people/remove/:group_id',    :action => 'remove', :requirements => {:group_id => /\d+/}
+    m.people_manage          'people/manage/:id',          :action => 'manage', :requirements => {:id => /\d+/}
     m.people_import          'people/import',              :action => 'import'
     m.people_call            'people/call',                :action => 'call'
     m.people_call_list       'people/call_list',           :action => 'call_list'
@@ -222,8 +238,13 @@ ActionController::Routing::Routes.draw do |map|
                                                                                                         
     m.current_time_report   'people/current_time/:id', :action => 'current_time'
     
-    m.people_list           'people/:group',         :action => 'list'
-    m.people_vcards         'people/:group/vcards',  :action => 'vcards'
+    m.people_list           'people/:group',             :action => 'list'
+    m.people_vcards         'people/:group/vcards',      :action => 'vcards'
+    m.people_group_vcards   'people/groups/:id/vcards',  :action => 'person_group_vcards'
+    
+    m.people_create_group   'person/create_group',   :action => 'create_group'
+    m.people_rename_group   'people/rename_group',   :action => 'rename_group'
+    m.people_reparent_group 'people/reparent_group', :action => 'reparent_group'
 
     m.person_create         'person/create',         :action => 'create'
     m.person_show           'person/:id',            :action => 'show',  :requirements => {:id => /\d+/}
@@ -231,6 +252,8 @@ ActionController::Routing::Routes.draw do |map|
     m.person_icon           'person/:id/icon',       :action => 'icon',  :requirements => {:id => /\d+/}
     m.person_vcard          'person/:id/vcard',      :action => 'vcard', :requirements => {:id => /\d+/}
   end
+  
+  map.resources :person_groups
 
   map.with_options :controller => 'files' do |m|
     m.files_move                       'files/move',                                            :action => 'move'
@@ -331,8 +354,12 @@ ActionController::Routing::Routes.draw do |map|
     m.calendar_all_rss              'syndicate/calendar/all/rss',               :action => 'all_calendar_rss'
     m.calendar_notifications_rss    'syndicate/calendar/notifications/rss',     :action => 'notifications_calendar_rss'
     m.calendar_invitations_rss      'syndicate/calendar/invitations/rss',       :action => 'invitations_calendar_rss'
+    
+    m.calendar_subscription_rss     'syndicate/calendar_subscription/:calendar_subscription_id/rss',      :action => 'subscription_calendar_rss',     :requirements => {:calendar_subscription_id => /\d+/}
+    m.calendar_subscription_ics     'syndicate/calendar_subscription/:calendar_subscription_id/ics',      :action => 'subscription_calendar_ics',     :requirements => {:calendar_subscription_id => /\d+/}
                                                                              
     m.people_rss                    'syndicate/people/:group/rss',              :action => 'people_rss'
+    m.people_group_rss              'syndicate/people/groups/:id/rss',          :action => 'people_person_group_rss'
 
     m.files_rss                     'syndicate/files/:folder_id/rss',           :action => 'files_standard_rss',        :requirements => {:folder_id => /\d+/}  
     m.files_smart_rss               'syndicate/files/:smart_group_id/rss',      :action => 'files_smart_rss',           :requirements => {:smart_group_id => /s\d+/} 

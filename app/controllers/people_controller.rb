@@ -12,7 +12,7 @@ $Id$
 =end #(end)
 
 class PeopleController < AuthenticatedController
-  before_filter :load_sort_order, :only => [:list]
+  before_filter :load_sort_order, :only => [:list, :group_list]
 
   def current_group_id
     if    @smart_group  then @smart_group.url_id
@@ -20,6 +20,14 @@ class PeopleController < AuthenticatedController
     elsif @group_name   then @group_name
     else  nil
     end
+  end
+  
+  def self.group_name
+    'Group'
+  end
+
+  def item_class_name
+    'Person'
   end
 
   def index
@@ -80,6 +88,69 @@ class PeopleController < AuthenticatedController
     redirect_to people_home_url
   end
 
+  # add people to a person group
+  def add
+    ids = params[:ids].split(',')
+    person_group = PersonGroup.find(params[:new_group_id], :scope => :create_on)
+    return unless ids
+    return unless person_group
+
+    ids.each do |id|
+      if person = current_user.all_people.detect {|p| p.id.to_s == id}
+        unless person_group.people.detect {|p| p == person }
+          person_group.people << person  
+        end
+      end
+    end
+  ensure
+    redirect_back_or_home and return
+  end
+  
+  # remove people from a person group
+  # ajax call
+  def remove
+    ids = params[:ids].split(',')
+    person_group = PersonGroup.find(params[:group_id], :scope => :read)
+    return unless ids
+    return unless person_group
+    
+    removed_people = []
+    ids.each do |id|
+      begin
+        person = person_group.people.find(id, :scope => :delete)
+        person_group.people.delete(person)
+        removed_people << person
+      rescue ActiveRecord::RecordNotFound
+      end
+    end
+    
+    respond_to do |format|
+      format.html { redirect_back_or_home }
+      format.js   do
+        render :update do |page|
+          removed_people.each do |person|
+            page << "Item.removeFromList('#{person.dom_id}');"
+          end
+          page << 'JoyentPage.refresh()';
+        end
+      end
+    end      
+  end
+
+  def manage
+    person = Person.find(params[:id], :scope => :read)
+    person.person_group_memberships.clear
+    if params[:manage_ids]
+      PersonGroup.find(params[:manage_ids], :scope => :read).each do |pg|
+        person.person_groups << pg
+      end
+    end
+    redirect_to(person_show_url(person))
+  rescue ActiveRecord::RecordNotFound
+    redirect_to(people_home_url)
+  end
+  
+  
   def delete
     if ! request.post? or params[:ids].blank?
       redirect_back_or_home and return
@@ -116,17 +187,20 @@ class PeopleController < AuthenticatedController
 
   def list
     @view_kind = 'list'
+
     if params[:group] =~ /^\d+$/
       contacts_list
     elsif params[:group] == 'users'
       users_list
+    elsif params[:group] =~ /^pg(\d+)$/ # HAX
+      person_group_list
     elsif params[:group] =~ /s(\d+)/
       smart_list
     else
       redirect_to '/'
     end
   end
-
+  
   def show
     @view_kind = 'show'
     @person = Person.find(params[:id], :scope => :read)
@@ -232,6 +306,19 @@ class PeopleController < AuthenticatedController
   end
   helper_method :item_delete_url
 
+  # for the add toolbar button
+  def item_add_url
+    people_add_url
+  end
+  helper_method :item_add_url
+  
+  # for the remove toolbar button
+  def item_remove_url(group)
+    people_remove_url(group.id)
+  end
+  helper_method :item_remove_url
+  
+  
   def item_class_name
     'Person'
   end
@@ -410,6 +497,48 @@ class PeopleController < AuthenticatedController
       page['jajah_status'].replace_html  flash[:status]
     end
   end
+
+  def create_group
+    @person_group = current_user.person_groups.build(:name => params[:group_name], :organization_id => current_user.organization_id)
+
+    if @person_group.save
+      flash[:message] = _('Group successfully created.')
+    else
+      flash[:error] = _("An error occurred creating the group.")
+    end
+  ensure
+    redirect_back_or_home
+  end
+  
+  def rename_group
+    @person_group = current_user.person_groups.find(params[:id])
+
+    if @person_group.rename!(params[:name])
+      flash[:message] = _('Group successfully renamed.')
+    else
+      flash[:error] = _("An error occurred renaming the group.")
+    end
+  ensure
+    redirect_back_or_home    
+  end
+  
+  def delete_group
+    @person_group = current_user.person_groups.find(params[:id])
+    @person_group.destroy
+
+    redirect_to people_home_url
+  end
+  
+  def person_group_vcards
+    @person_group      = PersonGroup.find(params[:id], :scope => :read)
+    self.selected_user = @person_group.owner
+    @people            = @person_group.people.find(:all, :scope => :read)
+    vcards             = VcardConverter.create_vcards_from_people(@people)
+
+    send_data vcards, :filename => "#{@person_group.name.gsub(/\s/, '_')}.vcf"
+  rescue
+    render :nothing => true
+  end
   
   protected
 
@@ -433,6 +562,7 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy_from?(@contact_list)
       @toolbar[:call]   = current_user.can_copy_from?(@contact_list)
       @toolbar[:delete] = current_user.can_delete_from?(@contact_list)
+      @toolbar[:add]    = true
     
       respond_to do |wants|
         wants.html { render :action  => 'list'   }
@@ -458,10 +588,35 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = true
       @toolbar[:call]   = true
       @toolbar[:delete] = current_user.admin?
+      @toolbar[:add]    = true
 
       respond_to do |wants|
         wants.html { render :action  => 'list'   }
         wants.js   { render :partial => 'reports/people' }
+      end
+    end
+    
+    def person_group_list
+      @person_group      = PersonGroup.find(PersonGroup.param_to_id(params[:group]), :scope => :read)
+      self.selected_user = @person_group.owner
+      @group_name        = @person_group.name
+
+      @paginator = Paginator.new self, @person_group.people.size, JoyentConfig.page_limit, params[:page]
+      @people    = @person_group.people.find(:all,
+                     :order  => "LOWER(#{@sort_field}) #{@sort_order}",
+                     :include    => [:user, :permissions, :notifications, :taggings],
+                     :limit  => @paginator.items_per_page,
+                     :offset => @paginator.current.offset,
+                     :scope => :read)
+
+      @toolbar[:copy]   = current_user.can_copy_from?(@person_group)
+      @toolbar[:call]   = current_user.can_copy_from?(@person_group)
+      @toolbar[:remove] = current_user.can_delete_from?(@person_group)
+      @toolbar[:add]    = current_user.can_create_on?(@person_group)
+      
+      respond_to do |format|
+        format.html { render :action => 'list' }
+        format.js   { render :partial => 'reports/people' }
       end
     end
 
@@ -476,9 +631,10 @@ class PeopleController < AuthenticatedController
       # It appears that the pagination doesn't do much, so lets page now
       @people      = @people[@paginator.current.offset, @paginator.items_per_page]
 
-      @toolbar[:copy]   = current_user.can_copy_from?(@smart_group) 
-      @toolbar[:call]   = current_user.can_copy_from?(@smart_group)       
-      @toolbar[:delete] = current_user.can_delete_from?(@smart_group) 
+      @toolbar[:copy]   = current_user.can_copy_from?(@smart_group)
+      @toolbar[:call]   = current_user.can_copy_from?(@smart_group)
+      @toolbar[:delete] = current_user.can_delete_from?(@smart_group)
+      @toolbar[:add]    = true
 
       respond_to do |wants|
         wants.html { render :action  => 'list'   }
@@ -487,7 +643,7 @@ class PeopleController < AuthenticatedController
     rescue ActiveRecord::RecordNotFound
       redirect_to people_home_url
     end
-
+    
     # show
   
     def contacts_show
@@ -499,6 +655,8 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person)
       @toolbar[:call]   = current_user.can_copy?(@person)      
       @toolbar[:delete] = current_user.can_delete?(@person)
+      
+      setup_person_groups_manage
 
       respond_to do |wants|
         wants.html { render :action => 'show' }
@@ -518,7 +676,9 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person) 
       @toolbar[:call]   = current_user.can_copy?(@person)       
       @toolbar[:delete] = current_user.can_delete?(@person)
-                                               
+
+      setup_person_groups_manage
+      
       respond_to do |wants|
         wants.html { render :action => 'show' }
         wants.js   { render :update do |page|
@@ -538,6 +698,7 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person)
       @toolbar[:call]   = current_user.can_copy?(@person)      
       @toolbar[:delete] = current_user.can_delete?(@person)
+      @toolbar[:add]    = true
 
       respond_to do |wants|
         wants.html { render :action => 'show' }
@@ -561,7 +722,8 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person) 
       @toolbar[:call]   = current_user.can_copy?(@person)       
       @toolbar[:delete] = current_user.can_delete?(@person)
-                      
+      @toolbar[:add]    = true
+
       if request.post?
         @failed = @person.save_from_params(params[:person])
         redirect_to person_show_url(:id => @person.id)
@@ -579,7 +741,8 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person) 
       @toolbar[:call]   = current_user.can_copy?(@person)       
       @toolbar[:delete] = current_user.can_delete?(@person)
-    
+      @toolbar[:add]    = true
+
       if ! current_user.can_edit?(@person)
         redirect_to people_list_url(:group => 'users')
         return true
@@ -637,7 +800,8 @@ class PeopleController < AuthenticatedController
     end
 
   private
-
+  
+    # overwrites method on AuthenticatedController
     def setup_toolbar
       super
       @toolbar[:quota]  = false
@@ -647,9 +811,17 @@ class PeopleController < AuthenticatedController
       @toolbar[:delete] = false
       @toolbar[:import] = true     
       @toolbar[:call]   = true
+      @toolbar[:add]    = false
+      @toolbar[:remove] = false
+      @toolbar[:manage] = false
       true
-    end            
+    end         
 
+    def setup_person_groups_manage
+      @available_person_groups = PersonGroup.find(:all, :order => 'person_groups.name ASC', :scope => :read)
+      @toolbar[:manage] = true
+    end
+    
     def valid_sort_fields
       ['person_type', 'first_name', 'last_name', 'company_name', 'primary_email_cache', 'primary_phone_cache']
     end

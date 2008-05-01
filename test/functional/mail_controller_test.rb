@@ -545,11 +545,40 @@ class MailControllerTest < Test::Unit::TestCase
     assert_response :success
   end
   
-  def test_addresses_for_lookup
+  def test_groups_ids
     login_person(:ian)
-    get :addresses_for_lookup
+    get :groups_ids
     assert_response :success
-    assert assigns(:addresses)
+    assert assigns(:groups_ids)
+  end
+  
+  def test_groups_addresses_for_lookup
+    login_person(:ian)
+    #contact
+    xhr :post, :groups_addresses_for_lookup, {:message => {:to_field => people(:ian).first_name} }
+    assert_response :success
+    assert assigns(:needle)
+    assert assigns(:groups_contacts)
+    
+    #person group
+    xhr :post, :groups_addresses_for_lookup, {:message => {:cc_field => person_groups(:friends).name[2..4]} }
+    assert_response :success
+    assert assigns(:needle)
+    assert assigns(:groups_contacts)
+    
+    #smart group
+    xhr :post, :groups_addresses_for_lookup, {:message => {:bcc_field => smart_groups(:ian_people_body_foo).name[2..4]} }
+    assert_response :success
+    assert assigns(:needle)
+    assert assigns(:groups_contacts)
+  end  
+  
+  def test_add_group_emails_ajax
+    login_person(:ian)
+    xhr :get, :add_group_emails_ajax, :group_id => "pg#{person_groups(:friends).id}"
+    assert_response :success
+    xhr :get, :add_group_emails_ajax, :group_id => "s#{smart_groups(:ian_people_body_foo).id}"
+    assert_response :success        
   end
 
   # def test_inbox_unread_count
@@ -668,6 +697,62 @@ class MailControllerTest < Test::Unit::TestCase
     login_person(:ian)
     get :list, :id => mailboxes(:ian_inbox).id
     assert_nil @response.body =~ /ago ago/
+  end
+  
+  def test_away_message_edit
+    # success through ajax
+    login_person(:ian)
+    # success through ajax
+    xhr :get, :away_message_edit
+    assert assigns(:user)                    
+    assert_response :success
+    # redirect otherwise
+    get :away_message_edit
+    assert_response :redirect
+    assert_redirected_to mail_home_url
+  end
+  
+  def test_away_message_update
+    login_person(:ian)
+    xhr :post, :away_message_update, :user => {:away_expires_at => 5.days.from_now.to_date, :away_message => 'Sorry, but I am on vacation', :away_on => '1'}
+    assert assigns(:user)
+    assert_response :success
+    assert_match(/active/, @response.body)
+    # it should fails when not xhr
+    post :away_message_update, :user => {:away_expires_at => 5.days.from_now.to_date, :away_message => 'Sorry, but I am on vacation', :away_on => '1'}
+    assert_response :redirect
+    assert_redirected_to mail_home_url
+  end
+  
+  def test_away_update_should_fails_for_days_in_the_past
+    login_person(:ian)
+    # it should fails for expiration days before than today
+    xhr :post, :away_message_update, :user => {:away_expires_at => 1.day.ago.to_date, :away_message => 'Sorry, but I am on vacation', :away_on => '1'}
+    assert assigns(:user)
+    assert_response :success
+    assert_no_match(/active/, @response.body)
+    assert_match(/alert/, @response.body)
+  end
+  
+  def test_should_render_away_info_div_for_inbox
+    flexstub(JoyentMaildir::Base).should_receive(:connection).once.returns {
+		  flexmock('mailbox') {|m| m.should_receive(:mailbox_sync).with(mailboxes(:ian_inbox).id).once}
+		}
+
+    login_person(:ian)
+    get :special_list, :id => 'inbox'
+    
+    assert_response :success
+    assert_select "#awayInfo"
+    # And should not be rendered for any other mailbox
+    flexstub(JoyentMaildir::Base).should_receive(:connection).once.returns {
+		  flexmock('mailbox') {|m| m.should_receive(:mailbox_sync).with(mailboxes(:ian_inbox_concerts).id).once}
+		}
+		
+    get :list, :id => mailboxes(:ian_inbox_concerts).id
+    assert_response :success
+    assert_select "#awayInfo", false
+    
   end
   
 end

@@ -12,7 +12,7 @@
 <%= render(:partial => "overlay_color_key", :locals => { :overlayed_users => @overlayed_users }) %>
 <%= render_month_header(@group_name, @month_view) %>
 
-<table id="calendarMonthView" cellspacing="0" style="width:100%; border:none; border-collapse: collapse;" class="tableList">
+<table id="calendarMonthView" cellspacing="0" style="" class="tableList">
 	<caption><%= @month_view.name %> <%= @month_view.year %></caption>
 	<colgroup>
 		<col width="15%" />
@@ -38,8 +38,7 @@
 		<% @month_view.each_week do |week| -%>
 			<tr>
 				<% week.each_day do |day| -%>
-					<% td_class = day.today? ? "monthToday" : "" -%>
-					<td class="<%= td_class %>">
+					<td class="<%= month_view_day_view_class(day) %>">
 						<div class="calMonthDayHeader">
 							<% day_date_formatted = day.date.strftime('%Y-%m-%d') %>
 							<% create_url = current_user.can_create_on?(@calendar) ? calendar_create_on_calendar_url(:calendar_id => @calendar, :date => day_date_formatted) : calendar_create_url(:date => day_date_formatted) -%>

@@ -183,13 +183,19 @@ class AuthenticatedController < ApplicationController
       klass = item_type(dom_id[0..-2].collect(&:capitalize).join)
       item_id = dom_id[-1]
     
-      klass.find(item_id, :scope => :read)
+      item = klass.find(item_id, :scope => :read)
+      # skip calendar subscription events
+      if item.is_a?(Event) && !item.calendar_subscription.nil?
+        nil
+      else
+        item
+      end
     rescue
       nil
     end
 
     def group_type(type_name)
-      valid_types = ['Mailbox', 'Calendar', 'ContactList', 'Folder', 'BookmarkFolder', 'ListFolder']
+      valid_types = ['Mailbox', 'Calendar', 'ContactList', 'Folder', 'BookmarkFolder', 'ListFolder', 'CalendarSubscription', 'PersonGroup']
       raise "Unknown Group Type '#{type_name}'" unless valid_types.include?(type_name)
 
       Object.const_get(type_name)

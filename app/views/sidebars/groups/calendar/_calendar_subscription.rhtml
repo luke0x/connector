@@ -1,0 +1,4 @@
+<%= add_to_workspace(:calendar_subscription, subscription_group) %>
+<hr />
+<%= link_to "ICS", calendar_subscription_ics_url(:calendar_subscription_id => subscription_group.id), { :class => 'orangeBadge icsIcon', :style => 'margin-bottom:3px;', :title=> _('Subscribe to this ICS calendar')  } %>
+<%= link_to "RSS", calendar_subscription_rss_url(:calendar_subscription_id => subscription_group.id), { :class => 'orangeBadge rss', :title=> _('Subscribe to this RSS feed') } %>

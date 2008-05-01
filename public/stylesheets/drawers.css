@@ -41,3 +41,34 @@ $Id$
  	padding: 5px 0 1px 0;
  	margin-bottom: 1em;
  }
+ 
+ /* Manage --------------------------------------------- */
+
+.manage.columns_4 .column {
+  width: 23%;
+}
+
+.manage .column {
+  float: left;
+  display: block;
+  margin-left: 2%;
+}
+.manage .column ul li {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: .25em .25em .25em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-border-radius: .95em;
+  margin-bottom: .15em;
+}
+.manage .column ul li.manage_selected {
+  background-color: #DDD;
+}
+.manage .column ul li .manage_desc {
+  background-image: url(/images/icons/groupFolder.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  padding: .15em 0 .15em 18px;
+}
+

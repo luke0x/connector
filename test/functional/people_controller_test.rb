@@ -98,6 +98,8 @@ class PeopleControllerTest < Test::Unit::TestCase
     login_person(:ian)
     get :show, {:id => people(:stephen).id}
     test_show_common
+    assert assigns(:available_person_groups)
+    assert assigns(:toolbar)[:manage] # TODO: when GUI ready move to assert_toolbar method
     assert_template 'show'
     assert_toolbar([:new, :edit, :copy, :delete, :import])
   end        
@@ -113,6 +115,12 @@ class PeopleControllerTest < Test::Unit::TestCase
   def test_contacts_vcards_works
     login_person(:ian)
     get :vcards, {:group => User.current.contact_list.id}
+    test_vcards_common
+  end
+  
+  def test_person_group_vcards_works
+    login_person(:ian)
+    get :person_group_vcards, {:id => 1}
     test_vcards_common
   end
 
@@ -146,6 +154,8 @@ class PeopleControllerTest < Test::Unit::TestCase
     login_person(:ian)
     get :show, :id => people(:ian).id
     test_show_common
+    assert assigns(:available_person_groups)
+    assert assigns(:toolbar)[:manage] # TODO: when GUI ready move to assert_toolbar method
     assert_template 'show'                               
     # Delete button is not present for your own record
     assert_toolbar([:quota, :new, :edit, :copy, :import])
@@ -632,7 +642,73 @@ class PeopleControllerTest < Test::Unit::TestCase
 
     assert_nil User.find_by_username('peter')
   end
+  
+  def test_person_group_list
+    login_person(:ian)
+    post(:list, {:group => "pg" + person_groups(:colleagues).id.to_s})
+    test_list_common
+    assert assigns(:person_group)
+    assert (person_groups(:colleagues).people - assigns(:people)).empty?
+    assert assigns(:toolbar)[:remove]
+    assert assigns(:toolbar)[:add]
+    assert_template 'list'
+  end
 
+  def test_add
+    login_person(:ian)
+    assert !person_groups(:colleagues).people.include?(people(:peter))
+    assert !person_groups(:colleagues).people.include?(people(:stephen))
+    assert !person_groups(:colleagues).people.include?(people(:guest))
+
+    post(:add, {:new_group_id => person_groups(:colleagues).id, :ids => [people(:peter).id, people(:stephen).id, people(:guest).id].join(',')})
+    assert_response :success
+
+    assert person_groups(:colleagues).people(true).include?(people(:peter))
+    assert person_groups(:colleagues).people(true).include?(people(:stephen))
+    assert person_groups(:colleagues).people(true).include?(people(:guest))
+  end
+  
+  
+  def test_remove
+    login_person(:ian)
+    post(:add, {:new_group_id => person_groups(:colleagues).id, :ids => [people(:peter).id, people(:stephen).id, people(:guest).id].join(',')})
+    
+    assert person_groups(:colleagues).people(true).include?(people(:peter))
+    assert person_groups(:colleagues).people(true).include?(people(:stephen))
+    assert person_groups(:colleagues).people(true).include?(people(:guest))
+    
+    xhr(:post, :remove, {:group_id => person_groups(:colleagues).id, :ids => [people(:peter).id, people(:stephen).id, people(:guest).id].join(',')})
+    assert_response :success
+    
+    assert !person_groups(:colleagues).people(true).include?(people(:peter))
+    assert !person_groups(:colleagues).people(true).include?(people(:stephen))
+    assert !person_groups(:colleagues).people(true).include?(people(:guest))
+  end
+  
+  def test_manage
+    login_person(:ian)
+    person = people(:peter)
+    person_group1 = person_groups(:empty)
+    person_group2 = person_groups(:friends)
+    person_group3 = person_groups(:colleagues)
+    
+    assert person.person_groups.empty?
+    
+    post(:manage, {:id => person.id, :manage_ids => [person_group1.id.to_s, person_group2.id.to_s]})
+    assert !person.person_groups(true).empty?
+    assert person.person_groups(true).include?(person_group1)
+    assert person.person_groups(true).include?(person_group2)
+    assert_equal person.person_groups(true).length, 2
+    assert_response :redirect
+    
+    post(:manage, {:id => person.id, :manage_ids => [person_group3.id.to_s]})
+    assert !person.person_groups(true).include?(person_group1)
+    assert !person.person_groups(true).include?(person_group2)
+    assert person.person_groups(true).include?(person_group3)
+    assert_equal person.person_groups(true).length, 1
+    assert_response :redirect
+  end
+  
   private
 
     def test_list_common_ajax
@@ -670,5 +746,5 @@ class PeopleControllerTest < Test::Unit::TestCase
     def test_delete_common
       assert_response :redirect
     end                      
-
+    
 end

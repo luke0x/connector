@@ -1,0 +1,60 @@
+<% @page_javascript << javascript_jsar_init([@event], 'show') -%>
+
+<div class="infobox">
+	<div class="" style="float:right;">
+    <%=  %>
+	</div>
+  <h2><%=h @event.name %></h2>
+  <div></div>
+</div>
+
+<dl>
+  <dt><%= _('Date') %>:</dt>
+  <dd><%= format_date(@event.start_time_in_user_tz) %></dd>
+  <dt><%= _('Time') %>:</dt>
+  <% if @event.all_day? -%>
+    <dd><%= _('All Day') %></dd>
+  <% else -%>
+    <dd>
+      <%= "#{format_time(@event.start_time_in_user_tz)} - #{format_time(@event.end_time_in_user_tz)}" %>
+      <% unless @event.duration == 0 -%>
+        <em><%= duration_in_words(@event.duration) %></em>
+      <% end -%>
+    </dd>
+  <% end -%>
+  <% if @event.repeats? -%>
+    <dt><%= _('Repeat') %>:</dt>
+    <dd>
+      <%= _(@event.recurrence_description.name) %>
+   	  <% if @event.by_day? -%>
+		<%= _('every') %>
+	  	<%= _(@event.by_day_in_words) %>
+	  <% end -%>
+      <% if @event.recur_end_time_in_user_tz && @event.recur_end_time_in_user_tz != '' -%>
+        <%= _('until') %>
+        <%= format_date(@event.recur_end_time_in_user_tz) %>
+	  <% else -%>
+        <em><%= _('Forever') %></em>
+      <% end -%>
+    </dd>
+  <% end -%>
+  <% unless @event.location.blank? -%>
+    <dt><%= _('Location') %>:</dt>
+    <dd><%=h @event.location %></dd>
+  <% end -%> 
+
+  <% if @event.alarm? -%>
+    <dt><%= _('Alarm') %>:</dt>
+    <dd>
+      <%=h @event.alarm_trigger_in_words %>
+      <%= "<img src='/images/icons/notify-sms.png' />"   if @event.owner && @event.owner.notify_via?(:sms) %>
+      <%= "<img src='/images/icons/notify-email.png' />" if @event.owner && @event.owner.notify_via?(:email) %>
+      <%= "<img src='/images/icons/notify-im.png' />"    if @event.owner && @event.owner.notify_via?(:jabber) %>
+    </dd>
+  <% end -%>
+  <% unless @event.notes.blank? -%>
+    <dt><%= _('Notes') %>:</dt>
+    <dd><%= simple_format(h(@event.notes)) %></dd>
+  <% end -%>
+</dl>
+<%# render :partial => "comments/list", :locals => { :item => @event } %>

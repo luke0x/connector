@@ -105,6 +105,9 @@ $Id$
 	#calendar .group.subscription {
 		background-image: url(/images/icons/groupCalendarSubscription.png);
 	}
+	#calendar .group.ics_subscription {
+		background-image: url(/images/icons/groupCalendarICS.png);
+	}
 
 /* List View ---------------------------------------------- */
 
@@ -268,19 +271,23 @@ $Id$
 
 /* Month View --------------------------------------------- */
 	
-	#calendarMonthView {
-		border-collapse: collapse;
-		margin: 0;	
-		border-width: 0 0 1px 0;
+	#contentWrapper table#calendarMonthView {
+		margin: 0;
+		border-width: 1;
 		border-style: solid;
 		border-color: #CCC;
 		clear: left;
-  }
+		width: 100%;
+		border-collapse: collapse;
+	}
 	#calendarMonthView td {
 		border-color: #CCC #DDD #CCC #DDD;
 		border-width: 1px;
 		border-style: solid;
 		background-color: #FFF;
+	}	
+	#calendarMonthView td.not_current_month {
+		background-color: #F3F3F3;
 	}	
 	#calendarMonthView thead th { 
 		font-size:85%;
@@ -289,7 +296,6 @@ $Id$
   }
 	#calendarMonthView tr+td {
 		border-left: 1px solid #CCC !important;
-		background-color: red;
   }
 	#calendarMonthView caption {
 		display:none;
@@ -299,6 +305,7 @@ $Id$
 		height: 60px;
 		padding: 0px 2px 2px 2px;
 		white-space: normal;
+		border-width: 1;
 	}
 	.dayView .allDayEvent {
 		margin: 1px 1px 1px 1px;
@@ -424,7 +431,7 @@ $Id$
 		height: 12px;
 		width: 12px;
   }
-	.overlayColorKeyCell {		
+	.overlayColorKeyCell {
 		padding: 0.75em;
 		background-color: #F9F9F9;
   }
@@ -437,3 +444,33 @@ $Id$
 		clear: both;
 		margin-top: 2em;
   }
+
+/* Drawers --------------------------------------------- */
+
+	.overlay_users.columns_4 .column {
+		width: 23%;
+	}
+		.overlay_users .column {
+			float: left;
+			display: block;
+			margin-left: 2%;
+		}
+			.overlay_users .column ul li {
+				display: block;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: .25em .25em .25em 1em;
+				-moz-border-radius: 1em 1em 1em 1em;
+				-webkit-border-radius: .95em;
+				margin-bottom: .15em;
+			}
+				.overlay_users .column ul li.overlay_selected {
+					background-color: #DDD;
+				}
+				.overlay_users .column ul li .overlay_user {
+					background-image: url(/images/icons/user.png);
+					background-repeat: no-repeat;
+					background-position: left 0;
+					padding: .15em 0 .15em 18px;
+				}
+

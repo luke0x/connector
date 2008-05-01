@@ -1,0 +1,59 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<div id="addSubscriptionGroupDialog" style="display: none;margin:2px 0 0 0;">
+  <div>
+
+    <% form_for(:calendar_subscription, :url => calendar_subscriptions_path, :html => {:method => 'post', :onsubmit => 'return SubscriptionGroup.newSubmit(this);', :id =>'NewICSSubscription'}) do |f| -%>
+			<div class="roundtl highlighted"><div class="roundtr">
+    		<table>
+    			<tr>
+    				<td class="dinger">
+    				</td>
+    				<td>
+    				  <a href="#" class="folder highlighted group" onclick="return false;">
+      				  <%= _("New ICS Subscription") -%>
+    				  </a>
+    				</td>
+    				<td class="showInfo">
+    				</td>
+    			</tr>
+    		</table>
+      </div></div>
+      <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+        <%= _('Name') -%>:
+  			<%= text_field_tag "calendar_subscription[name]", _("New ICS Subscription"), { :style => 'width: 100%; display: block;', :id => 'calendar_subscription_name' } %>
+				
+				<%= _('URL') -%>:
+			  <%= text_field_tag 'calendar_subscription[url]', 'http://', { :style => 'width: 100%; display: block;', :id => 'calendar_subscription_url' } %>
+			  
+				<%= _('Update Frequency') -%>:
+				<%= select_tag('calendar_subscription[update_frequency]', options_for_select(CalendarSubscription::frequencies), { :style => 'display: block;', :id => 'calendar_subscription_update_frequency' }) %>
+
+			  <fieldset>
+			    <legend><%= _('Username') -%>:</legend>
+			    <%= f.text_field :username %>
+			  </fieldset>
+
+			  <fieldset>
+			    <legend><%= _('Password') -%>:</legend>
+			    <%= f.password_field :password %>
+			  </fieldset>
+
+        <p style="text-align: right; margin-top: 10px;">
+					<img src="/images/animation/loading16.gif" id="newICSSubscriptionLoading" style="vertical-align: bottom; display: none;"/>
+          <input type="button" value="<%= _('Cancel') -%>" onclick="SubscriptionGroup.newCancel();" />
+          <input type="submit" name="Submit" value="<%= _('Save') -%>" />
+        </p>
+      </div></div>
+    <% end -%>
+  </div>
+</div>

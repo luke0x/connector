@@ -99,3 +99,9 @@ lists_smart_group:
 lists_notifications:
   id: 30
   name: lists_notifications
+calendar_subscription:
+  id: 31
+  name: calendar_subscription
+people_person_group:
+  id: 32
+  name: people_person_group

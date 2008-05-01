@@ -19,7 +19,7 @@ var Sidebar = {
 	},
 
 	disabled: function() {
-		return ['month', 'notifications', 'report', 'strongspace', 'service'].include(Joyent.viewKind);
+		return ['month', 'notifications', 'report', 'strongspace', 'service', 'calendar_subscriptions'].include(Joyent.viewKind);
 	},
 
 	Tabs: {

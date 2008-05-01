@@ -339,6 +339,8 @@ class Message < ActiveRecord::Base
     s
   end
 
+  # This is more related to presentation than to bussines logic.
+  # We should move this to Helper, but that isn't so easy.
   def primary_status
     if self.draft?
       'Draft'

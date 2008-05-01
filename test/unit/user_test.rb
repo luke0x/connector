@@ -143,6 +143,11 @@ class UserTest < Test::Unit::TestCase
     assert !users(:jason).can_edit?(joyent_files(:ian_jpg))
     assert !users(:jason).can_edit?(joyent_files(:ians_dog_jpg))
   end
+  
+  def test_can_add
+    assert users(:ian).can_add?(people(:peter))
+    assert !users(:guest).can_add?(people(:user_with_restrictions))
+  end
 
   def test_find_other_users
     User.current         = users(:ian)
@@ -565,4 +570,36 @@ class UserTest < Test::Unit::TestCase
     
     assert_nil users(:ian).notifier_email
   end
+  
+  def test_away_expires_at_has_to_be_later_than_today
+    User.current = user = users(:ian)
+    
+    assert !user.update_attributes({:away_expires_at => 2.days.ago.to_date})
+    assert !user.errors.empty?
+    assert user.errors.invalid?(:away_expires_at)
+    
+    assert user.update_attributes({:away_expires_at => 2.days.from_now.to_date})
+    assert user.errors.empty?
+  end
+  
+  def test_all_people
+    assert_empty users(:ian).all_people - users(:ian).organization.users.collect(&:people)
+    assert_empty users(:ian).all_people - users(:ian).contact_list.people
+  end
+  
+  def test_people_person_groups
+    person_group = person_groups(:empty)
+    owner = person_group.owner
+    
+    User.current = users(:bernard)
+    assert owner.people_person_groups.include?(person_group)
+    
+    User.current = owner
+    person_group.make_private!
+    
+    User.current = users(:bernard)
+    owner.person_groups(true) # reload person groups
+    assert !owner.people_person_groups.include?(person_group)
+  end
+  
 end

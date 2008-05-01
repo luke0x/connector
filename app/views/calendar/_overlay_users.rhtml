@@ -10,29 +10,31 @@
 <% # -- -%>
 
 <h5 style="clear: left;"><%= _('Overlaid Calendars') -%></h5>
-<fieldset style="float: left;clear: left;width:96%;">
-  <% if @overlayed_users.blank? -%>
-    <em><%= _('No calendars overlayed') -%>.</em>
-  <% else -%>
-		<ul id="tagsAssigned" class="tagList tagsAssigned">
-			<% @overlayed_users.each do |user| -%>
-				<li><%= link_to "#{user.person.first_name} #{user.person.last_name}", calendar_remove_overlay_url(:user_id => user.id), { :class => 'tag'}  %></li>
-			<% end -%>
-		</ul>
-  <% end -%>
-</fieldset>
-<h5 style="clear: left;"><%= _('Click to Overlay') -%></h5>
-<fieldset style="float: left;clear: left;width:96%;">
-  <% if @non_overlayed_users.blank? -%>
+
+<% if @available_users.blank? -%>
+  <fieldset>
     <em><%= _('All calendars overlayed') -%>.</em>
-  <% else -%>
-		<ul id="" class="tagList">
-			<% @non_overlayed_users.each do |user| -%>
-				<li><%= link_to "#{user.person.first_name} #{user.person.last_name}", calendar_add_overlay_url(:user_id => user.id), { :class => 'tag'} %></li>
-			<% end -%>
-		</ul>
+  </fieldset>
+<% else -%>
+  <% form_tag(calendar_set_overlay_url) do -%>
+    <fieldset class="overlay_users columns_4">
+      <% @available_users.in_groups_of((@available_users.size/4.0).ceil,false).each do |available_group| -%>
+        <div class="column">
+          <ul style="list-style:none;">
+            <% available_group.each do |user| -%>
+              <li id="<%= "overlay_li_#{user.id}" %>" class="<%= 'overlay_selected' if @overlayed_users.include?(user) %>">
+                <%= check_box_tag('user_ids[]', user.id, @overlayed_users.include?(user), {:id => "overlay_checkbox_#{user.id}", :onclick => "CalendarOverlayDrawer.toggle($('overlay_li_#{user.id}'),'overlay_selected')"} ) %>
+                <label for="<%= "overlay_checkbox_#{user.id}" %>">
+                  <span class="overlay_user"><%= "#{user.person.first_name} #{user.person.last_name}" %></span>
+                </label>
+              </li>
+            <% end -%>
+          </ul>
+        </div>
+      <% end -%>
+    </fieldset>
+  <div class="drawerButtons" style="clear: left;">
+    <%= submit_tag(_('Save')) %>
+  </div>
   <% end -%>
-</fieldset>
-<div class="drawerButtons" style="clear: left;">
-	<input type="button" value="<%= _('Done') -%>" onclick="return Drawers.hide('CalendarOverlay');" />
-</div>
+<% end -%>

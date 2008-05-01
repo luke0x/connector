@@ -261,4 +261,12 @@ module CalendarHelper
     render :partial => 'partials/calendar_list_header', :locals => new_locals
   end
 
+  def month_view_day_view_class(day_view)
+		if    day_view.today?             then "monthToday"
+		elsif day_view.not_current_month? then "not_current_month"
+		else
+		  ""
+		end
+  end
+
 end

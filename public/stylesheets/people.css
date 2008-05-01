@@ -180,3 +180,50 @@ td.person a.admin {
 td.person a.contact {	
   background-position: 0 -298px;
 }
+
+/* Drawers --------------------------------------------- */
+
+.add_people.columns_4 .column {
+  width: 23%;
+}
+.add_people .column {
+  float: left;
+  display: block;
+  margin-left: 2%;
+}
+.add_people .column ul li {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: .25em .25em .25em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-border-radius: .95em;
+  margin-bottom: .15em;
+}
+.add_people .column ul li.add_people_selected {
+  background-color: #DDD;
+}
+.add_people .column ul li .add_people_name_user {
+  background-image: url(/images/icons/groupUser.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  padding: .15em 0 .15em 18px;
+}
+.add_people .column ul li .add_people_name_contact {
+  background-image: url(/images/icons/addressBook16.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  padding: .15em 0 .15em 18px;
+}
+.add_people .column ul li .add_people_name_admin {
+  background-image: url(/images/icons/addressBook16.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  padding: .15em 0 .15em 18px;
+}
+.add_people .column ul li .add_people_name_guest {
+  background-image: url(/images/icons/addressBook16.png);
+  background-repeat: no-repeat;
+  background-position: left 0;
+  padding: .15em 0 .15em 18px;
+}

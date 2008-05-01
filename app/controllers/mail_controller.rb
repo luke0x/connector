@@ -18,8 +18,9 @@ class MailController < AuthenticatedController
                                              :create_mailbox, :rename_group,
                                              :delete_group, :send_draft, :send_compose,
                                              :send_reply_to, :send_forward, :attachment,
-                                             :empty_spam, :empty_trash, :addresses_for_lookup,
-                                             :others_groups, :flag, :unflag, :inbox_unread_count]
+                                             :empty_spam, :empty_trash, :groups_ids,
+                                             :others_groups, :flag, :unflag, :inbox_unread_count, 
+                                             :away_message_edit, :away_message_update, :add_group_emails_ajax, :groups_addresses_for_lookup]
   before_filter :load_sort_order, :only => [:special_list, :list, :smart_list, :special_show, :show, :smart_show]
   before_filter :load_mail_aliases, :only => [:special_list, :list, :smart_list, :special_show, :show, :smart_show, :compose, :reply_to, :forward, :edit_draft, :notifications, :unread_messages]
 #  after_filter(:only => [:create_mailbox, :rename_group, :delete_group, :reparent_group]){ |c| c.expire_fragment %r{mail/sidebar} }
@@ -61,6 +62,7 @@ class MailController < AuthenticatedController
     @toolbar[:empty_spam]  = @mailbox && @mailbox.full_name == 'INBOX.Spam' && current_user.owns?(@mailbox)
     @toolbar[:empty_trash] = @mailbox && @mailbox.full_name == 'INBOX.Trash' && current_user.owns?(@mailbox)
     @toolbar[:tools]       = true
+    @toolbar[:away]  = @mailbox && @mailbox.full_name == 'INBOX' && current_user.owns?(@mailbox)
 
     respond_to do |wants|
       wants.html { render :action => 'list' }
@@ -588,11 +590,45 @@ class MailController < AuthenticatedController
     redirect_to mail_special_list_url(:id => 'trash')
   end
   
-  def addresses_for_lookup
-    people = Person.find(:all, :include => :email_addresses, :scope => :read)
-    @addresses = people.map(&:email_addresses).flatten.map(&:email_address).uniq.sort
+  # this method retrieves each group and smart group [id, name] so Addresses.js can call Ajax
+  # and post group_id value for a chosen group or smart group
+  def groups_ids
+    @groups_ids = current_user.mail_autocomplete_groups
     headers['content-type'] = 'text/javascript'
     render :layout => false
+  end
+  
+  def groups_addresses_for_lookup
+    # params[:message] is a hash with 3 possible keys: to_field, cc_field, bcc_field
+    @needle = params[:message].values.first.downcase
+    # empty searches return nothing, instead of everything
+    unless @needle
+      render :text => '<ul><li></li></ul>'
+      return true
+    end
+    
+    people = Person.find( :all, :include => :email_addresses, :scope => :read,
+                          :conditions => ['LOWER(people.first_name) LIKE ? OR
+                                           LOWER(people.last_name) LIKE ? OR
+                                           LOWER(email_addresses.email_address) LIKE ?', 
+                                           "%#{@needle}%", "%#{@needle}%", "%#{@needle}%"])
+                                           
+    @groups_contacts = current_user.fetch_group_matches(@needle)    
+    @groups_contacts << people_emails(people, 'html')      
+    @groups_contacts.flatten! 
+    render :layout => false  
+  end  
+  
+  def add_group_emails_ajax      
+    if params[:group_id] =~ /^pg(\d+)$/
+      people = PersonGroup.find(PersonGroup.param_to_id(params[:group_id])).people      
+    elsif params[:group_id] =~ /s(\d+)/
+      people = SmartGroup.find(SmartGroup.param_to_id(params[:group_id])).items('people.last_name ASC')
+    end
+    
+    emails = people_emails(people, 'json')
+    headers['content-type'] = 'text/javascript'
+    render :text => emails.to_json
   end
   
   def others_groups
@@ -689,6 +725,55 @@ class MailController < AuthenticatedController
   def item_class_name
     'Message'
   end
+  
+  # Away related methods
+  def away_message_edit
+    # load this drawer using javascript
+    @user = User.find(current_user.id)
+    @user.away_message = _("I am away and have limited access to email. I will respond as soon as possible.") if @user.away_message.blank?
+    if request.xhr?
+      render :partial => 'away'
+    else
+      redirect_to mail_home_url
+      return
+    end
+  end
+  
+  def away_message_update
+    # just try to update the attributes and hide the drawer on success
+    params[:user][:away_on] = params[:user][:away_on] || false
+    @user = User.find(current_user.id)
+    if request.xhr?
+      if @user.update_attributes(params[:user]) 
+        render(:update) { |page|
+          # How to get access to JavaScript Joyent.effectsDuration from here?
+          page.visual_effect(:blind_up, 'drawerAway', :duration => 1)
+          page['actionAwayLink'].removeClassName('active');
+          # We will try to properly hide/show the info div about the away status
+          if @user.away_on?
+            page['awayInfo'].show();
+            page << "Event.stopObserving($('awayPointerLink'), 'click', awayEvent.listenerLoad);
+Event.observe($('awayPointerLink'), 'click', function(event){
+return Drawers.toggle('Away');
+});"
+          else
+            page['awayInfo'].hide();
+          end
+        }
+      else
+        render(:update) {|page|
+          if @user.errors.invalid?(:away_expires_at)
+            page.alert("#{@user.errors.on(:away_expires_at)}")
+          else
+            page.alert(_("We're experiencing some problems now, try again later, please"))
+          end
+        }
+      end
+    else
+      redirect_to mail_home_url
+      return
+    end
+  end
 
   #########
   protected
@@ -782,6 +867,22 @@ class MailController < AuthenticatedController
       new_msg.draft! if params[:command] == 'save'
     
       new_msg
+    end
+    
+    def people_emails(people, format)
+      emails = []
+      # we dont want people without an email address
+      people_with_email = people.select{|person| !person.email_addresses.blank?}
+      if format.eql? 'html'
+        people_with_email.each{ |person|
+          for email in person.email_addresses
+            emails << "#{person.full_name} \<#{email.email_address}\>"
+          end
+        }          
+      elsif format.eql? 'json'
+        people_with_email.each{ |person| emails << {:name => "#{person.first_name} #{person.last_name}", :email => person.primary_email.email_address}}        
+      end
+      emails
     end
 
     def redirect_to_mailbox

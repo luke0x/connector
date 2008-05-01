@@ -27,11 +27,17 @@
   	<% current_user.subscriptions_to_group_type(@contact_list.class).each do |subscription| -%>
   		<%= render_standard_group 'sidebars/groups/people/people_standard', { :standard_group => subscription.subscribable, :url => standard_list_url(subscription.subscribable), :selected_group => @contact_list, :subscription => true, :css_class => 'group subscription' } %>
   	<% end %>
+	
+	<% current_user.person_groups.each do |person_group| -%>
+      <%= render_standard_group 'sidebars/groups/people/people_standard', { :standard_group => person_group, :url => people_list_url(:group => person_group.url_id), :selected_group => @person_group, :ui_messages => {:delete => _('Do you want to delete this group?')}} %>
+    <% end -%>
+	
   </ul></div>
 
   <div id="addGroup">
-  	<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="<%= _('Add New Smart Group') -%>"><%= _('New') -%>&hellip;</a>
+  	<a href="#" id="addGroupPlus" class="plus" onclick="return AddGroupWidget.toggle();" title="<%= _('Add New People Group or Smart Group') -%>"><%= _('New') -%>&hellip;</a>
   	<div id="addGroupMenu" style="display:none;">
+		<a href="#" class="folder group" onclick="return AddGroupWidget.select('standard');"><%= _('Person Group') -%></a>
   		<a href="#" class="folder smartGroup" onclick="return AddGroupWidget.select('smart');"><%= _('Smart Group') -%></a>
 		<% if current_user.has_other_identities? -%>
 			<%= link_to_function _('Subscription'), "ModalDialog.showURL('#{browse_list_url(:app => 'People', :context => 'subscribe', :subscribable_type => 'ContactList')}'); browser.removeBrowser(); Drawers.hideAll();", :class => 'folder group subscription' %>
@@ -39,4 +45,5 @@
   	</div>
   </div>
   <%= render :partial => 'sidebars/groups/smart_group_new_container', :locals => { :smart_groups => @smart_groups } %>
+  <%= render :partial => 'sidebars/groups/standard_group_new_container', :locals => { :standard_groups => current_user.person_groups, :parent_id => nil } %>  
 <% # end -%>

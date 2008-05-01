@@ -26,3 +26,5 @@
 	  <%= link_to(_("Your Preferences"), person_edit_url(:id => current_user.person.id, :anchor => 'preferences'), {:title => _("Edit your personal information")}) %>
   </div></div></div></div>
 <% end -%>
+
+<%= render :partial => 'mail/away_info' %>

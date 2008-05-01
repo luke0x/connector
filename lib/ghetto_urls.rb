@@ -34,6 +34,8 @@ module GhettoUrls
     when ServiceFolder     then files_service_list_url(:service_name => standard_group.service.name, :group_id => standard_group.id)
     when ListFolder        then lists_url(:group => standard_group.id)
     when BookmarkFolder    then bookmarks_list_route_url(:bookmark_folder_id => standard_group.id)
+    when CalendarSubscription then calendar_subscriptions_month_route_url(:calendar_subscription_id => standard_group.id)
+    when PersonGroup       then people_list_url(:group => standard_group.url_id)
     end
   end
 
@@ -81,6 +83,8 @@ module GhettoUrls
       calendar_smart_list_url(:smart_group_id => @smart_group.url_id, :start_date => start_date.to_s, :end_date => end_date.to_s)
     elsif @calendar
       calendar_list_route_url(:calendar_id => @calendar.id, :start_date => start_date.to_s, :end_date => end_date.to_s)
+    elsif @calendar_subscription
+      calendar_subscriptions_list_route_url(:calendar_subscription_id => @calendar_subscription.id, :start_date => start_date.to_s, :end_date => end_date.to_s)
     elsif @group_name == _('All Events')
       calendar_all_list_url(:start_date => start_date.to_s, :end_date => end_date.to_s)
     else
@@ -93,6 +97,8 @@ module GhettoUrls
       calendar_smart_month_url(:smart_group_id => @smart_group.url_id, :date => @start_date.to_s)
     elsif @calendar
       calendar_month_route_url(:calendar_id => @calendar.id, :date => @start_date.to_s)
+    elsif @calendar_subscription
+      calendar_subscriptions_month_route_url(:calendar_subscription_id => @calendar_subscription.id, :date => @start_date.to_s)
     elsif @group_name == _('All Events')
       calendar_all_month_url(:date => @start_date.to_s)
     else
@@ -106,7 +112,15 @@ module GhettoUrls
     elsif @calendar
       calendar_show_route_url(:calendar_id => @calendar.id, :id => url_options[:id])
     elsif @group_name == _('All Events')
-      calendar_all_show_url(:id => url_options[:id])
+      event = Event.find(url_options[:id], :scope => :read)
+      unless event.calendar_subscription.nil?
+        calendar_subscriptions_show_event_route_url(:id => event.calendar_subscription.id, :event_id => url_options[:id])
+      else
+        calendar_all_show_url(:id => url_options[:id])
+      end
+    elsif @calendar_subscription && url_options[:id]
+      event = Event.find(url_options[:id], :scope => :read)
+      calendar_subscriptions_show_event_route_url(:id => event.calendar_subscription.id, :event_id => url_options[:id])
     elsif url_options[:id]   
       event = Event.find(url_options[:id], :scope => :read)
       calendar_show_route_url(:calendar_id => event.primary_calendar.id, :id => url_options[:id], :chart_date => url_options[:chart_date])

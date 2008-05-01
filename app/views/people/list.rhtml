@@ -9,7 +9,7 @@
 <% # $Id$ -%>
 <% # -- -%>
 
-<% @page_javascript << javascript_jsar_init(@people, 'list') -%>
+<% @page_javascript << javascript_jsar_init(@people, 'list', @person_group) -%>
 
 <div style="position: relative;" class="report">
   <%= render_list_header(@group_name, @paginator, 'people') %>
@@ -43,8 +43,7 @@
 						<input class="listCheckbox" id="<%= person.dom_id %>_list_checkbox" onclick="JoyentPage.toggleItemCheckbox(this);" itemDomId="<%= person.dom_id %>" type="checkbox" />
 					</td>
 					<td class="person">
-						<% pt = {'0_Admin' => 'Admin', '1_User' => 'User', '1_User_Guest' => 'Guest', '2_Contact' => 'Contact'}[person.person_type] -%>
-						<%= link_to pt, person_show_url(:id => person.id), {:class => pt.downcase, :title => pt} %>
+						<%= link_to person.account_type.titlecase, person_show_url(:id => person.id), {:class => person.account_type.downcase, :title => person.account_type.titlecase} %>
 					</td>
 					<td>
 						<%= link_to person.first_name.to_s, person_show_url(:id => person.id) %>

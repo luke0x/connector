@@ -26,6 +26,10 @@ class DayView < BaseView
     start_time.midnight == (current_user.now + 1.day).midnight
   end
   
+  def not_current_month?
+    @date.month != Date.today.month
+  end
+  
   def take_events(events)
     local_start_time = date.to_time(:utc).midnight
     local_end_time   = local_start_time + 1.day

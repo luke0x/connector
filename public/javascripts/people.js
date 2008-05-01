@@ -561,3 +561,16 @@ var EditAccountArea = {
     }
   }
 }
+
+
+var AddPeopleDrawer = {
+  toggle: function(element, class_name) {
+    if (element.hasClassName(class_name)) {
+      element.removeClassName(class_name)
+    } else {
+      element.addClassName(class_name)
+  }
+}
+  
+}
+

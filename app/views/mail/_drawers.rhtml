@@ -19,4 +19,8 @@
   <% if @toolbar[:tools] -%>
     <div class="drawerContent" id="drawerMailTools" style="display: none;"><%= render :partial => 'tools' %></div>
   <% end -%>
+  <% if @toolbar[:away] -%>
+		<%= javascript_include_tag 'jscalendar' %>
+    <div class="drawerContent" id="drawerAway" style="display: none;"></div>
+  <% end -%>
 </div>

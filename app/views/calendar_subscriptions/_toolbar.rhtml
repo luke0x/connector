@@ -1,0 +1,28 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<ul id="Toolbar">
+	<% if @toolbar[:copy] -%>
+		<li class="actionCopy"><%= link_to_function _('Copy'), "return Drawers.toggleBrowser('Copy')", {:id => 'actionCopyLink'} %></li>
+	<% end -%>
+	<% if @toolbar[:list] -%>
+		<li class="actionListView"><%= link_to _('List View'), calendar_list_url %></li>
+	<% end -%>
+	<% if @toolbar[:month] -%>
+		<li class="actionMonthView"><%= link_to _('Month View'), calendar_month_url %></li>
+	<% end -%>
+	<% if @toolbar[:today] -%>
+		<li class="actionToday"><%= link_to _('Today'), calendar_home_url %></li>
+	<% end -%>
+	<% if @toolbar[:overlay_users] -%>
+		<li class="actionOverlayUser"><%= link_to_function _('Overlay Users'), "return Drawers.toggle('CalendarOverlay');", {:id => 'actionCalendarOverlayLink'} %></li>
+	<% end -%>
+</ul>

@@ -277,6 +277,7 @@ class EventTest < Test::Unit::TestCase
     User.current = users(:ian)
     e = events(:concert)
     assert_equal e.primary_calendar.owner, users(:ian)
+    assert e.primary_calendar.is_a?(Calendar)
   end
 
   def test_renotify
@@ -473,4 +474,67 @@ class EventTest < Test::Unit::TestCase
   def test_next_occurrence_time_repeating_all_day
     
   end
+  
+  # Calendar subscriptions related: neither invitations nor notifications for these events
+  def test_should_not_invite_to_calendar_subscriptions_events
+    e = events(:subscription_us_holidays_easter_2007)
+    e.invitations(true)
+    assert_equal 0, e.accepted_invitations.size
+    assert_equal 0, e.declined_invitations.size
+    assert_equal 0, e.pending_invitations.size
+    
+    u = users(:peter)
+    assert_nil e.invite(u)                               
+    e.invitations(true)                           
+    assert_equal 0, e.accepted_invitations.size
+    assert_equal 0, e.declined_invitations.size
+    assert_equal 0, e.pending_invitations.size
+    
+    assert_nil e.uninvite(u)
+    assert_nil e.renotify!
+  end
+  
+  # Invitees will return empty arrays for events attached to a CalendarSubscription
+  def test_invitees_should_be_empty_arrays_for_calendar_subscriptions_events
+    e = events(:subscription_us_holidays_easter_2007)
+    assert e.invitees_accepted.is_a?(Array)
+    assert_equal 0, e.invitees_accepted.size
+    assert e.invitees_declined.is_a?(Array)
+    assert_equal 0, e.invitees_declined.size
+    assert e.invitees_pending.is_a?(Array)
+    assert_equal 0, e.invitees_pending.size
+    
+    u = users(:peter)
+    assert_nil e.invite(u)
+    assert_equal 0, e.invitees_accepted.size
+    assert_equal 0, e.invitees_declined.size
+    assert_equal 0, e.invitees_pending.size
+  end
+  
+  # Calendar Subscriptions events can be copied, but not moved
+  def test_should_copy_calendar_subscriptions_events_but_should_not_move_them
+    e = events(:subscription_us_holidays_easter_2007)
+    c = calendars(:anotherthing)
+    
+    assert_nil e.move_to(c)
+    e.reload
+    assert !e.calendars.index(c)
+    
+    copy = e.copy_to(c)
+    
+    assert_equal 0, e.calendars.size
+    
+    assert copy.calendars.index(c)
+    assert_equal 1, copy.calendars.size
+    assert_nil copy.calendar_subscription
+  end
+  
+  def test_primary_calendar_for_calendar_subscriptions_events
+    User.current = users(:ian)
+    e = events(:subscription_us_holidays_easter_2007)
+    assert_equal e.primary_calendar.owner, users(:ian)
+    assert e.primary_calendar.is_a?(CalendarSubscription)
+  end
+  
+  
 end

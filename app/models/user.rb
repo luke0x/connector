@@ -51,10 +51,12 @@ class User < ActiveRecord::Base
   # core item type ownership
   has_many   :mailboxes,       :dependent => :destroy, :order => 'LOWER(mailboxes.full_name)'
   has_many   :calendars,       :dependent => :destroy, :order => 'LOWER(calendars.name)'
+  has_many   :calendar_subscriptions, :dependent => :destroy, :order => 'LOWER(calendar_subscriptions.name)'
   has_one    :contact_list,    :dependent => :destroy
   has_many   :folders,         :dependent => :destroy, :order => 'LOWER(folders.name)'
   has_one    :bookmark_folder, :dependent => :destroy
   has_many   :list_folders,    :dependent => :destroy
+  has_many   :person_groups,   :dependent => :destroy, :order => 'LOWER(person_groups.name)'
 
   has_many   :messages,        :dependent => :destroy
   has_many   :events,          :dependent => :destroy
@@ -481,6 +483,10 @@ class User < ActiveRecord::Base
   def people_contact_list
     User.current.can_view?(contact_list) ? contact_list : nil
   end
+  
+  def people_person_groups
+    person_groups.select{|pg| User.current.can_view?(pg)}
+  end
 
   def files_documents_folder
     folder = folders.find(:first, :conditions => ["folders.name = 'Documents' AND parent_id IS NULL"], :order => 'folders.id')
@@ -507,12 +513,17 @@ class User < ActiveRecord::Base
     root_groups.select{|lf| User.current.can_view?(lf)}
   end
 
-  def browser_root_groups_for(application_name)
+  def browser_root_groups_for(application_name, context = nil)
     case application_name
     when 'connect'   then []
     when 'mail'      then [inbox, sent, drafts, trash] + mail_root_mailboxes
     when 'calendar'  then calendar_root_calendars
-    when 'people'    then [people_contact_list]
+    when 'people'
+      if context == 'add'
+        person_groups
+      else
+        [people_contact_list]
+      end
     when 'files'     then [files_documents_folder] + files_root_folders
     when 'bookmarks' then [bookmarks_bookmark_folder]
     when 'lists'     then [lists_list_folder] + lists_root_folders
@@ -548,7 +559,7 @@ class User < ActiveRecord::Base
   end
 
   def can_view?(item)
-    return false unless item                                                                
+    return false unless item
     item.permissions.empty? || !(item.permissions.map(&:user_id) & identity.users.collect(&:id)).blank?
   end
 
@@ -609,7 +620,7 @@ class User < ActiveRecord::Base
   # can the user create items on this group?
   def can_create_on?(group)
     return false unless group
-    owns?(group)  
+    owns?(group)
   end
   
   # can the user create children groups on this group?
@@ -656,7 +667,27 @@ class User < ActiveRecord::Base
     
   def can_delete_from?(group)
     return false unless group
-    owns?(group)  
+    owns?(group)
+  end
+
+  def can_add?(item)
+    if item.is_a?(Person) and item.user
+      can_view?(item)
+    else
+      owns?(item)
+    end
+  end
+
+  def can_remove?(item)
+    owns?(item)
+  end
+  
+  def can_add_on?(group)
+    owns?(group)
+  end
+  
+  def can_remove_from?(group)
+    owns?(group)
   end
   
   def authorized_keys_path
@@ -718,11 +749,55 @@ class User < ActiveRecord::Base
   def jajah_password=(new_password)
     write_attribute(:jajah_password, encrypt(new_password))
   end
+
+  # returns people from real users in the same organization and people from user's contacts
+  def all_people(force_reload = false)
+    if force_reload or @all_people.nil?
+      organization_people = organization.users.find(:all, :include => [:person]).collect(&:person)
+      @all_people = organization_people + contact_list.people(true)
+    end
+    @all_people
+  end
+  
+  def non_empty_person_groups(string_to_match = '')
+    if string_to_match.blank?
+      # logic: empty groups and group members without email addresses are filtered
+      person_groups.select{|group| !group.people.blank?}.select{|group| group.people.select{|person| !person.email_addresses.blank?}.size != 0}
+    else
+      person_groups.find(:all, :conditions => ['LOWER(person_groups.name) LIKE ?', "%#{string_to_match}%"]).select{|group| !group.people.blank?}
+    end
+  end
+  
+  def non_empty_smart_groups(string_to_match = '')
+    if string_to_match.blank?
+      # logic: empty groups and group members without email addresses are filtered
+      smart_groups.select{|group| group.smart_group_description.name == "People"}.select{|group| !group.items.blank?}.
+                   select{|group| group.items('people.last_name ASC').select{|person| !person.email_addresses.blank?}.size != 0}
+    else
+      smart_groups.find(:all, :conditions => ['LOWER(smart_groups.name) LIKE ?', "%#{string_to_match}%"]).select{|group| group.smart_group_description.name == "People"}.select{|group| !group.items.blank?}
+    end
+  end
+  
+  def mail_autocomplete_groups    
+    groups_ids = non_empty_person_groups.map{|group| {:group_id => "pg#{group.id.to_s}", :group_name => group.name}}    
+    groups_ids << non_empty_smart_groups.map{|group| {:group_id => "s#{group.id.to_s}",  :group_name => group.name}}
+    groups_ids.flatten!
+  end
+  
+  def fetch_group_matches(string_to_match)
+    # format for groups is "group_name (group_type)"    
+    groups =  non_empty_smart_groups(string_to_match).flatten.map{|group| "#{group.name} (smart group)"}.uniq.sort
+    groups << non_empty_person_groups(string_to_match).flatten.map{|group| "#{group.name} (group)"}.uniq.sort
+  end
   
   protected
     
     def validate
       errors.add(:name, "The username can not be the same as a mail alias.") if User.current.organization.mail_aliases.find_by_name(self.username)
+    end
+    
+    def validate_on_update
+      errors.add(:away_expires_at, "Away message expiration date has to be later than today") if self.away_expires_at && self.away_expires_at < today.to_date
     end
   
   private

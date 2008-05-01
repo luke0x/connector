@@ -1,0 +1,18 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<ul>
+  <% @groups_contacts.each do |gc| -%>
+    <% content = h(gc.to_s.strip) -%>
+    <% content.gsub!(/#{@needle}/i){|match| "<strong>#{$&}</strong>"} -%>
+    <li><%= content %></li>
+  <% end -%>
+</ul>

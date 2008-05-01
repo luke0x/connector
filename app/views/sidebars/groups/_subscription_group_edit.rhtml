@@ -1,0 +1,33 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
+  <% if group.owner == current_user -%>
+    <%= render :partial => 'sidebars/groups/subscription_group_edit_rename',        :locals => { :group => group } %>
+		<%= render :partial => 'sidebars/groups/subscription_group_edit_ics_settings',  :locals => { :group => group } %>
+		<%= render :partial => 'sidebars/groups/subscription_group_edit_permissions',   :locals => { :group => group } %>
+    <%= render :partial => 'sidebars/groups/subscription_group_edit_subscriptions', :locals => { :group => group } %>
+    <%= render :partial => 'sidebars/groups/subscription_group_edit_delete',        :locals => { :group => group } %>
+    <hr />
+  <% end -%>
+  <% if group and current_user.subscribed_group(group) and subscription -%>
+  	<div>
+  	 	<p><strong>Organization:</strong> <%= current_user.subscribed_group(group).subscribable.owner.organization.name %></p>
+  		<p><strong>User:</strong> <%= current_user.subscribed_group(group).subscribable.owner.username %></p>
+  	</div>
+  	<hr />
+  	<%= joyent_button_to _('Unsubscribe'),
+          	             subscription_delete_url(:subscription_id => current_user.subscribed_group(group)),
+      	                 {:confirm => _("Do you want to unsubscribe to %{i18n_group_name}?")%{:i18n_group_name => "#{group.name rescue name}"}, :class => '', :style => 'width:11em; display:block;', :method => :post} %>
+    <hr />
+  <% end -%>
+  <%= content %>
+</div></div>

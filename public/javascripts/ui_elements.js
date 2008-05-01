@@ -350,6 +350,49 @@ var Drawers = {
 		}
 		return false;
 	},
+	// Same thing that show but for Drawers being loaded using AJAX
+	load: function(path, drawerName) {
+		if (!(drawer = $('drawer' + drawerName))) return;
+				
+		new Ajax.Request(path, { method:'get', asynchronous:true, evalScripts:true,
+			onLoading: function(request) {
+				// Show loading
+				new Insertion.Bottom($('drawer' + drawerName), '<div id="loading" style="display:none;"></div>');
+				$('loading').update(Joyent.loadingMessageSmall).show();
+				Drawers.hideAll();
+				$('contentPane').scrollTop = 0;
+				Effect.BlindDown('drawer' + drawerName, { duration: Joyent.effectsDuration * 2, queue: 'end' });
+				$('action' + drawerName + 'Link').addClassName('active');
+				return false;
+			},
+			onSuccess: function(request) {
+				new Insertion.Bottom($('drawer' + drawerName), request.responseText);
+				$('loading').hide();
+				$('contentPane').scrollTop = 0;
+				// Override the onClick event for the Drawer link since it has been loaded and we'll
+				// not require more AJAX in order to display it:
+				Event.stopObserving($('action' + drawerName + 'Link'), 'click', awayEvent.listenerLoad);
+				Event.observe($('action' + drawerName + 'Link'), 'click', function(event){
+					return Drawers.toggle(drawerName);
+				})
+				// This is just for the info link, should follow some naming convention, just in case
+				if($('awayPointerLink') != undefined) {
+					Event.stopObserving($('awayPointerLink'), 'click', awayEvent.listenerLoad);
+					Event.observe($('awayPointerLink'), 'click', function(event){
+						return Drawers.toggle(drawerName);
+					});
+				}
+				
+				
+			},
+			onComplete: function(request) {
+				// Leave it here for now, probably will cleanup later if not used
+			}
+		});
+		
+		
+		
+	},
 
 	hideAll: function() {
 		$$('div#Drawers div.drawerContent').each(function(drawer){
@@ -399,6 +442,16 @@ var Drawers = {
 		  }
 		}, specificView);
 	}
+}
+
+var ManageDrawer = {
+  toggle: function(element, class_name) {
+    if (element.hasClassName(class_name)) {
+      element.removeClassName(class_name)
+    } else {
+      element.addClassName(class_name)
+    }
+  }
 }
 
 var SidebarResizer = {

@@ -12,10 +12,12 @@
 <div class="roundbl groupInfo"><div class="roundbr groupInfoMargin">
   <% if group.owner == current_user -%>
     <%= render :partial => 'sidebars/groups/standard_group_edit_rename',        :locals => { :group => group } %>
-    <%= render :partial => 'sidebars/groups/standard_group_edit_move',          :locals => { :group => group } %>
+  	<% if group.has_attribute?(:parent_id) %>
+    	<%= render :partial => 'sidebars/groups/standard_group_edit_move',        :locals => { :group => group } %>
+  	<% end %>
     <%= render :partial => 'sidebars/groups/standard_group_edit_permissions',   :locals => { :group => group } %>
     <%= render :partial => 'sidebars/groups/standard_group_edit_subscriptions', :locals => { :group => group } %>
-    <%= render :partial => 'sidebars/groups/standard_group_edit_delete',        :locals => { :group => group } %>
+    <%= render :partial => 'sidebars/groups/standard_group_edit_delete',        :locals => { :group => group, :ui_messages => ui_messages } %>
     <hr />
   <% end -%>
   <% if group and current_user.subscribed_group(group) and subscription -%>

@@ -75,3 +75,7 @@ $Id$
     	width: 84px !important;
     	background-image: url(/images/lang/en/actionsMail.png);
 	}
+	.actionAway a {
+    	width: 60px !important;
+    	background-image: url(/images/lang/en/actionsMail.png);
+	}

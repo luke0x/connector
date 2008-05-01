@@ -114,3 +114,10 @@ $Id$
   div.lightning a {
     text-decoration: underline;
   }
+
+/* Misc. ---------------------------------------------- */
+
+	
+	.ics_subscription {
+		background-image: url(/images/icons/groupCalendarICS.png);
+	}

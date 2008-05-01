@@ -224,3 +224,43 @@ repeating_fortnight_testing:
     created_at: <%= 1.day.ago.to_formatted_s(:db) %>
     recurrence_description_id: 5
     recur_end_time: <%= (Time.now.midnight + 1.week).to_formatted_s(:db) %>
+
+# CalendarSubscription related
+
+subscription_us_holidays_easter_2007:
+  id: 19
+  user_id: 1
+  organization_id: 1
+  name: Easter
+  start_time: 2007-04-08 00:00:00
+  end_time: 2007-04-09 00:00:00
+  all_day: true
+  updated_at: <%= (Time.now - 8.days).to_formatted_s(:db) %>
+  created_at: <%= (Time.now - 9.days).to_formatted_s(:db) %>
+  calendar_subscription_id: 1
+
+subscription_us_holidays_easter_2008:
+  id: 20
+  user_id: 1
+  organization_id: 1
+  name: Easter
+  start_time: 2008-03-23 00:00:00
+  end_time: 2008-03-24 00:00:00
+  all_day: true
+  updated_at: <%= (Time.now - 8.days).to_formatted_s(:db) %>
+  created_at: <%= (Time.now - 9.days).to_formatted_s(:db) %>
+  calendar_subscription_id: 1
+
+subscription_us_holidays_christmas: 
+  id: 21
+  user_id: 1
+  organization_id: 1
+  name: Christmas
+  all_day: true
+  recurrence_name: Yearly
+  recurrence_description_id: 4  
+  calendar_subscription_id: 1
+  updated_at: <%= (Time.now - 8.days).to_formatted_s(:db) %>
+  created_at: <%= (Time.now - 9.days).to_formatted_s(:db) %>
+  start_time: 2002-12-25 00:00:00
+  end_time: 2002-12-26 00:00:00

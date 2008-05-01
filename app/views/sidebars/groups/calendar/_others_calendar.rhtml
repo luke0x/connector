@@ -19,4 +19,8 @@
   <% selected_user.calendar_root_calendars.each do |calendar| -%>
     <%= render_standard_group 'sidebars/groups/calendar/calendar_standard', { :standard_group => calendar, :url => calendar_list_route_url(:calendar_id => calendar.id), :selected_group => @calendar, :others => true } %>
   <% end -%>
+
+	<% selected_user.calendar_subscriptions.each do |calendar_subscription| -%>
+		<%= render_subscription_group 'sidebars/groups/calendar/calendar_subscription', { :subscription_group => calendar_subscription, :url => calendar_subscriptions_list_route_url(calendar_subscription), :selected_group => @calendar_subscription, :css_class => 'group subscription', :skip_children => true } %>
+	<% end %>
 </ul>

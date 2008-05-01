@@ -16,4 +16,10 @@
   <% if @toolbar[:call] -%>
     <div class="drawerContent" id="drawerJajah" style="display: none;"><%= render :partial => 'call' %></div>
   <% end -%>
+  <% if @toolbar[:add] -%>
+    <div class="drawerContent" id="drawerAdd" style="display: none;"><%= render :partial => 'toolbars/add' %></div>
+  <% end -%>
+  <% if @toolbar[:manage] -%>
+    <div class="drawerContent" id="drawerManage" style="display: none;"><%= render :partial => 'people/manage_person_groups' %></div>
+  <% end -%>
 </div>

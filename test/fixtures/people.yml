@@ -163,6 +163,7 @@ tagged_with_rails_solaris:
   contact_list_id: 1
   first_name: Rails
   last_name: Solaris
+  company_name: foo  
   created_at: <%= (Time.now - 4.days).to_s(:db) %>
   updated_at: <%= (Time.now - 3.days).to_s(:db) %>
   person_type: 2_Contact
@@ -209,3 +210,28 @@ pedro:
   created_at: <%= (Time.now - 2.days).to_s(:db) %>
   updated_at: <%= (Time.now - 2.days).to_s(:db) %>
   person_type: 1_User
+
+luis:
+  id: 15
+  organization_id: 1
+  first_name: Luis
+  last_name: Hurtado
+  company_name: JoyDivision
+  title: 
+  time_zone: America/Bogota
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+  person_type: 1_User
+
+andres:
+  id: 16
+  organization_id: 1
+  first_name: Andres
+  last_name: Rodriguez
+  company_name: JoyDivision
+  title: 
+  time_zone: America/Bogota
+  created_at: <%= (Time.now - 2.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 2.days).to_s(:db) %>
+  person_type: 1_User
+

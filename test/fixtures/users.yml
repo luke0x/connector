@@ -21,6 +21,9 @@ ian:
   recovery_email: ian@something.com
   documents_id: 1
   admin: true
+  away_on: true
+  away_expires_at: <%= (Time.now + 7.days).to_s(:db) %>
+  away_message: 'Sorry, but I am on vacation'
 
 peter:
   id: 2

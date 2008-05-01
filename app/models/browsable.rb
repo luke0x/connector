@@ -53,14 +53,14 @@ class Browsable
       end
     when 'group'
       user = User.find(@current_user)
-      user.browser_root_groups_for(@params[:app].downcase).compact.each do |item|
+      user.browser_root_groups_for(params[:app].downcase, params[:context]).compact.each do |item|
         add_details( item.dom_id,
-                     get_group_name(params[:app], item),
+                     get_group_name(params[:app], item, params[:context]),
                      @current_user.id,
-                     @params[:app],
-                     @params[:app],
+                     params[:app],
+                     params[:app],
                      'view',
-                     @params[:view] ? item.full_path : item.id,
+                     params[:view] ? item.full_path : item.id,
                      item.class.to_s )
       end
     when 'view'
@@ -136,12 +136,17 @@ class Browsable
     Object.const_get(type_name)
   end
   
-  def get_group_name(app, item)
+  def get_group_name(app, item, context = nil)
     case app
     when 'Mail'      then item.name.downcase.capitalize
     when 'Calendar'  then item.name
     when 'Files'     then item.name
-    when 'People'    then 'Contacts'
+    when 'People'
+      if context == 'add'
+        item.name
+      else
+        'Contacts'
+      end
     when 'Bookmarks' then 'Bookmarks'
     when 'Lists'     then item.name
     end

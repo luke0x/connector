@@ -97,12 +97,21 @@ module Securable
     self.permissions.clear
   end
 
-  # remove notifications when their owner no longer has access to the item
+  # 1. remove notifications when their owner no longer has access to the item
+  # 2. remove person group memberships when thier owner no longer has access to the person
   def remove_obsolete_associations
     user_ids = self.permissions.map(&:user_id)
     return if user_ids.blank?
 
     Notification.destroy_all([ "item_id = ? AND item_type = ? AND notifiee_id NOT IN (?)", id, self.class.to_s, user_ids ])
+    
+    # remove person group memberships only if item is a Person
+    # instead of this approach we can overwrite this instance method on Person calling 'super' but maybe that way is more tricky
+    if self.is_a?(Person)
+      PersonGroup.find(:all, :conditions => ["user_id NOT IN (?)",user_ids]).each do |person_group|
+        person_group.people.delete(self)
+      end
+    end
   end
 
   def users_with_permissions

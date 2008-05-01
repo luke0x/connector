@@ -1,0 +1,30 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<%= link_to_function _('ICS Settings'), "SubscriptionGroup.toggleEditICSSettings();", { :id => 'subscriptionGroupEditICSSettingsLink', :class => 'groupOption settings' } %>
+<div id="subscriptionGroupEditICSSettings" style="display: none;" class="groupOptionMenu">
+  <% form_for(:calendar_subscription, :url => calendar_subscription_path(:id => group.id), :html => {:method => :put, :onsubmit => 'return true;'}) do |f| -%>
+  	<%= _('URL') -%>:
+    <%= f.text_field :url, :class => 'textInput', :id => 'calendar_subscription_url' %>
+  	<%= _('Update Frequency') -%>:
+  	<select id="calendar_subscription_update_frequency" name="calendar_subscription[update_frequency]" style="display: block;">
+  		<%= options_for_select(CalendarSubscription::frequencies.collect { |opt| [opt[0], opt[1].to_s] }, group.update_frequency) %>
+  	</select>
+    <%= _('Username') -%>:
+    <%= f.text_field :username, { :class => 'textInput' } %>
+    <%= _('Password') -%>:
+    <%= f.password_field :password, { :class => 'textInput' } %>
+    
+		<div align="right" style="padding-top:.5em;">
+			<%= submit_tag _('Update'), { :name => 'Submit' } %>
+    </div>
+  <% end %>
+</div>

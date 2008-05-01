@@ -1,0 +1,31 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id$ -%>
+<% # -- -%>
+
+<% if current_user.has_other_identities? -%>
+  <%= link_to_function _('Subscription'), "StandardGroup.toggleEditSubscriptions();", {:id => 'standardGroupEditSubscriptionsLink', :class => 'groupOption subscription'} %>
+  <div id="standardGroupEditSubscriptions" style="display: none;" class="groupOptionMenu">
+		<%= _('View this %{i18n_controller_class_groupname} in another account') % {:i18n_controller_class_groupname => _("ICS Calendar")} -%>:
+  	<ul style="margin-top:.4em;">
+    	<% current_user.identity_other_users.each do |user| -%>
+    		<% subscription_id = group.subscriptions.find_by_user_id(user.id) || nil %>
+    		<li style="line-height: 1.6em;">
+    			<%= check_box_action(subscription_create_url(:subscribable_id => group.id, 
+    			                                             :subscribable_type => controller.class.group_name,
+    		                                               :organization_id => user.organization_id,
+    		                                               :user_id => user.id),
+                               subscription_delete_url(:subscription_id => subscription_id),
+                               { :checked => ! subscription_id.blank? } ) %>
+          <%= "#{user.organization.name} (#{user.username})" %>
+    		</li>
+    	<% end -%>
+  	</ul>
+  </div>
+<% end -%>

@@ -169,3 +169,10 @@ var MailAlias = {
 	}
 }
 
+var awayEvent = {
+	listenLoad: function(e) {
+		Drawers.load('/away/edit','Away');
+		return false;
+	}
+}
+awayEvent.listenerLoad = awayEvent.listenLoad.bindAsEventListener(awayEvent);

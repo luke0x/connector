@@ -20,13 +20,15 @@ class Person < ActiveRecord::Base
   
   belongs_to :contact_list
   has_one    :user
-  has_many   :addresses,       :dependent => :destroy, :order=>"preferred desc"
-  has_many   :email_addresses, :dependent => :destroy, :order=>"preferred desc"
-  has_many   :im_addresses,    :dependent => :destroy, :order=>"preferred desc"
-  has_many   :phone_numbers,   :dependent => :destroy, :order=>"preferred desc"
-  has_many   :special_dates,   :dependent => :destroy, :order=>"preferred desc"
-  has_many   :websites,        :dependent => :destroy, :order=>"preferred desc"
-  has_many   :callings,        :dependent => :nullify, :foreign_key => "callee_id"
+  has_many   :addresses,                :dependent => :destroy, :order=>"preferred desc"
+  has_many   :email_addresses,          :dependent => :destroy, :order=>"preferred desc"
+  has_many   :im_addresses,             :dependent => :destroy, :order=>"preferred desc"
+  has_many   :phone_numbers,            :dependent => :destroy, :order=>"preferred desc"
+  has_many   :special_dates,            :dependent => :destroy, :order=>"preferred desc"
+  has_many   :websites,                 :dependent => :destroy, :order=>"preferred desc"
+  has_many   :callings,                 :dependent => :nullify, :foreign_key => "callee_id"
+  has_many   :person_group_memberships, :dependent => :destroy
+  has_many   :person_groups,            :through => :person_group_memberships
 
   composed_of :tz, :class_name => 'TZInfo::Timezone', :mapping => %w(time_zone time_zone)
 

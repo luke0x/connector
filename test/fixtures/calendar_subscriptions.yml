@@ -1,0 +1,33 @@
+# ++
+# Copyright 2004-2007 Joyent Inc.
+# 
+# Redistribution and/or modification of this code is 
+# governed by the GPLv2.
+# 
+# Report issues and contribute at http://dev.joyent.com/
+# 
+# $Id$
+# --
+
+us_holidays:
+  id: 1
+  name: 'US Holidays'
+  user_id: 1
+  organization_id: 1
+  url: 'http://www.example.com/basic/US32Holidays.ics'
+  username: 'ian'
+  password: 'testpass'
+  update_frequency: 'weekly'
+  created_at: <%= (Time.now - 9.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 8.days).to_s(:db) %>
+spanish_holidays:
+  id: 2
+  name: 'Spain Holidays'
+  user_id: 1
+  organization_id: 1
+  url: 'http://www.example.com/plain/Spain32Holidays.ics'
+  username: 
+  password: 
+  update_frequency: 'monthly'
+  created_at: <%= (Time.now - 45.days).to_s(:db) %>
+  updated_at: <%= (Time.now - 32.days).to_s(:db) %>

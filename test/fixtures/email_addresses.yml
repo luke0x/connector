@@ -38,3 +38,38 @@ stephen_at_joyent:
   preferred: false
   email_type: Home
   email_address: stephen@joyent.net
+
+pedro_at_joyent:
+  id: 5
+  person_id: 14
+  preferred: true
+  email_type: Home
+  email_address: pedro@joyent.net
+
+luis_at_joyent:
+  id: 6
+  person_id: 15
+  preferred: true
+  email_type: Work
+  email_address: luis@joyent.net
+
+andres_at_joyent:
+  id: 7
+  person_id: 16
+  preferred: false
+  email_type: Work
+  email_address: andres@joyent.net
+
+andres2_at_joyent:
+  id: 8
+  person_id: 16
+  preferred: true
+  email_type: Home
+  email_address: andresr83@gmail.com
+
+rails_at_joyent:
+  id: 9
+  person_id: 11
+  preferred: true
+  email_type: Home
+  email_address: rails@joyent.net

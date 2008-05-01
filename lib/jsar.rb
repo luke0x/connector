@@ -22,6 +22,7 @@ module JSAR
       helper_method :item_to_jsar
       helper_method :permission_to_jsar
       helper_method :notification_to_jsar
+      helper_method :group_to_jsar
     EOF
   end
 
@@ -63,7 +64,7 @@ module JSAR
       });".gsub(/\s+/, ' ')
     end
 
-    def item_to_jsar(item, selected)
+    def item_to_jsar(item, selected, selected_group = nil)
       return '' unless item
 
       "Item.create({
@@ -75,8 +76,10 @@ module JSAR
         selected:          #{selected},
         canEdit:           #{User.current.can_edit?(item)},
         canCopy:           #{User.current.can_copy?(item)},
+        canAdd:            #{User.current.can_add?(item)},
         canMove:           #{User.current.can_move?(item)},
         canDelete:         #{User.current.can_delete?(item)},
+        canRemove:         #{User.current.can_delete_from?(selected_group)},
         mustConfirmDelete: #{User.current.must_confirm_delete?(item)}
       });".gsub(/\s+/, ' ')
     end
@@ -99,6 +102,21 @@ module JSAR
         userDomId: '#{notification.notifiee.dom_id}',
         itemDomId: '#{notification.item.dom_id}'
       });".gsub(/\s+/, ' ')
+    end
+    
+    def group_to_jsar(group)
+      return '' unless group
+      users = group.respond_to?(:users) ? group.users : []
+      js_users_array = users.map{|u| "'#{u.dom_id}'"}.join(',')
+      
+      "Group.create({
+        domId:       '#{group.dom_id}',
+        userDomId:   '#{group.owner.dom_id}',
+        personDomId: '#{group.owner.person.dom_id}',
+        name:        '#{escape_javascript(URI.encode(group.name))}',
+        users:       [#{js_users_array}]
+      });".gsub(/\s+/, ' ')
+      
     end
 
     # taken from actionview

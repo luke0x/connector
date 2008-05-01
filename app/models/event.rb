@@ -28,6 +28,8 @@ class Event < ActiveRecord::Base
   has_many   :calendars,   :through   => :invitations
   has_many   :users,       :through   => :invitations
   
+  belongs_to :calendar_subscription
+  
   def self.search_fields
     [
       'users.username',
@@ -69,12 +71,14 @@ class Event < ActiveRecord::Base
   end
   
   def invite(user)
+    return unless self.calendar_subscription.nil?
     return if invitation_for(user)
     Invitation.create(:user_id=>user.id, :event_id=>id)
   end  
   
   # Won't allow you to uninvite if an invitation has already been responded to
   def uninvite(user)
+    return unless self.calendar_subscription.nil?
     return unless invite = invitation_for(user)
     return unless invite.pending?
     return if invite.user == owner and calendars.select{|c| c.owner == owner}.length == 1
@@ -84,6 +88,7 @@ class Event < ActiveRecord::Base
 
   # 'renotifies' all invitees, for when the event has changed
   def renotify!
+    return unless self.calendar_subscription.nil?
     invitations.find(:all, :conditions => ["user_id <> ?", user_id]).each do |invitation|
       invitation.accepted = false
       invitation.pending = true
@@ -93,6 +98,7 @@ class Event < ActiveRecord::Base
   end
   
   def move_to(calendar)
+    return unless self.calendar_subscription.nil?
     user = calendar.owner
     # find the calendar the user's storing this event on
     invite = invitations.find(:first, :conditions=>["user_id = ?", user.id])
@@ -106,6 +112,8 @@ class Event < ActiveRecord::Base
   def copy_to(calendar)
     new_event       = Event.create(self.attributes)
     new_event.owner = calendar.owner
+    # Just in case the event comes from a calendar subscription
+    new_event.calendar_subscription = nil
     new_event.save
     calendar.add_event(new_event)
     permissions.each {|perm| new_event.permissions.create(perm.attributes)} 
@@ -114,30 +122,37 @@ class Event < ActiveRecord::Base
   end
   
   def invitation_for(user)
+    return nil unless self.calendar_subscription.nil?
     self.invitations.find_by_user_id(user.id)
   end  
   
   def accepted_invitations
+    return [] unless self.calendar_subscription.nil?
     self.invitations(true).select{|invite| ! invite.pending? && invite.accepted?} - [self.invitation_for(self.owner)]
   end
   
   def declined_invitations
+    return [] unless self.calendar_subscription.nil?
     self.invitations(true).select{|invite| ! invite.pending? && !invite.accepted?} - [self.invitation_for(self.owner)]
   end
   
   def pending_invitations
+    return [] unless self.calendar_subscription.nil?
     self.invitations(true).select{|invite| invite.pending?} - [self.invitation_for(self.owner)]
   end
 
   def invitees_accepted
+    return [] unless self.calendar_subscription.nil?
     self.accepted_invitations.collect(&:user).sort
   end
 
   def invitees_declined
+    return [] unless self.calendar_subscription.nil?
     self.declined_invitations.collect(&:user).sort
   end
   
   def invitees_pending
+    return [] unless self.calendar_subscription.nil?
     self.pending_invitations.collect(&:user).sort
   end
   
@@ -318,7 +333,11 @@ class Event < ActiveRecord::Base
   #####
   
   def primary_calendar
-    calendars.find(:first, :conditions => ['users.id = ?', owner.id], :scope => :read)
+    if !calendar_subscription.nil?
+      calendar_subscription
+    else
+      calendars.find(:first, :conditions => ['users.id = ?', owner.id], :scope => :read)
+    end
   end
   
   def class_humanize

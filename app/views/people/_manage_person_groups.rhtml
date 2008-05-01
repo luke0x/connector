@@ -1,0 +1,40 @@
+<% # ++ -%>
+<% # Copyright 2004-2007 Joyent Inc. -%>
+<% #  -%>
+<% # Redistribution and/or modification of this code is  -%>
+<% # governed by the GPLv2. -%>
+<% #  -%>
+<% # Report issues and contribute at http://dev.joyent.com/ -%>
+<% #  -%>
+<% # $Id: _overlay_users.rhtml 652 2008-04-06 07:19:23Z luis@joyent.com $ -%>
+<% # -- -%>
+
+<h5 style="clear: left;"><%= _('Manage Person Groups') -%></h5>
+
+<% if @available_person_groups.blank? -%>
+  <fieldset>
+    <em><%= _('Member of all person groups') -%>.</em>
+  </fieldset>
+<% else -%>
+  <% form_tag(people_manage_url(@person)) do -%>
+    <fieldset class="manage columns_4">
+      <% @available_person_groups.in_groups_of((@available_person_groups.size/4.0).ceil,false).each do |available_set| -%>
+        <div class="column">
+          <ul style="list-style:none;">
+            <% available_set.each do |person_group| -%>
+              <li id="<%= "manage_li_#{person_group.id}" %>" class="<%= 'manage_selected' if @person.person_groups.include?(person_group) %>">
+                <%= check_box_tag('manage_ids[]', person_group.id, @person.person_groups.include?(person_group), {:id => "manage_checkbox_#{person_group.id}", :onclick => "ManageDrawer.toggle($('manage_li_#{person_group.id}'),'manage_selected')"} ) %>
+                <label for="<%= "manage_checkbox_#{person_group.id}" %>">
+                  <span class="manage_desc"><%= "#{person_group.name} (#{person_group.owner.person.first_name} #{person_group.owner.person.last_name})" %></span>
+                </label>
+              </li>
+            <% end -%>
+          </ul>
+        </div>
+      <% end -%>
+    </fieldset>
+  <div class="drawerButtons" style="clear: left;">
+    <%= submit_tag(_('Save')) %>
+  </div>
+  <% end -%>
+<% end -%>

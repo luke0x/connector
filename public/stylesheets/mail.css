@@ -142,6 +142,19 @@ $Id$
 	.actionUnflag a:active, .actionJunk a.active {
 		background-position: -1350px -90px;
 	}
+	
+	.actionAway a.disabled, .actionAway a:hover.disabled {
+		background-position: -1500px 0px;
+	}
+	.actionAway a {
+		background-position: -1500px -30px;
+	}
+	.actionAway a:hover {
+		background-position: -1500px -60px;
+	}
+	.actionAway a:active, .actionAway a.active {
+		background-position: -1500px -90px;
+	}
 
 /* sidebar -------------------------------------------------- */
 
@@ -445,3 +458,74 @@ $Id$
     	background-position: 0 0;
     	padding: 2px 0 2px 18px;
     }
+
+/* JavaScript Calendar and Auto Replies Styles -------------------------- */
+
+		#awayInfo .info p {
+		}
+			#awayInfo .info p #awayPointerLink {
+				float: right;
+				background-image: url(/images/mail/away.png);
+				padding-left: 17px;
+				background-repeat: no-repeat;
+				background-position: left center;
+				color: #000;
+			}
+			#awayInfo .info p #awayPointerLink:hover {
+				text-decoration: underline;
+			}
+		
+		.auto_reply_switch {
+			margin-bottom: 1em;
+			padding-left: 2px;
+		}
+		.auto_reply_calendar, .auto_reply_message {
+			vertical-align: top;
+		}
+		.auto_reply_calendar {
+			padding-right: 1em;
+		}
+		.auto_reply_message textarea {
+			width: 97%;
+			height: 10em;
+			padding: .5em;
+			margin-bottom: .25em;
+		}
+		#jsCalendar {
+			border: 1px solid #C5C5C5;
+			background-color: #F6F6F6;
+			padding: .5em;
+		}
+		#jsCalendar table {
+			border-collapse: collapse;
+		}
+		#jsCalendar th {
+		}
+		#jsCalendar td {
+			border: 1px solid #DCDCDC;
+		}
+		#jsCalendar td a, #jsCalendar td a:active, #jsCalendar td a:hover {
+			text-decoration: none;
+			display: block;
+			text-align: center;
+			color: #194ab9;
+			background-color: #fff;
+		}
+		#jsCalendar th a.prev-month, 
+		#jsCalendar th a.next-month {
+			text-decoration: none;
+			border: 1px solid #c5c5c5;
+			height: 8px;
+			background-color: #fff;
+			color: #333;
+		}
+		#jsCalendar td a.selected-day {
+			outline: 1px solid #000;
+			color: #FFF;
+			background-color: #333;
+		}
+
+		#jsCalendar td.today-day, #jsCalendar td.today-day a {
+			background-color: #D1E6FF;
+		}
+
