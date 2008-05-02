@@ -23,3 +23,11 @@ $Id$
 		width: 98px !important;
 		background-image: url(/images/lang/en/actionsPeople.png);
 		}
+	.action.add_to_group a {	
+		width: 106px !important;
+		background-image: url(/images/lang/en/actionsPeople.png);
+		}
+	.action.remove_from_group a {	
+		width: 139px !important;
+		background-image: url(/images/lang/en/actionsPeople.png);
+		}

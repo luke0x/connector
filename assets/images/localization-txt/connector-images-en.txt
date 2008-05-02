@@ -53,6 +53,7 @@ Delete All Spam =>
 == File: public/images/lang/en/actionsPeople.png
 
 Call via Jajah =>
+Add to Group =>
 
 == File: public/images/lang/en/apps.png
 

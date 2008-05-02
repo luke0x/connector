@@ -25,6 +25,32 @@ $Id$
 	.actionJajah a:active, .actionJajah a.active {
 		background-position: 0px -90px;
 	}
+	
+	.action.add_to_group a.disabled, .action.add_to_group a:hover.disabled {
+		background-position: -150px 0px;
+	}
+	.action.add_to_group a {
+		background-position: -150px -30px;
+	}
+	.action.add_to_group a:hover {
+		background-position: -150px -60px;
+	}
+	.action.add_to_group a:active, .action.add_to_group a.active {
+		background-position: -150px -90px;
+	}
+	
+	.action.remove_from_group a.disabled, .action.remove_from_group a:hover.disabled {
+		background-position: -300px 0px;
+	}
+	.action.remove_from_group a {
+		background-position: -300px -30px;
+	}
+	.action.remove_from_group a:hover {
+		background-position: -300px -60px;
+	}
+	.action.remove_from_group a:active, .action.remove_from_group a.active {
+		background-position: -300px -90px;
+	}
 
 /* sidebar -------------------------------------------------- */
 
