@@ -62,7 +62,7 @@ class PersonGroup < ActiveRecord::Base
   # users with membership to this group
   def users(force_reload = false)
     if force_reload or @users.nil?
-      @users = people.find_all { |person| person.user?  }
+      @users = people.find_all{ |person| person.user?  }.collect(&:user)
     end
     @users
   end
