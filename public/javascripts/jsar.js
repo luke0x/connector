@@ -367,6 +367,34 @@ Object.extend(Group, {
 			return this.attributes.push(h);
 		}
 	},	
+	
+	notifications: function(group) {
+		return GroupNotification.attributes.select(function(groupNotification){
+			return groupNotification.groupDomId == group.domId;
+		});
+	},
+	
+	allNotifiedOf: function(group, item) {
+		return group.users.all(function(userDomId){	
+			return User.isNotifiedOf(User.find(userDomId), item);
+		});
+	},	
+	
+	someNotifiedOf: function(group, item) {
+		return group.users.any(function(userDomId){	
+			return User.isNotifiedOf(User.find(userDomId), item);
+		});
+	},	
+	
+	findSorted: function() {
+		return Group.attributes.sortBy(function(group){ return group.name; });
+	},
+	
+	canView: function(group, item){
+		//TODO Luis' code
+		return true;
+	}
+	
 });
 
 var Permission = new ActiveRecord();

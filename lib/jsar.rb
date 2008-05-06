@@ -107,7 +107,7 @@ module JSAR
     def group_to_jsar(group)
       return '' unless group
       users = group.respond_to?(:users) ? group.users : []
-      js_users_array = users.map{|u| "'#{u.dom_id}'"}.join(',')
+      js_users_array = users.map{|u| "'#{u.user.dom_id}'"}.join(',')
       
       "Group.create({
         domId:       '#{group.dom_id}',

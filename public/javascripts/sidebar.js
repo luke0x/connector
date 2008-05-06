@@ -533,11 +533,14 @@ var Sidebar = {
 
 			if (! Sidebar.disabled()) {
 				var currentUser = User.findCurrent();
-				Sidebar.Notify.draw(currentUser);
+				Sidebar.Notify.draw(currentUser, 'user');
 				new Insertion.Bottom(container, '<tr><td colspan="2"><hr /></td></tr>');
 
+				Group.findSorted().each(function(group){
+					if (group.users != '') Sidebar.Notify.draw(group, 'group');
+				});
 				User.findSorted().each(function(user){
-					if(user.domId != currentUser.domId) Sidebar.Notify.draw(user);
+					if(user.domId != currentUser.domId) Sidebar.Notify.draw(user, 'user');
 				});
 				$('notifyAvailableContainer').show();
 			} else {
@@ -545,22 +548,43 @@ var Sidebar = {
 			}
 		},
 
-		draw: function(user) {
+		draw: function(notifiee, type) {
 			html = '';
 
 			if (Joyent.viewKind == 'create') {
-				if (JoyentPage.createNotifications.include(user.domId)) {
+				if (JoyentPage.createNotifications.include(notifiee.domId)) {
 					viewableClass = ' on';
 				} else {
 					viewableClass = ' off';
 				}
 			} else {
-				if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){ return User.isNotifiedOf(user, item); })) {
-					viewableClass = ' on';
-				} else if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){ return ! User.isNotifiedOf(user, item); })) {
-					viewableClass = ' off';
-				} else {
-					viewableClass = ' some';
+				if (type == 'user') {
+					if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){return User.isNotifiedOf(notifiee, item);})) {
+						viewableClass = ' on';
+					}
+					else 
+						if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){return !User.isNotifiedOf(notifiee, item);})) {
+							viewableClass = ' off';
+						}
+						else {
+							viewableClass = ' some';
+						}
+				}else if (type == 'group'){
+					if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){return Group.allNotifiedOf(notifiee, item);
+					})) {
+						viewableClass = ' on';
+					}else if (Item.findSelected().length > 0 
+						&& Item.findSelected().all(function(item){return Group.someNotifiedOf(notifiee, item );}) 
+						&& Item.findSelected().all(function(item){return !Group.allNotifiedOf(notifiee, item );})) {
+						viewableClass = ' some';
+					}					
+					else 
+						if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){return !Group.allNotifiedOf(notifiee, item);})) {
+							viewableClass = ' off';
+						}
+						else {
+							viewableClass = ' some';
+						}
 				}
 			}
 
@@ -575,9 +599,13 @@ var Sidebar = {
 				}
 			}
 			if (Joyent.viewKind == 'create') {
-				disabled = Item.findSelected().length == 0 || (JoyentPage.createPermissions.length > 0 && ! JoyentPage.createPermissions.include(user.domId));
+				disabled = Item.findSelected().length == 0 || (JoyentPage.createPermissions.length > 0 && ! JoyentPage.createPermissions.include(notifiee.domId));
 			} else {
-				disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){ return ! User.canView(user, item); });
+				if (type == 'user') {
+					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !User.canView(notifiee, item);});
+				}else if (type == 'group') {
+					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !Group.canView(notifiee, item);});
+				}
 			}
 			if (disabled) {
 				title += JoyentL10n["can't change"];
@@ -585,21 +613,31 @@ var Sidebar = {
 				title += JoyentL10n['can change'];
 			}
 
-			userClass = (user.domId == User.findCurrent().domId) ? 'currentUser' : 'user';
-			html += '<tr id="' + user.domId + '_notify_li">';
-			html += '<td><span class="addIconLeft ' + userClass + '">' + user.fullName.escapeHTML() + '</span></td>';
+			if (type == 'user') {
+				notifieeClass = (notifiee.domId == User.findCurrent().domId) ? 'currentUser' : 'user';
+				notifieeName = notifiee.fullName.escapeHTML();
+				onclickAction = 'toggleSelected';
+			}else if (type == 'group'){
+				// TODO notifieeClass should be 'group'
+				notifieeClass = 'user';	
+				notifieeName = notifiee.name.escapeHTML();
+				onclickAction = 'toggleSelectedGroup';				
+			}
+							
+			html += '<tr id="' + notifiee.domId + '_notify_li">';
+			html += '<td><span class="addIconLeft ' + notifieeClass + '">' + notifieeName + '</span></td>';
 			html += '<td>';
-			html += '<a href="#" id="' + user.domId + '_notify_toggle" onclick="return Sidebar.Notify.toggleSelected(\'' + user.domId + '\');" class="status viewable' + viewableClass + '" title="' + title + '">' + JoyentL10n['Notified'] + '</a>';
+			html += '<a href="#" id="' + notifiee.domId + '_notify_toggle" onclick="return Sidebar.Notify.' + onclickAction + '(\'' + notifiee.domId + '\');" class="status viewable' + viewableClass + '" title="' + title + '">' + JoyentL10n['Notified'] + '</a>';
 			html += '</td>';
 			html += '</tr>';
 			new Insertion.Bottom('notifySidebarUsers', html);
-			if (disabled) setLink(user.domId + '_notify_toggle', false);
+			if (disabled) setLink(notifiee.domId + '_notify_toggle', false);
 
-      return html;
-		},
+      		return html;
+		},	
 
 		toggleSelected: function(userDomId) {
-			if (Item.findSelected().length == 0) return false
+			if (Item.findSelected().length == 0) return false;
 			var user = User.find(userDomId);
 
 			if (Joyent.viewKind == 'create') {
@@ -616,6 +654,34 @@ var Sidebar = {
 				}
 			}
 			return false;
+		},
+		
+		toggleSelectedGroup: function(groupDomId){
+			if (Item.findSelected().length == 0) return false;
+			var group = Group.find(groupDomId);
+			
+			group.users.each(function(userDomId){
+				var user = User.find(userDomId);				
+			
+				if (Joyent.viewKind == 'create') {
+					if (JoyentPage.createNotifications.include(user.domId)) {
+						Sidebar.Notify.unnotifySelected(userDomId);
+					} else {
+						if (!$(groupDomId + '_notify_toggle').hasClassName('some')) {
+							Sidebar.Notify.unnotifySelected(userDomId);
+						}
+					}
+				} else {
+					if (Item.findSelected().any(function(item){ return ! User.isNotifiedOf(user, item) })) {
+						Sidebar.Notify.notifySelected(userDomId);
+					} else {
+						if (!$(groupDomId + '_notify_toggle').hasClassName('some')) {
+							Sidebar.Notify.unnotifySelected(userDomId);
+						}
+					}
+				}
+			});
+			return false;			
 		},
 		
 		notifySelected: function(userDomId) {
