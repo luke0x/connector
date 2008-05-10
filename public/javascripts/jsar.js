@@ -368,12 +368,6 @@ Object.extend(Group, {
 		}
 	},	
 	
-	notifications: function(group) {
-		return GroupNotification.attributes.select(function(groupNotification){
-			return groupNotification.groupDomId == group.domId;
-		});
-	},
-	
 	allNotifiedOf: function(group, item) {
 		return group.users.all(function(userDomId){	
 			return User.isNotifiedOf(User.find(userDomId), item);
@@ -390,9 +384,16 @@ Object.extend(Group, {
 		return Group.attributes.sortBy(function(group){ return group.name; });
 	},
 	
-	canView: function(group, item){
-		//TODO Luis' code
-		return true;
+	someCanView: function(group, item){
+		return group.users.any(function(userDomId){
+			return User.canView(User.find(userDomId), item);
+		});
+	},
+	
+	allCanView: function(group, item){
+		return group.users.all(function(userDomId){
+			return User.canView(User.find(userDomId), item);
+		});
 	}
 	
 });
