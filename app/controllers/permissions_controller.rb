@@ -45,6 +45,37 @@ class PermissionsController < AuthenticatedController
     render :text => TagController::ERROR_MSG
   end
 
+  def add_person_group
+    person_group = PersonGroup.find(params[:group_id], :scope => :read)
+    return if person_group.blank?
+    page_js = []
+
+    dom_ids = params[:dom_ids].split(',')
+    dom_ids.each do |dom_id|
+      next unless item = find_by_dom_id(dom_id)
+      
+      person_group.users.each { |user| item.add_permission(user) }
+      
+      page_js << "Permission.findAllBy('itemDomId', '#{item.dom_id}').each(function(permission){ Permission.destroy(permission.domId); });"
+      item.permissions(true).each do |permission|
+        page_js << permission_to_jsar(permission)
+      end unless item.public?
+    end
+
+    respond_to do |wants|
+      wants.html { redirect_back_or_home }
+      wants.js {
+        render :update do |page|
+          page << page_js.join("\n")
+          page << "Sidebar.Access.refresh();"
+          page << "Sidebar.Notify.refresh();"
+        end
+      }
+    end      
+  rescue ActiveRecord::RecordNotFound
+    render :text => TagController::ERROR_MSG
+  end  
+  
   def remove_user
     user = User.find(params[:user_id], :scope => :read)
     return if user.blank?
@@ -78,6 +109,39 @@ class PermissionsController < AuthenticatedController
     render :text => TagController::ERROR_MSG    
   end
 
+  def remove_person_group
+    person_group = PersonGroup.find(params[:group_id], :scope => :read)
+    return if person_group.blank?
+    page_js = []
+
+    dom_ids = params[:dom_ids].split(',')
+    dom_ids.each do |dom_id|
+      next unless item = find_by_dom_id(dom_id)
+      person_group.users.each { |user| item.remove_permission(user) } 
+      page_js << "Permission.findAllBy('itemDomId', '#{item.dom_id}').each(function(permission){ Permission.destroy(permission.domId); });"
+      item.permissions(true).each do |permission|
+        page_js << permission_to_jsar(permission)
+      end unless item.public?
+      page_js << "Notification.findAllBy('itemDomId', '#{item.dom_id}').each(function(notification){ Notification.destroy(notification.domId); });"
+      item.active_notifications.each do |notification|
+        page_js << notification_to_jsar(notification)
+      end
+    end
+
+    respond_to do |wants|
+      wants.html { redirect_back_or_home }
+      wants.js {
+        render :update do |page|
+          page << page_js.join("\n")
+          page << "Sidebar.Access.refresh();"
+          page << "Sidebar.Notify.refresh();"
+        end
+      }
+    end
+  rescue ActiveRecord::RecordNotFound
+    render :text => TagController::ERROR_MSG    
+  end
+  
   def make_public
     page_js = []
 
