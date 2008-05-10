@@ -111,14 +111,14 @@ module JSAR
       
       "Group.create({
         domId:       '#{group.dom_id}',
+        arId:        '#{group.id || 'null'}',
         userDomId:   '#{group.owner.dom_id}',
         personDomId: '#{group.owner.person.dom_id}',
         name:        '#{escape_javascript(URI.encode(group.name))}',
         users:       [#{js_users_array}]
       });".gsub(/\s+/, ' ')
-      
     end
-
+    
     # taken from actionview
     def escape_javascript(javascript)
       (javascript || '').gsub(/\r\n|\n|\r/, "\\n").gsub(/["']/) { |m| "\\#{m}" }
