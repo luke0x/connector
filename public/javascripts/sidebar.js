@@ -270,7 +270,7 @@ var Sidebar = {
 
 				var currentUser = User.findCurrent();
 				Sidebar.Access.draw(currentUser);
-
+                                
 				new Insertion.Bottom(container, '<tr><td colspan="2"><hr /></td></tr>');
 
 				if (JoyentPage.createPermissions.length == 0 || JoyentPage.createPermissions.length == User.findAll().length) {
@@ -293,6 +293,10 @@ var Sidebar = {
 		    everyoneHTML += '</tr>';
 				new Insertion.Bottom(container, everyoneHTML);
 
+                                Group.findSorted().each(function(group){
+                                    Sidebar.Access.drawGroup(group);
+                                });
+                                
 				User.findSorted().each(function(user){
 					if(user.domId != currentUser.domId) Sidebar.Access.draw(user);
 				});
@@ -339,6 +343,10 @@ var Sidebar = {
 				new Insertion.Bottom(container, everyoneHTML);
 				if (disabled) setLink('everyone_access_toggle', false);
 
+                                Group.findSorted().each(function(group){
+                                    Sidebar.Access.drawGroup(group);
+                                });
+                                
 				User.findSorted().each(function(user){
 					if (user.domId != currentUser.domId) Sidebar.Access.draw(user);
 				});
@@ -399,9 +407,80 @@ var Sidebar = {
 			new Insertion.Bottom('accessSidebarUsers', html);
 			if (disabled) setLink(user.domId + '_access_toggle', false);
 
-      return html;
+                        return html;
 		},
 
+		drawGroup: function(group) {
+			html = '';
+			currentUser = User.findCurrent();
+
+			if (Joyent.viewKind == 'create') {
+                            var permissionsCounter = 0;
+                            
+                            if (JoyentPage.createPermissions.length == 0) {
+                                permissionsCounter = group.users.length;
+                            } else {
+                                group.users.each(function(userDomId){
+                                    if ( JoyentPage.createPermissions.include(userDomId) ) {
+                                        permissionsCounter++;
+                                    }
+                                });
+                            }
+                          
+                            if (permissionsCounter == 0) {
+                                viewableClass = ' off';
+                            } else if ( permissionsCounter == group.users.length ) {
+                                viewableClass = ' on';
+                            } else {
+                                viewableClass = ' some'
+                            }
+                            
+			} else {
+                            if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){ return Group.allCanView(group, item); })) {
+                                viewableClass = ' on';
+                            } else if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){ return !Group.someCanView(group, item); })) {
+                                viewableClass = ' off';
+                            } else {
+                                viewableClass = ' some';
+                            }
+			}
+
+			if (Item.findSelected().length == 0) {
+                            title = JoyentL10n["no items selected, "];				
+			} else {
+                            switch (viewableClass) {
+                                case ' on':   title = JoyentL10n['has access, ']; break;
+                                case ' some': title = JoyentL10n['has access to some selected items, ']; break;
+                                case ' off':  title = JoyentL10n["doesn't have access, "]; break;
+                                default:      title = '';
+                            }
+			}
+                        
+			disabled = Item.findSelected().length == 0 ||
+                                   (group.users.all(function(userDomId){return userDomId == currentUser.domId; }))  ||
+                                   (Item.findSelected().all(function(item){ return Group.someCanView(group, item); }) &&
+                                    Item.findSelected().any(function(item){ return group.users.any(function(userDomId){ return item.userDomId == userDomId }); }));
+                                  
+			if (disabled) {
+                            title += JoyentL10n["can't change"];
+			} else {
+                            title += JoyentL10n['can change'];
+			}
+
+			html += '<tr id="' + group.domId + '_access_li">';
+			html += '<td>';
+			html += '<span class="addIconLeft personGroup">' + group.name.escapeHTML() + '</span>';
+			html += '</td>';
+			html += '<td>';
+			html += '<a href="#" id="' + group.domId + '_access_toggle" onclick="return Sidebar.Access.toggleSelectionForGroup(\'' + group.domId + '\');" class="status viewable' + viewableClass + '" title="' + title + '">' + JoyentL10n['Viewable'] + '</a>';
+			html += '</td>';
+			html += '</tr>';
+			new Insertion.Bottom('accessSidebarUsers', html);
+			if (disabled) setLink(group.domId + '_access_toggle', false);
+
+                        return html;
+		},
+                
 		toggleSelected: function(userDomId) {
 			if (Item.findSelected().length == 0) return false
 			var user = User.find(userDomId);
@@ -441,6 +520,29 @@ var Sidebar = {
 			return false;
 		},
 		
+		addGroupToSelected: function(groupDomId) {
+			if (Item.findSelected().length == 0) return false
+                        var group = Group.find(groupDomId);
+
+			if (Joyent.viewKind == 'create') {
+                            group.users.each(function(userDomId){
+                              if (! JoyentPage.createPermissions.include(userDomId)) JoyentPage.createPermissions.push(userDomId);
+                            });
+				
+                            if (JoyentPage.createPermissions.length == User.findAll().length) JoyentPage.createPermissions = $A();
+                            Sidebar.Access.refresh();
+                            Sidebar.Notify.refresh();
+			} else {
+                            if (e = $(groupDomId + '_access_toggle')) {
+                                e.removeClassName('off');
+                                e.removeClassName('some');
+                                e.addClassName('on');
+                            }
+                            new Ajax.Request('/permissions/add_person_group?group_id=' + group.arId + '&dom_ids=' + Item.selectedDomIds(), {asynchronous:true, evalScripts:true});
+			}
+			return false;
+		},
+		
 		removeFromSelected: function(userDomId) {
 			if (Item.findSelected().length == 0) return false
 
@@ -466,6 +568,32 @@ var Sidebar = {
 			return false;
 		},
 
+		removeGroupFromSelected: function(groupDomId) {
+			if (Item.findSelected().length == 0) return false;
+                        var group = Group.find(groupDomId);
+
+			if (Joyent.viewKind == 'create') {
+                            if (JoyentPage.createPermissions.length == 0) {
+                                User.findAll().each(function(user){
+                                    if (!group.users.include(user.domId)) JoyentPage.createPermissions.push(user.domId);
+                                });
+                            } else {
+                                JoyentPage.createPermissions = JoyentPage.createPermissions.reject(function(userDomId){ return group.users.include(userDomId); });
+                            }
+                            JoyentPage.createNotifications = JoyentPage.createNotifications.reject(function(userDomId){ return group.users.include(userDomId); });
+                            Sidebar.Access.refresh();
+                            Sidebar.Notify.refresh();
+			} else {
+                            if (e = $(groupDomId + '_access_toggle')) {
+                                e.removeClassName('on');
+                                e.removeClassName('some');
+                                e.addClassName('off');
+                            }
+                            new Ajax.Request('/permissions/remove_person_group?group_id=' + group.arId + '&dom_ids=' + Item.selectedDomIds(), {asynchronous:true, evalScripts:true});
+			}
+			return false;
+		},
+                
 		toggleSelectionForEveryone: function() {
 			if (Item.findSelected().length == 0) return false
 
@@ -484,6 +612,27 @@ var Sidebar = {
 			}
 			return false;
 		},
+                
+                toggleSelectionForGroup: function(groupDomId) {
+                  if (Item.findSelected().length == 0) return false
+                  var group = Group.find(groupDomId);
+                  
+                  if (Joyent.viewKind == 'create') {
+                      if (JoyentPage.createPermissions.length == 0 || group.users.any(function(userDomId){ return JoyentPage.createPermissions.include(userDomId); })) {
+                          Sidebar.Access.removeGroupFromSelected(groupDomId);
+                      } else {
+                          Sidebar.Access.addGroupToSelected(groupDomId);
+                      }
+                  } else {
+                      if (Item.findSelected().any(function(item){ return !Group.allCanView(group, item); })) {
+                          Sidebar.Access.addGroupToSelected(groupDomId);
+                      } else {
+                          Sidebar.Access.removeGroupFromSelected(groupDomId);
+                      }
+                  }
+                  
+                  return false;
+                },
 
 		makeSelectionPublic: function() {
 			if (Item.findSelected().length == 0) return false
@@ -604,7 +753,7 @@ var Sidebar = {
 				if (type == 'user') {
 					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !User.canView(notifiee, item);});
 				}else if (type == 'group') {
-					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !Group.canView(notifiee, item);});
+					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !Group.allCanView(notifiee, item);});
 				}
 			}
 			if (disabled) {
