@@ -109,4 +109,47 @@ class PermissionsControllerTest < Test::Unit::TestCase
     
   end
   
+  def test_add_person_group
+    group = person_groups(:empty)
+    peter = users(:peter)
+    pedro = users(:pedro)
+    bernard = people(:bernard)
+    
+    group.people << peter.person
+    group.people << pedro.person
+    
+    bernard.make_private!
+    
+    assert !bernard.permissions(true).collect(&:user_id).include?(peter.id)
+    assert !bernard.permissions(true).collect(&:user_id).include?(pedro.id)
+    
+    xhr(:post, :add_person_group, {:group_id => group.id, :dom_ids => bernard.dom_id})
+    assert_response :success
+    
+    assert bernard.permissions(true).collect(&:user_id).include?(peter.id) || bernard.public?
+    assert bernard.permissions(true).collect(&:user_id).include?(pedro.id) || bernard.public?
+  end
+  
+  def test_remove_person_group
+    group = person_groups(:empty)
+    peter = users(:peter)
+    pedro = users(:pedro)
+    bernard = people(:bernard)
+    
+    group.people << peter.person
+    group.people << pedro.person
+    
+    bernard.add_permission(peter)
+    bernard.add_permission(pedro)
+    
+    assert bernard.permissions(true).collect(&:user_id).include?(peter.id) || bernard.public?
+    assert bernard.permissions(true).collect(&:user_id).include?(pedro.id) || bernard.public?
+    
+    xhr(:post, :remove_person_group, {:group_id => group.id, :dom_ids => bernard.dom_id})
+    assert_response :success
+    
+    assert !bernard.permissions(true).collect(&:user_id).include?(peter.id)
+    assert !bernard.permissions(true).collect(&:user_id).include?(pedro.id)
+  end
+  
 end
