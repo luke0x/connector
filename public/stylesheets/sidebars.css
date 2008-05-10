@@ -715,6 +715,10 @@ a.folder  {
 		background-image: url(/images/icons/userCurrent.png);
 		background-position: 0 0;
 		}
+	.personGroup {
+		background-image: url(/images/icons/userFolder.png);
+		background-position: 0 0;
+		}
 	.orangeBadge {
 		width: 38px;
 		height: 14px;
