@@ -682,14 +682,14 @@ var Sidebar = {
 
 			if (! Sidebar.disabled()) {
 				var currentUser = User.findCurrent();
-				Sidebar.Notify.draw(currentUser, 'user');
+				Sidebar.Notify.drawUser(currentUser);
 				new Insertion.Bottom(container, '<tr><td colspan="2"><hr /></td></tr>');
 
 				Group.findSorted().each(function(group){
-					if (group.users != '') Sidebar.Notify.draw(group, 'group');
+					if (group.users != '') Sidebar.Notify.drawGroup(group);
 				});
 				User.findSorted().each(function(user){
-					if(user.domId != currentUser.domId) Sidebar.Notify.draw(user, 'user');
+					if(user.domId != currentUser.domId) Sidebar.Notify.drawUser(user);
 				});
 				$('notifyAvailableContainer').show();
 			} else {
@@ -697,43 +697,24 @@ var Sidebar = {
 			}
 		},
 
-		draw: function(notifiee, type) {
+		drawUser: function(user) {
 			html = '';
 
 			if (Joyent.viewKind == 'create') {
-				if (JoyentPage.createNotifications.include(notifiee.domId)) {
+				if (JoyentPage.createNotifications.include(user.domId)) {
 					viewableClass = ' on';
 				} else {
 					viewableClass = ' off';
 				}
 			} else {
-				if (type == 'user') {
-					if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){return User.isNotifiedOf(notifiee, item);})) {
-						viewableClass = ' on';
-					}
-					else 
-						if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){return !User.isNotifiedOf(notifiee, item);})) {
-							viewableClass = ' off';
-						}
-						else {
-							viewableClass = ' some';
-						}
-				}else if (type == 'group'){
-					if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){return Group.allNotifiedOf(notifiee, item);
-					})) {
-						viewableClass = ' on';
-					}else if (Item.findSelected().length > 0 
-						&& Item.findSelected().all(function(item){return Group.someNotifiedOf(notifiee, item );}) 
-						&& Item.findSelected().all(function(item){return !Group.allNotifiedOf(notifiee, item );})) {
-						viewableClass = ' some';
-					}					
-					else 
-						if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){return !Group.allNotifiedOf(notifiee, item);})) {
-							viewableClass = ' off';
-						}
-						else {
-							viewableClass = ' some';
-						}
+				if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){return User.isNotifiedOf(user, item);})) {
+					viewableClass = ' on';
+				}
+				else if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){return !User.isNotifiedOf(user, item);})) {
+					viewableClass = ' off';
+				}
+				else {
+					viewableClass = ' some';
 				}
 			}
 
@@ -748,13 +729,9 @@ var Sidebar = {
 				}
 			}
 			if (Joyent.viewKind == 'create') {
-				disabled = Item.findSelected().length == 0 || (JoyentPage.createPermissions.length > 0 && ! JoyentPage.createPermissions.include(notifiee.domId));
+				disabled = Item.findSelected().length == 0 || (JoyentPage.createPermissions.length > 0 && ! JoyentPage.createPermissions.include(user.domId));
 			} else {
-				if (type == 'user') {
-					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !User.canView(notifiee, item);});
-				}else if (type == 'group') {
-					disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !Group.allCanView(notifiee, item);});
-				}
+				disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !User.canView(user, item);});
 			}
 			if (disabled) {
 				title += JoyentL10n["can't change"];
@@ -762,28 +739,87 @@ var Sidebar = {
 				title += JoyentL10n['can change'];
 			}
 
-			if (type == 'user') {
-				notifieeClass = (notifiee.domId == User.findCurrent().domId) ? 'currentUser' : 'user';
-				notifieeName = notifiee.fullName.escapeHTML();
-				onclickAction = 'toggleSelected';
-			}else if (type == 'group'){
-				// TODO notifieeClass should be 'group'
-				notifieeClass = 'user';	
-				notifieeName = notifiee.name.escapeHTML();
-				onclickAction = 'toggleSelectedGroup';				
-			}
+			userClass = (user.domId == User.findCurrent().domId) ? 'currentUser' : 'user';
+			userName = user.fullName.escapeHTML();
 							
-			html += '<tr id="' + notifiee.domId + '_notify_li">';
-			html += '<td><span class="addIconLeft ' + notifieeClass + '">' + notifieeName + '</span></td>';
+			html += '<tr id="' + user.domId + '_notify_li">';
+			html += '<td><span class="addIconLeft ' + userClass + '">' + userName + '</span></td>';
 			html += '<td>';
-			html += '<a href="#" id="' + notifiee.domId + '_notify_toggle" onclick="return Sidebar.Notify.' + onclickAction + '(\'' + notifiee.domId + '\');" class="status viewable' + viewableClass + '" title="' + title + '">' + JoyentL10n['Notified'] + '</a>';
+			html += '<a href="#" id="' + user.domId + '_notify_toggle" onclick="return Sidebar.Notify.toggleSelected(\'' + user.domId + '\');" class="status viewable' + viewableClass + '" title="' + title + '">' + JoyentL10n['Notified'] + '</a>';
 			html += '</td>';
 			html += '</tr>';
 			new Insertion.Bottom('notifySidebarUsers', html);
-			if (disabled) setLink(notifiee.domId + '_notify_toggle', false);
+			if (disabled) setLink(user.domId + '_notify_toggle', false);
 
       		return html;
 		},	
+		
+		drawGroup: function(group) {
+			html = '';
+			if (Joyent.viewKind == 'create') {
+				if (group.users.all(function(userDomId){ return JoyentPage.createNotifications.include(userDomId);})) {
+					viewableClass = ' on';
+				//any number of users but not all users means viewableClass = 'some'
+				} else if (group.users.any(function(userDomId){ return JoyentPage.createNotifications.include(userDomId);}) 
+						&& !group.users.all(function(userDomId){ return JoyentPage.createNotifications.include(userDomId);})){
+					viewableClass = ' some';
+				} else {
+					viewableClass = ' off';
+				}
+
+			} else {
+				if (Item.findSelected().length > 0 && Item.findSelected().all(function(item){return Group.allNotifiedOf(group, item);})) {
+					viewableClass = ' on';
+				}else if (Item.findSelected().length > 0 
+					&& Item.findSelected().all(function(item){return Group.someNotifiedOf(group, item );}) 
+					&& Item.findSelected().all(function(item){return !Group.allNotifiedOf(group, item );})) {
+					viewableClass = ' some';
+				}					
+				else if (Item.findSelected().length == 0 || Item.findSelected().all(function(item){return !Group.allNotifiedOf(group, item);})) {
+					viewableClass = ' off';
+				}
+				else {
+					viewableClass = ' some';
+				}
+			}
+
+			if (Item.findSelected().length == 0) {
+				title = JoyentL10n["no items selected, "];				
+			} else {
+				switch (viewableClass) {
+					case ' on':   title = JoyentL10n['is notified, ']; break;
+					case ' some': title = JoyentL10n['is notified of some selected items, ']; break;
+					case ' off':  title = JoyentL10n["isn't notified, "]; break;
+					default:      title = '';
+				}
+			}
+			if (Joyent.viewKind == 'create') {
+				disabled = Item.findSelected().length == 0 || 
+						   (JoyentPage.createPermissions.length > 0 && 
+						   ! group.users.any(function(userDomId){return JoyentPage.createPermissions.include(userDomId);}));
+			} else {
+				disabled = Item.findSelected().length == 0 || Item.findSelected().any(function(item){return !Group.someCanView(group, item);});
+			}
+			if (disabled) {
+				title += JoyentL10n["can't change"];
+			} else {
+				title += JoyentL10n['can change'];
+			}
+
+			groupClass = 'personGroup';	
+			groupName = group.name.escapeHTML();
+							
+			html += '<tr id="' + group.domId + '_notify_li">';
+			html += '<td><span class="addIconLeft ' + groupClass + '">' + groupName + '</span></td>';
+			html += '<td>';
+			html += '<a href="#" id="' + group.domId + '_notify_toggle" onclick="return Sidebar.Notify.toggleSelectedGroup(\'' + group.domId + '\');" class="status viewable' + viewableClass + '" title="' + title + '">' + JoyentL10n['Notified'] + '</a>';
+			html += '</td>';
+			html += '</tr>';
+			new Insertion.Bottom('notifySidebarUsers', html);
+			if (disabled) setLink(group.domId + '_notify_toggle', false);
+
+      		return html;
+		},		
 
 		toggleSelected: function(userDomId) {
 			if (Item.findSelected().length == 0) return false;
@@ -808,22 +844,35 @@ var Sidebar = {
 		toggleSelectedGroup: function(groupDomId){
 			if (Item.findSelected().length == 0) return false;
 			var group = Group.find(groupDomId);
+			var initialClass;
+			
+			if ($(groupDomId + '_notify_toggle').hasClassName('on')){
+				initialClass = 'on';
+			}else{
+				initialClass = 'other';
+			}
 			
 			group.users.each(function(userDomId){
 				var user = User.find(userDomId);				
 			
 				if (Joyent.viewKind == 'create') {
-					if (JoyentPage.createNotifications.include(user.domId)) {
-						Sidebar.Notify.unnotifySelected(userDomId);
-					} else {
-						if (!$(groupDomId + '_notify_toggle').hasClassName('some')) {
+					if (JoyentPage.createNotifications.include(userDomId) 
+						&& !$(groupDomId + '_notify_toggle').hasClassName('some') && (initialClass == 'on')) {
 							Sidebar.Notify.unnotifySelected(userDomId);
-						}
-					}
-				} else {
-					if (Item.findSelected().any(function(item){ return ! User.isNotifiedOf(user, item) })) {
-						Sidebar.Notify.notifySelected(userDomId);
+					} else if (JoyentPage.createNotifications.include(userDomId) 
+						&& $(groupDomId + '_notify_toggle').hasClassName('some') && (initialClass == 'on')){
+							Sidebar.Notify.unnotifySelected(userDomId);
 					} else {
+						Sidebar.Notify.notifySelected(userDomId);
+					}
+				}
+				else {
+					if (Item.findSelected().any(function(item){
+						return !User.isNotifiedOf(user, item)
+					})) {
+						Sidebar.Notify.notifySelected(userDomId);
+					}
+					else {
 						if (!$(groupDomId + '_notify_toggle').hasClassName('some')) {
 							Sidebar.Notify.unnotifySelected(userDomId);
 						}
