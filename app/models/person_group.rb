@@ -51,7 +51,8 @@ class PersonGroup < ActiveRecord::Base
   end
 
   def cascade_permissions
-    # TODO
+    users_tmp = permissions.collect(&:user)
+    people.each { |p| p.restrict_to!(users_tmp) }
   end
   
   # turns pg17 into 17
