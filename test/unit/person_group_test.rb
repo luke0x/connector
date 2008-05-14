@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class PersonGroupTest < Test::Unit::TestCase
-  fixtures :person_groups, :people
+  fixtures :person_groups, :people, :users
   include CRUDTest
 
   crud_data 'user_id'         => 1,
@@ -12,11 +12,21 @@ class PersonGroupTest < Test::Unit::TestCase
 
   crud_required 'user_id', 'organization_id', 'name'  
 
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_cascade_permissions
+    ian = users(:ian)
+    User.current = ian
+    pedro = users(:pedro)
+    bernard = users(:bernard)
+    ian_group = ian.person_groups.create(:name => "Ian's Person Group", :organization_id => ian.organization.id)
+    pedro_group = pedro.person_groups.create(:name => "Pedro's Person Group", :organization_id => pedro.organization.id)
+    
+    ian_group.people << bernard.person
+    pedro_group.people << bernard.person
+    
+    ian_group.make_private!
+    
+    assert !pedro_group.people(true).include?(bernard.person)
   end
-  
   
   def test_users
     person_group = person_groups(:empty)
@@ -25,9 +35,9 @@ class PersonGroupTest < Test::Unit::TestCase
     person_group.people << people(:peter) # this person belongs to a user
     person_group.people << people(:guest) # just a guest
     
-    assert person_group.users.include?(people(:peter))
-    assert !person_group.users.include?(people(:stephen))
-    assert !person_group.users.include?(people(:guest))
+    assert person_group.users.include?(people(:peter).user)
+    assert !person_group.users.include?(people(:stephen).user)
+    assert !person_group.users.include?(people(:guest).user)
   end
   
 end
