@@ -655,8 +655,9 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person)
       @toolbar[:call]   = current_user.can_copy?(@person)      
       @toolbar[:delete] = current_user.can_delete?(@person)
+      @toolbar[:manage] = current_user.owns?(@person)
       
-      setup_person_groups_manage
+      setup_person_groups_manage if @toolbar[:manage]
 
       respond_to do |wants|
         wants.html { render :action => 'show' }
@@ -676,6 +677,7 @@ class PeopleController < AuthenticatedController
       @toolbar[:copy]   = current_user.can_copy?(@person) 
       @toolbar[:call]   = current_user.can_copy?(@person)       
       @toolbar[:delete] = current_user.can_delete?(@person)
+      @toolbar[:manage] = true
 
       setup_person_groups_manage
       
@@ -818,8 +820,7 @@ class PeopleController < AuthenticatedController
     end         
 
     def setup_person_groups_manage
-      @available_person_groups = PersonGroup.find(:all, :order => 'person_groups.name ASC', :scope => :read)
-      @toolbar[:manage] = true
+      @available_person_groups = current_user.person_groups.find(:all, :order => 'person_groups.name ASC', :scope => :read)
     end
     
     def valid_sort_fields
