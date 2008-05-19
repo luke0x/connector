@@ -25,7 +25,7 @@
               <li id="<%= "manage_li_#{person_group.id}" %>" class="<%= 'manage_selected' if @person.person_groups.include?(person_group) %>">
                 <%= check_box_tag('manage_ids[]', person_group.id, @person.person_groups.include?(person_group), {:id => "manage_checkbox_#{person_group.id}", :onclick => "ManageDrawer.toggle($('manage_li_#{person_group.id}'),'manage_selected')"} ) %>
                 <label for="<%= "manage_checkbox_#{person_group.id}" %>">
-                  <span class="manage_desc"><%= "#{person_group.name} (#{person_group.owner.person.first_name} #{person_group.owner.person.last_name})" %></span>
+                  <span class="manage_desc"><%= person_group.name %></span>
                 </label>
               </li>
             <% end -%>
