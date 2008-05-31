@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Joyent Connector\n"
 "POT-Creation-Date: 2008-04-30 22:27-0400\n"
-"PO-Revision-Date: 2008-04-02 16:55+0100\n"
+"PO-Revision-Date: 2008-05-23 20:59+0200\n"
 "Last-Translator: Sebastian Niesen <sebastian@niesen.net>\n"
 "Language-Team: Joyent i18n <pedro@joyent.com>\n"
 "MIME-Version: 1.0\n"
@@ -117,24 +117,23 @@ msgstr ""
 "hat."
 
 #: app/controllers/calendar_subscriptions_controller.rb:89
-#, fuzzy
 msgid "CalendarSubscription was successfully created."
-msgstr "Listenordner erfolgreich erstellt."
+msgstr "Kalenderabonnement erfolgreich erstellt."
 
 #: app/controllers/calendar_subscriptions_controller.rb:99
 #: app/controllers/calendar_subscriptions_controller.rb:107
 msgid "Cannot create Calendar ICS Subscription"
-msgstr ""
+msgstr "Kann ICS Kalender Abonnement nicht erstellen"
 
 #: app/controllers/calendar_subscriptions_controller.rb:136
 #: app/controllers/calendar_subscriptions_controller.rb:255
 msgid "Calendar ICS Subscription was successfully updated."
-msgstr ""
+msgstr "ICS Kalender Abonnement erfolgreich aktualisiert."
 
 #: app/controllers/calendar_subscriptions_controller.rb:141
 #: app/controllers/calendar_subscriptions_controller.rb:263
 msgid "Cannot update Calendar ICS Subscription"
-msgstr ""
+msgstr "Kann ICS Kalender Abonnement nicht aktualisieren"
 
 #: app/controllers/connect_controller.rb:66
 msgid "Search: %{i18n_search_param}"
@@ -185,11 +184,13 @@ msgstr "Ein Fehler ist beim Umbenennen des Listenordners aufgetreten."
 msgid ""
 "I am away and have limited access to email. I will respond as soon as "
 "possible."
-msgstr ""
+msgstr "Ich bin unterwegs und habe begrenzten Email-Zugang. Ich werde "
+"sobald wie möglich antworten."
 
 #: app/controllers/mail_controller.rb:768
 msgid "We're experiencing some problems now, try again later, please"
-msgstr ""
+msgstr "Wir haben zur Zeit einige Probleme. Bitte versuchen Sie es später "
+"noch einmal."
 
 #: app/controllers/mail_controller.rb:814
 msgid "Draft"
@@ -229,24 +230,20 @@ msgstr ""
 "stellen Sie sicher, dass die Datei ein gültiges Format hat."
 
 #: app/controllers/people_controller.rb:505
-#, fuzzy
 msgid "Group successfully created."
-msgstr "Listenordner erfolgreich erstellt."
+msgstr "Gruppe erfolgreich erstellt."
 
 #: app/controllers/people_controller.rb:507
-#, fuzzy
 msgid "An error occurred creating the group."
-msgstr "Ein Fehler ist beim Erstellen des Listenordners aufgetreten."
+msgstr "Ein Fehler ist beim Erstellen der Gruppe aufgetreten."
 
 #: app/controllers/people_controller.rb:517
-#, fuzzy
 msgid "Group successfully renamed."
-msgstr "Listenordner erfolgreich umbenannt."
+msgstr "Gruppe erfolgreich umbenannt."
 
 #: app/controllers/people_controller.rb:519
-#, fuzzy
 msgid "An error occurred renaming the group."
-msgstr "Ein Fehler ist beim Umbenennen des Listenordners aufgetreten."
+msgstr "Ein Fehler ist beim Umbenennen der Gruppe aufgetreten."
 
 #: app/controllers/people_controller.rb:550
 #: app/controllers/people_controller.rb:652
@@ -1384,28 +1381,30 @@ msgstr "Als OPML herunterladen"
 
 #: app/views/mail/_away.rhtml:13
 msgid "Automated Reply Message"
-msgstr ""
+msgstr "Automatische Antwortnachricht"
 
 #: app/views/mail/_away.rhtml:19
 msgid "Automatically reply to incoming messages with a custom away message"
-msgstr ""
+msgstr "Automatisch auf eingehende Nachrichten mit einer persönlichen "
+"Abwesendheitsnachricht antworten."
 
 #: app/views/mail/_away.rhtml:25
 msgid "You will return"
-msgstr ""
+msgstr "Sie sind zurück am"
 
 #: app/views/mail/_away.rhtml:33
-#, fuzzy
 msgid "Reply Message"
-msgstr "Neue Nachricht"
+msgstr "Nachricht beantworten"
 
 #: app/views/mail/_away.rhtml:35
 msgid "A single message per day will be sent to each person who emails you"
-msgstr ""
+msgstr "Jede Person die Ihnen eine Email schickt wird am Tag höchstens eine "
+"Nachricht erhalten."
 
 #: app/views/mail/_away_info.rhtml:8
 msgid "An \"Away Message\" is being sent to all incoming emails"
-msgstr ""
+msgstr "Eine \"Abwesendheitsnachricht\" wird an alle eingehenden Emails "
+"gesendet"
 
 #: app/views/mail/_compose_form.rhtml:34
 #: app/views/mail/_compose_form_html.rhtml:31 app/views/mail/list.rhtml:42
@@ -1599,7 +1598,7 @@ msgstr "Möchten Sie Ihren Papierkorb entleeren?"
 
 #: app/views/mail/_toolbar.rhtml:59
 msgid "Away"
-msgstr ""
+msgstr "Abwesend"
 
 #: app/views/mail/_tools.rhtml:12
 msgid "Forwarding"
@@ -2089,11 +2088,11 @@ msgstr "Kontakte aus vCard (.vcf) Datei importieren"
 
 #: app/views/people/_manage_person_groups.rhtml:12
 msgid "Manage Person Groups"
-msgstr ""
+msgstr "Personen Gruppen verwalten"
 
 #: app/views/people/_manage_person_groups.rhtml:16
 msgid "Member of all person groups"
-msgstr ""
+msgstr "Mitglied aller Personen Gruppen"
 
 #: app/views/people/_peek.rhtml:27 app/views/people/show.rhtml:39
 msgid "Download vCard for this person"
@@ -2234,9 +2233,8 @@ msgid "url"
 msgstr "URL"
 
 #: app/views/people/_toolbar.rhtml:38
-#, fuzzy
 msgid "Manage"
-msgstr "Sprache"
+msgstr "Verwalten"
 
 #: app/views/people/_toolbar.rhtml:44
 msgid "Import vCards"
@@ -2626,32 +2624,30 @@ msgstr "Mit ausgewählten Gästen teilen"
 
 #: app/views/sidebars/groups/_subscription_group_edit_delete.rhtml:17
 msgid "Are you sure you would like to delete this group?"
-msgstr ""
+msgstr "Sind Sie sicher, dass Sie diese Gruppe löschen möchten?"
 
 #: app/views/sidebars/groups/_subscription_group_edit_ics_settings.rhtml:12
 msgid "ICS Settings"
-msgstr ""
+msgstr "ICS Einstellungen"
 
 #: app/views/sidebars/groups/_subscription_group_edit_ics_settings.rhtml:15
 #: app/views/sidebars/groups/_subscription_group_new_container.rhtml:35
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: app/views/sidebars/groups/_subscription_group_edit_ics_settings.rhtml:17
 #: app/views/sidebars/groups/_subscription_group_new_container.rhtml:38
 msgid "Update Frequency"
-msgstr ""
+msgstr "Aktualisierungsintervall"
 
 #: app/views/sidebars/groups/_subscription_group_edit_subscriptions.rhtml:15
-#, fuzzy
 msgid "ICS Calendar"
-msgstr "Kalender"
+msgstr "ICS Kalender"
 
 #: app/views/sidebars/groups/_subscription_group_new_container.rhtml:23
 #: app/views/sidebars/groups/_subscription_group_new_container.rhtml:33
-#, fuzzy
 msgid "New ICS Subscription"
-msgstr "Abonnement"
+msgstr "Neues ICS Abonnement"
 
 #: app/views/sidebars/groups/bookmarks/_bookmarks.rhtml:27
 #: app/views/sidebars/groups/files/_files.rhtml:51
@@ -2718,9 +2714,8 @@ msgid "Smart Calendar"
 msgstr "Intelligenter Kalender"
 
 #: app/views/sidebars/groups/calendar/_calendar.rhtml:51
-#, fuzzy
 msgid "ICS Subscription"
-msgstr "Abonnement"
+msgstr "ICS Abonnement"
 
 #: app/views/sidebars/groups/calendar/_calendar_all.rhtml:14
 #: app/views/sidebars/groups/calendar/_calendar_invitations.rhtml:12
@@ -2828,19 +2823,16 @@ msgid "Smart Mailbox"
 msgstr "Intelligentes Postfach"
 
 #: app/views/sidebars/groups/people/_people.rhtml:32
-#, fuzzy
 msgid "Do you want to delete this group?"
-msgstr "Wollen Sie dieses Element löschen?"
+msgstr "Möchten Sie diese Gruppe löschen?"
 
 #: app/views/sidebars/groups/people/_people.rhtml:38
-#, fuzzy
 msgid "Add New People Group or Smart Group"
-msgstr "Neuen Ordner oder Intelligenden Ordner hinzufügen"
+msgstr "Neue Personen Gruppe oder Intelligenden Ordner hinzufügen"
 
 #: app/views/sidebars/groups/people/_people.rhtml:40
-#, fuzzy
 msgid "Person Group"
-msgstr "Personentyp"
+msgstr "Personen Gruppe"
 
 #: app/views/sidebars/groups/people/_people_contacts.rhtml:17
 #: app/views/sidebars/groups/people/_people_notifications.rhtml:14
@@ -2906,7 +2898,6 @@ msgid "Users Created"
 msgstr "Benutzer erstellt"
 
 #: app/views/toolbars/_remove.rhtml:13
-#, fuzzy
 msgid "Remove all selected items."
 msgstr "Alle ausgewählten Elemente löschen."
 
@@ -3244,7 +3235,6 @@ msgid "Not all selected items are deleteable."
 msgstr "Nicht alle ausgewählten Elemente sind löschbar."
 
 #: lib/js_strings.rb:6
-#, fuzzy
 msgid "Not all selected items are removable."
 msgstr "Nicht alle ausgewählten Elemente sind löschbar."
 
@@ -3272,29 +3262,27 @@ msgstr ""
 "'notifier@joyent.com' als Kontakt hinzu."
 
 #: lib/js_strings.rb:11
-#, fuzzy
 msgid "You must select a group to add items to."
 msgstr ""
-"Sie müssen eine Gruppe auswählen in die Sie die Elemente kopieren möchten."
+"Sie müssen eine Gruppe auswählen in die Sie Elemente einfügen möchten."
 
 #: lib/js_strings.rb:12
 msgid "You must select a group to copy items to."
 msgstr ""
-"Sie müssen eine Gruppe auswählen in die Sie die Elemente kopieren möchten."
+"Sie müssen eine Gruppe auswählen in die Sie Elemente kopieren möchten."
 
 #: lib/js_strings.rb:13
 msgid "You must select a group to move items to."
 msgstr ""
-"Sie müssen eine Gruppe auswählen in die Sie die Elemente bewegen möchten."
+"Sie müssen eine Gruppe auswählen in die Sie Elemente bewegen möchten."
 
 #: lib/js_strings.rb:14
 msgid "You must select something in order to include it as an attachment."
 msgstr "Sie müssen etwas auswählen um es als Anhang anzufügen."
 
 #: lib/js_strings.rb:15
-#, fuzzy
 msgid "You must select something to add it to another group."
-msgstr "Sie müssen etwas auswählen um es in eine andere Gruppe zu kopieren."
+msgstr "Sie müssen etwas auswählen um es einer anderen Gruppe hinzuzufügen."
 
 #: lib/js_strings.rb:16
 msgid "You must select something to copy it to another group."
@@ -3313,7 +3301,6 @@ msgid "You must select something to move it to another group."
 msgstr "Sie müssen etwas auswählen um es in eine andere Gruppe zu bewegen."
 
 #: lib/js_strings.rb:20
-#, fuzzy
 msgid "You must select something to remove."
 msgstr "Sie müssen etwas auswählen um es zu löschen."
 
@@ -3351,7 +3338,7 @@ msgstr "Ein Alias mit diesem Namen existiert bereits."
 
 #: lib/js_strings.rb:29
 msgid "April"
-msgstr ""
+msgstr "April"
 
 #: lib/js_strings.rb:30
 msgid "assign tag as your own"
@@ -3363,7 +3350,7 @@ msgstr "Tag anbringen"
 
 #: lib/js_strings.rb:32
 msgid "August"
-msgstr ""
+msgstr "August"
 
 #: lib/js_strings.rb:33
 msgid "can change"
@@ -3375,7 +3362,7 @@ msgstr "Zur Zeit als Primär markiert"
 
 #: lib/js_strings.rb:35
 msgid "December"
-msgstr ""
+msgstr "Dezember"
 
 #: lib/js_strings.rb:36
 msgid "Deleting..."
@@ -3399,7 +3386,6 @@ msgid "Do you want to delete this item?"
 msgstr "Wollen Sie dieses Element löschen?"
 
 #: lib/js_strings.rb:41
-#, fuzzy
 msgid "Do you want to remove the selected items?"
 msgstr "Möchten Sie die ausgewählten Elemente löschen?"
 
@@ -3413,12 +3399,11 @@ msgstr "Jeder andere"
 
 #: lib/js_strings.rb:44
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #: lib/js_strings.rb:45
-#, fuzzy
 msgid "Fr"
-msgstr "Von"
+msgstr "Fr"
 
 #: lib/js_strings.rb:46
 msgid "has access to some selected items, "
@@ -3442,39 +3427,35 @@ msgstr "wurde benachrichtigt, "
 
 #: lib/js_strings.rb:52
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 #: lib/js_strings.rb:53
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: lib/js_strings.rb:54
-#, fuzzy
 msgid "June"
-msgstr "Unerwünschte Werbung"
+msgstr "Juni"
 
 #: lib/js_strings.rb:55
 msgid "Mailbox names can not contain periods (.)"
 msgstr "Der Name des Postfaches darf keinen Punkt (.) enthalten."
 
 #: lib/js_strings.rb:56
-#, fuzzy
 msgid "March"
-msgstr "Suche"
+msgstr "März"
 
 #: lib/js_strings.rb:57
 msgid "Mark as primary"
 msgstr "Als Primär markieren"
 
 #: lib/js_strings.rb:58
-#, fuzzy
 msgid "May"
-msgstr "Karte"
+msgstr "Mai"
 
 #: lib/js_strings.rb:59
-#, fuzzy
 msgid "Mo"
-msgstr "Bewegen"
+msgstr "Mo"
 
 #: lib/js_strings.rb:60
 msgid "New "
@@ -3489,14 +3470,12 @@ msgid "No tag or condition fields may be blank."
 msgstr "Tag- oder Bedingungsfelder dürfen nicht leer sein."
 
 #: lib/js_strings.rb:64
-#, fuzzy
 msgid "November"
-msgstr "Zahlen"
+msgstr "November"
 
 #: lib/js_strings.rb:65
-#, fuzzy
 msgid "October"
-msgstr "Andere"
+msgstr "Oktober"
 
 #: lib/js_strings.rb:66
 msgid "Password recovery email address can not be blank."
@@ -3507,9 +3486,8 @@ msgid "Phone numbers can not be blank."
 msgstr "Telefonnummern dürfen nicht leer sein."
 
 #: lib/js_strings.rb:68
-#, fuzzy
 msgid "Sa"
-msgstr "Werbung"
+msgstr "Sa"
 
 #: lib/js_strings.rb:69
 msgid "Search "
@@ -3521,7 +3499,7 @@ msgstr "Alles durchsuchen"
 
 #: lib/js_strings.rb:72
 msgid "September"
-msgstr ""
+msgstr "September"
 
 #: lib/js_strings.rb:73
 msgid "Special date dates can not be blank."
@@ -3533,7 +3511,7 @@ msgstr "Beschreibungen besonderer Tage dürfen nicht leer sein."
 
 #: lib/js_strings.rb:75
 msgid "Su"
-msgstr ""
+msgstr "So"
 
 #: lib/js_strings.rb:77
 msgid "tag info"
@@ -3541,7 +3519,7 @@ msgstr "Tag Info"
 
 #: lib/js_strings.rb:78
 msgid "Th"
-msgstr ""
+msgstr "Do"
 
 #: lib/js_strings.rb:79
 msgid "The file name can not be blank."
@@ -3552,9 +3530,8 @@ msgid "The group name can not be blank."
 msgstr "Der Gruppenname kann nicht leer sein."
 
 #: lib/js_strings.rb:81
-#, fuzzy
 msgid "The group url can not be blank."
-msgstr "Der Gruppenname kann nicht leer sein."
+msgstr "Der URL der Gruppe kann nicht leer sein."
 
 #: lib/js_strings.rb:82
 msgid "The password and confirmation must match."
@@ -3586,7 +3563,7 @@ msgstr "Benutzernamen dürfen nur die Zeichen a-z, 0-9 und _ und . enthalten."
 
 #: lib/js_strings.rb:89
 msgid "Tu"
-msgstr ""
+msgstr "Di"
 
 #: lib/js_strings.rb:90
 msgid "unassign tag"
@@ -3602,7 +3579,7 @@ msgstr "Betrachtbar"
 
 #: lib/js_strings.rb:93
 msgid "We"
-msgstr ""
+msgstr "Mi"
 
 #: lib/js_strings.rb:94
 msgid "Website names can not be blank."
